@@ -5,3 +5,4 @@ _vendor
 .jekyll-metadata
 Gemfile.lock
 bower_components
+.DS_Store
