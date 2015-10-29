@@ -16,7 +16,7 @@ header .navbar-brand {
 }
 header h2#org-logo {
   text-indent: -5000px;
-  background: url('/ui/img/tyee_logo.png') no-repeat top left;
+  background: url('../../ui/img/tyee_logo.png') no-repeat top left;
   margin-top: 10px;
   padding-top: 80px;
 }
