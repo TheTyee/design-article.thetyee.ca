@@ -34,3 +34,12 @@ That helps to ensure the project is using the right version of each gem, and tha
 Configuration files can be added to switch modes:
 
 `bundle exec jekyll serve -w --config _config.yml,_config.development.yml`
+
+## If you're not using Bundler
+
+If not using Bundler, you can simply pass the configuration arguments directly to Jekyll like so:
+
+`jekyll serve -w --config _config.yml,_config.development.yml`
+
+`jekyll serve -w --config _config.yml,_config.development.yml`
+

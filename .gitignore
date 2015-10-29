@@ -1,2 +1,7 @@
 _site/
 .sass-cache/
+_vendor
+.bundle
+.jekyll-metadata
+Gemfile.lock
+bower_components
