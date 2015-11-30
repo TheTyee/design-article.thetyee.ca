@@ -43,3 +43,5 @@ If not using Bundler, you can simply pass the configuration arguments directly t
 
 `jekyll serve -w --config _config.yml,_config.development.yml`
 
+##Docs on structure
+
