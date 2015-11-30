@@ -1,0 +1,25 @@
+<article>
+<div class="story_masthead">
+	{% for field in site.data.example_stories limit:1 %}
+
+	<p>CATEGORY</p>
+	<h1>{{field.hed}}</h1>
+	<h4>{{field.hed}}</h4>
+	<div class="authour info">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Blank_woman_placeholder.svg/315px-Blank_woman_placeholder.svg.png"/>
+		<p>By {{field.authour}}, 15 January 2015, TheTyee.ca</p>
+		<p>Bio</p>
+	</div>
+	<div class="social_sharing">
+		<ul>
+			<li>Facebook</li>
+			<li>Twitter</li>
+			<li>Email</li>
+			<li>Donate</li>
+			<li>Print</li>
+			<li>Comment</li>
+		</ul>
+	</div>
+</div>
+
+{% endfor %}

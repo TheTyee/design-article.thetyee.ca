@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint'); // Local dev only
     grunt.loadNpmTasks('grunt-jsbeautifier'); // Ditto
-    grunt.loadNpmTasks('grunt-browser-sync'); // Ditto. Required node.
+  //  grunt.loadNpmTasks('grunt-browser-sync'); // Ditto. Required node.
     grunt.loadNpmTasks('grunt-open');
 
 
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                 files: ['ui/js/*.js', '*.json', 'Gruntfile.js'],
                 tasks: ['jshint', 'jsbeautifier', 'copy:js'],
                 options: {
-                    livereload: true
+                    livereload: false
                 }
             },
             // Less compile, copy assets on edit
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                 files: ['ui/img/*'],
                 tasks: ['copy:images'],
                 options: {
-                    livereload: true
+                    livereload: false
                 }
             },
             html: {
