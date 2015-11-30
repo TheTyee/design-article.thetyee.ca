@@ -18,8 +18,21 @@ copyright: "&copy; The Tyee 2015"
 
 # Project settings - Assets
 asset_paths:
-    img: ""
-    js:  ""
+ # jekyll-assets pipeline
+  # Pathname of the destination of generated (bundled) assets relative
+  # to the destination of the root.
+  dirname: assets
+  # Base URL of assets paths.
+  baseurl: /assets/
+  sources:
+    - ui/js
+    - ui/img
+    - ui/less
+    - ui/css
+  js_compressor: yui
+  css_compressor: yui
+  cache: true
+  digest: true
 
 # Project settings - URLs
 urls:

@@ -1,0 +1,8 @@
+
+
+{% for field in site.data.example_stories limit:1 %}
+<section class="featured_image">
+    <img src="{{ field.featured_image }}"/>
+      <caption>{{field.featured_image_caption}}</caption>
+</section>
+{% endfor %}

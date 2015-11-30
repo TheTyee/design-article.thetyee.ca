@@ -1,0 +1,9 @@
+mode: 'local'
+# Local development (both jekyll and API)
+# These overwrite configurations options from _config.yml
+url: "http://localhost:4000/"
+
+assets:
+  debug: true
+  cachebust: none
+  cache: true
