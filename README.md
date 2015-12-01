@@ -71,9 +71,10 @@ The list of includes is:
 The general idea is that each of these elements can be used in multiple positions on the page.
 
 ### Additional
-You will notice that some of the includes are being populated with Jekyll. This is meant to replicate the behaviour or any CMS, and hopefully make it easier to style for dynamic content. This data is being pulled from a csv I made out of existing Tyee stories.
+You will notice that some of the includes are being populated with Jekyll (Jekyll tags are identifiable from their `{% %}` or `{{}}` wrappers). This is meant to replicate the behaviour or any CMS, and hopefully make it easier to account for dynamic content when styling. This data is being pulled from a csv I made out of existing Tyee stories.
 
 If at any point, you'd like to sub in new content to see how the styles hold up, you can do that by searching out all `{% for field in site.data.example_stories limit:1 %}` tags and setting them to `{% for field in site.data.example_stories limit:2 %}` or `{% for field in site.data.example_stories limit:3 %}`. You can also feel free to reorder any of the includes in article.html and sidebar.html.
+
 
 
 
