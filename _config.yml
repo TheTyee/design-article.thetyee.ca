@@ -27,12 +27,7 @@ asset_paths:
   sources:
     - ui/js
     - ui/img
-    - ui/less
     - ui/css
-  js_compressor: yui
-  css_compressor: yui
-  cache: true
-  digest: true
 
 # Project settings - URLs
 urls:
