@@ -11,7 +11,7 @@
     <noscript id="js-warning">
     This page requires Javascript. Your browser either doesn't support JavaScript or you have it turned off. Please enable JavaScript before you proceed.
     </noscript>
-    {% include header.html %}
+    {% include 02-organisms/global/header.html %}
     <div id="content">
         <div class="container">
             <div class="row">
@@ -20,8 +20,7 @@
                     <!--Article header, including hed, dek, authour and social links-->
                     {% include 02-organisms/article/article__head.html %}
                     <section class="main">
-                        <!--Featured image-->
-                        {% include featured_image.html %}
+                        {% include 02-organisms/sections/featured-media.html %}
                         <!--This is a conventional block of content, like in a typical Tyee story, where all HTML is entered into one field-->
                         {% include content.html %}
                         <!--This is a single paragraph of content, like in a Tyee series, where items like additional images, pullquotes or video are entered a field at a time-->
