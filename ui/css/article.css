@@ -1,53 +1,94 @@
 /* ==========================================================================
    Globals & Mixins
    ========================================================================== */
+
 /* ==========================================================================
-   Variables
+   #Variables
    ========================================================================== */
+
 /* ==========================================================================
-   Global 
+   #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
+
 body {
   background-color: #f0f0f0;
   font-family: "Lucida Grande", Verdana, sans-serif;
 }
+
 header .navbar-brand {
   padding-left: 0px;
 }
+
 header h2#org-logo {
   text-indent: -5000px;
   background: url('../../ui/img/tyee_logo.png') no-repeat top left;
   margin-top: 10px;
   padding-top: 80px;
 }
+
 #content {
   background: #ffffff;
   padding-bottom: 40px;
 }
+
 footer.site-footer {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* ==========================================================================
-   Type
-   ========================================================================== */
+
+/* Type */
+
 h1,
 h2,
 h3,
 h4 {
   font-family: "franklin-gothic-urw-cond", sans-serif;
 }
+
+
+
+
+
 /* ==========================================================================
-   Layout
+   LAYOUT
+   (Layout rules divide the page into sections. Layouts hold one or more modules
+    together. These apply largely to the Organism and Template levels. They 
+    are kind of like helper classes. https://smacss.com/book/type-layout )
    ========================================================================== */
+
+
+
+
+
 /* ==========================================================================
-   Modules 
+   MODULES 
+   (Modules are the reusable, modular parts of our design. They are the 
+   callouts, the sidebar sections, the product lists and so on. These apply 
+   largely to the Molecule and Organism levels)
    ========================================================================== */
+
+.cmnt {
+  display:block;
+}
+
+.cmnt-organism {
+  border: 1px solid red;
+}
+
+.cnmt-molecule {
+  border: 1px solid blue;
+}
+
+.cmnt__remark {
+  display: block;
+}
+
 .site-nav {
   border: none;
   margin-bottom: 0px;
   background-color: inherit;
 }
+
 .site-nav .navbar-toggle {
   border: none;
   margin-right: 0px;
@@ -64,6 +105,28 @@ h4 {
 .site-nav .navbar > .container-fluid .navbar-brand {
   margin-left: -30px;
 }
+
+
+
+
+
+/* ==========================================================================
+   STATES 
+   (A state is something that augments and overrides all other styles. 
+   State styles can apply to layout and/or module styles; and State styles 
+   indicate a JavaScript dependency.
+   For example, an accordion section may be in a collapsed or expanded state. 
+   A message may be in a success or error state. Eg: .is-collapsed or .is-error 
+   So again, something like a helper class. 
+   But sometimes there may be a state that is specific to a particular object.
+   Eg: .is-tab-active
+   https://smacss.com/book/type-state)
+   ========================================================================== */
+
+
+
+
+
 /* ==========================================================================
    Progressively enhance for larger screens 
    ========================================================================== */
@@ -79,6 +142,11 @@ h4 {
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   /* Put high-resolution display styles here */
 }
+
+
+
+
+
 /* ==========================================================================
    Print styles.
    Should be inlined to avoid required HTTP connection: h5bp.com/r

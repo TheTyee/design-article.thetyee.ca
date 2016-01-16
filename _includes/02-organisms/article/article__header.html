@@ -1,14 +1,20 @@
-<header class="story_masthead">
-	{% for field in site.data.example_stories limit:1 %}
+{% for field in site.data.example_stories limit:1 %}
+
+<header class="article__header cmnt-organism">
+    <pre class="cmnt cmnt__remark">organisms/article/article__header</pre>
 
 	<p><a href="#">CATEGORY</a></p>
+
 	<h1>{{field.hed}}</h1>
+
 	<h4>{{field.hed}}</h4>
+
 	<div class="authour info">
 		<img height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Blank_woman_placeholder.svg/315px-Blank_woman_placeholder.svg.png"/>
 		<p>By <a href="#">{{field.authour}}</a>, 15 January 2015, TheTyee.ca</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at est mi. Nulla accumsan luctus semper.</p>
 	</div>
+
 	<div class="social_sharing">
 		<ul>
 			<li><a href="#">Facebook</a></li>
@@ -19,6 +25,7 @@
 			<li><a href="#">Comment</a></li>
 		</ul>
 	</div>
+
 </header>
 
 {% endfor %}
