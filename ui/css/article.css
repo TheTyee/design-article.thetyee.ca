@@ -67,45 +67,6 @@ h4 {
    largely to the Molecule and Organism levels)
    ========================================================================== */
 
-/**
- * COMMENT module
- * (not really a module, more like a helper class)
- * This displays the browser annotations on Organisms and molecules. 
- * These classes exist only for prototyping and should be removed in production.
- */
-
-.cmnt {
-  display:block;
-}
-
-    pre.cmnt__remark {
-      display: none;
-      border: none;
-      background:none;
-      color: red;
-      font-size: 1em;
-      margin: 0;
-      padding: 5px 0px 10px 5px;
-
-    }
-    .cmnt--visibility:hover .cmnt__remark {
-      display: block;
-    }
-
-.cmnt--organism { }
-
-    .cmnt--visibility:hover .cmnt--organism {
-      border: 1px solid red;
-    }
-
-.cnmt--molecule { }
-
-    .cmnt--visibility:hover .cmnt--molecule {
-      border: 1px solid blue;
-    }
-
-
-
 
 .site-nav {
   border: none;
@@ -131,6 +92,44 @@ h4 {
 }
 
 
+/**
+ * COMMENT module
+ * (not really a module, more like a helper class)
+ * This displays the browser annotations on Organisms and molecules. 
+ * These classes exist only for prototyping and should be removed in production.
+ */
+
+.cmnt { }
+
+    pre.cmnt__remark {
+      display: block;
+      border: none;
+      background:none;
+      color: Tomato ;
+      font-size: 1em;
+      margin: 0;
+      padding: 5px 0px 10px 5px;
+    }
+
+    .cmnt--visibility:hover .cmnt__remark {
+      display: block;
+    }
+
+.cmnt--organism {border: 1px solid pink; }
+
+    .cmnt--visibility:hover .cmnt--organism {
+      border: 1px solid Tomato ;
+    }
+
+.cmnt--molecule {border: 1px solid LightBlue; }
+
+    .cmnt--visibility:hover .cmnt--molecule {
+      border: 1px solid DodgerBlue;
+    }
+
+    .cmnt--molecule pre.cmnt__remark {
+      color: DodgerBlue ;
+    }
 
 
 
