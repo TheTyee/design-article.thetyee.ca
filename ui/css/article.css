@@ -15,26 +15,6 @@ body {
   font-family: "Lucida Grande", Verdana, sans-serif;
 }
 
-header .navbar-brand {
-  padding-left: 0px;
-}
-
-header h2#org-logo {
-  text-indent: -5000px;
-  background: url('../../ui/img/tyee_logo.png') no-repeat top left;
-  margin-top: 10px;
-  padding-top: 80px;
-}
-
-#content {
-  background: #ffffff;
-  padding-bottom: 40px;
-}
-
-footer.site-footer {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
 
 /* Type */
 
@@ -66,6 +46,35 @@ h4 {
    callouts, the sidebar sections, the product lists and so on. These apply 
    largely to the Molecule and Organism levels)
    ========================================================================== */
+
+header .navbar-brand {
+  padding-left: 0px;
+}
+
+#site-logo {
+  display:block;
+  float: left;
+  margin-top: 0px;
+  padding-top: 0px;
+  background: none;
+}
+
+header h2#org-logo {
+  text-indent: -5000px;
+  background: url('../../ui/img/tyee_logo.png') no-repeat top left;
+  margin-top: 10px;
+  padding-top: 80px;
+}
+
+#content {
+  background: #ffffff;
+  padding-bottom: 40px;
+}
+
+footer.site-footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 
 .site-nav {
@@ -121,7 +130,7 @@ h4 {
       border: 1px solid Tomato ;
     }
 
-.cmnt--molecule {border: 1px solid LightBlue; }
+.cmnt--molecule {border: 1px solid LightBlue;}
 
     .cmnt--visibility:hover .cmnt--molecule {
       border: 1px solid DodgerBlue;
