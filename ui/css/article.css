@@ -50,7 +50,7 @@ h4 {
 
 
 /* ==========================================================================
-   LAYOUT
+   #LAYOUT
    (Layout rules divide the page into sections. Layouts hold one or more modules
     together. These apply largely to the Organism and Template levels. They 
     are kind of like helper classes. https://smacss.com/book/type-layout )
@@ -61,27 +61,51 @@ h4 {
 
 
 /* ==========================================================================
-   MODULES 
+   #MODULES 
    (Modules are the reusable, modular parts of our design. They are the 
    callouts, the sidebar sections, the product lists and so on. These apply 
    largely to the Molecule and Organism levels)
    ========================================================================== */
 
+/**
+ * COMMENT module
+ * (not really a module, more like a helper class)
+ * This displays the browser annotations on Organisms and molecules. 
+ * These classes exist only for prototyping and should be removed in production.
+ */
+
 .cmnt {
   display:block;
 }
 
-.cmnt-organism {
-  border: 1px solid red;
-}
+    pre.cmnt__remark {
+      display: none;
+      border: none;
+      background:none;
+      color: red;
+      font-size: 1em;
+      margin: 0;
+      padding: 5px 0px 10px 5px;
 
-.cnmt-molecule {
-  border: 1px solid blue;
-}
+    }
+    .cmnt--visibility:hover .cmnt__remark {
+      display: block;
+    }
 
-.cmnt__remark {
-  display: block;
-}
+.cmnt--organism { }
+
+    .cmnt--visibility:hover .cmnt--organism {
+      border: 1px solid red;
+    }
+
+.cnmt--molecule { }
+
+    .cmnt--visibility:hover .cmnt--molecule {
+      border: 1px solid blue;
+    }
+
+
+
 
 .site-nav {
   border: none;
