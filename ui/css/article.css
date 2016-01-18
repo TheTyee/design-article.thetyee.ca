@@ -26,6 +26,13 @@ h4 {
 }
 
 
+.center-object {
+}
+
+
+
+
+
 /* ==========================================================================
    #LAYOUT
    (Layout rules divide the page into sections. Layouts hold one or more modules
@@ -48,42 +55,61 @@ h4 {
  * PRIMARY-NAV molecule
  */
 
-.site-nav {
-  margin-bottom: 0px;
-  border: none;
-  background-color: inherit;
-}
+    .site-nav {
+      margin-bottom: 0px;
+      padding-top: 18px;
+      padding-bottom: 0px;
+      border: none;
+      background-color: inherit;
 
-.navbar-brand {
-  height: 100%;
-  padding-left: 0px;
+    }
 
-}
+    .navbar-header {
+      padding-bottom: 15px;
+    }
 
-#site-logo {
-  width: 170px;
-  /* display:block;
-  float: left;
-  margin-top: 0px;
-  padding-top: 0px;
-  background: none; */
-  
-}
+    .navbar-brand {
+      height: 100%;
+      margin-top: -5px;
+      padding-top: 0;
+      padding-left: 0;
+      padding-bottom: 0; 
 
-header h2#org-logo {
-  text-indent: -5000px;
-  background: url('../../ui/img/tyee_logo.png') no-repeat top left;
-  margin-top: 10px;
-  padding-top: 80px;
-}
+    }
 
-.site-nav .navbar-toggle {
-  border: none;
-  margin-right: 0px;
-}
-.site-nav .navbar-toggle .icon-bar {
-  height: 4px;
-}
+    #site-logo {
+      width: 170px;
+      /* display:block;
+      float: left;
+      margin-top: 0px;
+      padding-top: 0px;
+      background: none; */
+
+    }
+
+
+    .site-nav .navbar-toggle {
+      margin-top: ;
+      margin-right: 0px;
+      border: none;
+
+    }
+
+    .navbar-default .navbar-toggle:focus {
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle:hover {
+      background-color: #ddd;
+    }
+
+    .site-nav .navbar-toggle .icon-bar {
+      height: 4px;
+    }
+
+    .navbar-nav {
+    }
+
 
 
 #content {
