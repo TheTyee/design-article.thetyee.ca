@@ -126,8 +126,7 @@ footer.site-footer {
 
 
 /**
- * COMMENT module
- * (not really a module, more like a helper class)
+ * COMMENT helper classes
  * This displays the browser annotations on Organisms and molecules. 
  * These classes exist only for prototyping and should be removed in production.
  */
@@ -144,17 +143,17 @@ footer.site-footer {
       padding: 5px 0px 10px 5px;
     }
 
-    .cmnt--visibility:hover .cmnt__remark {
+    .cmnt:hover > .cmnt__remark {
       display: block;
     }
 
-.cmnt--organism {border: 1px solid pink; }
+.cmnt--organism {/* border: 1px solid pink; */ }
 
     .cmnt--visibility:hover .cmnt--organism {
       border: 1px solid Tomato ;
     }
 
-.cmnt--molecule {border: 1px solid LightBlue;}
+.cmnt--molecule {/* border: 1px solid LightBlue; */}
 
     .cmnt--visibility:hover .cmnt--molecule {
       border: 1px solid DodgerBlue;
@@ -163,6 +162,30 @@ footer.site-footer {
     .cmnt--molecule pre.cmnt__remark {
       color: DodgerBlue ;
     }
+
+pre[data-dev-status~="in-progress"]::after {
+    content: "in progress";
+    margin-left: 10px;
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+}
+
+pre[data-dev-status~="in-review"]::after {
+    content: "in review";
+    margin-left: 10px;
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+}
+
+pre[data-dev-status~="complete"]::after {
+    content: "complete";
+    margin-left: 10px;
+    background-color: transparent;
+    color: green;
+    font-weight: bold;
+}
 
 
 
