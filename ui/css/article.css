@@ -26,9 +26,6 @@ h4 {
 }
 
 
-
-
-
 /* ==========================================================================
    #LAYOUT
    (Layout rules divide the page into sections. Layouts hold one or more modules
@@ -47,16 +44,30 @@ h4 {
    largely to the Molecule and Organism levels)
    ========================================================================== */
 
-header .navbar-brand {
+/**
+ * PRIMARY-NAV molecule
+ */
+
+.site-nav {
+  margin-bottom: 0px;
+  border: none;
+  background-color: inherit;
+}
+
+.navbar-brand {
+  height: 100%;
   padding-left: 0px;
+
 }
 
 #site-logo {
-  display:block;
+  width: 170px;
+  /* display:block;
   float: left;
   margin-top: 0px;
   padding-top: 0px;
-  background: none;
+  background: none; */
+  
 }
 
 header h2#org-logo {
@@ -65,6 +76,15 @@ header h2#org-logo {
   margin-top: 10px;
   padding-top: 80px;
 }
+
+.site-nav .navbar-toggle {
+  border: none;
+  margin-right: 0px;
+}
+.site-nav .navbar-toggle .icon-bar {
+  height: 4px;
+}
+
 
 #content {
   background: #ffffff;
@@ -77,28 +97,6 @@ footer.site-footer {
 }
 
 
-.site-nav {
-  border: none;
-  margin-bottom: 0px;
-  background-color: inherit;
-}
-
-.site-nav .navbar-toggle {
-  border: none;
-  margin-right: 0px;
-}
-.site-nav .navbar-toggle .icon-bar {
-  height: 4px;
-}
-.site-nav h1 {
-  margin: 0;
-  padding: 0;
-  display: inline;
-  line-height: inherit;
-}
-.site-nav .navbar > .container-fluid .navbar-brand {
-  margin-left: -30px;
-}
 
 
 /**
@@ -111,7 +109,7 @@ footer.site-footer {
 .cmnt { }
 
     pre.cmnt__remark {
-      display: block;
+      display: none;
       border: none;
       background:none;
       color: Tomato ;
