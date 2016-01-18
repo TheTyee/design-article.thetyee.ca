@@ -15,26 +15,6 @@ body {
   font-family: "Lucida Grande", Verdana, sans-serif;
 }
 
-header .navbar-brand {
-  padding-left: 0px;
-}
-
-header h2#org-logo {
-  text-indent: -5000px;
-  background: url('../../ui/img/tyee_logo.png') no-repeat top left;
-  margin-top: 10px;
-  padding-top: 80px;
-}
-
-#content {
-  background: #ffffff;
-  padding-bottom: 40px;
-}
-
-footer.site-footer {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
 
 /* Type */
 
@@ -43,6 +23,10 @@ h2,
 h3,
 h4 {
   font-family: "franklin-gothic-urw-cond", sans-serif;
+}
+
+
+.center-object {
 }
 
 
@@ -67,34 +51,82 @@ h4 {
    largely to the Molecule and Organism levels)
    ========================================================================== */
 
+/**
+ * PRIMARY-NAV molecule
+ */
 
-.site-nav {
-  border: none;
-  margin-bottom: 0px;
-  background-color: inherit;
+    .site-nav {
+      margin-bottom: 0px;
+      padding-top: 18px;
+      padding-bottom: 0px;
+      border: none;
+      background-color: inherit;
+
+    }
+
+    .navbar-header {
+      padding-bottom: 15px;
+    }
+
+    .navbar-brand {
+      height: 100%;
+      margin-top: -5px;
+      padding-top: 0;
+      padding-left: 0;
+      padding-bottom: 0; 
+
+    }
+
+    #site-logo {
+      width: 170px;
+      /* display:block;
+      float: left;
+      margin-top: 0px;
+      padding-top: 0px;
+      background: none; */
+
+    }
+
+
+    .site-nav .navbar-toggle {
+      margin-top: ;
+      margin-right: 0px;
+      border: none;
+
+    }
+
+    .navbar-default .navbar-toggle:focus {
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle:hover {
+      background-color: #ddd;
+    }
+
+    .site-nav .navbar-toggle .icon-bar {
+      height: 4px;
+    }
+
+    .navbar-nav {
+    }
+
+
+
+#content {
+  background: #ffffff;
+  padding-bottom: 40px;
 }
 
-.site-nav .navbar-toggle {
-  border: none;
-  margin-right: 0px;
+footer.site-footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.site-nav .navbar-toggle .icon-bar {
-  height: 4px;
-}
-.site-nav h1 {
-  margin: 0;
-  padding: 0;
-  display: inline;
-  line-height: inherit;
-}
-.site-nav .navbar > .container-fluid .navbar-brand {
-  margin-left: -30px;
-}
+
+
 
 
 /**
- * COMMENT module
- * (not really a module, more like a helper class)
+ * COMMENT helper classes
  * This displays the browser annotations on Organisms and molecules. 
  * These classes exist only for prototyping and should be removed in production.
  */
@@ -102,7 +134,7 @@ h4 {
 .cmnt { }
 
     pre.cmnt__remark {
-      display: block;
+      display: none;
       border: none;
       background:none;
       color: Tomato ;
@@ -111,17 +143,17 @@ h4 {
       padding: 5px 0px 10px 5px;
     }
 
-    .cmnt--visibility:hover .cmnt__remark {
+    .cmnt:hover > .cmnt__remark {
       display: block;
     }
 
-.cmnt--organism {border: 1px solid pink; }
+.cmnt--organism {/* border: 1px solid pink; */ }
 
     .cmnt--visibility:hover .cmnt--organism {
       border: 1px solid Tomato ;
     }
 
-.cmnt--molecule {border: 1px solid LightBlue; }
+.cmnt--molecule {/* border: 1px solid LightBlue; */}
 
     .cmnt--visibility:hover .cmnt--molecule {
       border: 1px solid DodgerBlue;
@@ -130,6 +162,30 @@ h4 {
     .cmnt--molecule pre.cmnt__remark {
       color: DodgerBlue ;
     }
+
+pre[data-dev-status~="in-progress"]::after {
+    content: "in progress";
+    margin-left: 10px;
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+}
+
+pre[data-dev-status~="in-review"]::after {
+    content: "in review";
+    margin-left: 10px;
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+}
+
+pre[data-dev-status~="complete"]::after {
+    content: "complete";
+    margin-left: 10px;
+    background-color: transparent;
+    color: green;
+    font-weight: bold;
+}
 
 
 
