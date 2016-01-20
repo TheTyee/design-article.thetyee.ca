@@ -1,9 +1,11 @@
 <!-- begin organisms/media/featured-media -->
 <!--This pulls in an image and a caption-->
 {% for field in site.data.example_stories limit:1 %}
-<section class="cmnt cmnt--organism">
-	<pre class="cmnt__remark">organisms/media/featured-media</pre>
+
+<section class="cmnt cmnt--organism" data-dev-object-descrip="organisms/media/featured-media" data-dev-status="IN-PROGRESS">
+
     <img src="{{ field.featured_image }}"/>
 	<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
+
 </section>
 {% endfor %}
