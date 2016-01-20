@@ -32,27 +32,31 @@ h4 {
  * These classes exist only for prototyping and should be removed in production.
  */
 
-.cmnt { }
+.cmnt {
+    position:relative; 
+}   /* This ensures that the absolute positioning of dev-status will work 
+       MIGHT CAUSE PROBLEMS as it can override static positioning of elements */
 
-    pre.cmnt__remark {
-      display: none;
-      border: none;
-      background:none;
-      color: Tomato ;
-      font-size: .75em;
-      margin: 0;
-      padding: 5px 0px 10px 5px;
-    } /*  */
+    body.cmnt--visibility { }
+        /* This is applied to the body tag to trigger the display of 
+        object dev-status colours upon hover */
 
-    .cmnt:hover > .cmnt__remark {
-      display: block;
-    }
+        body.cmnt--visibility:hover [data-dev-status~="in-progress"] {
+            background-color: hsla(60, 100%, 50%, .1) ;
+        }   /* elements that are "in-progress" are coloured pale yellow when
+            there's hover on the body tag */
+
+        body.cmnt--visibility:hover .cmnt--organism {
+            border: 1px solid Tomato ;
+        }   /* objects that are "in-progress" are coloured pale yellow when
+            there's hover on the body tag */
+
+        body.cmnt--visibility:hover [data-dev-object-descrip^="organisms"] {
+            border: 1px solid Tomato ;
+        }
 
 .cmnt--organism {/* border: 1px solid pink; */ }
 
-    .cmnt--visibility:hover .cmnt--organism {
-      border: 1px solid Tomato ;
-    }
 
 .cmnt--molecule {/* border: 1px solid LightBlue; */}
 
@@ -60,16 +64,8 @@ h4 {
       border: 1px solid DodgerBlue;
     }
 
-    .cmnt--molecule pre.cmnt__remark {
-      color: DodgerBlue ;
-    }
-
-.cmnt--visibility:hover [data-dev-status~="in-progress"] {
-    background-color: hsla(60, 100%, 50%, .1) ;
-}
-
 [data-dev-object-descrip]:hover::before {
-    content: attr(data-dev-object-descrip);
+    content: attr(data-dev-object-descrip) " ___ " attr(data-dev-status);
     padding: 5px 0px 10px 10px;
     margin-top: -15px;
     background-color: transparent;
@@ -79,13 +75,15 @@ h4 {
 }
 
 [data-dev-status~="in-progress"]:hover::after {
-    content: "in progress";
-    margin-left: 10px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
     background-color: yellow;
+    content: "in progress";
     color: red;
     font-size: .75em;
     font-weight: bold;
-} */
+} 
 
 [data-dev-status~="in-review"]::after {
     content: "in review";
