@@ -72,12 +72,12 @@ body.cmnt--visibility { }
         body.cmnt--visibility [data-dev-status~="COMPLETE"]:hover {
             background-color: hsla(120, 100%, 50%, .1) !important;
         }   /* elements that are "complete" are coloured pale green but only when
-            there's hover on the body tag */
+            there's hover directly on the element itself */
 
         body.cmnt--visibility:hover [data-dev-object-descrip^="organisms"] {
             border: 1px solid Tomato !important;
         }   /* elements that are "organisms" receive a border when
-            there's hover directly on the tag */
+            there's hover on the body tag */
 
         body.cmnt--visibility:hover [data-dev-object-descrip^="molecules"] {
           border: 1px solid DodgerBlue !important;
