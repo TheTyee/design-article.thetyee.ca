@@ -60,17 +60,27 @@ body.cmnt--visibility { }
     object dev-status colours upon hover */
 
         body.cmnt--visibility:hover [data-dev-status~="IN-PROGRESS"] {
-            background-color: hsla(60, 100%, 50%, .1) ;
+            background-color: hsla(60, 100%, 50%, .1) !important;
         }   /* elements that are "in-progress" are coloured pale yellow when
             there's hover on the body tag */
 
-        body.cmnt--visibility:hover [data-dev-object-descrip^="organisms"] {
-            border: 1px solid Tomato ;
-        }   /* elements that are "organisms" receive a border when
+        body.cmnt--visibility:hover [data-dev-status~="IN-REVIEW"] {
+            background-color: hsla(180, 100%, 50%, .1) !important;
+        }   /* elements that are "in-progress" are coloured pale cyan when
             there's hover on the body tag */
 
+        body.cmnt--visibility [data-dev-status~="COMPLETE"]:hover {
+            background-color: hsla(120, 100%, 50%, .1) !important;
+        }   /* elements that are "complete" are coloured pale green but only when
+            there's hover on the body tag */
+
+        body.cmnt--visibility:hover [data-dev-object-descrip^="organisms"] {
+            border: 1px solid Tomato !important;
+        }   /* elements that are "organisms" receive a border when
+            there's hover directly on the tag */
+
         body.cmnt--visibility:hover [data-dev-object-descrip^="molecules"] {
-          border: 1px solid DodgerBlue;
+          border: 1px solid DodgerBlue !important;
         }   /* elements that are "molecules" receive a border when
             there's hover on the body tag */
 
