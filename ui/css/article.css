@@ -51,15 +51,15 @@ h4 {
         data-dev-status="IN-PROGRESS"
         data-dev-status="IN-REVIEW"
         data-dev-status="COMPLETE"
-    This value should get updated during the dev process.
-    
+    This value should be manually updated during the dev process.
+
  */
 
 body.cmnt--visibility { }
     /* This class is applied to the body tag to trigger the display of 
     object dev-status colours upon hover */
 
-        body.cmnt--visibility:hover [data-dev-status~="in-progress"] {
+        body.cmnt--visibility:hover [data-dev-status~="IN-PROGRESS"] {
             background-color: hsla(60, 100%, 50%, .1) ;
         }   /* elements that are "in-progress" are coloured pale yellow when
             there's hover on the body tag */
@@ -75,21 +75,7 @@ body.cmnt--visibility { }
             there's hover on the body tag */
 
 
-    [data-dev-object-descrip^="molecules"][data-dev-object-descrip]:hover::before {
-        margin-top: -15px;
-        padding: 5px 0px 10px 10px;
-        background-color: transparent;
-
-        content: attr(data-dev-object-descrip) "\a0\a0\a0\a0\a0 ---> \a0" attr(data-dev-status);
-        
-        color: DodgerBlue;
-        font-size: .75em;
-        font-weight: bold;
-    }   /* elements that are molecules and have a data-dev-object-descrip 
-        attribute get labeled with their object-description and dev-status 
-        upon hover */
-
-    [data-dev-object-descrip^="organisms"][data-dev-object-descrip]:hover::before {
+    [data-dev-object-descrip]:hover::before {
         margin-top: -15px;
         padding: 5px 0px 10px 10px;
         background-color: transparent;
@@ -99,9 +85,13 @@ body.cmnt--visibility { }
         color: tomato;
         font-size: .75em;
         font-weight: bold;
-    }   /* elements that are molecules and have a data-dev-object-descrip 
-        attribute get labeled with their object-description and dev-status 
-        upon hover */
+    }   /* elements that have a data-dev-object-descrip attribute get labeled with 
+        their object-description and dev-status upon hover */
+
+        [data-dev-object-descrip^="molecules"][data-dev-object-descrip]:hover::before {
+            color: DodgerBlue;
+        }   /* elements that are molecules and have a data-dev-object-descrip 
+            attribute get their label coloured blue to match their border */
 
 
 
