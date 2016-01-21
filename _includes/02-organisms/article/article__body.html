@@ -1,44 +1,40 @@
 <!-- Begin organisms/article/article__body -->
 <div id="content" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
 
-    <div class="container">
-
-        <div class="row">
+    <div class="container-fluid">
             
-            <article class="col-md-8">
-                <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
-                <!--Article header, including hed, dek, authour and social links-->
+        <article class="">
+            <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
+            
+            <section class="main">
                 
-                <section class="main">
-                    
-                    <!--This is a conventional block of content, like in a typical Tyee story, where all HTML is entered into one field-->
-                    {% include content.html %}
-                    <!--This is a single paragraph of content, like in a Tyee series, where items like additional images, pullquotes or video are entered a field at a time-->
-                    {% include paragraph.html %}
-                    <!--Pullquote-->
-                    {% include pullquote.html %}
-                    {% include paragraph.html %}
-                    {% include paragraph.html %}
-                    {% include pullquote.html %}
-                    {% include paragraph.html %}
-                    {% include paragraph.html %}
-                    <!--Video or audio player. Will likely be iframe embeds.-->
-                    {% include multimedia.html %}
-                    {% include paragraph.html %}
-                    <!--Photo slideshow-->
-                    {% include photo_gallery.html %}
-                    {% include paragraph.html %}
-                    <!--Standard image that does not break the containing element-->
-                    {% include standard_image.html %}
-                    {% include paragraph.html %}
-                    {% include sidebar.html %}
-                </section>
+                {% include 01-molecules/text/lead-in-text.html %}
 
-            </article>
+                <!--This is a single paragraph of content, like in a Tyee series, where items like additional images, pullquotes or video are entered a field at a time-->
+                {% include 00-atoms/text/paragraph.html %}
+
+                <!--Pullquote-->
+                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html %}
+                {% include pullquote.html %}
+                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html %}
+                <!--Video or audio player. Will likely be iframe embeds.-->
+                {% include multimedia.html %}
+                {% include 00-atoms/text/paragraph.html %}
+                <!--Photo slideshow-->
+                {% include photo_gallery.html %}
+                {% include 00-atoms/text/paragraph.html %}
+                <!--Standard image that does not break the containing element-->
+                {% include standard_image.html %}
+                {% include 00-atoms/text/paragraph.html %}
+                {% include sidebar.html %}
+            </section>
+
+        </article>
         
-        </div>
+    </div> <!--END .container-fluid-->
 
-    </div>
-
-</div>
+</div> <!--END #content -->
 <!-- END organisms/article/article__body -->

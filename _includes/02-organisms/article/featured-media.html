@@ -4,8 +4,12 @@
 
 <section data-dev-object-descrip="organisms/article/featured-media" data-dev-status="IN-PROGRESS">
 
-    <img src="{{ field.featured_image }}"/>
-	<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
+	<div class="container-fluid">
+
+	    <img src="{{ field.featured_image }}"/>
+		<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
+
+	</div> <!--END .container-fluid-->
 
 </section>
 {% endfor %}

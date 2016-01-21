@@ -1,30 +1,35 @@
 {% for field in site.data.example_stories limit:1 %}
 
 <!-- Begin organisms/article/article__header -->
-<header class="article__header [ cmnt cmnt--organism ]" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">
+<!--Article header, including hed, dek, authour and social links-->
+<header class="article__header" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">
 
-	<p><a href="#">CATEGORY</a></p>
+	<div class="container-fluid">
 
-	<h1>{{field.hed}}</h1>
+		<p><a href="#">CATEGORY</a></p>
 
-	<h4>{{field.hed}}</h4>
+		<h1>{{field.hed}}</h1>
 
-	<div class="authour info">
-		<img height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Blank_woman_placeholder.svg/315px-Blank_woman_placeholder.svg.png"/>
-		<p>By <a href="#">{{field.authour}}</a>, 15 January 2015, TheTyee.ca</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at est mi. Nulla accumsan luctus semper.</p>
-	</div>
+		<h4>{{field.hed}}</h4>
 
-	<div class="social_sharing">
-		<ul>
-			<li><a href="#">Facebook</a></li>
-			<li><a href="#">Twitter</a></li>
-			<li><a href="#">Email</a></li>
-			<li><a href="#">Donate</a></li>
-			<li><a href="#">Print</a></li>
-			<li><a href="#">Comment</a></li>
-		</ul>
-	</div>
+		<div class="authour info">
+			<img height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Blank_woman_placeholder.svg/315px-Blank_woman_placeholder.svg.png"/>
+			<p>By <a href="#">{{field.authour}}</a>, 15 January 2015, TheTyee.ca</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at est mi. Nulla accumsan luctus semper.</p>
+		</div>
+
+		<div class="social_sharing">
+			<ul>
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">Twitter</a></li>
+				<li><a href="#">Email</a></li>
+				<li><a href="#">Donate</a></li>
+				<li><a href="#">Print</a></li>
+				<li><a href="#">Comment</a></li>
+			</ul>
+		</div>
+
+	</div> <!--END .container-fluid-->
 
 </header>
 

@@ -5,17 +5,19 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 {% include meta/head.html %}
   <body class="{{ page.layout }} cmnt--visibility" id="{{ page.slug | 'front' }}">
-    <!--[if lt IE 7]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
 
-    <noscript id="js-warning">
-    This page requires Javascript. Your browser either doesn't support JavaScript or you have it turned off. Please enable JavaScript before you proceed.
-    </noscript>
+    <!-- =============================== -->
+    <!-- ===== Header ===== -->
+
+    {% include 01-molecules/messaging/alerts--browser-support.html %}
 
     {% include 01-molecules/blocks/block-ad-banner.html %}
     
     {% include 02-organisms/global/header.html %}
+
+
+    <!-- =============================== -->
+    <!-- ===== Article components ===== -->
 
     {% include 02-organisms/article/article__header.html %}
 
@@ -24,11 +26,18 @@
     {% include 02-organisms/article/article__body.html %}
     
 
+    <!-- =============================== -->
+    <!-- ===== Tertiary components ===== -->
+
     {% include share.html %}
 
     {% include ask.html %}
 
     {% include subscribe.html %}
+
+
+    <!-- =============================== -->
+    <!-- ===== Footer ===== -->
 
     {% include footer.html %}
 
