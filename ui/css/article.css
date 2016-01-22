@@ -79,12 +79,12 @@ body.cmnt--visibility { }
         }   /* elements that are "complete" are coloured pale green but only when
             there's hover directly on the element itself */
 
-        body.cmnt--visibility:hover [data-dev-object-descrip^="organisms"] {
+        body.cmnt--visibility:hover [data-dev-object-descrip*="organisms"] {
             border: 1px solid Tomato !important;
         }   /* elements that are "organisms" receive a border when
             there's hover on the body tag */
 
-        body.cmnt--visibility:hover [data-dev-object-descrip^="molecules"] {
+        body.cmnt--visibility:hover [data-dev-object-descrip*="molecules"] {
           border: 1px solid DodgerBlue !important;
         }   /* elements that are "molecules" receive a border when
             there's hover on the body tag */
@@ -103,7 +103,7 @@ body.cmnt--visibility { }
     }   /* elements that have a data-dev-object-descrip attribute get labeled with 
         their object-description and dev-status upon hover */
 
-        [data-dev-object-descrip^="molecules"][data-dev-object-descrip]:hover::before {
+        [data-dev-object-descrip*="molecules"][data-dev-object-descrip]:hover::before {
             color: DodgerBlue;
         }   /* elements that are molecules and have a data-dev-object-descrip 
             attribute get their label coloured blue to match their border */
@@ -269,8 +269,6 @@ footer.site-footer {
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   /* Put high-resolution display styles here */
 }
-
-
 
 
 

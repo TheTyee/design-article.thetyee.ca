@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Sally's css goes in this file. It will eventually be integrated into 
+   article.css. 
+   ========================================================================== */
+
+/* ==========================================================================
+   #BASE (Global) (This mostly applies to the Atoms)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   #LAYOUT
+   (Layout rules divide the page into sections. Layouts hold one or more modules
+    together. These apply largely to the Organism and Template levels. They 
+    are kind of like helper classes. https://smacss.com/book/type-layout )
+   ========================================================================== */
+
+
+
+
+
+/* ==========================================================================
+   #MODULES 
+   (Modules are the reusable, modular parts of our design. They are the 
+   callouts, the sidebar sections, the product lists and so on. These apply 
+   largely to the Molecule and Organism levels)
+   ========================================================================== */
+
+
+
+
+
+
+/* ==========================================================================
+   STATES 
+   (A state is something that augments and overrides all other styles. 
+   State styles can apply to layout and/or module styles; and State styles 
+   indicate a JavaScript dependency.
+   For example, an accordion section may be in a collapsed or expanded state. 
+   A message may be in a success or error state. Eg: .is-collapsed or .is-error 
+   So again, something like a helper class. 
+   But sometimes there may be a state that is specific to a particular object.
+   Eg: .is-tab-active
+   https://smacss.com/book/type-state)
+   ========================================================================== */
+
+
+
+
+
+/* ==========================================================================
+   Progressively enhance for larger screens 
+   ========================================================================== */
+
+

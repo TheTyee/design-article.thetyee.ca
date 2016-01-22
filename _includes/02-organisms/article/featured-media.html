@@ -1,12 +1,12 @@
-<!-- begin organisms/article/featured-media -->
+<!-- begin 02-organisms/article/featured-media -->
 <!--This pulls in an image and a caption-->
 {% for field in site.data.example_stories limit:1 %}
 
-<section data-dev-object-descrip="organisms/article/featured-media" data-dev-status="IN-PROGRESS">
+<section data-dev-object-descrip="02-organisms/article/featured-media" data-dev-status="IN-PROGRESS">
 
 	<div class="container-fluid">
 
-	    <img src="{{ field.featured_image }}"/>
+	    <img src="{{ field.featured_image }}" class="img-responsive"/>
 		<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
 
 	</div> <!--END .container-fluid-->
