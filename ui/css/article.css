@@ -31,6 +31,22 @@ h4 {
 
 
 
+
+
+/* ==========================================================================
+   #HELPER Classes
+   ========================================================================== */
+
+/* RESPONSIVE IMAGES -- forces the image to be the same width as its parent 
+element. Confusingly similar to Bootstrap's .img-responsive except this will 
+actually stretch an image rather than merely shrink it. */
+.responsive-img {
+  width: 100%; 
+  height: auto; 
+  display: block;
+}
+
+
 /**
  *  COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES
  *  This displays the browser annotations on organisms and molecules. 
