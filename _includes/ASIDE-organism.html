@@ -1,0 +1,12 @@
+<section>
+This will contain a variety of molecules. Use _include parameters to determine the contained molecule, or create aside--related-story.html , aside--media.html , aside--support.html ?
+
+Probably the best thing would be to use parameters to pass the exact path and name of the desired molecule like this:
+
+Put this in article__body.html: {% include aside.html aside-contents="01-molecules/blocks/related-story" %}
+
+Put this in aside.html: 
+
+	{% include {{ include.aside-contents }}.html %}
+
+</section>

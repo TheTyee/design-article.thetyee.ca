@@ -34,7 +34,7 @@ h4 {
 /**
  *  COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES
  *  This displays the browser annotations on organisms and molecules. 
- *  These classes and custom attributes exist only for prototyping and 
+ *  This class and the custom attributes exist only for prototyping and 
  *  should be removed in production.
 
  *  HTML Syntax 
@@ -42,16 +42,16 @@ h4 {
     The body tag receives a .cmnt--visibility class:
         <body class="cmnt--visibility>
 
-    The outermost tag of every component (molecules and organisms)
-    gets 2 custom attributes that describe what the component is and
+    The outermost tag of every object (molecules and organisms)
+    gets 2 custom attributes that describe what the object is and
     its current development status:
         <tag data-dev-object-descrip="" data-dev-status="">
 
-    The value of data-dev-object-descrip should be the component's 
+    The value of data-dev-object-descrip should be the object's 
     include path and name. E.g.:
         data-dev-object-descrip="molecules/navigation/primary-nav"
 
-    The value of data-dev-status should be the component's development 
+    The value of data-dev-status should be the object's development 
     status. There's 3 options:
         data-dev-status="IN-PROGRESS"
         data-dev-status="IN-REVIEW"
