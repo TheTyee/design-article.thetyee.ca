@@ -19,7 +19,7 @@
                 {% include 00-atoms/text/paragraph.html %}
 
                 {% include 01-molecules/text/pullquote.html %}
-                
+
                 
                 <!-- ======== PUT AN ASIDE HERE ==== NEEDS WORK ==== -->
 
@@ -31,21 +31,32 @@
 
                 {% include 00-atoms/text/paragraph.html %}
                 
-                <!--Here's a figure containing an image. All media within an article body should be called from within a figure object. -->
-                {% include 01-molecules/media/figure.html figure-contents="00-atoms/images/image" %}
+                <!--Here's a figure containing an image. All media within an article body should be called from within a figure object or an aside. -->
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" %}
+
+                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html %}
 
                 <!--Video or audio player. Will likely be iframe embeds. ==== NEEDS WORK ==== -->
                 {% include multimedia.html %}
 
+                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html %}
+
+                <!--Here's an aside containing an image. All media within an article body should be called from within a figure object or an aside. -->
+                {% include 01-molecules/blocks/aside.html aside-contents="00-atoms/images/image" %}
+
+                {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
 
                 <!--Photo slideshow ==== NEEDS WORK ==== -->
                 {% include 02-organisms/media/slideshow.html %}
 
                 {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html %}
 
-                <!--Here's a figure containing an image. All media within an article body should be called from within a figure object. -->
-                {% include 01-molecules/media/figure.html figure-contents="00-atoms/images/image" %}
+                <!--Here's a figure containing an image. All media within an article body should be called from within a figure object or an aside. -->
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" %}
 
                 {% include 00-atoms/text/paragraph.html %}
 
