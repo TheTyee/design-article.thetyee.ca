@@ -6,7 +6,14 @@
 /* ==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
+   .article {
+      margin:0px;
+      padding: 0px;
+   }
 
+   img {
+      max-width: 100%;
+   }
 
 /* ==========================================================================
    #LAYOUT
@@ -14,6 +21,10 @@
     together. These apply largely to the Organism and Template levels. They 
     are kind of like helper classes. https://smacss.com/book/type-layout )
    ========================================================================== */
+   header.site-header{
+      background-color: #dee3ab;
+   }
+
 
 
 
@@ -25,11 +36,88 @@
    callouts, the sidebar sections, the product lists and so on. These apply 
    largely to the Molecule and Organism levels)
    ========================================================================== */
+ 
+
+/* PRIMARY NAV MOBILE TOGGLE ========================================================================== */
+  
+   header .primary-nav button {
+      border: none;
+      display: block;
+      min-height: 40px;
+      min-width: 40px;
+      float: left;
+      background-color: transparent;
+   }
+
+   header .primary-nav button:focus {
+      outline:0;
+   }
+
+   
+   header .primary-nav button .box-shadow-menu {
+     position: relative;
+     padding-left: 1.25em;
+     margin-top: 8px;
+     float: right;
+   }
+
+   header .primary-nav button .box-shadow-menu:before {
+     content: "";
+     position: absolute;
+     left: 0;
+     top: 0.25em;
+     width: 2em;
+     height: 0.25em;
+     background: rgba(118, 118, 117, 1);
+     box-shadow: 
+       0 0.5em 0 0 rgba(118, 118, 117, 1),
+       0 1em 0 0 rgba(118, 118, 117, 1);
+   }
+
+   header .primary-nav button span {
+      text-transform: uppercase;
+      float: left;
+      padding: 10px 5px;
+   }
+   
+   header .primary-nav button .mobile-toggle {
+
+   }
+
+
+
+
+   /* PRIMARY NAV SEARCH ICON ========================================================================== */
 
 
 
 
 
+   /* LATEST STORIES ========================================================================== */ 
+
+   .latest-stories {
+      background-color: #f8f9ed;
+      color: #859c01;
+   }
+
+   .latest-stories a{
+      color: #859c01;
+   }
+
+   .latest-stories ul{
+      margin: 0;
+      padding: 0;
+   }
+
+   .latest-stories ul li:first{
+      color: #859c01;
+      border-top: solid 1px #859c01;
+   }
+
+   .latest-stories ul li{
+      color: #859c01;
+      border-bottom: solid 1px #859c01;
+   }
 
 /* ==========================================================================
    STATES 
@@ -44,6 +132,10 @@
    https://smacss.com/book/type-state)
    ========================================================================== */
 
+
+
+
+  
 
 
 
