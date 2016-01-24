@@ -1,18 +1,19 @@
 <!-- Begin 01-molecules/blocks/aside -->
-<!-- The aside object is a block for content that is tangentially related to the content that forms the main textual flow. It can contain any of the media atoms or any other objects that are appropriate aside contents (https://www.w3.org/TR/html-markup/aside.html), in particular: media object, related stories, and possibly Tyee messaging (like asks).
-All media within an article body should be called from within either a figure object or an aside object.
+<!-- The aside object is a block for content that is tangentially related to the content that forms the main textual flow. It can contain any of the media atoms or any other objects that are appropriate aside contents (https://www.w3.org/TR/html-markup/aside.html), in particular: media objects, related stories, and possibly Tyee messaging (like asks).
+All media within an article body should be included from within either a figure object or an aside object.
 
 The aside object will appear as an inset box on narrower viewports and in the right margin of the page on wider viewports.
 
-Use the figure-contents parameter to specify the path of contained molecule. Like this: [% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" %]
+HOW TO INCLUDE THIS FIGURE OBJECT
+---------------------------------
+Use the figure-contents parameter to specify the path of its contained object. Like this: 
+	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" %]
+
+You can also specify a content-source parameter if the contained object requires it. Like this:
+	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://baconmockup.com/300/200" %]
 -->
 
-<aside class="figure" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
-	{% include {{ include.aside-contents }}.html %}
-
-
-	<figcaption>This is an example of a figure conatining a media object with a caption. Captions, also known as cutlines, are a few lines of text used to explain or elaborate on published media.</figcaption>
-
-
+<aside class="aside" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
+	{% include {{ include.aside-contents }}.html content-source=include.content-source %}
 </aside>
 <!-- END 01-molecules/blocks/aside -->

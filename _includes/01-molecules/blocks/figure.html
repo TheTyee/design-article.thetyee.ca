@@ -1,17 +1,23 @@
 <!-- Begin 01-molecules/blocks/figure -->
 <!-- The figure object is a block for supporting content that is directly related to the main textual flow. It can contain any of the media atoms or any other objects that are appropriate figure contents ( https://www.w3.org/wiki/HTML/Elements/figure ). It will also typically contain a caption describing its content.
-All media within an article body should be called from within either a figure object or an aside object.
+All media within an article body should be included from within either a figure object or an aside object.
 
 The figure object will appear within the main content flow on all viewports.  
 
-All media within an article body should be called from within a figure object. Use the figure-contents parameter to specify the path of contained molecule. Like this: [% include 01-molecules/blocks/figure.html figure-contents="01-molecules/blocks/related-story" %]
-
 Modify this object with .figure--XL to produce an extra-wide object that breaks out of the text column in larger viewports.
+
+HOW TO INCLUDE THIS FIGURE OBJECT
+---------------------------------
+Use the figure-contents parameter to specify the path of its contained media object molecule. Like this: 
+	[% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" %]
+
+You can also specify a content-source parameter if the media object molecule requires it. Like this:
+	[% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source="http://baconmockup.com/300/200" %]
 -->
 
 <figure class="figure" data-dev-object-descrip="01-molecules/blocks/figure" data-dev-status="IN-PROGRESS">
-	{% include {{ include.figure-contents }}.html %}
-	<figcaption>This is an example of a figure conatining a media object with a caption. Captions, also known as cutlines, are a few lines of text used to explain or elaborate on published media.</figcaption>
+	{% include {{ include.figure-contents }}.html content-source=include.content-source %}
+	<figcaption>This is an example of a figure containing a content object and this caption. Captions, also known as cutlines, are a few lines of text used to explain or elaborate on published media. figure contents is {{ include.figure-contents }}. Content source is {{ include.content-source }}</figcaption>
 </figure>
 <!-- END 01-molecules/blocks/figure -->
 

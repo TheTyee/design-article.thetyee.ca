@@ -1,3 +1,7 @@
-<!-- 00-atoms/images/image -- Just a plain ol image. This will be called from within a figure object. -->
-<img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/138.jpg" class="responsive-img" alt="image atom"/>
-
+<!-- 00-atoms/images/image -- 
+Just a plain ol image. This will be called from within a figure object or an aside object. When calling the include use the parameter content-source to specify the url of the image. E.g:
+	[% include 00-atoms/images/image.html content-source="http://baconmockup.com/300/200" %]
+	OR
+	[% include 00-atoms/images/image.html content-source=include.content-source %] if passing on a parameter from a parent include
+-->
+<img src='{{ include.content-source }}' class="responsive-img" alt="image atom"/>
