@@ -5,8 +5,8 @@
 <section data-dev-object-descrip="02-organisms/article/featured-media" data-dev-status="IN-PROGRESS">
 
 	<div class="container-fluid">
-
-	    <img src="{{ field.featured_image }}" class="img-responsive"/>
+		
+	    {% include 00-atoms/images/image.html content-source=field.featured_image %}
 		<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
 
 	</div> <!--END .container-fluid-->
