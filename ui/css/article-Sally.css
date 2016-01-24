@@ -38,6 +38,13 @@
    ========================================================================== */
  
 
+
+
+/* PRIMARY NAV  ========================================================================== */
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .primary-nav ul li.active > a, .primary-nav ul li.dropdown-toggle, .primary-nav ul .active, .primary-nav ul .open {
+   background-color: #f8f9ed;
+}
+
 /* PRIMARY NAV MOBILE TOGGLE ========================================================================== */
   
    header .primary-nav button {
