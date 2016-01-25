@@ -25,9 +25,6 @@ h4 {
   font-family: "franklin-gothic-urw-cond", sans-serif;
 }
 
-aside {
-  max-width: 40%;
-}
 
 .blockquote { }
 
@@ -271,6 +268,22 @@ body.cmnt--visibility { }
 #content {
   background: transparent;
   padding-bottom: 40px;
+}
+
+
+
+aside { }
+
+    .aside {
+        max-width: 40%;
+    }
+
+    .aside--pullquote { }
+
+
+
+.caption {
+
 }
 
 
