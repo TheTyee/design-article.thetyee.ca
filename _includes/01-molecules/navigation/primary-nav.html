@@ -1,29 +1,33 @@
 <!-- Begin molecules/navigation/primary-nav -->
 <nav class="[ navbar navbar-default ]  site-nav primary-nav" data-dev-object-descrip="molecules/navigation/primary-nav" data-dev-status="IN-PROGRESS">
-  <div class="navbar-header">
-
-    <!--Toggle-->
-    <div class="mobile-toggle col-xs-4 pull-left">
-      <button type="button" class="collapsed hidden-md hidden-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span>Menu</span>
-        <div class="box-shadow-menu"></div>
-      </button>
-    </div>
-
-    <!--logo -->
-    <a class="col-xs-4" href="#"><img src="../../ui/img/tyee_logo.png" class="" id="site-logo" alt="Logo Alt Text" /></a>
-
-    <!--search-->
-    <div class="search col-xs-4 pull-right hidden-md hidden-lg">
-      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-    </div>
-    
+ 
+ <!--Start Mobile Menu--> 
+<div class="mobile-menu hidden-sm hidden-md hidden-lg hidden-xl">
+  
+  <!--Toggle-->
+  <div class="mobile-toggle col-xs-4 pull-left">
+    <button type="button" class="collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span>Menu</span>
+      <div class="hamburger"></div>
+    </button>
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
+  <!--logo -->
+  <a class="col-xs-4" href="#"><img src="../../ui/img/tyee_logo.png" class="" id="site-logo" alt="Logo Alt Text" /></a>
 
-    <ul class="[ nav navbar-nav ] ">
+  <!--search-->
+  <div class="search col-xs-4 pull-right">
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  </div>
+
+</div><!--/mobile-menu-->
+    
+
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="[ collapse navbar-collapse ] row" id="bs-example-navbar-collapse-1">
+
+    <ul class="[ nav navbar-nav ] col-md-6">
 
       <!== Nav bar left ==>
       <li class="dropdown active">
@@ -41,25 +45,14 @@
       </li>
 
       <li><a href="#">Newsletter</a></li>
-
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-        </ul>
-      </li>
+      <li><a href="#">Join</a></li>
 
     </ul>
 
+        <a class="hidden-xs col-2" href="#"><img src="../../ui/img/tyee_logo.png" class="" id="site-logo" alt="Logo Alt Text" /></a>
+
     <!== Nav bar right ==>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Join</a></li>
+    <ul class="nav navbar-nav navbar-right col-4">
       <li><a href="#">FB</a></li>
       <li><a href="#">Tw</a></li>
 

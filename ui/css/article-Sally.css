@@ -3,16 +3,25 @@
    article.css. 
    ========================================================================== */
 
+   @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 /* ==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
    .article {
       margin:0px;
       padding: 0px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
    }
 
    img {
       max-width: 100%;
+      padding: 10px;
+   }
+
+   .block--site-header{
+      background-color: #dee3ab;
    }
 
 /* ==========================================================================
@@ -21,9 +30,7 @@
     together. These apply largely to the Organism and Template levels. They 
     are kind of like helper classes. https://smacss.com/book/type-layout )
    ========================================================================== */
-   header.site-header{
-      background-color: #dee3ab;
-   }
+
 
 
 
@@ -41,13 +48,26 @@
 
 
 /* PRIMARY NAV  ========================================================================== */
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .primary-nav ul li.active > a, .primary-nav ul li.dropdown-toggle, .primary-nav ul .active, .primary-nav ul .open {
+
+header .primary-nav ul > li {
+   text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .primary-nav ul li.active > a, .primary-nav ul li.dropdown-toggle, .primary-nav ul .active, .primary-nav ul .open {
    background-color: #f8f9ed;
+}
+
+.navbar-default .navbar-nav > .active > a{
+   background-color: #dee3ab;
+
 }
 
 /* PRIMARY NAV MOBILE TOGGLE ========================================================================== */
   
-   header .primary-nav button {
+  .block--site-header .primary-nav .mobile-menu{
+      overflow:hidden;
+  }
+   .block--site-header .primary-nav button {
       border: none;
       display: block;
       min-height: 40px;
@@ -56,19 +76,19 @@
       background-color: transparent;
    }
 
-   header .primary-nav button:focus {
+   .block--site-header .primary-nav button:focus {
       outline:0;
    }
 
    
-   header .primary-nav button .box-shadow-menu {
+   .block--site-header .primary-nav button .hamburger {
      position: relative;
      padding-left: 1.25em;
      margin-top: 8px;
      float: right;
    }
 
-   header .primary-nav button .box-shadow-menu:before {
+   .block--site-header .primary-nav button .hamburger:before {
      content: "";
      position: absolute;
      left: 0;
@@ -81,13 +101,13 @@
        0 1em 0 0 rgba(118, 118, 117, 1);
    }
 
-   header .primary-nav button span {
+   .block--site-header .primary-nav button span {
       text-transform: uppercase;
       float: left;
       padding: 10px 5px;
    }
    
-   header .primary-nav button .mobile-toggle {
+   .block--site-header .primary-nav button .mobile-toggle {
 
    }
 
@@ -96,7 +116,13 @@
 
    /* PRIMARY NAV SEARCH ICON ========================================================================== */
 
+   .block--site-header .primary-nav .mobile-menu .search span{
+      background: red;
+      display: block;
+      font-size: 2em;
 
+
+   }
 
 
 
@@ -126,6 +152,10 @@
       border-bottom: solid 1px #859c01;
    }
 
+   .latest-stories .media {
+      margin-top: 0px;
+   }
+
 /* ==========================================================================
    STATES 
    (A state is something that augments and overrides all other styles. 
@@ -151,4 +181,9 @@
    Progressively enhance for larger screens 
    ========================================================================== */
 
+
+ /* 768 AND UP ========================================================================== */ 
+@media (min-width: 768px) {
+
+}
 
