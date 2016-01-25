@@ -14,6 +14,7 @@ You can also specify a content-source parameter if the contained object requires
 -->
 
 <aside class="aside" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
-	{% include {{ include.object-contents }}.html content-source=include.content-source %}
+	{% include {{ include.aside-contents }}.html content-source=include.content-source %}
+	<div class="caption">{{ include.aside-caption }} Aside content is {{ include.aside-contents }}. Content source is {{ include.content-source }}</div>
 </aside>
 <!-- END 01-molecules/blocks/aside -->

@@ -21,13 +21,13 @@
                 {% include 01-molecules/text/pullquote.html %}
 
                 <!--An ASIDE containing a RELATED STORY. -->
-                {% include 01-molecules/blocks/aside.html object-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/400/250" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/400/250" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
 
                 <!--VIDEO player. Will likely be iframe embeds. -->
-                {% include 01-molecules/blocks/figure.html object-contents="00-atoms/media/video" figure-caption="This is a caption describing a video inside a figure. Such railroad! Very excitement!" content-source="" %}
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/video" figure-caption="This is a caption describing a video inside a figure. Such railroad! Very excitement!" content-source="" %}
 
                 {% include 00-atoms/text/paragraph.html %}
 
@@ -37,24 +37,25 @@
                 
                 <!--Here's a FIGURE containing an IMAGE. 
                     All media within an article body should be called from within a figure object or an aside. -->
-                {% include 01-molecules/blocks/figure.html object-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Much kawaii!" content-source="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/138.jpg" %}
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Much kawaii!" content-source="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/138.jpg" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
 
-                <!--An ASIDE containing a RELATED STORY. -->
+                <!--An ASIDE containing an IMAGE. -->
+                {% include 01-molecules/blocks/aside.html aside-contents="00-atoms/images/image" aside-caption="This is a caption for an image in an aside. So hassle!" content-source="http://place-hoff.com/350/300" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
 
                 <!--AUDIO player. Will likely be iframe embeds. -->
-                {% include 01-molecules/blocks/figure.html object-contents="00-atoms/media/audio" figure-caption="This is a caption describing an audio object inside a figure." content-source="" %}
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/audio" figure-caption="This is a caption describing an audio object inside a figure." content-source="" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
 
                 <!--An ASIDE containing a RELATED STORY. -->
-                {% include 01-molecules/blocks/aside.html object-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/400/300" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/400/300" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
@@ -67,7 +68,7 @@
 
                 <!--Here's a FIGURE containing an IMAGE. 
                     All media within an article body should be called from within a figure object or an aside. -->
-                {% include 01-molecules/blocks/figure.html object-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Very yum!" content-source="http://baconmockup.com/300/200" %}
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Very yum!" content-source="http://baconmockup.com/300/200" %}
 
                 {% include 00-atoms/text/paragraph.html %}
 
