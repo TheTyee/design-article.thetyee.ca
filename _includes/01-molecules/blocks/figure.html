@@ -11,13 +11,13 @@ HOW TO INCLUDE THIS FIGURE OBJECT
 Use the figure-contents parameter to specify the path of its contained media object molecule. Like this: 
 	[% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" %]
 
-You can also specify a content-source parameter if the media object molecule requires it. Like this:
-	[% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source="http://baconmockup.com/300/200" %]
+You can also specify a caption string and a content-source parameter if the media object molecule requires it. Like this:
+	[% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="Caption text goes here" content-source="http://baconmockup.com/300/200" %]
 -->
 
 <figure class="figure" data-dev-object-descrip="01-molecules/blocks/figure" data-dev-status="IN-PROGRESS">
 	{% include {{ include.figure-contents }}.html content-source=include.content-source %}
-	<figcaption>This is an example of a figure containing a content object and this caption. Captions, also known as cutlines, are a few lines of text used to explain or elaborate on published media. figure contents is {{ include.figure-contents }}. Content source is {{ include.content-source }}</figcaption>
+	<figcaption class="caption">{{ include.figure-caption }} Figure content is {{ include.figure-contents }}. Content source is {{ include.content-source }}</figcaption>
 </figure>
 <!-- END 01-molecules/blocks/figure -->
 
