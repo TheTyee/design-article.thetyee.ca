@@ -8,6 +8,15 @@
 /* ==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
+   
+
+
+
+   html, body {
+      width: 100%;
+   }
+
+
    .article {
       margin:0px;
       padding: 0px;
@@ -22,6 +31,7 @@
 
    .block--site-header{
       background-color: #dee3ab;
+      width: 100%;
    }
 
 /* ==========================================================================
@@ -61,6 +71,37 @@ header .primary-nav ul > li {
    background-color: #dee3ab;
 
 }
+
+.block--site-header .primary-nav .desktop-menu{
+   margin: 0;
+   padding: 0;
+}
+
+.block--site-header .primary-nav .desktop-menu > ul, .block--site-header .primary-nav .desktop-menu a {
+   padding-right: 0px;
+   margin-right: 0px;
+   
+
+}
+
+.block--site-header .primary-nav .desktop-menu > ul {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #dee3ab;
+}
+
+.navbar-nav {
+  margin: 0px;
+}
+
+
+.navbar-nav > li  { position: static; }
+.navbar-nav > li > .dropdown-menu { width: 100%; text-align: center; }
+.navbar-nav > li >  .dropdown-menu>li { display: inline-block; }
+
+
+
 
 /* PRIMARY NAV MOBILE TOGGLE ========================================================================== */
   
@@ -117,7 +158,7 @@ header .primary-nav ul > li {
    /* PRIMARY NAV SEARCH ICON ========================================================================== */
 
    .block--site-header .primary-nav .mobile-menu .search span{
-      background: red;
+      padding: 10px;
       display: block;
       font-size: 2em;
 
@@ -184,6 +225,10 @@ header .primary-nav ul > li {
 
  /* 768 AND UP ========================================================================== */ 
 @media (min-width: 768px) {
-
+  
+.media {
+  float: left;
+  display: inline;
+}
 }
 
