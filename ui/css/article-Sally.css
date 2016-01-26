@@ -226,9 +226,24 @@ header .primary-nav ul > li {
  /* 768 AND UP ========================================================================== */ 
 @media (min-width: 768px) {
   
-.media {
-  float: left;
-  display: inline;
-}
+
+  /* FULL WIDTH NAV SLIDER ========================================================================== */ 
+
+  .latest-stories__list-wrapper {
+    width: 1260px;
+    overflow: hidden;
+  }
+
+  .latest-stories__list-wrapper ul {
+    width: 2000px;
+    overflow: hidden;
+  }
+
+
+  .media {
+    float: left;
+    display: inline;
+    text-align: left;
+  }
 }
 
