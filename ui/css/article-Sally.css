@@ -12,9 +12,6 @@
 
 
 
-   html, body {
-      width: 100%;
-   }
 
 
    .article {
@@ -229,21 +226,19 @@ header .primary-nav ul > li {
 
   /* FULL WIDTH NAV SLIDER ========================================================================== */ 
 
-  .latest-stories__list-wrapper {
-    width: 1260px;
-    overflow: hidden;
+  section.latest-stories {
+    max-width: 100%;
   }
 
-  .latest-stories__list-wrapper ul {
-    width: 2000px;
-    overflow: hidden;
+  section.latest-stories ul {
   }
 
 
-  .media {
-    float: left;
-    display: inline;
+  section.latest-stories .media {
+    display: inline-block;
     text-align: left;
+    padding: 20px;
+
   }
 }
 
