@@ -192,7 +192,9 @@ header .primary-nav ul > li {
 
    .latest-stories .media {
       margin-top: 0px;
+      text-align: left;
    }
+
 
 /* ==========================================================================
    STATES 
@@ -237,7 +239,6 @@ header .primary-nav ul > li {
   section.latest-stories .media {
     display: inline-block;
     text-align: left;
-    padding: 20px;
 
   }
 }
