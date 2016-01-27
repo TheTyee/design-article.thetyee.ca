@@ -4,13 +4,13 @@ All media within an article body should be included from within either a figure 
 
 The aside object will appear as an inset box on narrower viewports and in the right margin of the page on wider viewports.
 
-HOW TO INCLUDE THIS FIGURE OBJECT
+HOW TO INCLUDE THIS ASIDE OBJECT
 ---------------------------------
-Use the figure-contents parameter to specify the path of its contained object. Like this: 
+Use the aside-contents parameter to specify the path of its contained object. Like this: 
 	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" %]
 
-You can also specify a content-source parameter if the contained object requires it. Like this:
-	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://baconmockup.com/300/200" %]
+You can also specify a caption string and a content-source parameter if the contained object requires it. Like this:
+	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" aside-caption="Caption text goes here" content-source="http://baconmockup.com/300/200" %]
 -->
 
 <aside class="aside" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
