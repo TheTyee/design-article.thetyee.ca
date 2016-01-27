@@ -1,4 +1,5 @@
 <!-- Begin 01-molecules/blocks/figure -->
+{% comment %}
 <!-- The figure object is a block for supporting content that is directly related to the main textual flow. It can contain any of the media atoms or any other objects that are appropriate figure contents ( https://www.w3.org/wiki/HTML/Elements/figure ). It will also typically contain a caption describing its content.
 All media within an article body should be included from within either a figure object or an aside object.
 
@@ -14,6 +15,7 @@ Use the figure-contents parameter to specify the path of its contained media obj
 You can also specify a caption string and a content-source parameter if the media object molecule requires it. Like this:
 	[% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="Caption text goes here" content-source="http://baconmockup.com/300/200" %]
 -->
+{% endcomment %}
 
 <figure class="figure" data-dev-object-descrip="01-molecules/blocks/figure" data-dev-status="IN-PROGRESS">
 	{% include {{ include.figure-contents }}.html content-source=include.content-source %}
