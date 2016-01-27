@@ -195,7 +195,16 @@ header .primary-nav ul > li {
       text-align: left;
    }
 
+   .latest-stories .media h4, p{
+      text-transform: capitalize;
+   }
 
+   .latest-stories .media .latest-stories__date,  .latest-stories .media .latest-stories__authour {
+    text-transform: capitalize;
+    color: grey;
+    font-style: oblique;
+    font-size: 0.8em;
+   }
 /* ==========================================================================
    STATES 
    (A state is something that augments and overrides all other styles. 
@@ -232,7 +241,11 @@ header .primary-nav ul > li {
     max-width: 100%;
   }
 
-  section.latest-stories ul {
+section.latest-stories .latest-stories__media-wrapper{
+  border-bottom: solid 1px #859c01;
+}
+  section.latest-stories ul li{
+    border-bottom: none;
   }
 
 
