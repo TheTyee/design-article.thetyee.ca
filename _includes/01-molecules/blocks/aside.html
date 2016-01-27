@@ -1,4 +1,5 @@
 <!-- Begin 01-molecules/blocks/aside -->
+{% comment %}
 <!-- The aside object is a block for content that is tangentially related to the content that forms the main textual flow. It can contain any of the media atoms or any other objects that are appropriate aside contents (https://www.w3.org/TR/html-markup/aside.html), in particular: media objects, related stories, and possibly Tyee messaging (like asks).
 All media within an article body should be included from within either a figure object or an aside object.
 
@@ -12,6 +13,7 @@ Use the aside-contents parameter to specify the path of its contained object. Li
 You can also specify a caption string and a content-source parameter if the contained object requires it. Like this:
 	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" aside-caption="Caption text goes here" content-source="http://baconmockup.com/300/200" %]
 -->
+{% endcomment %}
 
 <aside class="aside" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
 	{% include {{ include.aside-contents }}.html content-source=include.content-source %}
