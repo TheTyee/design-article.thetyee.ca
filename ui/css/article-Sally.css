@@ -3,10 +3,33 @@
    article.css. 
    ========================================================================== */
 
+   @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 /* ==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
+   
 
+
+
+
+
+   .article {
+      margin:0px;
+      padding: 0px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+   }
+
+   img {
+      max-width: 100%;
+      padding: 10px;
+   }
+
+   .block--site-header{
+      background-color: #dee3ab;
+      width: 100%;
+   }
 
 /* ==========================================================================
    #LAYOUT
@@ -19,18 +42,169 @@
 
 
 
+
+
 /* ==========================================================================
    #MODULES 
    (Modules are the reusable, modular parts of our design. They are the 
    callouts, the sidebar sections, the product lists and so on. These apply 
    largely to the Molecule and Organism levels)
    ========================================================================== */
+ 
+
+
+
+/* PRIMARY NAV  ========================================================================== */
+
+header .primary-nav ul > li {
+   text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .primary-nav ul li.active > a, .primary-nav ul li.dropdown-toggle, .primary-nav ul .active, .primary-nav ul .open {
+   background-color: #f8f9ed;
+}
+
+.navbar-default .navbar-nav > .active > a{
+   background-color: #dee3ab;
+
+}
+
+.block--site-header .primary-nav .desktop-menu{
+   margin: 0;
+   padding: 0;
+}
+
+.block--site-header .primary-nav .desktop-menu > ul, .block--site-header .primary-nav .desktop-menu a {
+   padding-right: 0px;
+   margin-right: 0px;
+   
+
+}
+
+.block--site-header .primary-nav .desktop-menu > ul {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #dee3ab;
+}
+
+.navbar-nav {
+  margin: 0px;
+}
+
+
+.navbar-nav > li  { position: static; }
+.navbar-nav > li > .dropdown-menu { width: 100%; text-align: center; }
+.navbar-nav > li >  .dropdown-menu>li { display: inline-block; }
 
 
 
 
+/* PRIMARY NAV MOBILE TOGGLE ========================================================================== */
+  
+  .block--site-header .primary-nav .mobile-menu{
+      overflow:hidden;
+  }
+   .block--site-header .primary-nav button {
+      border: none;
+      display: block;
+      min-height: 40px;
+      min-width: 40px;
+      float: left;
+      background-color: transparent;
+   }
+
+   .block--site-header .primary-nav button:focus {
+      outline:0;
+   }
+
+   
+   .block--site-header .primary-nav button .hamburger {
+     position: relative;
+     padding-left: 1.25em;
+     margin-top: 8px;
+     float: right;
+   }
+
+   .block--site-header .primary-nav button .hamburger:before {
+     content: "";
+     position: absolute;
+     left: 0;
+     top: 0.25em;
+     width: 2em;
+     height: 0.25em;
+     background: rgba(118, 118, 117, 1);
+     box-shadow: 
+       0 0.5em 0 0 rgba(118, 118, 117, 1),
+       0 1em 0 0 rgba(118, 118, 117, 1);
+   }
+
+   .block--site-header .primary-nav button span {
+      text-transform: uppercase;
+      float: left;
+      padding: 10px 5px;
+   }
+   
+   .block--site-header .primary-nav button .mobile-toggle {
+
+   }
 
 
+
+
+   /* PRIMARY NAV SEARCH ICON ========================================================================== */
+
+   .block--site-header .primary-nav .mobile-menu .search span{
+      padding: 10px;
+      display: block;
+      font-size: 2em;
+
+
+   }
+
+
+
+   /* LATEST STORIES ========================================================================== */ 
+
+   .latest-stories {
+      background-color: #f8f9ed;
+      color: #859c01;
+   }
+
+   .latest-stories a{
+      color: #859c01;
+   }
+
+   .latest-stories ul{
+      margin: 0;
+      padding: 0;
+   }
+
+   .latest-stories ul li:first{
+      color: #859c01;
+      border-top: solid 1px #859c01;
+   }
+
+   .latest-stories ul li{
+      color: #859c01;
+      border-bottom: solid 1px #859c01;
+   }
+
+   .latest-stories .media {
+      margin-top: 0px;
+      text-align: left;
+   }
+
+   .latest-stories .media h4, p{
+      text-transform: capitalize;
+   }
+
+   .latest-stories .media .latest-stories__date,  .latest-stories .media .latest-stories__authour {
+    text-transform: capitalize;
+    color: grey;
+    font-style: oblique;
+    font-size: 0.8em;
+   }
 /* ==========================================================================
    STATES 
    (A state is something that augments and overrides all other styles. 
@@ -47,9 +221,38 @@
 
 
 
+  
+
+
+
 
 /* ==========================================================================
    Progressively enhance for larger screens 
    ========================================================================== */
 
+
+ /* 768 AND UP ========================================================================== */ 
+@media (min-width: 768px) {
+  
+
+  /* FULL WIDTH NAV SLIDER ========================================================================== */ 
+
+  section.latest-stories {
+    max-width: 100%;
+  }
+
+section.latest-stories .latest-stories__media-wrapper{
+  border-bottom: solid 1px #859c01;
+}
+  section.latest-stories ul li{
+    border-bottom: none;
+  }
+
+
+  section.latest-stories .media {
+    display: inline-block;
+    text-align: left;
+
+  }
+}
 
