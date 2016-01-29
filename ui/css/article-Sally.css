@@ -198,6 +198,60 @@ header .primary-nav ul > li {
     font-style: oblique;
     font-size: 0.8em;
    }
+
+
+   /* SLIDESHOW ========================================================================== */ 
+
+   .slideshow {
+   }
+  .slideshow .slidesjs-navigation{
+
+  }
+
+  .slideshow .slidesjs-previous:before {
+      content: '< ';
+
+
+  }
+
+  .slideshow .slidesjs-previous{
+    margin-right: 10px;
+    padding: 10px 0px;
+    display: inline-block;
+    background: yellow;
+  }
+  .slideshow .slidesjs-next{
+    padding: 10px 0px;
+    display: inline-block;
+    background-color: orange;
+
+  }
+   .slideshow .slidesjs-next:after {
+    content: ' >';
+  }
+
+  .slideshow ul {
+    display: inline-block;
+    margin-top: 10px;
+    background: green;
+  }
+   .slideshow ul li{
+    display: inline;
+    margin: 0px 3px;
+   }
+
+.slideshow ul li a {
+  background: #90AD00;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 100%;
+}
+
+
+
+
+
+
 /* ==========================================================================
    STATES 
    (A state is something that augments and overrides all other styles. 
