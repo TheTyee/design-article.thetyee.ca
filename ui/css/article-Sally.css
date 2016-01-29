@@ -9,16 +9,14 @@
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
 
+  
 
    .article {
-      margin:0px;
-      padding: 0px;
-      font-weight: 300;
+
    }
 
    img {
       max-width: 100%;
-      padding: 10px;
    }
 
    .block--site-header{
