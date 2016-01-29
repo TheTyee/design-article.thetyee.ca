@@ -150,11 +150,7 @@ header .primary-nav ul > li {
       padding: 10px;
       display: block;
       font-size: 2em;
-
-
    }
-
-
 
    /* LATEST STORIES ========================================================================== */ 
 
@@ -202,25 +198,23 @@ header .primary-nav ul > li {
 
    /* SLIDESHOW ========================================================================== */ 
 
-   .slideshow {
-   }
+  .slideshow {
+  }
 
-   .slideshow img {
+  .slideshow img {
     min-width: 100%;
-   }
+  }
 
-   .slideshow a {
-      background: #90AD00;
-  color: #fff;
-   }
+  .slideshow a {
+    background: #90AD00;
+    color: #fff;
+  }
   .slideshow .slidesjs-navigation{
 
   }
 
   .slideshow .slidesjs-previous:before {
-      content: '< ';
-
-
+    content: '< ';
   }
 
   .slideshow .slidesjs-previous{
@@ -235,7 +229,7 @@ header .primary-nav ul > li {
     border-radius: 5px;
 
   }
-   .slideshow .slidesjs-next:after {
+  .slideshow .slidesjs-next:after {
     content: ' >';
   }
 
@@ -244,20 +238,15 @@ header .primary-nav ul > li {
     margin-top: 10px;
     float: right;
   }
-   .slideshow ul li{
+  .slideshow ul li{
     display: inline;
     margin: 0px 3px;
-   }
+  }
 
-.slideshow ul li a {
-  padding: 4px 10px;
-  border-radius: 100%;
-}
-
-
-
-
-
+  .slideshow ul li a {
+    padding: 4px 10px;
+    border-radius: 100%;
+  }
 
 /* ==========================================================================
    STATES 
@@ -301,7 +290,6 @@ header .primary-nav ul > li {
   section.latest-stories ul li{
     border-bottom: none;
   }
-
 
   section.latest-stories .media {
     display: inline-block;
