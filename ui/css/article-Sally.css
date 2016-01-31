@@ -218,16 +218,16 @@ header .primary-nav ul > li {
   }
 
   .slideshow .slidesjs-previous{
-    margin-right: 5px;
     padding: 7px;
     display: inline-block;
     border-radius: 5px;
+    margin: 5px 5px 5px 0px;
   }
   .slideshow .slidesjs-next{
     padding: 7px;
     display: inline-block;
     border-radius: 5px;
-
+    margin: 5px 5px 5px 0px;
   }
   .slideshow .slidesjs-next:after {
     content: ' >';
@@ -276,9 +276,75 @@ header .primary-nav ul > li {
 
  /* 768 AND UP ========================================================================== */ 
 @media (min-width: 768px) {
+
+
+
+.nav > li > a {
+  padding: 0px;
+}
+
+.menu > ul {
+  width: 100%;
+}
+
+
+.wide-nav--latest-stories {
+  border: solid 2px red;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+.wide-nav--sections {
+  padding: 0px 10px;
   
+}
+
+.wide-nav--newsletter {
+  padding: 0px 10px;
+  
+}
+
+.wide-nav--join {
+  padding: 0px 10px;
+  
+}
+
+.wide-nav--logo{
+  padding: 0px 20px 0px 100px;
+  
+}
+
+
+
+
+.primary-nav .latest-stories {
+  
+  padding: 0px;
+  margin: 0px; 
+}
+
+
+
+.primary-nav img {
+      padding-bottom: 20px;
+    /* max-width: 200px; */
+    border: solid 1px red;
+    max-height: 80px;
+}
+
+
+
+.site-nav {
+  padding-top: 0px;
+  font-size: 16px;
+  text-align: center
+}
 
   /* FULL WIDTH NAV SLIDER ========================================================================== */ 
+
+
+
+
 
   section.latest-stories {
     max-width: 100%;
@@ -287,16 +353,46 @@ header .primary-nav ul > li {
   section.latest-stories .latest-stories__media-wrapper{
     border-bottom: solid 1px #859c01;
   }
-  section.latest-stories ul li{
+.latest-stories .latest-stories__media-wrapper li{
     border-bottom: none;
+    background: yellow;
   }
 
-  section.latest-stories .media {
+  .latest-stories .latest-stories__media-wrapper li {
+    border-right: solid 1px #859c01;
+    height: 385px;
+  }
+
+   .latest-stories .latest-stories__media-wrapper li:last-child {
+    border-right: none;
+   } 
+
+.latest-stories .media {
     display: inline-block;
     text-align: left;
+    border: solid 2px red;
 
   }
 
+.latest-stories .media .media-image{
+  background: purple;
+}
+
+
+.latest-stories .media .media-body {
+  background: green;
+  height: 100%;
+  position: relative;
+}
+
+
+  .latest-stories__date, .latest-stories__authour{
+    background: red;
+    position: absolute;
+    bottom: 0px;
+    z-index: 10000;
+
+  }
 
 
 }
