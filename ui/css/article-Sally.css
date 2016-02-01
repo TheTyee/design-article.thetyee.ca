@@ -277,60 +277,30 @@ header .primary-nav ul > li {
  /* 768 AND UP ========================================================================== */ 
 @media (min-width: 768px) {
 
-
-
-.nav > li > a {
-  padding: 0px;
-}
-
-.menu > ul {
+.navbar-nav {
   width: 100%;
+  text-transform: uppercase;
 }
 
 
-.wide-nav--latest-stories {
-  border: solid 2px red;
-  text-align: center;
-  padding: 0px 10px;
+
+.menu ul >  div> li {
+  padding: 5px;
+  float: left;
 }
 
-.wide-nav--sections {
-  padding: 0px 10px;
+.menu--logo{
+
   
 }
 
-.wide-nav--newsletter {
-  padding: 0px 10px;
-  
-}
+.menu--logo img {
+    max-height: 60px;
 
-.wide-nav--join {
-  padding: 0px 10px;
-  
-}
-
-.wide-nav--logo{
-  padding: 0px 20px 0px 100px;
-  
 }
 
 
 
-
-.primary-nav .latest-stories {
-  
-  padding: 0px;
-  margin: 0px; 
-}
-
-
-
-.primary-nav img {
-      padding-bottom: 20px;
-    /* max-width: 200px; */
-    border: solid 1px red;
-    max-height: 80px;
-}
 
 
 
@@ -392,6 +362,11 @@ header .primary-nav ul > li {
     bottom: 0px;
     z-index: 10000;
 
+  }
+
+
+  .wide-nav--latest-stories .dropdown, .wide-nav--sections .dropdown{
+    display: none;
   }
 
 
