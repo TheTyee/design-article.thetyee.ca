@@ -177,7 +177,6 @@ header .menu ul > li {
   background: #90AD00;
   color: #fff;
 }
-
 .slideshow .slidesjs-previous:before {
   content: '< ';
 }
@@ -209,6 +208,7 @@ header .menu ul > li {
   padding: 4px 10px;
   border-radius: 100%;
 }
+
 
 /* ==========================================================================
  STATES 
