@@ -42,9 +42,14 @@
 
 /* PRIMARY NAV  ========================================================================== */
 
-header .menu ul > li {
+header .menu ul > li a {
    text-transform: uppercase;
 }
+
+.navbar-nav {
+  border-bottom: solid 1px #849c01;
+}
+
 .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .menu ul li.active > a, .menu ul li.dropdown-toggle, .menu ul .active, .menu ul .open {
   background-color: #f8f9ed;
 }
@@ -55,7 +60,7 @@ header .menu ul > li {
   margin: 0;
   padding: 0;
 }
-.menu > ul, .block--site-header .menu .menu a {
+.menu > ul, .block--site-header .menu a{
   padding-right: 0px;
   margin-right: 0px;
 }
@@ -74,12 +79,16 @@ header .menu ul > li {
 .navbar-nav > li > .dropdown-menu { 
   width: 100%; 
   text-align: center; 
+  margin-top:0px;
+  padding-top: 0px;
 }
 .navbar-nav > li >  .dropdown-menu>li { 
   display: inline-block; 
 }
 
-
+.menu > a, .menu .nav-right a{
+  color: #555;
+}
 
 
 /* PRIMARY NAV MOBILE TOGGLE ========================================================================== */
@@ -136,7 +145,7 @@ header .menu ul > li {
     background-color: #f8f9ed;
     color: #859c01;
  }
- .latest-stories a{
+ .latest-stories a {
     color: #859c01;
  }
  .latest-stories .latest-stories__media-wrapper{
@@ -155,8 +164,10 @@ header .menu ul > li {
  .latest-stories .latest-stories__media-wrapper .media {
     margin-top: 0px;
     text-align: left;
+    padding-top: 25px;
+}
  }
- .latest-stories .latest-stories__media-wrapper .media h4, p{
+ .latest-stories .latest-stories__media-wrapper .media h4{
     text-transform: capitalize;
  }
  .latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
@@ -241,16 +252,21 @@ header .menu ul > li {
 
   .navbar-nav {
     width: 100%;
-    text-transform: uppercase;
     position: relative;
   }
+
+  .navbar-nav > li > a{
+    padding-top: 23px;
+    padding-bottom: 15px;
+}
+
   .menu ul >  div> li {
-    padding: 5px;
+    padding: 12px 5px;
     float: left;
     position: relative;
   }
   .menu--logo{
-    padding: 0px 6%;
+    padding: 0px 6% 5px 6%;
   }
   .menu--logo img {
     max-height: 60px;
@@ -258,6 +274,7 @@ header .menu ul > li {
   .nav-right{
     float: right!important;
     padding-right: 20px;
+    padding-top: 5px;
   }
   .site-nav {
     padding-top: 0px;
@@ -290,15 +307,15 @@ header .menu ul > li {
   }
   .latest-stories .media .media-image{
   }
+
+  .latest-stories .media .media-image img{
+      min-width: 100%;
+  }
   .latest-stories .media .media-body {
     height: 100%;
     position: relative;
   }
-  .latest-stories__date, .latest-stories__authour{
-    position: absolute;
-    bottom: 0px;
-    z-index: 10000;
-  }
+ 
   .wide-nav--latest-stories .dropdown, .wide-nav--sections .dropdown{
     display: none;
   }
@@ -307,7 +324,7 @@ header .menu ul > li {
  /* 870 TO TABLET SIZE (a hack to handle the wide nav) ========================================================================== */ 
 @media (max-width: 870px) {
   .menu--logo{
-    padding: 0;
+    padding: 0px 0px 5px 0;
   }
 }
 
@@ -315,7 +332,7 @@ header .menu ul > li {
  /* 1168 AND UP (a hack to handle the wide nav) ========================================================================== */ 
 @media (min-width: 1168px) {
   .menu--logo{
-    padding: 0 15%;
+    padding: 0px 15% 5px 15%;
   }
 }
 
