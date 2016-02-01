@@ -9,16 +9,9 @@
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
 
-  
-
-   .article {
-
-   }
-
    img {
       max-width: 100%;
    }
-
    .block--site-header{
       background-color: #dee3ab;
       width: 100%;
@@ -49,45 +42,42 @@
 
 /* PRIMARY NAV  ========================================================================== */
 
-header .primary-nav ul > li {
+header .menu ul > li {
    text-transform: uppercase;
 }
-
-.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .primary-nav ul li.active > a, .primary-nav ul li.dropdown-toggle, .primary-nav ul .active, .primary-nav ul .open {
-   background-color: #f8f9ed;
+.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .menu ul li.active > a, .menu ul li.dropdown-toggle, .menu ul .active, .menu ul .open {
+  background-color: #f8f9ed;
 }
-
 .navbar-default .navbar-nav > .active > a{
-   background-color: #dee3ab;
+  background-color: #dee3ab;
 }
-
-.primary-nav .menu{
-   margin: 0;
-   padding: 0;
+.menu{
+  margin: 0;
+  padding: 0;
 }
-
-.menu > ul, .block--site-header .primary-nav .menu a {
-   padding-right: 0px;
-   margin-right: 0px;
-   
-
+.menu > ul, .block--site-header .menu .menu a {
+  padding-right: 0px;
+  margin-right: 0px;
 }
-
-.wmenu > ul {
-    position: absolute;
-    left: 0;
-    right: 0;
-    background-color: #dee3ab;
+.menu > ul {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #dee3ab;
 }
-
 .navbar-nav {
   margin: 0px;
 }
-
-
-.navbar-nav > li  { position: static; }
-.navbar-nav > li > .dropdown-menu { width: 100%; text-align: center; }
-.navbar-nav > li >  .dropdown-menu>li { display: inline-block; }
+.navbar-nav > li  { 
+  position: static; 
+}
+.navbar-nav > li > .dropdown-menu { 
+  width: 100%; 
+  text-align: center; 
+}
+.navbar-nav > li >  .dropdown-menu>li { 
+  display: inline-block; 
+}
 
 
 
@@ -95,280 +85,229 @@ header .primary-nav ul > li {
 /* PRIMARY NAV MOBILE TOGGLE ========================================================================== */
   
 .primary-nav .narrow-menu{
-      overflow:hidden;
-  }
+  overflow:hidden;
+}
 .primary-nav button {
-      border: none;
-      display: block;
-      min-height: 40px;
-      min-width: 40px;
-      float: left;
-      background-color: transparent;
-   }
-
+  border: none;
+  display: block;
+  min-height: 40px;
+  min-width: 40px;
+  float: left;
+  background-color: transparent;
+}
 .primary-nav button:focus {
-      outline:0;
-   }
-
-   
+  outline:0;
+} 
 .primary-nav button .hamburger {
-     position: relative;
-     padding-left: 1.25em;
-     margin-top: 8px;
-     float: right;
-   }
-
+  position: relative;
+  padding-left: 1.25em;
+  margin-top: 8px;
+  float: right;
+}
 .primary-nav button .hamburger:before {
-     content: "";
-     position: absolute;
-     left: 0;
-     top: 0.25em;
-     width: 2em;
-     height: 0.25em;
-     background: rgba(118, 118, 117, 1);
-     box-shadow: 
-       0 0.5em 0 0 rgba(118, 118, 117, 1),
-       0 1em 0 0 rgba(118, 118, 117, 1);
-   }
-
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 2em;
+  height: 0.25em;
+  background: rgba(118, 118, 117, 1);
+  box-shadow: 
+   0 0.5em 0 0 rgba(118, 118, 117, 1),
+   0 1em 0 0 rgba(118, 118, 117, 1);
+}
 .primary-nav button span {
-      text-transform: uppercase;
-      float: left;
-      padding: 10px 5px;
-   }
-   
-.primary-nav button .mobile-toggle {
+  text-transform: uppercase;
+  float: left;
+  padding: 10px 5px;
+}
 
-   }
-
-
-
-
-   /* PRIMARY NAV SEARCH ICON ========================================================================== */
+/* PRIMARY NAV SEARCH ICON ========================================================================== */
 
 .primary-nav .narrow-menu .search span{
-      padding: 10px;
-      display: block;
-      font-size: 2em;
-   }
+  padding: 10px;
+  display: block;
+  font-size: 2em;
+}
 
-   /* LATEST STORIES ========================================================================== */ 
+/* LATEST STORIES ========================================================================== */ 
 
-   .latest-stories {
-      background-color: #f8f9ed;
-      color: #859c01;
-   }
-
-   .latest-stories a{
-      color: #859c01;
-   }
-
-   .latest-stories .latest-stories__media-wrapper{
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-   }
-
-   .latest-stories .latest-stories__media-wrapper li:first{
-      color: #859c01;
-      border-top: solid 1px #859c01;
-   }
-
-   .latest-stories .latest-stories__media-wrapper li{
-      color: #859c01;
-      border-bottom: solid 1px #859c01;
-   }
-
-   .latest-stories .latest-stories__media-wrapper .media {
-      margin-top: 0px;
-      text-align: left;
-   }
-
-   .latest-stories .latest-stories__media-wrapper .media h4, p{
-      text-transform: capitalize;
-   }
-
-   .latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
+ .latest-stories {
+    background-color: #f8f9ed;
+    color: #859c01;
+ }
+ .latest-stories a{
+    color: #859c01;
+ }
+ .latest-stories .latest-stories__media-wrapper{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+ }
+ .latest-stories .latest-stories__media-wrapper li:first{
+    color: #859c01;
+    border-top: solid 1px #859c01;
+ }
+ .latest-stories .latest-stories__media-wrapper li{
+    color: #859c01;
+    border-bottom: solid 1px #859c01;
+ }
+ .latest-stories .latest-stories__media-wrapper .media {
+    margin-top: 0px;
+    text-align: left;
+ }
+ .latest-stories .latest-stories__media-wrapper .media h4, p{
     text-transform: capitalize;
-    color: grey;
-    font-style: oblique;
-    font-size: 0.8em;
-   }
+ }
+ .latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
+  text-transform: capitalize;
+  color: grey;
+  font-style: oblique;
+  font-size: 0.8em;
+ }
 
+ /* SLIDESHOW ========================================================================== */ 
 
-   /* SLIDESHOW ========================================================================== */ 
+.slideshow {
+}
+.slideshow img {
+  min-width: 100%;
+}
+.slideshow a {
+  background: #90AD00;
+  color: #fff;
+}
 
-  .slideshow {
-  }
-
-  .slideshow img {
-    min-width: 100%;
-  }
-
-  .slideshow a {
-    background: #90AD00;
-    color: #fff;
-  }
-  .slideshow .slidesjs-navigation{
-
-  }
-
-  .slideshow .slidesjs-previous:before {
-    content: '< ';
-  }
-
-  .slideshow .slidesjs-previous{
-    padding: 7px;
-    display: inline-block;
-    border-radius: 5px;
-    margin: 5px 5px 5px 0px;
-  }
-  .slideshow .slidesjs-next{
-    padding: 7px;
-    display: inline-block;
-    border-radius: 5px;
-    margin: 5px 5px 5px 0px;
-  }
-  .slideshow .slidesjs-next:after {
-    content: ' >';
-  }
-
-  .slideshow ul {
-    display: inline-block;
-    margin-top: 10px;
-    float: right;
-  }
-  .slideshow ul li{
-    display: inline;
-    margin: 0px 3px;
-  }
-
-  .slideshow ul li a {
-    padding: 4px 10px;
-    border-radius: 100%;
-  }
+.slideshow .slidesjs-previous:before {
+  content: '< ';
+}
+.slideshow .slidesjs-previous{
+  padding: 7px;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 5px 5px 5px 0px;
+}
+.slideshow .slidesjs-next{
+  padding: 7px;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 5px 5px 5px 0px;
+}
+.slideshow .slidesjs-next:after {
+  content: ' >';
+}
+.slideshow ul {
+  display: inline-block;
+  margin-top: 10px;
+  float: right;
+}
+.slideshow ul li{
+  display: inline;
+  margin: 0px 3px;
+}
+.slideshow ul li a {
+  padding: 4px 10px;
+  border-radius: 100%;
+}
 
 /* ==========================================================================
-   STATES 
-   (A state is something that augments and overrides all other styles. 
-   State styles can apply to layout and/or module styles; and State styles 
-   indicate a JavaScript dependency.
-   For example, an accordion section may be in a collapsed or expanded state. 
-   A message may be in a success or error state. Eg: .is-collapsed or .is-error 
-   So again, something like a helper class. 
-   But sometimes there may be a state that is specific to a particular object.
-   Eg: .is-tab-active
-   https://smacss.com/book/type-state)
-   ========================================================================== */
+ STATES 
+ (A state is something that augments and overrides all other styles. 
+ State styles can apply to layout and/or module styles; and State styles 
+ indicate a JavaScript dependency.
+ For example, an accordion section may be in a collapsed or expanded state. 
+ A message may be in a success or error state. Eg: .is-collapsed or .is-error 
+ So again, something like a helper class. 
+ But sometimes there may be a state that is specific to a particular object.
+ Eg: .is-tab-active
+ https://smacss.com/book/type-state)
+ ========================================================================== */
 
 
 
 
-  
+
 
 
 
 
 /* ==========================================================================
-   Progressively enhance for larger screens 
-   ========================================================================== */
+ Progressively enhance for larger screens 
+ ========================================================================== */
 
 
- /* 768 AND UP ========================================================================== */ 
+/* 768 AND UP ========================================================================== */ 
 @media (min-width: 768px) {
 
-.navbar-nav {
-  width: 100%;
-  text-transform: uppercase;
-}
-
-
-
-.menu ul >  div> li {
-  padding: 5px;
-  float: left;
-}
-
-.menu--logo{
-
-  
-}
-
-.menu--logo img {
+  .navbar-nav {
+    width: 100%;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .menu ul >  div> li {
+    padding: 5px;
+    float: left;
+    position: relative;
+  }
+  .menu--logo{
+    padding: 0px 6%;
+  }
+  .menu--logo img {
     max-height: 60px;
-
-}
-
-
-
-
-
-
-.site-nav {
-  padding-top: 0px;
-  font-size: 16px;
-  text-align: center
-}
+  }
+  .nav-right{
+    float: right!important;
+    padding-right: 20px;
+  }
+  .site-nav {
+    padding-top: 0px;
+    font-size: 16px;
+    text-align: center
+  }
 
   /* FULL WIDTH NAV SLIDER ========================================================================== */ 
 
-
-
-
-
-  section.latest-stories {
+  .latest-stories {
     max-width: 100%;
   }
 
-  section.latest-stories .latest-stories__media-wrapper{
+  .latest-stories .latest-stories__media-wrapper{
     border-bottom: solid 1px #859c01;
   }
-.latest-stories .latest-stories__media-wrapper li{
+  .latest-stories .latest-stories__media-wrapper li{
     border-bottom: none;
-    background: yellow;
   }
-
   .latest-stories .latest-stories__media-wrapper li {
     border-right: solid 1px #859c01;
     height: 385px;
   }
-
-   .latest-stories .latest-stories__media-wrapper li:last-child {
+  .latest-stories .latest-stories__media-wrapper li:last-child {
     border-right: none;
-   } 
-
-.latest-stories .media {
+  } 
+  .latest-stories .media {
     display: inline-block;
     text-align: left;
-    border: solid 2px red;
-
   }
-
-.latest-stories .media .media-image{
-  background: purple;
-}
-
-
-.latest-stories .media .media-body {
-  background: green;
-  height: 100%;
-  position: relative;
-}
-
-
+  .latest-stories .media .media-image{
+  }
+  .latest-stories .media .media-body {
+    height: 100%;
+    position: relative;
+  }
   .latest-stories__date, .latest-stories__authour{
-    background: red;
     position: absolute;
     bottom: 0px;
     z-index: 10000;
-
   }
-
-
   .wide-nav--latest-stories .dropdown, .wide-nav--sections .dropdown{
     display: none;
   }
+}
 
-
+ /* 1168 AND UP (a hack to handle the wide nav) ========================================================================== */ 
+@media (min-width: 1168px) {
+  .menu--logo{
+    padding: 0 15%;
+  }
 }
 
