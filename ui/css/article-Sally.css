@@ -186,7 +186,7 @@ header .primary-nav ul > li {
       text-align: left;
    }
 
-   .latest-stories .media h4, p{
+   .latest-stories .media h4 {
       text-transform: capitalize;
    }
 

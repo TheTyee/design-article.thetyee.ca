@@ -50,19 +50,22 @@ h1 {
   margin-bottom: 0.333em;
 }
 
-h3 {
-  font-family: Georgia, Serif;
-  font-size: 1.2em;
-  font-weight: 600;
-  line-height: 1.18518519em;
-  color: #869D00;
-}
+
 
 h4 {
   font-size: 1.42em;
   font-weight: 300;
   line-height: 1.4em;
   color: #424242;
+}
+
+h5 {
+  margin-top: 1em;
+  font-family: Georgia, Serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1.18518519em;
+  color: #869D00;
 }
 
 p {
@@ -172,7 +175,7 @@ body.cmnt--visibility { }
     object dev-status colours upon hover */
 
         body.cmnt--visibility:hover [data-dev-status~="IN-PROGRESS"] {
-            background-color: hsla(60, 100%, 50%, .1) !important;
+            background-color: hsla(60, 100%, 50%, 0.04) !important;
         }   /* elements that are "in-progress" are coloured pale yellow when
             there's hover on the body tag */
 
@@ -362,6 +365,22 @@ aside { }
 
 
 
+/* AD BANNER  ========================================================================== */
+
+.ad-banner {
+  background-color: #606060;
+  padding: 0.5em 0 0.5em 0;
+}
+
+    .ad-banner img {
+        display: block; 
+        margin: 0em auto 0em auto;
+        width: 728px;
+        height: 90px;
+    }
+
+
+
 /* BIGBOX AD  ========================================================================== */
 
 .bigbox {
@@ -376,6 +395,7 @@ aside { }
         display: block; 
         margin: 0em auto 0em auto;
         width: 300px;
+        height: 250px;
     }
 
      .bigbox::before { 
