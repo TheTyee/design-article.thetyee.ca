@@ -17,6 +17,6 @@ You can also specify a caption string and a content-source parameter if the cont
 
 <aside class="aside" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
 	{% include {{ include.aside-contents }}.html content-source=include.content-source %}
-	<div class="caption">{{ include.aside-caption }} (Aside content is {{ include.aside-contents }}. Content source is {{ include.content-source }})</div>
+	<div class="caption">{{ include.aside-caption }} {% comment %}(Aside content is {{ include.aside-contents }}. Content source is {{ include.content-source }}){% endcomment %}</div>
 </aside>
 <!-- END 01-molecules/blocks/aside -->
