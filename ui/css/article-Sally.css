@@ -304,6 +304,14 @@ header .menu ul > li {
   }
 }
 
+ /* 870 TO TABLET SIZE (a hack to handle the wide nav) ========================================================================== */ 
+@media (max-width: 870px) {
+  .menu--logo{
+    padding: 0;
+  }
+}
+
+
  /* 1168 AND UP (a hack to handle the wide nav) ========================================================================== */ 
 @media (min-width: 1168px) {
   .menu--logo{
