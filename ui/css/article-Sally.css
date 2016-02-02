@@ -251,24 +251,32 @@ header .menu ul > li a {
     width: 100%;
     position: relative;
   }
-
   .nav >li {
     position: static;
   }
-
-.menu__left-nav, .menu__right-nav {
-  position: static;
-}
-
+  .menu__left-nav, .menu__right-nav {
+    position: static;
+  }
   .menu ul > li {
-
     float: left;
-
   }
   .site-nav {
     font-size: 16px;
+    margin-top: 0px;
+    padding-top: 0px;
     text-align: center
   }
+
+   .block--site-header .menu__left-nav > li > a, .block--site-header .menu__right-nav > li > a {
+    padding: 22px 5px;
+    display: inline-block;
+    color: #555;
+   }
+
+.block--site-header .menu ul .open a{
+  color: #859c01;
+}
+
 
   /* LATEST STORIES  SLIDER ========================================================================== */ 
 
@@ -322,5 +330,6 @@ header .menu ul > li a {
 .sections ul li {
   clear: both;
 }
+
 
 }
