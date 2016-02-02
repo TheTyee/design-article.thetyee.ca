@@ -3,24 +3,67 @@
 
 <section class="section latest-stories" data-dev-object-descrip="02-organisms/sections/latest-stories" data-dev-status="IN-PROGRESS">
 
-		<!-- Put the story list in here.
-	Start from bootstrap’s default Media Object (if possible) ( http://getbootstrap.com/components/#media ) and then applying my atomic conventions.
-	This object should default to its mobile-first stacked state and only become horizontal at higher breakpoints (see mockups for the 2 states). In mobile stacked state it should be limited to 3 items. In horizontal state it should show enough items to fill the viewport width, ideally with slider functionality to reveal more items.
-	-->
-	<ul class="latest-stories__media-wrapper row">
-		<li class="media col-md-3 col-sm-4 col-xs-12">
-			{% include 01-molecules/blocks/story-item.html %}
-		</li>
-		<li class="media col-md-3 col-sm-4 col-xs-12">
-			{% include 01-molecules/blocks/story-item.html %}
-		</li>
-		<li class="media col-md-3 col-sm-4 col-xs-12">
-			{% include 01-molecules/blocks/story-item.html %}
-		</li>
+			<!-- Put the story list in here.
+		Start from bootstrap’s default Media Object (if possible) ( http://getbootstrap.com/components/#media ) and then applying my atomic conventions.
+		This object should default to its mobile-first stacked state and only become horizontal at higher breakpoints (see mockups for the 2 states). In mobile stacked state it should be limited to 3 items. In horizontal state it should show enough items to fill the viewport width, ideally with slider functionality to reveal more items.
+		-->
+		<ul class="latest-stories__media-wrapper row">
+			<li class="media col-md-3 col-sm-4 col-xs-12">
+				<div class="media-image col-sm-12 col-xs-3">
+					<a href="#">
+						<img class="media-object" src="/ui/img/placeholder.svg"/>
+					</a>
+				</div>
+				<div class="media-body col-sm-12 col-xs-9">
+					<h4 class="latest-stories__hed">National Energy Board Slammed for 'Inadequate' Regulation</h4>
+					<p class="latest-stories__dek">Agency failing to properly track 'deficiencies in company compliance,' audit finds.</p>
+					<span class="latest-stories__date hidden-xs">Sept 30</span>
+					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
+				</div>
+			</li>
+			<li class="media col-md-3 col-sm-4 col-xs-12">
+				<div class="media-image col-sm-12 col-xs-3">
+					<a href="#">
+						<img class="media-object" src="/ui/img/placeholder.svg"/>
+					</a>
+				</div>
+				<div class="media-body col-xs-9">
+					<h4 class="latest-stories__hed">Smarten up, Christy! BC Libs Show Tech Ed Illiteracy</h4>
+					<p class="latest-stories__dek">Why educators schooled premier on computer coding promise as basic needs go unmet.</p>
+					<span class="latest-stories__date hidden-xs">Sept 30</span>
+					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
+				</div>
+			</li>
+			<li class="media col-md-3 col-sm-4 col-xs-12">
+				<div class="media-image col-sm-12 col-xs-3">
+					<a href="#">
+						<img class="media-object" src="/ui/img/placeholder.svg"/>
+					</a>
+				</div>
+				<div class="media-body col-xs-9">
+					<h4 class="latest-stories__hed">'Signing Does Not Equal Ratifying': Freeland on TPP</h4>
+					<p class="latest-stories__dek">International trade minister defends decision to ink Pacific treaty next week.</p>
+					<span class="latest-stories__date hidden-xs">Sept 30</span>
+					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
+				</div>
+			</li>
+			<li class="media col-md-3 hidden-sm col-xs-12">
+				<div class="media-image col-sm-12 col-xs-3">
+					<a href="#">
+						<img class="media-object" src="/ui/img/placeholder.svg"/>
+					</a>
+				</div>
+				<div class="media-body col-sm-12 col-xs-9">
+					<h4 class="latest-stories__hed">Tyee Poll: What Will Journalism after Newspapers Look Like?</h4>
+					<p class="latest-stories__dek">Postmedia's downward spiral begs the question. Tell us what you think.</p>
+					<span class="latest-stories__date hidden-xs">Sept 30</span>
+					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
+				</div>
+			
+			</li>
+		</ul>
+		
 
-		<li class="media col-md-3 col-sm-4 col-xs-12 hidden-xs">
-			{% include 01-molecules/blocks/story-item.html %}
-		</li>
-	</ul>
+
 </section>
 <!-- END 02-organisms/sections/latest-stories -->
