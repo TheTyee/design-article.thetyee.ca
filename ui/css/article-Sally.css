@@ -3,8 +3,6 @@
    article.css. 
    ========================================================================== */
 
-   @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-
 /* ==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
@@ -167,9 +165,7 @@ header .menu ul > li a {
     padding-top: 25px;
 }
  }
- .latest-stories .latest-stories__media-wrapper .media h4{
-    text-transform: capitalize;
- }
+
  .latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
   text-transform: capitalize;
   color: grey;
@@ -316,6 +312,14 @@ header .menu ul > li a {
     position: relative;
   }
  
+.latest-stories__story-item {
+  
+}
+
+.latest-stories__story-item--hed{
+    font-family: 'Source Sans Pro', sans-serif;
+ }
+
   .wide-nav--latest-stories .dropdown, .wide-nav--sections .dropdown{
     display: none;
   }
