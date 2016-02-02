@@ -263,6 +263,47 @@ body.cmnt--visibility { }
 
 
 
+/* ARTICLE LAYOUT  ========================================================================== */
+
+
+.article__header {
+  /* article__header is always centered on the page */
+  max-width: 45em;
+  margin: 0 auto 0 auto;
+}
+
+
+
+.article__body, 
+.featured-media, 
+.messaging-zone {/* organisms within the text column remain left-aligned
+     after hitting their max width */
+     position: relative;
+     max-width: 34em;
+     margin: 0;
+}
+
+
+
+@media screen and (min-width: 50.5em) {
+    /* breakpoint:
+       When viewport exceeds the max-width of the article__header ... 
+       max-width of header plus difference between header and body divided by 2;
+       = [article__header max-width] + ([article__header max-width]-[article__body max-width])
+       =            45em             +           (45em - 34em) / 2
+       =            45em             +                 5.5em                  
+       >> if this value is set in px then the 5.5em should be omitted. (810px) <<  */
+    .article__body, 
+    .featured-media, 
+    .messaging-zone {
+      margin: 0 auto 0 auto;
+      left: -5.5em; /* [article__header max-width]-[article__body max-width] */
+      /* ... centers article__body and offsets towards left to align with article__header.
+         It keeps the article__body aligned flush left with the article__header. */
+    }
+}
+
+
 
 
 /* ==========================================================================
@@ -348,14 +389,85 @@ figure {
 
 
 
+/* ASIDES  ========================================================================== */
+
+
 aside { }
 
     .aside {
-        max-width: 40%;
+        position: relative;
+        width: 45%;
         float: right;
+        padding: 1em 0 2em 1.5em;
+        /* Aligns asides flush right inside article__body */
     }
 
+    @media screen and (min-width: 38.5em) {
+        /* Breakpoint: 
+           When viewport exceeds width of article__body ...
+           [article__body max-width] - [article__body left margin]
+           =          34em           -          -5.5em              
+           >> if this value is set in px then the 5.5em should be omitted. (612px) <<  */
+        .aside {
+            margin-right: calc(34em - 100vw);
+            /* ... aligns asides flush right with viewport. */
+            
+        }
+    }
+
+    @media screen and (min-width: 50.5rem) 
+    /* Breakpoint:
+       
+       When viewport exceeds the max-width of the article__header ... 
+
+       [article__header width] + [article__body left offset]    
+       =        45em           +            5.5em               
+       >> if this value is set in px then the 5.5em offset should be omitted. (810px) << */ {
+        .aside {
+            margin-right: calc(34em - 100vw + ((100vw - 45em) / 2));
+            /* ... compensate for the centering of the article__body to keep asides flush 
+                   right with viewport.
+                   [prior offset] + ((article__header margin]) / 2 )        */
+
+
+            /* ALTERNATIVE RULE:
+               margin-right: calc(-11em - ((100vw - 45em) / 2)); 
+               [max offset of prev breakpoint] + [article__header left margin] 
+               [max offset of prev breakpoint] + (view-width - [article__header width]) / 2  */
+        }
+    }
+
+
+
+    @media screen and (min-width: 59.5em) 
+    /* Breakpoint:
+       
+       When viewport exceeds the max desired width of the page ... 
+
+       [max page width] + [article__body left offset]    
+       =      54em      +            5.5em               
+       >> if this value is set in px then the 5.5em offset should be omitted. (950px) << */ {
+        .aside {
+            margin-right: 15em;
+            margin-right: calc(34em - 100vw + ((100vw - 45em) / 2));
+            margin-right: -15em;
+            /* ... compensate for the centering of the article__body to keep asides flush 
+                   right with viewport.
+                   [prior offset] + ([article__header margin at max desired width]) / 2 ) */
+
+
+            /* ALTERNATIVE RULE:
+               margin-right: calc(-11em - ((100vw - 45em) / 2)); 
+               [max offset of prev breakpoint] + [article__header left margin] 
+               [max offset of prev breakpoint] + (view-width - [article__header width]) / 2  */
+        }
+    }
+
+
+
     .aside--pullquote { }
+
+
 
 
 
