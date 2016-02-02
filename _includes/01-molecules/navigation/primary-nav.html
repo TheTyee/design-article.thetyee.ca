@@ -1,5 +1,8 @@
 <!-- Begin molecules/navigation/primary-nav -->
-<nav class="navbar yamm navbar-default navbar navbar-default ]  site-nav primary-nav" data-dev-object-descrip="molecules/navigation/primary-nav" data-dev-status="IN-PROGRESS" role="navigation">
+<nav class="navbar yamm navbar-default navbar navbar-default ] site-nav primary-nav" data-dev-object-descrip="molecules/navigation/primary-nav" data-dev-status="IN-PROGRESS" role="navigation">
+  
+<!--NARROW MENU-->
+
   <div class="narrow-menu hidden-sm hidden-md hidden-lg hidden-xl">
       <!--Toggle-->
     <div class="mobile-toggle col-xs-4 pull-left">
@@ -18,47 +21,56 @@
   </div>
 
 
-
+<!-- WIDE MENU -->
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="[ collapse navbar-collapse ] menu row" id="bs-example-navbar-collapse-1">
 
-    <ul class="nav navbar-nav col-md-12">
-      <li class="menu--latest-stories dropdown active ">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Latest Stories</a>
+    <div class="nav navbar-nav col-md-12">
+      <ul class="menu__left-nav col-md-5 col-sm-5 nav">
+        <li class="menu--latest-stories dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Latest Stories</a>
+            <ul class="dropdown-menu">
+              <li>{% include 02-organisms/sections/latest-stories.html %}</li>
+            </ul>
+        </li>
+        <li class="menu--sections dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sections</a>
           <ul class="dropdown-menu">
-            <li>{% include 02-organisms/sections/latest-stories.html %}</li>
+              <li>{% include 01-molecules/navigation/sections-nav.html %}</li>
           </ul>
-      </li>
+        </li>
+        <li class="menu--newsletter"><a href="#">Newsletter</a></li>
+        <li class="menu--more"><a href="#">More</a></li>
+      </ul>
+      
+      <!--LOGO-->
 
-      <li class="menu--sections dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sections</a>
-        <ul class="dropdown-menu">
-            <li>{% include 01-molecules/navigation/sections-nav.html %}</li>
+      <ul class="col-md-2 col-sm-2 nav">
+        <li class="menu--logo hidden-xs">
+           <img src="../../ui/img/tyee_logo.png" alt="Logo Alt Text" />
+        </li>
       </ul>
 
+      <!--RIGHT NAV -->
 
-      <li class="menu--newsletter"><a href="#">Newsletter</a></li>
-      <li class="menu--join"><a href="#">Join</a></li>
-      <li class="menu--logo hidden-xs">
-        <img src="../../ui/img/tyee_logo.png" alt="Logo Alt Text" />
-      </li>
-      <div class="nav-right">
-      <li class="menu--facebook"><a href="#"><i class="fa fa-facebook-square fa-lg"></i></a></li>
-      <li class="menu--twitter"><a href="#"><i class="fa fa-twitter-square fa-lg"></i></a></li>
-      <li class="menu--search dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="glyphicon glyphicon-search"></span></a>
-        <ul class="dropdown-menu">
-            <div>
-              <form class="navbar-form navbar-left" role="search">
-                <li class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                </li>
-                <button type="submit" class="btn btn-default">Submit</button>
-              </form>
-            </div>
-    
-      </ul>
-</div>
+      <ul class="menu__right-nav col-md-5 col-sm-5 nav">
+        <li class="menu--join"><a href="#">Join</a></li>
+        <li class="menu--facebook"><a href="#"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+        <li class="menu--twitter"><a href="#"><i class="fa fa-twitter-square fa-lg"></i></a></li>
+        <li class="menu--search dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="glyphicon glyphicon-search"></span></a>
+          <ul class="dropdown-menu">
+              <div>
+                <form class="navbar-form navbar-left" role="search">
+                  <li class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </li>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+              </div>
+      
+        </ul>
+</ul>
 
   </div><!-- /.navbar-collapse -->
 
