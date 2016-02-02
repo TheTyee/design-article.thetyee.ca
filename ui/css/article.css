@@ -263,6 +263,17 @@ body.cmnt--visibility { }
 
 
 
+/* ARTICLE LAYOUT  ========================================================================== */
+
+.article__body, 
+.featured-media, 
+.messaging-zone {
+  max-width: 34em;
+  margin: 0 auto 0 auto;
+}
+
+
+
 
 
 /* ==========================================================================

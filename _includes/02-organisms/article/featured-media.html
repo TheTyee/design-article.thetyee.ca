@@ -2,10 +2,10 @@
 <!--This pulls in an image and a caption-->
 {% for field in site.data.example_stories limit:1 %}
 
-<section data-dev-object-descrip="02-organisms/article/featured-media" data-dev-status="IN-PROGRESS">
+<section class="featured-media" data-dev-object-descrip="02-organisms/article/featured-media" data-dev-status="IN-PROGRESS">
 
 	<div class="container-fluid">
-		
+
 	    {% include 00-atoms/images/image.html content-source=field.featured_image %}
 		<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
 
