@@ -6,8 +6,12 @@
 
 	<div class="container-fluid">
 
-	    {% include 00-atoms/images/image.html content-source=field.featured_image %}
-		<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
+		{% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure, all inside the featured-media layout section. Such hoff! So hassle!" content-source="http://place-hoff.com/525/350" %}
+
+		{% comment %}
+		    {% include 00-atoms/images/image.html content-source=field.featured_image %}
+			<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
+		{% endcomment %}
 
 	</div> <!--END .container-fluid-->
 

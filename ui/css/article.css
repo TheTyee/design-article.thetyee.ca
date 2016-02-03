@@ -95,7 +95,15 @@ a:active {color: #839800;}
 
 
 
-.pullquote { }
+.pullquote {
+  margin: 1.33em 0em 1.33em 0em;
+  font-family: Georgia, Serif;
+  font-weight: 800;
+  font-size: 1.36em;
+  line-height: 1.333em;
+  color: #424242;
+
+}
 
 
 
