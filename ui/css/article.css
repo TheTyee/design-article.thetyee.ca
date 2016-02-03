@@ -90,10 +90,23 @@ a:hover {color: #839800;}
 a:active {color: #839800;}
 
 
+
 .blockquote { }
 
 
+
 .pullquote { }
+
+
+
+.caption {
+    padding-top: .65em;
+    font-size: 0.777em;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+
 
 .lead-in:first-letter {
     display: block;
@@ -398,10 +411,13 @@ body.cmnt--visibility { }
 
 
 
+/* FIGURES  ========================================================================== */
+
 figure {
   /* clear: right; */
   float:left;
   width: 100%;
+  margin-bottom: 2em;
 }
 
 
@@ -484,13 +500,6 @@ aside { }
 
     .aside--pullquote { }
 
-
-
-
-
-.caption {
-
-}
 
 
 
