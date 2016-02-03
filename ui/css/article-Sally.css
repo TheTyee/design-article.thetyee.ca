@@ -39,7 +39,8 @@
 /* NARROW NAV, TOP ONLY ========================================================================== */
   
 .narrow-menu{
-  overflow:hidden;
+  min-height: 52px;
+  position: relative
 }
 .narrow-menu button {
   border: none;
@@ -125,6 +126,9 @@
   font-size: 2em;
 }
 
+.narrow__search {
+  position: static;
+}
 
 /* NARROW MENU STYLES ========================================================================== */
 
