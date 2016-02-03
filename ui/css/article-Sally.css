@@ -7,10 +7,7 @@
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
 
-   img {
-      max-width: 100%;
-   }
-   .block--site-header{
+   .site__header{
       background-color: #dee3ab;
       width: 100%;
    }
@@ -42,7 +39,7 @@
   min-height: 52px;
   position: relative
 }
-.narrow-menu button {
+.menu__hamburger{
   border: none;
   display: block;
   min-height: 40px;
@@ -50,16 +47,16 @@
   float: left;
   background-color: transparent;
 }
-.narrow-menu button:focus {
+.menu__hamburger:focus {
   outline:0;
 } 
-.narrow-menu button .hamburger {
+.menu__hamburger .hamburger {
   position: relative;
   padding-left: 1.25em;
   margin-top: 8px;
   float: right;
 }
-.narrow-menu button .hamburger:before {
+.menu__hamburger .hamburger:before {
   content: "";
   position: absolute;
   left: 0;
@@ -71,7 +68,7 @@
    0 0.5em 0 0 rgba(118, 118, 117, 1),
    0 1em 0 0 rgba(118, 118, 117, 1);
 }
-.narrow-menu button span {
+.menu__hamburger span {
   text-transform: uppercase;
   float: left;
   padding: 10px 5px;
@@ -80,6 +77,14 @@
 .site-nav .navbar-collapse {
   border-top: none;
   box-shadow: none;
+}
+
+.menu {
+  width: 100vw;
+}
+
+.menu img {
+  max-width: 100%;
 }
 
 .menu__content-wrapper {
@@ -128,7 +133,22 @@
 
 .narrow__search {
   position: static;
+  display: block;
 }
+
+.menu__search--button{
+  background-color: #859c01;
+  color: #fff;
+}
+
+.menu__search--wrapper {
+  width: 100vw;
+}
+
+.search-block .dropdown-toggle {
+  padding: 22px;
+}
+
 
 /* NARROW MENU STYLES ========================================================================== */
 
@@ -205,6 +225,7 @@
 
 .sections__categories ul li, .sections__categories ul li a {
   color: #859c01;
+  font-weight: bold;
 }
 
 .sections__list-four ul li:last-child {
@@ -349,7 +370,7 @@
   padding-left: 0px;
 }
 
-.menu__left-nav > li > a, .menu__right-nav > li > a {
+.menu__left-nav > li > a, .menu__right-nav > li > a, .dropdown-toggle {
     padding: 22px 5px;
     display: inline-block;
     color: #555;
@@ -359,11 +380,26 @@
   border-bottom: none;
 }
 
+.menu__logo img{
+  max-width: 100%;
+position: relative;
+  top: 50%;
+  transform: translateY(1%);
+}
+
+
+.menu__facebook{
+  margin: 0px 10px;
+}
+
+.menu__twitter {
+  margin: 0px 0px 0px 5px;
+}
+
 
   /* LATEST STORIES  SLIDER ========================================================================== */ 
 
-
-.primary .menu .menu__content-wrapper {
+.menu__content-wrapper {
   padding: 0px 30px;
 }
 
@@ -385,7 +421,7 @@
     position: relative;
         border-bottom: none;
     border-top: none;
-    height: 265px;
+    min-height: 265px;
 
   }
   .latest-stories .latest-stories__media-wrapper li:last-child {
@@ -472,16 +508,20 @@
 
 .menu__search ul{
   background-color: #fafbf2;
-  padding: 20px;
+  padding: 20px 0px;
 }
 
 .menu__search .form-control{
   width: 100%;
 }
 
-.menu__search button{
-    background-color: #859c01;
-    color: #fff;
+
 }
+
+@media(max-width:992px){
+
+  .menu__content-wrapper {
+      padding: 0px;
+  }
 
 }
