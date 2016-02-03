@@ -281,48 +281,52 @@
 
 /* BOOTSTRAP OVERRIDES */
 
-/*== Sets full-width nav wrapper =====*/
-  .navbar-nav {
-    width: 100%;
-    position: relative;
-  }
+/* == Overrides rounded corners, padding and default Bootstrap borders on nav == */
+.navbar {
+  border-radius: 0px;
+  border-bottom: solid 1px #859c01;
+  background-color: #dee3ab;
+}
+.dropdown-menu {
+  border-radius: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  left: 0;
+}
+.navbar-collapse {
+  padding: 0px;
+}
 
-/*== Overrides the hover and active states from Bootstrap =====*/
-  .nav > li > a:hover, .nav > li > a:focus {
-    background-color: transparent;
-    color: #859c01 !important;
+/* == Overrides the hover and active states from Bootstrap === */
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+  color: #859c01 !important;
+}
 
-  }
+/* == Turns off relative positioning so the dropdowns will align on the left === */
+.nav >li {
+  position: static;
+}
+.menu__left-nav, .menu__right-nav {
+  position: static;
+  padding-left: 20px;
+}
 
-/*== turns off relative positioning so the dropdowns will align on the left =====*/
-  .nav >li {
-    position: static;
-  }
-  .menu__left-nav, .menu__right-nav {
-    position: static;
-    padding-left: 20px;
-  }
+/* == Floats primary list items for horizontal wide nav ===== */
+.menu ul > li {
+  float: left;
+}
 
-  /*== Floats lis for horizontal wide nav =====*/
-  .menu ul > li {
-    float: left;
-  }
-  /*== Turns off defaults on the nav buttons =====*/
-  .site-nav {
-    font-size: 16px;
-    margin-top: 0px;
-    padding-top: 0px;
-    text-align: center
-  }
+/* == Turns off defaults fonts and layout on the nav buttons ===== */
+.site-nav {
+  font-size: 16px;
+  margin-top: 0px;
+  padding-top: 0px;
+  text-align: center;
+}
 
-/*== Sets padding on the nav elements =====*/
-   .block--site-header .menu__left-nav > li > a, .block--site-header .menu__right-nav > li > a {
-    padding: 22px 5px;
-    display: inline-block;
-    color: #555;
-   }
-
-/*== turns off default handling for .open =====*/
+/* == turns off default handling for .open ===== */
 .menu__left-nav .open a, .block--site-header .menu__right-nav .open a, .menu__left-nav .open, .menu__right-nav .open{
   color: #859c01;
   background-color: transparent;
@@ -330,9 +334,24 @@
 
 
 
-.menu ul {
-  padding: 0px;
+/* WIDE NAV ========================================================================== */ 
+.menu__content-wrapper {
+  background-color: transparent;
 }
+.menu__left-nav >li, .menu__right-nav >li {
+  padding-left: 0px;
+}
+
+.menu__left-nav > li > a, .menu__right-nav > li > a {
+    padding: 22px 5px;
+    display: inline-block;
+    color: #555;
+   }
+
+.menu__left-nav li, .menu__right-nav li {
+  border-bottom: none;
+}
+
 
   /* LATEST STORIES  SLIDER ========================================================================== */ 
 
@@ -342,19 +361,23 @@
 }
 
 
-  .dropdown-menu {
-    width: 100vw;
-    left: 0;
-  }
-
   .latest-stories .latest-stories__media-wrapper{
     border-bottom: solid 1px #859c01;
+    background-color: #fafbf2;
+    padding: 10px;
   }
-  .latest-stories .latest-stories__media-wrapper li{
+  .latest-stories .latest-stories__media-wrapper li, .latest-stories .latest-stories__media-wrapper li:first-child{
     border-bottom: none;
+    border-top: none;
+  }
+  .latest-stories .latest-stories__media-wrapper li:first-child{
+    border-left: solid 1px #859c01;
+    border-bottom: none;
+    border-top: none;
   }
   .latest-stories .latest-stories__media-wrapper li {
     border-right: solid 1px #859c01;
+    padding: 10px;
 
   }
   .latest-stories .latest-stories__media-wrapper li:last-child {
@@ -364,7 +387,8 @@
     display: inline-block;
     text-align: left;
   }
-  .latest-stories .media .media-image{
+  .latest-stories__media-wrapper .media .media-image{
+    padding: 15px;
   }
 
   .latest-stories .media .media-image img{
@@ -388,11 +412,50 @@
   }
 
 /* SECTIONS NAV ========================================================================== */ 
+.sections {
+  padding: 20px;
+  background-color: #fafbf2;
+}
 
+
+.menu__sections ul li {
+  width: 100%;
+}
+
+.sections ul {
+  overflow: hidden;
+  text-align: left
+}
+
+.sections ul li {
+  clear:both;
+  padding: 5px 0px;
+}
+
+.sections ul li a {
+    text-transform: capitalize;
+}
+
+.sections__categories ul {
+  text-align: left;
+  border-right: solid 1px #859c01;
+}
+
+.sections__categories ul li a{
+    text-transform: uppercase;
+}
+
+.sections__list-one {
+  padding-left: 40px;
+}
 
 /* SEARCH NAV ========================================================================== */ 
 
-.menu--search ul div form .form-group, .menu--search ul div .navbar-form, .menu--search ul div form .form-control{
+.menu__search ul{
+  background-color: #fafbf2;
+}
+
+.menu__search ul div form .form-group, .menu__search ul div .navbar-form, .menu__search ul div form .form-control{
   width: 100%;
 }
 
