@@ -21,7 +21,7 @@
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Related story follows." %}
 
                 <!--An ASIDE containing a RELATED STORY. -->
-                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-block" content-source="http://place-hoff.com/400/266" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/400/266" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Video player follows." %}
@@ -56,13 +56,16 @@
 
                 <!--An ASIDE containing a RELATED STORY. -->
 
-                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-block" content-source="http://place-hoff.com/525/350" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/525/350" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Slideshow follows." %}
 
-                <!--Photo SLIDESHOW ======================================================= NEEDS WORK ==== -->
-                {% include 02-organisms/media/slideshow.html %}
+                {% comment %}
+                Omit slideshow until it's styled.
+                    <!--Photo SLIDESHOW ======================================================= NEEDS WORK ==== -->
+                    {% include 02-organisms/media/slideshow.html %}
+                {% endcomment %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Figure with image follows." %}
