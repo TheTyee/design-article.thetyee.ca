@@ -68,6 +68,16 @@ h5 {
   color: #869D00;
 }
 
+h6 {
+  display: inline-block;
+  margin-top: 2.4em;
+  margin-bottom: 0;
+  border-bottom: 2px solid #90AD00;
+  padding-bottom: 0.15em;
+  font-size: 1em;
+  font-weight: 700;
+}
+
 p {
   margin-bottom: 1.5em;
 }
