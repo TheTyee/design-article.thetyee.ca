@@ -91,10 +91,6 @@ a:active {color: #839800;}
 
 
 
-.blockquote { }
-
-
-
 .pullquote {
   margin: 1.33em 0em 1.33em 0em;
   font-family: Georgia, Serif;
@@ -417,6 +413,29 @@ body.cmnt--visibility { }
   padding-bottom: 40px;
 }
 
+
+
+/* BLOCKQUOTE  ========================================================================== */
+
+.blockquote { 
+    margin: 1em 0 2em 0;
+}
+
+    blockquote {
+        margin: 0 0 1rem 0;
+        padding: 0rem 1.25rem;
+        border-left: .3rem solid #eee;
+        font-size: .9em;
+        font-weight: 300;
+    }
+
+    .blockquote figcaption {
+        padding: 0rem 1.55rem;
+        text-align: ;
+        font-size: .9em;
+        font-weight: 300;
+        font-style: italic;
+    }
 
 
 /* FIGURES  ========================================================================== */
