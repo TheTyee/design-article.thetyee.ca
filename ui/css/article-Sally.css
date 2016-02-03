@@ -125,11 +125,6 @@
 }
 
 
-.narrow-menu .search span{
-  padding: 10px;
-  display: block;
-  font-size: 2em;
-}
 
 .narrow__search {
   position: static;
@@ -149,6 +144,11 @@
   padding: 22px;
 }
 
+.search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form {
+  margin: 8px 0px 0px 0px;
+  border: none;
+  border-radius: 0px;
+}
 
 /* NARROW MENU STYLES ========================================================================== */
 
@@ -380,6 +380,10 @@
   border-bottom: none;
 }
 
+.menu__logo {
+  padding: 5px 0px;
+}
+
 .menu__logo img{
   max-width: 100%;
 position: relative;
@@ -522,6 +526,10 @@ position: relative;
 
   .menu__content-wrapper {
       padding: 0px;
+  }
+
+  .menu__logo {
+    padding: 10px;
   }
 
 }
