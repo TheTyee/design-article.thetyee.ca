@@ -36,65 +36,12 @@
    ========================================================================== */
  
 
-
-
-/* PRIMARY NAV  ========================================================================== */
-
-header .menu ul > li a {
-   text-transform: uppercase;
-}
-
-.navbar-nav {
-  border-bottom: solid 1px #849c01;
-}
-
-.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .menu ul li.active > a, .menu ul li.dropdown-toggle, .menu ul .active, .menu ul .open {
-  background-color: #f8f9ed;
-}
-.navbar-default .navbar-nav > .active > a{
-  background-color: #dee3ab;
-}
-.menu{
-  margin: 0;
-  padding: 0;
-}
-.menu > ul, .block--site-header .menu a{
-  padding-right: 0px;
-  margin-right: 0px;
-}
-.menu > ul {
-  position: absolute;
-  left: 0;
-  right: 0;
-  background-color: #dee3ab;
-}
-.navbar-nav {
-  margin: 0px;
-}
-.navbar-nav > li  { 
-  position: static; 
-}
-.navbar-nav > li > .dropdown-menu { 
-  width: 100%; 
-  text-align: center; 
-  margin-top:0px;
-  padding-top: 0px;
-}
-.navbar-nav > li >  .dropdown-menu>li { 
-  display: inline-block; 
-}
-
-.menu > a, .menu .nav-right a{
-  color: #555;
-}
-
-
-/* PRIMARY NAV MOBILE TOGGLE ========================================================================== */
+/* NARROW NAV, TOP ONLY ========================================================================== */
   
-.primary-nav .narrow-menu{
+.narrow-menu{
   overflow:hidden;
 }
-.primary-nav button {
+.narrow-menu button {
   border: none;
   display: block;
   min-height: 40px;
@@ -102,16 +49,16 @@ header .menu ul > li a {
   float: left;
   background-color: transparent;
 }
-.primary-nav button:focus {
+.narrow-menu button:focus {
   outline:0;
 } 
-.primary-nav button .hamburger {
+.narrow-menu button .hamburger {
   position: relative;
   padding-left: 1.25em;
   margin-top: 8px;
   float: right;
 }
-.primary-nav button .hamburger:before {
+.narrow-menu button .hamburger:before {
   content: "";
   position: absolute;
   left: 0;
@@ -123,19 +70,66 @@ header .menu ul > li a {
    0 0.5em 0 0 rgba(118, 118, 117, 1),
    0 1em 0 0 rgba(118, 118, 117, 1);
 }
-.primary-nav button span {
+.narrow-menu button span {
   text-transform: uppercase;
   float: left;
   padding: 10px 5px;
 }
 
-/* PRIMARY NAV SEARCH ICON ========================================================================== */
+.site-nav .navbar-collapse {
+  border-top: none;
+  box-shadow: none;
+}
 
-.primary-nav .narrow-menu .search span{
+.menu__content-wrapper {
+  padding: 0px;
+  background-color: #f8f9ed;
+}
+
+ 
+
+
+.menu__left-nav, .menu__right-nav, .menu__left-nav li, .menu__right-nav li{
+  padding-left: 5px;
+  font-size: 0.95em;
+}
+
+.menu__left-nav li, .menu__right-nav li{
+  border-bottom: solid 1px #859c01;
+}
+
+
+.menu__left-nav > li a, .menu__right-nav > li a{
+  text-transform: uppercase;
+  color: #555;
+}
+
+.menu__left-nav > .open a, .menu__right-nav > .open a, .menu__left-nav > .open , .menu__right-nav > .open, {
+  color: #859c01;
+  background-color: #eef1d4;
+  border-bottom: none;
+}
+
+
+.menu__left-nav .open > a, .menu__left-nav .open > a:hover, .menu__left-nav .open > a:focus,
+.menu__left-nav > li > a:hover, .menu__left-nav > li > a:focus,
+.menu__right-nav .open > a, .menu__right-nav .open > a:hover, .menu__right-nav .open > a:focus,
+.menu__right-nav > li > a:hover, .menu__right-nav > li > a:focus  {
+  background-color: transparent;
+}
+
+
+.narrow-menu .search span{
   padding: 10px;
   display: block;
   font-size: 2em;
 }
+
+
+/* NARROW MENU STYLES ========================================================================== */
+
+
+
 
 /* LATEST STORIES ========================================================================== */ 
 
@@ -146,25 +140,47 @@ header .menu ul > li a {
  .latest-stories a {
     color: #859c01;
  }
- .latest-stories .latest-stories__media-wrapper{
+.latest-stories__media-wrapper{
     margin: 0;
     padding: 0;
     list-style-type: none;
  }
- .latest-stories .latest-stories__media-wrapper li:first{
-    color: #859c01;
+.latest-stories__media-wrapper li:first-child{
     border-top: solid 1px #859c01;
  }
- .latest-stories .latest-stories__media-wrapper li{
-    color: #859c01;
+.latest-stories__media-wrapper li{
+    color: #555;
     border-bottom: solid 1px #859c01;
+    line-height: 1.75em;
  }
- .latest-stories .latest-stories__media-wrapper .media {
+
+ .latest-stories__media-wrapper li:last-child{
+    border-bottom: none;
+ }
+
+.latest-stories__media-wrapper .media {
     margin-top: 0px;
     text-align: left;
-    padding-top: 25px;
 }
+
+.latest-stories__media-wrapper .media .media-image {
+  padding: 15px 0px;
  }
+
+/* == inside latest stories ==*/
+ .latest-stories__hed {
+    color: #859c01;
+    font-size: 1em;
+    line-height: 1.25em;
+    font-weight: bold;
+ }
+
+
+ .latest-stories__dek {
+    font-size: 1em;
+    line-height: 1.25em;
+ }
+
 
  .latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
   text-transform: capitalize;
@@ -173,8 +189,25 @@ header .menu ul > li a {
   font-size: 0.8em;
  }
 
- /* SLIDESHOW ========================================================================== */ 
+/* SECTIONS ========================================================================== */ 
 
+.sections, .sections ul, .sections__categories, .sections__list-one, .sections__list-two, .sections__list-three, .sections__list-four, .sections__list-five {
+  padding: 0px;
+}
+
+.sections ul {
+  list-style-type: none;
+}
+
+.sections__categories ul li, .sections__categories ul li a {
+  color: #859c01;
+}
+
+.sections__list-four ul li:last-child {
+  border-bottom: none;
+}
+
+ /* SLIDESHOW ========================================================================== */
 .slideshow {
 }
 .slideshow img {
@@ -247,19 +280,34 @@ header .menu ul > li a {
 @media (min-width: 768px) {
 
 /* BOOTSTRAP OVERRIDES */
+
+/*== Sets full-width nav wrapper =====*/
   .navbar-nav {
     width: 100%;
     position: relative;
   }
+
+/*== Overrides the hover and active states from Bootstrap =====*/
+  .nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent;
+    color: #859c01 !important;
+
+  }
+
+/*== turns off relative positioning so the dropdowns will align on the left =====*/
   .nav >li {
     position: static;
   }
   .menu__left-nav, .menu__right-nav {
     position: static;
+    padding-left: 20px;
   }
+
+  /*== Floats lis for horizontal wide nav =====*/
   .menu ul > li {
     float: left;
   }
+  /*== Turns off defaults on the nav buttons =====*/
   .site-nav {
     font-size: 16px;
     margin-top: 0px;
@@ -267,20 +315,34 @@ header .menu ul > li a {
     text-align: center
   }
 
+/*== Sets padding on the nav elements =====*/
    .block--site-header .menu__left-nav > li > a, .block--site-header .menu__right-nav > li > a {
     padding: 22px 5px;
     display: inline-block;
     color: #555;
    }
 
-.block--site-header .menu ul .open a{
+/*== turns off default handling for .open =====*/
+.menu__left-nav .open a, .block--site-header .menu__right-nav .open a, .menu__left-nav .open, .menu__right-nav .open{
   color: #859c01;
+  background-color: transparent;
 }
 
 
+
+.menu ul {
+  padding: 0px;
+}
+
   /* LATEST STORIES  SLIDER ========================================================================== */ 
 
-  .dropdown-menu, .sections {
+
+.primary .menu .menu__content-wrapper {
+  padding: 0px 30px;
+}
+
+
+  .dropdown-menu {
     width: 100vw;
     left: 0;
   }
@@ -293,7 +355,7 @@ header .menu ul > li a {
   }
   .latest-stories .latest-stories__media-wrapper li {
     border-right: solid 1px #859c01;
-    height: 385px;
+
   }
   .latest-stories .latest-stories__media-wrapper li:last-child {
     border-right: none;
@@ -327,8 +389,11 @@ header .menu ul > li a {
 
 /* SECTIONS NAV ========================================================================== */ 
 
-.sections ul li {
-  clear: both;
+
+/* SEARCH NAV ========================================================================== */ 
+
+.menu--search ul div form .form-group, .menu--search ul div .navbar-form, .menu--search ul div form .form-control{
+  width: 100%;
 }
 
 
