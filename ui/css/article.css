@@ -201,17 +201,23 @@ body.cmnt--visibility { }
 
 
     [data-dev-object-descrip]:hover::before {
+        display: inline-block;
+
         margin-top: -15px;
-        padding: 5px 0px 10px 10px;
-        background-color: transparent;
+        padding: 5px 0px 0px 10px;
+        /* background-color: hsla(120, 100%, 100%, 0.9); */
+
+
+        color: tomato;
+        font-size: .65em;
+        line-height: 1.1em;
+        font-weight: bold;
 
         content: attr(data-dev-object-descrip) "\a0\a0\a0\a0\a0 ---> \a0" attr(data-dev-status);
 
-        color: tomato;
-        font-size: .75em;
-        font-weight: bold;
     }   /* elements that have a data-dev-object-descrip attribute get labeled with 
         their object-description and dev-status upon hover */
+
 
         [data-dev-object-descrip*="molecules"][data-dev-object-descrip]:hover::before {
             color: DodgerBlue;
