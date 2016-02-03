@@ -3,20 +3,13 @@
    article.css. 
    ========================================================================== */
 
-   @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-
 /* ==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
-  
-
-   .article {
-   }
 
    img {
       max-width: 100%;
    }
-
    .block--site-header{
       background-color: #dee3ab;
       width: 100%;
@@ -47,203 +40,296 @@
 
 /* PRIMARY NAV  ========================================================================== */
 
-header .primary-nav ul > li {
+header .menu ul > li a {
    text-transform: uppercase;
 }
 
-.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .primary-nav ul li.active > a, .primary-nav ul li.dropdown-toggle, .primary-nav ul .active, .primary-nav ul .open {
-   background-color: #f8f9ed;
+.navbar-nav {
+  border-bottom: solid 1px #849c01;
 }
 
+.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .menu ul li.active > a, .menu ul li.dropdown-toggle, .menu ul .active, .menu ul .open {
+  background-color: #f8f9ed;
+}
 .navbar-default .navbar-nav > .active > a{
-   background-color: #dee3ab;
-
+  background-color: #dee3ab;
 }
-
-.block--site-header .primary-nav .desktop-menu{
-   margin: 0;
-   padding: 0;
+.menu{
+  margin: 0;
+  padding: 0;
 }
-
-.block--site-header .primary-nav .desktop-menu > ul, .block--site-header .primary-nav .desktop-menu a {
-   padding-right: 0px;
-   margin-right: 0px;
-   
-
+.menu > ul, .block--site-header .menu a{
+  padding-right: 0px;
+  margin-right: 0px;
 }
-
-.block--site-header .primary-nav .desktop-menu > ul {
-    position: absolute;
-    left: 0;
-    right: 0;
-    background-color: #dee3ab;
+.menu > ul {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #dee3ab;
 }
-
 .navbar-nav {
   margin: 0px;
 }
+.navbar-nav > li  { 
+  position: static; 
+}
+.navbar-nav > li > .dropdown-menu { 
+  width: 100%; 
+  text-align: center; 
+  margin-top:0px;
+  padding-top: 0px;
+}
+.navbar-nav > li >  .dropdown-menu>li { 
+  display: inline-block; 
+}
 
-
-.navbar-nav > li  { position: static; }
-.navbar-nav > li > .dropdown-menu { width: 100%; text-align: center; }
-.navbar-nav > li >  .dropdown-menu>li { display: inline-block; }
-
-
+.menu > a, .menu .nav-right a{
+  color: #555;
+}
 
 
 /* PRIMARY NAV MOBILE TOGGLE ========================================================================== */
   
-  .block--site-header .primary-nav .mobile-menu{
-      overflow:hidden;
-  }
-   .block--site-header .primary-nav button {
-      border: none;
-      display: block;
-      min-height: 40px;
-      min-width: 40px;
-      float: left;
-      background-color: transparent;
-   }
-
-   .block--site-header .primary-nav button:focus {
-      outline:0;
-   }
-
-   
-   .block--site-header .primary-nav button .hamburger {
-     position: relative;
-     padding-left: 1.25em;
-     margin-top: 8px;
-     float: right;
-   }
-
-   .block--site-header .primary-nav button .hamburger:before {
-     content: "";
-     position: absolute;
-     left: 0;
-     top: 0.25em;
-     width: 2em;
-     height: 0.25em;
-     background: rgba(118, 118, 117, 1);
-     box-shadow: 
-       0 0.5em 0 0 rgba(118, 118, 117, 1),
-       0 1em 0 0 rgba(118, 118, 117, 1);
-   }
-
-   .block--site-header .primary-nav button span {
-      text-transform: uppercase;
-      float: left;
-      padding: 10px 5px;
-   }
-   
-   .block--site-header .primary-nav button .mobile-toggle {
-
-   }
-
-
-
-
-   /* PRIMARY NAV SEARCH ICON ========================================================================== */
-
-   .block--site-header .primary-nav .mobile-menu .search span{
-      padding: 10px;
-      display: block;
-      font-size: 2em;
-
-
-   }
-
-
-
-   /* LATEST STORIES ========================================================================== */ 
-
-   .latest-stories {
-      background-color: #f8f9ed;
-      color: #859c01;
-   }
-
-   .latest-stories a{
-      color: #859c01;
-   }
-
-   .latest-stories ul{
-      margin: 0;
-      padding: 0;
-   }
-
-   .latest-stories ul li:first{
-      color: #859c01;
-      border-top: solid 1px #859c01;
-   }
-
-   .latest-stories ul li{
-      color: #859c01;
-      border-bottom: solid 1px #859c01;
-   }
-
-   .latest-stories .media {
-      margin-top: 0px;
-      text-align: left;
-   }
-
-   .latest-stories .media h4 {
-      text-transform: capitalize;
-   }
-
-   .latest-stories .media .latest-stories__date,  .latest-stories .media .latest-stories__authour {
-    text-transform: capitalize;
-    color: grey;
-    font-style: oblique;
-    font-size: 0.8em;
-   }
-/* ==========================================================================
-   STATES 
-   (A state is something that augments and overrides all other styles. 
-   State styles can apply to layout and/or module styles; and State styles 
-   indicate a JavaScript dependency.
-   For example, an accordion section may be in a collapsed or expanded state. 
-   A message may be in a success or error state. Eg: .is-collapsed or .is-error 
-   So again, something like a helper class. 
-   But sometimes there may be a state that is specific to a particular object.
-   Eg: .is-tab-active
-   https://smacss.com/book/type-state)
-   ========================================================================== */
-
-
-
-
-  
-
-
-
-
-/* ==========================================================================
-   Progressively enhance for larger screens 
-   ========================================================================== */
-
-
- /* 768 AND UP ========================================================================== */ 
-@media (min-width: 768px) {
-  
-
-  /* FULL WIDTH NAV SLIDER ========================================================================== */ 
-
-  section.latest-stories {
-    max-width: 100%;
-  }
-
-section.latest-stories .latest-stories__media-wrapper{
-  border-bottom: solid 1px #859c01;
+.primary-nav .narrow-menu{
+  overflow:hidden;
 }
-  section.latest-stories ul li{
+.primary-nav button {
+  border: none;
+  display: block;
+  min-height: 40px;
+  min-width: 40px;
+  float: left;
+  background-color: transparent;
+}
+.primary-nav button:focus {
+  outline:0;
+} 
+.primary-nav button .hamburger {
+  position: relative;
+  padding-left: 1.25em;
+  margin-top: 8px;
+  float: right;
+}
+.primary-nav button .hamburger:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 2em;
+  height: 0.25em;
+  background: rgba(118, 118, 117, 1);
+  box-shadow: 
+   0 0.5em 0 0 rgba(118, 118, 117, 1),
+   0 1em 0 0 rgba(118, 118, 117, 1);
+}
+.primary-nav button span {
+  text-transform: uppercase;
+  float: left;
+  padding: 10px 5px;
+}
+
+/* PRIMARY NAV SEARCH ICON ========================================================================== */
+
+.primary-nav .narrow-menu .search span{
+  padding: 10px;
+  display: block;
+  font-size: 2em;
+}
+
+/* LATEST STORIES ========================================================================== */ 
+
+ .latest-stories {
+    background-color: #f8f9ed;
+    color: #859c01;
+ }
+ .latest-stories a {
+    color: #859c01;
+ }
+ .latest-stories .latest-stories__media-wrapper{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+ }
+ .latest-stories .latest-stories__media-wrapper li:first{
+    color: #859c01;
+    border-top: solid 1px #859c01;
+ }
+ .latest-stories .latest-stories__media-wrapper li{
+    color: #859c01;
+    border-bottom: solid 1px #859c01;
+ }
+ .latest-stories .latest-stories__media-wrapper .media {
+    margin-top: 0px;
+    text-align: left;
+    padding-top: 25px;
+}
+ }
+
+ .latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
+  text-transform: capitalize;
+  color: grey;
+  font-style: oblique;
+  font-size: 0.8em;
+ }
+
+ /* SLIDESHOW ========================================================================== */ 
+
+.slideshow {
+}
+.slideshow img {
+  min-width: 100%;
+}
+.slideshow a {
+  background: #90AD00;
+  color: #fff;
+}
+.slideshow .slidesjs-previous:before {
+  content: '< ';
+}
+.slideshow .slidesjs-previous{
+  padding: 7px;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 5px 5px 5px 0px;
+}
+.slideshow .slidesjs-next{
+  padding: 7px;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 5px 5px 5px 0px;
+}
+.slideshow .slidesjs-next:after {
+  content: ' >';
+}
+.slideshow ul {
+  display: inline-block;
+  margin-top: 10px;
+  float: right;
+}
+.slideshow ul li{
+  display: inline;
+  margin: 0px 3px;
+}
+.slideshow ul li a {
+  padding: 4px 10px;
+  border-radius: 100%;
+}
+
+
+/* ==========================================================================
+ STATES 
+ (A state is something that augments and overrides all other styles. 
+ State styles can apply to layout and/or module styles; and State styles 
+ indicate a JavaScript dependency.
+ For example, an accordion section may be in a collapsed or expanded state. 
+ A message may be in a success or error state. Eg: .is-collapsed or .is-error 
+ So again, something like a helper class. 
+ But sometimes there may be a state that is specific to a particular object.
+ Eg: .is-tab-active
+ https://smacss.com/book/type-state)
+ ========================================================================== */
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+ Progressively enhance for larger screens 
+ ========================================================================== */
+
+
+/* 768 AND UP ========================================================================== */ 
+@media (min-width: 768px) {
+
+/* BOOTSTRAP OVERRIDES */
+  .navbar-nav {
+    width: 100%;
+    position: relative;
+  }
+  .nav >li {
+    position: static;
+  }
+  .menu__left-nav, .menu__right-nav {
+    position: static;
+  }
+  .menu ul > li {
+    float: left;
+  }
+  .site-nav {
+    font-size: 16px;
+    margin-top: 0px;
+    padding-top: 0px;
+    text-align: center
+  }
+
+   .block--site-header .menu__left-nav > li > a, .block--site-header .menu__right-nav > li > a {
+    padding: 22px 5px;
+    display: inline-block;
+    color: #555;
+   }
+
+.block--site-header .menu ul .open a{
+  color: #859c01;
+}
+
+
+  /* LATEST STORIES  SLIDER ========================================================================== */ 
+
+  .dropdown-menu, .sections {
+    width: 100vw;
+    left: 0;
+  }
+
+  .latest-stories .latest-stories__media-wrapper{
+    border-bottom: solid 1px #859c01;
+  }
+  .latest-stories .latest-stories__media-wrapper li{
     border-bottom: none;
   }
-
-
-  section.latest-stories .media {
+  .latest-stories .latest-stories__media-wrapper li {
+    border-right: solid 1px #859c01;
+    height: 385px;
+  }
+  .latest-stories .latest-stories__media-wrapper li:last-child {
+    border-right: none;
+  } 
+  .latest-stories .media {
     display: inline-block;
     text-align: left;
-
   }
+  .latest-stories .media .media-image{
+  }
+
+  .latest-stories .media .media-image img{
+      min-width: 100%;
+  }
+  .latest-stories .media .media-body {
+    height: 100%;
+    position: relative;
+  }
+ 
+.latest-stories__story-item {
+
 }
 
+.latest-stories__story-item--hed{
+    font-family: 'Source Sans Pro', sans-serif;
+ }
+
+  .wide-nav--latest-stories .dropdown, .wide-nav--sections .dropdown{
+    display: none;
+  }
+
+/* SECTIONS NAV ========================================================================== */ 
+
+.sections ul li {
+  clear: both;
+}
+
+
+}
