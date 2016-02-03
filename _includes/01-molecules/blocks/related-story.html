@@ -1,0 +1,12 @@
+<!-- BEGIN 01-molecules/blocks/related-story -->
+If you want to adapt the object you can extend it by using the story-item-class parameter to add a new BEM class. Like this:
+	[% include 01-molecules/blocks/story-item.html content-source="http://baconmockup.com/300/200" story-item-class="story-item--latest-stories" %]
+-->
+
+<div class="related-story" data-dev-object-descrip="01-molecules/blocks/related-story" data-dev-status="IN-PROGRESS">
+	<h4>Related Story</h4>
+
+	{% include 01-molecules/blocks/story-item.html content-source=include.content-source%}
+
+</div>
+<!-- END 01-molecules/blocks/related-story -->

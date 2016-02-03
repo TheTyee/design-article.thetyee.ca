@@ -28,7 +28,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.39em;
+  line-height: 1.5em;
   color: #555;
 }
 
@@ -66,16 +66,6 @@ h5 {
   font-weight: 600;
   line-height: 1.18518519em;
   color: #869D00;
-}
-
-h6 {
-  display: inline-block;
-  margin-top: 2.4em;
-  margin-bottom: 0;
-  border-bottom: 2px solid #90AD00;
-  padding-bottom: 0.15em;
-  font-size: 1em;
-  font-weight: 700;
 }
 
 p {
@@ -497,19 +487,15 @@ aside { }
 
 .author-info {
   margin-top: 0.75em;
-  padding: 0.45em 0  0.4em 0;
+  padding: 0.5em 0  0.5em 0;
   border-top: 1px solid #A8A8A8;
   border-bottom: 1px solid #A8A8A8;
-
-  font-weight: 600;
 }
 
     .author-info img{
       float: left;
-      padding-top:;
-      margin-top: 0.25em;
 
-      height: 3.6em;
+      height: 4em;
       width: auto;
       background-color: teal;
       border-radius: 50%; 
@@ -517,86 +503,12 @@ aside { }
 
     .author-info__bio {
       display: block;
-      padding-top: 0.15em;
-      font-size: 0.8em;
-      font-weight: 300;
     }
 
     .author-info div {
       overflow:hidden; 
-      padding-left: 0.75em;
+      padding-left: 1em;
     }
-
-
-
-/* TOOL-BAR  ========================================================================== */
-
-.tool-bar{
-  margin: 1em 0 .3em 0;
-}
-
-    .tool-bar ul {
-          display: block;
-          margin: 0;
-          padding: 0;
-          font-size: em;
-          list-style: none;
-    }
-
-    .tool-bar li {
-        float: left;
-        margin-right: .7em;
-    }
-
-        .btn-social-icon { /* This is adapted from bootstrap */
-            position:relative;
-            padding-left:44px;
-            text-align:left;
-            white-space:nowrap;
-            overflow:hidden;
-            text-overflow:ellipsis;
-            height:32px;
-            width:32px;
-            padding:0;}
-
-            .btn-social-icon>:first-child { /* This is adapted from bootstrap */
-                position:absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                width: 30px;
-                line-height: 32px;
-                font-size: 1.5em;
-                text-align: center;
-                border-right: none}
-
-        a.btn-twitter {
-              color: #fff;
-              background-color: #55acee;
-        }
-
-        a.btn-facebook {
-              color: #fff;
-              background-color: #3B5998;
-        }
-
-        a.btn-email {
-              color: #fff;
-              background-color: grey;
-        }
-
-        .btn-donate {
-              padding-left: 0em;
-              padding-right: 0em;
-              background-color: transparent;
-        }
-
-        .btn-print, .btn-comment {
-              padding-left: 0em;
-              padding-right: 0em;
-              background-color: transparent;
-              font-size: 1.2em;
-        }
 
 
 
