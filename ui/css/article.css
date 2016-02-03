@@ -97,15 +97,16 @@ a:active {color: #839800;}
 
 .lead-in:first-letter {
     display: block;
+    overflow: hidden;
     float: left;
     padding-right: 0.06em;
+    padding-bottom:0;
     margin-top: -0.065em;
-
-
+    margin-bottom: -0.1em;
     font-family: Georgia, Serif;
     font-weight: 800;
-    font-size: 5.3em;
-    line-height: 1;
+    font-size: 4.9em;
+    line-height: 1em;
     text-transform: capitalize;
     color: #424242;
 }
@@ -530,6 +531,8 @@ aside { }
 
 
 /* TOOL-BAR  ========================================================================== */
+/* This object is a total mess! For some reason the bootstrap default button html & css 
+wasn't working so I had to hack some crap together. —AG */
 
 .tool-bar{
   margin: 1em 0 .3em 0;
