@@ -598,8 +598,11 @@ aside { }
 
 
 /* TOOL-BAR  ========================================================================== */
-/* This object is a total mess! For some reason the bootstrap default button html & css 
-wasn't working so I had to hack some crap together. —AG */
+/* THIS OBJECT IS A TOTAL MESS! 
+   -->> Start again from scratch using the basic bootstrap button markup, like I already 
+   started in the messaging-zone buttons. <<--
+   For some reason the bootstrap default button html & css wasn't working so I had to hack 
+   some crap together. —AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -714,7 +717,7 @@ wasn't working so I had to hack some crap together. —AG */
         height: 250px;
     }
 
-     .bigbox::before { 
+     .bigbox:before { 
        display: block; 
        margin: 0.8em auto 2em auto;
        text-align: center; 
@@ -725,6 +728,32 @@ wasn't working so I had to hack some crap together. —AG */
        font-weight: 400;
        letter-spacing: 0.15em;
  
+    }
+
+    /* BIGBOX AD - 1ST POSITION  ---------------------------------------------- */
+    /* This is the top add position on the page. It will appear next to the 
+       featured image when there's room. Otherwise it will appear within 
+       article__body after the 3rd paragraph.   */
+
+    .featured-media .bigbox {
+        display: none;
+    }
+
+    @media screen and (min-width: 1125px) {
+
+        .featured-media .bigbox {
+            display: block;
+            position: relative;
+            float:right;
+            margin-top: 0.24em;
+            margin-right: -19em;
+            width: 300px; 
+            border: none
+        }
+
+        .featured-media .bigbox:before { 
+           margin-top: 0;
+        }
     }
 
 
