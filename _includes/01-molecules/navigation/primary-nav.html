@@ -1,79 +1,65 @@
 <!-- Begin molecules/navigation/primary-nav -->
-<nav class="navbar yamm navbar-default navbar navbar-default ] site-nav primary-nav" data-dev-object-descrip="molecules/navigation/primary-nav" data-dev-status="IN-PROGRESS" role="navigation">
+<nav class="[ navbar navbar-default yamm] site-nav primary-nav" data-dev-object-descrip="molecules/navigation/primary-nav" data-dev-status="IN-PROGRESS" role="navigation">
   
 <!--NARROW MENU-->
 
-  <div class="narrow-menu hidden-sm hidden-md hidden-lg hidden-xl">
+  <div class="narrow-menu [ hidden-sm hidden-md hidden-lg hidden-xl ]">
       <!--Toggle-->
-    <div class="mobile-toggle col-xs-4 pull-left">
-      <button type="button" class="collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <div class="[ col-xs-4 pull-left ] mobile-toggle ">
+      <button type="button" class="collapsed menu__hamburger" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span>Menu</span>
-        <div class="hamburger"></div>
+        <i class="fa fa-bars"></i>
       </button>
     </div>
     <!--logo -->
-    <a class="col-xs-4" href="#"><img src="../../ui/img/tyee_logo.png" class="" id="site-logo" alt="Logo Alt Text" /></a>
+    <a class="col-xs-4" href="#"><img src="../../ui/img/tyee_logo.png" class="narrow-menu__logo" id="site-logo" alt="Logo Alt Text" /></a>
 
     <!--search-->
-    <div class="search col-xs-4 pull-right">
-      <span class="glyphicon glyphicon-search col-xs-4 pull-right" aria-hidden="true"></span>
+    <div class="narrow__search [ col-xs-4 ]">
+        {% include 01-molecules/blocks/search-block.html %}
     </div>
   </div>
 
 
 <!-- WIDE MENU -->
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="[ collapse navbar-collapse ] menu row" id="bs-example-navbar-collapse-1">
+  <div class="[ collapse navbar-collapse ] menu" id="bs-example-navbar-collapse-1">
 
-    <div class="nav navbar-nav col-md-12">
-      <ul class="menu__left-nav col-md-5 col-sm-5 nav">
-        <li class="menu--latest-stories dropdown">
+    <div class="[ navbar-nav col-sm-12 col-md-12 col-lg-12 ] menu__content-wrapper">
+      <ul class="[ col-sm-5 col-md-5 col-lg-5 nav ] menu__left-nav ">
+        <li class="menu__latest-stories dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Latest Stories</a>
             <ul class="dropdown-menu">
               <li>{% include 02-organisms/sections/latest-stories.html %}</li>
             </ul>
         </li>
-        <li class="menu--sections dropdown">
+        <li class="menu__sections [ dropdown ]">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sections</a>
           <ul class="dropdown-menu">
               <li>{% include 01-molecules/navigation/sections-nav.html %}</li>
           </ul>
         </li>
-        <li class="menu--newsletter"><a href="#">Newsletter</a></li>
-        <li class="menu--more"><a href="#">More</a></li>
+        <li class="menu__newsletter"><a href="#">Newsletter</a></li>
       </ul>
       
       <!--LOGO-->
 
-      <ul class="col-md-2 col-sm-2 nav">
-        <li class="menu--logo hidden-xs">
+      <ul class="[ menu__logo col-sm-2 col-md-2 col-lg-2 nav hidden-xs ]">
+        <li class="[ hidden-xs ]">
            <img src="../../ui/img/tyee_logo.png" alt="Logo Alt Text" />
         </li>
       </ul>
 
       <!--RIGHT NAV -->
 
-      <ul class="menu__right-nav col-md-offset-1 col-sm-offset-1 col-md-3 col-sm-2 nav">
-        <li class="col-md-offset-2 col-md-2 col-sm-2 menu--join"><a href="#">Join</a></li>
-        <li class="col-md-1 col-sm-1 menu--facebook"><a href="#"><i class="fa fa-facebook-square fa-lg"></i></a></li>
-        <li class="col-md-1 col-sm-1 menu--twitter"><a href="#"><i class="fa fa-twitter-square fa-lg"></i></a></li>
-        <li class="col-md-5 col-sm-3 menu--search dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="glyphicon glyphicon-search"></span></a>
-          <ul class="dropdown-menu">
-              <div>
-                <form class="navbar-form navbar-left" role="search">
-                  <li class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                  </li>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-              </div>
-      
-        </ul>
-</ul>
+      <ul class="menu__right-nav [ col-md-offset-1 col-lg-offset-1  col-sm-5 col-md-4 col-lg-4  nav ]">
+        <li class="menu__join [ col-sm-offset-2 col-lg-offset-2 col-lg-2 col-sm-2 ]"><a href="#">Join</a></li>
+        <li class="menu__facebook [ col-lg-1 col-sm-1 ]"><a href="#"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+        <li class="menu__twitter [ col-lg-1 col-sm-1 ]"><a href="#"><i class="fa fa-twitter-square fa-lg"></i></a></li>
+        <li class="menu__search [ col-sm-4 col-md-4 col-lg-4 hidden-xs dropdown nav ]">
 
-  </div><!-- /.navbar-collapse -->
-
-      
-
+          {% include 01-molecules/blocks/search-block.html %}
+        </li>
+      </ul>
+  </div>
 </nav>
