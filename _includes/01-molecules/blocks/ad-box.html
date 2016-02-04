@@ -1,5 +1,11 @@
 <!-- Begin 01-molecules/blocks/ad-box -->
-<aside class="bigbox" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">
-	<img src='{{site.url}}/ui/img/{{ include.ad-source}}'>
+<!-- Set the parameter ad-position="bigbox--1st-position" if this is the top ad position -->
+{% comment %}
+<!-- The top ad position will appear next to the featured image when there's room. Otherwise it will appear within article__body after the 3rd paragraph.
+It gets marked up in both positions and the .bigbox--1st-position display properties determine which one is visible. -->
+{% endcomment %}
+
+<aside class="bigbox {{ include.ad-position}}" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">
+	<img src='{{ site.url}}ui/img/{{ include.ad-source}}'>
 </aside>
 <!-- END 01-molecules/blocks/ad-box -->

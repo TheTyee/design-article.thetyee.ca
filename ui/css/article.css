@@ -50,7 +50,12 @@ h1 {
   margin-bottom: 0.333em;
 }
 
-
+h3 {
+  margin-top: 0.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #424242;
+}
 
 h4 {
   font-size: 1.42em;
@@ -76,10 +81,11 @@ h6 {
   padding-bottom: 0.15em;
   font-size: 1em;
   font-weight: 700;
+  letter-spacing: .04em
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 
@@ -90,183 +96,51 @@ a:hover {color: #839800;}
 a:active {color: #839800;}
 
 
-.blockquote { }
+
+.pullquote {
+  margin: 1.33em 0em 1.33em 0em;
+  font-family: Georgia, Serif;
+  font-weight: 800;
+  font-size: 1.36em;
+  line-height: 1.333em;
+  color: #424242;
+
+}
 
 
-.pullquote { }
 
 .lead-in:first-letter {
     display: block;
+    overflow: hidden;
     float: left;
     padding-right: 0.06em;
+    padding-bottom:0;
     margin-top: -0.065em;
-
-
+    margin-bottom: -0.1em;
     font-family: Georgia, Serif;
     font-weight: 800;
-    font-size: 5.3em;
-    line-height: 1;
+    font-size: 4.9em;
+    line-height: 1em;
     text-transform: capitalize;
     color: #424242;
 }
 
 
 
-/* ==========================================================================
-   #HELPER Classes
-   ========================================================================== */
+/* CAPTIONS  ========================================================================== */
 
-
-/** RESPONSIVE HELPER CLASSES **/
-
-/*  RESPONSIVE IMAGES -- forces the image to be the same width as its parent 
-    element. Confusingly similar in name to Bootstrap's .img-responsive but this 
-    will actually stretch an image rather than merely shrink it. */
-.responsive-img {
-  width: 100%; 
-  height: auto; 
-  display: block;
+.caption {
+    padding-top: .65em;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #A8A8A8;
+    font-size: 0.777em;
+    font-weight: 700;
+    line-height: 1.5em;
 }
 
-/*  RESPONSIVE EMBED -- This allows a Youtube embed to expand proportionally to 
-    fill a column. */
-.responsive-embed {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 0px;
-    height: 0;
-    overflow: hidden;
-}
-
-    .responsive-embed iframe {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
+    .caption__media--credit {
+        font-weight: 300;
     }
-
-    .responsive-embed--audio {
-        padding-bottom: 150px;
-    }
-
-
-
-/**
- *  COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES
- *  This displays the browser annotations on organisms and molecules. 
- *  This class and the custom attributes exist only for prototyping and 
- *  should be removed in production.
-
- *  HTML Syntax 
-    -----------
-    The body tag receives a .cmnt--visibility class:
-        <body class="cmnt--visibility>
-
-    The outermost tag of every object (molecules and organisms)
-    gets 2 custom attributes that describe what the object is and
-    its current development status:
-        <tag data-dev-object-descrip="" data-dev-status="">
-
-    The value of data-dev-object-descrip should be the object's 
-    include path and name. E.g.:
-        data-dev-object-descrip="molecules/navigation/primary-nav"
-
-    The value of data-dev-status should be the object's development 
-    status. There's 3 options:
-        data-dev-status="IN-PROGRESS"
-        data-dev-status="IN-REVIEW"
-        data-dev-status="COMPLETE"
-    This value should be manually updated during the dev process.
-
- */
-
-body.cmnt--visibility { }
-    /* This class is applied to the body tag to trigger the display of 
-    object dev-status colours upon hover */
-
-        body.cmnt--visibility:hover [data-dev-status~="IN-PROGRESS"] {
-            background-color: hsla(60, 100%, 50%, 0.04) !important;
-        }   /* elements that are "in-progress" are coloured pale yellow when
-            there's hover on the body tag */
-
-        body.cmnt--visibility:hover [data-dev-status~="IN-REVIEW"] {
-            background-color: hsla(180, 100%, 50%, .1) !important;
-        }   /* elements that are "in-progress" are coloured pale cyan when
-            there's hover on the body tag */
-
-        body.cmnt--visibility [data-dev-status~="COMPLETE"]:hover {
-            background-color: hsla(120, 100%, 50%, .1) !important;
-        }   /* elements that are "complete" are coloured pale green but only when
-            there's hover directly on the element itself */
-
-        body.cmnt--visibility:hover [data-dev-object-descrip*="organisms"] {
-            border: 1px solid Tomato !important;
-        }   /* elements that are "organisms" receive a border when
-            there's hover on the body tag */
-
-        body.cmnt--visibility:hover [data-dev-object-descrip*="molecules"] {
-          border: 1px solid DodgerBlue !important;
-        }   /* elements that are "molecules" receive a border when
-            there's hover on the body tag */
-
-
-    [data-dev-object-descrip]:hover::before {
-        display: inline-block;
-
-        margin-top: -15px;
-        padding: 5px 0px 0px 10px;
-        /* background-color: hsla(120, 100%, 100%, 0.9); */
-
-
-        color: tomato;
-        font-size: .65em;
-        line-height: 1.1em;
-        font-weight: bold;
-
-        content: attr(data-dev-object-descrip) "\a0\a0\a0\a0\a0 ---> \a0" attr(data-dev-status);
-
-    }   /* elements that have a data-dev-object-descrip attribute get labeled with 
-        their object-description and dev-status upon hover */
-
-
-        [data-dev-object-descrip*="molecules"][data-dev-object-descrip]:hover::before {
-            color: DodgerBlue;
-        }   /* elements that are molecules and have a data-dev-object-descrip 
-            attribute get their label coloured blue to match their border */
-
-
-
-/*  ---- The following rules are deprecated but could be brought back into use if
-    ---- the dev status of objects requires greater visual emphasis
-
-    [data-dev-status~="IN-PROGRESS"]:hover::after {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        background-color: yellow;
-        content: "in progress";
-        color: red;
-        font-size: .75em;
-        font-weight: bold;
-    } 
-
-    [data-dev-status~="IN-REVIEW"]::after {
-        content: "in review";
-        margin-left: 10px;
-        background-color: yellow;
-        color: red;
-        font-weight: bold;
-    }
-
-    [data-dev-status~="COMPLETE"]::after {
-        content: "complete";
-        margin-left: 10px;
-        background-color: transparent;
-        color: green;
-        font-weight: bold;
-    }
-
-    ---- */
 
 
 
@@ -297,6 +171,10 @@ body.cmnt--visibility { }
      position: relative;
      max-width: 34em;
      margin: 0;
+}
+
+.article__body {
+     margin-bottom:2em;
 }
 
 
@@ -397,11 +275,42 @@ body.cmnt--visibility { }
 
 
 
+/* BLOCKQUOTE  ========================================================================== */
+
+.blockquote { 
+    margin: 1em 0 2em 0;
+}
+
+    blockquote {
+        margin: 0 0 1rem 0;
+        padding: 0rem 1.25rem;
+        border-left: .3rem solid #eee;
+        font-size: .9em;
+        font-weight: 300;
+    }
+
+    .blockquote figcaption {
+        padding: 0rem 1.55rem;
+        text-align: ;
+        font-size: .9em;
+        font-weight: 300;
+        font-style: italic;
+    }
+
+
+/* FIGURES  ========================================================================== */
+
 figure {
   /* clear: right; */
   float:left;
   width: 100%;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
+
+  .featured-media figure {
+      margin-top: 0.25em;
+  }
 
 
 
@@ -411,11 +320,11 @@ figure {
 aside { }
 
     .aside {
+        clear: right;
         position: relative;
         width: 45%;
         float: right;
-        padding: 1em 0 2em 1.5em;
-        /* Aligns asides flush right inside article__body */
+        padding: 1em 0 2em 1.5em;/* Aligns asides flush right inside article__body */
     }
 
     @media screen and (min-width: 38.5em) {
@@ -486,13 +395,6 @@ aside { }
 
 
 
-
-.caption {
-
-}
-
-
-
 /* AUTHOR INFO  ========================================================================== */
 
 .author-info {
@@ -530,9 +432,14 @@ aside { }
 
 
 /* TOOL-BAR  ========================================================================== */
+/* THIS OBJECT IS A TOTAL MESS! 
+   -->> Start again from scratch using the basic bootstrap button markup, like I already 
+   started in the messaging-zone buttons. <<--
+   For some reason the bootstrap default button html & css wasn't working so I had to hack 
+   some crap together. â€”AG */
 
 .tool-bar{
-  margin: 1em 0 .3em 0;
+  margin: .85em 0 .3em 0;
 }
 
     .tool-bar ul {
@@ -557,30 +464,41 @@ aside { }
             text-overflow:ellipsis;
             height:32px;
             width:32px;
-            padding:0;}
+            padding:0;
+        }
 
-            .btn-social-icon>:first-child { /* This is adapted from bootstrap */
+            .btn-social-icon>:first-child {/* This is adapted from bootstrap */
                 position:absolute;
                 left: 0;
                 top: 0;
                 bottom: 0;
                 width: 30px;
                 line-height: 32px;
-                font-size: 1.5em;
+                font-size:;
                 text-align: center;
-                border-right: none}
+                border-right: none;
+            }
 
-        a.btn-twitter {
+        .fa:before, .btn-social-icon .glyphicon:before {
+          display: inline-block;
+          height: 100%;
+          font-size: 1.5em;
+        }
+
+
+
+
+        .btn-twitter {
               color: #fff;
               background-color: #55acee;
         }
 
-        a.btn-facebook {
+        .btn-facebook {
               color: #fff;
               background-color: #3B5998;
         }
 
-        a.btn-email {
+        .btn-email {
               color: #fff;
               background-color: grey;
         }
@@ -633,7 +551,7 @@ aside { }
         height: 250px;
     }
 
-     .bigbox::before { 
+     .bigbox:before { 
        display: block; 
        margin: 0.8em auto 2em auto;
        text-align: center; 
@@ -646,7 +564,41 @@ aside { }
  
     }
 
+    /* BIGBOX AD - 1ST POSITION  ---------------------------------------------- */
+    /* This is the top add position on the page. It will appear next to the 
+       featured image when there's room. Otherwise it will appear within 
+       article__body after the 3rd paragraph.
+       It gets marked up in both positions and the following display properties
+       determine which one is visible. */
 
+    .featured-media .bigbox--1st-position {
+        display: none;
+    }
+
+    @media screen and (min-width: 1125px) {
+
+        .bigbox--1st-position {
+            display: none;
+        }
+
+        .featured-media .bigbox--1st-position {
+            display: block;
+            position: relative;
+            float:right;
+            margin-top: 0.24em;
+            margin-right: -19em;
+            width: 300px; 
+            border: none
+        }
+
+        .featured-media .bigbox--1st-position:before { 
+           margin-top: 0;
+        }
+    }
+
+
+
+/* SLIDESHOW  ========================================================================== */
 
 .slideshow {
   /* clear:right; */
@@ -656,7 +608,10 @@ aside { }
 
 
 
+/* MESSAGING BLOCK  ========================================================================== */
+
 .messaging-block {
+    padding-bottom: 1em;
     border-top: 1px solid #A8A8A8; 
     border-bottom: 1px solid #A8A8A8;
 }
@@ -666,12 +621,15 @@ aside { }
     }
 
     .messaging-block h3 {
+      margin-top: 0;
       margin-bottom: 0px;
+      padding-top: 0.5em;
+
     }
 
-    .messaging-block span{
+    .messaging-block--ask span{
       display: inline-block;
-      padding-top: 0.1em;
+      padding-top: 0.2em;
       font-size: 1.333em;
       line-height: 1.3333em;
     }
@@ -684,21 +642,216 @@ aside { }
       border-top: 1px solid #A8A8A8;
     }
 
+    .messaging-block--subscribe .input-group {
+      margin-top: 1em;
+      margin-bottom: .35em;
+    }
 
-
-.related-story {
-  display: ;
-  float:;
+.btn--subscribe {
+  color: white;
+  background-color: #9AAB00;
 }
 
 
+
+/* RELATED STORY  ========================================================================== */
+
+.related-story {
+    background-color: hsla(66, 100%, 33%, .1);
+    padding-bottom: 1em;
+}
+    
+    .related-story h6 {
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        padding: 0.5rem;
+        border-bottom: 1px solid;
+        border-top: 1px solid;
+        font-size: 0.9em;
+        color: #839800;
+        text-transform: uppercase;
+    }
+
+
+
+/* STORY-ITEM  ========================================================================== */
+
+.story-item { }
+
+    .story-item__description {
+      margin: 0 0.5rem 0 0.5rem;
+      font-size: 0.8em;
+      line-height: 1.4em;
+    }
+
+        .story-item__description h5 {
+          margin:.5em 0;
+          padding: 0;
+          line-height: 1.4em;
+        }
+
+        .latest-stories__date, .latest-stories__author {
+          font-weight: 300;
+          color: #959595;
+        }
+
+        .latest-stories__author {
+          font-style: italic; 
+        }
+
+
+
+
+
+/* COMMENTS-SECTION  ========================================================================== */
+
+.comments-section {
+    height: 10em;
+    margin-top: 1.75em;
+    padding-top: 1.5em;
+    background-color: #F4F4F4;
+}
+
+
+/* SITE-FOOTER  ========================================================================== */
 
 footer.site-footer {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #424242;
 }
 
 
+/* ==========================================================================
+   #HELPER Classes
+   ========================================================================== */
+
+
+/* RESPONSIVE HELPER CLASSES  ========================================================================== */
+
+/*  RESPONSIVE IMAGES -- forces the image to be the same width as its parent 
+    element. Confusingly similar in name to Bootstrap's .img-responsive but this 
+    will actually stretch an image rather than merely shrink it. */
+.responsive-img {
+  width: 100%; 
+  height: auto; 
+  display: block;
+}
+
+
+
+/* RESPONSIVE EMBED  ========================================================================== */
+/*  This allows a Youtube embed to expand proportionally to 
+    fill a column. */
+
+.responsive-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0px;
+    height: 0;
+    overflow: hidden;
+}
+
+    .responsive-embed iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .responsive-embed--audio {
+        padding-bottom: 150px;
+    }
+
+
+
+/* COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES  ========================================================================== */
+
+/**
+ *  COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES
+ *  This displays the browser annotations on organisms and molecules. 
+ *  This class and the custom attributes exist only for prototyping and 
+ *  should be removed in production.
+ *  To disable the the annotation display just remove the .cmnt--visibility
+ *  class from the body tag. 
+
+ *  HTML Syntax 
+    -----------
+    The body tag receives a .cmnt--visibility class:
+        <body class="cmnt--visibility>
+
+    The outermost tag of every object (molecules and organisms)
+    gets 2 custom attributes that describe what the object is and
+    its current development status:
+        <tag data-dev-object-descrip="" data-dev-status="">
+
+    The value of data-dev-object-descrip should be the object's 
+    include path and name. E.g.:
+        data-dev-object-descrip="molecules/navigation/primary-nav"
+
+    The value of data-dev-status should be the object's development 
+    status. There's 3 options:
+        data-dev-status="IN-PROGRESS"
+        data-dev-status="IN-REVIEW"
+        data-dev-status="COMPLETE"
+    This value should be manually updated during the dev process.
+
+ */
+
+body.cmnt--visibility { }
+    /* This class is applied to the body tag to trigger the display of 
+    object dev-status colours upon hover */
+
+        body.cmnt--visibility:hover [data-dev-status~="IN-PROGRESS"] {
+            background-color: hsla(60, 100%, 50%, 0.04) !important;
+        }   /* elements that are "in-progress" are coloured pale yellow when
+            there's hover on the body tag */
+
+        body.cmnt--visibility:hover [data-dev-status~="IN-REVIEW"] {
+            background-color: hsla(180, 100%, 50%, .1) !important;
+        }   /* elements that are "in-progress" are coloured pale cyan when
+            there's hover on the body tag */
+
+        body.cmnt--visibility [data-dev-status~="COMPLETE"]:hover {
+            background-color: hsla(120, 100%, 50%, .1) !important;
+        }   /* elements that are "complete" are coloured pale green but only when
+            there's hover directly on the element itself */
+
+        body.cmnt--visibility:hover [data-dev-object-descrip*="organisms"] {
+            border: 1px solid Tomato !important;
+        }   /* elements that are "organisms" receive a border when
+            there's hover on the body tag */
+
+        body.cmnt--visibility:hover [data-dev-object-descrip*="molecules"] {
+          border: 1px solid DodgerBlue !important;
+        }   /* elements that are "molecules" receive a border when
+            there's hover on the body tag */
+
+
+    body.cmnt--visibility [data-dev-object-descrip]:hover::before {
+        display: inline-block;
+
+        margin-top: -15px;
+        padding: 5px 0px 0px 10px;
+        /* background-color: hsla(120, 100%, 100%, 0.9); */
+
+
+        color: tomato;
+        font-size: .65em;
+        line-height: 1.1em;
+        font-weight: bold;
+
+        content: attr(data-dev-object-descrip) "\a0\a0\a0\a0\a0 ---> \a0" attr(data-dev-status);
+
+    }   /* elements that have a data-dev-object-descrip attribute get labeled with 
+        their object-description and dev-status upon hover */
+
+
+        body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-descrip]:hover::before {
+            color: DodgerBlue;
+        }   /* elements that are molecules and have a data-dev-object-descrip 
+            attribute get their label coloured blue to match their border */
 
 
 

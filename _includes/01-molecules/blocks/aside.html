@@ -10,13 +10,17 @@ HOW TO INCLUDE THIS ASIDE OBJECT
 Use the aside-contents parameter to specify the path of its contained object. Like this: 
 	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" %]
 
-You can also specify a caption string and a content-source parameter if the contained object requires it. Like this:
-	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" aside-caption="Caption text goes here" content-source="http://baconmockup.com/300/200" %]
+You can also specify a caption string, media credit and a content-source parameter if the contained object requires it. Like this:
+	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" aside-caption="Caption text goes here" media-credit="Photo by Hoffman" content-source="http://baconmockup.com/300/200" %]
 -->
 {% endcomment %}
 
-<aside class="aside" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
+<aside class="aside clearfix" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
 	{% include {{ include.aside-contents }}.html content-source=include.content-source %}
-	<div class="caption">{{ include.aside-caption }} {% comment %}(Aside content is {{ include.aside-contents }}. Content source is {{ include.content-source }}){% endcomment %}</div>
+	
+	{% if include.aside-caption or include.media-credit %}
+		<div class="caption">{{ include.aside-caption }} {% comment %}(Aside content is {{ include.aside-contents }}. Content source is {{ include.content-source }}){% endcomment %} <span class="caption__media--credit"> {{ include.media-credit }}</span></div>
+	{% endif %}
+
 </aside>
 <!-- END 01-molecules/blocks/aside -->

@@ -6,8 +6,16 @@
 
 	<div class="container-fluid">
 
-	    {% include 00-atoms/images/image.html content-source=field.featured_image %}
-		<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
+		{% include 01-molecules/blocks/ad-box.html ad-position="bigbox--1st-position" ad-source="VFF-bigbox.gif" %}
+
+		{% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure, all inside the featured-media layout section. Such hoff! So hassle!" media-credit="Photo by Hoffman" content-source="http://place-hoff.com/525/350" %}
+
+		{% comment %}
+			This is left here to show the syntax for pulling data from the CSV file:
+
+		    {% include 00-atoms/images/image.html content-source=field.featured_image %}
+			<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
+		{% endcomment %}
 
 	</div> <!--END .container-fluid-->
 
