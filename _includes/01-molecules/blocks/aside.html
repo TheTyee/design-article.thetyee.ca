@@ -1,0 +1,26 @@
+<!-- Begin 01-molecules/blocks/aside -->
+{% comment %}
+<!-- The aside object is a block for content that is tangentially related to the content that forms the main textual flow. It can contain any of the media atoms or any other objects that are appropriate aside contents (https://www.w3.org/TR/html-markup/aside.html), in particular: media objects, related stories, and possibly Tyee messaging (like asks).
+All media within an article body should be included from within either a figure object or an aside object.
+
+The aside object will appear as an inset box on narrower viewports and in the right margin of the page on wider viewports.
+
+HOW TO INCLUDE THIS ASIDE OBJECT
+---------------------------------
+Use the aside-contents parameter to specify the path of its contained object. Like this: 
+	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" %]
+
+You can also specify a caption string, media credit and a content-source parameter if the contained object requires it. Like this:
+	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" aside-caption="Caption text goes here" media-credit="Photo by Hoffman" content-source="http://baconmockup.com/300/200" %]
+-->
+{% endcomment %}
+
+<aside class="aside clearfix" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
+	{% include {{ include.aside-contents }}.html content-source=include.content-source %}
+	
+	{% if include.aside-caption or include.media-credit %}
+		<div class="caption">{{ include.aside-caption }} {% comment %}(Aside content is {{ include.aside-contents }}. Content source is {{ include.content-source }}){% endcomment %} <span class="caption__media--credit"> {{ include.media-credit }}</span></div>
+	{% endif %}
+
+</aside>
+<!-- END 01-molecules/blocks/aside -->

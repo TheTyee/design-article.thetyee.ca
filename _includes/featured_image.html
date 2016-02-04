@@ -1,8 +1,0 @@
-
-<!--This pulls in an image and a caption-->
-{% for field in site.data.example_stories limit:1 %}
-<section>
-    <img src="{{ field.featured_image }}"/>
-	<p><caption><em>{{field.featured_image_caption}}</em></caption></p>
-</section>
-{% endfor %}
