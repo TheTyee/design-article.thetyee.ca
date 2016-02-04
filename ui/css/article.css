@@ -144,172 +144,6 @@ a:active {color: #839800;}
 
 
 
-
-
-/* ==========================================================================
-   #HELPER Classes
-   ========================================================================== */
-
-
-/* RESPONSIVE HELPER CLASSES  ========================================================================== */
-
-/*  RESPONSIVE IMAGES -- forces the image to be the same width as its parent 
-    element. Confusingly similar in name to Bootstrap's .img-responsive but this 
-    will actually stretch an image rather than merely shrink it. */
-.responsive-img {
-  width: 100%; 
-  height: auto; 
-  display: block;
-}
-
-
-
-/* RESPONSIVE EMBED  ========================================================================== */
-/*  This allows a Youtube embed to expand proportionally to 
-    fill a column. */
-
-.responsive-embed {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 0px;
-    height: 0;
-    overflow: hidden;
-}
-
-    .responsive-embed iframe {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .responsive-embed--audio {
-        padding-bottom: 150px;
-    }
-
-
-
-/* COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES  ========================================================================== */
-
-/**
- *  COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES
- *  This displays the browser annotations on organisms and molecules. 
- *  This class and the custom attributes exist only for prototyping and 
- *  should be removed in production.
-
- *  HTML Syntax 
-    -----------
-    The body tag receives a .cmnt--visibility class:
-        <body class="cmnt--visibility>
-
-    The outermost tag of every object (molecules and organisms)
-    gets 2 custom attributes that describe what the object is and
-    its current development status:
-        <tag data-dev-object-descrip="" data-dev-status="">
-
-    The value of data-dev-object-descrip should be the object's 
-    include path and name. E.g.:
-        data-dev-object-descrip="molecules/navigation/primary-nav"
-
-    The value of data-dev-status should be the object's development 
-    status. There's 3 options:
-        data-dev-status="IN-PROGRESS"
-        data-dev-status="IN-REVIEW"
-        data-dev-status="COMPLETE"
-    This value should be manually updated during the dev process.
-
- */
-
-body.cmnt--visibility { }
-    /* This class is applied to the body tag to trigger the display of 
-    object dev-status colours upon hover */
-
-        body.cmnt--visibility:hover [data-dev-status~="IN-PROGRESS"] {
-            background-color: hsla(60, 100%, 50%, 0.04) !important;
-        }   /* elements that are "in-progress" are coloured pale yellow when
-            there's hover on the body tag */
-
-        body.cmnt--visibility:hover [data-dev-status~="IN-REVIEW"] {
-            background-color: hsla(180, 100%, 50%, .1) !important;
-        }   /* elements that are "in-progress" are coloured pale cyan when
-            there's hover on the body tag */
-
-        body.cmnt--visibility [data-dev-status~="COMPLETE"]:hover {
-            background-color: hsla(120, 100%, 50%, .1) !important;
-        }   /* elements that are "complete" are coloured pale green but only when
-            there's hover directly on the element itself */
-
-        body.cmnt--visibility:hover [data-dev-object-descrip*="organisms"] {
-            border: 1px solid Tomato !important;
-        }   /* elements that are "organisms" receive a border when
-            there's hover on the body tag */
-
-        body.cmnt--visibility:hover [data-dev-object-descrip*="molecules"] {
-          border: 1px solid DodgerBlue !important;
-        }   /* elements that are "molecules" receive a border when
-            there's hover on the body tag */
-
-
-    [data-dev-object-descrip]:hover::before {
-        display: inline-block;
-
-        margin-top: -15px;
-        padding: 5px 0px 0px 10px;
-        /* background-color: hsla(120, 100%, 100%, 0.9); */
-
-
-        color: tomato;
-        font-size: .65em;
-        line-height: 1.1em;
-        font-weight: bold;
-
-        content: attr(data-dev-object-descrip) "\a0\a0\a0\a0\a0 ---> \a0" attr(data-dev-status);
-
-    }   /* elements that have a data-dev-object-descrip attribute get labeled with 
-        their object-description and dev-status upon hover */
-
-
-        [data-dev-object-descrip*="molecules"][data-dev-object-descrip]:hover::before {
-            color: DodgerBlue;
-        }   /* elements that are molecules and have a data-dev-object-descrip 
-            attribute get their label coloured blue to match their border */
-
-
-
-/*  ---- The following rules are deprecated but could be brought back into use if
-    ---- the dev status of objects requires greater visual emphasis
-
-    [data-dev-status~="IN-PROGRESS"]:hover::after {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        background-color: yellow;
-        content: "in progress";
-        color: red;
-        font-size: .75em;
-        font-weight: bold;
-    } 
-
-    [data-dev-status~="IN-REVIEW"]::after {
-        content: "in review";
-        margin-left: 10px;
-        background-color: yellow;
-        color: red;
-        font-weight: bold;
-    }
-
-    [data-dev-status~="COMPLETE"]::after {
-        content: "complete";
-        margin-left: 10px;
-        background-color: transparent;
-        color: green;
-        font-weight: bold;
-    }
-
-    ---- */
-
-
-
 /* ==========================================================================
    #LAYOUT
    (Layout rules divide the page into sections. Layouts hold one or more modules
@@ -887,6 +721,135 @@ footer.site-footer {
 }
 
 
+/* ==========================================================================
+   #HELPER Classes
+   ========================================================================== */
+
+
+/* RESPONSIVE HELPER CLASSES  ========================================================================== */
+
+/*  RESPONSIVE IMAGES -- forces the image to be the same width as its parent 
+    element. Confusingly similar in name to Bootstrap's .img-responsive but this 
+    will actually stretch an image rather than merely shrink it. */
+.responsive-img {
+  width: 100%; 
+  height: auto; 
+  display: block;
+}
+
+
+
+/* RESPONSIVE EMBED  ========================================================================== */
+/*  This allows a Youtube embed to expand proportionally to 
+    fill a column. */
+
+.responsive-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0px;
+    height: 0;
+    overflow: hidden;
+}
+
+    .responsive-embed iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .responsive-embed--audio {
+        padding-bottom: 150px;
+    }
+
+
+
+/* COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES  ========================================================================== */
+
+/**
+ *  COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES
+ *  This displays the browser annotations on organisms and molecules. 
+ *  This class and the custom attributes exist only for prototyping and 
+ *  should be removed in production.
+ *  To disable the the annotation display just remove the .cmnt--visibility
+ *  class from the body tag. 
+
+ *  HTML Syntax 
+    -----------
+    The body tag receives a .cmnt--visibility class:
+        <body class="cmnt--visibility>
+
+    The outermost tag of every object (molecules and organisms)
+    gets 2 custom attributes that describe what the object is and
+    its current development status:
+        <tag data-dev-object-descrip="" data-dev-status="">
+
+    The value of data-dev-object-descrip should be the object's 
+    include path and name. E.g.:
+        data-dev-object-descrip="molecules/navigation/primary-nav"
+
+    The value of data-dev-status should be the object's development 
+    status. There's 3 options:
+        data-dev-status="IN-PROGRESS"
+        data-dev-status="IN-REVIEW"
+        data-dev-status="COMPLETE"
+    This value should be manually updated during the dev process.
+
+ */
+
+body.cmnt--visibility { }
+    /* This class is applied to the body tag to trigger the display of 
+    object dev-status colours upon hover */
+
+        body.cmnt--visibility:hover [data-dev-status~="IN-PROGRESS"] {
+            background-color: hsla(60, 100%, 50%, 0.04) !important;
+        }   /* elements that are "in-progress" are coloured pale yellow when
+            there's hover on the body tag */
+
+        body.cmnt--visibility:hover [data-dev-status~="IN-REVIEW"] {
+            background-color: hsla(180, 100%, 50%, .1) !important;
+        }   /* elements that are "in-progress" are coloured pale cyan when
+            there's hover on the body tag */
+
+        body.cmnt--visibility [data-dev-status~="COMPLETE"]:hover {
+            background-color: hsla(120, 100%, 50%, .1) !important;
+        }   /* elements that are "complete" are coloured pale green but only when
+            there's hover directly on the element itself */
+
+        body.cmnt--visibility:hover [data-dev-object-descrip*="organisms"] {
+            border: 1px solid Tomato !important;
+        }   /* elements that are "organisms" receive a border when
+            there's hover on the body tag */
+
+        body.cmnt--visibility:hover [data-dev-object-descrip*="molecules"] {
+          border: 1px solid DodgerBlue !important;
+        }   /* elements that are "molecules" receive a border when
+            there's hover on the body tag */
+
+
+    body.cmnt--visibility [data-dev-object-descrip]:hover::before {
+        display: inline-block;
+
+        margin-top: -15px;
+        padding: 5px 0px 0px 10px;
+        /* background-color: hsla(120, 100%, 100%, 0.9); */
+
+
+        color: tomato;
+        font-size: .65em;
+        line-height: 1.1em;
+        font-weight: bold;
+
+        content: attr(data-dev-object-descrip) "\a0\a0\a0\a0\a0 ---> \a0" attr(data-dev-status);
+
+    }   /* elements that have a data-dev-object-descrip attribute get labeled with 
+        their object-description and dev-status upon hover */
+
+
+        body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-descrip]:hover::before {
+            color: DodgerBlue;
+        }   /* elements that are molecules and have a data-dev-object-descrip 
+            attribute get their label coloured blue to match their border */
 
 
 
