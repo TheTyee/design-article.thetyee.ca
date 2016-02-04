@@ -50,6 +50,7 @@ The layout file for the article page is at **_layouts/article.html** (This page 
 Inside of article.html, you'll find a series of includes created to reflect this mockup: https://basecamp.com/1929296/projects/9481270/messages/48980865?enlarge=185388269#attachment_185388269
 
 All includes can be found in the **_includes folder**.
+All working CSS, JS and images can be found/added in the **ui folder**.
 
 There are no classes appended to any of the sections, except where some bootstrap styling was needed. This is so @AlexGreen can feel free to add any classes he likes without worrying about breaking anything I've done.
 

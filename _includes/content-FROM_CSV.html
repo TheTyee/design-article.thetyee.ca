@@ -1,0 +1,6 @@
+<!--This pulls in a block of dynamic HTML content-->
+<!--This is a conventional block of content, like in a typical Tyee story, where all HTML is entered into one field-->
+{% for field in site.data.example_stories limit:1 %}
+	{{field.content}}
+{% endfor %}
+
