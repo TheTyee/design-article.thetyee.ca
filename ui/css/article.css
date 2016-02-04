@@ -50,7 +50,10 @@ h1 {
   margin-bottom: 0.333em;
 }
 
-
+h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
 
 h4 {
   font-size: 1.42em;
@@ -615,30 +618,41 @@ wasn't working so I had to hack some crap together. —AG */
             text-overflow:ellipsis;
             height:32px;
             width:32px;
-            padding:0;}
+            padding:0;
+        }
 
-            .btn-social-icon>:first-child { /* This is adapted from bootstrap */
+            .btn-social-icon>:first-child {/* This is adapted from bootstrap */
                 position:absolute;
                 left: 0;
                 top: 0;
                 bottom: 0;
                 width: 30px;
                 line-height: 32px;
-                font-size: 1.5em;
+                font-size:;
                 text-align: center;
-                border-right: none}
+                border-right: none;
+            }
 
-        a.btn-twitter {
+        .fa:before, .btn-social-icon .glyphicon:before {
+          display: inline-block;
+          height: 100%;
+          font-size: 1.5em;
+        }
+
+
+
+
+        .btn-twitter {
               color: #fff;
               background-color: #55acee;
         }
 
-        a.btn-facebook {
+        .btn-facebook {
               color: #fff;
               background-color: #3B5998;
         }
 
-        a.btn-email {
+        .btn-email {
               color: #fff;
               background-color: grey;
         }
@@ -731,7 +745,7 @@ wasn't working so I had to hack some crap together. —AG */
       margin-bottom: 0px;
     }
 
-    .messaging-block span{
+    .messaging-block--ask span{
       display: inline-block;
       padding-top: 0.1em;
       font-size: 1.333em;
