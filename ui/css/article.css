@@ -833,11 +833,22 @@ wasn't working so I had to hack some crap together. —AG */
 
 
 
+/* COMMENTS-SECTION  ========================================================================== */
+
+.comments-section {
+    height: 10em;
+    margin-top: 1.75em;
+    padding-top: 1.5em;
+    background-color: #F4F4F4;
+}
+
+
 /* SITE-FOOTER  ========================================================================== */
 
 footer.site-footer {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #424242;
 }
 
 
