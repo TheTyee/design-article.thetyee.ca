@@ -733,15 +733,21 @@ aside { }
     /* BIGBOX AD - 1ST POSITION  ---------------------------------------------- */
     /* This is the top add position on the page. It will appear next to the 
        featured image when there's room. Otherwise it will appear within 
-       article__body after the 3rd paragraph.   */
+       article__body after the 3rd paragraph.
+       It gets marked up in both positions and the following display properties
+       determine which one is visible. */
 
-    .featured-media .bigbox {
+    .featured-media .bigbox--1st-position {
         display: none;
     }
 
     @media screen and (min-width: 1125px) {
 
-        .featured-media .bigbox {
+        .bigbox--1st-position {
+            display: none;
+        }
+
+        .featured-media .bigbox--1st-position {
             display: block;
             position: relative;
             float:right;
@@ -751,7 +757,7 @@ aside { }
             border: none
         }
 
-        .featured-media .bigbox:before { 
+        .featured-media .bigbox--1st-position:before { 
            margin-top: 0;
         }
     }
