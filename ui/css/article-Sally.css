@@ -85,9 +85,7 @@
 .menu {
   width: 100vw;
 }
-.menu img {
-  max-width: 100%;
-}
+
 .menu__content-wrapper {
   padding: 0px;
   background-color: #f8f9ed;
@@ -138,10 +136,12 @@
 .latest-stories {
   background-color: #f8f9ed;
   color: #859c01;
+  font-size: 16px;
 }
 .latest-stories a {
   color: #859c01;
 }
+
 .latest-stories__media-wrapper{
   margin: 0;
   padding: 0;
@@ -165,14 +165,18 @@
 .latest-stories__media-wrapper .media .media-image {
   padding: 15px 0px;
 }
+
+.latest-stories__media-wrapper .media .media-image .media-object{
+  max-width: 100%;
+}
 .latest-stories__hed {
   color: #859c01;
-  font-size: 1em;
+  font-size: 0.8em;
   line-height: 1.25em;
   font-weight: bold;
 }
 .latest-stories__dek {
-  font-size: 1em;
+  font-size: 0.8em;
   line-height: 1.25em;
 }
 .latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
