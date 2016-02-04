@@ -51,8 +51,10 @@ h1 {
 }
 
 h3 {
+  margin-top: 0.5em;
   font-size: 1.5em;
   font-weight: 600;
+  color: #424242;
 }
 
 h4 {
@@ -147,7 +149,6 @@ a:active {color: #839800;}
 /* ==========================================================================
    #HELPER Classes
    ========================================================================== */
-
 
 
 /* RESPONSIVE HELPER CLASSES  ========================================================================== */
@@ -336,6 +337,10 @@ body.cmnt--visibility { }
      position: relative;
      max-width: 34em;
      margin: 0;
+}
+
+.article__body {
+     margin-bottom:2em;
 }
 
 
@@ -593,7 +598,7 @@ aside { }
 wasn't working so I had to hack some crap together. —AG */
 
 .tool-bar{
-  margin: 1em 0 .3em 0;
+  margin: .85em 0 .3em 0;
 }
 
     .tool-bar ul {
@@ -733,6 +738,7 @@ wasn't working so I had to hack some crap together. —AG */
 /* MESSAGING BLOCK  ========================================================================== */
 
 .messaging-block {
+    padding-bottom: 1em;
     border-top: 1px solid #A8A8A8; 
     border-bottom: 1px solid #A8A8A8;
 }
@@ -743,11 +749,12 @@ wasn't working so I had to hack some crap together. —AG */
 
     .messaging-block h3 {
       margin-bottom: 0px;
+
     }
 
     .messaging-block--ask span{
       display: inline-block;
-      padding-top: 0.1em;
+      padding-top: 0.2em;
       font-size: 1.333em;
       line-height: 1.3333em;
     }
@@ -759,6 +766,16 @@ wasn't working so I had to hack some crap together. —AG */
     .messaging-zone .messaging-block:first-child {
       border-top: 1px solid #A8A8A8;
     }
+
+    .messaging-block--subscribe .input-group {
+      margin-top: 1em;
+      margin-bottom: .35em;
+    }
+
+.btn--subscribe {
+  color: white;
+  background-color: #9AAB00;
+}
 
 
 
