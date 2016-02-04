@@ -26,9 +26,10 @@
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Video player follows." %}
 
-                <!--VIDEO player. Will likely be iframe embeds. -->
-                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/video" figure-caption="This is a caption describing a video inside a figure. Such railroad! Very excitement!" content-source="" %}
+                <!--FIGURE containing a VIDEO player. Will likely be iframe embeds. -->
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/video" figure-caption="This is a caption describing a video inside a figure. Such railroad! Very excitement!" media-credit="Video by Casey Jones" content-source="" %}
 
+                {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Blockquote follows." %}
 
                 {% include 01-molecules/text/blockquote.html %}
@@ -37,19 +38,23 @@
                 
                 <!--Here's a FIGURE containing an IMAGE. 
                     All media within an article body should be called from within a figure object or an aside. -->
-                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Much kawaii!" content-source="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/138.jpg" %}
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Much kawaii!" media-credit="Photo by Pussy Galore" content-source="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/138.jpg" %}
 
-                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html custom-parag-content="Aside with messaging follows." %}
+
+                <!--An ASIDE containing a MESSAGING BLOCK. -->
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/messaging-block--ask" content-source="" %}
+
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Aside with image follows." %}
 
                 <!--An ASIDE containing an IMAGE. -->
-                {% include 01-molecules/blocks/aside.html aside-contents="00-atoms/images/image" aside-caption="This is a caption for an image in an aside. Many hassle!" content-source="http://place-hoff.com/350/300" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="00-atoms/images/image" aside-caption="This is a caption for an image in an aside. Many hassle!" media-credit="Photo by Hoffman" content-source="http://place-hoff.com/350/300" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Audio player follows." %}
 
                 <!--AUDIO player. Will likely be iframe embeds. -->
-                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/audio" figure-caption="This is a caption describing an audio object inside a figure. Very Hollywood cynicism!" content-source="" %}
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/audio" figure-caption="This is a caption describing an audio object inside a figure. Very Hollywood cynicism!" media-credit="Music by saxofonhallicken" content-source="" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Related story follows." %}
@@ -62,9 +67,9 @@
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Slideshow follows." %}
 
                 {% comment %}
-                Omit slideshow until it's styled.
-                    <!--Photo SLIDESHOW ======================================================= NEEDS WORK ==== -->
-                    {% include 02-organisms/media/slideshow.html %}
+                            Omit slideshow until it's styled.
+                                <!--Photo SLIDESHOW ======================================================= NEEDS WORK ==== -->
+                                {% include 02-organisms/media/slideshow.html %}
                 {% endcomment %}
 
                 {% include 00-atoms/text/paragraph.html %}
@@ -72,7 +77,7 @@
 
                 <!--Here's a FIGURE containing an IMAGE. 
                     All media within an article body should be called from within a figure object or an aside. -->
-                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Very yum!" content-source="http://baconmockup.com/300/200" %}
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Very yum!" media-credit="Photo by Porco Rosso" content-source="http://baconmockup.com/300/200" %}
 
                 {% include 00-atoms/text/paragraph.html %}
 
