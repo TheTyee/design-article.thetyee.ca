@@ -50,6 +50,16 @@ h1 {
   margin-bottom: 0.333em;
 }
 
+h2 {
+  color: #424242;
+  font-family: Georgia, Serif;
+  font-weight: 800;
+  font-size: 1.5em; /* 27px */
+  line-height: 1.333em; /* 36px */
+  margin-top: 1.555em; /* 42px */
+  margin-bottom: .666em; /* 18px */
+}
+
 h3 {
   margin-top: 0.5em;
   font-size: 1.5em;
