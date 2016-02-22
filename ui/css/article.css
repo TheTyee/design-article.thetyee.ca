@@ -89,11 +89,15 @@ p {
 }
 
 
-a {color: #90AD00;}
-a:link {color: #90AD00;}
-a:visited {color: #90AD00;}
+
+/* LINKS  ========================================================================== */
+
+a, a:link, a:visited {color: #90AD00}
 a:hover {color: #839800;}
 a:active {color: #839800;}
+
+/* Text links within paragraphs get a dotted underscores */
+p a, p a:link, p a:visited {color: #90AD00; border-bottom: 1.5px dotted #90AD00;}
 
 
 
