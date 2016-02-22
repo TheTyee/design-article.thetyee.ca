@@ -97,8 +97,8 @@ a:hover {color: #839800;}
 a:active {color: #839800;}
 
 /* Text links within paragraphs get a dotted underscores */
-p a, p a:link, p a:visited {color: #90AD00; border-bottom: 1.5px dotted #90AD00;}
-
+p a, p a:link, p a:visited {color: #90AD00; font-weight:600; border-bottom: 1.5px dotted #90AD00;}
+p a:hover {color: #839800;}
 
 
 .pullquote {
