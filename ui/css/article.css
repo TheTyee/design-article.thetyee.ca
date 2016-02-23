@@ -359,6 +359,14 @@ aside { }
         padding: 1em 0 2em 1.5em;/* Aligns asides flush right inside article__body */
     }
 
+    .aside > :first-child {
+      
+    }
+
+    .aside > :last-child {
+      
+    }
+
     @media screen and (min-width: 38.5em) {
         /* Breakpoint: 
            When viewport exceeds width of article__body ...
