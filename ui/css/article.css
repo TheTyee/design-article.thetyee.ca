@@ -24,7 +24,7 @@ Html {
   font-size: 18px;
 }
 
-body {  
+body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -80,7 +80,7 @@ h5 {
   font-size: 1.2em;
   font-weight: 600;
   line-height: 1.18518519em;
-  color: #869D00;
+  color: #424242 ;
 }
 
 h6 {
@@ -96,6 +96,24 @@ h6 {
 
 p {
   margin-bottom: 1em;
+}
+
+
+/* READ-MORE atom */
+
+.read-more {
+  font-weight: 600;
+  letter-spacing: .0125em;
+  text-transform: uppercase;
+
+}
+
+
+
+/* ARROW ICON atom */
+
+.arrow-svg {
+  vertical-align: text-top; 
 }
 
 
@@ -671,10 +689,15 @@ aside { }
 /* RELATED STORY  ========================================================================== */
 
 .related-story {
-    background-color: hsla(66, 100%, 33%, .1);
-    padding-bottom: 1em;
+    background-color: #F4F4F4;
+    border-top: 2px solid;
+    padding-bottom: .75em;
 }
-    
+
+.related-story:hover {
+    background-color: #eaeaea;
+} 
+   
     .related-story h6 {
         display: inline-block;
         width: 100%;
@@ -700,7 +723,7 @@ aside { }
     }
 
         .story-item__description h5 {
-          margin:.5em 0;
+          margin:.4em 0 .65em;
           padding: 0;
           line-height: 1.4em;
         }
@@ -737,9 +760,29 @@ footer.site-footer {
 }
 
 
+
+
+
 /* ==========================================================================
    #HELPER Classes
    ========================================================================== */
+
+
+
+/*  ACCENT COLOR HELPER CLASSES  ========================================================================== 
+    These classes can get applied to elements that should employ the secondary 
+    color. This color will change depending on the website section and will 
+    typically by synonymous with the lnk color. */
+
+.accent-color {
+    color: #90AD00;
+    fill: #90AD00;
+}
+
+    .accent-color--border {
+      border-color: #90AD00;
+    }
+
 
 
 /* RESPONSIVE HELPER CLASSES  ========================================================================== */
@@ -776,6 +819,36 @@ footer.site-footer {
 
     .responsive-embed--audio {
         padding-bottom: 150px;
+    }
+
+
+
+/*  LINK WRAP  ==========================================================================
+    This class is used to make an entire div (or other container) into a clickable
+    link. To use it put this empty <a> element somewhere within your container:
+    <a href="[URL YOU WANT]" class="link-wrap"><span></span></a> 
+
+    If you have any other links within your container you'll need to apply the
+    .link-wrap--contained-link class to them, otherwise they won't be clickable. */
+
+a.link-wrap span {
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+
+    z-index: 1;
+
+    /* fixes overlap error in IE7/8, 
+       make sure you have an empty gif */
+    background-image: url('empty.gif'); 
+}
+
+    a.link-wrap--contained-link {
+        /* required to make other links within the container work */ 
+        position: relative;
+        z-index: 100;
     }
 
 
