@@ -131,21 +131,46 @@ p a:hover {color: #839800;}
 
 
 .pullquote {
+  position: relative;
+  width: 95%;
   margin: 1.33em 0em 1.33em 0em;
+  padding-left: 1.75em;
+  padding-right: 1.75em;
+
   font-family: Georgia, Serif;
   font-weight: 800;
-  font-size: 1.36em;
+  font-size: 1.15em;
   line-height: 1.333em;
   color: #424242;
 
 }
 
     .pullquote:before {
-        content: open-quote;
+        content: "“";
+        display: block;
+        position:absolute;
+        left: 0em;
+        top: -.1em;
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1em;    
+        /* 
+        background-color: #fff;
+        clip: rect(16px, 50px, 44px, 0px); 
+        */
     }
 
+
     .pullquote:after {
-        content: close-quote;
+        content: "”";
+
+        position:absolute;
+        padding-left: 0.075em;
+        top:;
+        right: ;
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1em;
     }
 
 
