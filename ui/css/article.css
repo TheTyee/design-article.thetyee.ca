@@ -161,7 +161,7 @@ p a:hover {color: #839800;}
     }
 
 
-    .pullquote:after {
+    /* .pullquote:after {
         content: "”";
 
         position:absolute;
@@ -171,7 +171,7 @@ p a:hover {color: #839800;}
         font-size: 3.5em;
         font-weight: bold;
         line-height: 1.04em;
-    } *
+    } */
 
 
 
