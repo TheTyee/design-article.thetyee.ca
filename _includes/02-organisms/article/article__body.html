@@ -7,8 +7,11 @@
 
                 {% include 01-molecules/text/lead-in-text.html %}
 
+                <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" %}
+
                 <!--This is a single PARAGRAPH of content, like in a Tyee series, where items like additional images, pullquotes or video are entered a field at a time-->
-                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html inline-atom="00-atoms/text/fact-box-anchor-link" %} <!--P with anchor text-link to fact-box -->
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Ad-box folows." %}
 
                 <!--AD in the 1ST POSITION. (Set ad-position parameter.) -->
@@ -22,11 +25,12 @@
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Related story follows." %}
 
                 <!--An ASIDE containing a RELATED STORY. -->
-                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/400/266" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/400/266" aside-class="" %}
 
                 <!--SUBHEADER -->
-                {% include 00-atoms/text/article-subheader.html subheader-content="Here's a short subheader" %}
+                {% include 00-atoms/text/article-subheader.html subheader-content="Here’s a short subheader" %}
 
+                {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Video player follows." %}
 
@@ -38,6 +42,7 @@
 
                 {% include 01-molecules/text/blockquote.html %}
 
+                {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Figure with image follows." %}
                 
                 <!--Here's a FIGURE containing an IMAGE. 
@@ -47,12 +52,12 @@
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Aside with messaging follows." %}
 
                 <!--An ASIDE containing a MESSAGING BLOCK. -->
-                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/messaging-block--ask" content-source="" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/messaging-block--ask" content-source="" aside-class="" %}
 
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Aside with image follows." %}
 
                 <!--An ASIDE containing an IMAGE. -->
-                {% include 01-molecules/blocks/aside.html aside-contents="00-atoms/images/image" aside-caption="This is a caption for an image in an aside. Many hassle!" media-credit="Photo by Hoffman" content-source="http://place-hoff.com/350/300" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="00-atoms/images/image" aside-caption="This is a caption for an image in an aside. Many hassle!" media-credit="Photo by Hoffman" content-source="http://place-hoff.com/350/300" aside-class="" %}
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Audio player follows." %}
@@ -64,11 +69,10 @@
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Related story follows." %}
 
                 <!--An ASIDE containing a RELATED STORY. -->
-
-                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/525/350" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/525/350" aside-class="" %}
 
                 {% include 00-atoms/text/paragraph.html %}
-                {% include 00-atoms/text/paragraph.html custom-parag-content="Slideshow follows." %}
+                {% include 00-atoms/text/paragraph.html custom-parag-content="" %}
 
                 {% comment %}
                             Omit slideshow until it's styled.
@@ -79,8 +83,9 @@
                 {% include 00-atoms/text/paragraph.html %}
 
                 <!--SUBHEADER -->
-                {% include 00-atoms/text/article-subheader.html subheader-content="Here's a subheader that's somewhat longer than average" %}
+                {% include 00-atoms/text/article-subheader.html subheader-content="Here’s a subheader that’s somewhat longer than average" %}
 
+                {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Figure with image follows." %}
 
                 <!--Here's a FIGURE containing an IMAGE. 
@@ -88,6 +93,11 @@
                 {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Very yum!" media-credit="Photo by Porco Rosso" content-source="http://baconmockup.com/300/200" %}
 
                 {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html %}
+
+                <!--FACT-BOX will display here at bottom of article in narrow viewports -->
+                <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. -->
+                {% include 01-molecules/blocks/fact-box.html %}
 
         </div> <!--END .container-fluid-->
 

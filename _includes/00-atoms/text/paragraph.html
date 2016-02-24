@@ -1,3 +1,9 @@
+{% comment %}
+Atoms can be inserted in-line into the paragraph by setting parameter inline-atom="[path to the atom]". E.g:
+[% include 00-atoms/text/paragraph.html inline-atom="00-atoms/text/fact-box-anchor-link" %]
+{% endcomment %}
 <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at est mi. Nulla accumsan luctus semper. In consequat laoreet arcu in pulvinar. Quisque consequat vehicula viverra. <a href="#">Quisque</a> ut sagittis tortor, at gravida sapien. Vivamus ut nibh consequat, rutrum nisl quis, iaculis sapien. {{ include.custom-parag-content }}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at est mi. 
+    {% if include.inline-atom %}{% include {{ include.inline-atom }}.html %}{% endif %} 
+    Nulla accumsan luctus semper. In consequat laoreet arcu in pulvinar. Quisque consequat vehicula viverra. <a href="#">Quisque</a> ut sagittis tortor, at gravida sapien. Vivamus ut nibh consequat, rutrum nisl quis, iaculis sapien. {{ include.custom-parag-content }}
 </p>

@@ -129,6 +129,7 @@ p a, p a:link, p a:visited {color: #90AD00; font-weight:600; border-bottom: 1.5p
 p a:hover {color: #839800;}
 
 
+
 .pullquote {
   margin: 1.33em 0em 1.33em 0em;
   font-family: Georgia, Serif;
@@ -138,6 +139,14 @@ p a:hover {color: #839800;}
   color: #424242;
 
 }
+
+    .pullquote:before {
+        content: open-quote;
+    }
+
+    .pullquote:after {
+        content: close-quote;
+    }
 
 
 
@@ -205,10 +214,10 @@ p a:hover {color: #839800;}
      margin: 0;
 }
 
-.article__body {
-     margin-bottom:2em;
-}
 
+.article__body {
+     padding-bottom: 2em;
+}
 
 
 @media screen and (min-width: 50.5em) {
@@ -357,6 +366,14 @@ aside { }
         width: 45%;
         float: right;
         padding: 1em 0 2em 1.5em;/* Aligns asides flush right inside article__body */
+    }
+
+    .aside > :first-child {
+      
+    }
+
+    .aside > :last-child {
+      
     }
 
     @media screen and (min-width: 38.5em) {
@@ -577,7 +594,7 @@ aside { }
 }
 
     .bigbox img {
-        display: block; 
+        display: block;
         margin: 0em auto 0em auto;
         width: 300px;
         height: 250px;
@@ -739,6 +756,88 @@ aside { }
 
 
 
+/* FACT-BOX  ========================================================================== 
+    The fact appears at the bottom of the article by default, but appears 
+    in the sidebar in wider viewports. This is done by changing the .fact-box 
+    display property based on location/context and viewport width. 
+    The additional .hide-on-narrow-vp class gets applied to the containing 
+    <aside> so that its margin doesn't cut into the the text column when
+    the fact box is hidden. (This ugly class could probably be eliminated if 
+    asides were simply a class rather than a container, or if an aside's 
+    margins were applied to it's contents instead of the container itself.) */
+
+
+.fact-box {
+    clear: both;
+    background-color: #F4F4F4;
+    border-top: none;
+    padding: 0.5em 1em .5em 1em;
+    margin-top: 3em;
+}
+
+    .fact-box p {
+      font-size: .8em;
+    }
+
+    .fact-box h4 {
+      display:table;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-bottom: .33em;
+      text-align: ;
+      font-size: 1em;
+      font-weight:600;
+      border-bottom: 1px solid #A8A8A8;      
+    }
+
+    /*  In default narrow views don't show the fact-box within an aside. */
+    .aside .fact-box {
+        display: none;
+    }
+    /*  In default narrow views show the fact-box anchor link text (the html for this should 
+        be placed inside article body text. */
+    .fact-box__anchor-link {
+      display: inline;
+    }
+
+    .hide-on-narrow-vp {
+      display: none;
+    } /* .hide-on-narrow-vp class gets applied to the containing 
+    <aside> so that its margin doesn't cut into the the text column when
+    the contained fact box is hidden. (This ugly class could probably be eliminated if 
+    asides were simply a class rather than a container, or if an aside's 
+    margins were applied to it's contents instead of the container itself.) */
+
+    /*  IN WIDER VIEWPORTS: 
+        • don't show the fact-box at the bottom of the article-body
+        • show the aside containing the fact-bax (.hide-on-narrow-vp)
+        • show the factbox within an aside
+        • hide fact-box text anchor link */
+    @media screen and (min-width: 939px) {
+
+        .fact-box {
+            display: none;
+        }
+
+        .hide-on-narrow-vp {
+          display: block;
+        }
+
+        .aside .fact-box {
+            display: block;
+            margin-top: 0em;
+            border-top: 2px solid;
+
+        }
+            .fact-box h4 {
+              border: none
+            }
+          
+        .fact-box__anchor-link {
+          display: none;
+        }
+    }
+
 
 
 /* COMMENTS-SECTION  ========================================================================== */
@@ -780,7 +879,7 @@ footer.site-footer {
 }
 
     .accent-color--border {
-      border-color: #90AD00;
+      border-color: #90AD00 !important; 
     }
 
 
