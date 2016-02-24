@@ -129,6 +129,7 @@ p a, p a:link, p a:visited {color: #90AD00; font-weight:600; border-bottom: 1.5p
 p a:hover {color: #839800;}
 
 
+
 .pullquote {
   margin: 1.33em 0em 1.33em 0em;
   font-family: Georgia, Serif;
@@ -138,6 +139,14 @@ p a:hover {color: #839800;}
   color: #424242;
 
 }
+
+    .pullquote:before {
+        content: open-quote;
+    }
+
+    .pullquote:after {
+        content: close-quote;
+    }
 
 
 
