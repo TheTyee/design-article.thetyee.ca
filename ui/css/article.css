@@ -24,7 +24,7 @@ Html {
   font-size: 18px;
 }
 
-body {  
+body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -50,6 +50,16 @@ h1 {
   margin-bottom: 0.333em;
 }
 
+h2 {
+  color: #424242;
+  font-family: Georgia, Serif;
+  font-weight: 800;
+  font-size: 1.5em; /* 27px */
+  line-height: 1.333em; /* 36px */
+  margin-top: 1.555em; /* 42px */
+  margin-bottom: .666em; /* 18px */
+}
+
 h3 {
   margin-top: 0.5em;
   font-size: 1.5em;
@@ -70,7 +80,7 @@ h5 {
   font-size: 1.2em;
   font-weight: 600;
   line-height: 1.18518519em;
-  color: #869D00;
+  color: #424242 ;
 }
 
 h6 {
@@ -89,23 +99,79 @@ p {
 }
 
 
-a {color: #90AD00;}
-a:link {color: #90AD00;}
-a:visited {color: #90AD00;}
+/* READ-MORE atom */
+
+.read-more {
+  font-weight: 600;
+  letter-spacing: .0125em;
+  text-transform: uppercase;
+
+}
+
+
+
+/* ARROW ICON atom */
+
+.arrow-svg {
+  vertical-align: text-top; 
+}
+
+
+
+/* LINKS  ========================================================================== */
+
+a, a:link, a:visited {color: #90AD00}
 a:hover {color: #839800;}
 a:active {color: #839800;}
+
+/* Text links within paragraphs get a dotted underscores */
+p a, p a:link, p a:visited {color: #90AD00; font-weight:600; border-bottom: 1.5px dotted #90AD00;}
+p a:hover {color: #839800;}
 
 
 
 .pullquote {
+  position: relative;
+  width: 95%;
   margin: 1.33em 0em 1.33em 0em;
+  padding-left: 2.125em;
+  padding-right: 1.75em;
+
   font-family: Georgia, Serif;
   font-weight: 800;
-  font-size: 1.36em;
+  font-size: 1.15em;
   line-height: 1.333em;
   color: #424242;
 
 }
+
+    .pullquote:before {
+        content: "“";
+        display: block;
+        position:absolute;
+        left: 0em;
+        top: -.15em;
+        font-size: 3.5em;
+        font-weight: bold;
+        line-height: 1em;    
+        /* 
+        background-color: #fff;
+        clip: rect(16px, 50px, 44px, 0px); 
+        */
+    }
+
+
+    /* .pullquote:after {
+        content: "”";
+
+        position:absolute;
+        padding-left: 0.075em;
+        top:;
+        right: ;
+        font-size: 3.5em;
+        font-weight: bold;
+        line-height: 1.04em;
+    } */
 
 
 
@@ -173,10 +239,10 @@ a:active {color: #839800;}
      margin: 0;
 }
 
-.article__body {
-     margin-bottom:2em;
-}
 
+.article__body {
+     padding-bottom: 2em;
+}
 
 
 @media screen and (min-width: 50.5em) {
@@ -325,6 +391,14 @@ aside { }
         width: 45%;
         float: right;
         padding: 1em 0 2em 1.5em;/* Aligns asides flush right inside article__body */
+    }
+
+    .aside > :first-child {
+      
+    }
+
+    .aside > :last-child {
+      
     }
 
     @media screen and (min-width: 38.5em) {
@@ -545,7 +619,7 @@ aside { }
 }
 
     .bigbox img {
-        display: block; 
+        display: block;
         margin: 0em auto 0em auto;
         width: 300px;
         height: 250px;
@@ -657,10 +731,15 @@ aside { }
 /* RELATED STORY  ========================================================================== */
 
 .related-story {
-    background-color: hsla(66, 100%, 33%, .1);
-    padding-bottom: 1em;
+    background-color: #F4F4F4;
+    border-top: 2px solid;
+    padding-bottom: .75em;
 }
-    
+
+.related-story:hover {
+    background-color: #eaeaea;
+} 
+   
     .related-story h6 {
         display: inline-block;
         width: 100%;
@@ -686,7 +765,7 @@ aside { }
     }
 
         .story-item__description h5 {
-          margin:.5em 0;
+          margin:.4em 0 .65em;
           padding: 0;
           line-height: 1.4em;
         }
@@ -701,6 +780,88 @@ aside { }
         }
 
 
+
+/* FACT-BOX  ========================================================================== 
+    The fact appears at the bottom of the article by default, but appears 
+    in the sidebar in wider viewports. This is done by changing the .fact-box 
+    display property based on location/context and viewport width. 
+    The additional .hide-on-narrow-vp class gets applied to the containing 
+    <aside> so that its margin doesn't cut into the the text column when
+    the fact box is hidden. (This ugly class could probably be eliminated if 
+    asides were simply a class rather than a container, or if an aside's 
+    margins were applied to it's contents instead of the container itself.) */
+
+
+.fact-box {
+    clear: both;
+    background-color: #F4F4F4;
+    border-top: none;
+    padding: 0.5em 1em .5em 1em;
+    margin-top: 3em;
+}
+
+    .fact-box p {
+      font-size: .8em;
+    }
+
+    .fact-box h4 {
+      display:table;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-bottom: .33em;
+      text-align: ;
+      font-size: 1em;
+      font-weight:600;
+      border-bottom: 1px solid #A8A8A8;      
+    }
+
+    /*  In default narrow views don't show the fact-box within an aside. */
+    .aside .fact-box {
+        display: none;
+    }
+    /*  In default narrow views show the fact-box anchor link text (the html for this should 
+        be placed inside article body text. */
+    .fact-box__anchor-link {
+      display: inline;
+    }
+
+    .hide-on-narrow-vp {
+      display: none;
+    } /* .hide-on-narrow-vp class gets applied to the containing 
+    <aside> so that its margin doesn't cut into the the text column when
+    the contained fact box is hidden. (This ugly class could probably be eliminated if 
+    asides were simply a class rather than a container, or if an aside's 
+    margins were applied to it's contents instead of the container itself.) */
+
+    /*  IN WIDER VIEWPORTS: 
+        • don't show the fact-box at the bottom of the article-body
+        • show the aside containing the fact-bax (.hide-on-narrow-vp)
+        • show the factbox within an aside
+        • hide fact-box text anchor link */
+    @media screen and (min-width: 939px) {
+
+        .fact-box {
+            display: none;
+        }
+
+        .hide-on-narrow-vp {
+          display: block;
+        }
+
+        .aside .fact-box {
+            display: block;
+            margin-top: 0em;
+            border-top: 2px solid;
+
+        }
+            .fact-box h4 {
+              border: none
+            }
+          
+        .fact-box__anchor-link {
+          display: none;
+        }
+    }
 
 
 
@@ -723,9 +884,29 @@ footer.site-footer {
 }
 
 
+
+
+
 /* ==========================================================================
    #HELPER Classes
    ========================================================================== */
+
+
+
+/*  ACCENT COLOR HELPER CLASSES  ========================================================================== 
+    These classes can get applied to elements that should employ the secondary 
+    color. This color will change depending on the website section and will 
+    typically by synonymous with the lnk color. */
+
+.accent-color {
+    color: #90AD00;
+    fill: #90AD00;
+}
+
+    .accent-color--border {
+      border-color: #90AD00 !important; 
+    }
+
 
 
 /* RESPONSIVE HELPER CLASSES  ========================================================================== */
@@ -762,6 +943,36 @@ footer.site-footer {
 
     .responsive-embed--audio {
         padding-bottom: 150px;
+    }
+
+
+
+/*  LINK WRAP  ==========================================================================
+    This class is used to make an entire div (or other container) into a clickable
+    link. To use it put this empty <a> element somewhere within your container:
+    <a href="[URL YOU WANT]" class="link-wrap"><span></span></a> 
+
+    If you have any other links within your container you'll need to apply the
+    .link-wrap--contained-link class to them, otherwise they won't be clickable. */
+
+a.link-wrap span {
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+
+    z-index: 1;
+
+    /* fixes overlap error in IE7/8, 
+       make sure you have an empty gif */
+    background-image: url('empty.gif'); 
+}
+
+    a.link-wrap--contained-link {
+        /* required to make other links within the container work */ 
+        position: relative;
+        z-index: 100;
     }
 
 
