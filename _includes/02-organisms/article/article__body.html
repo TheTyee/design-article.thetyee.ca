@@ -11,7 +11,7 @@
                 {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" %}
 
                 <!--This is a single PARAGRAPH of content, like in a Tyee series, where items like additional images, pullquotes or video are entered a field at a time-->
-                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html inline-atom="00-atoms/text/fact-box-anchor-link" %} <!--P with anchor text-link to fact-box -->
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Ad-box folows." %}
 
                 <!--AD in the 1ST POSITION. (Set ad-position parameter.) -->
@@ -96,6 +96,7 @@
                 {% include 00-atoms/text/paragraph.html %}
 
                 <!--FACT-BOX will display here at bottom of article in narrow viewports -->
+                <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. -->
                 {% include 01-molecules/blocks/fact-box.html %}
 
         </div> <!--END .container-fluid-->

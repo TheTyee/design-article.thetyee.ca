@@ -790,34 +790,53 @@ aside { }
       border-bottom: 1px solid #A8A8A8;      
     }
 
+    /*  In default narrow views don't show the fact-box within an aside. */
     .aside .fact-box {
         display: none;
+    }
+    /*  In default narrow views show the fact-box anchor link text (the html for this should 
+        be placed inside article body text. */
+    .fact-box__anchor-link {
+      display: inline;
     }
 
     .hide-on-narrow-vp {
       display: none;
-    }
+    } /* .hide-on-narrow-vp class gets applied to the containing 
+    <aside> so that its margin doesn't cut into the the text column when
+    the contained fact box is hidden. (This ugly class could probably be eliminated if 
+    asides were simply a class rather than a container, or if an aside's 
+    margins were applied to it's contents instead of the container itself.) */
 
-@media screen and (min-width: 939px) {
-  
-    .fact-box {
-        display: none;
-    }
+    /*  IN WIDER VIEWPORTS: 
+        • don't show the fact-box at the bottom of the article-body
+        • show the aside containing the fact-bax (.hide-on-narrow-vp)
+        • show the factbox within an aside
+        • hide fact-box text anchor link */
+    @media screen and (min-width: 939px) {
 
-    .hide-on-narrow-vp {
-      display: block;
-    }
+        .fact-box {
+            display: none;
+        }
 
-    .aside .fact-box {
-        display: block;
-        margin-top: 0em;
-        border-top: 2px solid;
-        
+        .hide-on-narrow-vp {
+          display: block;
+        }
+
+        .aside .fact-box {
+            display: block;
+            margin-top: 0em;
+            border-top: 2px solid;
+
+        }
+            .fact-box h4 {
+              border: none
+            }
+          
+        .fact-box__anchor-link {
+          display: none;
+        }
     }
-      .fact-box h4 {
-        border: none
-      }
-}
 
 
 
