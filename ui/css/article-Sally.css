@@ -8,7 +8,7 @@
    ========================================================================== */
 
  .site__header{
-    background-color: #dee3ab;
+    background-color: #fff;
     width: 100%;
  }
 
@@ -40,7 +40,7 @@
 }
 
 .site-nav .navbar-collapse {
-  border-top: none;
+  border-color: #949594;
   box-shadow: none;
 }
 
@@ -87,23 +87,47 @@
 }
 .menu {
   width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  border-top: none;
 }
 
 .menu__content-wrapper {
   padding: 0px;
   background-color: #f8f9ed;
+  position: relative;
+  z-index: 9999;
 }
+
+.menu_left-nav-wrap, .menu_right-nav-wrap {
+  padding: 0px;
+  margin: 0px;
+}
+
 .menu__left-nav, .menu__right-nav, .menu__left-nav li, .menu__right-nav li{
-  padding-left: 5px;
   font-size: 0.95em;
+  margin-bottom: 0px;
 }
 .menu__left-nav li, .menu__right-nav li{
   border-bottom: solid 1px #859c01;
+  list-style-type: none;
+
+
 }
-.menu__left-nav > li a, .menu__right-nav > li a{
-  text-transform: uppercase;
+.menu__left-nav > li > a, .menu__right-nav > li > a{
+
   color: #555;
+  padding: 10px 5px;
+  display: inline-block;
+    font-weight: bold;
+  text-transform: uppercase;
 }
+
+.menu__left-nav li a i, .menu__right-nav li a i { 
+  font-size: 0.75em;
+  padding-right: 2px;
+}
+
 .menu__left-nav > .open a, .menu__right-nav > .open a, .menu__left-nav > .open , .menu__right-nav > .open, {
   color: #859c01;
   background-color: #eef1d4;
@@ -122,7 +146,7 @@
 }
 .search-block .dropdown-toggle {
   padding: 10px;
-  color: rgba(118, 118, 117, 1);
+  color: #555;
 }
 .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form {
   margin: 8px 0px 0px 0px;
@@ -137,7 +161,7 @@
 /* LATEST STORIES ========================================================================== */ 
 
 .latest-stories {
-  background-color: #f8f9ed;
+  background-color: #fff;
   color: #859c01;
   font-size: 16px;
 }
@@ -281,8 +305,7 @@
   /* == Overrides rounded corners, padding and default Bootstrap borders on nav == */
   .navbar {
     border-radius: 0px;
-    border-bottom: solid 1px #859c01;
-    background-color: #dee3ab;
+    background-color: #fff;
   }
   .dropdown-menu {
     border-radius: 0px;
@@ -329,6 +352,7 @@
 
   }
 
+
   /* == turns off default handling for .open ===== */
   .menu__left-nav .open a, .block--site-header .menu__right-nav .open a, .menu__left-nav .open, .menu__right-nav .open{
     color: #859c01;
@@ -337,41 +361,61 @@
 
   /* WIDE NAV ========================================================================== */ 
 
-  .menu__content-wrapper {
-    background-color: transparent;
-    padding: 0px 30px;
-    height: 70px;
+  .menu {
+    border-top: 1px solid  #949594;
+    margin-top: 2px;
   }
+
+  .menu_left-nav-wrap, .menu_right-nav-wrap {
+    padding: 0px;
+    position: static;
+    border-bottom-style: double;
+    border-bottom-color: #949594;
+  }
+
 
   .menu__left-nav, .menu__right-nav{
     display: table;
     height: 70px;
+    margin-bottom: 0px;
   }
 
   .menu__left-nav >li, .menu__right-nav >li {
     padding-left: 0px;
-
   }
+
   .menu__left-nav > li > a, .menu__right-nav > li > a, .dropdown-toggle {
     padding: 0px;
-    display: table-cell;
-    vertical-align: middle;
-    height: 100%;
-    color: #555;
+
   }
   .menu__left-nav li, .menu__right-nav li {
     border-bottom: none;
+    position: static;
+  }
+
+  .menu_center-nav-wrap{
+    position: relative;
   }
 
   .menu__logo {
-    height: 70px;
-            padding: 0px;
-    display: table-cell;
-    vertical-align: middle;
+    padding: 0px;
+    position: static;
+  }
+
+  .menu__logo li {
+    width: 100%;
+    display: inline-block!important;
   }
 
   .menu__logo img{
-    max-height: 70px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top: 9px;
+    text-align: center;
+    clear:both;
+    float: none;
+    
   }
   .menu__facebook{
     margin: 0px 20px 0px 0px;
@@ -385,7 +429,6 @@
 
   .latest-stories .latest-stories__media-wrapper{
     border-bottom: solid 1px #859c01;
-    background-color: #fafbf2;
     padding: 10px;
   }
 
@@ -437,7 +480,6 @@
   /* SECTIONS NAV ========================================================================== */ 
   .sections {
     padding: 20px;
-    background-color: #fafbf2;
   }
   .menu__sections ul li {
     width: 100%;
@@ -473,15 +515,23 @@
   /* SEARCH NAV ========================================================================== */ 
 
   .menu__search ul{
-    background-color: #fafbf2;
     padding: 20px 0px;
   }
   .menu__search .form-control{
     width: 100%;
   }
-    .search-block .dropdown-toggle {
-    
-}
+  .search-block .dropdown-toggle {  
+    padding-right: 15px;
+    position: relative;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .search-block .dropdown-toggle .glyphicon {
+    position: relative;
+    top: 4px;
+    margin-right: 4px;
+  }
 
 
 }
