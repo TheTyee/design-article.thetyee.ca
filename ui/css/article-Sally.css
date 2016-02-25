@@ -544,14 +544,18 @@
     position: relative;
     font-weight: bold;
     text-transform: uppercase;
+    padding-top: 0px;
   }
 
   .search-block .dropdown-toggle .glyphicon {
-    position: relative;
-    top: 4px;
     margin-right: 4px;
+    font-size: 1.2em;
   }
 
+.search-block .dropdown-toggle span {
+  vertical-align: middle;
+  display: inline-block;
+}
 
 
 }
