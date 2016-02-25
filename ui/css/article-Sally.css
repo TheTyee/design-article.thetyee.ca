@@ -86,7 +86,7 @@
   min-width: 100%;
 }
 .menu {
-  width: 100vw;
+  /* width: 100vw;  --AG--*/
   padding: 0px;
   margin: 0px;
   border-top: none;
