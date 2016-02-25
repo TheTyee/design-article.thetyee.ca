@@ -526,6 +526,7 @@ aside { }
     }
 
     .tool-bar li {
+        position: relative;
         float: left;
         margin-right: .7em;
     }
@@ -578,17 +579,26 @@ aside { }
               background-color: grey;
         }
 
-        .btn-donate {
+        .btn-join {
+              position: relative;
+              top: .15em;
               padding-left: 0em;
               padding-right: 0em;
               background-color: transparent;
+              text-align:;
         }
 
         .btn-print, .btn-comment {
+              position: relative;
+              top: .25em;
               padding-left: 0em;
               padding-right: 0em;
               background-color: transparent;
               font-size: 1.2em;
+        }
+
+        .btn-join:hover .accent-color {
+              fill: #839800;
         }
 
 
