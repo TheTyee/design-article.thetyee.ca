@@ -151,6 +151,7 @@ p a:hover {color: #839800;}
         position:absolute;
         left: 0em;
         top: -.15em;
+        color: #bbb;
         font-size: 3.5em;
         font-weight: bold;
         line-height: 1em;    
