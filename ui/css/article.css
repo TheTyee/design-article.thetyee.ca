@@ -255,7 +255,7 @@ p a:hover {color: #839800;}
 }
 
 
-@media screen and (min-width: 50.5em) {
+@media screen and (min-width: 51.35em) {
     /* breakpoint:
        When viewport exceeds the max-width of the article__header ... 
        max-width of header plus difference between header and body divided by 2;
