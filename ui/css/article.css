@@ -117,6 +117,16 @@ p {
 }
 
 
+/* DOLLAR HEART ICON atom */
+
+.dollar-heart-svg {
+   height: 1.25em;
+   width: auto;
+   vertical-align: middle;
+   margin-right: -0em;
+}
+
+
 
 /* LINKS  ========================================================================== */
 
@@ -597,12 +607,15 @@ aside { }
                 font-weight: 700
             }
 
+            .btn-join .dollar-heart-svg {
+                height: 1.75em;
+            }
+
+
             .btn-join:hover .accent-color {
-              fill: #839800;
-              cursor: pointer;
-        }
-
-
+                fill: #839800;
+                cursor: pointer;
+            }
 
         .btn-print, .btn-comment {
               position: relative;
