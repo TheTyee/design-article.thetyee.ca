@@ -390,7 +390,7 @@ figure {
 
   .figure--xl {
     position: relative;
-    width: 92vw;
+    width: calc(100vw - 45px);
     max-width: 47.25rem;
   }
 
