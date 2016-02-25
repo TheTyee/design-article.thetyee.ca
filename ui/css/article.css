@@ -391,9 +391,25 @@ figure {
   .figure--xl {
     position: relative;
     width: calc(100vw - 45px);
-    max-width: 47.25rem;
+    /* Keep figure at full width but maintain correct margins
+       [full viewport width] - [[total bootstrap padding of 30px]-[additional 15px from somewhere?]]  */
   }
 
+      @media screen and (min-width: 51.35em) 
+      /*  Breakpoint:
+          When viewport exceeds the max-width of the article__header ... 
+          [article__header width] + [article__body left offset]    
+          =        45em           +            5.5em               
+          >> if this value is set in px then the 5.5em offset should be omitted. (810px) << */{
+          .figure--xl {
+              position: relative;
+              width: calc(100vw - 37px - ((100vw - 45em) / 2));
+              /* ... compensate for the centering of the article__body to keep figure width within 
+                     the viewport.
+                     [prior offset] + ((article__header margin]) / 2 )        */
+              max-width: 47.25rem;
+          }
+      }
 
 
 /* ASIDES  ========================================================================== */
@@ -430,7 +446,7 @@ aside { }
         }
     }
 
-    @media screen and (min-width: 50.5rem) 
+    @media screen and (min-width: 50.75em) 
     /* Breakpoint:
        
        When viewport exceeds the max-width of the article__header ... 
@@ -463,15 +479,7 @@ aside { }
        =      54em      +            5.5em               
        >> if this value is set in px then the 5.5em offset should be omitted. (950px) << */ {
         .aside {
-            margin-right: 15em;
-            margin-right: calc(34em - 100vw + ((100vw - 45em) / 2));
-            margin-right: -15em;/* ... compensate for the centering of the article__body to keep asides flush 
-                   right with viewport.
-                   [prior offset] + ([article__header margin at max desired width]) / 2 ) */
-            /* ALTERNATIVE RULE:
-               margin-right: calc(-11em - ((100vw - 45em) / 2)); 
-               [max offset of prev breakpoint] + [article__header left margin] 
-               [max offset of prev breakpoint] + (view-width - [article__header width]) / 2  */
+            margin-right: -15em;/* ... keep the aside at a constant offset from the text column (article__body) */
         }
     }
 
