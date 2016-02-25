@@ -233,8 +233,7 @@ p a:hover {color: #839800;}
 /* ARTICLE LAYOUT  ========================================================================== */
 
 
-.article__header {
-  /* article__header is always centered on the page */
+.article__header {/* article__header is always centered on the page */
   max-width: 45em;
   margin: 0 auto 0 auto;
 }
@@ -389,6 +388,12 @@ figure {
       margin-top: 0.25em;
   }
 
+  .figure--xl {
+    position: relative;
+    width: 92vw;
+    max-width: 47.25rem;
+  }
+
 
 
 /* ASIDES  ========================================================================== */
@@ -460,12 +465,9 @@ aside { }
         .aside {
             margin-right: 15em;
             margin-right: calc(34em - 100vw + ((100vw - 45em) / 2));
-            margin-right: -15em;
-            /* ... compensate for the centering of the article__body to keep asides flush 
+            margin-right: -15em;/* ... compensate for the centering of the article__body to keep asides flush 
                    right with viewport.
                    [prior offset] + ([article__header margin at max desired width]) / 2 ) */
-
-
             /* ALTERNATIVE RULE:
                margin-right: calc(-11em - ((100vw - 45em) / 2)); 
                [max offset of prev breakpoint] + [article__header left margin] 
@@ -955,8 +957,8 @@ footer.site-footer {
     element. Confusingly similar in name to Bootstrap's .img-responsive but this 
     will actually stretch an image rather than merely shrink it. */
 .responsive-img {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
   display: block;
 }
 
