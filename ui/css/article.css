@@ -585,8 +585,24 @@ aside { }
               padding-left: 0em;
               padding-right: 0em;
               background-color: transparent;
+              text-transform: uppercase;
               text-align:;
         }
+            
+            .btn-join span {
+                display: inline-block;
+                vertical-align: top;
+                margin-left: -0.2em;
+                padding-top: .1em;
+                font-weight: 700
+            }
+
+            .btn-join:hover .accent-color {
+              fill: #839800;
+              cursor: pointer;
+        }
+
+
 
         .btn-print, .btn-comment {
               position: relative;
@@ -597,8 +613,8 @@ aside { }
               font-size: 1.2em;
         }
 
-        .btn-join:hover .accent-color {
-              fill: #839800;
+        .btn-join:hover, .btn-print:hover, .btn-comment:hover {          
+              cursor: pointer;
         }
 
 
