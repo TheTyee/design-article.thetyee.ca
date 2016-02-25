@@ -67,8 +67,8 @@
 .menu__hamburger{
   border: none;
   display: block;
-  min-height: 40px;
-  min-width: 40px;
+  min-height: 50px;
+  min-width: 77px;
   float: left;
   background-color: transparent;
 }
@@ -76,16 +76,22 @@
   outline:0;
 } 
 .menu__hamburger span {
+  font-size: 0.7em;
+  font-weight: bold;
   text-transform: uppercase;
-  float: left;
-  padding: 5px;
+  color: #555;
+  padding-left: 2px;
+  vertical-align: baseline;
 }
+
 .menu__hamburger i {
-    padding: 10px 0px;
+    float: left;
 }
+
 .narrow-menu__logo{
   max-width: 100%;
   min-width: 100%;
+  background: white;
 }
 .menu {
   width: 100vw;
@@ -138,6 +144,8 @@
 .narrow__search {
   position: static;
   display: block;
+  font-size: 0.7em;
+  text-transform: uppercase;
 }
 .menu__search--button{
   background-color: #859c01;
@@ -147,7 +155,10 @@
   width: 100vw;
 }
 .search-block .dropdown-toggle {
-  padding: 10px;
+  text-transform: uppercase;
+  float: left;
+  padding-top: 10px;
+  font-weight: bold;
   color: #555;
 }
 .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form {
@@ -156,7 +167,13 @@
   border-radius: 0px;
 }
 .search-block .glyphicon {
-  font-size: 1.2em;
+  font-size: 1.7em;
+  margin-right: 3px;
+}
+
+.search-block .dropdown-toggle span {
+  vertical-align: middle;
+  display: inline-block;
 }
 
 
@@ -534,6 +551,7 @@
     top: 4px;
     margin-right: 4px;
   }
+
 
 
 }
