@@ -268,6 +268,28 @@
   border-bottom: none;
 }
 
+/* MORE ========================================================================== */
+
+
+
+.more:first-child{
+  padding: 0px;
+}
+
+.more__categories {
+  padding: 0px;
+}
+
+.more__categories ul{
+  padding: 0px;
+}
+
+.more__categories:last-child li:last-child {
+  border-bottom: none;
+}
+
+
+
  /* SLIDESHOW ========================================================================== */
 
 .slideshow img {
@@ -560,7 +582,19 @@
     padding-left: 40px;
   }
 
-  /* SEARCH NAV ========================================================================== */ 
+   /* MORE========================================================================== */ 
+
+.more:first-child {
+  padding:8px 20px;
+
+}
+
+  .menu__more ul li{
+  display: block;
+  text-align: left;
+}
+
+ 
 
   .menu__search ul{
     padding: 20px 0px;
