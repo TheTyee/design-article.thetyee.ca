@@ -332,6 +332,68 @@
 }
 
 
+/* BAROMETER ========================================================================== */
+
+.barometer {
+  clear:both;
+  float: none;
+  padding: 0px;
+  overflow: hidden;
+
+}
+.barometer__wrap {
+  border-top: solid 1px grey;
+  border-bottom: solid 1px grey;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.barometer__wrap h4 {
+  margin-top: 0px;
+  padding-top: 5px;
+  border-bottom: solid 1px grey;
+  color: #90AD00;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  padding-bottom: 5px;
+}
+
+.barometer__wrap h4 i {
+  font-size: 0.7em;
+}
+
+.barometer__wrap p {
+  font-weight: bold;
+  font-size: 1.25em;
+  padding: 0px 10px;
+  margin-top: 1em;
+}
+
+.barometer__wrap p a{
+  background-color: #90AD00;
+  padding: 4px 10px;
+  width: 100%;
+  font-size: 0.85em;
+  font-weight: normal;
+  display: block;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+
+/* FOOTER ========================================================================== */
+
+footer {
+  clear: both;
+}
+
+
+
 /* ==========================================================================
  STATES 
  (A state is something that augments and overrides all other styles. 
