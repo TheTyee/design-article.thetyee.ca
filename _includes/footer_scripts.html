@@ -15,5 +15,19 @@
 
     </script>
 {% endif %}
-
-
+<script>
+    window.App = {};
+    App.apiUrl = '{{ site.api_url }}';
+    App.rootUrl = '{{ site.url }}'; 
+    App.siteMode  = '{{ site.mode }}';
+</script>
+<script type="text/javascript" charset="utf-8" src="{{ site.url }}ui/js/app.js"></script>
+<script>
+// Start routing now...
+App.router = new App.Router();
+{% if site.mode != 'local' %}
+    Backbone.history.start({ pushState: true });
+{% else %}
+    Backbone.history.start();
+{% endif %}
+</script>
