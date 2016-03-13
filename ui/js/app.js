@@ -58,32 +58,15 @@ App.Stories = Backbone.Collection.extend({
 
 App.Router = Backbone.Router.extend({
     initialize: function() { 
-        // If running in production
-        // track every route and call trackPage
-        //if ( App.siteMode === 'production' ) {
-            //this.bind('route', this.trackPageView);
-        //}
     },
-    // Assume that any pages with cards or businesses showing are Backbone-powered
-    // Static pages: /prizes, /about, etc. are not
     routes: {
         "":         "showFront",
         "*path":    "storyShow"
     },
     storyShow: function(path, mode) {
-        console.log(path);
         App.story = new App.Story({ "id": path });
         App.storyView = new App.StoryView({ "model": App.story });
         App.storyView.render();
         App.story.fetch();
-    },
-    trackPageView: function() {
-        //var url = Backbone.history.getFragment();
-        //// Add a slash if neccesary
-        //if (!/^\//.test(url)) url = '/' + url;
-                //ga('send', {
-            //'hitType': 'pageview',
-        //'page': url
-        //});
     }
 });
