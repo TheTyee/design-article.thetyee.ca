@@ -12,6 +12,49 @@
     width: 100%;
  }
 
+
+
+.preloader1 {
+   width:40px;
+   height:40px;
+   display:inline-block;
+   padding:0px;
+   text-align:left;
+   -webkit-animation:preloader1 1.4s linear infinite;
+   animation:preloader1 1.4s linear infinite;
+}
+.preloader1 span {
+   position:absolute;
+   vertical-align:top;
+   border-radius:100%;
+   background:#000000;
+   display:inline-block;
+   width:8px;
+   height:8px;
+   margin-left:16px;
+   transform-origin:center 20px;
+   -webkit-transform-origin:center 20px;
+}
+.preloader1 span:nth-child(2) {transform: rotate(36deg);-webkit-transform: rotate(36deg); opacity:0.1;}
+.preloader1 span:nth-child(3) {transform: rotate(72deg);-webkit-transform: rotate(72deg); opacity:0.2;}
+.preloader1 span:nth-child(4) {transform: rotate(108deg);-webkit-transform: rotate(108deg); opacity:0.3;}
+.preloader1 span:nth-child(5) {transform: rotate(144deg);-webkit-transform: rotate(144deg); opacity:0.4;}
+.preloader1 span:nth-child(6) {transform: rotate(180deg);-webkit-transform: rotate(180deg); opacity:0.5;}
+.preloader1 span:nth-child(7) {transform: rotate(216deg);-webkit-transform: rotate(216deg); opacity:0.6;}
+.preloader1 span:nth-child(8) {transform: rotate(252deg);-webkit-transform: rotate(252deg); opacity:0.7;}
+.preloader1 span:nth-child(9) {transform: rotate(288deg);-webkit-transform: rotate(288deg); opacity:0.8;}
+.preloader1 span:nth-child(10) {transform: rotate(324deg);-webkit-transform: rotate(324deg); opacity:0.9;}
+@keyframes preloader1 {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(360deg);}
+}
+@-webkit-keyframes preloader1 {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(360deg);}
+}
+
+
+
 /* ==========================================================================
    #LAYOUT
    (Layout rules divide the page into sections. Layouts hold one or more modules
@@ -220,6 +263,19 @@
   line-height: 1.25em;
   font-weight: bold;
 }
+
+.hed_preload_placeholder{
+  background: #ccc;
+  min-height: 16px;
+  min-width: 100px;
+}
+
+
+.dek_preload_placeholder{
+  background: #ccc;
+  min-height: 100px;
+  min-width: 100px;
+}
 .latest-stories__dek {
   font-size: 0.8em;
   line-height: 1.25em;
@@ -264,7 +320,7 @@
   color: #859c01;
   font-weight: bold;
 }
-.sections__list-four ul li:last-child {
+.sections__topics-wrap div:last-child ul li:last-child{
   border-bottom: none;
 }
 
@@ -555,9 +611,50 @@ footer {
   /* LATEST STORIES  SLIDER ========================================================================== */ 
 
 
+  .latest-stories {
+    position: relative;
+  }
+
   .latest-stories .latest-stories__media-wrapper{
     border-bottom: solid 1px #859c01;
     padding: 10px;
+    overflow: hidden;
+  }
+
+  .latest-stories .latest-stories__media-wrapper .chevron{
+    background: #e5e5e5;
+    height: 100px;
+    border-radius: 100px;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    top: 90px;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+  }
+  .chevron::before {
+    border-style: solid;
+    border-width: 0.5em 0.5em 0 0;
+    content: '';
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    left: 18px;
+    position: absolute;
+    top: 25px;
+    color: #fff;
+    transform: rotate(-45deg);
+    vertical-align: top;
+  }
+
+  .chevron.right:before {
+    right: 0;
+    transform: rotate(45deg);
+  }
+
+  .latest-stories .latest-stories__media-wrapper:hover .chevron{
+    opacity: 0.8;
+    -webkit-transition: opacity 0.4s;
   }
 
   .latest-stories .latest-stories__media-wrapper li:first-child{
