@@ -32,13 +32,17 @@ layout: article
     <!-- =============================== -->
     <!-- ===== Tertiary components ===== -->    
 
+    {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+
     {% include 02-organisms/sections/messaging-zone.html %}
 
     {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
 
     {% include 02-organisms/sections/comments.html %}          <!-- NEEDS WORK -->
-
-    {% include 02-organisms/sections/barometer-block.html %}          <!-- NEEDS WORK -->
+    
+    {% assign barometer = 'true' %}
+    
+    {% include 02-organisms/sections/messaging-zone.html %}
 
     <!-- =============================== -->
     <!-- ===== Footer ===== -->
