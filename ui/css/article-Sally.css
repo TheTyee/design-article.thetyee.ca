@@ -130,7 +130,7 @@
   color: #555;
   padding: 10px 5px;
   display: inline-block;
-    font-weight: bold;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -484,6 +484,8 @@ footer {
 
   /* WIDE NAV ========================================================================== */ 
 
+
+
   .menu {
     border-top: 1px solid  #949594;
     margin-top: 2px;
@@ -685,6 +687,15 @@ footer {
 }
 
 
+}
+
+
+@media (max-width: 990px){
+.navbar-collapse.collapse {
+    display: none !important;
+
+
+  }
 }
 
 
