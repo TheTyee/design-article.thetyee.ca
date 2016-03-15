@@ -89,8 +89,12 @@
 
 .narrow-menu__logo{
   max-width: 100%;
-  min-width: 100%;
   background: white;
+  position: relative;
+  top: 7px; 
+  margin: 0 auto;
+  display: block;
+
 }
 .menu {
   width: 100vw;
