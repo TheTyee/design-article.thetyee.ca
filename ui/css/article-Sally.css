@@ -432,13 +432,49 @@ footer {
   }
   .dropdown-menu {
     border-radius: 0px;
-    margin: 0px;
+    margin: -40px 0px 0px 0px;
+
+    display: block;
     padding: 0px;
     width: 100vw;
     left: 0;
+    opacity:0!important;
+    transition: all 0.3s ease;
+    z-index: -10;
   }
+
+
+  .open > .dropdown-menu {
+    opacity: 1!important;
+    margin: 0px;
+      transition: all 0.3s ease;
+      z-index: 9999;
+  }
+
+
+
   .navbar-collapse {
     padding: 0px;
+  }
+
+  /* == Makes the carets in wide nav bigger ==*/
+.open .caret {
+   -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+    transition: all 0.5s ease;
+}
+
+  .caret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 6px solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    transition: all 0.5s ease;
   }
 
   /* == Overrides the hover and active states from Bootstrap === */
@@ -463,7 +499,8 @@ footer {
     display: table-cell;
     float: none;
     text-align: center;
-    vertical-align: middle;
+    vertical-align: bottom;
+    padding-bottom: 10px;
   }
 
   /* == Turns off defaults fonts and layout on the nav buttons ===== */
