@@ -11,10 +11,11 @@ If you want to adapt the object you can extend it by using the story-item-class 
 	[% include 01-molecules/blocks/story-item.html content-source="http://baconmockup.com/300/200" story-item-class="story-item--latest-stories" %]
 -->
 {% endcomment %}
+<a href="#">
 	<div class="media-image col-sm-12 col-xs-4">
-		<a href="#">
+		
 			<img class="media-object" src="{{ site.url }}/ui/img/placeholder.svg"/>
-		</a>
+	
 	</div>
 	<div class="media-body col-sm-12 col-xs-8">
 		<h4 class="hed_preload_placeholder latest-stories__hed">Tyee Poll: What Will Journalism after Newspapers Look Like?</h4>
@@ -24,5 +25,6 @@ If you want to adapt the object you can extend it by using the story-item-class 
 		<span class="latest-stories__date hidden-xs">Sept 30</span>
 		<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
 	</div>
+</a>
 
 <!-- END 01-molecules/blocks/story-item -->

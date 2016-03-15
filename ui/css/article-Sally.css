@@ -243,6 +243,10 @@
   border-bottom: solid 1px #859c01;
   line-height: 1.75em;
 }
+.latest-stories__media-wrapper li:hover{
+  background-color: hsla(66, 100%, 33%, .1);
+
+}
 .latest-stories__media-wrapper li:last-child{
   border-bottom: none;
 }
@@ -650,6 +654,13 @@ footer {
   .chevron.right:before {
     right: 0;
     transform: rotate(45deg);
+  }
+
+.chevron.left {
+    opacity: 1;
+    z-index: 200;
+    left: 0px;
+    transform: rotate(-90deg);
   }
 
   .latest-stories .latest-stories__media-wrapper:hover .chevron{
