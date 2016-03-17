@@ -22,11 +22,11 @@
 
 <!-- WIDE MENU -->
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="[ collapse row navbar-collapse hidden-sm ] menu" id="bs-example-navbar-collapse-1">
+  <div class="[ collapse row navbar-collapse  ] menu" id="bs-example-navbar-collapse-1">
 
-    <nav class="[ navbar-nav col-xs-12 col-sm-4 col-md-4 col-lg-4 ] menu_left-nav-wrap">
-      <ul class="[ col-sm-12 ] menu__left-nav ">
-        <li class="menu__latest-stories [ col-md-4  dropdown ]">
+    <nav class="[ navbar-nav col-xs-12 col-sm-12 col-md-12 col-lg-4 ] menu_left-nav-wrap">
+      <ul class="[ col-sm-12 col-md-12 ] menu__left-nav ">
+        <li class="menu__latest-stories [ col-md-12 col-lg-5  dropdown ]">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               Latest Stories
               <span class="hidden-sm">
@@ -37,7 +37,7 @@
               <li>{% include 02-organisms/sections/latest-stories.html %}</li>
             </ul>
         </li>
-        <li class="menu__sections col-md-3 [ dropdown ]">
+        <li class="menu__sections col-md-12 col-lg-3 [ dropdown ]">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Sections
             <span class="hidden-sm">
@@ -48,7 +48,7 @@
               <li>{% include 01-molecules/navigation/sections-nav.html %}</li>
           </ul>
         </li>
-        <li class="menu__more col-md-3 [ dropdown ]">
+        <li class="menu__more col-md-12 col-lg-4[ dropdown ]">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             More
             <span class="hidden-sm">
@@ -64,26 +64,28 @@
     </nav>
       
       <!--LOGO-->
-      <nav class="[ col-sm-4 col-md-4 col-lg-4 ] menu_center-nav-wrap">
+      <nav class="[ hidden-xs hidden-sm hidden-md col-lg-4 ] menu_center-nav-wrap">
       <ul class="[ hidden-xs ] menu__logo ">
-        <li class="[ hidden-xs ]">
+        <li class="[ hidden-xs hidden-sm hidden-md ]">
            <img src="{{site.url}}ui/img/tyee_logo.png" alt="Logo Alt Text" />
         </li>
       </ul>
     </nav>
 
       <!--RIGHT NAV -->
-      <nav class="[ navbar-nav col-xs-12 col-sm-4 col-md-4 col-lg-4 ] menu_right-nav-wrap">
+      <nav class="[ navbar-nav col-xs-12 col-sm-12 col-md-12 col-lg-4 ] menu_right-nav-wrap">
       <ul class="[ col-sm-12 ] menu__right-nav ">
-        <li class="menu__join [ col-md-2  ]">
+        <li class="menu__join [ col-md-12  col-lg-3 ]">
           <a href="#">Join</a>
         </li>
-        <li class="menu__newsletter [ col-md-4 ]">
+        <li class="menu__newsletter [ col-md-12 col-lg-4 ]">
           <a href="#">Newsletter</a>
         </li>
-        <li class="menu__facebook [ col-md-2  ]">
+        <li class="menu__facebook [ col-md-12 col-lg-2  ]">
           <a href="#">
             <i class="fa fa-facebook-square"></i>
+          </a>
+          <a href="#">
             <i class="fa fa-twitter-square"></i>
           </a>
         </li>
