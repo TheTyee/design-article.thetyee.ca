@@ -8,97 +8,28 @@
 		This object should default to its mobile-first stacked state and only become horizontal at higher breakpoints (see mockups for the 2 states). In mobile stacked state it should be limited to 3 items. In horizontal state it should show enough items to fill the viewport width, ideally with slider functionality to reveal more items.
 		-->
 		<ul class="latest-stories__media-wrapper row">
+			<span class="chevron left"></span>
 			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-2">
-				<div class="media-image col-sm-12 col-xs-4">
-					<a href="#">
-						<img class="media-object" src="{{ site.url }}ui/img/placeholder.svg"/>
-					</a>
-				</div>
-				<div class="media-body col-sm-12 col-xs-8">
-					<h4 class="latest-stories__hed">National Energy Board Slammed for 'Inadequate' Regulation</h4>
-					<p class="latest-stories__dek">Agency failing to properly track 'deficiencies in company compliance,' audit finds.</p>
-				</div>
-				<div class="media-meta">
-					<span class="latest-stories__date hidden-xs">Sept 30</span>
-					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
-				</div>
+				{% include 01-molecules/blocks/latest-story-item.html %}
 			</li>
 			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-2">
-				<div class="media-image col-sm-12 col-xs-4">
-					<a href="#">
-						<img class="media-object" src="{{ site.url }}ui/img/placeholder.svg"/>
-					</a>
-				</div>
-				<div class="media-body col-xs-8 col-sm-12">
-					<h4 class="latest-stories__hed">Smarten up, Christy! BC Libs Show Tech Ed Illiteracy</h4>
-					<p class="latest-stories__dek">Why educators schooled premier on computer coding promise as basic needs go unmet.</p>
-				</div>
-				<div class="media-meta">
-					<span class="latest-stories__date hidden-xs">Sept 30</span>
-					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
-				</div>
+				{% include 01-molecules/blocks/latest-story-item.html %}
 			</li>
 			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-2">
-				<div class="media-image col-sm-12 col-xs-4">
-					<a href="#">
-						<img class="media-object" src="{{ site.url }}ui/img/placeholder.svg"/>
-					</a>
-				</div>
-				<div class="media-body col-xs-8 col-sm-12">
-					<h4 class="latest-stories__hed">'Signing Does Not Equal Ratifying': Freeland on TPP</h4>
-					<p class="latest-stories__dek">International trade minister defends decision to ink Pacific treaty next week.</p>
-				</div>
-				<div class="media-meta">
-					<span class="latest-stories__date hidden-xs">Sept 30</span>
-					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
-				</div>
+				{% include 01-molecules/blocks/latest-story-item.html %}
 			</li>
 			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden-sm">
-				<div class="media-image col-sm-12 col-xs-4">
-					<a href="#">
-						<img class="media-object" src="{{ site.url }}ui/img/placeholder.svg"/>
-					</a>
-				</div>
-				<div class="media-body col-sm-12 col-xs-8">
-					<h4 class="latest-stories__hed">Tyee Poll: What Will Journalism after Newspapers Look Like?</h4>
-					<p class="latest-stories__dek">Postmedia's downward spiral begs the question. Tell us what you think.</p>
-				</div>
-				<div class="media-meta">
-					<span class="latest-stories__date hidden-xs">Sept 30</span>
-					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
-				</div>
+				{% include 01-molecules/blocks/latest-story-item.html %}
 			</li>
 			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden-sm hidden-md">
-				<div class="media-image col-sm-12 col-xs-4">
-					<a href="#">
-						<img class="media-object" src="{{ site.url }}ui/img/placeholder.svg"/>
-					</a>
-				</div>
-				<div class="media-body col-sm-12 col-xs-8">
-					<h4 class="latest-stories__hed">Tyee Poll: What Will Journalism after Newspapers Look Like?</h4>
-					<p class="latest-stories__dek">Postmedia's downward spiral begs the question. Tell us what you think.</p>
-				</div>
-				<div class="media-meta">
-					<span class="latest-stories__date hidden-xs">Sept 30</span>
-					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
-				</div>
+				{% include 01-molecules/blocks/latest-story-item.html %}
 			</li>
 			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-2 hidden-sm hidden-md">
-				<div class="media-image col-sm-12 col-xs-4">
-					<a href="#">
-						<img class="media-object" src="{{ site.url }}ui/img/placeholder.svg"/>
-					</a>
-				</div>
-				<div class="media-body col-sm-12 col-xs-8">
-					<h4 class="latest-stories__hed">Tyee Poll: What Will Journalism after Newspapers Look Like?</h4>
-					<p class="latest-stories__dek">Postmedia's downward spiral begs the question. Tell us what you think.</p>
-				</div>
-				<div class="media-meta">
-					<span class="latest-stories__date hidden-xs">Sept 30</span>
-					<span class="latest-stories__authour hidden-xs">J Alston-O'Connor</span>
-				</div>
+				{% include 01-molecules/blocks/latest-story-item.html %}
 			</li>
+			<span class="chevron right"></span>
 		</ul>
+
 		
 
 
