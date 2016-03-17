@@ -390,9 +390,71 @@
 
 footer {
   clear: both;
+  line-height: 2em;
+  font-size: 0.9em;
+}
+
+footer h4 {
+  color: #fff;
+  font-size: 1em;
+
+}
+
+footer ul {
+  padding: 0px;
+  list-style-type: none;
+  margin: 0px;
 }
 
 
+.footer-four {
+
+}
+
+.footer__social-links {
+  padding-top: 20px;
+}
+
+.footer__social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer__social-links li a {
+  color: #fff;
+}
+
+.footer__social-links li a:hover{
+  background-color: #aaa;
+}
+
+.footer__social-links li a i {
+  vertical-align: middle;
+  font-size: 0.8em;
+}
+
+.footer__social-links .facebook {
+  background-color: #3b5998;
+  padding: 4px 8px;
+}
+
+.footer__social-links .twitter {
+  background-color: #00aced;
+  padding: 4px;
+}
+
+.footer__social-links .twitter i {
+  margin-top: -2px;
+}
+
+.footer__social-links .envelope {
+  background-color: #666;
+  padding: 4px;
+}
+
+.footer__social-links .envelope i {
+  margin-top: -4px;
+}
 
 /* ==========================================================================
  STATES 
@@ -438,14 +500,14 @@ footer {
     padding: 0px;
     width: 100vw;
     left: 0;
-    opacity:0!important;
+    opacity:0;
     transition: all 0.3s ease;
     z-index: -10;
   }
 
 
   .open > .dropdown-menu {
-    opacity: 1!important;
+    opacity: 1;
     margin: 0px;
       transition: all 0.3s ease;
       z-index: 9999;
@@ -723,16 +785,19 @@ footer {
   display: inline-block;
 }
 
+/* FOOTER =======*/
+
+
+.footer-three {
+  margin-top: 40px;
+}
+
 
 }
 
 
 @media (max-width: 990px){
-.navbar-collapse.collapse {
-    display: none !important;
-
-
-  }
+ 
 }
 
 
