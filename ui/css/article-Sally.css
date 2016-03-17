@@ -481,8 +481,68 @@ footer ul {
  Progressively enhance for larger screens 
  ========================================================================== */
 
+/* 1200 AND UP ========================================================================== */ 
+@media (min-width: 768px) {
+   /* LATEST STORIES  SLIDER ========================================================================== */ 
 
-/* 990 AND UP ========================================================================== */ 
+
+  .latest-stories .latest-stories__media-wrapper{
+    border-bottom: solid 1px #859c01;
+    padding: 10px;
+  }
+
+  .latest-stories .latest-stories__media-wrapper li:first-child{
+    border-left: solid 1px #859c01;
+    border-bottom: none;
+    border-top: none;
+  }
+  .latest-stories .latest-stories__media-wrapper li {
+    border-right: solid 1px #859c01;
+    padding: 0px 10px 10px 10px;
+    position: relative;
+    float: left;
+    border-bottom: none;
+    border-top: none;
+    min-height: 265px;
+  }
+  .latest-stories .latest-stories__media-wrapper li:last-child {
+    border-right: none;
+  } 
+  .latest-stories .media {
+    display: inline-block;
+    text-align: left;
+  }
+  .latest-stories__hed {
+    line-height: 1.55em;
+    margin-bottom: 5px;
+  }
+  .latest-stories__dek {
+    line-height: 1.5em;
+  }
+  .latest-stories .media .media-image{
+    padding: 0px 5px;
+  }
+  .latest-stories .media .media-image img{
+    min-width: 100%;
+  }
+  .latest-stories .media .media-body {
+    height: 100%;
+    position: relative;
+    padding: 0px 5px;
+  }
+  .latest-stories .media .media-meta {
+    bottom: 0px;
+    position: absolute;
+    padding: 0px 5px;
+  }
+
+}
+
+
+
+
+
+/* 1200 AND UP ========================================================================== */ 
 @media (min-width: 1200px) {
 
   /* BOOTSTRAP OVERRIDES */
@@ -653,58 +713,7 @@ footer ul {
     margin: 0px 20px 0px 0px;
   }
 
-  /* LATEST STORIES  SLIDER ========================================================================== */ 
-
-
-  .latest-stories .latest-stories__media-wrapper{
-    border-bottom: solid 1px #859c01;
-    padding: 10px;
-  }
-
-  .latest-stories .latest-stories__media-wrapper li:first-child{
-    border-left: solid 1px #859c01;
-    border-bottom: none;
-    border-top: none;
-  }
-  .latest-stories .latest-stories__media-wrapper li {
-    border-right: solid 1px #859c01;
-    padding: 0px 10px 10px 10px;
-    position: relative;
-    float: left;
-    border-bottom: none;
-    border-top: none;
-    min-height: 265px;
-  }
-  .latest-stories .latest-stories__media-wrapper li:last-child {
-    border-right: none;
-  } 
-  .latest-stories .media {
-    display: inline-block;
-    text-align: left;
-  }
-  .latest-stories__hed {
-    line-height: 1.55em;
-    margin-bottom: 5px;
-  }
-  .latest-stories__dek {
-    line-height: 1.5em;
-  }
-  .latest-stories .media .media-image{
-    padding: 0px 5px;
-  }
-  .latest-stories .media .media-image img{
-    min-width: 100%;
-  }
-  .latest-stories .media .media-body {
-    height: 100%;
-    position: relative;
-    padding: 0px 5px;
-  }
-  .latest-stories .media .media-meta {
-    bottom: 0px;
-    position: absolute;
-    padding: 0px 5px;
-  }
+ 
 
   /* SECTIONS NAV ========================================================================== */ 
   .sections {
