@@ -55,6 +55,13 @@
   overflow-y: visible; 
 }
 
+ /* == turns off default handling for .open ===== */
+  .menu__left-nav .open a, .block--site-header .menu__right-nav .open a, .menu__left-nav .open, .menu__right-nav .open{
+    color: #859c01;
+    background-color: transparent;
+  }
+
+
 /* NARROW NAV, TOP ONLY ========================================================================== */
   
 .narrow-menu{
@@ -144,6 +151,8 @@
   background-color: #eef1d4;
   border-bottom: none;
 }
+
+
 .narrow__search {
   position: static;
   display: block;
@@ -178,6 +187,33 @@
   vertical-align: middle;
   display: inline-block;
 }
+
+
+ /* == Makes the carets in wide nav bigger ==*/
+.open .caret {
+   -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+    transition: all 0.5s ease;
+}
+
+  .caret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 6px solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    transition: all 0.5s ease;
+  }
+
+  /* == Overrides the hover and active states from Bootstrap === */
+  .nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent;
+    color: #859c01 !important;
+  }
 
 
 /* LATEST STORIES ========================================================================== */ 
@@ -483,6 +519,18 @@ footer ul {
 
 /* 1200 AND UP ========================================================================== */ 
 @media (min-width: 768px) {
+
+.menu__left-nav li, .menu__right-nav li {
+  border-bottom: solid 1px grey;
+}
+
+.menu__left-nav li ul li, .menu__right-nav li ul li {
+  border-bottom: none;
+}
+
+
+
+
    /* LATEST STORIES  SLIDER ========================================================================== */ 
 
 
@@ -536,6 +584,61 @@ footer ul {
     padding: 0px 5px;
   }
 
+
+
+  /* SECTIONS NAV ========================================================================== */ 
+
+
+  .sections ul {
+    overflow: hidden;
+    text-align: left
+  }
+  .sections ul li {
+  }
+  .sections ul li a {
+      text-transform: capitalize;
+  }
+
+  .sections__categories ul li{
+        padding: 0px 10px 20px 8px;  }
+
+  .sections__topics-header {
+    padding-bottom: 8px;
+    padding-left: 10px;
+    border-color: #949594;
+    padding-top: 0px;
+  }
+  .sections__topics-wrap ul {
+    margin-top: 10px!important;
+  }
+
+  .sections__topics-wrap ul li {
+    clear:both;
+    float: none;
+    width: 100%;
+  }
+
+  .sections__topics-wrap > div {
+    padding-left: 8px;
+  }
+
+   .sections__categories ul li, .sections__list-one ul li, .sections__list-two ul li, .sections__list-three ul li, .sections__list-four ul li, .sections__lis ul li{
+    display: inline-block!important;
+    text-align: left;
+  }
+
+  .sections__categories ul li a{
+    text-transform: uppercase;
+  }
+
+
+   /* MORE========================================================================== */ 
+
+  .more:first-child {
+    padding:8px 20px;
+
+  }
+
 }
 
 
@@ -579,32 +682,7 @@ footer ul {
     padding: 0px;
   }
 
-  /* == Makes the carets in wide nav bigger ==*/
-.open .caret {
-   -ms-transform: rotate(180deg); /* IE 9 */
-    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-    transform: rotate(180deg);
-    transition: all 0.5s ease;
-}
-
-  .caret{
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 2px;
-    vertical-align: middle;
-    border-top: 6px solid;
-    border-right: 6px solid transparent;
-    border-left: 6px solid transparent;
-    transition: all 0.5s ease;
-  }
-
-  /* == Overrides the hover and active states from Bootstrap === */
-  .nav > li > a:hover, .nav > li > a:focus {
-    background-color: transparent;
-    color: #859c01 !important;
-  }
-
+ 
   /* == Turns off relative positioning so the dropdowns will align on the left === */
   .nav >li {
     position: static;
@@ -620,7 +698,7 @@ footer ul {
   .menu ul > li {
     display: table-cell;
     float: none;
-    text-align: center;
+   
     vertical-align: bottom;
     padding-bottom: 10px;
   }
@@ -635,11 +713,7 @@ footer ul {
   }
 
 
-  /* == turns off default handling for .open ===== */
-  .menu__left-nav .open a, .block--site-header .menu__right-nav .open a, .menu__left-nav .open, .menu__right-nav .open{
-    color: #859c01;
-    background-color: transparent;
-  }
+ 
 
   /* WIDE NAV ========================================================================== */ 
 
@@ -714,60 +788,29 @@ footer ul {
   }
 
  
-
-  /* SECTIONS NAV ========================================================================== */ 
+/* SECTIONS ====*/
+  
   .sections {
     padding: 8px 20px;
   }
-  .menu__sections ul li {
-    width: 100%;
-  }
-  .sections ul {
-    overflow: hidden;
-    text-align: left
-  }
-  .sections ul li {
-    clear:both;
-    padding: 5px 0px;
-  }
-  .sections ul li a {
-      text-transform: capitalize;
-  }
-  .sections__categories ul {
-    text-align: left;
-    border-right: solid 1px #859c01;
-  }
-  .sections__topics-header {
-    margin-left: 15px;
-    padding-bottom: 8px;
-    border-color: #949594;
-    padding-top: 0px;
-  }
-  .sections__topics-wrap ul {
-    margin-top: 10px!important;
-  }
 
-   .sections__categories ul li, .sections__list-one ul li, .sections__list-two ul li, .sections__list-three ul li, .sections__list-four ul li, .sections__lis ul li{
-    display: inline-block!important;
-    text-align: left;
-  }
-
-  .sections__categories ul li a{
-    text-transform: uppercase;
-  }
   .sections__list-one {
     padding-left: 40px;
   }
 
-   /* MORE========================================================================== */ 
 
-  .more:first-child {
-    padding:8px 20px;
-
+  .sections__categories ul {
+    text-align: left;
+    border-right: solid 1px #859c01;
+  }
+  .sections__categories ul li {
+    width: 100%;
+    float: none;
+    clear: both;
+    padding: 10px;
   }
 
-  
-
+  /* SEARCH =====*/
  
 
   .menu__search ul{
