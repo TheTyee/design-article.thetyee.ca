@@ -6,8 +6,6 @@ $('.dropdown-menu').children().click(function(e){
 
 //LATEST STORIES
 
-//Fire the API call on initial load
-//latestStories();
 
 //GLOBALS 
 var storyPositions = '';
@@ -22,11 +20,7 @@ var storyObjects = new Array();
 //this makes the Ajax call and puts everything into the returnedStories var for manipulation.
 getLatestStories();
 
-
-
 function getLatestStories(newUrl, callback){
-	//Count how many stories are showing
-//	storyPositions = $('.menu_left-nav-wrap .latest-stories__media-wrapper li:hidden').length;
 	//Return the max number of stories, to avoid multiple costly requests
 	storiesRequested =50;
 	//API Call
@@ -63,6 +57,7 @@ function createLatestStories(returnedStories){
 		latestStoryImage = value._source.related_media[0].uri;
 		latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
 
+		formattedDate = moment(value._source.storyDate).format("DD MMM");
 		//Set default values for the Story object
 		var Story = {
 			urlPath : 'link', 
@@ -78,7 +73,7 @@ function createLatestStories(returnedStories){
 		Story.hed = value._source.title;
 		Story.image = latestStoryImage;
 		Story.dek = value._source.teaser;
-		Story.date = value._source.storyDate;
+		Story.date = formattedDate;
 		Story.authour = value._source.byline;
 		
 		//Put all objects into a new array for easier handling
@@ -89,15 +84,13 @@ function createLatestStories(returnedStories){
 
 	//Loop through latest stories spots and plug in the data
 	$.each( $('.menu_left-nav-wrap .latest-stories__media-wrapper li'), function(i, details){
-
-		console.log(storyObjects.length);
-		console.log(counter + 'this is it');
 		$(this).find('a').attr('href', storyObjects[counter].urlPath);
 		$(this).find('img').attr('src', storyObjects[counter].image);
 		$(this).find('h4').html(storyObjects[counter].hed);
 		$(this).find('p').html(storyObjects[counter].dek);
 		$(this).find('.latest-stories__date').html(storyObjects[counter].date);
 		$(this).find('.latest-stories__authour').html(storyObjects[counter].authour);
+		//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
 		if((counter> 5) && (counter  % 6 == 0 )){
 			return false;
 		}

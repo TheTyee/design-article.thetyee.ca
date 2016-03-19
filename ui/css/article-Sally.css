@@ -12,8 +12,6 @@
     width: 100%;
  }
 
-
-
 .preloader1 {
    width:40px;
    height:40px;
@@ -296,6 +294,8 @@
 }
 .latest-stories__media-wrapper .media .media-image {
   padding: 15px 0px;
+  height: 100px;
+  overflow: hidden;
 }
 
 .latest-stories__media-wrapper .media .media-image .media-object{
@@ -913,7 +913,7 @@ footer ul {
     float: left;
     border-bottom: none;
     border-top: none;
-    min-height: 265px;
+    min-height: 255px;
   }
   .latest-stories .latest-stories__media-wrapper li:last-child {
     border-right: none;
