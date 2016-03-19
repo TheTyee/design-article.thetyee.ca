@@ -82,19 +82,23 @@ function createLatestStories(returnedStories){
 
 	});
 
-	//Loop through latest stories spots and plug in the data
-	$.each( $('.menu_left-nav-wrap .latest-stories__media-wrapper li'), function(i, details){
-		$(this).find('a').attr('href', storyObjects[counter].urlPath);
-		$(this).find('img').attr('src', storyObjects[counter].image);
-		$(this).find('h4').html(storyObjects[counter].hed);
-		$(this).find('p').html(storyObjects[counter].dek);
-		$(this).find('.latest-stories__date').html(storyObjects[counter].date);
-		$(this).find('.latest-stories__authour').html(storyObjects[counter].authour);
-		//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
-		if((counter> 5) && (counter  % 6 == 0 )){
-			return false;
-		}
-		counter++;
+	$('.latest-stories__media-wrapper').each(function(key, value){
+		//Loop through latest stories spots and plug in the data
+		$.each( $(value).find('li'), function(i, details){
+			$(this).find('a').attr('href', storyObjects[counter].urlPath);
+			$(this).find('img').attr('src', storyObjects[counter].image);
+			$(this).find('h4').html(storyObjects[counter].hed);
+			$(this).find('p').html(storyObjects[counter].dek);
+			$(this).find('.latest-stories__date').html(storyObjects[counter].date);
+			$(this).find('.latest-stories__authour').html(storyObjects[counter].authour);
+			//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
+			if((counter> 5) && (counter  % 6 == 0 )){
+				return false;
+			}
+			counter++;
+		});
+		//reset the counter to populate the footer
+		counter = 0;
 	});
 
 

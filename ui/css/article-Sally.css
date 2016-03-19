@@ -133,6 +133,7 @@
 
 .menu__hamburger i {
     float: left;
+    color: #555;
 }
 
 .narrow-menu__logo{
@@ -229,6 +230,10 @@
   display: inline-block;
 }
 
+
+.menu__search--wrapper .form-control{
+    width: 100%!important;
+  }
 
  /* == Makes the carets in wide nav bigger ==*/
 .open .caret {
@@ -939,6 +944,7 @@ footer ul {
     height: 100%;
     position: relative;
     padding: 0px 5px;
+    color: #555;
   }
   .latest-stories .media .media-meta {
     bottom: 0px;
@@ -981,9 +987,7 @@ footer ul {
   .menu__search ul{
     padding: 20px 0px;
   }
-  .menu__search .form-control{
-    width: 100%;
-  }
+
   .search-block .dropdown-toggle {  
     padding-right: 15px;
     position: relative;
