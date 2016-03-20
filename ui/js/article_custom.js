@@ -131,10 +131,8 @@ $('.latest-stories__media-wrapper').on('click', '.next', function(event){
 	counter = counter+1;
 	console.log(counter);
 	if (counter % 49 == 0){
-        //your callback logic / code here
+        
         counter = 0;
-    
-	
 	};
 	//Fire request for new stories
 	displayLatestStories();
