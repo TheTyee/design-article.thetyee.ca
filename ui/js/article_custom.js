@@ -20,7 +20,10 @@ $('.dropdown-menu').children().click(function(e){
 //GLOBALS 
 var storyPositions = '';
 var totalStoryPositions='';
-var counter = 0;
+var counter =0;
+var topCounter = 0;
+var bottomCounter = 0;
+
 var i = 0;
 var response;
 var recentItems;
@@ -99,47 +102,81 @@ function displayLatestStories(){
 //	console.log(storyObjects);
 
 	$('.latest-stories__media-wrapper').each(function(key, value){
-	//Loop through latest stories spots and plug in the data
-	$.each( $(value).find('li'), function(i, details){
-		$(this).find('a').attr('href', storyObjects[counter].urlPath);
-		$(this).find('img').attr('src', storyObjects[counter].image);
-		$(this).find('h4').html(storyObjects[counter].hed);
-		$(this).find('p').html(storyObjects[counter].dek);
-		$(this).find('.latest-stories__date').html(storyObjects[counter].date);
-		$(this).find('.latest-stories__authour').html(storyObjects[counter].authour);
-		//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
-		if((counter> 5) && (counter  % 6 == 0 )){
-			return false;
+		if(key == 0){
+	//	console.log(key);
+		//Loop through latest stories spots and plug in the data
+			$.each( $(this).find('li'), function(i, details){
+				$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+				$(this).find('img').attr('src', storyObjects[topCounter].image);
+				$(this).find('h4').html(storyObjects[topCounter].hed);
+				$(this).find('p').html(storyObjects[topCounter].dek);
+				$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+				$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+				//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
+				if((topCounter>5) && (topCounter  % 6 == 0 )){
+					return false;
+					//counter = 0;
+				}
+				topCounter++;
+
+			});
+		} 
+
+		if (key == 1){
+
+			$.each( $(this).find('li'), function(i, details){
+				$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+				$(this).find('img').attr('src', storyObjects[bottomCounter].image);
+				$(this).find('h4').html(storyObjects[bottomCounter].hed);
+				$(this).find('p').html(storyObjects[bottomCounter].dek);
+				$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+				$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+				//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
+				if((bottomCounter>5) && (bottomCounter  % 6 == 0 )){
+					return false;
+					//counter = 0;
+				}
+				bottomCounter++;
+
+			});
+
 		}
-		counter++;
 	});
-	//reset the counter to populate the footer
+}//displayStories
 
-});
 
-}
-
+//CLICKING ANY CHEVRON MAKES THE TOP MOVE
 
 
 //Get the next group of stories on click
-$('.latest-stories__media-wrapper').on('click', '.next', function(event){
-	
+$.each($('.latest-stories__media-wrapper'), function(top, bottom){
 
-	//Grab the markup for the stories and keep it in a variable for repopulation
-	var temp = $('.menu_left-nav-wrap .latest-stories__media-wrapper').children();
-	//Clear out last set of stories
-	counter = counter+1;
-	console.log(counter);
-	if (counter % 49 == 0){
-        
-        counter = 0;
-	};
-	//Fire request for new stories
-	displayLatestStories();
-	//createLatestStories(returnedStories);
-	//Unbind the click handler so it'll work repeatedly
-	$(this).off('click');
+	$(this).on('click', '.next', function(event){
 	
+		console.log($(this));
+		//Grab the markup for the stories and keep it in a variable for repopulation
+		var temp = $('.menu_left-nav-wrap .latest-stories__media-wrapper').children();
+		//Clear out last set of stories
+		topCounter = topCounter+1;
+		bottomCounter = bottomCounter+1;
+
+		console.log(topCounter);
+		if (topCounter % 49 == 0){    
+	        topCounter = 0;
+		};
+
+		if (bottomCounter % 49 == 0){    
+	        bottomCounter = 0;
+		};
+
+
+		//Fire request for new stories
+		displayLatestStories();
+		//createLatestStories(returnedStories);
+		//Unbind the click handler so it'll work repeatedly
+		$(this).off('click');
+	
+	});
 });
 
 
