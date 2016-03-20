@@ -6,6 +6,16 @@ $('.dropdown-menu').children().click(function(e){
 
 //LATEST STORIES
 
+//on load, call the api / getLatestStories();
+//return 50 stories /getLatestStories()
+//put them into a variable / createStoryObjects()
+//use that variable to populate the dom / displayLatestStories
+
+
+
+
+
+
 
 //GLOBALS 
 var storyPositions = '';
@@ -20,7 +30,7 @@ var storyObjects = new Array();
 //this makes the Ajax call and puts everything into the returnedStories var for manipulation.
 getLatestStories();
 
-function getLatestStories(newUrl, callback){
+function getLatestStories(){
 	//Return the max number of stories, to avoid multiple costly requests
 	storiesRequested =50;
 	//API Call
@@ -32,7 +42,7 @@ function getLatestStories(newUrl, callback){
 		crossDomain: true,
 		success: function(response){
 			returnedStories = returnedStories.responseJSON.hits.hits;
-			recentItems = createLatestStories(returnedStories);
+			recentItems = createStoryObjects(returnedStories);
 		},
 		error: function(){
 			console.log('NO DICE SISTER');
@@ -41,7 +51,7 @@ function getLatestStories(newUrl, callback){
 }//end lateststories()
 
 
-function createLatestStories(returnedStories){
+function createStoryObjects(returnedStories, callback){
 	
 	//remove the placeholder classes
 	$('.latest-stories__hed').removeClass('hed_preload_placeholder');
@@ -78,30 +88,34 @@ function createLatestStories(returnedStories){
 		
 		//Put all objects into a new array for easier handling
 		storyObjects.push(Story);
-		//console.log(storyObjects);
-
 	});
+	// on load, populate the DOM
+	displayLatestStories();
+}
+//make storyObjects global, so I don't have to keep hitting the API
+storyObjects = storyObjects;
+
+function displayLatestStories(){
+//	console.log(storyObjects);
 
 	$('.latest-stories__media-wrapper').each(function(key, value){
-		//Loop through latest stories spots and plug in the data
-		$.each( $(value).find('li'), function(i, details){
-			$(this).find('a').attr('href', storyObjects[counter].urlPath);
-			$(this).find('img').attr('src', storyObjects[counter].image);
-			$(this).find('h4').html(storyObjects[counter].hed);
-			$(this).find('p').html(storyObjects[counter].dek);
-			$(this).find('.latest-stories__date').html(storyObjects[counter].date);
-			$(this).find('.latest-stories__authour').html(storyObjects[counter].authour);
-			//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
-			if((counter> 5) && (counter  % 6 == 0 )){
-				return false;
-			}
-			counter++;
-		});
-		//reset the counter to populate the footer
-		counter = 0;
+	//Loop through latest stories spots and plug in the data
+	$.each( $(value).find('li'), function(i, details){
+		$(this).find('a').attr('href', storyObjects[counter].urlPath);
+		$(this).find('img').attr('src', storyObjects[counter].image);
+		$(this).find('h4').html(storyObjects[counter].hed);
+		$(this).find('p').html(storyObjects[counter].dek);
+		$(this).find('.latest-stories__date').html(storyObjects[counter].date);
+		$(this).find('.latest-stories__authour').html(storyObjects[counter].authour);
+		//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
+		if((counter> 5) && (counter  % 6 == 0 )){
+			return false;
+		}
+		counter++;
 	});
+	//reset the counter to populate the footer
 
-
+});
 
 }
 
@@ -110,15 +124,24 @@ function createLatestStories(returnedStories){
 //Get the next group of stories on click
 $('.latest-stories__media-wrapper').on('click', '.next', function(event){
 	
+
 	//Grab the markup for the stories and keep it in a variable for repopulation
 	var temp = $('.menu_left-nav-wrap .latest-stories__media-wrapper').children();
 	//Clear out last set of stories
 	counter = counter+1;
+	console.log(counter);
+	if (counter % 49 == 0){
+        //your callback logic / code here
+        counter = 0;
+    
+	
+	};
 	//Fire request for new stories
-	getLatestStories();
+	displayLatestStories();
 	//createLatestStories(returnedStories);
 	//Unbind the click handler so it'll work repeatedly
 	$(this).off('click');
+	
 });
 
 
