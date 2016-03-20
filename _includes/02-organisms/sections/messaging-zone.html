@@ -1,11 +1,24 @@
+
 <!-- BEGIN 02-organisms/sections/messaging-zone -->
+
+
 <div class="messaging-zone container-fluid" data-dev-object-descrip="02-organisms/sections/messaging-zone" data-dev-status="IN-PROGRESS">
+		{% if barometer == 'false' %}
 
-    {% include 01-molecules/blocks/messaging-block--share.html %}
+			{% include 01-molecules/blocks/messaging-block--share.html %}
 
-    {% include 01-molecules/blocks/messaging-block--ask.html %}
+			{% include 01-molecules/blocks/messaging-block--ask.html %}
 
-    {% include 01-molecules/blocks/messaging-block--subscribe.html %}
+			{% include 01-molecules/blocks/messaging-block--subscribe.html %}
+
+		{% endif %}
+	
+
+		{% if barometer == 'true' %}
+		
+			{% include 01-molecules/blocks/messaging-block--barometer.html %}   
+		
+		{% endif %}
 
 </div>
 <!-- END 02-organisms/sections/messaging-zone -->
