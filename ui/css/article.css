@@ -711,8 +711,8 @@ aside { }
             float:right;
             margin-top: 0.24em;
             margin-right: -19em;
-            width: 300px; 
-            border: none
+            width: 300px;
+            border: none;
         }
 
         .featured-media .bigbox--1st-position:before { 
