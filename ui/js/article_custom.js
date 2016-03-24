@@ -109,139 +109,14 @@ function createStoryObjects(returnedStories, callback){
 		storyObjects.push(Story);
 	});
 	// on load, populate the DOM
-	displayLatestStories();
-}
 
 
-function displayLatestStories(callback){
-	
-	console.log(countStoryPositions());
-		//Loop through latest stories spots in the nav and plug in the data
-			$(this).children().each(function(i, details){
+	$('.latest-stories__media-wrapper').each(function(key, index){
 
-
-
-				$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
-				$(this).find('img').attr('src', storyObjects[topCounter].image);
-				$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
-				$(this).find('p').html(storyObjects[topCounter].dek);
-				$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
-				$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
-				topCounter++;
-
-			});
-			scrollLatestStories();
-
-		
-
-
-}//displayStories
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//populates empty lis with story objects
-function displayLatestStories(callback){
-	$('.latest-stories__media-wrapper').each(function(key, value){
-	
-		if (key == 0){
-		//Loop through latest stories spots in the nav and plug in the data
-			$.each( $(this).find('li'), function(i, details){
-			//	console.log('top: ' +storyObjects[topCounter]);
-			
-				$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
-				$(this).find('img').attr('src', storyObjects[topCounter].image);
-				$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
-				$(this).find('p').html(storyObjects[topCounter].dek);
-				$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
-				$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
-
-				topCounter++;
-
-				if (topCounter % 5 ===0){
-					return false;
-				}
-
-				if (topCounter >= 50){
-					topCounter = 0;
-				}
-		
-
-			});
-			scrollLatestStories(key, value);
-		} 
-
-		if (key == 1){
-		//Loop through latest stories spots in the nav and plug in the data
-			$.each( $(this).find('li'), function(i, details){
-			//	console.log('top: ' +storyObjects[topCounter]);
-			
-				$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
-				$(this).find('img').attr('src', storyObjects[bottomCounter].image);
-				$(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
-				$(this).find('p').html(storyObjects[bottomCounter].dek);
-				$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
-				$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
-
-				bottomCounter++;
-
-				if (bottomCounter % 6 ===0){
-					return false;
-				}
-				if (bottomCounter >= 50){
-					bottomCounter = 0;
-				}
-			
-
-			});
-			scrollLatestStories(key, value);
-		} 
-
-
-			
-
-	});
-
-}//displayStories
-
-*/
-
-
-
-//Make Ajax call and put data into the returnedStories var for manipulation.
-getLatestStories();
-
-
-
-//takes parameters of current slider
-function scrollLatestStories(){
-	//Get the next group of stories on click
-
-	//console.log(key + ' ' + value);
-		$('.latest-stories__media-wrapper').each(function(key, index){
-
-
-
-
-
-		$(this).on('click', '.next', function(event){
-			console.log($(this).find('li'));
 			
 			$(this).parent().find('li').each(function(i, details){
 
 				if (key == 0){
-
-
 
 					$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
 					$(this).find('img').attr('src', storyObjects[topCounter].image);
@@ -260,7 +135,69 @@ function scrollLatestStories(){
 
 				if (key == 1){
 
+					$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+					$(this).find('img').attr('src', storyObjects[bottomCounter].image);
+					$(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
+					$(this).find('p').html(storyObjects[bottomCounter].dek);
+					$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+					$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+					bottomCounter++;
 
+					if (bottomCounter >=50){
+						bottomCounter = 0;
+					}
+				}
+
+
+			});
+		});
+
+
+
+	//control the scrolling
+	scrollLatestStories();
+}
+
+
+
+
+
+
+
+//Make Ajax call and put data into the returnedStories var for manipulation.
+getLatestStories();
+
+
+
+//takes parameters of current slider
+function scrollLatestStories(){
+	//Get the next group of stories on click
+
+	//console.log(key + ' ' + value);
+		$('.latest-stories__media-wrapper').each(function(key, index){
+		$(this).on('click', '.next', function(event){
+			console.log($(this).find('li'));
+			
+			$(this).parent().find('li').each(function(i, details){
+
+				if (key == 0){
+
+					$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+					$(this).find('img').attr('src', storyObjects[topCounter].image);
+					$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
+					$(this).find('p').html(storyObjects[topCounter].dek);
+					$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+					$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+					topCounter++;
+
+					if (topCounter >=50){
+						topCounter = 0;
+					}
+				}
+
+
+
+				if (key == 1){
 
 					$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
 					$(this).find('img').attr('src', storyObjects[bottomCounter].image);
@@ -283,7 +220,7 @@ function scrollLatestStories(){
 	});
 
 
-		});
+});
 
 
 }
