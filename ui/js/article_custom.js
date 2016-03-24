@@ -12,7 +12,9 @@ $('.dropdown-menu').children().click(function(e){
 //use that variable to populate the dom / displayLatestStories
 
 
-
+jQuery.fn.reverse = function() {
+    return this.pushStack(this.get().reverse(), arguments);
+};
 
 
 
@@ -109,30 +111,17 @@ function createStoryObjects(returnedStories, callback){
 		storyObjects.push(Story);
 	});
 	// on load, populate the DOM
-
-
-	$('.latest-stories__media-wrapper').each(function(key, index){
-
-			
-			$(this).parent().find('li').each(function(i, details){
-
-				if (key == 0){
-
-					$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
-					$(this).find('img').attr('src', storyObjects[topCounter].image);
-					$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
-					$(this).find('p').html(storyObjects[topCounter].dek);
-					$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
-					$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
-					topCounter++;
-
-					if (topCounter >=50){
-						topCounter = 0;
-					}
-				}
-
-
-
+	$('.latest-stories__media-wrapper').each(function(key, index){		
+		$(this).parent().find('li').each(function(i, details){
+			if (key == 0){
+				$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+				$(this).find('img').attr('src', storyObjects[topCounter].image);
+				$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
+				$(this).find('p').html(storyObjects[topCounter].dek);
+				$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+				$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+				topCounter++;
+			}
 				if (key == 1){
 
 					$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
@@ -143,9 +132,6 @@ function createStoryObjects(returnedStories, callback){
 					$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
 					bottomCounter++;
 
-					if (bottomCounter >=50){
-						bottomCounter = 0;
-					}
 				}
 
 
@@ -176,10 +162,10 @@ function scrollLatestStories(){
 	//console.log(key + ' ' + value);
 		$('.latest-stories__media-wrapper').each(function(key, index){
 		$(this).on('click', '.next', function(event){
-			console.log($(this).find('li'));
-			
-			$(this).parent().find('li').each(function(i, details){
+		//	console.log($(this).find('li'));
 
+			$(this).parent().find('li').each(function(i, details){
+		//	console.log('right click - ' + topCounter);
 				if (key == 0){
 
 					$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
@@ -220,7 +206,57 @@ function scrollLatestStories(){
 	});
 
 
+console.log($(this));
+
+$(this).on('click', '.prev', function(event){
+
+
+
+			$(this).parent().find('li').reverse().each(function(i, details){
+
+				if (topCounter < 0){
+						topCounter = 49;
+					}
+
+				if (key == 0){
+					console.log('left click - ' + topCounter);
+					$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+					$(this).find('img').attr('src', storyObjects[topCounter].image);
+					$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
+					$(this).find('p').html(storyObjects[topCounter].dek);
+					$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+					$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+					topCounter--;
+					//alert(topCounter);
+					
+				}
+
+	
+
+				if (bottomCounter < 0){
+						bottomCounter = 49;
+					}
+
+				if (key == 1){
+					console.log('left click - ' + bottomCounter);
+					$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+					$(this).find('img').attr('src', storyObjects[bottomCounter].image);
+					$(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
+					$(this).find('p').html(storyObjects[bottomCounter].dek);
+					$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+					$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+					bottomCounter--;
+					//alert(topCounter);
+					
+				}
+
 });
+
+
+
+});
+});
+
 
 
 }
