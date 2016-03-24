@@ -18,25 +18,37 @@ $('.dropdown-menu').children().click(function(e){
 
 
 //GLOBALS 
-var storyPositions = '';
-var totalStoryPositions='';
+var totalStoryPositions;
 var counter =0;
 var topCounter = 0;
 var bottomCounter = 0;
-
-var i = 0;
 var response;
 var recentItems;
 var returnedStories = new Array();
 var storyObjects = new Array();
 
-//this makes the Ajax call and puts everything into the returnedStories var for manipulation.
-getLatestStories();
 
+
+//make storyObjects global, so I don't have to keep hitting the API
+storyObjects = storyObjects;
+
+//check the DOM to see how many stories we need to show
+totalStoryPositions = countStoryPositions();
+
+
+
+//returns the number of lis to be populated
+function countStoryPositions(){
+	$('.latest-stories__media-wrapper').each(function( key, value){
+		totalStoryPositions = $(this).children(':visible').length;
+		return totalStoryPositions;
+	});
+}
+
+
+//Returned stories from the API
 function getLatestStories(){
-	//Return the max number of stories, to avoid multiple costly requests
-	storiesRequested =50;
-	//API Call
+	storiesRequested = 50;
 	returnedStories = $.ajax({
 		method: 'POST',
 		url: 'http://api.thetyee.ca/v1/latest/' + storiesRequested,
@@ -44,8 +56,11 @@ function getLatestStories(){
 		data: response,
 		crossDomain: true,
 		success: function(response){
+			console.log(response);
 			returnedStories = returnedStories.responseJSON.hits.hits;
+			//pass data to the create function so I can create my own story objects
 			recentItems = createStoryObjects(returnedStories);
+			return recentItems
 		},
 		error: function(){
 			console.log('NO DICE SISTER');
@@ -53,9 +68,8 @@ function getLatestStories(){
 	});
 }//end lateststories()
 
-
+//Format the json data for ease of manipulation
 function createStoryObjects(returnedStories, callback){
-	
 	//remove the placeholder classes
 	$('.latest-stories__hed').removeClass('hed_preload_placeholder');
 	$('.latest-stories__dek').removeClass('dek_preload_placeholder');
@@ -69,8 +83,10 @@ function createStoryObjects(returnedStories, callback){
 		//Format the API img uri's so they don't point at cachefly
 		latestStoryImage = value._source.related_media[0].uri;
 		latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
-
+		
+		//Use moment.js to format the date
 		formattedDate = moment(value._source.storyDate).format("DD MMM");
+		
 		//Set default values for the Story object
 		var Story = {
 			urlPath : 'link', 
@@ -95,88 +111,190 @@ function createStoryObjects(returnedStories, callback){
 	// on load, populate the DOM
 	displayLatestStories();
 }
-//make storyObjects global, so I don't have to keep hitting the API
-storyObjects = storyObjects;
 
-function displayLatestStories(){
-//	console.log(storyObjects);
 
-	$('.latest-stories__media-wrapper').each(function(key, value){
-		if(key == 0){
-	//	console.log(key);
-		//Loop through latest stories spots and plug in the data
-			$.each( $(this).find('li'), function(i, details){
+function displayLatestStories(callback){
+	
+	console.log(countStoryPositions());
+		//Loop through latest stories spots in the nav and plug in the data
+			$(this).children().each(function(i, details){
+
+
+
 				$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
 				$(this).find('img').attr('src', storyObjects[topCounter].image);
-				$(this).find('h4').html(storyObjects[topCounter].hed);
+				$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
 				$(this).find('p').html(storyObjects[topCounter].dek);
 				$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
 				$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
-				//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
-				if((topCounter>5) && (topCounter  % 6 == 0 )){
-					return false;
-					//counter = 0;
-				}
 				topCounter++;
 
 			});
-		} 
+			scrollLatestStories();
 
-		if (key == 1){
+		
 
-			$.each( $(this).find('li'), function(i, details){
-				$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
-				$(this).find('img').attr('src', storyObjects[bottomCounter].image);
-				$(this).find('h4').html(storyObjects[bottomCounter].hed);
-				$(this).find('p').html(storyObjects[bottomCounter].dek);
-				$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
-				$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
-				//keeps the counter from randomly skipping stories. Needs to be made dynamic based on screen width.
-				if((bottomCounter>5) && (bottomCounter  % 6 == 0 )){
-					return false;
-					//counter = 0;
-				}
-				bottomCounter++;
 
-			});
-
-		}
-	});
 }//displayStories
 
 
-//CLICKING ANY CHEVRON MAKES THE TOP MOVE
 
 
-//Get the next group of stories on click
-$.each($('.latest-stories__media-wrapper'), function(top, bottom){
 
-	$(this).on('click', '.next', function(event){
+
+
+
+
+
+
+
+
+/*
+//populates empty lis with story objects
+function displayLatestStories(callback){
+	$('.latest-stories__media-wrapper').each(function(key, value){
 	
-		console.log($(this));
-		//Grab the markup for the stories and keep it in a variable for repopulation
-		var temp = $('.menu_left-nav-wrap .latest-stories__media-wrapper').children();
-		//Clear out last set of stories
-		topCounter = topCounter+1;
-		bottomCounter = bottomCounter+1;
+		if (key == 0){
+		//Loop through latest stories spots in the nav and plug in the data
+			$.each( $(this).find('li'), function(i, details){
+			//	console.log('top: ' +storyObjects[topCounter]);
+			
+				$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+				$(this).find('img').attr('src', storyObjects[topCounter].image);
+				$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
+				$(this).find('p').html(storyObjects[topCounter].dek);
+				$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+				$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
 
-		console.log(topCounter);
-		if (topCounter % 49 == 0){    
-	        topCounter = 0;
-		};
+				topCounter++;
 
-		if (bottomCounter % 49 == 0){    
-	        bottomCounter = 0;
-		};
+				if (topCounter % 5 ===0){
+					return false;
+				}
+
+				if (topCounter >= 50){
+					topCounter = 0;
+				}
+		
+
+			});
+			scrollLatestStories(key, value);
+		} 
+
+		if (key == 1){
+		//Loop through latest stories spots in the nav and plug in the data
+			$.each( $(this).find('li'), function(i, details){
+			//	console.log('top: ' +storyObjects[topCounter]);
+			
+				$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+				$(this).find('img').attr('src', storyObjects[bottomCounter].image);
+				$(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
+				$(this).find('p').html(storyObjects[bottomCounter].dek);
+				$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+				$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+
+				bottomCounter++;
+
+				if (bottomCounter % 6 ===0){
+					return false;
+				}
+				if (bottomCounter >= 50){
+					bottomCounter = 0;
+				}
+			
+
+			});
+			scrollLatestStories(key, value);
+		} 
 
 
-		//Fire request for new stories
-		displayLatestStories();
-		//createLatestStories(returnedStories);
-		//Unbind the click handler so it'll work repeatedly
-		$(this).off('click');
+			
+
+	});
+
+}//displayStories
+
+*/
+
+
+
+//Make Ajax call and put data into the returnedStories var for manipulation.
+getLatestStories();
+
+
+
+//takes parameters of current slider
+function scrollLatestStories(){
+	//Get the next group of stories on click
+
+	//console.log(key + ' ' + value);
+		$('.latest-stories__media-wrapper').each(function(key, index){
+
+
+
+
+
+		$(this).on('click', '.next', function(event){
+			console.log($(this).find('li'));
+			
+			$(this).parent().find('li').each(function(i, details){
+
+				if (key == 0){
+
+
+
+					$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+					$(this).find('img').attr('src', storyObjects[topCounter].image);
+					$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
+					$(this).find('p').html(storyObjects[topCounter].dek);
+					$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+					$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+					topCounter++;
+
+					if (topCounter >=50){
+						topCounter = 0;
+					}
+				}
+
+
+
+				if (key == 1){
+
+
+
+					$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+					$(this).find('img').attr('src', storyObjects[bottomCounter].image);
+					$(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
+					$(this).find('p').html(storyObjects[bottomCounter].dek);
+					$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+					$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+					bottomCounter++;
+
+					if (bottomCounter >=50){
+						bottomCounter = 0;
+					}
+				}
+
+
+			});
+
+			$(this).off('click');
 	
 	});
-});
+
+
+		});
+
+
+}
+
+
+
+
+//page loads with first stories, 0-6
+
+//on click, take the last number of stories (6) and add one to pull the next 6 stories.
+
+//if 50 stories have loaded, loop back to start
 
 
