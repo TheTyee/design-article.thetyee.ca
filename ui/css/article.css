@@ -224,8 +224,8 @@ p a:hover {color: #839800;}
 /* ==========================================================================
    #LAYOUT
    (Layout rules divide the page into sections. Layouts hold one or more modules
-    together. These apply largely to the Organism and Template levels. They 
-    are kind of like helper classes. https://smacss.com/book/type-layout )
+    together. These apply largely to the Organism and Template levels. 
+    https://smacss.com/book/type-layout )
    ========================================================================== */
 
 
@@ -240,6 +240,9 @@ p a:hover {color: #839800;}
   margin: 0 auto 0 auto;
 }
 
+.featured-media { 
+  padding-top: 1em;
+}
 
     @media screen and (min-width: 1125px) {
         .featured-media {/* At views wider than 1125px the feature-media organism shrinks and
@@ -278,7 +281,8 @@ p a:hover {color: #839800;}
     .article__body, 
     .featured-media, 
     .messaging-zone {
-      margin: 0 auto 0 auto;
+      margin-left: auto;
+      margin-right: auto;
       left: -5.5em; /* [article__header max-width]-[article__body max-width] */
       /* ... centers article__body and offsets towards left to align with article__header.
          It keeps the article__body aligned flush left with the article__header. */
