@@ -238,6 +238,16 @@ p a:hover {color: #839800;}
   margin: 0 auto 0 auto;
 }
 
+    @media screen and (min-width: 40em) {
+        
+        .article__header {
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+        
+    }
+
+
 
 .featured-media { /* featured-media organism is centered on the page and occupies full page column 
                      width at medium and small view widths */
@@ -246,6 +256,13 @@ p a:hover {color: #839800;}
   padding-top: 1em;
 }
 
+    @media screen and (min-width: 40em) {
+        
+        .featured-media {
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+    }
     
     @media screen and (min-width: 70em) {
         .featured-media {/* At views wider than 70em (~1125px) the feature-media organism shrinks and
