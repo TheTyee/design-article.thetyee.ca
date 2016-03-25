@@ -193,7 +193,12 @@
   border-bottom: none;
 }
 
-
+.menu__join {
+  padding-bottom: 12px!important;
+}
+.menu__join .btn-join span{
+  color: #90AD00;
+}
 .narrow__search {
   position: static;
   display: block;
