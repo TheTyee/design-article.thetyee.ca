@@ -403,32 +403,42 @@ figure {
   margin-bottom: 2em;
 }
 
-  .featured-media figure {
-      margin-top: 0.25em;
-  }
+    .featured-media figure {
+        margin-top: 0.25em;
+    }
 
-  .figure--xl {
-    position: relative;
-    width: calc(100vw - 45px);
-    /* Keep figure at full width but maintain correct margins
-       [full viewport width] - [[total bootstrap padding of 30px]-[additional 15px from somewhere?]]  */
-  }
+    @media screen and (min-width: 38em) 
+    /*  Breakpoint:
+        When viewport exceeds the max-width of the article__body ... 
+        [article__body max width] + [bootstrap margins]    
+        =        34em           +            4em               
+        >> if this value is set in px then the 5.5em offset should be omitted. (810px) << */{
+        .figure--xl {
+          position: relative;
+          width: calc(100vw - ((100vw - 34em) / 2));
+          left:  calc((34em - 100vw + 0px) / 2);
+          width: calc(100vw - 30px);
+          /* Keep figure at full width but maintain correct margins
+             [full viewport width] - [[total bootstrap padding of 30px]-[additional 15px from somewhere?]]  */
+        }
+    }
 
-      @media screen and (min-width: 51.35em) 
-      /*  Breakpoint:
-          When viewport exceeds the max-width of the article__header ... 
-          [article__header width] + [article__body left offset]    
-          =        45em           +            5.5em               
-          >> if this value is set in px then the 5.5em offset should be omitted. (810px) << */{
-          .figure--xl {
-              position: relative;
-              width: calc(100vw - 37px - ((100vw - 45em) / 2));
-              /* ... compensate for the centering of the article__body to keep figure width within 
-                     the viewport.
-                     [prior offset] + ((article__header margin]) / 2 )        */
-              max-width: 47.25rem;
-          }
-      }
+
+    @media screen and (min-width: 51.35em) 
+    /*  Breakpoint:
+        When viewport exceeds the max-width of the article__header ... 
+        [article__header width] + [article__body left offset]    
+        =        45em           +            5.5em               
+        >> if this value is set in px then the 5.5em offset should be omitted. (810px) << */{
+        .figure--xl {
+            position: relative;
+            width: calc(100vw - 37px - ((100vw - 45em) / 2));
+            /* ... compensate for the centering of the article__body to keep figure width within 
+                   the viewport.
+                   [prior offset] + ((article__header margin]) / 2 )        */
+            max-width: 47.25rem;
+        }
+    }
 
 
 /* ASIDES  ========================================================================== */
