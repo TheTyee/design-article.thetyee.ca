@@ -175,11 +175,11 @@ function scrollLatestStories(){
 
 			});
 			//reset the counter so I can scroll the other way
-			topPrevCounter = topCounter - 6;
-			bottomPrevCounter = bottomCounter - 6;
+			topPrevCounter = topCounter - 7;
+			bottomPrevCounter = bottomCounter - 7;
 			
 			//reset the click event
-			$(this).off('click');
+			
 		});
 
 
@@ -187,7 +187,7 @@ function scrollLatestStories(){
 		$(this).on('click', '.prev', function(event){
 			$(this).parent().find('li').reverse().each(function(i, details){
 				//infinite backwards scroll
-				if (topPrevCounter <0){
+				if (topPrevCounter <=0){
 						topPrevCounter = 49;
 					}
 				if (key == 0){
@@ -200,7 +200,7 @@ function scrollLatestStories(){
 					topPrevCounter--;
 				}
 
-				if (bottomPrevCounter < 0){
+				if (bottomPrevCounter <= 0){
 					bottomPrevCounter = 49;
 				}
 
@@ -217,8 +217,8 @@ function scrollLatestStories(){
 
 			});
 			//reset the counter so i can go the other way
-			topCounter = topPrevCounter + 6;
-			bottomCounter = bottomPrevCounter + 6;
+			topCounter = topPrevCounter + 7;
+			bottomCounter = bottomPrevCounter + 7;
 			//reset the counter for infinite scrolling
 			
 		});
