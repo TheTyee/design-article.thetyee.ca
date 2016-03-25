@@ -441,6 +441,7 @@
 }
 
 
+<<<<<<< HEAD
 /* Messaging Zones ========================================================================== */
 
 /* BAROMETER ========================================================================== */
@@ -560,6 +561,26 @@ footer ul {
 .footer__social-links .envelope i {
   margin-top: -4px;
 }
+=======
+/* ===== Related event box =======*/
+
+.related-event-box {
+  background-color: #F2F4DE;
+  padding: 10px;
+  border-top-style: double;
+  border-bottom-style: double;
+  border-color:#A8A8A8;
+}
+
+.related-event-box h4 {
+  font-size: 1em;
+}
+.related-event-box p{
+  font-size: 0.75em;
+}
+
+
+>>>>>>> 3f9951b595e30459e083315dfc2ef7194acbae3d
 
 /* ==========================================================================
  STATES 
