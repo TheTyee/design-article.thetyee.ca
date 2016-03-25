@@ -12,10 +12,13 @@ Use the aside-contents parameter to specify the path of its contained object. Li
 
 You can also specify a caption string, media credit and a content-source parameter if the contained object requires it. Like this:
 	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" aside-caption="Caption text goes here" media-credit="Photo by Hoffman" content-source="http://baconmockup.com/300/200" %]
+
+Sometimes the content of an aside is too big or too long to float next to paragraph text in narrow viewports and is intended to display below the article (as in the case of a fact-box). In this case the aside should receive the class "hide-on-narrow-vp", like this:
+	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/fact-box" aside-class="hide-on-narrow-vp" %]
 -->
 {% endcomment %}
 
-<aside class="aside clearfix" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
+<aside class="aside clearfix {{ include.aside-class }}" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
 	{% include {{ include.aside-contents }}.html content-source=include.content-source %}
 	
 	{% if include.aside-caption or include.media-credit %}

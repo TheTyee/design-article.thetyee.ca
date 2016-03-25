@@ -5,4 +5,5 @@ _vendor
 .jekyll-metadata
 Gemfile.lock
 .DS_Store
-ui/js/test.js
+node_modules
+bower_components
