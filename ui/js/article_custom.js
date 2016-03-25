@@ -6,17 +6,10 @@ $('.dropdown-menu').children().click(function(e){
 
 //LATEST STORIES
 
-//on load, call the api / getLatestStories();
-//return 50 stories /getLatestStories()
-//put them into a variable / createStoryObjects()
-//use that variable to populate the dom / displayLatestStories
-
 
 jQuery.fn.reverse = function() {
     return this.pushStack(this.get().reverse(), arguments);
 };
-
-
 
 
 //GLOBALS 
@@ -28,24 +21,13 @@ var response;
 var recentItems;
 var returnedStories = new Array();
 var storyObjects = new Array();
-
+var firstStory;
+var topPrevCounter = 0;
+var bottomPrevCounter = 0;
 
 
 //make storyObjects global, so I don't have to keep hitting the API
 storyObjects = storyObjects;
-
-//check the DOM to see how many stories we need to show
-totalStoryPositions = countStoryPositions();
-
-
-
-//returns the number of lis to be populated
-function countStoryPositions(){
-	$('.latest-stories__media-wrapper').each(function( key, value){
-		totalStoryPositions = $(this).children(':visible').length;
-		return totalStoryPositions;
-	});
-}
 
 
 //Returned stories from the API
@@ -113,6 +95,7 @@ function createStoryObjects(returnedStories, callback){
 	// on load, populate the DOM
 	$('.latest-stories__media-wrapper').each(function(key, index){		
 		$(this).parent().find('li').each(function(i, details){
+		
 			if (key == 0){
 				$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
 				$(this).find('img').attr('src', storyObjects[topCounter].image);
@@ -122,32 +105,24 @@ function createStoryObjects(returnedStories, callback){
 				$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
 				topCounter++;
 			}
-				if (key == 1){
+			if (key == 1){
 
-					$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
-					$(this).find('img').attr('src', storyObjects[bottomCounter].image);
-					$(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
-					$(this).find('p').html(storyObjects[bottomCounter].dek);
-					$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
-					$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
-					bottomCounter++;
+				$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+				$(this).find('img').attr('src', storyObjects[bottomCounter].image);
+				$(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
+				$(this).find('p').html(storyObjects[bottomCounter].dek);
+				$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+				$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+				bottomCounter++;
 
-				}
+			}
 
 
-			});
 		});
-
-
-
+	});
 	//control the scrolling
 	scrollLatestStories();
 }
-
-
-
-
-
 
 
 //Make Ajax call and put data into the returnedStories var for manipulation.
@@ -163,25 +138,24 @@ function scrollLatestStories(){
 		$('.latest-stories__media-wrapper').each(function(key, index){
 		$(this).on('click', '.next', function(event){
 		//	console.log($(this).find('li'));
-
+		
 			$(this).parent().find('li').each(function(i, details){
-		//	console.log('right click - ' + topCounter);
+	
 				if (key == 0){
-
 					$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
 					$(this).find('img').attr('src', storyObjects[topCounter].image);
 					$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
 					$(this).find('p').html(storyObjects[topCounter].dek);
 					$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
 					$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+			
 					topCounter++;
 
 					if (topCounter >=50){
 						topCounter = 0;
 					}
+
 				}
-
-
 
 				if (key == 1){
 
@@ -200,64 +174,55 @@ function scrollLatestStories(){
 
 
 			});
-
+			//reset the counter so I can scroll the other way
+			topPrevCounter = topCounter - 6;
+			bottomPrevCounter = bottomCounter - 6;
+			
+			//reset the click event
 			$(this).off('click');
-	
-	});
-
-
-console.log($(this));
-
-$(this).on('click', '.prev', function(event){
+		});
 
 
 
+		$(this).on('click', '.prev', function(event){
 			$(this).parent().find('li').reverse().each(function(i, details){
-
-				if (topCounter < 0){
-						topCounter = 49;
+				//infinite backwards scroll
+				if (topPrevCounter <0){
+						topPrevCounter = 49;
 					}
-
 				if (key == 0){
-					console.log('left click - ' + topCounter);
-					$(this).find('a').attr('href', storyObjects[topCounter].urlPath);
-					$(this).find('img').attr('src', storyObjects[topCounter].image);
-					$(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
-					$(this).find('p').html(storyObjects[topCounter].dek);
-					$(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
-					$(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
-					topCounter--;
-					//alert(topCounter);
-					
+					$(this).find('a').attr('href', storyObjects[topPrevCounter].urlPath);
+					$(this).find('img').attr('src', storyObjects[topPrevCounter].image);
+					$(this).find('h4').html(storyObjects[topPrevCounter].hed + ' key ' + topPrevCounter);
+					$(this).find('p').html(storyObjects[topPrevCounter].dek);
+					$(this).find('.latest-stories__date').html(storyObjects[topPrevCounter].date);
+					$(this).find('.latest-stories__authour').html(storyObjects[topPrevCounter].authour);
+					topPrevCounter--;
 				}
 
-	
-
-				if (bottomCounter < 0){
-						bottomCounter = 49;
-					}
+				if (bottomPrevCounter < 0){
+					bottomPrevCounter = 49;
+				}
 
 				if (key == 1){
-					console.log('left click - ' + bottomCounter);
-					$(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
-					$(this).find('img').attr('src', storyObjects[bottomCounter].image);
-					$(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
-					$(this).find('p').html(storyObjects[bottomCounter].dek);
-					$(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
-					$(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
-					bottomCounter--;
-					//alert(topCounter);
-					
+					console.log('left click - ' + bottomPrevCounter);
+					$(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
+					$(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
+					$(this).find('h4').html(storyObjects[bottomPrevCounter].hed + ' key ' + bottomPrevCounter);
+					$(this).find('p').html(storyObjects[bottomPrevCounter].dek);
+					$(this).find('.latest-stories__date').html(storyObjects[bottomPrevCounter].date);
+					$(this).find('.latest-stories__authour').html(storyObjects[bottomPrevCounter].authour);
+					bottomPrevCounter--;
 				}
 
-});
-
-
-
-});
-});
-
-
+			});
+			//reset the counter so i can go the other way
+			topCounter = topPrevCounter + 6;
+			bottomCounter = bottomPrevCounter + 6;
+			//reset the counter for infinite scrolling
+			
+		});
+	});
 
 }
 
