@@ -270,6 +270,9 @@ p a:hover {color: #839800;}
              position: relative;
              max-width: 34em;
              margin: 0;
+             padding-left: 0;
+             padding-right: 0;
+
         }
         
     }
@@ -293,7 +296,7 @@ p a:hover {color: #839800;}
      margin-right: auto;
 }
 
-    @media screen and (min-width: 51.35em) {
+    @media screen and (min-width: 55em) {
         /* breakpoint:
            When viewport exceeds the max-width of the article__header ... 
            max-width of header plus difference between header and body divided by 2;
@@ -306,7 +309,7 @@ p a:hover {color: #839800;}
         .messaging-zone {
           margin-left: auto;
           margin-right: auto;
-          left: -5.5em; /* [article__header max-width]-[article__body max-width] */
+          left: -4.5em; /* [article__header max-width]-[article__body max-width] */
           /* ... centers article__body and offsets towards left to align with article__header.
              It keeps the article__body aligned flush left with the article__header. */
         }
