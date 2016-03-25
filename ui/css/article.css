@@ -244,8 +244,8 @@ p a:hover {color: #839800;}
   padding-top: 1em;
 }
 
-    @media screen and (min-width: 1125px) {
-        .featured-media {/* At views wider than 1125px the feature-media organism shrinks and
+    @media screen and (min-width: 70em) {
+        .featured-media {/* At views wider than 70em (~1125px) the feature-media organism shrinks and
                             sits left-aligned to make room for the adjacent bigbox--1st-position */
              position: relative;
              max-width: 34em;
@@ -262,6 +262,9 @@ p a:hover {color: #839800;}
      position: relative;
      max-width: 34em;
      margin: 0;
+     margin-left: auto;
+     margin-right: auto;
+
 }
 
 
@@ -449,14 +452,14 @@ aside { }
       
     }
 
-    @media screen and (min-width: 38.5em) {
+    @media screen and (min-width: 43.5em) {
         /* Breakpoint: 
            When viewport exceeds width of article__body ...
            [article__body max-width] - [article__body left margin]
            =          34em           -          -5.5em              
            >> if this value is set in px then the 5.5em should be omitted. (612px) <<  */
         .aside {
-            margin-right: calc(34em - 100vw);
+            margin-right: calc(39.5em - 100vw);
             /* ... aligns asides flush right with viewport. */
             
         }
@@ -471,7 +474,7 @@ aside { }
        =        45em           +            5.5em               
        >> if this value is set in px then the 5.5em offset should be omitted. (810px) << */ {
         .aside {
-            margin-right: calc(34em - 100vw + ((100vw - 45em) / 2));
+            margin-right: calc(39.5em - 100vw + ((100vw - 45em) / 2));
             /* ... compensate for the centering of the article__body to keep asides flush 
                    right with viewport.
                    [prior offset] + ((article__header margin]) / 2 )        */
@@ -715,7 +718,7 @@ aside { }
         display: none;
     }
 
-    @media screen and (min-width: 1125px) {
+    @media screen and (min-width: 70em) {
 
         .bigbox--1st-position {
             display: none;
