@@ -735,7 +735,7 @@ footer ul {
 
 
 /* 1200 AND UP ========================================================================== */ 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
 
   /* BOOTSTRAP OVERRIDES */
 
