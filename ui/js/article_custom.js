@@ -22,14 +22,7 @@
             // ...
         }
 
-        // Execute code each time window size changes
-        $(window).resize(
-            viewport.changed(function() {
-                if(viewport.is('xs')) {
-                    // ...
-                }
-            })
-        );
+     
 
 
 
@@ -271,14 +264,35 @@ function scrollLatestStories(){
 
 
 //Collapsible authour box 
-if (triggerAuthourCollapse === true){
+
+
+function collapseAuthourBox(){
 	$('.author-info').click(function(){
 		$('.author-info__bio').toggleClass('show');
-		$('.author-more .caret').toggleClass('up');
-
-		
+		$('.author-more .caret').toggleClass('up');		
 	});
 }
+
+  
+  if(triggerAuthourCollapse === true){
+  	collapseAuthourBox();
+
+  }
+        
+
+
+   // Execute code each time window size changes
+        $(window).resize(
+            viewport.changed(function() {
+                if(viewport.is('sm')) {
+
+                    	collapseAuthourBox();
+					
+                }
+            })
+        );
+
+
 
 
     });
