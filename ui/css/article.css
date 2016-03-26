@@ -156,7 +156,7 @@ p a:hover {color: #839800;}
 }
 
     .pullquote:before {
-        content: "“";
+        content: "â€œ";
         display: block;
         position:absolute;
         left: 0em;
@@ -173,7 +173,7 @@ p a:hover {color: #839800;}
 
 
     /* .pullquote:after {
-        content: "”";
+        content: "â€";
 
         position:absolute;
         padding-left: 0.075em;
@@ -238,6 +238,7 @@ p a:hover {color: #839800;}
   margin: 0 auto 0 auto;
 }
 
+    /* BREAKPOINT: 40em // Increase page margin */
     @media screen and (min-width: 40em) {
         
         .article__header {
@@ -256,6 +257,7 @@ p a:hover {color: #839800;}
   padding-top: 1em;
 }
 
+    /* BREAKPOINT: 40em // Increase page margin */
     @media screen and (min-width: 40em) {
         
         .featured-media {
@@ -264,6 +266,8 @@ p a:hover {color: #839800;}
         }
     }
     
+    /* BREAKPOINT: 70em // At views wider than 70em (~1125px) the feature-media organism shrinks 
+       and sits left-aligned to make room for the adjacent bigbox--1st-position */
     @media screen and (min-width: 70em) {
         .featured-media {/* At views wider than 70em (~1125px) the feature-media organism shrinks and
                             sits left-aligned to make room for the adjacent bigbox--1st-position */
@@ -296,6 +300,7 @@ p a:hover {color: #839800;}
      margin-right: auto;
 }
 
+    /* BREAKPOINT: 40em // Increase page margin */
     @media screen and (min-width: 55em) {
         /* breakpoint:
            When viewport exceeds the max-width of the article__header ... 
@@ -475,7 +480,7 @@ aside { }
         position: relative;
         width: 45%;
         float: right;
-        padding: 1em 0 2em 1.5em;/* Aligns asides flush right inside article__body */
+        padding: 1em 0 2em 2em; /* Aligns asides flush right inside article__body */
     }
 
     .aside > :first-child {
@@ -584,7 +589,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. â€”AG */
+   some crap together. Ã¢â‚¬â€AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -937,10 +942,10 @@ aside { }
     margins were applied to it's contents instead of the container itself.) */
 
     /*  IN WIDER VIEWPORTS: 
-        • don't show the fact-box at the bottom of the article-body
-        • show the aside containing the fact-bax (.hide-on-narrow-vp)
-        • show the factbox within an aside
-        • hide fact-box text anchor link */
+        â€¢ don't show the fact-box at the bottom of the article-body
+        â€¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
+        â€¢ show the factbox within an aside
+        â€¢ hide fact-box text anchor link */
     @media screen and (min-width: 939px) {
 
         .fact-box {
