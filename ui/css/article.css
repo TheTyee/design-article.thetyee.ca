@@ -754,7 +754,7 @@ aside { }
         display: none;
     }
 
-    @media screen and (min-width: 70em) {
+    @media screen and (min-width: 1120px) {
 
         .bigbox--1st-position {
             display: none;
