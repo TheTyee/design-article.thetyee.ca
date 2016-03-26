@@ -302,8 +302,7 @@ p a:hover {color: #839800;}
 
     /* BREAKPOINT: 55em */
     @media screen and (min-width: 55em) {
-        /* breakpoint:
-           When viewport exceeds the max-width of the article__header ... 
+        /* When viewport exceeds the max-width of the article__header ... 
            max-width of header plus difference between header and body divided by 2;
            = [article__header max-width] + ([article__header max-width]-[article__body max-width])
            =            45em             +           (45em - 34em) / 2
@@ -520,16 +519,26 @@ aside { }
         }
     }
 
+    /* BREAKPOINT: 880px //  */
+    @media screen and (min-width: 880px) 
+    /* When viewport exceeds the max-width of the article__header and article__body shifts to
+       to left-align with article__header ... */
+             
+       {
+        .aside {
+            margin-right: calc( -1 * ( ((100vw - 34em) / 2) - (1em) ) - 4.5em );
+            /*         (                      [prior breakpoint calc] - 4.5em )
 
+            ... compensate for the left-align shift of the article__body to keep asides flush 
+                right with viewport.  */
+        }
+    }
 
-    @media screen and (min-width: 59.5em) 
-    /* Breakpoint:
-       
-       When viewport exceeds the max desired width of the page ... 
-
-       [max page width] + [article__body left offset]    
-       =      54em      +            5.5em               
-       >> if this value is set in px then the 5.5em offset should be omitted. (950px) << */ {
+    /* BREAKPOINT: 1025px //  */
+    @media screen and (min-width: 1025px) 
+    /* When viewport exceeds the max desired width of the page ... */
+             
+       {
         .aside {
             margin-right: -15em;/* ... keep the aside at a constant offset from the text column (article__body) */
         }
