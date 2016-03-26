@@ -51,6 +51,13 @@
    to {-webkit-transform: rotate(360deg);}
 }
 
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
 
 
 /* ==========================================================================
@@ -396,6 +403,44 @@
 }
 
 
+/* ARTICLE HEADER ========*/
+
+.author-info div{
+  position: relative;
+}
+
+.author-info__bio{
+  display: none;
+}
+
+.author-more{
+  background-color: #90AD00;
+  color: #fff;
+  padding: 3px;
+  border-radius: 3px;
+  font-weight: 300;
+  font-size: 0.85em;
+  position: relative;
+  right: 5px;
+  margin: 10px;
+}
+
+.author-more .caret{
+  -moz-transform:rotate(0deg);
+  -webkit-transform:rotate(0deg);
+  -o-transform:rotate(0deg);
+  -ms-transform:rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.author-more .up{
+  -moz-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  transform: rotate(180deg);
+
+}
 
  /* SLIDESHOW ========================================================================== */
 
@@ -445,8 +490,8 @@
 
 
 .messaging-block--barometer {
-  border-top: solid 1px grey;
-  border-bottom: solid 1px grey;
+  border-top: solid 1px #A8A8A8;
+  border-bottom: solid 1px #A8A8A8;
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 10px;
@@ -456,7 +501,7 @@
 .messaging-block--barometer h3 {
   margin-top: 0px;
   padding-top: 5px;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 1px #A8A8A8;
   color: #90AD00;
   text-transform: uppercase;
   font-weight: bold;
@@ -708,6 +753,11 @@ footer ul {
 
   }
 
+  /* ARTICLE HEADER ========*/
+.author-info__bio{
+  display: none;
+}
+
 }
 
 
@@ -715,7 +765,7 @@ footer ul {
 
 
 /* 1200 AND UP ========================================================================== */ 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
 
   /* BOOTSTRAP OVERRIDES */
 
@@ -1009,6 +1059,12 @@ footer ul {
   vertical-align: middle;
   display: inline-block;
 }
+
+  /* ARTICLE HEADER ========*/
+.author-info__bio{
+  display: block;
+}
+
 
 /* FOOTER =======*/
 

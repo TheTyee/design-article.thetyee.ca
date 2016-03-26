@@ -1,8 +1,50 @@
 
+// Wrap IIFE around your code
+(function($, viewport){
+    $(document).ready(function() {
+
+    	var triggerAuthourCollapse;
+
+
+
+        // Executes only in XS breakpoint
+        if(viewport.is('xs')) {
+            // ...
+        }
+
+        // Executes in SM, MD and LG breakpoints
+        if(viewport.is('<=sm')) {
+            triggerAuthourCollapse = true;
+        }
+
+        // Executes in XS and SM breakpoints
+        if(viewport.is('<md')) {
+            // ...
+        }
+
+        // Execute code each time window size changes
+        $(window).resize(
+            viewport.changed(function() {
+                if(viewport.is('xs')) {
+                    // ...
+                }
+            })
+        );
+
+
+
+
 //Do not kill the dropdowns when users click in them)
 $('.dropdown-menu').children().click(function(e){
         e.stopPropagation();
  });
+
+
+
+
+
+
+
 
 //LATEST STORIES
 
@@ -228,11 +270,18 @@ function scrollLatestStories(){
 
 
 
+//Collapsible authour box 
+if (triggerAuthourCollapse === true){
+	$('.author-info').click(function(){
+		$('.author-info__bio').toggleClass('show');
+		$('.author-more .caret').toggleClass('up');
 
-//page loads with first stories, 0-6
+		
+	});
+}
 
-//on click, take the last number of stories (6) and add one to pull the next 6 stories.
 
-//if 50 stories have loaded, loop back to start
+    });
+})(jQuery, ResponsiveBootstrapToolkit);
 
 
