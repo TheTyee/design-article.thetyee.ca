@@ -445,10 +445,10 @@ figure {
     {
         .figure--xl {
             position: relative;
-            width: calc(100vw - 37px - ((100vw - 45em) / 2));
+            width: calc(100vw - 37px - ((100vw - 42em) / 2));
             /* ... compensate for the centering of the article__body to keep figure--XL width within 
                    the viewport.
-                   [prior offset] + ((article__header margin]) / 2 )        */
+                   [prior offset ??] - (([article__header margin??]) / 2 )        */
             max-width: 47.25rem;
             left: 0;
         }
