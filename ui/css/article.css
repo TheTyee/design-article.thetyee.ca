@@ -156,7 +156,7 @@ p a:hover {color: #839800;}
 }
 
     .pullquote:before {
-        content: "“";
+        content: "â€œ";
         display: block;
         position:absolute;
         left: 0em;
@@ -173,7 +173,7 @@ p a:hover {color: #839800;}
 
 
     /* .pullquote:after {
-        content: "”";
+        content: "â€";
 
         position:absolute;
         padding-left: 0.075em;
@@ -224,8 +224,8 @@ p a:hover {color: #839800;}
 /* ==========================================================================
    #LAYOUT
    (Layout rules divide the page into sections. Layouts hold one or more modules
-    together. These apply largely to the Organism and Template levels. They 
-    are kind of like helper classes. https://smacss.com/book/type-layout )
+    together. These apply largely to the Organism and Template levels. 
+    https://smacss.com/book/type-layout )
    ========================================================================== */
 
 
@@ -233,21 +233,53 @@ p a:hover {color: #839800;}
 /* ARTICLE LAYOUT  ========================================================================== */
 
 
-.article__header {/* article__header is always centered on the page */
+.article__header { /* article__header is always centered on the page */
   max-width: 45em;
   margin: 0 auto 0 auto;
 }
 
+    /* BREAKPOINT: 640px // Increase page margin */
+    @media screen and (min-width: 640px) {
+        
+        .article__header {
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+        
+    }
 
 
-.article__body, 
-.featured-media, 
-.messaging-zone {/* organisms within the text column remain left-aligned
-     after hitting their max width */
-     position: relative;
-     max-width: 34em;
-     margin: 0;
+
+.featured-media { /* featured-media organism is centered on the page and occupies full page column 
+                     width at medium and small view widths */
+  max-width: 45em;
+  margin: 0 auto 0 auto;
+  padding-top: 1em;
 }
+
+    /* BREAKPOINT: 640px // Increase page margin */
+    @media screen and (min-width: 640px) {
+        
+        .featured-media {
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+    }
+    
+    /* BREAKPOINT: 1120px // At views wider than 1120px the feature-media organism shrinks 
+       and sits left-aligned to make room for the adjacent bigbox--1st-position */
+    @media screen and (min-width: 1120px) {
+        .featured-media {
+             position: relative;
+             max-width: 34em;
+             margin: 0;
+             padding-left: 0;
+             padding-right: 0;
+
+        }
+        
+    }
+
 
 
 .article__body {
@@ -255,23 +287,36 @@ p a:hover {color: #839800;}
 }
 
 
-@media screen and (min-width: 51.35em) {
-    /* breakpoint:
-       When viewport exceeds the max-width of the article__header ... 
-       max-width of header plus difference between header and body divided by 2;
-       = [article__header max-width] + ([article__header max-width]-[article__body max-width])
-       =            45em             +           (45em - 34em) / 2
-       =            45em             +                 5.5em                  
-       >> if this value is set in px then the 5.5em should be omitted. (810px) <<  */
-    .article__body, 
-    .featured-media, 
-    .messaging-zone {
-      margin: 0 auto 0 auto;
-      left: -5.5em; /* [article__header max-width]-[article__body max-width] */
-      /* ... centers article__body and offsets towards left to align with article__header.
-         It keeps the article__body aligned flush left with the article__header. */
-    }
+.article__body, 
+.messaging-zone {/* organisms within the text column remain left-aligned
+     after hitting their max width
+     (NOTE: Should break this out into 2 media queries each within its respective object.
+      This will be less DRY but conform to atomic OOCSS practice.) */
+     position: relative;
+     max-width: 34em;
+     margin: 0;
+     margin-left: auto;
+     margin-right: auto;
 }
+
+    /* BREAKPOINT: 880px // aligns article content flush left with the article__header */
+    @media screen and (min-width: 880px) {
+        /* When viewport exceeds the max-width of the article__header ... 
+           max-width of header plus difference between header and body divided by 2;
+           = [article__header max-width] + ([article__header max-width]-[article__body max-width])
+           =            45em             +           (45em - 34em) / 2
+           =            45em             +                 5.5em                  
+           >> if this value is set in px then the 5.5em should be omitted. (810px) <<  */
+        .article__body, 
+        .featured-media, 
+        .messaging-zone {
+          margin-left: auto;
+          margin-right: auto;
+          left: -4.5em; /* [article__header max-width]-[article__body max-width] */
+          /* ... centers article__body and offsets towards left to align with article__header.
+             It keeps the article__body aligned flush left with the article__header. */
+        }
+    }
 
 
 
@@ -384,32 +429,40 @@ figure {
   margin-bottom: 2em;
 }
 
-  .featured-media figure {
-      margin-top: 0.25em;
-  }
+    .featured-media figure {
+        margin-top: 0.25em;
+    }
 
-  .figure--xl {
-    position: relative;
-    width: calc(100vw - 45px);
-    /* Keep figure at full width but maintain correct margins
-       [full viewport width] - [[total bootstrap padding of 30px]-[additional 15px from somewhere?]]  */
-  }
+    /* BREAKPOINT: 608px // Keep figure--xl at full width but maintain correct margins */
+    @media screen and (min-width: 608px) 
+    /*  When viewport exceeds the max-width of the article__body ... 
+        [article__body max width] + [bootstrap margins]    
+        =        34em           +            4em       = 38em x 16px = 608px  */
+        {
+        .figure--xl {
+          position: relative;
+          width: calc(100vw - ((100vw - 34em) / 2));
+          left:  calc((34em - 100vw + 0px) / 2);
+          width: calc(100vw - 30px);
+          /* Keep figure at full width but maintain correct margins
+             [full viewport width] - [[total bootstrap padding of 30px]-[additional 15px from somewhere?]]  */
+        }
+    }
 
-      @media screen and (min-width: 51.35em) 
-      /*  Breakpoint:
-          When viewport exceeds the max-width of the article__header ... 
-          [article__header width] + [article__body left offset]    
-          =        45em           +            5.5em               
-          >> if this value is set in px then the 5.5em offset should be omitted. (810px) << */{
-          .figure--xl {
-              position: relative;
-              width: calc(100vw - 37px - ((100vw - 45em) / 2));
-              /* ... compensate for the centering of the article__body to keep figure width within 
-                     the viewport.
-                     [prior offset] + ((article__header margin]) / 2 )        */
-              max-width: 47.25rem;
-          }
-      }
+    /* BREAKPOINT: 880px (article__body left-aligned) // set figure--xl left-align with article__body */
+    @media screen and (min-width: 880px) 
+    /*  When viewport exceeds the max-width of the article__header ... */
+    {
+        .figure--xl {
+            position: relative;
+            width: calc(100vw - 37px - ((100vw - 45em) / 2));
+            /* ... compensate for the centering of the article__body to keep figure--XL width within 
+                   the viewport.
+                   [prior offset] + ((article__header margin]) / 2 )        */
+            max-width: 47.25rem;
+            left: 0;
+        }
+    }
 
 
 /* ASIDES  ========================================================================== */
@@ -422,7 +475,7 @@ aside { }
         position: relative;
         width: 45%;
         float: right;
-        padding: 1em 0 2em 1.5em;/* Aligns asides flush right inside article__body */
+        padding: 1em 0 2em 2em; /* Aligns asides flush right inside article__body */
     }
 
     .aside > :first-child {
@@ -433,51 +486,53 @@ aside { }
       
     }
 
-    @media screen and (min-width: 38.5em) {
-        /* Breakpoint: 
-           When viewport exceeds width of article__body ...
+    /* BREAKPOINT: 696px // gradually moves aside outward to align flush right w/ viewport */
+    @media screen and (min-width: 696px) {
+        /* When viewport exceeds width of article__body ...
            [article__body max-width] - [article__body left margin]
            =          34em           -          -5.5em              
            >> if this value is set in px then the 5.5em should be omitted. (612px) <<  */
         .aside {
-            margin-right: calc(34em - 100vw);
+            margin-right: calc(38.5em - 100vw);
             /* ... aligns asides flush right with viewport. */
             
         }
     }
-
-    @media screen and (min-width: 50.75em) 
-    /* Breakpoint:
-       
-       When viewport exceeds the max-width of the article__header ... 
-
-       [article__header width] + [article__body left offset]    
-       =        45em           +            5.5em               
-       >> if this value is set in px then the 5.5em offset should be omitted. (810px) << */ {
+    
+    /* BREAKPOINT: 742px // keep aside flush right w/ viewport */
+    @media screen and (min-width: 742px) {
+    /* When viewport exceeds  ... 742px
+     */
         .aside {
-            margin-right: calc(34em - 100vw + ((100vw - 45em) / 2));
-            /* ... compensate for the centering of the article__body to keep asides flush 
-                   right with viewport.
-                   [prior offset] + ((article__header margin]) / 2 )        */
+            margin-right: calc( -1 * (((100vw - 34em) / 2) - (1em)));
+            /*         ( [make neg] [right textcol margin] - [right articleheader margin] )
+                       ( [make neg] [view - textcol] / 2)  - [right articleheader margin] )
 
-
-            /* ALTERNATIVE RULE:
-               margin-right: calc(-11em - ((100vw - 45em) / 2)); 
-               [max offset of prev breakpoint] + [article__header left margin] 
-               [max offset of prev breakpoint] + (view-width - [article__header width]) / 2  */
+            ... compensate for the centering of the article__body to keep asides flush 
+                right with viewport.  */
         }
     }
 
+    /* BREAKPOINT: 880px //  */
+    @media screen and (min-width: 880px) 
+    /* When viewport exceeds the max-width of the article__header and article__body shifts to
+       to left-align with article__header ... */
+             
+       {
+        .aside {
+            margin-right: calc( -1 * ( ((100vw - 34em) / 2) - (1em) ) - 4.5em );
+            /*         (                      [prior breakpoint calc] - 4.5em )
 
+            ... compensate for the left-align shift of the article__body to keep asides flush 
+                right with viewport.  */
+        }
+    }
 
-    @media screen and (min-width: 59.5em) 
-    /* Breakpoint:
-       
-       When viewport exceeds the max desired width of the page ... 
-
-       [max page width] + [article__body left offset]    
-       =      54em      +            5.5em               
-       >> if this value is set in px then the 5.5em offset should be omitted. (950px) << */ {
+    /* BREAKPOINT: 1025px //  */
+    @media screen and (min-width: 1025px) 
+    /* When viewport exceeds the max desired width of the page ... */
+             
+       {
         .aside {
             margin-right: -15em;/* ... keep the aside at a constant offset from the text column (article__body) */
         }
@@ -531,7 +586,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. â€”AG */
+   some crap together. Ã¢â‚¬â€AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -699,7 +754,7 @@ aside { }
         display: none;
     }
 
-    @media screen and (min-width: 1125px) {
+    @media screen and (min-width: 1120px) {
 
         .bigbox--1st-position {
             display: none;
@@ -884,10 +939,10 @@ aside { }
     margins were applied to it's contents instead of the container itself.) */
 
     /*  IN WIDER VIEWPORTS: 
-        • don't show the fact-box at the bottom of the article-body
-        • show the aside containing the fact-bax (.hide-on-narrow-vp)
-        • show the factbox within an aside
-        • hide fact-box text anchor link */
+        â€¢ don't show the fact-box at the bottom of the article-body
+        â€¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
+        â€¢ show the factbox within an aside
+        â€¢ hide fact-box text anchor link */
     @media screen and (min-width: 939px) {
 
         .fact-box {
@@ -1134,7 +1189,14 @@ body.cmnt--visibility { }
 
 
 /* ==========================================================================
-   Progressively enhance for larger screens 
+   Progressively enhance for larger screens.
+   
+   NOTE: As per SMACSS Media quesries are grouped with their respective objects, above.
+   With SMACSS, the intent is to keep the styles that pertain to a specific 
+   module with the rest of the module. That means that instead of having a 
+   single break point, either in a main CSS file or in a separate media query 
+   style sheet, place media queries around the module states.
+   See https://smacss.com/book/state
    ========================================================================== */
 @media screen and (min-width: 768px) {
   /* Adjust for large desktop */
