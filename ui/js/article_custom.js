@@ -34,6 +34,15 @@ $('.dropdown-menu').children().click(function(e){
  });
 
 
+//Moves focus directly to search field when user begins typing
+$('.search-block').on('show.bs.dropdown', function(event) {
+	$(document).keydown(function(){
+		$('input#menu__search--input').focus();
+	});
+});
+
+
+
 
 
 
