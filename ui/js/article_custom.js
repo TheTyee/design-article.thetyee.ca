@@ -24,6 +24,7 @@
 
      
 
+	$('.menu__search--wrapper .form-control').focus();
 
 
 
@@ -31,9 +32,6 @@
 $('.dropdown-menu').children().click(function(e){
         e.stopPropagation();
  });
-
-
-
 
 
 
