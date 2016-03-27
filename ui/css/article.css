@@ -287,11 +287,7 @@ p a:hover {color: #839800;}
 }
 
 
-.article__body, 
-.messaging-zone {/* organisms within the text column remain left-aligned
-     after hitting their max width
-     (NOTE: Should break this out into 2 media queries each within its respective object.
-      This will be less DRY but conform to atomic OOCSS practice.) */
+.main-col-container {/* the text column remains centred after hitting its max width. */
      position: relative;
      max-width: 34em;
      margin: 0;
@@ -299,20 +295,14 @@ p a:hover {color: #839800;}
      margin-right: auto;
 }
 
-    /* BREAKPOINT: 880px // aligns article content flush left with the article__header */
+    /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
     @media screen and (min-width: 880px) {
-        /* When viewport exceeds the max-width of the article__header ... 
-           max-width of header plus difference between header and body divided by 2;
-           = [article__header max-width] + ([article__header max-width]-[article__body max-width])
-           =            45em             +           (45em - 34em) / 2
-           =            45em             +                 5.5em                  
-           >> if this value is set in px then the 5.5em should be omitted. (810px) <<  */
-        .article__body, 
-        .featured-media, 
-        .messaging-zone {
+        /* When viewport exceeds the max-width of the article__header ...  */
+        .main-col-container, 
+        .featured-media {
           margin-left: auto;
           margin-right: auto;
-          left: -4.5em; /* [article__header max-width]-[article__body max-width] */
+          left: -4.5em; /* = ( [article__header max-width] - [article__body max-width] - [padding&margins] ) / 2 */
           /* ... centers article__body and offsets towards left to align with article__header.
              It keeps the article__body aligned flush left with the article__header. */
         }
@@ -476,14 +466,6 @@ aside { }
         width: 45%;
         float: right;
         padding: 1em 0 2em 2em; /* Aligns asides flush right inside article__body */
-    }
-
-    .aside > :first-child {
-      
-    }
-
-    .aside > :last-child {
-      
     }
 
     /* BREAKPOINT: 696px // gradually moves aside outward to align flush right w/ viewport */

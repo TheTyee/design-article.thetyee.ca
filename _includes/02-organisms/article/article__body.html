@@ -1,28 +1,35 @@
 <!-- Begin organisms/article/article__body -->
             
-    <article class="article__body" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
+    <article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
         <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
         
         <div class="container-fluid clearfix">
 
                 {% include 01-molecules/text/lead-in-text.html %}
 
+
                 <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
                 {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" %}
+
 
                 <!--This is a single PARAGRAPH of content, like in a Tyee series, where items like additional images, pullquotes or video are entered a field at a time-->
                 {% include 00-atoms/text/paragraph.html inline-atom="00-atoms/text/fact-box-anchor-link" %} <!--P with anchor text-link to fact-box -->
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Ad-box folows." %}
 
+
                 <!--AD in the 1ST POSITION. (Set ad-position parameter.) -->
                 {% include 01-molecules/blocks/ad-box.html ad-position="bigbox--1st-position" ad-source="VFF-bigbox.gif" %}
 
+
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Pull-quote follows." %}
+
 
                 {% include 01-molecules/text/pullquote.html %}
 
+
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Related story follows." %}
+
 
                 <!--An ASIDE containing a RELATED STORY. -->
                 {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/400/266" aside-class="" %}
@@ -31,78 +38,104 @@
                 <!--SUBHEADER -->
                 {% include 00-atoms/text/article-subheader.html subheader-content="Here’s a short subheader" %}
 
+
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Video player follows." %}
 
+
                 <!--FIGURE containing a VIDEO player. Will likely be iframe embeds. -->
                 {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/video" figure-caption="This is a caption describing a video inside a figure. Such railroad! Very excitement!" media-credit="Video by Casey Jones" content-source="" %}
+
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Blockquote follows." %}
 
+
                 {% include 01-molecules/text/blockquote.html %}
+
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Figure with image follows." %}
+
                 
                 <!--Here's a FIGURE containing an IMAGE. 
                     All media within an article body should be called from within a figure object or an aside. -->
                 {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Much kawaii!" media-credit="Photo by Pussy Galore" content-source="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/138.jpg" %}
 
+
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Aside with messaging follows." %}
+
 
                 <!--An ASIDE containing a MESSAGING BLOCK. -->
                 {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/messaging-block--ask" content-source="" aside-class="" %}
 
+
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Aside with image follows." %}
+
 
                 <!--An ASIDE containing an IMAGE. -->
                 {% include 01-molecules/blocks/aside.html aside-contents="00-atoms/images/image" aside-caption="This is a caption for an image in an aside. Many hassle!" media-credit="Photo by Hoffman" content-source="http://place-hoff.com/350/300" aside-class="" %}
 
+
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Audio player follows." %}
+
 
                 <!--AUDIO player. Will likely be iframe embeds. -->
                 {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/audio" figure-caption="This is a caption describing an audio object inside a figure. Very Hollywood cynicism!" media-credit="Music by saxofonhallicken" content-source="" %}
 
+
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Related story follows." %}
+
 
                 <!--An ASIDE containing a RELATED STORY. -->
                 {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" content-source="http://place-hoff.com/525/350" aside-class="" %}
 
+
                 {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-event-box" aside-class="" %}
+
 
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="" %}
 
+
                 {% include 02-organisms/media/slideshow.html %} 
 
+
                 {% include 00-atoms/text/paragraph.html %}
+
 
                 <!--SUBHEADER -->
                 {% include 00-atoms/text/article-subheader.html subheader-content="Here’s a subheader that’s somewhat longer than average" %}
 
+
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Ad box follows." %}
+
 
                 <!--AD in the 2ND POSITION. (Set ad-position parameter.) -->
                 {% include 01-molecules/blocks/ad-box.html ad-position="bigbox--2nd-position" ad-source="VFF-bigbox.gif" %}
 
+
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Figure with image follows." %}
+
 
                 <!--Here's a FIGURE containing an IMAGE. 
                     All media within an article body should be called from within a figure object or an aside. -->
                 {% include 01-molecules/blocks/figure.html figure-class="figure--xl" figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside an Extra-Large figure. Very yum!" media-credit="Photo by Porco Rosso" content-source="http://baconmockup.com/300/200" %}
 
+
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
+
 
                 <!--FACT-BOX will display here at bottom of article in narrow viewports -->
                 <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. -->
                 {% include 01-molecules/blocks/Fact-box.html %}
+
 
         </div> <!--END .container-fluid-->
 
