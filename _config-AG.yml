@@ -58,3 +58,6 @@ exclude:
   - Gruntfile.js
   - gemfile
   - Gemfile.lock
+
+# server settings
+host: 192.168.0.87
