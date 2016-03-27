@@ -207,6 +207,7 @@
 .narrow__search {
   position: static;
   display: block;
+  padding-bottom: 18px;
   font-size: 0.7em;
   text-transform: uppercase;
 }
