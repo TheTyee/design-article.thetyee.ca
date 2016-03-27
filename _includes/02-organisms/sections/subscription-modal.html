@@ -1,0 +1,72 @@
+<!-- BEGIN 02-organisms/sections/subscription-popup -->
+
+
+<div id="modalSub" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+<section class="subscription-popup [ col xs-12 col-sm-12 col-md-12 ]" data-dev-object-descrip="01-molecules/blocks/subscription-popup" data-dev-status="IN-PROGRESS">
+<div class="modal-dialog" role="document">
+    <div class="modal-content bg-pale-green">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <img src="{{site.url}}ui/img/Tyee-NationalNews-logo.png" alt="Tyee National Enews logo" height="95" width="91" class="modal-national-logo pull-left">
+        <h2 class="">News travels fast</h2>
+      </div>
+      <div class="modal-body">
+        <p>Never miss a story. Get The Tyee's independent, reader-funded reporting sent straight to your inbox, for free. You'll also get early notice on Tyee events, news, promotions, and special initiatives.</p>
+        <form id="modal-sub-form" action="http://whatcounts.com/bin/listctrl" method="POST">
+
+        <input type="hidden" name="slid" value="6B5869DC547D3D46CFC60A3DF69EE7EB">
+        <input type="hidden" name="cmd" value="subscribe">
+        <input type="hidden" name="goto" value="http://subscribe.thetyee.ca/success/">
+        <input type="hidden" name="errors_to" value="">
+        <input type="hidden" id="format_mime" name="format" value="mime">
+        <input type="hidden" name="custom_pref_tyeenews_casl" value="1">
+        <input type="hidden" id="custom_campaign" name="custom_campaign" value="national-popover">
+          <div class="form-group">
+            <input type="email" class="form-control fsize18" id="InputEmail1" name="email" placeholder="Your email here" style="text-align: center;">
+          </div>
+
+        <label class="checkbox">
+          <div role="presentation" class="form-checkbox">
+            <div class="radio-buttons">
+              <input type="radio" aria-checked="false" id="custom_pref_enews_weekly-yes" name="custom_pref_enews_weekly" value="1"> Yes
+              <input type="radio" aria-checked="false" id="custom_pref_enews_weekly-no" name="custom_pref_enews_weekly" value="0" checked=""> No
+            </div>
+          </div>Send me the weekly edition
+        </label>
+        <label class="checkbox">
+          <div role="presentation" class="form-checkbox">
+            <div class="radio-buttons">
+              <input type="radio" aria-checked="false" id="custom_pref_enews_daily-yes" name="custom_pref_enews_daily" value="1"> Yes
+              <input type="radio" aria-checked="true" id="custom_pref_enews_daily-no" name="custom_pref_enews_daily" value="0" checked=""> No
+            </div>
+          </div>Send me the daily edition
+        </label>
+
+        <label class="checkbox">
+          <div role="presentation" class="form-checkbox">
+            <div class="radio-buttons">
+              <input type="radio" id="custom_pref_enews_national-yes" name="custom_pref_enews_national" value="1"> Yes
+             <input type="radio" aria-checked="true" id="custom_pref_enews_national-no" name="custom_pref_enews_national" value="0" checked=""> No
+            </div>
+          </div>Send me the national edition (weekly, just national stories)
+        </label>
+
+
+          <button type="submit" class="btn btn-green btn-block fsize18">Subscribe</button>
+        </form>
+      </div>
+      <div class="modal-footer text-center no-border-top">
+        <small><em>Your privacy is important to us. We will never share, rent, or sell your email address.</em></small><br>
+        <small><strong><a id="modalSubNoMore" href="">Please don’t show this to me again.</a></strong></small>
+
+      </div>
+    </div>
+  </div>
+</section>
+      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- END 02-organisms/sections/subscription-popup -->

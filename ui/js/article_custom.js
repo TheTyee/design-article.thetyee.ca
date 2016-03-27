@@ -42,10 +42,6 @@ $('.search-block').on('show.bs.dropdown', function(event) {
 });
 
 
-
-
-
-
 //LATEST STORIES
 
 
