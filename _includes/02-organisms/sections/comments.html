@@ -1,34 +1,39 @@
 <!-- Begin 02-organisms/sections/comments -->
-<!-- For info about best practices for blockquotes see 
-	http://alistapart.com/blog/post/more-thoughts-about-blockquotes-than-are-strictly-required 
--->
-<section class="section comments-section" data-dev-object-descrip="02-organisms/sections/comments" data-dev-status="IN-PROGRESS">
-	<div class="container-fluid">
-		DISQUS COMMENTS GET EMBEDDED HERE
-		<!--  
-		<div id="disqus_thread"></div>
-			<script>
-			/**
-			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-			*/
-			/*
-			var disqus_config = function () {
-			this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-			this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-			};
-			*/
-			(function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
-			var d = document, s = d.createElement('script');
 
-			s.src = '//EXAMPLE.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
-
-			s.setAttribute('data-timestamp', +new Date());
-			(d.head || d.body).appendChild(s);
-			})();
-			</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-		-->
-	</div>
+<section class="section comments-section" data-dev-object-descrip="01-molecules/blocks/barometer" data-dev-status="IN-PROGRESS">
+    <div class="comments__wrap container-fluid">
+        <div class="[ col xs-12 col-sm-12 col-md-offset-2 col-md-6 ]">
+            <div id="disqus_thread" style="display:none;">
+            </div>
+            <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+            var disqus_config = function () {
+                this.page.url = 'http://thetyee.ca/Culture/2016/03/25/Mean-Movies/';  // Replace PAGE_URL with your page's canonical URL variable
+                //this.page.identifier = '83CF573A-EDA0-11E5-86D4-F0F483C64BB7'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.callbacks.onReady = [function() {
+                    $('#disqus_thread').show();
+                }];
+                    
+            };
+            (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                var d = document, s = d.createElement('script');
+                s.src = '//thetyee.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div>
+        <div class="read-more">
+            <div class="container-fluid">
+                <div class="[ col xs-12 col-sm-12 col-md-offset-2 col-md-6 ]">
+                    <button class="btn btn-default" type="submit">Show me the comments!</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- END 02-organisms/sections/comments -->

@@ -1,4 +1,5 @@
 <script src="{{ site.url }}ui/js/article.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ site.url }}ui/js/article_custom.js" type="text/javascript" charset="utf-8"></script>
 
 {% if site.mode == 'development-w-grunt' %}
     <script type='text/javascript'>//<![CDATA[
@@ -15,5 +16,20 @@
 
     </script>
 {% endif %}
-
-
+<script>
+    window.App = {};
+    App.apiUrl = '{{ site.api_url }}';
+    App.rootUrl = '{{ site.url }}'; 
+    App.siteMode  = '{{ site.mode }}';
+</script>
+<script type="text/javascript" charset="utf-8" src="{{ site.url }}ui/js/app.js"></script>
+<script>
+// Start routing now...
+App.router = new App.Router();
+{% if site.mode != 'local' %}
+    // Backbone.history.start({ pushState: true });
+    Backbone.history.start({ root: "/design-article.thetyee.ca/" });
+{% else %}
+    Backbone.history.start();
+{% endif %}
+</script>
