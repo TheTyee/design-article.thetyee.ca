@@ -221,18 +221,16 @@ p a:hover {color: #839800;}
 
 
 
-
-
-/* ========================================================================================
+/* ==========================================================================
    #LAYOUT
    (Layout rules divide the page into sections. Layouts hold one or more modules
     together. These apply largely to the Organism and Template levels. 
     https://smacss.com/book/type-layout )
-   ======================================================================================== */
+   ========================================================================== */
 
 
 
-/* ARTICLE HEADER SECTION */
+/* ARTICLE LAYOUT  ========================================================================== */
 
 
 .article__header { /* article__header is always centered on the page */
@@ -252,8 +250,6 @@ p a:hover {color: #839800;}
 
 
 
-/* FEATURED MEDIA SECTION */
-
 .featured-media { /* featured-media organism is centered on the page and occupies full page column 
                      width at medium and small view widths */
   max-width: 45em;
@@ -270,19 +266,6 @@ p a:hover {color: #839800;}
         }
     }
     
-    /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
-    @media screen and (min-width: 880px) {
-        /* When viewport exceeds the max-width of the article__header ...  */
-
-        .featured-media {
-          margin-left: auto;
-          margin-right: auto;
-          left: -4.5em; /* = ( [article__header max-width] - [article__body max-width] - [padding&margins] ) / 2 */
-          /* ... centers article__body and offsets towards left to align with article__header.
-             It keeps the article__body aligned flush left with the article__header. */
-        }
-    }
-
     /* BREAKPOINT: 1120px // At views wider than 1120px the feature-media organism shrinks 
        and sits left-aligned to make room for the adjacent bigbox--1st-position */
     @media screen and (min-width: 1120px) {
@@ -299,11 +282,10 @@ p a:hover {color: #839800;}
 
 
 
-/* MAIN COLUMN CONTAINER CLASS */
+.article__body {
+     padding-bottom: 2em;
+}
 
-/* I've abstracted the main text column positioning styles into the class .main-col-container.
-It can be applied to any direct descendent of <body> that should conform to the main text column dimensions and alignment.
-For example: article__body.html, messaging-zone.html   */
 
 .main-col-container {/* the text column remains centred after hitting its max width. */
      position: relative;
@@ -316,8 +298,8 @@ For example: article__body.html, messaging-zone.html   */
     /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
     @media screen and (min-width: 880px) {
         /* When viewport exceeds the max-width of the article__header ...  */
-        
-        .main-col-container {
+        .main-col-container, 
+        .featured-media {
           margin-left: auto;
           margin-right: auto;
           left: -4.5em; /* = ( [article__header max-width] - [article__body max-width] - [padding&margins] ) / 2 */
@@ -325,13 +307,6 @@ For example: article__body.html, messaging-zone.html   */
              It keeps the article__body aligned flush left with the article__header. */
         }
     }
-
-/* ARTICLE BODY SECTION */
-
-.article__body {
-     padding-bottom: 2em;
-}
-
 
 
 
@@ -470,10 +445,10 @@ figure {
     {
         .figure--xl {
             position: relative;
-            width: calc(100vw - 37px - ((100vw - 45em) / 2));
+            width: calc(100vw - 37px - ((100vw - 42em) / 2));
             /* ... compensate for the centering of the article__body to keep figure--XL width within 
                    the viewport.
-                   [prior offset] + ((article__header margin]) / 2 )        */
+                   [prior offset ??] - (([article__header margin??]) / 2 )        */
             max-width: 47.25rem;
             left: 0;
         }
