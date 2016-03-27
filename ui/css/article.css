@@ -951,6 +951,14 @@ aside { }
     }
 
 
+/* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
+
+.messaging-block--subscribe select {
+    background-color: transparent;
+    border: none;
+    height: 18px;
+}
+
 
 /* COMMENTS-SECTION  ========================================================================== */
 
