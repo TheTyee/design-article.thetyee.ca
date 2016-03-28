@@ -43,12 +43,20 @@ h4 {
 h1 {
   font-family: Georgia, Serif;
   font-weight: 800;
-  font-size: 2.4em;
-  line-height: 1.136em;
+  font-size: 1.75em;
+  line-height: 1.21em;
   color: #424242;
-
-  margin-bottom: 0.333em;
+  margin-bottom: 0.25em;
 }
+
+    /* BREAKPOINT: 600px // Increase article headline size */
+    @media screen and (min-width: 600px) {
+
+        h1 {
+            font-size: 2.4em;
+            line-height: 1.136em;
+        }
+    }
 
 h2 {
   color: #424242;
@@ -73,6 +81,17 @@ h4 {
   line-height: 1.4em;
   color: #424242;
 }
+    .article__header h4 {
+      margin-top: 0px;
+    }
+
+    /* BREAKPOINT: 600px // Increase article title size */
+    @media screen and (min-width: 600px) {
+
+        .article__header h4 {
+            margin-top: 10px;
+        }
+    }
 
 h5 {
   margin-top: 1em;
@@ -156,7 +175,7 @@ p a:hover {color: #839800;}
 }
 
     .pullquote:before {
-        content: "â€œ";
+        content: "Ã¢â‚¬Å“";
         display: block;
         position:absolute;
         left: 0em;
@@ -173,7 +192,7 @@ p a:hover {color: #839800;}
 
 
     /* .pullquote:after {
-        content: "â€";
+        content: "Ã¢â‚¬Â";
 
         position:absolute;
         padding-left: 0.075em;
@@ -461,11 +480,20 @@ figure {
 aside { }
 
     .aside {
+        display: none; /* HIDE ASIDES AT SMALLEST VIEWPORTS & NARROW PHONES */
         clear: right;
         position: relative;
-        width: 45%;
+        width: 43%;
         float: right;
         padding: 1em 0 2em 2em; /* Aligns asides flush right inside article__body */
+    }
+    
+    /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
+    @media screen and (min-width: 500px)              
+       {
+        .aside {
+            display: block; /* ... show related-story block */
+        }
     }
 
     /* BREAKPOINT: 696px // gradually moves aside outward to align flush right w/ viewport */
@@ -568,7 +596,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. Ã¢â‚¬â€AG */
+   some crap together. ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂAG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -773,8 +801,8 @@ aside { }
 
 .messaging-block {
     padding-bottom: 1em;
-    border-top: 1px solid #A8A8A8; 
-    border-bottom: 1px solid #A8A8A8;
+    /* border-top: 1px solid #A8A8A8;
+       border-bottom: 1px solid #A8A8A8; */
 }
 
     .messaging-block:hover {
@@ -793,10 +821,16 @@ aside { }
       padding-top: 0.2em;
       font-size: 1.333em;
       line-height: 1.3333em;
+      font-weight: 600;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
     }
 
     .messaging-zone .messaging-block {
       border-top: none;
+      border-bottom: 1px solid #A8A8A8;
     }
 
     .messaging-zone .messaging-block:first-child {
@@ -819,7 +853,8 @@ aside { }
 
 .related-story {
     background-color: #F4F4F4;
-    border-top: 2px solid;
+    border-top: 0px solid;
+    border-bottom: 0px solid;
     padding-bottom: .75em;
 }
 
@@ -841,12 +876,13 @@ aside { }
 
 
 
-/* STORY-ITEM  ========================================================================== */
+/* STORY-ITEM  ========================================================================== 
+   This object is nested inside related-story blocks. */
 
 .story-item { }
 
     .story-item__description {
-      margin: 0 0.5rem 0 0.5rem;
+      margin: 0.75em 0.5rem 0 0.5rem;
       font-size: 0.8em;
       line-height: 1.4em;
     }
@@ -881,7 +917,7 @@ aside { }
 
 .fact-box {
     clear: both;
-    background-color: #F4F4F4;
+    background-color: #F4F4F4;    
     border-top: none;
     padding: 0.5em 1em .5em 1em;
     margin-top: 3em;
@@ -921,10 +957,10 @@ aside { }
     margins were applied to it's contents instead of the container itself.) */
 
     /*  IN WIDER VIEWPORTS: 
-        â€¢ don't show the fact-box at the bottom of the article-body
-        â€¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
-        â€¢ show the factbox within an aside
-        â€¢ hide fact-box text anchor link */
+        Ã¢â‚¬Â¢ don't show the fact-box at the bottom of the article-body
+        Ã¢â‚¬Â¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
+        Ã¢â‚¬Â¢ show the factbox within an aside
+        Ã¢â‚¬Â¢ hide fact-box text anchor link */
     @media screen and (min-width: 939px) {
 
         .fact-box {
@@ -938,9 +974,13 @@ aside { }
         .aside .fact-box {
             display: block;
             margin-top: 0em;
-            border-top: 2px solid;
-
+            border-top: 8px solid;
+            border-bottom: 1px solid;
+            padding-left: 0;
+            padding-right: 0;
+            background-color: white;
         }
+
             .fact-box h4 {
               border: none
             }
