@@ -803,6 +803,10 @@ aside { }
       font-size: 1.333em;
       line-height: 1.3333em;
       font-weight: 600;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
     }
 
     .messaging-zone .messaging-block {
