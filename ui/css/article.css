@@ -733,7 +733,7 @@ aside { }
   width: 100%;
 }
 
-    .bigbox img {
+    .bigbox .advertisement {
         display: block;
         margin: 0em auto 0em auto;
         width: 300px;
