@@ -463,7 +463,7 @@ aside { }
     .aside {
         clear: right;
         position: relative;
-        width: 45%;
+        width: 43%;
         float: right;
         padding: 1em 0 2em 2em; /* Aligns asides flush right inside article__body */
     }
@@ -842,7 +842,8 @@ aside { }
 
 
 
-/* STORY-ITEM  ========================================================================== */
+/* STORY-ITEM  ========================================================================== 
+   This object is nested inside related-story blocks. */
 
 .story-item { }
 
