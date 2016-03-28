@@ -714,7 +714,7 @@ aside { }
   padding: 0.5em 0 0.5em 0;
 }
 
-    .ad-banner img {
+    .ad-banner .advertisement {
         display: block; 
         margin: 0em auto 0em auto;
         width: 728px;
