@@ -802,6 +802,7 @@ aside { }
       padding-top: 0.2em;
       font-size: 1.333em;
       line-height: 1.3333em;
+      font-weight: 600;
     }
 
     .messaging-zone .messaging-block {
