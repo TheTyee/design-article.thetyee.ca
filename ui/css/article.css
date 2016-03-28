@@ -156,7 +156,7 @@ p a:hover {color: #839800;}
 }
 
     .pullquote:before {
-        content: "â€œ";
+        content: "Ã¢â‚¬Å“";
         display: block;
         position:absolute;
         left: 0em;
@@ -173,7 +173,7 @@ p a:hover {color: #839800;}
 
 
     /* .pullquote:after {
-        content: "â€";
+        content: "Ã¢â‚¬Â";
 
         position:absolute;
         padding-left: 0.075em;
@@ -568,7 +568,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. Ã¢â‚¬â€AG */
+   some crap together. ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂAG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -881,7 +881,7 @@ aside { }
 
 .fact-box {
     clear: both;
-    background-color: #F4F4F4;
+    background-color: #F4F4F4;    
     border-top: none;
     padding: 0.5em 1em .5em 1em;
     margin-top: 3em;
@@ -921,10 +921,10 @@ aside { }
     margins were applied to it's contents instead of the container itself.) */
 
     /*  IN WIDER VIEWPORTS: 
-        â€¢ don't show the fact-box at the bottom of the article-body
-        â€¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
-        â€¢ show the factbox within an aside
-        â€¢ hide fact-box text anchor link */
+        Ã¢â‚¬Â¢ don't show the fact-box at the bottom of the article-body
+        Ã¢â‚¬Â¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
+        Ã¢â‚¬Â¢ show the factbox within an aside
+        Ã¢â‚¬Â¢ hide fact-box text anchor link */
     @media screen and (min-width: 939px) {
 
         .fact-box {
@@ -938,9 +938,13 @@ aside { }
         .aside .fact-box {
             display: block;
             margin-top: 0em;
-            border-top: 2px solid;
-
+            border-top: 8px solid;
+            border-bottom: 1px solid;
+            padding-left: 0;
+            padding-right: 0;
+            background-color: white;
         }
+
             .fact-box h4 {
               border: none
             }
