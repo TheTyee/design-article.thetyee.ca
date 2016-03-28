@@ -951,6 +951,38 @@ aside { }
     }
 
 
+/* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
+
+.messaging-block--subscribe select {
+    background-color: transparent;
+    border: none;
+    height: 18px;
+}
+
+/* MESSAGING-BLOCK-SHARE  ========================================================================== */
+
+/* TODO this might be too general and should probably be limited to this block, or moved to a more
+ * general location in the CSS
+*/
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    float: none;
+    margin-left: 0;
+}
+label.error {
+    font-weight: bold;
+    font-style: italic;
+    color: #b94a48;
+}
+label.valid {
+    font-weight: bold;
+    font-style: italic;
+    color: #468847;
+}
+
+.modal form#share input[type="text"], .modal form#share input[type="email"], .modal form#share textarea {
+    width: 90%;
+}
 
 /* COMMENTS-SECTION  ========================================================================== */
 
@@ -972,8 +1004,9 @@ aside { }
   left: 0;
   width: 100%; 
   text-align: center; 
-  margin: 0; padding: 30px 0;
-  background-image:linear-gradient(to bottom, transparent, rgba(66, 66, 66, 0.61));
+  margin: 0; 
+  padding: 60px 0;
+  background-image: linear-gradient(to bottom, transparent, rgb(255, 255, 255));
 }
 
 .comments-section .read-more .btn {

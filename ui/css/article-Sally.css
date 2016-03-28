@@ -207,6 +207,7 @@
 .narrow__search {
   position: static;
   display: block;
+  padding-bottom: 18px;
   font-size: 0.7em;
   text-transform: uppercase;
 }
@@ -225,7 +226,7 @@
   color: #555;
 }
 .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form {
-  margin: 8px 0px 0px 0px;
+  margin: 15px 0px 0px 0px;
   border: none;
   border-radius: 0px;
 }
@@ -542,10 +543,10 @@ footer {
   font-size: 0.9em;
 }
 
-footer h4 {
-  color: #fff;
-  font-size: 1em;
+footer div:first-child{
 
+  margin-top: 20px;
+  padding: 20px 0px;
 }
 
 footer ul {
@@ -554,22 +555,46 @@ footer ul {
   margin: 0px;
 }
 
+footer .footer__menu {
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
 
-.footer-four {
+.footer__menu li{
+  display: block;
+  clear: both;
+  text-align: center;
+  border-top: solid 1px #696868;
+  padding: 8px 0px;
+}
 
+.footer__menu li:last-child{
+  border-bottom: solid 1px #696868;
+}
+.footer__menu li .btn-join {
+  text-transform: capitalize;
+}
+
+.footer__menu li .btn-join span {
+  padding-bottom: 10px;
+  vertical-align: middle;
+  font-weight: normal;
+  margin-left: 1px;
 }
 
 .footer__social-links {
-  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .footer__social-links li {
-  display: inline-block;
-  margin-right: 10px;
+  text-align: center;
+  display: inline;
 }
 
 .footer__social-links li a {
   color: #fff;
+  display: block;
 }
 
 .footer__social-links li a:hover{
@@ -578,30 +603,29 @@ footer ul {
 
 .footer__social-links li a i {
   vertical-align: middle;
-  font-size: 0.8em;
 }
 
 .footer__social-links .facebook {
   background-color: #3b5998;
-  padding: 4px 8px;
+  padding: 8px;
+}
+
+.footer__social-links .facebook i {
+  margin-top: 2px;
 }
 
 .footer__social-links .twitter {
   background-color: #00aced;
-  padding: 4px;
+  padding: 8px 4px;
 }
 
 .footer__social-links .twitter i {
-  margin-top: -2px;
+  margin-top: 2px;
 }
 
 .footer__social-links .envelope {
   background-color: #666;
   padding: 4px;
-}
-
-.footer__social-links .envelope i {
-  margin-top: -4px;
 }
 
 /* ===== Related event box =======*/
@@ -621,7 +645,63 @@ footer ul {
   font-size: 0.75em;
 }
 
+/* ===== Popup =======*/
 
+div.ntnl-sgnup-modal {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #555;
+}
+.ntnl-sgnup-modal h2 { 
+    font-style: normal;
+}
+.ntnl-sgnup-modal p, .ntnl-sgnup-modal h2 {
+  margin-bottom: 24px;
+}
+.ntnl-sgnup-modal h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 38px;
+  color: #424242;
+  overflow:hidden;
+}
+.ntnl-sgnup-modal small {
+  font-size: 72%;
+  line-height: 85%;
+}
+.ntnl-sgnup-modal .text-center {
+    text-align: center;
+}
+/* unvisited link */
+.ntnl-sgnup-modal a:link {
+  color: #8A9900;
+}
+/* visited link */
+.ntnl-sgnup-modal a:visited {
+  color: #8A9900;
+}
+/* mouse over link */
+.ntnl-sgnup-modal a:hover {
+  color: #8A9900;
+}
+/* selected link */
+.ntnl-sgnup-modal a:active {
+  color: #8A9900;
+}
+.ntnl-sgnup-modal .fsize18 {
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.bg-pale-green{
+  background-color: #EEF0D9;
+}
+
+/*! == National modal transition, positioning and chrome */ 
+/*! Center the modal (except on mobile) and eliminate motion from fade-in transition */
 
 
 /* ==========================================================================
@@ -774,9 +854,140 @@ footer ul {
   }
 
   /* ARTICLE HEADER ========*/
-.author-info__bio{
-  display: none;
+  .author-info__bio{
+    display: none;
+  }
+
+  /* NEWSLETTER========================================================================== */ 
+  @media screen and (min-width: 768px) {
+  .ntnl-sgnup-modal.modal {
+    text-align: center;
+  }
+  .ntnl-sgnup-modal.modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+  .ntnl-sgnup-modal .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .ntnl-sgnup-modal.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+       -o-transform: translate(0, 0);
+          transform: translate(0, 0);
+    }
 }
+.modal-backdrop.in {
+  filter: alpha(opacity=70);
+  opacity: .7;
+}
+.ntnl-sgnup-modal .close {
+    float: right;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1;
+    text-shadow: 0px 1px 0px #FFF;
+    opacity: 0.5;
+    color: #000;
+}
+.ntnl-sgnup-modal .close:hover,
+.ntnl-sgnup-modal .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .9;
+}
+.ntnl-sgnup-modal .no-border-top {
+  border-top: none;
+}
+
+/*! == National modal content layout */
+.ntnl-sgnup-modal .modal-header {
+    min-height: 20px;
+    padding: 19px 24px 0px 24px;
+    border-bottom: none;
+    margin-bottom: 40px;
+}
+.ntnl-sgnup-modal .modal-body {
+    position: relative;
+    padding: 0px 24px 15px 24px;
+}
+.ntnl-sgnup-modal .modal-footer{
+  padding: 4px 24px 24px 24px;
+}
+.modal-national-logo{
+  position: relative;
+  top: 8px;
+  margin-right: 16px;
+}
+.btn-green {
+  color: #fff;
+  background-color: #9AAB00;
+  border-color: #9AAB00;
+}
+.ntnl-sgnup-modal .modal-content{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+  border: none;
+  border-radius: 0px;
+}
+.ntnl-sgnup-modal .modal-backdrop {
+  background-color: #000;
+    }
+
+
+.modal-national-logo {
+    float: left !important;
+}
+.ntnl-sgnup-modal .form-control {
+    padding: 0px;
+}
+.ntnl-sgnup-modal h2 { margin-top: 40px; } 
+.ntnl-sgnup-modal .modal-header { margin-bottom: 0px; } 
+.ntnl-sgnup-modal .modal-footer { margin-top: 0px; } 
+.ntnl-sgnup-modal small a { font-family: "Source Sans Pro",sans-serif; font-style: normal; } 
+
+.ntnl-sgnup-modal .form-checkbox {
+    background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.png');
+    background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.svg'), none;
+    height: 29px;
+    width: 35px;
+    background-repeat: no-repeat;
+    background-position: 0 -23px;
+    display: inline-block;
+}
+
+.ntnl-sgnup-modal .form-checkbox.checked {
+    height: 29px;
+    width: 35px;
+    background-repeat: no-repeat;
+    background-position: 0 3px;
+}
+
+.ntnl-sgnup-modal .radio-buttons {
+    opacity: .01;
+    height: 1px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+
+
+
+/*! End of modal customization for Tyee National subscription popup */
+/*! ---------------------------------------------------------------------------- */
+
 
 }
 
@@ -1089,12 +1300,99 @@ footer ul {
 /* FOOTER =======*/
 
 
-.footer-three {
-  margin-top: 40px;
+
+/* FOOTER ========================================================================== */
+
+footer {
+  clear: both;
+  line-height: 2em;
+  font-size: 0.9em;
+}
+
+footer div:first-child{
+  border-top: solid 1px #696868;
+  margin-top: 20px;
+  padding: 20px 0px;
+}
+
+footer ul {
+  padding: 0px;
+  list-style-type: none;
+  margin: 0px;
+}
+
+footer .footer__menu {
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+
+.footer__menu li{
+  display: inline-block;
+  margin-left: 20px;
+  border-top: 0px;
+}
+
+.footer__menu li:last-child{
+  border-bottom: 0px;
+}
+
+.footer__menu li .btn-join {
+  text-transform: capitalize;
+}
+
+.footer__menu li .btn-join span {
+  padding-bottom: 10px;
+  vertical-align: middle;
+  font-weight: normal;
+  margin-left: 1px;
 }
 
 
+
+.footer__social-links li {
+  float: right;
+  text-align: center;
 }
 
+.footer__social-links li a {
+  color: #fff;
+  display: block;
+}
+
+.footer__social-links li a:hover{
+  background-color: #aaa;
+}
+
+.footer__social-links li a i {
+  vertical-align: middle;
+}
+
+.footer__social-links .facebook {
+  background-color: #3b5998;
+  padding: 8px;
+}
+
+.footer__social-links .facebook i {
+  margin-top: 2px;
+}
+
+.footer__social-links .twitter {
+  background-color: #00aced;
+  padding: 8px 4px;
+}
+
+.footer__social-links .twitter i {
+  margin-top: 2px;
+}
+
+.footer__social-links .envelope {
+  background-color: #666;
+  padding: 4px;
+}
+
+
+
+}
 
 

@@ -1,17 +1,85 @@
 <!-- BEGIN 01-molecules/blocks/messaging-block--share -->
 <section class="messaging-block" data-dev-object-descrip="01-molecules/blocks/messaging-block--share" data-dev-status="IN-PROGRESS">
-<h3>Share this article</h3>
-<div class="tool-bar clearfix" data-dev-object-descrip="USES CODE FROM: molecules/blocks/tool-bar" data-dev-status="IN-PROGRESS">
-	<ul class="clearfix">
-		<li><button type="button" class="btn btn-default btn-facebook">
-			  <span class="fa fa-facebook" aria-hidden="true"></span> Share on Facebook
-			</button></li>
-		<li><button type="button" class="btn btn-default btn-twitter">
-			  <span class="fa fa-twitter" aria-hidden="true"></span> Share on Twitter
-			</button></li>
-		<li><button type="button" class="btn btn-default btn-email">
-			  <span class="fa fa-envelope" aria-hidden="true"></span>
-			</button></li>
-	</ul>
-</section>
-<!-- END 01-molecules/blocks/messaging-block--share -->
+    <h3>Share this article</h3>
+    <div class="tool-bar clearfix" data-dev-object-descrip="USES CODE FROM: molecules/blocks/tool-bar" data-dev-status="IN-PROGRESS">
+        <ul class="clearfix">
+            <li><button type="button" class="btn btn-default btn-facebook">
+                    <span class="fa fa-facebook" aria-hidden="true"></span> Share on Facebook
+            </button></li>
+            <li><button type="button" class="btn btn-default btn-twitter">
+                    <span class="fa fa-twitter" aria-hidden="true"></span> Share on Twitter
+            </button></li>
+            <li><button type="button" class="btn btn-default btn-email" data-toggle="modal" data-target="#share-email">
+                    <span class="fa fa-envelope" aria-hidden="true"></span>
+            </button></li>
+        </ul>
+    </section>
+
+    <!--E-mail share modal -->
+    <div class="modal fade" id="share-email" tabindex="-1" role="dialog" aria-labelledby="share-email-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="share-email-label">Share article via email</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div id="errors"></div>
+                    <div id="messages"></div>
+
+                    <form role="form" id="share">
+                        <div class="form-group">
+                            <label for="email_to">Send this article to:</label>
+                            <textarea class="form-control" rows="2" placeholder="Enter one email address, or multiple (up to 10) separated with a comma or one on each line." name="email_to" id="email_to"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="email_from">Your email address:</label>
+                            <input type="email" class="form-control" name="email_from" id="email_from" placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your message:</label>
+                            <textarea class="form-control" name="message" id="message" rows="3" placeholder="Please write more than a couple of words here. It's how we know you're not an evil Internet-spamming robot." ></textarea>
+                        </div>
+                        <div class="form-group" >
+                            <label for="subscription">Would you like to receive The Tyee's headlines free by email?</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="subscription" id="sub-daily" value="Daily">
+                                    Yes, every day.
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="subscription" id="sub-weekly" value="Weekly">
+                                    Yes, once a week.
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="subscription" id="sub-alreadysubscribed" value="Already subscribed">
+                                    I already subscribe.
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="subscription" id="sub-nothanks" value="No thanks">
+                                    No, thanks.
+                                </label>
+                            </div>
+                            <span id="radio-error"></span>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <button type="button" id="showForm" class="btn btn-link" style="display:none;">Show form again &raquo;</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- END 01-molecules/blocks/messaging-block--share -->

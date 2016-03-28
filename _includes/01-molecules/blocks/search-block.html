@@ -4,9 +4,17 @@
 	  <a href="#" class="[ dropdown-toggle pull-right ]" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-search"></span><span>Search</span> </a>
           <ul class="dropdown-menu">
             <div class="menu__search--wrapper">
-              <form class="[ navbar-form row ]" role="search">
+              <form id="search-form" class="[ navbar-form row ]" method='get' role="search" action="http://www.google.ca/custom">
+
                 <li class="[ form-group col-xs-8 col-sm-8 col-md-10 col-lg-11 ]">
-                  <input type="text" class="[ form-control ]" placeholder="Search">
+                  <input id="menu__search--input" type="text" class="[ form-control form-text]" placeholder="Search" name="q">
+                  <input type="hidden" name="domains" value="thetyee.ca">
+                  <input type="hidden" name="sitesearch" value="thetyee.ca" checked="checked">
+                  <input type="hidden" name="client" value="pub-2188005021510640">
+                  <input type="hidden" name="forid" value="1">
+                  <input type="hidden" name="ie" value="UTF-8">
+                  <input type="hidden" name="oe" value="UTF-8">
+                  <input type="hidden" name="hl" value="en">
                 </li>
                 <button type="submit" class="[ btn btn-default col-xs-4 col-sm-4 col-md-2 col-lg-1 ] menu__search--button ">Submit</button>
               </form>
