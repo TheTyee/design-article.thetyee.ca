@@ -782,8 +782,8 @@ aside { }
 
 .messaging-block {
     padding-bottom: 1em;
-    border-top: 1px solid #A8A8A8; 
-    border-bottom: 1px solid #A8A8A8;
+    /* border-top: 1px solid #A8A8A8;
+       border-bottom: 1px solid #A8A8A8; */
 }
 
     .messaging-block:hover {
@@ -806,6 +806,7 @@ aside { }
 
     .messaging-zone .messaging-block {
       border-top: none;
+      border-bottom: 1px solid #A8A8A8;
     }
 
     .messaging-zone .messaging-block:first-child {
