@@ -1,21 +1,37 @@
 <!-- BEGIN 01-molecules/blocks/messaging-block--subscribe -- -->
 <section class="messaging-block messaging-block--subscribe" data-dev-object-descrip="01-molecules/blocks/messaging-block--subscribe" data-dev-status="IN-PROGRESS">
     <h3>Subscribe to the Tyee</h3>
+    <form class="hidden-xs">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter your email address...">
+            <span class="input-group-addon">
+                <select>
+                    <option>Daily</option>
+                    <option>Weekly</option>
+                    <option>National (weekly)</option>
+                </select>
+            </span>
+            <span class="input-group-btn">
+                <button class="btn btn-default btn--subscribe" type="button">Subscribe now</button>
+            </span>
+        </div><!-- /input-group -->
+        <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
+    </form>
+    <form class="hidden-sm hidden-md hidden-lg">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter your email address...">
+            <span class="input-group-addon">
+                <select>
+                    <option>Daily</option>
+                    <option>Weekly</option>
+                    <option>National (weekly)</option>
+                </select>
+            </span>
+        </div><!-- /input-group -->
+        <button class="btn btn-default btn--subscribe" type="button">Subscribe now</button>
+        <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
+    </form>
 
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Enter your email address...">
-        <span class="input-group-addon">
-            <select>
-                <option>Daily</option>
-                <option>Weekly</option>
-                <option>National (weekly)</option>
-            </select>
-        </span>
-        <span class="input-group-btn">
-            <button class="btn btn-default btn--subscribe" type="button">Subscribe now</button>
-        </span>
-    </div><!-- /input-group -->
-    <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
 </section>
 <!-- Modal -->
 <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel">
