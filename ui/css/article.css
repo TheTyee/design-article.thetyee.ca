@@ -43,12 +43,20 @@ h4 {
 h1 {
   font-family: Georgia, Serif;
   font-weight: 800;
-  font-size: 2.4em;
-  line-height: 1.136em;
+  font-size: 1.75em;
+  line-height: 1.21em;
   color: #424242;
-
-  margin-bottom: 0.333em;
+  margin-bottom: 0.25em;
 }
+
+    /* BREAKPOINT: 600px // Increase article headline size */
+    @media screen and (min-width: 600px) {
+
+        h1 {
+            font-size: 2.4em;
+            line-height: 1.136em;
+        }
+    }
 
 h2 {
   color: #424242;
@@ -73,6 +81,17 @@ h4 {
   line-height: 1.4em;
   color: #424242;
 }
+    .article__header h4 {
+      margin-top: 0px;
+    }
+
+    /* BREAKPOINT: 600px // Increase article title size */
+    @media screen and (min-width: 600px) {
+
+        .article__header h4 {
+            margin-top: 10px;
+        }
+    }
 
 h5 {
   margin-top: 1em;
