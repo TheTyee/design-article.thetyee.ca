@@ -819,7 +819,8 @@ aside { }
 
 .related-story {
     background-color: #F4F4F4;
-    border-top: 2px solid;
+    border-top: 0px solid;
+    border-bottom: 0px solid;
     padding-bottom: .75em;
 }
 
