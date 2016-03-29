@@ -202,7 +202,7 @@
 
 
 .menu__join .btn-join span{
-  color: #90AD00;
+  color: #82AD00;
 }
 .narrow__search {
   position: static;
@@ -276,11 +276,11 @@
 
 .latest-stories {
   background-color: #fff;
-  color: #859c01;
+  color: #82AD00;
   font-size: 16px;
 }
 .latest-stories a {
-  color: #859c01;
+  color: #82AD00;
 }
 
 .latest-stories__media-wrapper{
@@ -317,7 +317,7 @@
   max-width: 100%;
 }
 .latest-stories__hed {
-  color: #859c01;
+  color: #82AD00;
   font-size: 0.8em;
   line-height: 1.25em;
   font-weight: bold;
@@ -415,7 +415,7 @@
 }
 
 .author-more{
-  background-color: #90AD00;
+  background-color: #82AD00;
   color: #fff;
   padding: 3px;
   border-radius: 3px;
@@ -503,7 +503,7 @@
   margin-top: 0px;
   padding-top: 5px;
   border-bottom: solid 1px #A8A8A8;
-  color: #90AD00;
+  color: #82AD00;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
@@ -522,7 +522,7 @@
 }
 
 .messaging-block--barometer p a{
-  background-color: #90AD00;
+  background-color: #82AD00;
   padding: 4px 10px;
   width: 100%;
   font-size: 0.85em;

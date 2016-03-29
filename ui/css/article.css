@@ -148,7 +148,7 @@ p {
 /* LINKS  ========================================================================== */
 
 a, a:link, a:visited {color: #82AD00}
-a:hover {color: #82AD00;}
+a:hover {color: #6F9400;}
 a:active {color: #82AD00;}
 
 /* Text links within paragraphs get a dotted underscores */
@@ -683,7 +683,7 @@ aside { }
 
 
             .btn-join:hover .accent-color {
-                fill: #839800;
+                fill: #6F9400;
                 cursor: pointer;
             }
 
@@ -839,7 +839,7 @@ aside { }
 
 .btn--subscribe {
   color: white;
-  background-color: #9AAB00;
+  background-color: #82AD00;
 }
 
 
@@ -1069,14 +1069,18 @@ footer.site-footer {
 
 
 /*  ACCENT COLOR HELPER CLASSES  ========================================================================== 
-    These classes can get applied to elements that should employ the secondary 
-    color. This color will change depending on the website section and will 
+    These classes can get applied to elements that should employ the accent 
+    color. This color may change depending on the website section and will 
     typically by synonymous with the lnk color. */
 
 .accent-color {
-    color: #90AD00;
-    fill: #90AD00;
+    color: #82AD00;
+    fill: #82AD00;
 }
+    
+    .accent-color--background {
+      background-color: #82AD00;
+    }
 
     .accent-color--border {
       border-color: #90AD00 !important; 
