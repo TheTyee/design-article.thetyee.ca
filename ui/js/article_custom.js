@@ -8,6 +8,17 @@
             e.stopPropagation();
         });
 
+        //*======= ALLOW MULTIPLE NAV ITEMS TO BE OPEN AT ONCE IN MOBILE 
+        if ($(window).width() < 992){
+            $('.dropdown.keep-open').on({
+                "shown.bs.dropdown": function() { this.closable = false; },
+                "click":             function() { this.closable = true; },
+                "hide.bs.dropdown":  function() { return this.closable; }
+            });
+        }
+
+  
+
 
         //Moves focus directly to search field when user begins typing
         $('.search-block').on('show.bs.dropdown', function(event) {
