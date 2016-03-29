@@ -242,7 +242,6 @@
         function trimBio(){
         if ($(window).width() < 667){
             $('.author-more').show();
-        
             var annotatedBio = fullBio.substr(0, 107) + "\u2026";
             $('.author-info__bio').html(annotatedBio);
 
@@ -252,10 +251,10 @@
                         
                         if($('.author-more').hasClass('up')){
                             $('.author-info__bio').html(fullBio);  
-                            $('.author-more').html('Less'); 
+                            $('.author-more').html('Show Less'); 
                         } else {
                             $('.author-info__bio').html(annotatedBio);
-                            $('.author-more').html('More');
+                            $('.author-more').html('Show More');
                         }
 
                     });
