@@ -170,7 +170,7 @@ p a:hover {color: #6F9400;}
 .pullquote {
   position: relative;
   /* width: 95%; */
-  margin: 1.33em 2.125em 1.33em 2.125em;
+  margin: 1.33em 0em 1.33em 0em;
   border-top: 8px solid;
   border-bottom: 1px solid;
   border-color: #444;
@@ -183,6 +183,15 @@ p a:hover {color: #6F9400;}
   font-size: 1.15em;
   line-height: 1.333em;
 }
+
+    /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
+    @media screen and (min-width: 500px)              
+       {
+        .pullquote {
+            margin-left: 2.125em;
+            margin-right: 2.125em;
+        }
+    }
 
     /* .pullquote:before {
         content: "Ã¢â‚¬Å“";
