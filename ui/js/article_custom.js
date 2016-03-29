@@ -240,7 +240,7 @@
         //==== COLLAPSING AUTHOR BIO
         var fullBio = $('.author-info__bio').html();
         function trimBio(){
-        if ($(window).width() < 667){
+        if ($(window).width() < 670){
             $('.author-more').show();
             var annotatedBio = fullBio.substr(0, 107) + "\u2026";
             $('.author-info__bio').html(annotatedBio);
@@ -267,7 +267,7 @@
 
 
          $(window).resize(function() {
-            if ($(window).width() < 667){
+            if ($(window).width() < 670){
                 trimBio();
             } else {
              $('.author-info__bio').html(fullBio);
