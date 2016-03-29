@@ -738,8 +738,9 @@ aside { }
 
 .bigbox {
   margin: 2em 0 1.75em 0;
-  border-top: 1px solid #A8A8A8;
-  border-bottom: 1px solid #A8A8A8;
+  border-color: inherit;
+  border-top: 1px solid #ddd; /* Ad block borders are paler than default border */
+  border-bottom: 1px solid #ddd; /* Ad block borders are paler than default border */
   padding-bottom: 1.333em;
   width: 100%;
 }
@@ -932,7 +933,7 @@ aside { }
     clear: both;
     background-color: #F4F4F4;
     border-top: none;
-    padding: 0em 1em .5em 1em;
+    padding: 0em 1em .33em 1em;
     margin-top: 3em;
 }
 
