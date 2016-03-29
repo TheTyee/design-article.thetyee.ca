@@ -157,19 +157,25 @@ p a:hover {color: #6F9400;}
 
 
 
+/* PULLQUOTES  ========================================================================== */
+
 .pullquote {
   position: relative;
-  width: 95%;
-  margin: 1.33em 0em 1.33em 0em;
-  padding-left: 2.125em;
-  padding-right: 1.75em;
+  /* width: 95%; */
+  margin: 1.33em 2.125em 1.33em 2.125em;
+  border-top: 8px solid;
+  border-bottom: 1px solid;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  /* padding-left: 2.125em; */
+  /* padding-right: 1.75em; */
   font-family: Georgia, Serif;
   font-weight: 800;
   font-size: 1.15em;
   line-height: 1.333em;
 }
 
-    .pullquote:before {
+    /* .pullquote:before {
         content: "Ã¢â‚¬Å“";
         display: block;
         position:absolute;
@@ -183,7 +189,7 @@ p a:hover {color: #6F9400;}
         background-color: #fff;
         clip: rect(16px, 50px, 44px, 0px); 
         */
-    }
+    } */
 
 
     /* .pullquote:after {
