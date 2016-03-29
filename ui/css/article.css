@@ -147,13 +147,13 @@ p {
 
 /* LINKS  ========================================================================== */
 
-a, a:link, a:visited {color: #90AD00}
-a:hover {color: #839800;}
-a:active {color: #839800;}
+a, a:link, a:visited {color: #82AD00}
+a:hover {color: #82AD00;}
+a:active {color: #82AD00;}
 
 /* Text links within paragraphs get a dotted underscores */
-p a, p a:link, p a:visited {color: #90AD00; font-weight:600; border-bottom: 1.5px dotted #90AD00;}
-p a:hover {color: #839800;}
+p a, p a:link, p a:visited {color: #82AD00; font-weight:600; border-bottom: 1.5px dotted #82AD00;}
+p a:hover {color: #6F9400;}
 
 
 
