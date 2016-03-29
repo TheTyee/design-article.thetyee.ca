@@ -410,15 +410,11 @@
   position: relative;
 }
 
-.author-info__bio{
-  display: none;
-}
+
 
 .author-more{
-  background-color: #82AD00;
-  color: #fff;
-  padding: 3px;
-  border-radius: 3px;
+  display: none;
+  color: #82AD00;
   font-weight: 300;
   font-size: 0.85em;
   position: relative;
@@ -864,10 +860,7 @@ div.ntnl-sgnup-modal {
 
   }
 
-  /* ARTICLE HEADER ========*/
-  .author-info__bio{
-    display: none;
-  }
+
 
   /* NEWSLETTER========================================================================== */ 
   @media screen and (min-width: 768px) {

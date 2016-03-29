@@ -2,31 +2,7 @@
 (function($, viewport){
     $(document).ready(function() {
 
-        var triggerAuthourCollapse;
-
-
-
-        // Executes only in XS breakpoint
-        if(viewport.is('xs')) {
-            // ...
-        }
-
-        // Executes in SM, MD and LG breakpoints
-        if(viewport.is('<=sm')) {
-            triggerAuthourCollapse = true;
-        }
-
-        // Executes in XS and SM breakpoints
-        if(viewport.is('<md')) {
-            // ...
-        }
-
-
-
-        $('.menu__search--wrapper .form-control').focus();
-
-
-
+        
         //Do not kill the dropdowns when users click in them)
         $('.dropdown-menu').children().click(function(e){
             e.stopPropagation();
@@ -259,43 +235,48 @@
                 });
             });
 
-        }
+        }//END LATEST STORIES SCROLLER
 
+        //==== COLLAPSING AUTHOR BIO
+        var fullBio = $('.author-info__bio').html();
+        function trimBio(){
+        if ($(window).width() < 667){
+            $('.author-more').show();
+        
+            var annotatedBio = fullBio.substr(0, 107) + "\u2026";
+            $('.author-info__bio').html(annotatedBio);
 
+                function collapseAuthourBox(){
+                    $('.author-info').click(function(){
+                      $('.author-more .caret').toggleClass('up');
+                        
+                        if($('.author-more .caret').hasClass('up')){
+                            $('.author-info__bio').html(fullBio);   
+                        } else {
+                            $('.author-info__bio').html(annotatedBio);
+                        }
 
-        //Collapsible authour box
-
-
-        function collapseAuthourBox(){
-            $('.author-info').click(function(){
-                $('.author-info__bio').toggleClass('show');
-                $('.author-more .caret').toggleClass('up');
-            });
-        }
-
-
-        if(triggerAuthourCollapse === true){
-            collapseAuthourBox();
-
-        }
-
-
-
-        // Execute code each time window size changes
-        $(window).resize(
-            viewport.changed(function() {
-                if(viewport.is('sm')) {
-
-                    collapseAuthourBox();
-
+                    });
                 }
-            })
-        );
+
+                collapseAuthourBox()
+            }
+        }
+        trimBio();
+
+
+         $(window).resize(function() {
+            if ($(window).width() < 667){
+                trimBio();
+            } else {
+             $('.author-info__bio').html(fullBio);
+             $('.author-more').hide();
+            }
+         });
 
 
 
 
-    });
 
     // Show Disqus comments
     $(".comments-section .btn").click(function(e) {
@@ -316,5 +297,6 @@
     });
 
 
+    });
 
 })(jQuery, ResponsiveBootstrapToolkit);
