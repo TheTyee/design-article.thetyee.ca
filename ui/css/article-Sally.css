@@ -635,6 +635,7 @@ footer .footer__menu {
             margin-top: 0em;
             border-top: 8px solid;
             border-bottom: 1px solid;
+            border-color: #444;
             padding-left: 0;
             padding-right: 0;
             background-color: white;
