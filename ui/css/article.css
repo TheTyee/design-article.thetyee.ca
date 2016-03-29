@@ -29,7 +29,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.39em;
-  color: #555;
+  color: #404040;
 }
 
 
@@ -45,7 +45,6 @@ h1 {
   font-weight: 800;
   font-size: 1.75em;
   line-height: 1.21em;
-  color: #424242;
   margin-bottom: 0.25em;
 }
 
@@ -72,14 +71,13 @@ h3 {
   margin-top: 0.5em;
   font-size: 1.5em;
   font-weight: 600;
-  color: #424242;
+  color: #444;
 }
 
 h4 {
   font-size: 1.42em;
   font-weight: 300;
   line-height: 1.4em;
-  color: #424242;
 }
     .article__header h4 {
       margin-top: 0px;
@@ -165,13 +163,10 @@ p a:hover {color: #839800;}
   margin: 1.33em 0em 1.33em 0em;
   padding-left: 2.125em;
   padding-right: 1.75em;
-
   font-family: Georgia, Serif;
   font-weight: 800;
   font-size: 1.15em;
   line-height: 1.333em;
-  color: #424242;
-
 }
 
     .pullquote:before {
