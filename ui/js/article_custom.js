@@ -248,12 +248,14 @@
 
                 function collapseAuthourBox(){
                     $('.author-info').click(function(){
-                      $('.author-more .caret').toggleClass('up');
+                      $('.author-more').toggleClass('up');
                         
-                        if($('.author-more .caret').hasClass('up')){
-                            $('.author-info__bio').html(fullBio);   
+                        if($('.author-more').hasClass('up')){
+                            $('.author-info__bio').html(fullBio);  
+                            $('.author-more').html('Less'); 
                         } else {
                             $('.author-info__bio').html(annotatedBio);
+                            $('.author-more').html('More');
                         }
 
                     });
