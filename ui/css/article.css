@@ -925,6 +925,36 @@ aside { }
           font-style: italic; 
         }
 
+/* TEXT-BLOCK-CONTAINER  ================================================================
+    This css abstracts the styling of text container that occur within asides. 
+    (E.g. related-event block) (Also fact-box, although fact-box currently has its own css
+    rules due to its dual presence within asides and within the main text column)  */
+
+.text-block-container {
+    margin-top: 0em;
+    border-top: 8px solid;
+    border-bottom: 1px solid;
+    border-color: #444;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0.33em;
+    background-color: white;
+}
+
+    .text-block-container h4 {
+          display:table;
+          margin-top: 1em;
+          margin-bottom: 1em;
+          padding-bottom: 0em;
+          text-align:;
+          font-size: 1em;
+          font-weight:600;
+    }
+
+    .text-block-container p{
+      font-size: 0.75em;
+    }
+
 
 
 /* FACT-BOX  ========================================================================== 
