@@ -1,21 +1,8 @@
 <!-- BEGIN 01-molecules/blocks/related-event-box -->
 {% comment %}
-<!-- The fact appears at the bottom of the article by default, but appears in the sidebar in wider viewports. This is done by changing the value of the fact-box's display property based on location/context and viewport width (by targeting .fact-box via css). 
-    The additional .hide-on-narrow-vp class gets applied to the containing 
-    <aside> so that its margin doesn't cut into the the text column when
-    the fact box is hidden. (This ugly class could probably be eliminated if 
-    asides were simply a class rather than a container, or if an aside's 
-    margins were applied to it's contents instead of the container itself.)
-
-    In default (narrow) viewports there should be the option of putting an anchor text-link within the article body text so that readers can easily get down the page to the fact-box. E.g:
-	    <a href="#fact-box-1" class="fact-box__anchor-link">Inline link to fact box.</a>
-    ... as seen in the atom fact-box-anchor-link.html which can be embedded into the paragraph.html atom.
-    This link will be set to display:none in wider viewports. 
-    There is empty <span id="fact-box-1"></span> at the bottom of the article__body to serve as the destination anchor for this link. (Assign #fact-box-1 to the fact-box object itself wouldn't work because the html for this object appears in 2 locations on the page.)
--->
 {% endcomment %}
 
-<div class="related-event-box" data-dev-object-descrip="01-molecules/blocks/related-event-box" data-dev-status="IN-PROGRESS">
+<div class="related-event-box text-block-container" data-dev-object-descrip="01-molecules/blocks/related-event-box" data-dev-status="IN-PROGRESS">
 
 	<h4 class="title">STANDING UP TO FRACKING: A TYEE EVENT</h4>
         
