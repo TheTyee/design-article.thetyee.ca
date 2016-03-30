@@ -18,7 +18,7 @@ Sometimes the content of an aside is too big or too long to float next to paragr
 -->
 {% endcomment %}
 
-<aside class="aside clearfix {{ include.aside-class }}" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
+<aside class="aside {{ include.aside-class }}" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
 	{% include {{ include.aside-contents }}.html content-source=include.content-source %}
 	
 	{% if include.aside-caption or include.media-credit %}
