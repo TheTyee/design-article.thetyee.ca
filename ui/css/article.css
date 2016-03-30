@@ -222,6 +222,7 @@ p a:hover {color: #6F9400;}
 
 
 .lead-in {
+    overflow:auto;
 }
 
 .lead-in:first-letter {
