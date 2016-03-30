@@ -26,7 +26,7 @@
 
     <nav class="[ navbar-nav col-xs-12 col-sm-12 col-md-4 col-lg-4 ] menu_left-nav-wrap">
       <ul class="[ col-sm-12 col-md-12 ] menu__left-nav ">
-        <li class="menu__latest-stories [ col-md-5 col-lg-5  dropdown ]">
+        <li class="menu__latest-stories [ col-md-5 col-lg-5  dropdown keep-open ]">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               Latest Stories
                 <span class="caret"></span>
@@ -35,7 +35,7 @@
               <li>{% include 02-organisms/sections/latest-stories.html %}</li>
             </ul>
         </li>
-        <li class="menu__sections col-md-3 col-lg-3 [ dropdown ]">
+        <li class="menu__sections col-md-3 col-lg-3 [ dropdown keep-open ]">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Sections
               <span class="caret"></span>
@@ -44,7 +44,7 @@
               <li>{% include 01-molecules/navigation/sections-nav.html %}</li>
           </ul>
         </li>
-        <li class="menu__more col-md4 col-lg-4[ dropdown ]">
+        <li class="menu__more col-md-4 col-lg-4[ dropdown keep-open ]">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             More
               <span class="caret"></span>

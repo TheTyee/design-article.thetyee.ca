@@ -13,6 +13,14 @@
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
 
+
+/* Default Border Color - set border-color:inherit on elements to inherit the default */
+* {
+  border-color: #888;
+}
+
+
+/* Default Background Color */
 body {
   background-color: #fff;
 }
@@ -29,7 +37,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.39em;
-  color: #555;
+  color: #404040;
 }
 
 
@@ -43,18 +51,25 @@ h4 {
 h1 {
   font-family: Georgia, Serif;
   font-weight: 800;
-  font-size: 2.4em;
-  line-height: 1.136em;
-  color: #424242;
-
-  margin-bottom: 0.333em;
+  font-size: 1.625em;
+  line-height: 1.21em;
+  margin-bottom: 0.25em;
 }
+
+    /* BREAKPOINT: 600px // Increase article headline size */
+    @media screen and (min-width: 600px) {
+
+        h1 {
+            font-size: 2.4em;
+            line-height: 1.136em;
+        }
+    }
 
 h2 {
   color: #424242;
-  font-family: Georgia, Serif;
-  font-weight: 800;
-  font-size: 1.5em; /* 27px */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 1.33em; /* ~24px */
   line-height: 1.333em; /* 36px */
   margin-top: 1.555em; /* 42px */
   margin-bottom: .666em; /* 18px */
@@ -64,15 +79,25 @@ h3 {
   margin-top: 0.5em;
   font-size: 1.5em;
   font-weight: 600;
-  color: #424242;
+  color: #444;
 }
 
 h4 {
   font-size: 1.42em;
   font-weight: 300;
   line-height: 1.4em;
-  color: #424242;
 }
+    .article__header h4 {
+      margin-top: 0px;
+    }
+
+    /* BREAKPOINT: 600px // Increase article title size */
+    @media screen and (min-width: 600px) {
+
+        .article__header h4 {
+            margin-top: 10px;
+        }
+    }
 
 h5 {
   margin-top: 1em;
@@ -130,32 +155,45 @@ p {
 
 /* LINKS  ========================================================================== */
 
-a, a:link, a:visited {color: #90AD00}
-a:hover {color: #839800;}
-a:active {color: #839800;}
+a, a:link, a:visited {color: #82AD00}
+a:hover {color: #6F9400;}
+a:active {color: #82AD00;}
 
 /* Text links within paragraphs get a dotted underscores */
-p a, p a:link, p a:visited {color: #90AD00; font-weight:600; border-bottom: 1.5px dotted #90AD00;}
-p a:hover {color: #839800;}
+p a, p a:link, p a:visited {color: #82AD00; font-weight:600; border-bottom: 1.5px dotted #82AD00;}
+p a:hover {color: #6F9400;}
 
 
+
+/* PULLQUOTES  ========================================================================== */
 
 .pullquote {
   position: relative;
-  width: 95%;
+  /* width: 95%; */
   margin: 1.33em 0em 1.33em 0em;
-  padding-left: 2.125em;
-  padding-right: 1.75em;
-
+  border-top: 8px solid;
+  border-bottom: 1px solid;
+  border-color: #444;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  /* padding-left: 2.125em; */
+  /* padding-right: 1.75em; */
   font-family: Georgia, Serif;
   font-weight: 800;
   font-size: 1.15em;
   line-height: 1.333em;
-  color: #424242;
-
 }
 
-    .pullquote:before {
+    /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
+    @media screen and (min-width: 500px)              
+       {
+        .pullquote {
+            margin-left: 2.125em;
+            margin-right: 2.125em;
+        }
+    }
+
+    /* .pullquote:before {
         content: "Ã¢â‚¬Å“";
         display: block;
         position:absolute;
@@ -169,7 +207,7 @@ p a:hover {color: #839800;}
         background-color: #fff;
         clip: rect(16px, 50px, 44px, 0px); 
         */
-    }
+    } */
 
 
     /* .pullquote:after {
@@ -209,7 +247,8 @@ p a:hover {color: #839800;}
 .caption {
     padding-top: .65em;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #A8A8A8;
+    border-bottom: 1px solid;
+    border-color: inherit;
     font-size: 0.777em;
     font-weight: 700;
     line-height: 1.5em;
@@ -541,9 +580,9 @@ aside { }
 .author-info {
   margin-top: 0.75em;
   padding: 0.45em 0  0.4em 0;
-  border-top: 1px solid #A8A8A8;
-  border-bottom: 1px solid #A8A8A8;
-
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: inherit;
   font-weight: 600;
 }
 
@@ -669,7 +708,7 @@ aside { }
 
 
             .btn-join:hover .accent-color {
-                fill: #839800;
+                fill: #6F9400;
                 cursor: pointer;
             }
 
@@ -708,8 +747,9 @@ aside { }
 
 .bigbox {
   margin: 2em 0 1.75em 0;
-  border-top: 1px solid #A8A8A8;
-  border-bottom: 1px solid #A8A8A8;
+  border-color: inherit;
+  border-top: 1px solid #ddd; /* Ad block borders are paler than default border */
+  border-bottom: 1px solid #ddd; /* Ad block borders are paler than default border */
   padding-bottom: 1.333em;
   width: 100%;
 }
@@ -812,10 +852,12 @@ aside { }
     .messaging-zone .messaging-block {
       border-top: none;
       border-bottom: 1px solid #A8A8A8;
+      border-color: inherit;
     }
 
     .messaging-zone .messaging-block:first-child {
-      border-top: 1px solid #A8A8A8;
+      border-top: 1px solid;
+      border-color: inherit;
     }
 
     .messaging-block--subscribe .input-group {
@@ -825,7 +867,7 @@ aside { }
 
 .btn--subscribe {
   color: white;
-  background-color: #9AAB00;
+  background-color: #82AD00;
 }
 
 
@@ -898,9 +940,9 @@ aside { }
 
 .fact-box {
     clear: both;
-    background-color: #F4F4F4;    
+    background-color: #F4F4F4;
     border-top: none;
-    padding: 0.5em 1em .5em 1em;
+    padding: 0em 1em .33em 1em;
     margin-top: 3em;
 }
 
@@ -912,11 +954,11 @@ aside { }
       display:table;
       margin-top: 1em;
       margin-bottom: 1em;
-      padding-bottom: .33em;
-      text-align: ;
+      padding-bottom: 0em;
+      text-align:;
       font-size: 1em;
       font-weight:600;
-      border-bottom: 1px solid #A8A8A8;      
+      border-bottom: 1px solid #A8A8A8;
     }
 
     /*  In default narrow views don't show the fact-box within an aside. */
@@ -957,6 +999,7 @@ aside { }
             margin-top: 0em;
             border-top: 8px solid;
             border-bottom: 1px solid;
+            border-color: #444;
             padding-left: 0;
             padding-right: 0;
             background-color: white;
@@ -1055,14 +1098,18 @@ footer.site-footer {
 
 
 /*  ACCENT COLOR HELPER CLASSES  ========================================================================== 
-    These classes can get applied to elements that should employ the secondary 
-    color. This color will change depending on the website section and will 
+    These classes can get applied to elements that should employ the accent 
+    color. This color may change depending on the website section and will 
     typically by synonymous with the lnk color. */
 
 .accent-color {
-    color: #90AD00;
-    fill: #90AD00;
+    color: #82AD00;
+    fill: #82AD00;
 }
+    
+    .accent-color--background {
+      background-color: #82AD00;
+    }
 
     .accent-color--border {
       border-color: #90AD00 !important; 

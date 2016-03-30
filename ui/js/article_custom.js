@@ -2,35 +2,22 @@
 (function($, viewport){
     $(document).ready(function() {
 
-        var triggerAuthourCollapse;
-
-
-
-        // Executes only in XS breakpoint
-        if(viewport.is('xs')) {
-            // ...
-        }
-
-        // Executes in SM, MD and LG breakpoints
-        if(viewport.is('<=sm')) {
-            triggerAuthourCollapse = true;
-        }
-
-        // Executes in XS and SM breakpoints
-        if(viewport.is('<md')) {
-            // ...
-        }
-
-
-
-        $('.menu__search--wrapper .form-control').focus();
-
-
-
+        
         //Do not kill the dropdowns when users click in them)
         $('.dropdown-menu').children().click(function(e){
             e.stopPropagation();
         });
+
+        //*======= ALLOW MULTIPLE NAV ITEMS TO BE OPEN AT ONCE IN MOBILE 
+        if ($(window).width() < 992){
+            $('.dropdown.keep-open').on({
+                "shown.bs.dropdown": function() { this.closable = false; },
+                "click":             function() { this.closable = true; },
+                "hide.bs.dropdown":  function() { return this.closable; }
+            });
+        }
+
+  
 
 
         //Moves focus directly to search field when user begins typing
@@ -259,43 +246,50 @@
                 });
             });
 
-        }
+        }//END LATEST STORIES SCROLLER
 
+        //==== COLLAPSING AUTHOR BIO
+        var fullBio = $('.author-info__bio').html();
+        function trimBio(){
+        if ($(window).width() < 670){
+            $('.author-more').show();
+            var annotatedBio = fullBio.substr(0, 107) + "\u2026";
+            $('.author-info__bio').html(annotatedBio);
 
+                function collapseAuthourBox(){
+                    $(document).on('click','.author-more', function(){
+                      event.preventDefault();  
+                      $('.author-more').toggleClass('up');
+                        
+                        if($('.author-more').hasClass('up')){
+                            $('.author-info__bio').html(fullBio);  
+                            $('.author-more').html('Show Less'); 
+                        } else {
+                            $('.author-info__bio').html(annotatedBio);
+                            $('.author-more').html('Show More');
+                        }
 
-        //Collapsible authour box
-
-
-        function collapseAuthourBox(){
-            $('.author-info').click(function(){
-                $('.author-info__bio').toggleClass('show');
-                $('.author-more .caret').toggleClass('up');
-            });
-        }
-
-
-        if(triggerAuthourCollapse === true){
-            collapseAuthourBox();
-
-        }
-
-
-
-        // Execute code each time window size changes
-        $(window).resize(
-            viewport.changed(function() {
-                if(viewport.is('sm')) {
-
-                    collapseAuthourBox();
-
+                    });
                 }
-            })
-        );
+
+                collapseAuthourBox();
+            }
+        }
+        trimBio();
+
+
+         $(window).resize(function() {
+            if ($(window).width() < 670){
+                trimBio();
+            } else {
+             $('.author-info__bio').html(fullBio);
+             $('.author-more').hide();
+            }
+         });
 
 
 
 
-    });
 
     // Show Disqus comments
     $(".comments-section .btn").click(function(e) {
@@ -316,5 +310,6 @@
     });
 
 
+    });
 
 })(jQuery, ResponsiveBootstrapToolkit);
