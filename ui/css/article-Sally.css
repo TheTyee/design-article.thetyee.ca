@@ -83,6 +83,18 @@
 
  /* == BOOTSTRAP OVERRIDES == */
 
+
+ .modal-content {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-clip: padding-box;
+    outline: none;
+  }
+
 .site-nav {
   padding-top: 0px;
 }
