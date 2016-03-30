@@ -153,13 +153,15 @@
 .menu__hamburger i {
     float: left;
     color: #555;
+    font-size: 0.8em;
+    margin-top: 4px;
 }
 
 .narrow-menu__logo{
   max-width: 100%;
   background: white;
   position: relative;
-  top: 7px; 
+  top: 10px; 
   margin: 0 auto;
   display: block;
 
@@ -219,7 +221,8 @@
 .narrow__search {
   position: static;
   display: block;
-  padding-bottom: 18px;
+  margin: 0px 0px 10px 0px;
+  padding: 0px;
   font-size: 0.7em;
   text-transform: uppercase;
 }
@@ -233,7 +236,6 @@
 .search-block .dropdown-toggle {
   text-transform: uppercase;
   float: left;
-  padding-top: 10px;
   font-weight: bold;
   color: #555;
 }
@@ -242,9 +244,23 @@
   border: none;
   border-radius: 0px;
 }
+
+.search-block {
+  overflow: hidden;
+  padding: 12px 10px 12px 0px;
+}
+
 .search-block .glyphicon {
-  font-size: 1.7em;
+  font-size: 1.6em;
   margin-right: 3px;
+  margin-top: -2px;
+}
+
+.search-block .glyphicon::before{
+}
+
+.search-block .search-text{
+  line-height: 0.7em;
 }
 
 .search-block .dropdown-toggle span {
