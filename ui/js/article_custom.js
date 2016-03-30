@@ -257,7 +257,8 @@
             $('.author-info__bio').html(annotatedBio);
 
                 function collapseAuthourBox(){
-                    $('.author-info').click(function(){
+                    $(document).on('click','.author-more', function(){
+                      event.preventDefault();  
                       $('.author-more').toggleClass('up');
                         
                         if($('.author-more').hasClass('up')){
@@ -271,7 +272,7 @@
                     });
                 }
 
-                collapseAuthourBox()
+                collapseAuthourBox();
             }
         }
         trimBio();
