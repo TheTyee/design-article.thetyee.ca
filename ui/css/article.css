@@ -275,6 +275,7 @@ p a:hover {color: #6F9400;}
 
 
 .article__header { /* article__header is always centered on the page */
+  position: relative;
   max-width: 45em;
   margin: 0 auto 0 auto;
 }
@@ -1000,7 +1001,36 @@ aside { }
 
 
 
-.series-box:before {
+/* SERIES-BOX  ================================================================
+    This object mostly just employs the default text-block-container style, with
+    the addition of an identifying badge. The badge also gets added to the 
+    article headline. */
+
+.series-box { }
+
+    .series-badge--box {
+        display: block;
+        position:absolute;
+        left: calc(100% / 2 - 1em);
+        top: -1.65rem;
+        width: auto;
+        transform: scale(.8);
+    }
+
+    .series-badge--headline {
+        display: block;
+        position:relative;
+        float:left;
+        margin-left: -.5em;
+        margin-top: -.25em;
+        transform: scale(.8);
+    }
+      
+     /*  These 2 rules are deprecated because pseudo content doesn't 
+         allow weblinks. */
+
+     /*
+    .series-badge--box:before {
         content: url(/ui/img/badge-series.svg);
         display: block;
         position:absolute;
@@ -1008,10 +1038,16 @@ aside { }
         top: -1.65rem;
         width: 2px;
         transform: scale(.8);
-        /* 
-        background-color: #fff;
-        clip: rect(16px, 50px, 44px, 0px); 
-        */}
+    }
+
+    .series-badge--headline:before {
+        content: url(/ui/img/badge-series.svg);
+        display: block;
+        position:absolute;
+    }
+    */
+
+
 
 /* FACT-BOX  ========================================================================== 
     The fact appears at the bottom of the article by default, but appears 
