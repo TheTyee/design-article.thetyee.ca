@@ -728,7 +728,7 @@ div.ntnl-sgnup-modal {
 @media (min-width: 768px) {
 
 .menu__left-nav li, .menu__right-nav li {
-  border-bottom: solid 1px grey;
+  border-bottom: solid 1px #A8A8A8;
 }
 
 .menu__left-nav li ul li, .menu__right-nav li ul li {
@@ -736,9 +736,6 @@ div.ntnl-sgnup-modal {
 }
 
 
-.menu__join {
-  padding-bottom: 12px!important;
-}
 
    /* LATEST STORIES  SLIDER ========================================================================== */ 
 
@@ -987,7 +984,7 @@ div.ntnl-sgnup-modal {
 
 
 
-/* 1200 AND UP ========================================================================== */ 
+/* 992 AND UP ========================================================================== */ 
 @media (min-width: 992px) {
 
   /* BOOTSTRAP OVERRIDES */
@@ -1029,18 +1026,18 @@ div.ntnl-sgnup-modal {
   }
   .menu__left-nav, .menu__right-nav {
     position: static;
-    padding-left: 20px;
+    display: inline-block;
   }
-  .menu__left-nav li, .menu__right-nav li{
-    padding: 0px;
+  .menu__left-nav >li, .menu__right-nav >li{
+    margin: 0 1.9%;
+
+    
   }
   /* == Floats primary list items for horizontal wide nav ===== */
   .menu ul > li {
-    display: table-cell;
-    float: none;
-   
-    vertical-align: bottom;
-    padding-bottom: 10px;
+
+    padding-bottom: 5px;
+
   }
 
   /* == Turns off defaults fonts and layout on the nav buttons ===== */
@@ -1064,35 +1061,51 @@ div.ntnl-sgnup-modal {
     margin-top: 2px;
   }
 
+  .menu > div {
+    float:left;
+  }
+
   .menu_left-nav-wrap, .menu_right-nav-wrap {
     padding: 0px;
     position: static;
     border-bottom-style: double;
     border-bottom-color: #949594;
+    width: 40%;
   }
 
 
   .menu__left-nav, .menu__right-nav{
-    display: table;
-    height: 70px;
+
+
     margin-bottom: 0px;
   }
 
-  .menu__left-nav >li, .menu__right-nav >li {
-    padding-left: 0px;
-  }
+
 
   .menu__left-nav > li > a, .menu__right-nav > li > a, .dropdown-toggle {
     padding: 0px;
 
   }
+
+ .menu__left-nav li{
+  padding-top: 33px;
+ }
+ .menu__right-nav li{
+  padding-top: 30px;
+ }
+
   .menu__left-nav li, .menu__right-nav li {
     border-bottom: none;
     position: static;
+    display: inline-block;
   }
 
   .menu_center-nav-wrap{
     position: relative;
+    background-color: #fff;
+    padding: 10px;
+    width: 20%;
+    float: left;
   }
 
   .menu__logo {
@@ -1109,16 +1122,21 @@ div.ntnl-sgnup-modal {
     position: relative;
     display: block;
     margin: 0 auto;
-    top: 9px;
+    
     text-align: center;
     clear:both;
     float: none;
+    max-width: 100%;
     
   }
 
   .menu__more ul li{
     display: block;
     text-align: left;
+  }
+
+  .menu__join .btn-join{
+    top: -1px;
   }
   .menu__facebook{
     margin: 0px 20px 0px 0px;
@@ -1266,6 +1284,11 @@ div.ntnl-sgnup-modal {
     padding: 20px 0px;
   }
 
+  .search-block {
+    padding: 0px;
+    margin-bottom: -6px;
+  }
+
   .search-block .dropdown-toggle {  
     padding-right: 15px;
     position: relative;
@@ -1387,5 +1410,15 @@ footer .footer__menu {
 
 
 }
+
+/* 1200 AND UP ========================================================================== */ 
+@media (min-width: 992px) and (max-width: 1024px) {
+  .search-text {
+    display: none!important;
+  }
+  background: red;
+
+}
+
 
 
