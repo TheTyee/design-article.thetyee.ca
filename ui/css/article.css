@@ -275,6 +275,7 @@ p a:hover {color: #6F9400;}
 
 
 .article__header { /* article__header is always centered on the page */
+  position: relative;
   max-width: 45em;
   margin: 0 auto 0 auto;
 }
@@ -787,6 +788,7 @@ aside { }
         display: none;
     }
 
+    /* BREAKPOINT: 1120px */
     @media screen and (min-width: 1120px) {
 
         .bigbox--1st-position {
@@ -1000,7 +1002,54 @@ aside { }
 
 
 
-.series-box:before {
+/* SERIES-BOX  ================================================================
+    This object mostly just employs the default text-block-container style, with
+    the addition of an identifying badge. The badge also gets added to the 
+    article headline. */
+
+.series-box { }
+
+    .series-badge--box {
+        display: block;
+        position:absolute;
+        left: calc(100% / 2 - 1.125em);
+        top: -1.65rem;
+        width: auto;
+        transform: scale(.8);
+    }
+
+    .series-badge--headline {
+        display: block;
+        position:relative;
+        float:left;
+        margin-left: -.65em;
+        margin-top: .5em;
+        transform: scale(.8);
+    }
+        
+         /* BREAKPOINT: 600px // Make headline series badge bigger */
+        @media screen and (min-width: 500px) {
+            .series-badge--headline {
+                transform: scale(.95);
+                margin-right: .25em;
+            }
+        }
+
+         /* BREAKPOINT: 1024px // Move headline series badge into left page margin */
+        @media screen and (min-width: 1024px) {
+            .series-badge--headline {
+                margin-top: 4em;
+                margin-left: -5.25em;
+                transform: scale(1.15);
+            }
+        }
+
+      
+     /*  These 2 rules are deprecated because pseudo content doesn't 
+         allow weblinks. */
+
+     /*
+    .series-badge--box:before {
         content: url(/ui/img/badge-series.svg);
         display: block;
         position:absolute;
@@ -1008,10 +1057,16 @@ aside { }
         top: -1.65rem;
         width: 2px;
         transform: scale(.8);
-        /* 
-        background-color: #fff;
-        clip: rect(16px, 50px, 44px, 0px); 
-        */}
+    }
+
+    .series-badge--headline:before {
+        content: url(/ui/img/badge-series.svg);
+        display: block;
+        position:absolute;
+    }
+    */
+
+
 
 /* FACT-BOX  ========================================================================== 
     The fact appears at the bottom of the article by default, but appears 
