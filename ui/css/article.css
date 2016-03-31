@@ -788,6 +788,7 @@ aside { }
         display: none;
     }
 
+    /* BREAKPOINT: 1120px */
     @media screen and (min-width: 1120px) {
 
         .bigbox--1st-position {
@@ -1021,10 +1022,28 @@ aside { }
         display: block;
         position:relative;
         float:left;
-        margin-left: -.5em;
-        margin-top: -.25em;
+        margin-left: -.65em;
+        margin-top: .5em;
         transform: scale(.8);
     }
+        
+         /* BREAKPOINT: 600px // Make headline series badge bigger */
+        @media screen and (min-width: 500px) {
+            .series-badge--headline {
+                transform: scale(.95);
+                margin-right: .25em;
+            }
+        }
+
+         /* BREAKPOINT: 1024px // Move headline series badge into left page margin */
+        @media screen and (min-width: 1024px) {
+            .series-badge--headline {
+                margin-top: 4em;
+                margin-left: -5em;
+                transform: scale(1);
+            }
+        }
+
       
      /*  These 2 rules are deprecated because pseudo content doesn't 
          allow weblinks. */
