@@ -121,7 +121,7 @@
                     if (key === 0){
                         $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
                         $(this).find('img').attr('src', storyObjects[topCounter].image);
-                        $(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
+                        $(this).find('h4').html(storyObjects[topCounter].hed);
                         $(this).find('p').html(storyObjects[topCounter].dek);
                         $(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
                         $(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
@@ -131,7 +131,7 @@
 
                         $(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
                         $(this).find('img').attr('src', storyObjects[bottomCounter].image);
-                        $(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
+                        $(this).find('h4').html(storyObjects[bottomCounter].hed);
                         $(this).find('p').html(storyObjects[bottomCounter].dek);
                         $(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
                         $(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
@@ -166,7 +166,7 @@
                         if (key === 0){
                             $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[topCounter].image);
-                            $(this).find('h4').html(storyObjects[topCounter].hed + ' key ' + topCounter);
+                            $(this).find('h4').html(storyObjects[topCounter].hed);
                             $(this).find('p').html(storyObjects[topCounter].dek);
                             $(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
                             $(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
@@ -183,7 +183,7 @@
 
                             $(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[bottomCounter].image);
-                            $(this).find('h4').html(storyObjects[bottomCounter].hed + ' key ' + bottomCounter);
+                            $(this).find('h4').html(storyObjects[bottomCounter].hed);
                             $(this).find('p').html(storyObjects[bottomCounter].dek);
                             $(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
                             $(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
@@ -215,7 +215,7 @@
                         if (key === 0){
                             $(this).find('a').attr('href', storyObjects[topPrevCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[topPrevCounter].image);
-                            $(this).find('h4').html(storyObjects[topPrevCounter].hed + ' key ' + topPrevCounter);
+                            $(this).find('h4').html(storyObjects[topPrevCounter].hed);
                             $(this).find('p').html(storyObjects[topPrevCounter].dek);
                             $(this).find('.latest-stories__date').html(storyObjects[topPrevCounter].date);
                             $(this).find('.latest-stories__authour').html(storyObjects[topPrevCounter].authour);
@@ -230,7 +230,7 @@
                             console.log('left click - ' + bottomPrevCounter);
                             $(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
-                            $(this).find('h4').html(storyObjects[bottomPrevCounter].hed + ' key ' + bottomPrevCounter);
+                            $(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
                             $(this).find('p').html(storyObjects[bottomPrevCounter].dek);
                             $(this).find('.latest-stories__date').html(storyObjects[bottomPrevCounter].date);
                             $(this).find('.latest-stories__authour').html(storyObjects[bottomPrevCounter].authour);
@@ -286,9 +286,6 @@
              $('.author-more').hide();
             }
          });
-
-
-
 
 
     // Show Disqus comments
