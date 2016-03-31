@@ -125,7 +125,7 @@ p {
 
 /* Modals */
 .modal-content {
-    background-color: white;
+    background-color: white !important;
 }
 
 /* READ-MORE atom */
