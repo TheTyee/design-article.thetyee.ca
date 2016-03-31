@@ -1039,8 +1039,8 @@ aside { }
         @media screen and (min-width: 1024px) {
             .series-badge--headline {
                 margin-top: 4em;
-                margin-left: -5em;
-                transform: scale(1);
+                margin-left: -5.25em;
+                transform: scale(1.15);
             }
         }
 
