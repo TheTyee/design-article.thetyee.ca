@@ -985,8 +985,10 @@ div.ntnl-sgnup-modal {
 
 
 
-/* 600 AND UP ========================================================================== */ 
-@media (min-width: 600px) {
+/* 768 AND UP ========================================================================== 
+   This breakpoint should be at 600px but some elements are styled with bootstrap columns 
+   which don't have any breakpoints below 768px. Should get rebuilt without bootstrap. */ 
+@media (min-width: 768px) {
 
 
 
