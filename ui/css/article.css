@@ -1048,13 +1048,27 @@ label.valid {
 
 
 /* SERIES-BOX  ================================================================
-    This object mostly just employs the default text-block-container style, with
-    the addition of an identifying badge. The badge also gets added to the 
-    article headline. */
+    This object mostly just employs the default text-block-container style. An 
+    identifying badge gets positioned via the .badge abstraction. The badge also gets 
+    added to the article headline. */
 
 .series-box {
-    position: relative;
-    margin-top: -1em
+    position: relative; /* required for the absolute positioning of the badge. 
+                  might makes sense to move this style to .text-block-container */
+    margin-top: -1em; /* aligns the box's top-border with the first line the
+                         article's body text. */
+}
+
+
+
+/* RELATED-EVENT-BOX  ================================================================
+    This object mostly just employs the default text-block-container style. An 
+    identifying badge gets positioned via the .badge abstraction. The badge also gets 
+    added to the article headline. */
+
+.related-event-box {
+  position: relative; /* required for the absolute positioning of the badge. 
+                  might makes sense to move this style to .text-block-container */
 }
 
 
