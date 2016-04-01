@@ -795,9 +795,9 @@ aside { }
     /* BREAKPOINT: 1120px */
     @media screen and (min-width: 1120px) {
 
-        .bigbox--1st-position {
-            display: none;
-        }
+        /*.bigbox--1st-position {*/
+            /*display: none;*/
+        /*}*/
 
         .featured-media .bigbox--1st-position {
             display: block;
