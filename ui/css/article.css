@@ -1052,13 +1052,15 @@ label.valid {
     the addition of an identifying badge. The badge also gets added to the 
     article headline. */
 
-.series-box { }
+.series-box {
+    position: relative;
+}
 
     .series-badge--box {
         display: block;
         position:absolute;
-        left: calc(100% / 2 - 1.125em);
-        top: -1.65rem;
+        left: calc(100% / 2 - 2.125em);
+        top: -2.7rem;
         width: auto;
         transform: scale(.8);
     }
