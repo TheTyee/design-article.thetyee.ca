@@ -2,22 +2,22 @@
 (function($, viewport){
     $(document).ready(function() {
 
-        
+
         //Do not kill the dropdowns when users click in them)
         $('.dropdown-menu').children().click(function(e){
             e.stopPropagation();
         });
 
-        //*======= ALLOW MULTIPLE NAV ITEMS TO BE OPEN AT ONCE IN MOBILE 
+        //*======= ALLOW MULTIPLE NAV ITEMS TO BE OPEN AT ONCE IN MOBILE
         if ($(window).width() < 992){
             $('.dropdown.keep-open').on({
                 "shown.bs.dropdown": function() { this.closable = false; },
-                "click":             function() { this.closable = true; },
-                "hide.bs.dropdown":  function() { return this.closable; }
+                    "click":             function() { this.closable = true; },
+                    "hide.bs.dropdown":  function() { return this.closable; }
             });
         }
 
-  
+
 
 
         //Moves focus directly to search field when user begins typing
@@ -62,14 +62,14 @@
                 data: response,
                 crossDomain: true,
                 success: function(response){
-                    console.log(response);
+                    //console.log(response);
                     returnedStories = returnedStories.responseJSON.hits.hits;
                     //pass data to the create function so I can create my own story objects
                     recentItems = createStoryObjects(returnedStories);
                     return recentItems;
                 },
                 error: function(){
-                    console.log('NO DICE SISTER');
+                    //console.log('NO DICE SISTER');
                 }
             });
         }//end lateststories()
@@ -227,7 +227,7 @@
                         }
 
                         if (key == 1){
-                            console.log('left click - ' + bottomPrevCounter);
+                            //console.log('left click - ' + bottomPrevCounter);
                             $(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
                             $(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
@@ -251,19 +251,19 @@
         //==== COLLAPSING AUTHOR BIO
         var fullBio = $('.author-info__bio').html();
         function trimBio(){
-        if ($(window).width() < 670){
-            $('.author-more').show();
-            var annotatedBio = fullBio.substr(0, 107) + "\u2026";
-            $('.author-info__bio').html(annotatedBio);
+            if ($(window).width() < 670){
+                $('.author-more').show();
+                var annotatedBio = fullBio.substr(0, 107) + "\u2026";
+                $('.author-info__bio').html(annotatedBio);
 
                 function collapseAuthourBox(){
                     $(document).on('click','.author-more', function(){
-                      event.preventDefault();  
-                      $('.author-more').toggleClass('up');
-                        
+                        event.preventDefault();
+                        $('.author-more').toggleClass('up');
+
                         if($('.author-more').hasClass('up')){
-                            $('.author-info__bio').html(fullBio);  
-                            $('.author-more').html('Show Less'); 
+                            $('.author-info__bio').html(fullBio);
+                            $('.author-more').html('Show Less');
                         } else {
                             $('.author-info__bio').html(annotatedBio);
                             $('.author-more').html('Show More');
@@ -278,33 +278,33 @@
         trimBio();
 
 
-         $(window).resize(function() {
+        $(window).resize(function() {
             if ($(window).width() < 670){
                 trimBio();
             } else {
-             $('.author-info__bio').html(fullBio);
-             $('.author-more').hide();
+                $('.author-info__bio').html(fullBio);
+                $('.author-more').hide();
             }
-         });
-
-
-    // Show Disqus comments
-    $(".comments-section .btn").click(function(e) {
-        e.preventDefault();
-        var el = $('.comments-section');
-        var disqus_div = $('#disqus_thread');
-        var anim_height = disqus_div.height() + 40;
-        el.css({
-            "height": 400,
-            "max-height": 9999
-        })
-        .animate({
-            "height": anim_height
         });
 
-        // fade out read-more
-        $('.read-more').fadeOut();
-    });
+
+        // Show Disqus comments
+        $(".comments-section .btn").click(function(e) {
+            e.preventDefault();
+            var el = $('.comments-section');
+            var disqus_div = $('#disqus_thread');
+            var anim_height = disqus_div.height() + 40;
+            el.css({
+                "height": 400,
+                "max-height": 9999
+            })
+            .animate({
+                "height": anim_height
+            });
+
+            // fade out read-more
+            $('.read-more').fadeOut();
+        });
 
 
     });

@@ -123,6 +123,10 @@ p {
   margin-bottom: 1em;
 }
 
+/* Modals */
+.modal-content {
+    background-color: white !important;
+}
 
 /* READ-MORE atom */
 
@@ -791,9 +795,9 @@ aside { }
     /* BREAKPOINT: 1120px */
     @media screen and (min-width: 1120px) {
 
-        .bigbox--1st-position {
-            display: none;
-        }
+        /*.bigbox--1st-position {*/
+            /*display: none;*/
+        /*}*/
 
         .featured-media .bigbox--1st-position {
             display: block;
@@ -864,16 +868,54 @@ aside { }
       border-color: inherit;
     }
 
-    .messaging-block--subscribe .input-group {
-      margin-top: 1em;
-      margin-bottom: .35em;
-    }
 
 .btn--subscribe {
   color: white;
   background-color: #82AD00;
 }
 
+/* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
+
+.messaging-block--subscribe .input-group {
+  margin-top: 1em;
+  margin-bottom: .35em;
+}
+
+.messaging-block--subscribe select.subscribe-frequency {
+    margin-top: .35em;
+    margin-bottom: .35em;
+}
+
+.messaging-block--subscribe .input-group select {
+    background-color: transparent;
+    border: none;
+    height: 18px;
+}
+
+/* MESSAGING-BLOCK-SHARE  ========================================================================== */
+
+/* TODO this might be too general and should probably be limited to this block, or moved to a more
+ * general location in the CSS
+*/
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    float: none;
+    margin-left: 0;
+}
+label.error {
+    font-weight: bold;
+    font-style: italic;
+    color: #b94a48;
+}
+label.valid {
+    font-weight: bold;
+    font-style: italic;
+    color: #468847;
+}
+
+.modal form#share input[type="text"], .modal form#share input[type="email"], .modal form#share textarea {
+    width: 90%;
+}
 
 
 /* RELATED STORY  ========================================================================== */
@@ -1156,38 +1198,6 @@ aside { }
     }
 
 
-/* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
-
-.messaging-block--subscribe select {
-    background-color: transparent;
-    border: none;
-    height: 18px;
-}
-
-/* MESSAGING-BLOCK-SHARE  ========================================================================== */
-
-/* TODO this might be too general and should probably be limited to this block, or moved to a more
- * general location in the CSS
-*/
-
-.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
-    float: none;
-    margin-left: 0;
-}
-label.error {
-    font-weight: bold;
-    font-style: italic;
-    color: #b94a48;
-}
-label.valid {
-    font-weight: bold;
-    font-style: italic;
-    color: #468847;
-}
-
-.modal form#share input[type="text"], .modal form#share input[type="email"], .modal form#share textarea {
-    width: 90%;
-}
 
 /* COMMENTS-SECTION  ========================================================================== */
 
@@ -1211,13 +1221,13 @@ label.valid {
   text-align: center; 
   margin: 0; 
   padding: 60px 0;
-  background-image: linear-gradient(to bottom, transparent, rgb(255, 255, 255));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
 }
 
 .comments-section .read-more .btn {
     color: #FFF;
     background-color: #555;
-    border-color: #333;e
+    border-color: #333;
 }
 
 /* SITE-FOOTER  ========================================================================== */
@@ -1315,6 +1325,10 @@ a.link-wrap span {
 
     /* fixes overlap error in IE7/8, 
        make sure you have an empty gif */
+
+    /* TODO AG to fix this reference
+     * it's not linking to anything like this
+     * and causign a console error */
     background-image: url('empty.gif'); 
 }
 
