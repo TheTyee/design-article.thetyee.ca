@@ -1054,6 +1054,7 @@ label.valid {
 
 .series-box {
     position: relative;
+    margin-top: -1em
 }
 
 
@@ -1191,7 +1192,7 @@ label.valid {
 
         .aside .fact-box {
             display: block;
-            margin-top: 0em;
+            margin-top: -1em;
             margin-bottom: 2em;
             border-top: 8px solid;
             border-bottom: 1px solid;
