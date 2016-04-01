@@ -1217,13 +1217,13 @@ label.valid {
   text-align: center; 
   margin: 0; 
   padding: 60px 0;
-  background-image: linear-gradient(to bottom, transparent, rgb(255, 255, 255));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
 }
 
 .comments-section .read-more .btn {
     color: #FFF;
     background-color: #555;
-    border-color: #333;e
+    border-color: #333;
 }
 
 /* SITE-FOOTER  ========================================================================== */
