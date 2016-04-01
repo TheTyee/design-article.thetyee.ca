@@ -123,6 +123,10 @@ p {
   margin-bottom: 1em;
 }
 
+/* Modals */
+.modal-content {
+    background-color: white !important;
+}
 
 /* READ-MORE atom */
 
