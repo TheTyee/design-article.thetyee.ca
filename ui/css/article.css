@@ -1329,7 +1329,7 @@ a.link-wrap span {
     /* TODO AG to fix this reference
      * it's not linking to anything like this
      * and causign a console error */
-    background-image: url('empty.gif'); 
+    background-image: url('/ui/img/empty.gif'); 
 }
 
     a.link-wrap--contained-link {
