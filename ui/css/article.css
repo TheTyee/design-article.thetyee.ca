@@ -1056,7 +1056,14 @@ label.valid {
     position: relative;
 }
 
-    .series-badge--box {
+
+
+/* BADGE  ================================================================
+    Use this to position a badge on an aside box or on the article headline  */
+    
+.badge { }
+
+    .badge--aside-placement {
         display: block;
         position:absolute;
         left: calc(100% / 2 - 2.125em);
@@ -1065,7 +1072,7 @@ label.valid {
         transform: scale(.8);
     }
 
-    .series-badge--headline {
+    .badge--headline-placement {
         display: block;
         position:relative;
         float:left;
@@ -1076,7 +1083,7 @@ label.valid {
         
          /* BREAKPOINT: 600px // Make headline series badge bigger */
         @media screen and (min-width: 500px) {
-            .series-badge--headline {
+            .badge--headline-placement {
                 transform: scale(.95);
                 margin-right: .25em;
             }
@@ -1084,7 +1091,7 @@ label.valid {
 
          /* BREAKPOINT: 1024px // Move headline series badge into left page margin */
         @media screen and (min-width: 1024px) {
-            .series-badge--headline {
+            .badge--headline-placement {
                 margin-top: 4em;
                 margin-left: -5.25em;
                 transform: scale(1.15);
