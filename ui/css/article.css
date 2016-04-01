@@ -1325,10 +1325,6 @@ a.link-wrap span {
 
     /* fixes overlap error in IE7/8, 
        make sure you have an empty gif */
-
-    /* TODO AG to fix this reference
-     * it's not linking to anything like this
-     * and causign a console error */
     background-image: url('/ui/img/empty.gif'); 
 }
 
