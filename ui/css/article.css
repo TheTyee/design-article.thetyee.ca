@@ -198,7 +198,7 @@ p a:hover {color: #6F9400;}
     }
 
     /* .pullquote:before {
-        content: "Ã¢â‚¬Å“";
+        content: "ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ";
         display: block;
         position:absolute;
         left: 0em;
@@ -212,7 +212,7 @@ p a:hover {color: #6F9400;}
 
 
     /* .pullquote:after {
-        content: "Ã¢â‚¬Â";
+        content: "ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â";
 
         position:absolute;
         padding-left: 0.075em;
@@ -512,7 +512,9 @@ aside { }
         position: relative;
         width: 43%;
         float: right;
-        padding: .6em 0 5em 2em; /* Aligns asides flush right inside article__body */
+        padding: 0.6em 0 0em 2em; /* Aligns asides flush right inside article__body */
+        margin-top: 1em;
+        margin-bottom: 2em;
     }
     
     /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
@@ -575,10 +577,11 @@ aside { }
         }
     }
 
-
+    .aside--1stposition {
+        margin-top: 0;
+    }
 
     .aside--pullquote { }
-
 
 
 
@@ -623,7 +626,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ÂAG */
+   some crap together. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂAG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -1045,22 +1048,46 @@ label.valid {
 
 
 /* SERIES-BOX  ================================================================
-    This object mostly just employs the default text-block-container style, with
-    the addition of an identifying badge. The badge also gets added to the 
-    article headline. */
+    This object mostly just employs the default text-block-container style. An 
+    identifying badge gets positioned via the .badge abstraction. The badge also gets 
+    added to the article headline. */
 
-.series-box { }
+.series-box {
+    position: relative; /* required for the absolute positioning of the badge. 
+                  might makes sense to move this style to .text-block-container */
+    margin-top: -1em; /* aligns the box's top-border with the first line the
+                         article's body text. */
+}
 
-    .series-badge--box {
+
+
+/* RELATED-EVENT-BOX  ================================================================
+    This object mostly just employs the default text-block-container style. An 
+    identifying badge gets positioned via the .badge abstraction. The badge also gets 
+    added to the article headline. */
+
+.related-event-box {
+  position: relative; /* required for the absolute positioning of the badge. 
+                  might makes sense to move this style to .text-block-container */
+}
+
+
+
+/* BADGE  ================================================================
+    Use this to position a badge on an aside box or on the article headline  */
+    
+.badge { }
+
+    .badge--aside-placement {
         display: block;
         position:absolute;
-        left: calc(100% / 2 - 1.125em);
-        top: -1.65rem;
+        left: calc(100% / 2 - 2.125em);
+        top: -2.7rem;
         width: auto;
         transform: scale(.8);
     }
 
-    .series-badge--headline {
+    .badge--headline-placement {
         display: block;
         position:relative;
         float:left;
@@ -1071,7 +1098,7 @@ label.valid {
         
          /* BREAKPOINT: 600px // Make headline series badge bigger */
         @media screen and (min-width: 500px) {
-            .series-badge--headline {
+            .badge--headline-placement {
                 transform: scale(.95);
                 margin-right: .25em;
             }
@@ -1079,7 +1106,7 @@ label.valid {
 
          /* BREAKPOINT: 1024px // Move headline series badge into left page margin */
         @media screen and (min-width: 1024px) {
-            .series-badge--headline {
+            .badge--headline-placement {
                 margin-top: 4em;
                 margin-left: -5.25em;
                 transform: scale(1.15);
@@ -1163,10 +1190,10 @@ label.valid {
     margins were applied to it's contents instead of the container itself.) */
 
     /*  IN WIDER VIEWPORTS: 
-        Ã¢â‚¬Â¢ don't show the fact-box at the bottom of the article-body
-        Ã¢â‚¬Â¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
-        Ã¢â‚¬Â¢ show the factbox within an aside
-        Ã¢â‚¬Â¢ hide fact-box text anchor link */
+        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ don't show the fact-box at the bottom of the article-body
+        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
+        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ show the factbox within an aside
+        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ hide fact-box text anchor link */
     @media screen and (min-width: 939px) {
 
         .fact-box {
@@ -1179,7 +1206,8 @@ label.valid {
 
         .aside .fact-box {
             display: block;
-            margin-top: 0em;
+            margin-top: -1em;
+            margin-bottom: 2em;
             border-top: 8px solid;
             border-bottom: 1px solid;
             border-color: #444;
