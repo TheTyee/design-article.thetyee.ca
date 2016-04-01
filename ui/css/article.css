@@ -578,7 +578,7 @@ aside { }
     }
 
     .aside--1stposition {
-        jj
+        margin-top: 0;
     }
 
     .aside--pullquote { }
@@ -1183,6 +1183,7 @@ label.valid {
         .aside .fact-box {
             display: block;
             margin-top: 0em;
+            margin-bottom: 2em;
             border-top: 8px solid;
             border-bottom: 1px solid;
             border-color: #444;
