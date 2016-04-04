@@ -1,8 +1,9 @@
 // Wrap IIFE around code
-(function($, viewport){
+(function($){
     $(document).ready(function() {
 
 
+   
 //*======= DO NOT KILL THE DROPDOWNS WHEN USERS CLICK IN THEM
         $('.dropdown-menu').children().click(function(e){
             e.stopPropagation();
@@ -26,13 +27,13 @@
 
 //*======= LATEST STORIES CODE =====*/
 
-        
         //*======= REVERSE FUNCTION FOR ALLOWING STORIES TO GO BACKWARDS
         jQuery.fn.reverse = function() {
             return this.pushStack(this.get().reverse(), arguments);
         };
 
         //*=======  GLOBALS
+        var visibleStories;
         var totalStoryPositions;
         var counter =0;
         var topCounter = 0;
@@ -44,6 +45,31 @@
         var firstStory;
         var topPrevCounter = 0;
         var bottomPrevCounter = 0;
+
+
+
+
+        function determineViewport(visibleStories){
+            viewportSize = $(window).width();
+
+            if(viewportSize > 1200){
+                totalStoryPositions = 6;
+            }
+
+            if((viewportSize > 992 && viewportSize <1200)){
+                totalStoryPositions = 4;
+                i=1;
+            }
+
+            if((viewportSize > 768 && viewportSize < 992)){
+                totalStoryPositions = 3;
+            }
+            return totalStoryPositions;
+        }
+
+        totalStoryPositions = determineViewport(visibleStories);
+
+        console.log(totalStoryPositions);
 
         //*======= MAKE STORY OBJECTS GLOBAL, SO I DON'T HAVE TO KEEP HITTING THE API
         storyObjects = storyObjects;
@@ -62,6 +88,7 @@
                     returnedStories = returnedStories.responseJSON.hits.hits;
                     //pass data to the create function so I can create my own story objects
                     recentItems = createStoryObjects(returnedStories);
+                    
                     return recentItems;
                 },
                 error: function(){
@@ -82,8 +109,6 @@
                 el.find('.latest-stories__authour').html(storyObjects[counter].authour); 
                 counterPosition= counter;  
             }
-
-
 
         //*======= FORMAT RETURNED JSON FOR EASE OF MANIPULATION
         function createStoryObjects(returnedStories, callback){
@@ -125,7 +150,7 @@
                 //Put all objects into a new array for easier handling
                 storyObjects.push(Story);
             });
-
+            
             // on load, populate all spaces in the DOM
             $('.latest-stories__media-wrapper').each(function(key, index){
                 $(this).parent().find('li').each(function(i, details){
@@ -133,11 +158,22 @@
                         //this populates the top scroller
                         storyData($(this), topCounter);
                         topCounter++; //separate counters let scroller move independently
+                       
+                        
+                        //break out of the lis, depending on viewport size
+                        if(i == (totalStoryPositions-1)){
+                            return false;
+                        }
+
                     }
                     if (key == 1){
                         //this populates the lower scroller
                         storyData($(this), bottomCounter);
                         bottomCounter++; //separate counters let scroller move independently
+                        //break out of the lis, depending on viewport size
+                        if(i == (totalStoryPositions - 1)){
+                            return false;
+                        }
                     }
                 });
             });
@@ -154,7 +190,10 @@
             $('.latest-stories__media-wrapper').each(function(key, index){
                 $(this).on('click', '.next', function(event){
                     $(this).parent().find('li').each(function(i, details){
-
+                        console.log('i = ' + i + 'and totalStoryPositions = ' + totalStoryPositions);
+                        if(i === totalStoryPositions){
+                            return false;
+                        }
                         if (topCounter >49){
                             topCounter = 0;
                         }
@@ -164,8 +203,12 @@
                             if (topCounter >49){
                                 topCounter = 0;
                             }
+                       
                         }
 
+                        if(i === totalStoryPositions){
+                            return false;
+                        }
                         if (bottomCounter >49){
                             bottomCounter = 0;
                         }
@@ -176,25 +219,37 @@
                                 bottomCounter = 0;
                             }
                         }
+
+                        
                     });
                     //reset the counter so I can scroll the other way
-                    topPrevCounter = topCounter - 7;
-                    bottomPrevCounter = bottomCounter - 7;
+                    topPrevCounter = topCounter - totalStoryPositions;
+                    bottomPrevCounter = bottomCounter - totalStoryPositions;
                 });
 
 
                 //Get the prev group of stories on click
                 $(this).on('click', '.prev', function(event){
                     $(this).parent().find('li').reverse().each(function(i, details){
-                        //infinite backwards scroll
-                        if (topPrevCounter <0){
+                    
+                     console.log('i = ' + i + 'and totalStoryPositions = ' + totalStoryPositions);
+                          //infinite backwards scroll
+                        if (topPrevCounter === -1){
                             topPrevCounter = 49;
                         }
+
+                     console.log('topprev' + topPrevCounter);
+                     if (i === totalStoryPositions){
+                        return false;
+                     }
+                   
 
                         if (key === 0){
                             storyData($(this), topPrevCounter);
                             topPrevCounter--;
                         }
+
+                      
 
                         if (bottomPrevCounter < 0){
                             bottomPrevCounter = 49;
@@ -207,8 +262,8 @@
 
                     });
                     //reset the counter so i can go the other way
-                    topCounter = topPrevCounter + 7;
-                    bottomCounter = bottomPrevCounter + 7;
+                    topCounter = topPrevCounter + totalStoryPositions;
+                    bottomCounter = bottomPrevCounter + totalStoryPositions;
                     //reset the counter for infinite scrolling
 
                 });
@@ -280,4 +335,4 @@
 
     });
 
-})(jQuery, ResponsiveBootstrapToolkit);
+})(jQuery);
