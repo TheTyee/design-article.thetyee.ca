@@ -1,0 +1,23 @@
+{% for field in site.data.example_stories limit:1 %}
+
+<!-- Begin organisms/article/article__header -->
+<!--Article header, including hed, dek, author and social links-->
+<header class="article__header" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">
+
+    <div class="container-fluid">
+
+        <h6 class="category-label"><a href="#" data-bind="category">{{ include.article-category }}</a></h6>
+
+        <h1 class="" data-bind="title">'Pennies for Billions': Aboriginals Fight Near Giveaway of Pipeline Rights in 1952</h1>
+
+        <h4 data-bind="teaser">BC's Coldwater Indian Band sues feds, Kinder Morgan to kill old deal.</h4>
+
+        {% include 01-molecules/text/author-info.html author-name="Mychaylo Prystupa" author-bio="Mychaylo Prystupa is an award-winning freelance journalist with 14 years experience, including nine as a CBC News reporter and two at the National Observer. Find him on Twitter @mychaylo, or his website here." article-date="27 Jan 2016" author-headshot="mychaylo-prystupa.jpg" %}
+
+        {% include 01-molecules/blocks/tool-bar.html %}
+
+    </div> <!--END .container-fluid-->
+
+</header>
+
+{% endfor %}
