@@ -1,4 +1,9 @@
 <!-- Begin molecules/text/lead-in-text -->
 <p class="lead-in" data-dev-object-descrip="molecules/text/lead-in-text" data-dev-status="IN-PROGRESS">
+    {% if include.lead-in-content %}
+        {{ include.lead-in-content }}
+    {% else %}
 	This text may be a lead-in to the passage of text, or it may just be used to create a visual distinction between the rest of the passage of text. A drop-cap 3 lines line tall is a nice way to start, but it looks odd if the paragraph content only spans 2 lines.
+    {% endif %}
+    </p>
 </p>
