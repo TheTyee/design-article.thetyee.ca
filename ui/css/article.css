@@ -198,7 +198,7 @@ p a:hover {color: #6F9400;}
     }
 
     /* .pullquote:before {
-        content: "ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ";
+        content: "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ";
         display: block;
         position:absolute;
         left: 0em;
@@ -212,7 +212,7 @@ p a:hover {color: #6F9400;}
 
 
     /* .pullquote:after {
-        content: "ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â";
+        content: "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â";
 
         position:absolute;
         padding-left: 0.075em;
@@ -226,7 +226,7 @@ p a:hover {color: #6F9400;}
 
 
 .lead-in {
-    overflow:auto;
+    overflow:hidden;
 }
 
 .lead-in:first-letter {
@@ -626,7 +626,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂAG */
+   some crap together. ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂAG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -1190,10 +1190,10 @@ label.valid {
     margins were applied to it's contents instead of the container itself.) */
 
     /*  IN WIDER VIEWPORTS: 
-        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ don't show the fact-box at the bottom of the article-body
-        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
-        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ show the factbox within an aside
-        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ hide fact-box text anchor link */
+        ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ don't show the fact-box at the bottom of the article-body
+        ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
+        ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ show the factbox within an aside
+        ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ hide fact-box text anchor link */
     @media screen and (min-width: 939px) {
 
         .fact-box {
