@@ -119,7 +119,10 @@
                 $(this).parent().find('li').each(function(i, details){
 
                     if (key === 0){
-                        $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+                        // TODO swap this out when closer to production
+                        $(this).find('a').attr('href', '#');
+                        // Old value
+                        // $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
                         $(this).find('img').attr('src', storyObjects[topCounter].image);
                         $(this).find('h4').html(storyObjects[topCounter].hed);
                         $(this).find('p').html(storyObjects[topCounter].dek);
@@ -128,8 +131,10 @@
                         topCounter++;
                     }
                     if (key == 1){
-
-                        $(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+                        // TODO swap this out when closer to production
+                        $(this).find('a').attr('href', '#');
+                        // Old value
+                        // $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
                         $(this).find('img').attr('src', storyObjects[bottomCounter].image);
                         $(this).find('h4').html(storyObjects[bottomCounter].hed);
                         $(this).find('p').html(storyObjects[bottomCounter].dek);

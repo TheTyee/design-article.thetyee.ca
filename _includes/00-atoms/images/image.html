@@ -6,4 +6,4 @@ Just a plain ol image. This will be called from within a figure object or an asi
 	[% include 00-atoms/images/image.html content-source=include.content-source %] if passing on a parameter from a parent include
 -->
 {% endcomment %}
-<img src='{{ include.content-source }}' class="responsive-img" alt="image atom"/>
+<img src='{{ site.url }}{{ include.content-source }}' class="responsive-img" alt="image atom"/>

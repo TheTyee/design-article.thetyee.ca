@@ -7,7 +7,6 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 {% include meta/head.html %}
   <body class="{{ page.layout }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
-
     <!-- =============================== -->
     <!-- ===== Header ===== -->
 
@@ -17,15 +16,14 @@
     
     {% include 02-organisms/global/header.html %}
 
-
     <!-- =============================== -->
     <!-- ===== Article components ===== -->
 
-    {% include 02-organisms/article/article__header.html %}  
+    {% include 02-organisms/article-standard/article__header.html article-category="NEWS" %}  
 
-    {% include 02-organisms/article/featured-media.html %}   <!-- NEEDS WORK add full-width format -->
+    {% include 02-organisms/article-standard/featured-media.html %}   <!-- NEEDS WORK add full-width format -->
     
-    {% include 02-organisms/article/article__body.html %}    
+    {% include 02-organisms/article-standard/article__body.html %}    
     
 
     <!-- =============================== -->
@@ -38,7 +36,7 @@
     {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
 
 
-    {% include 02-organisms/sections/comments.html %}          <!-- NEEDS WORK -->
+    {% include 02-organisms/sections/comments.html story-url="http://thetyee.ca/News/2016/01/27/Aboriginal-Rights-Pipeline-Deal/" %}          <!-- NEEDS WORK -->
     
     {% assign barometer = 'true' %}
     
@@ -50,7 +48,7 @@
 
     {% include footer.html %}                 <!-- NEEDS WORK -->
 
-    {% include footer_scripts.html %}
+    {% include footer_scripts_standard.html %}
 
      {% include 02-organisms/sections/subscription-modal.html %} 
 
