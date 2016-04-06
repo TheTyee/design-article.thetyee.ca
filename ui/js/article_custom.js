@@ -253,45 +253,6 @@
 
         }//END LATEST STORIES SCROLLER
 
-        //==== COLLAPSING AUTHOR BIO
-        var fullBio = $('.author-info__bio').html();
-        function trimBio(){
-            if ($(window).width() < 670){
-                $('.author-more').show();
-                var annotatedBio = fullBio.substr(0, 107) + "\u2026";
-                $('.author-info__bio').html(annotatedBio);
-
-                function collapseAuthourBox(){
-                    $(document).on('click','.author-more', function(){
-                        event.preventDefault();
-                        $('.author-more').toggleClass('up');
-
-                        if($('.author-more').hasClass('up')){
-                            $('.author-info__bio').html(fullBio);
-                            $('.author-more').html('Show Less');
-                        } else {
-                            $('.author-info__bio').html(annotatedBio);
-                            $('.author-more').html('Show More');
-                        }
-
-                    });
-                }
-
-                collapseAuthourBox();
-            }
-        }
-        trimBio();
-
-
-        $(window).resize(function() {
-            if ($(window).width() < 670){
-                trimBio();
-            } else {
-                $('.author-info__bio').html(fullBio);
-                $('.author-more').hide();
-            }
-        });
-
 
         // Show Disqus comments
         $(".comments-section .btn").click(function(e) {
