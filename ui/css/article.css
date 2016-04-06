@@ -636,7 +636,8 @@ aside { }
       right: 0em;
       width: auto;
       margin: 0px;
-      padding-left: 1em;
+      padding-left: 0.2em;
+      padding-right: 2em;
       color: #82AD00;
       background-color: white;
       font-weight: 400;
