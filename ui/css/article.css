@@ -626,7 +626,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂAG */
+   some crap together. --AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -734,6 +734,27 @@ aside { }
         .btn-join:hover, .btn-print:hover, .btn-comment:hover {          
               cursor: pointer;
         }
+
+        .messaging-block--share .btn {
+            width: 45px;
+        }
+
+        /* BREAKPOINT: small screens // collapse messaging block button labels */
+        .messaging-block--share-button--label {
+              display: none;
+        }
+            
+        /* BREAKPOINT: 540px // show messaging block button labels */
+        @media screen and (min-width: 540px) {
+
+            .messaging-block--share-button--label {
+              display: inline;
+            }
+            .messaging-block--share .btn {
+                width: auto;
+            }
+        }
+
 
 
 
