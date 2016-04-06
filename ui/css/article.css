@@ -45,7 +45,6 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: ;
 }
 
 h1 {
@@ -116,7 +115,7 @@ h6 {
   padding-bottom: 0.15em;
   font-size: 1em;
   font-weight: 700;
-  letter-spacing: .04em
+  letter-spacing: .04em;
 }
 
 p {
@@ -151,8 +150,9 @@ p {
 .dollar-heart-svg {
    height: 1.25em;
    width: auto;
-   vertical-align: middle;
+   vertical-align: bottom;
    margin-right: -0em;
+   margin-bottom: -.05rem;
 }
 
 
@@ -198,7 +198,7 @@ p a:hover {color: #6F9400;}
     }
 
     /* .pullquote:before {
-        content: "ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ";
+        content: "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ";
         display: block;
         position:absolute;
         left: 0em;
@@ -212,7 +212,7 @@ p a:hover {color: #6F9400;}
 
 
     /* .pullquote:after {
-        content: "ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â";
+        content: "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â";
 
         position:absolute;
         padding-left: 0.075em;
@@ -226,7 +226,7 @@ p a:hover {color: #6F9400;}
 
 
 .lead-in {
-    overflow:auto;
+    overflow:hidden;
 }
 
 .lead-in:first-letter {
@@ -263,6 +263,14 @@ p a:hover {color: #6F9400;}
     .caption__media--credit {
         font-weight: 300;
     }
+
+
+
+.help-block {
+    margin-bottom: 0px;
+    font-size: .75em;
+    line-height: 1.33em;
+}
 
 
 
@@ -329,7 +337,7 @@ p a:hover {color: #6F9400;}
 
 
 .article__body {
-     padding-bottom: 2em;
+     padding-bottom: 1em;
 }
 
 
@@ -626,7 +634,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂAG */
+   some crap together. --AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -735,6 +743,27 @@ aside { }
               cursor: pointer;
         }
 
+        .messaging-block--share .btn {
+            width: 45px;
+        }
+
+        /* BREAKPOINT: small screens // collapse messaging block button labels */
+        .messaging-block--share-button--label {
+              display: none;
+        }
+            
+        /* BREAKPOINT: 540px // show messaging block button labels */
+        @media screen and (min-width: 540px) {
+
+            .messaging-block--share-button--label {
+              display: inline;
+            }
+            .messaging-block--share .btn {
+                width: auto;
+            }
+        }
+
+
 
 
 /* AD BANNER  ========================================================================== */
@@ -831,39 +860,51 @@ aside { }
 
 /* MESSAGING BLOCK  ========================================================================== */
 
+.messaging-zone {
+    padding-bottom: 2em;
+}
+
+
 .messaging-block {
-    padding-bottom: 1em;
+    padding-bottom: 1.5em;
     /* border-top: 1px solid #A8A8A8;
        border-bottom: 1px solid #A8A8A8; */
 }
 
-    .messaging-block:hover {
-      background-color: #F2F4DE;
-    }
-
     .messaging-block h3 {
+      max-width: 325px; /* prevents bad line breaks */
       margin-top: 0;
       margin-bottom: 0px;
       padding-top: 0.5em;
+      font-size: 1.1em;
+      line-height: 1.33em;
+      font-weight: 700;
 
     }
 
     .messaging-block--ask span{
       display: inline-block;
+      max-width: 325px; /* prevents bad line breaks */
       padding-top: 0.2em;
-      font-size: 1.333em;
-      line-height: 1.3333em;
+      font-size: 1.1em;
+      line-height: 1.33em;
       font-weight: 600;
-      -webkit-hyphens: auto;
+      /* -webkit-hyphens: auto;
       -moz-hyphens: auto;
       -ms-hyphens: auto;
-      hyphens: auto;
+      hyphens: auto; */
+      hyphens: none;
     }
 
     .messaging-zone .messaging-block {
       border-top: none;
       border-bottom: 1px solid #A8A8A8;
+      padding-top: 1em;
       border-color: inherit;
+    }
+
+    .messaging-block .tool-bar {
+      margin-top: 0.5em;
     }
 
     .messaging-zone .messaging-block:first-child {
@@ -871,17 +912,34 @@ aside { }
       border-color: inherit;
     }
 
+    .messaging-block .help-block {
+        margin-bottom: -.5em;
+    }
+
+    /* BREAKPOINT: 400px // Allow longer text lines. Line breaks aren't a problem beyond this width. */
+    @media screen and (min-width: 400px) {
+
+        .messaging-block h3 {
+          max-width: 100%;
+        }
+
+        .messaging-block--ask span{
+          max-width: 100%;
+        }
+    }
 
 .btn--subscribe {
   color: white;
   background-color: #82AD00;
 }
 
+
+
 /* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
 
 .messaging-block--subscribe .input-group {
-  margin-top: 1em;
-  margin-bottom: .35em;
+  margin-top: .5em;
+  margin-bottom: .25em;
 }
 
 .messaging-block--subscribe select.subscribe-frequency {
@@ -1152,9 +1210,12 @@ label.valid {
     clear: both;
     background-color: #F4F4F4;
     border-top: none;
-    padding: 0em 1em .33em 1em;
+    padding: .33em 1em 1em 1em;
     margin-top: 3em;
+    overflow: auto;
 }
+
+    #fact-box-1 {}
 
     .fact-box p {
       font-size: .8em;
@@ -1190,10 +1251,10 @@ label.valid {
     margins were applied to it's contents instead of the container itself.) */
 
     /*  IN WIDER VIEWPORTS: 
-        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ don't show the fact-box at the bottom of the article-body
-        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
-        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ show the factbox within an aside
-        ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ hide fact-box text anchor link */
+        ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ don't show the fact-box at the bottom of the article-body
+        ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ show the aside containing the fact-bax (.hide-on-narrow-vp)
+        ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ show the factbox within an aside
+        ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ hide fact-box text anchor link */
     @media screen and (min-width: 939px) {
 
         .fact-box {
@@ -1208,11 +1269,12 @@ label.valid {
             display: block;
             margin-top: -1em;
             margin-bottom: 2em;
+            padding-top: 0;
+            padding-left: 0;
+            padding-right: 0;
             border-top: 8px solid;
             border-bottom: 1px solid;
             border-color: #444;
-            padding-left: 0;
-            padding-right: 0;
             background-color: white;
         }
 
