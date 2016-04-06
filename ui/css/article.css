@@ -608,7 +608,7 @@ aside { }
       float: left;
       padding-top:;
       margin-top: 0.25em;
-
+      margin-bottom: 0.25em;
       height: 3.6em;
       width: auto;
       background-color: teal;
@@ -623,6 +623,7 @@ aside { }
     }
 
     .author-info div {
+      max-height: 4em;
       overflow:hidden; 
       padding-left: 0.75em;
     }
