@@ -45,7 +45,6 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: ;
 }
 
 h1 {
@@ -151,8 +150,9 @@ p {
 .dollar-heart-svg {
    height: 1.25em;
    width: auto;
-   vertical-align: middle;
+   vertical-align: bottom;
    margin-right: -0em;
+   margin-bottom: -.05rem;
 }
 
 
@@ -263,6 +263,14 @@ p a:hover {color: #6F9400;}
     .caption__media--credit {
         font-weight: 300;
     }
+
+
+
+.help-block {
+    margin-bottom: 0px;
+    font-size: .75em;
+    line-height: 1.33em;
+}
 
 
 
@@ -852,39 +860,51 @@ aside { }
 
 /* MESSAGING BLOCK  ========================================================================== */
 
+.messaging-zone {
+    padding-bottom: 1.5em;
+}
+
+
 .messaging-block {
-    padding-bottom: 1em;
+    padding-bottom: 1.5em;
     /* border-top: 1px solid #A8A8A8;
        border-bottom: 1px solid #A8A8A8; */
 }
 
-    .messaging-block:hover {
-      background-color: #F2F4DE;
-    }
-
     .messaging-block h3 {
+      max-width: 325px; /* prevents bad line breaks */
       margin-top: 0;
       margin-bottom: 0px;
       padding-top: 0.5em;
+      font-size: 1.1em;
+      line-height: 1.33em;
+      font-weight: 700;
 
     }
 
     .messaging-block--ask span{
       display: inline-block;
+      max-width: 325px; /* prevents bad line breaks */
       padding-top: 0.2em;
-      font-size: 1.333em;
-      line-height: 1.3333em;
+      font-size: 1.1em;
+      line-height: 1.33em;
       font-weight: 600;
-      -webkit-hyphens: auto;
+      /* -webkit-hyphens: auto;
       -moz-hyphens: auto;
       -ms-hyphens: auto;
-      hyphens: auto;
+      hyphens: auto; */
+      hyphens: none;
     }
 
     .messaging-zone .messaging-block {
       border-top: none;
       border-bottom: 1px solid #A8A8A8;
+      padding-top: 1em;
       border-color: inherit;
+    }
+
+    .messaging-block .tool-bar {
+      margin-top: 0.5em;
     }
 
     .messaging-zone .messaging-block:first-child {
@@ -892,17 +912,34 @@ aside { }
       border-color: inherit;
     }
 
+    .messaging-block .help-block {
+        margin-bottom: -.5em;
+    }
+
+    /* BREAKPOINT: 400px // Allow longer text lines. Line breaks aren't a problem beyond this width. */
+    @media screen and (min-width: 400px) {
+
+        .messaging-block h3 {
+          max-width: 100%;
+        }
+
+        .messaging-block--ask span{
+          max-width: 100%;
+        }
+    }
 
 .btn--subscribe {
   color: white;
   background-color: #82AD00;
 }
 
+
+
 /* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
 
 .messaging-block--subscribe .input-group {
-  margin-top: 1em;
-  margin-bottom: .35em;
+  margin-top: .5em;
+  margin-bottom: .25em;
 }
 
 .messaging-block--subscribe select.subscribe-frequency {
