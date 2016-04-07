@@ -1,0 +1,111 @@
+<!-- Begin organisms/article/article__body -->
+
+<article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
+    <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
+
+    <div class="container-fluid clearfix">
+
+        <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/fact-box-article-standard" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" %}
+
+        {% include 01-molecules/text/lead-in-text.html lead-in-content="Sixty-four years ago, a tiny B.C. Aboriginal community was paid $1,292 for a corporation's right to forever pump oil through its reserve." %}
+
+        <p>Now the Coldwater Indian Band is <a href="http://www.thetyee.ca/Documents/2016/01/26/ColdwaterBrief.pdf">suing</a> to kill that deal -- a challenge that threatens to derail the $6.8-billion expansion of that pipeline proposed by current owner Kinder Morgan.</p>
+        <p>The latest step in the fight came last week, when Coldwater representatives testified at the National Energy Board hearing, urging a rejection of the expansion pipeline.</p>
+
+
+        <!--AD in the 1ST POSITION. (Set ad-position parameter.) -->
+        {% include 01-molecules/blocks/ad-box.html ad-position="bigbox--1st-position" ad-source="VFF-bigbox.gif" %}
+        <p>On the surface, the band's immediate grievance, it told the board, is with the route being pursued by Kinder Morgan to twin its expansion pipeline just outside the reserve's boundary. They say it represents an oil contamination risk to the reserve's drinking-water-glacial aquifer that flows beneath their mountain village, west of Merritt.</p>
+        <p>But the heart of Coldwater's discontent flows much deeper -- into the past.</p>
+
+                <!--An ASIDE containing a MESSAGING BLOCK. -->
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/messaging-block--ask" content-source="" aside-class="" %}
+
+        <p>In 1952, before the current elected chief was even born, a disputed deal was struck to allow the original Trans Mountain pipeline through their valley community. The pipeline has pumped up to 300,000 barrels of oil per day ever since, within metres of their homes. Children have grown up for generations with backyard signs that still read "oil pipeline crossing."</p>
+
+        <p>And as compensation, the band was given a one-time payment of $1,292.  </p>
+        <p>"When I first heard what kind of a deal they gave to our people, it was an insult. It was a slap in the face," Chief Lee Spahan said in a video interview with The Tyee on his reserve last week.</p>
+        <p>"You look at how much barrels of oil per day they pump through the pipeline now, and how much money they make, and how they want to expand it. They're making millions, billions of dollars, and what they decided to pay us was pennies," he added.</p>
+        <p>The band is now suing the federal government and Kinder Morgan in federal court over the 1952 deal with the hopes of a better arrangement. If the band wins, the community may gain significant bargaining power over Kinder Morgan's expansion plans.</p>
+        <!--embed video-->
+
+
+                <!--FIGURE containing a VIDEO player. Will likely be iframe embeds. -->
+                {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/video" figure-caption="Watch an interview with Coldwater Indian Band Chief Lee Spahan: 'If the membership really wants it to stop, we can say no. They need to respect us.'" media-credit="Video by Mychaylo Prystupa for The Tyee." content-source="https://player.vimeo.com/video/153048550" %}
+
+        <p>"If the membership really wants it to stop, we can say no," said Chief Spahan. "They need to respect us."</p>
+
+        <!--An ASIDE containing a RELATED STORY. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" related-story-title="Kinder Morgan Pipeline Expansion Designed to Carry Much More Oil" content-source="/ui/img/tankersea600px.jpg" %}
+
+        <!--SUBHEADER -->
+        {% include 00-atoms/text/article-subheader.html subheader-content="They were just told sign!" %}
+        <p>The 1952 pipeline deal was from a different time in Canada's history. </p>
+
+        <p>It was before First Nations had the full right to vote, and it was just after discriminatory laws had been lifted that prohibited Aboriginal people from hiring lawyers, or appearing off reserve in ceremonial dress without an Indian agent's permission.</p>
+        <p>On April 1, 1952, an official for Trans Mountain wrote to the Department of Indian Affairs asking for permission to plow a new oil pipeline from Alberta through the reserve. The one-time fee offered was $1 per lineal rod, which totaled $1,292, or $11,408 in today's dollars.   </p>
+        <p>The federal department accepted the offer "without question" and Coldwater signed a band resolution in support of the pipeline, court records show. But Chief Spahan says elders have long told stories about his people being bullied into the arrangement by government agents.</p>
+        <p>"They were just told 'sign!' by the Indian agent. They told you what to do, and you had to do it," he said.</p>
+        <p>"We didn't have lawyers back then, so how was our people to know if that was a good deal or not? It was never a good deal.</p>
+        <p>"It insults me. How could they do that to our people?"</p>
+
+                <!--An ASIDE containing an IMAGE. -->
+                {% include 01-molecules/blocks/aside.html aside-contents="00-atoms/images/image" aside-caption="Coldwater Indian Band's location along the Trans Mountain pipeline, which owner Kinder Morgan wants to expand pending federal approval." media-credit="" content-source="ui/img/ColdwaterMap_300px.jpg" aside-class="" %}
+
+
+        <p>Kinder Morgan wouldn't enter the picture until more than half a century later. In 2007, the "largest energy infrastructure company in North America," according to its website, bought the Trans Mountain pipeline in Canada from Terasan Inc., formerly BC Gas Inc.</p>
+        <p>But band lawyers spotted a loophole in the sale. A 1955 contract (called an indenture) between the pipeline's owner and the Crown required that Trans Mountain's right of passage (or easement) through the reserve could not be transferred without the "written consent of the minister."</p>
+        <p>In May 2012, the Coldwater band verified that Kinder Morgan had not obtained this, so the legal fight was on.  </p>
+        <p>"Some sharp lawyer in Calgary didn't pick up on the fact that they didn't get the minister's permission," said band lawyer Matthew Kirchner.  </p>
+        <p>The band argued in court in 2013 that the pipeline, under its new ownership, was operating for nearly six years "without authorization."</p>
+        <p>But Kinder Morgan didn't have to fight back for long. By late 2014, an official for then-Conservative federal minister Bernard Valcourt granted retroactive consent to the transfer of the pipeline's easement to the U.S. company. That didn't sit well with the community.  </p>
+        <p>"We're not greedy. We want our people looked after. We need housing. We need our water infrastructure looked after," said Chief Spahan.</p>
+        <p>The setback came the same year that other Kinder Morgan pipeline problems surfaced.  </p>
+        <p>The company admitted in 2014 that its decades-old pipeline on the Coldwater reserve was leaking. Crews dug up the pipeline and welded patches, the chief said.  </p>
+
+
+                <!--Here's a FIGURE containing an IMAGE. 
+                    All media within an article body should be called from within a figure object or an aside. -->
+                {% include 01-molecules/blocks/figure.html figure-class="figure--xl" figure-contents="00-atoms/images/image" figure-caption="Oil leak of the Trans Mountain pipeline on Coldwater Indian Band reserve in 2014. " media-credit="Source: band's lawyer." content-source="ui/img/KinderMorganColdwaterLeak_610px.jpg" %}
+
+
+        <p>The band then hired a hydrologist to see if the reserve's drinking water was put at risk. Tests came back showing petrochemical traces, called polycyclic aromatic hydrocarbons, including naphthalene, phenanthrene, fluorine and pyrene.</p>
+
+
+
+        <p>"The pipeline is a potential source," said the chief.</p>
+        <p>But Kinder Morgan is not ready to agree its pipeline's leaking has affected the band's drinking water. </p>
+
+
+        <!--AD in the 2ND POSITION. (Set ad-position parameter.) -->
+        {% include 01-molecules/blocks/ad-box.html ad-position="bigbox--2nd-position" ad-source="VFF-bigbox.gif" %}
+
+        <p>"To date, there are no findings to confirm groundwater contamination," a company spokesperson told The Tyee in an email. "We have been working co-operatively with the community on cleanup of the historical contaminated soil found in 2014. We are currently in the planning stages and will be pursuing remediation later this year."</p>
+        <p>Last summer Kinder Morgan also told the NEB: "The existing pipeline has operated for more than 60 years with only four spills that are known to have affected groundwater resources, none of which affected the Coldwater Indian Reserve."</p>
+        <p>Frustrated, the band launched a federal appeal in 2015 of the minister's decision. The case is ongoing.</p>
+
+        <!--An ASIDE containing a RELATED STORY. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" related-story-title="A Tyee Kinder Morgan Reader" content-source="/ui/img/KinderMorgExpansion_600px.jpg" %}
+
+
+        <!--SUBHEADER -->
+        {% include 00-atoms/text/article-subheader.html subheader-content="A community in need, and conflicted" %}
+
+        <p>Despite his band's past and current grievances, the chief admits it may do a deal with Kinder Morgan for the pipeline expansion in order to obtain new sources of revenue. The community only has enough houses for 336 of its 800 members -- and many off reserve want to come home.</p>
+        <p>"It's very difficult. Some of our people want it, and some of our people don't want it," he said. </p>
+        <p>"We need programs for our people, we need infrastructure, we need housing. We need to fix our water wells." </p>
+        <p>The chief says Kinder Morgan Canada's CEO Ian Anderson has pressed personally to meet with him.  </p>
+        <p>But relations soured last summer when the company "unilaterally" withdrew the "west alternative" option for the new pipeline, says the band. It was the only route the band considered safe for its drinking water.</p>
+        <p>"We want to tell Kinder Morgan that we're serious about our drinking water. We don't want it impacted. We want it there for generations to come," said the chief.</p>
+
+        <!--FACT-BOX will display here at bottom of article in narrow viewports -->
+        <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. -->
+        {% include 01-molecules/blocks/fact-box-article-standard.html %}
+
+
+    </div> <!--END .container-fluid-->
+
+</article>
+
+<!-- END organisms/article/article__body -->
