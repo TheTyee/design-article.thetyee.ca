@@ -532,7 +532,7 @@
 
 footer {
   clear: both;
-  line-height: 2em;
+  /* line-height: 2em; -AG */
   font-size: 0.9em;
 }
 
@@ -978,8 +978,6 @@ div.ntnl-sgnup-modal {
 
     footer {
       clear: both;
-      line-height: 2em;
-      font-size: 0.9em;
     }
 
     footer div:first-child{
