@@ -745,6 +745,7 @@ div.ntnl-sgnup-modal {
 
   .latest-stories .latest-stories__media-wrapper{
     padding: 10px;
+    position: relative;
   }
 
   .latest-stories .latest-stories__media-wrapper li:first-child{
@@ -793,6 +794,41 @@ div.ntnl-sgnup-modal {
   }
 
 
+  .latest-stories .latest-stories__media-wrapper .chevron{
+    background: #e5e5e5;
+    height: 100px;
+    border-radius: 100px;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    top: 90px;
+    opacity: 0.75;
+  }
+  .latest-stories .latest-stories__media-wrapper .chevron::before {
+    border-style: solid;
+    border-width: 0.5em 0.5em 0 0;
+    content: '';
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    left: 18px;
+    position: absolute;
+    top: 25px;
+    color: #fff;
+    transform: rotate(-45deg);
+    vertical-align: top;
+  }
+
+  .latest-stories .latest-stories__media-wrapper .chevron.right:before {
+    right: 0;
+    transform: rotate(45deg);
+  }
+
+.latest-stories .latest-stories__media-wrapper .chevron.left {
+    z-index: 200;
+    left: 0px;
+    transform: rotate(-90deg);
+  }
 
   /* SECTIONS NAV ========================================================================== */ 
 
@@ -1156,48 +1192,7 @@ div.ntnl-sgnup-modal {
     overflow: hidden;
   }
 
-  .latest-stories .latest-stories__media-wrapper .chevron{
-    background: #e5e5e5;
-    height: 100px;
-    border-radius: 100px;
-    width: 100px;
-    position: absolute;
-    right: 10px;
-    top: 90px;
-    opacity: 0;
-    -webkit-transition: opacity 0.4s;
-  }
-  .chevron::before {
-    border-style: solid;
-    border-width: 0.5em 0.5em 0 0;
-    content: '';
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    left: 18px;
-    position: absolute;
-    top: 25px;
-    color: #fff;
-    transform: rotate(-45deg);
-    vertical-align: top;
-  }
 
-  .chevron.right:before {
-    right: 0;
-    transform: rotate(45deg);
-  }
-
-.chevron.left {
-    opacity: 1;
-    z-index: 200;
-    left: 0px;
-    transform: rotate(-90deg);
-  }
-
-  .latest-stories .latest-stories__media-wrapper:hover .chevron{
-    opacity: 0.8;
-    -webkit-transition: opacity 0.4s;
-  }
 
   .latest-stories .latest-stories__media-wrapper li:first-child{
     border-left: solid 1px #859c01;

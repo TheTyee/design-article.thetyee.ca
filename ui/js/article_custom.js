@@ -103,7 +103,7 @@
                 counter = counterPosition;
                 el.find('a').attr('href', storyObjects[counter].urlPath);
                 el.find('img').attr('src', storyObjects[counter].image);
-                el.find('h4').html(storyObjects[counter].hed + 'key= ' + counter);
+                el.find('h4').html(storyObjects[counter].hed);
                 el.find('p').html(storyObjects[counter].dek);
                 el.find('.latest-stories__date').html(storyObjects[counter].date);
                 el.find('.latest-stories__authour').html(storyObjects[counter].authour); 
