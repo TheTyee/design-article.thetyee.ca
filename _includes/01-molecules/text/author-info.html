@@ -4,7 +4,9 @@
     <img src='{{ site.url}}{{ include.author-headshot }}'>
 
     <div class="author-info__text">
-        By <a href="#" data-bind="author-name">{{ include.author-name }}</a>, <span data-bind="date">{{ include.article-date }}</span>,&nbsp;TheTyee.ca {% comment %} <-- NBSP IS NECESSARY HERE {% endcomment %}
+
+        By <a href="#" data-bind="author-name">{{ include.author-name }}</a>, <span data-bind="date">{{ include.article-date }}</span>&nbsp;|&nbsp;TheTyee.ca {% comment %} <-- NBSP IS NECESSARY HERE {% endcomment %}
+
         <span class="author-info__bio" data-bind="author-bio">{{ include.author-bio }}</span>
         <a href="#" class="author-more">... read more</a> {% comment %} This should link to the author's page (same as the author's name above) {% endcomment %}
     </div>
