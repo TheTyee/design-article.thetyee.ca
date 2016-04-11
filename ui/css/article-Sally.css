@@ -366,6 +366,7 @@
 .latest-stories__dek {
   font-size: 0.8em;
   line-height: 1.25em;
+  color: grey;
 }
 .latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
   text-transform: capitalize;
