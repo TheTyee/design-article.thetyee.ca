@@ -227,21 +227,37 @@
                     bottomPrevCounter = bottomCounter - totalStoryPositions;
                 });
 
+                console.log(topPrevCounter);
 
                 //Get the prev group of stories on click
                 $(this).on('click', '.prev', function(event){
                     $(this).parent().find('li').reverse().each(function(i, details){
-                    
+
+                     
+                        if (totalStoryPositions === 4){
+
+                            if ((i === 0) || (i === 1)){
+                                return;
+                            }
+                             if( i === totalStoryPositions + 2){
+                                return false;
+                             }
+                         } else {
+
+
+                             if( i === totalStoryPositions + 1){
+                                return false;
+                             }
+
+                         }
                      console.log('i = ' + i + 'and totalStoryPositions = ' + totalStoryPositions);
                           //infinite backwards scroll
-                        if (topPrevCounter === -1){
+                        if (topPrevCounter < 0){
                             topPrevCounter = 49;
                         }
 
                      console.log('topprev' + topPrevCounter);
-                     if (i === totalStoryPositions){
-                        return false;
-                     }
+                 
                    
 
                         if (key === 0){
