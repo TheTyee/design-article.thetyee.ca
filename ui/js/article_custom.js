@@ -1,39 +1,42 @@
-// Wrap IIFE around code
-(function($){
+// Wrap IIFE around your code
+(function($, viewport){
     $(document).ready(function() {
 
 
-   
-//*======= DO NOT KILL THE DROPDOWNS WHEN USERS CLICK IN THEM
+        //Do not kill the dropdowns when users click in them)
         $('.dropdown-menu').children().click(function(e){
             e.stopPropagation();
         });
 
-//*======= ALLOW MULTIPLE NAV ITEMS TO BE OPEN AT ONCE IN MOBILE
+        //*======= ALLOW MULTIPLE NAV ITEMS TO BE OPEN AT ONCE IN MOBILE
         if ($(window).width() < 992){
             $('.dropdown.keep-open').on({
                 "shown.bs.dropdown": function() { this.closable = false; },
-                "click":             function() { this.closable = true; },
-                "hide.bs.dropdown":  function() { return this.closable; }
+                    "click":             function() { this.closable = true; },
+                    "hide.bs.dropdown":  function() { return this.closable; }
             });
         }
 
-//*======= MOVE FOCUS DIRECTLY TO SEARCH FIELD WHEN USER STARTS TYPING
+
+
+
+        //Moves focus directly to search field when user begins typing
         $('.search-block').on('show.bs.dropdown', function(event) {
             $(document).keydown(function(){
                 $('input#menu__search--input').focus();
             });
         });
 
-//*======= LATEST STORIES CODE =====*/
 
-        //*======= REVERSE FUNCTION FOR ALLOWING STORIES TO GO BACKWARDS
+        //LATEST STORIES
+
+
         jQuery.fn.reverse = function() {
             return this.pushStack(this.get().reverse(), arguments);
         };
 
-        //*=======  GLOBALS
-        var visibleStories;
+
+        //GLOBALS
         var totalStoryPositions;
         var counter =0;
         var topCounter = 0;
@@ -46,35 +49,10 @@
         var topPrevCounter = 0;
         var bottomPrevCounter = 0;
 
-
-
-
-        function determineViewport(visibleStories){
-            viewportSize = $(window).width();
-
-            if(viewportSize > 1200){
-                totalStoryPositions = 6;
-            }
-
-            if((viewportSize > 992 && viewportSize <1200)){
-                totalStoryPositions = 4;
-                i=1;
-            }
-
-            if((viewportSize > 768 && viewportSize < 992)){
-                totalStoryPositions = 3;
-            }
-            return totalStoryPositions;
-        }
-
-        totalStoryPositions = determineViewport(visibleStories);
-
-        console.log(totalStoryPositions);
-
-        //*======= MAKE STORY OBJECTS GLOBAL, SO I DON'T HAVE TO KEEP HITTING THE API
+        //make storyObjects global, so I don't have to keep hitting the API
         storyObjects = storyObjects;
 
-        //*======= RETURNED STORIES FROM THE API
+        //Returned stories from the API
         function getLatestStories(){
             storiesRequested = 50;
             returnedStories = $.ajax({
@@ -88,29 +66,15 @@
                     returnedStories = returnedStories.responseJSON.hits.hits;
                     //pass data to the create function so I can create my own story objects
                     recentItems = createStoryObjects(returnedStories);
-                    
                     return recentItems;
                 },
                 error: function(){
                     //console.log('NO DICE SISTER');
                 }
             });
-        }//END LATESTSTORIES
+        }//end lateststories()
 
-        //*======= FUNCTION TO POPULATE THE DOM ELEMENTS BASED ON EVENTS
-        // Parameter 'el' is the current element, parameter 'counterPosition' is whether we need top or bottom counter
-        function storyData( el, counterPosition){
-                counter = counterPosition;
-                el.find('a').attr('href', storyObjects[counter].urlPath);
-                el.find('img').attr('src', storyObjects[counter].image);
-                el.find('h4').html(storyObjects[counter].hed);
-                el.find('p').html(storyObjects[counter].dek);
-                el.find('.latest-stories__date').html(storyObjects[counter].date);
-                el.find('.latest-stories__authour').html(storyObjects[counter].authour); 
-                counterPosition= counter;  
-            }
-
-        //*======= FORMAT RETURNED JSON FOR EASE OF MANIPULATION
+        //Format the json data for ease of manipulation
         function createStoryObjects(returnedStories, callback){
             //remove the placeholder classes
             $('.latest-stories__hed').removeClass('hed_preload_placeholder');
@@ -150,134 +114,138 @@
                 //Put all objects into a new array for easier handling
                 storyObjects.push(Story);
             });
-            
-            // on load, populate all spaces in the DOM
+            // on load, populate the DOM
             $('.latest-stories__media-wrapper').each(function(key, index){
                 $(this).parent().find('li').each(function(i, details){
-                    if (key === 0){
-                        //this populates the top scroller
-                        storyData($(this), topCounter);
-                        topCounter++; //separate counters let scroller move independently
-                       
-                        
-                        //break out of the lis, depending on viewport size
-                        if(i == (totalStoryPositions-1)){
-                            return false;
-                        }
 
+                    if (key === 0){
+                        // TODO swap this out when closer to production
+                        $(this).find('a').attr('href', '#');
+                        // Old value
+                        // $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+                        $(this).find('img').attr('src', storyObjects[topCounter].image);
+                        $(this).find('h4').html(storyObjects[topCounter].hed);
+                        $(this).find('p').html(storyObjects[topCounter].dek);
+                        $(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+                        $(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+                        topCounter++;
                     }
                     if (key == 1){
-                        //this populates the lower scroller
-                        storyData($(this), bottomCounter);
-                        bottomCounter++; //separate counters let scroller move independently
-                        //break out of the lis, depending on viewport size
-                        if(i == (totalStoryPositions - 1)){
-                            return false;
-                        }
+                        // TODO swap this out when closer to production
+                        $(this).find('a').attr('href', '#');
+                        // Old value
+                        // $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+                        $(this).find('img').attr('src', storyObjects[bottomCounter].image);
+                        $(this).find('h4').html(storyObjects[bottomCounter].hed);
+                        $(this).find('p').html(storyObjects[bottomCounter].dek);
+                        $(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+                        $(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+                        bottomCounter++;
+
                     }
+
+
                 });
             });
-            //Click events for scrolling
+            //control the scrolling
             scrollLatestStories();
         }
 
-        //*======= MAKE AJAX CALL AND PUT DATA INTO RETURNEDSTORIES VAR FOR MANIPULATION
+
+        //Make Ajax call and put data into the returnedStories var for manipulation.
         getLatestStories();
 
-        //*======= SETS UP CLICK EVENTS
+
+
+        //takes parameters of current slider
         function scrollLatestStories(){
             //Get the next group of stories on click
+
+            //console.log(key + ' ' + value);
             $('.latest-stories__media-wrapper').each(function(key, index){
                 $(this).on('click', '.next', function(event){
+                    //	console.log($(this).find('li'));
+
                     $(this).parent().find('li').each(function(i, details){
-                      //  console.log('i = ' + i + 'and totalStoryPositions = ' + totalStoryPositions);
-                        if(i === totalStoryPositions){
-                            return false;
-                        }
-                        if (topCounter >49){
-                            topCounter = 0;
-                        }
+
                         if (key === 0){
-                            storyData($(this), topCounter);
+                            $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+                            $(this).find('img').attr('src', storyObjects[topCounter].image);
+                            $(this).find('h4').html(storyObjects[topCounter].hed);
+                            $(this).find('p').html(storyObjects[topCounter].dek);
+                            $(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+                            $(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+
                             topCounter++;
-                            if (topCounter >49){
+
+                            if (topCounter >=50){
                                 topCounter = 0;
                             }
-                       
+
                         }
 
-                        if(i === totalStoryPositions){
-                            return false;
-                        }
-                        if (bottomCounter >49){
-                            bottomCounter = 0;
-                        }
                         if (key == 1){
-                            storyData($(this), bottomCounter);
+
+                            $(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+                            $(this).find('img').attr('src', storyObjects[bottomCounter].image);
+                            $(this).find('h4').html(storyObjects[bottomCounter].hed);
+                            $(this).find('p').html(storyObjects[bottomCounter].dek);
+                            $(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+                            $(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
                             bottomCounter++;
-                            if (bottomCounter >49){
+
+                            if (bottomCounter >=50){
                                 bottomCounter = 0;
                             }
                         }
 
-                        
+
                     });
                     //reset the counter so I can scroll the other way
-                    topPrevCounter = topCounter - totalStoryPositions;
-                    bottomPrevCounter = bottomCounter - totalStoryPositions;
+                    topPrevCounter = topCounter - 7;
+                    bottomPrevCounter = bottomCounter - 7;
+
+                    //reset the click event
+
                 });
 
-                
 
-                //Get the prev group of stories on click
+
                 $(this).on('click', '.prev', function(event){
                     $(this).parent().find('li').reverse().each(function(i, details){
-
-                     
-                        if (totalStoryPositions === 4){
-
-                            if ((i === 0) || (i === 1)){
-                                return;
-                            }
-                             if( i === totalStoryPositions + 2){
-                                return false;
-                             }
-                         } else {
-
-
-                             if( i === totalStoryPositions + 1){
-                                return false;
-                             }
-
-                         }
-                     console.log('i = ' + i + 'and totalStoryPositions = ' + totalStoryPositions);
-                          //infinite backwards scroll
-                        if (topPrevCounter < 0){
+                        //infinite backwards scroll
+                        if (topPrevCounter <=0){
                             topPrevCounter = 49;
                         }
-
-                     
-                 
-                   
-
                         if (key === 0){
-                            storyData($(this), topPrevCounter);
+                            $(this).find('a').attr('href', storyObjects[topPrevCounter].urlPath);
+                            $(this).find('img').attr('src', storyObjects[topPrevCounter].image);
+                            $(this).find('h4').html(storyObjects[topPrevCounter].hed);
+                            $(this).find('p').html(storyObjects[topPrevCounter].dek);
+                            $(this).find('.latest-stories__date').html(storyObjects[topPrevCounter].date);
+                            $(this).find('.latest-stories__authour').html(storyObjects[topPrevCounter].authour);
                             topPrevCounter--;
                         }
 
-                        if (bottomPrevCounter < 0){
+                        if (bottomPrevCounter <= 0){
                             bottomPrevCounter = 49;
                         }
 
                         if (key == 1){
-                            storyData($(this), bottomPrevCounter);
+                            //console.log('left click - ' + bottomPrevCounter);
+                            $(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
+                            $(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
+                            $(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
+                            $(this).find('p').html(storyObjects[bottomPrevCounter].dek);
+                            $(this).find('.latest-stories__date').html(storyObjects[bottomPrevCounter].date);
+                            $(this).find('.latest-stories__authour').html(storyObjects[bottomPrevCounter].authour);
                             bottomPrevCounter--;
                         }
 
                     });
                     //reset the counter so i can go the other way
-                    topCounter = topPrevCounter + totalStoryPositions;
-                    bottomCounter = bottomPrevCounter + totalStoryPositions;
+                    topCounter = topPrevCounter + 7;
+                    bottomCounter = bottomPrevCounter + 7;
                     //reset the counter for infinite scrolling
 
                 });
@@ -286,48 +254,7 @@
         }//END LATEST STORIES SCROLLER
 
 
-//*======= END LATEST STORIES CODE
-
-//*======= COLLAPSING AUTHOR BIO
-        var fullBio = $('.author-info__bio').html();
-        function trimBio(){
-            if ($(window).width() < 670){
-                $('.author-more').show();
-                var annotatedBio = fullBio.substr(0, 107) + "\u2026";
-                $('.author-info__bio').html(annotatedBio);
-
-                function collapseAuthourBox(){
-                    $(document).on('click','.author-more', function(){
-                        event.preventDefault();
-                        $('.author-more').toggleClass('up');
-
-                        if($('.author-more').hasClass('up')){
-                            $('.author-info__bio').html(fullBio);
-                            $('.author-more').html('Show Less');
-                        } else {
-                            $('.author-info__bio').html(annotatedBio);
-                            $('.author-more').html('Show More');
-                        }
-
-                    });
-                }
-
-                collapseAuthourBox();
-            }
-        }
-        trimBio();
-
-
-        $(window).resize(function() {
-            if ($(window).width() < 670){
-                trimBio();
-            } else {
-                $('.author-info__bio').html(fullBio);
-                $('.author-more').hide();
-            }
-        });
-
-//*======= SHOW DISQUS COMMENTS
+        // Show Disqus comments
         $(".comments-section .btn").click(function(e) {
             e.preventDefault();
             var el = $('.comments-section');
@@ -348,4 +275,4 @@
 
     });
 
-})(jQuery);
+})(jQuery, ResponsiveBootstrapToolkit);
