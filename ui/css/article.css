@@ -889,6 +889,7 @@ aside { }
         }
 
         .ad-box--halfpage:before { 
+           display: none;
            margin-top: 0;
         }
     }
