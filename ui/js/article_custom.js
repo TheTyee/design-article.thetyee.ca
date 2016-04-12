@@ -190,7 +190,7 @@
             $('.latest-stories__media-wrapper').each(function(key, index){
                 $(this).on('click', '.next', function(event){
                     $(this).parent().find('li').each(function(i, details){
-                        console.log('i = ' + i + 'and totalStoryPositions = ' + totalStoryPositions);
+                      //  console.log('i = ' + i + 'and totalStoryPositions = ' + totalStoryPositions);
                         if(i === totalStoryPositions){
                             return false;
                         }
@@ -227,7 +227,7 @@
                     bottomPrevCounter = bottomCounter - totalStoryPositions;
                 });
 
-                console.log(topPrevCounter);
+                
 
                 //Get the prev group of stories on click
                 $(this).on('click', '.prev', function(event){
@@ -256,7 +256,7 @@
                             topPrevCounter = 49;
                         }
 
-                     console.log('topprev' + topPrevCounter);
+                     
                  
                    
 
@@ -264,8 +264,6 @@
                             storyData($(this), topPrevCounter);
                             topPrevCounter--;
                         }
-
-                      
 
                         if (bottomPrevCounter < 0){
                             bottomPrevCounter = 49;
