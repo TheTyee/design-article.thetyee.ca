@@ -304,7 +304,7 @@ p a:hover {color: #6F9400;}
 
 .featured-media { /* featured-media organism is centered on the page and occupies full page column 
                      width at medium and small view widths */
-  max-width: 45em;
+  max-width: 57em;
   margin: 0 auto 0 auto;
   padding-top: 1em;
 }
@@ -320,13 +320,14 @@ p a:hover {color: #6F9400;}
     
     /* BREAKPOINT: 1120px // At views wider than 1120px the feature-media organism shrinks 
        and sits left-aligned to make room for the adjacent bigbox--1st-position */
-    @media screen and (min-width: 1120px) {
+    @media screen and (min-width: 1400px) {
         .featured-media {
              position: relative;
-             max-width: 34em;
-             margin: 0;
-             padding-left: 0;
-             padding-right: 0;
+             left: -12.7em;
+             max-width: 53.75em;
+             margin: 0 auto 0 auto;
+             padding-left: 1em;
+             padding-right: 1em;
 
         }
         
@@ -350,8 +351,7 @@ p a:hover {color: #6F9400;}
     /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
     @media screen and (min-width: 880px) {
         /* When viewport exceeds the max-width of the article__header ...  */
-        .main-col-container, 
-        .featured-media {
+        .main-col-container {
           margin-left: auto;
           margin-right: auto;
           left: -4.5em; /* = ( [article__header max-width] - [article__body max-width] - [padding&margins] ) / 2 */
@@ -870,8 +870,8 @@ aside { }
         display: none;
     }
 
-    /* BREAKPOINT: 1120px */
-    @media screen and (min-width: 1120px) {
+    /* BREAKPOINT: 1320px */
+    @media screen and (min-width: 1400px) {
 
         /*.bigbox--1st-position {*/
             /*display: none;*/
@@ -884,6 +884,8 @@ aside { }
             margin-top: 0.24em;
             margin-right: -19em;
             width: 300px;
+            height: 600px;
+            background-color: grey;
             border: none;
         }
 
