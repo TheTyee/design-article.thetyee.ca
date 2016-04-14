@@ -318,7 +318,7 @@ p a:hover {color: #6F9400;}
         }
     }
     
-    /* BREAKPOINT: 1120px // At views wider than 1120px the feature-media organism shrinks 
+    /* BREAKPOINT: 1400px // At views wider than 1120px the feature-media organism shrinks 
        and sits left-aligned to make room for the adjacent bigbox--1st-position */
     @media screen and (min-width: 1400px) {
         .featured-media {
@@ -462,6 +462,8 @@ p a:hover {color: #6F9400;}
 
 
 /* FIGURES  ========================================================================== */
+/* Figures are always nested inside the .main-col-container. Therefore all positioning
+   and sizing of figures is relative to the positioning of the .main-col-container.    */
 
 figure {
   /* clear: right; */
@@ -475,6 +477,9 @@ figure {
         margin-top: 0.25em;
     }
 
+    /* FIGURE XL -------------------------------------------------------------------- */
+
+
     /* BREAKPOINT: 608px // Keep figure--xl at full width but maintain correct margins */
     @media screen and (min-width: 608px) 
     /*  When viewport exceeds the max-width of the article__body ... 
@@ -483,11 +488,12 @@ figure {
         {
         .figure--xl {
           position: relative;
-          width: calc(100vw - ((100vw - 34em) / 2));
           left:  calc((34em - 100vw + 0px) / 2);
+          /* Set figure flush-left with viewport. 
+             [[.main-col-container width] - [view width]] / 2           */
           width: calc(100vw - 30px);
           /* Keep figure at full width but maintain correct margins
-             [full viewport width] - [[total bootstrap padding of 30px]-[additional 15px from somewhere?]]  */
+             [full viewport width] - [total bootstrap padding of 30px]  */
         }
     }
 
@@ -505,6 +511,59 @@ figure {
             left: 0;
         }
     }
+
+    /* FIGURE XXL -------------------------------------------------------------------- */
+
+        .figure--xxl {
+          position: relative;
+          width: calc(100vw);
+          /* Set figure to full width with no margins  */
+          left:  -15px;
+          /* Set figure flush-left with viewport. 
+             Compensate for bootstrap padding.
+             -[bootstrap padding]                      */
+        }
+
+        .figure--xxl .caption {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+
+    /* BREAKPOINT: 608px // Keep figure--xl at full width but maintain correct margins */
+    @media screen and (min-width: 608px) 
+    /*  When viewport exceeds the max-width of the article__body ... 
+        [article__body max width] + [bootstrap margins]    
+        =        34em           +            4em       = 38em x 16px = 608px  */
+        {
+        .figure--xxl {
+          position: relative;
+          width: calc(100vw);
+          /* Set figure to full width with no margins  */
+          left:  calc((34em - 100vw - 30px) / 2);
+          /* Set figure flush-left with viewport. 
+             [ offset between text colunm and left viewport edge]
+             [ [.main-col-container width] - [view width] - [bootstrap padding] ] / 2           */
+        }
+    }
+
+
+    /* BREAKPOINT: 880px (article__body left-aligned) // set figure--xl left-align with article__body */
+    @media screen and (min-width: 880px) 
+    /*  When viewport exceeds the max-width of the article__header ... */
+    {
+        .figure--xxl {
+            position: relative;
+            width: calc(100vw);
+            /* Set figure to full width with no margins   */            
+            left:  calc(((34em - 100vw - 30px) / 2) + 4.5em);
+            /* Set figure flush-left with viewport.                
+               Calc as above but compensate for the -4.5em left offset of the .main-col-container.
+               [calc as above] + 4.53em 
+               [ [ [view width] - [txt col width] - [bootstrap padding] ] / 2 ] + 4.5em           */
+        }
+    }
+
 
 
 /* ASIDES  ========================================================================== */
@@ -680,7 +739,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. --Ã‚ÂAG */
+   some crap together. --AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
