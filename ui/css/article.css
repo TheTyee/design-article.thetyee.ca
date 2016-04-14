@@ -512,7 +512,10 @@ figure {
         }
     }
 
-    /* FIGURE XXL -------------------------------------------------------------------- */
+    /* FIGURE XXL --------------------------------------------------------------------
+    Media size 4: figure--xxl. This class extends the figure object to be full viewport 
+    width. In narrow and medium viewports it's almost identical to the figure--xl, but 
+    in large viewports it gets gigantic. */
 
         .figure--xxl {
           position: relative;
@@ -739,7 +742,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. --AG */
+   some crap together. --ÂAG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
