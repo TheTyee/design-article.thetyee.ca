@@ -154,6 +154,17 @@ p {
 }
 
 
+/* END MARK ICON atom */
+
+.end-mark-svg {
+  position: relative;
+  vertical-align: bottom;
+  margin-left: .25em;
+  top: 1px;
+  transform: scale(1.1); 
+}
+
+
 
 /* LINKS  ========================================================================== */
 
@@ -336,7 +347,7 @@ p a:hover {color: #6F9400;}
 
 
 .article__body {
-     padding-bottom: 1em;
+     padding-bottom: 2em;
 }
 
 
@@ -742,7 +753,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. --ÂAG */
+   some crap together. -- AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
