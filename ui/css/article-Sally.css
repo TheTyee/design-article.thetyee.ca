@@ -159,7 +159,7 @@
   max-width: 100%;
   background: white;
   position: relative;
-  top: 10px; 
+  top: 7px; 
   margin: 0 auto;
   display: block;
 }
@@ -292,9 +292,13 @@
     margin-right: 6%;
   }
   .menu__right-nav >li {
-    margin-left: 3.2%;
+    margin-right: 3.2%;
     padding-top: 37px;
   }
+  .menu__right-nav >li:last-child {
+    margin-right: 0;
+  }
+
   .menu__left-nav > li > a, .menu__right-nav > li > a, .dropdown-toggle {
     padding: 0px;
   }
@@ -314,17 +318,18 @@
   .menu__logo li {
     width: 100%;
     display: inline-block!important;
+
   }
   .menu__logo img{
     position: relative;
     display: block;
     margin: 0 auto;
-    top: 4px;
+    top: 26px;
     text-align: center;
     clear:both;
     float: none;
-    max-width: 100%;
-    min-width: 100%;
+    max-width: 90%;
+    min-width: 90%;
   }
   .menu__more ul li{
     display: block;
@@ -375,12 +380,61 @@
       vertical-align: middle;
       display: inline-block;
     }
-    /* ARTICLE HEADER ========*/
-    .author-info__bio{
-      display: block;
-    }
 }
 
+@media (min-width: 1020px) {
+
+  .menu__logo img{
+
+    top: 25px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .menu__logo img{
+    top: 26px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .menu__logo img{
+    top: 24px;
+  }
+}
+
+@media (min-width: 1085px) {
+  .menu__logo img{
+    top: 21px;
+  }
+}
+
+@media (min-width: 1120px) {
+   .menu__logo img{
+
+    top: 20px;
+  }
+}
+
+
+@media (min-width: 1148px) {
+   .menu__logo img{
+    top: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .primary-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .menu__logo img{
+
+    top: 15px;
+  }
+
+}
 
 /* FOOTER ========================================================================== */
 
@@ -1169,7 +1223,10 @@ div.ntnl-sgnup-modal {
 
 
 
-
+    /* ARTICLE HEADER ========*/
+    .author-info__bio{
+      display: block;
+    }
 
 
 
@@ -1194,6 +1251,9 @@ div.ntnl-sgnup-modal {
 
 
 
+/*
+
+
 @media (max-width: 992px) and (min-width: 440px){
     #site-logo{
       width: 200px;
@@ -1204,10 +1264,10 @@ div.ntnl-sgnup-modal {
 }
 
 /* MEDIA QUERIES FOR THE MAIN LOGO */
-@media (max-width: 1170px) and (min-width: 992px){
+/*@media (max-width: 1170px) and (min-width: 992px){
     .menu__logo img{
       top: 20px;
     }
 
 }
-
+*/
