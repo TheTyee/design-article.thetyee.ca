@@ -478,10 +478,16 @@ p a:hover {color: #6F9400;}
 /* FIGURES  ========================================================================== */
 /* Figures are always nested inside the .main-col-container. Therefore all positioning
    and sizing of figures is relative to the positioning of the .main-col-container.    */
+/* Figures are floated left so that they don't collide with any nearby asides. Asides are 
+   floated right, so when asides and figures come into proximity the latter element will 
+   get pushed further down within the content flow but without causing any gaps in the text
+   column. However, this means that figures and asides will not always appear exactly where
+   they're marked up relative to the text content. */
+
 
 figure {
   /* clear: right; */
-  float:left;
+  float:left; /* This prevents the figure from colliding with any asides. */
   width: 100%;
   margin-top: 1em;
   margin-bottom: 2em;
@@ -904,10 +910,15 @@ aside { }
 
 
 
-/* BIGBOX AD  ========================================================================== */
+/* AD BOXES  ========================================================================== */
+/* Ad boxes are floated left so that they don't collide with any nearby asides. Asides are 
+   floated right, so when ad boxes and asides come into proximity the latter element will 
+   get pushed further down within the content flow but without causing any gaps in the text
+   column. However, this means that ad boxes and asides will not always appear exactly where
+   they're marked up relative to the text content.  */
 
 .ad-box {
-  float: left;
+  float: left; /* This prevents the ad-block from colliding with any asides. */
   margin: 1em 0 1.75em 0;
   border-color: inherit;
   border-top: 1px solid #ddd; /* Ad block borders are paler than default border */
