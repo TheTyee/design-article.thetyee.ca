@@ -907,7 +907,8 @@ aside { }
 /* BIGBOX AD  ========================================================================== */
 
 .ad-box {
-  margin: 2em 0 1.75em 0;
+  float: left;
+  margin: 1em 0 1.75em 0;
   border-color: inherit;
   border-top: 1px solid #ddd; /* Ad block borders are paler than default border */
   border-bottom: 1px solid #ddd; /* Ad block borders are paler than default border */
