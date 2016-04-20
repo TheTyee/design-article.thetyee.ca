@@ -163,6 +163,10 @@ p {
   transform: scale(1.1); 
 }
 
+  .end-mark-svg path {
+      fill:  #6F9400;
+  }
+
 
 
 /* LINKS  ========================================================================== */
@@ -752,7 +756,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. -- AG */
+   some crap together. -- ÂAG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
