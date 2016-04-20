@@ -185,8 +185,9 @@ p a:hover {color: #6F9400;}
 
 .pullquote {
   position: relative;
+  float: left; /* prevents collisions with asides */
   /* width: 95%; */
-  margin: 1.33em 0em 1.33em 0em;
+  margin: 0.4em 0em 1.33em 0em;
   border-top: 8px solid;
   border-bottom: 1px solid;
   border-color: #444;
