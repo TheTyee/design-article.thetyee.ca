@@ -6,15 +6,17 @@
 
     <div class="container-fluid">
 
+        {% comment %}[% if page.series == "Yes" %]{% endcomment %}
         <a href="#series-listview-link" class="series-badge badge--headline-placement"><img src="{{ site.url }}ui/img/badge-series.svg"></a>
+        {% comment %}[% endif %]{% endcomment %}
 
-        <h6 class="category-label"><a href="#" data-bind="category">{{ include.article-category }}</a></h6>
+        <h6 class="category-label"><a href="#" data-bind="category">{{ page.meta-category }}</a></h6>
 
-        <h1 class="" data-bind="title">‘Perfect Storm’ Engulfing Canada’s Economy Perfectly Predictable</h1>
+        <h1 class="" data-bind="title">{{ page.title }}</h1>
 
-        <h4 data-bind="teaser">Years ago Andrew Nikiforuk, citing experts, warned where Stephen Harper’s priorities would lead us.</h4>
+        <h4 data-bind="teaser">{{ page.description }}</h4>
 
-        {% include 01-molecules/text/author-info.html author-name="Mychaylo Prystupa" author-bio="Mychaylo Prystupa is an award-winning freelance journalist with 14 years experience, including nine as a CBC News reporter and two at the National Observer. Find him on Twitter @mychaylo, or his website here." article-date="27&nbsp;Jan&nbsp;2016" author-headshot="mychaylo-prystupa.jpg" %}
+        {% include 01-molecules/text/author-info.html author-name=page.meta-contributor author-bio=page.meta-contributor-bio article-date=page.meta-date author-headshot=page.meta-contributor-photo %} {% comment %} <-- THERE MUST BE NBSPs BETWEEN THE DATE ELEMENTS {% endcomment %}
 
         {% include 01-molecules/blocks/tool-bar.html %}
 
