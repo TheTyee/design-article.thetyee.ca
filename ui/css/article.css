@@ -182,6 +182,11 @@ p a:hover {color: #6F9400;}
 
 
 /* PULLQUOTES  ========================================================================== */
+/* Pullquotes are floated left so that they don't collide with any nearby asides. Asides are 
+   floated right, so when asides and pullquotes come into proximity the latter element will 
+   get pushed further down within the content flow but without causing any gaps in the text
+   column. However, this means that pullquotes and asides will not always appear exactly where
+   they're marked up relative to the text content. */
 
 .pullquote {
   position: relative;
@@ -591,6 +596,14 @@ figure {
 
 
 /* ASIDES  ========================================================================== */
+/* Asides are floated right. Content blocks that sit within the main text column (pullquotes,
+   figures, and ad boxes) are left. So when asides and these main column blocks come into 
+   proximity whichever is the latter element will get pushed further down within the content 
+   flow but without causing any gaps in the text column. However, this means that asides 
+   will not always appear exactly where they're marked up relative to the text content.
+   Also, if a great number of asides and figures appear close together within the html this
+   could push them below the text and create a gap at the bottom of the article. */
+
 
 
 aside { }
