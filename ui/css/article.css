@@ -492,7 +492,7 @@ p a:hover {color: #6F9400;}
 
 
 figure {
-  clear: right;
+  clear: right; /* This prevents the figure from colliding with any asides. */
   float:left; /* This prevents the figure from colliding with any asides. */
   width: 100%;
   margin-top: 1em;
