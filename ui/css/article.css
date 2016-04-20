@@ -163,6 +163,10 @@ p {
   transform: scale(1.1); 
 }
 
+  .end-mark-svg path {
+      fill:  #6F9400;
+  }
+
 
 
 /* LINKS  ========================================================================== */
@@ -178,11 +182,17 @@ p a:hover {color: #6F9400;}
 
 
 /* PULLQUOTES  ========================================================================== */
+/* Pullquotes are floated left so that they don't collide with any nearby asides. Asides are 
+   floated right, so when asides and pullquotes come into proximity the latter element will 
+   get pushed further down within the content flow but without causing any gaps in the text
+   column. However, this means that pullquotes and asides will not always appear exactly where
+   they're marked up relative to the text content. */
 
 .pullquote {
   position: relative;
+  float: left; /* prevents collisions with asides */
   /* width: 95%; */
-  margin: 1.33em 0em 1.33em 0em;
+  margin: 0.4em 0em 1.33em 0em;
   border-top: 8px solid;
   border-bottom: 1px solid;
   border-color: #444;
@@ -474,10 +484,16 @@ p a:hover {color: #6F9400;}
 /* FIGURES  ========================================================================== */
 /* Figures are always nested inside the .main-col-container. Therefore all positioning
    and sizing of figures is relative to the positioning of the .main-col-container.    */
+/* Figures are floated left so that they don't collide with any nearby asides. Asides are 
+   floated right, so when asides and figures come into proximity the latter element will 
+   get pushed further down within the content flow but without causing any gaps in the text
+   column. However, this means that figures and asides will not always appear exactly where
+   they're marked up relative to the text content. */
+
 
 figure {
-  /* clear: right; */
-  float:left;
+  clear: right; /* This prevents the figure from colliding with any asides. */
+  float:left; /* This prevents the figure from colliding with any asides. */
   width: 100%;
   margin-top: 1em;
   margin-bottom: 2em;
@@ -580,6 +596,14 @@ figure {
 
 
 /* ASIDES  ========================================================================== */
+/* Asides are floated right. Content blocks that sit within the main text column (pullquotes,
+   figures, and ad boxes) are left. So when asides and these main column blocks come into 
+   proximity whichever is the latter element will get pushed further down within the content 
+   flow but without causing any gaps in the text column. However, this means that asides 
+   will not always appear exactly where they're marked up relative to the text content.
+   Also, if a great number of asides and figures appear close together within the html this
+   could push them below the text and create a gap at the bottom of the article. */
+
 
 
 aside { }
@@ -752,7 +776,7 @@ aside { }
    -->> Start again from scratch using the basic bootstrap button markup, like I already 
    started in the messaging-zone buttons. <<--
    For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. -- AG */
+   some crap together. -- AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -900,10 +924,16 @@ aside { }
 
 
 
-/* BIGBOX AD  ========================================================================== */
+/* AD BOXES  ========================================================================== */
+/* Ad boxes are floated left so that they don't collide with any nearby asides. Asides are 
+   floated right, so when ad boxes and asides come into proximity the latter element will 
+   get pushed further down within the content flow but without causing any gaps in the text
+   column. However, this means that ad boxes and asides will not always appear exactly where
+   they're marked up relative to the text content.  */
 
 .ad-box {
-  margin: 2em 0 1.75em 0;
+  float: left; /* This prevents the ad-block from colliding with any asides. */
+  margin: 1em 0 1.75em 0;
   border-color: inherit;
   border-top: 1px solid #ddd; /* Ad block borders are paler than default border */
   border-bottom: 1px solid #ddd; /* Ad block borders are paler than default border */
@@ -915,7 +945,8 @@ aside { }
         display: block;
         margin: 0em auto 0em auto;
         width: 300px;
-        height: 250px;
+        max-width: 100%;
+        height: auto;
     }
 
      .ad-box:before { 
@@ -1019,7 +1050,7 @@ aside { }
     .messaging-zone .messaging-block {
       border-top: none;
       border-bottom: 1px solid #A8A8A8;
-      padding-top: 1em;
+      padding-top: .75em;
       border-color: inherit;
     }
 
