@@ -4,7 +4,7 @@ This box is shown if the article is part of a series. This box should always be 
 {% endcomment %}
 
 <div class="series-box text-block-container" data-dev-object-descrip="01-molecules/blocks/series-box" data-dev-status="IN-PROGRESS">
-    <a href="#series-listview-link" class="series-badge badge--aside-placement"><img src="{{ site.url }}ui/img/badge-series.svg"></a>
+    {% include 00-atoms/images/series-badge.html series-badge-position="badge--aside-placement" %}
     <h5>Also in this series:</h5>
     <h3 class="title">Portaits from nature’s death row</h3>
     

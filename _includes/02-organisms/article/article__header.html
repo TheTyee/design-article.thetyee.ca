@@ -7,7 +7,9 @@
     <div class="container-fluid">
 
         {% comment %}[% if page.series == "Yes" %]{% endcomment %}
-        <a href="#series-listview-link" class="series-badge badge--headline-placement"><img src="{{ site.url }}ui/img/badge-series.svg"></a>
+
+        {% include 00-atoms/images/series-badge.html series-badge-position="badge--headline-placement" %}
+        
         {% comment %}[% endif %]{% endcomment %}
 
         <h6 class="category-label"><a href="#" data-bind="category">{{ page.meta-category }}</a></h6>
