@@ -500,6 +500,7 @@ figure {
 }
 
     .featured-media figure {
+        clear: none;
         margin-top: 0.25em;
     }
 
