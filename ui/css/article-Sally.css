@@ -19,7 +19,6 @@
   display: none;
 }
 
-
 /* == BOOTSTRAP OVERRIDES == */
 
 .modal-content {
@@ -1037,7 +1036,6 @@ footer .footer__menu {
   -moz-border-radius: 2px;
 }
 
-@media (min-width: 992px) {}
 
 
 /* ===== Popup =======*/
@@ -1055,7 +1053,7 @@ div.ntnl-sgnup-modal {
 .ntnl-sgnup-modal p, .ntnl-sgnup-modal h2 {
   margin-bottom: 24px;
 }
-.ntnl-sgnup-modal h2 {
+.modal-header h2 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
   font-size: 40px;
@@ -1063,6 +1061,16 @@ div.ntnl-sgnup-modal {
   color: #424242;
   overflow:hidden;
 }
+
+.modal-national-logo {
+    position: relative;
+    top: 8px;
+    margin-right: 16px;
+}
+.modal-national-logo {
+    float: left !important;
+}
+
 .ntnl-sgnup-modal small {
   font-size: 72%;
   line-height: 85%;
@@ -1095,12 +1103,28 @@ div.ntnl-sgnup-modal {
   background-color: #EEF0D9;
 }
 
+.modal-header {
+  border-color: transparent;
+}
+.form-checkbox {
+  background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.png');
+  background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.svg'), none;
+  height: 29px;
+  width: 35px;
+  background-repeat: no-repeat;
+  background-position: 0 -23px;
+  display: inline-block;
+}
+.modal-footer {
+  text-align: center;
+}
+
 /*! == National modal transition, positioning and chrome */ 
 /*! Center the modal (except on mobile) and eliminate motion from fade-in transition */
 
 
   /* NEWSLETTER========================================================================== */ 
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) {
     .ntnl-sgnup-modal.modal {
       text-align: center;
     }
@@ -1174,7 +1198,7 @@ div.ntnl-sgnup-modal {
     background-color: #9AAB00;
     border-color: #9AAB00;
     }
-    .ntnl-sgnup-modal .modal-content{
+    .ntnl-sgnup-modal {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     -o-box-shadow: none;
@@ -1191,7 +1215,7 @@ div.ntnl-sgnup-modal {
     .ntnl-sgnup-modal .form-control {
       padding: 0px;
     }
-    .ntnl-sgnup-modal h2 { margin-top: 40px; } 
+    .ntnl-sgnup-modal .modal-header h2 { margin-top: 40px; } 
     .ntnl-sgnup-modal .modal-header { margin-bottom: 0px; } 
     .ntnl-sgnup-modal .modal-footer { margin-top: 0px; } 
     .ntnl-sgnup-modal small a { font-family: "Source Sans Pro",sans-serif; font-style: normal; } 
@@ -1211,12 +1235,14 @@ div.ntnl-sgnup-modal {
       background-repeat: no-repeat;
       background-position: 0 3px;
     }
-    .ntnl-sgnup-modal .radio-buttons {
-      opacity: .01;
+    .radio-buttons {
+      opacity: 0.01;
       height: 1px;
       overflow: hidden;
       display: inline-block;
     }
+
+
 /*! End of modal customization for Tyee National subscription popup */
 /*! ---------------------------------------------------------------------------- */
 }
