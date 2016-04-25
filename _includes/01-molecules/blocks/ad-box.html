@@ -1,11 +1,14 @@
 <!-- Begin 01-molecules/blocks/ad-box -->
-<!-- Set the parameter ad-position="bigbox--1st-position" if this is the top ad position -->
+<!-- Set the parameter ad-position="ad-box--halfpage" if this ad is a half-page in the featured-media section -->
 {% comment %}
-<!-- The top ad position will appear next to the featured image when there's room. Otherwise it will appear within article__body after the 3rd paragraph.
-It gets marked up in both positions and the .bigbox--1st-position display properties determine which one is visible. -->
+<!-- Ad-box is bigbox by default. bigbox ads get marked up within the article__body. They can be included like this: 
+            [% include 01-molecules/blocks/ad-box.html ad-size="ad-box--bigbox" ad-source="VFF-bigbox.gif" %]
+     There is also a half-page ad format. Halfpage ads are marked up within the featured-media section and they
+        are only visible on the widest screens. To include them just change the ad-size parameter:
+            [% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-source="2015CS-TYEEads-buffy-halfpage2.jpg" %] -->
 {% endcomment %}
 
-<aside class="bigbox {{ include.ad-position}}" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">
+<aside class="ad-box {{ include.ad-size}}" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">
 	<img src='{{ site.url}}ui/img/{{ include.ad-source}}'>
 </aside>
 <!-- END 01-molecules/blocks/ad-box -->

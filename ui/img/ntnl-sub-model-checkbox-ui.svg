@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="23px" height="49px"
+	 viewBox="0 0 23 49" enable-background="new 0 0 23 49" xml:space="preserve">
+<title>form-ui</title>
+<desc>Created with Sketch.</desc>
+<g>
+	<path id="Check-Background" sketch:type="MSShapeGroup" fill="#FFFFFF" stroke="#9AAB00" stroke-width="3" d="M3.966,1.853H19
+		c1.104,0,2,0.896,2,2v15.338c0,1.104-0.896,2-2,2H3.966c-1.104,0-2-0.896-2-2V3.853C1.966,2.749,2.862,1.853,3.966,1.853z"/>
+	<path id="Check-Background-2" sketch:type="MSShapeGroup" fill="#FFFFFF" stroke="#9AAB00" stroke-width="3" d="M3.966,27.653H19
+		c1.104,0,2,0.896,2,2V44.99c0,1.105-0.896,2-2,2H3.966c-1.104,0-2-0.895-2-2V29.653C1.966,28.549,2.862,27.653,3.966,27.653z"/>
+	<g transform="translate(9.464684, 9.758034) rotate(-8.000000) translate(-9.464684, -9.758034) " sketch:type="MSShapeGroup">
+		<path id="path-1" fill="#4A4A4A" fill-opacity="0.9113" stroke="#4A4A4A" d="M10.714,16.953l-5.691-4.058l1.698-2.339l3.415,2.67
+			l5.244-7.006L17.656,8L10.714,16.953z"/>
+	</g>
+	<g>
+		<path id="path-1_1_" fill="none" d="M9.998,16.798l-5.071-4.811l2.007-2.08l3.01,3.12l6.167-6.208l2.008,2.08L9.998,16.798z"/>
+	</g>
+</g>
+</svg>
