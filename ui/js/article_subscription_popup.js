@@ -2,10 +2,6 @@
 
 $(document).ready(function(){
 
-Cookies.set('sally', 'true');
-//fire modal
-//$('#modalSub').modal('show');
-
 
 var queryString = window.location.href;
 queryString = URI.parse(queryString); 
@@ -42,14 +38,6 @@ if ( userDoesntWantSubOffer === false  ) {
         }
     }
 }
-
-
-
-
-
-
-
-
 
 
 function showPopup() {
