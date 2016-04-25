@@ -603,14 +603,16 @@ figure {
    flow but without causing any gaps in the text column. However, this means that asides 
    will not always appear exactly where they're marked up relative to the text content.
    Also, if a great number of asides and figures appear close together within the html this
-   could push them below the text and create a gap at the bottom of the article. */
+   could push them below the text and create a gap at the bottom of the article.
+   By default asides are not displayed in views narrower than 500px. */
 
 
 
 aside { }
 
     .aside {
-        display: none; /* HIDE ASIDES AT SMALLEST VIEWPORTS & NARROW PHONES */
+        display: none; /* HIDE ASIDES AT SMALLEST VIEWPORTS & NARROW PHONES
+        !Use :has pseudo-class to display asides that contain essential story content! */
         clear: right;
         position: relative;
         width: 43%;
@@ -618,6 +620,11 @@ aside { }
         padding: 0.6em 0 0em 2em; /* Aligns asides flush right inside article__body */
         margin-top: 1em;
         margin-bottom: 2em;
+    }
+
+    .aside:has(> img) { /* Shows asides that contain img child element. 
+    (Requires jquery, polyfill.js and this: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/ )  */
+        display: block;
     }
     
     /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
