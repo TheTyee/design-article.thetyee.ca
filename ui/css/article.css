@@ -1198,7 +1198,7 @@ label.valid {
     rules due to its dual presence within asides and within the main text column)  */
 
 .text-block-container {
-    margin-top: 0em;
+    margin-top: 1em;
     border-top: 8px solid;
     border-bottom: 1px solid;
     border-color: #444;
