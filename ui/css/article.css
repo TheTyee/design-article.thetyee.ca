@@ -1299,7 +1299,8 @@ label.valid {
     }
 
     .presents-box li a {
-        text-transform: capitalize; 
+        text-transform: capitalize;
+        font-weight: 700;
     }
 
     .presents-box .arrow-svg {
@@ -1349,6 +1350,12 @@ label.valid {
         margin-top: .5em;
         transform: scale(.8);
     }
+
+        .badge--aside-placement--presents {
+            left: calc(100% / 2 - 2.5em);
+            top: -2.65rem;
+            transform: scale(.88);
+        }
         
          /* BREAKPOINT: 600px // Make headline series badge bigger */
         @media screen and (min-width: 500px) {
