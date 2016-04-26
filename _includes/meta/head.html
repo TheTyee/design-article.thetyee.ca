@@ -74,6 +74,30 @@ summary" />
     
     <script type="text/javascript" src="//use.typekit.net/uky8tja.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') + 
+            '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+    <script type='text/javascript'>
+    googletag.cmd.push(function() {
+        var mappingBox = googletag.sizeMapping().
+            addSize([0,0 ], [300, 600]).
+            build();
 
+        googletag.defineSlot('/1001962/RD-Box-A', [[300, 600]], 'gpt-rd-box').defineSizeMapping(mappingBox).addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+    </script>
     <!-- /JS Head -->
 </head>
