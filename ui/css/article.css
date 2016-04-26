@@ -1198,6 +1198,7 @@ label.valid {
     rules due to its dual presence within asides and within the main text column)  */
 
 .text-block-container {
+    position: relative; /* required for the absolute positioning of the badge. */
     margin-top: 1em;
     border-top: 8px solid;
     border-bottom: 1px solid;
@@ -1270,8 +1271,6 @@ label.valid {
     added to the article headline. */
 
 .series-box {
-    position: relative; /* required for the absolute positioning of the badge. 
-                  might makes sense to move this style to .text-block-container */
     margin-top: -1em; /* aligns the box's top-border with the first line the
                          article's body text. */
 }
@@ -1284,8 +1283,6 @@ label.valid {
     added to the article headline. */
 
 .related-event-box {
-  position: relative; /* required for the absolute positioning of the badge. 
-                  might makes sense to move this style to .text-block-container */
 }
 
 
