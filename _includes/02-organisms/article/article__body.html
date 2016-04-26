@@ -53,7 +53,12 @@
                 {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/video" figure-caption="This is a caption describing a video inside a figure. Such railroad! Very excitement!" media-credit="Video by Casey Jones" content-source="https://player.vimeo.com/video/153048550" %}
 
 
-                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html custom-parag-content="Presents-box follows." %}
+
+                <!--An ASIDE containing a PRESENTS BOX. -->
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/presents-box" content-source="" aside-caption=false media-credit=false aside-class="" %}
+
+
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Blockquote follows." %}
 
 

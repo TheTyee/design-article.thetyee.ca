@@ -713,7 +713,7 @@ aside { }
       height: 2.3em;
       width: auto;
       background-color: none;
-      border-radius: 50%; 
+      border-radius: 50%;
     }
 
     .author-info__date {
@@ -732,7 +732,7 @@ aside { }
     .author-info div {
       position: relative;
       max-height: 4em;
-      overflow:hidden; 
+      overflow:hidden;
       padding-left: 0.75em;
     }
 
@@ -1251,12 +1251,14 @@ label.valid {
     }
 
     .text-block-container ul {
-          font-size: .8em;
           line-height: 1.25rem;
-          font-weight: 600;
           list-style: none outside;
           padding-left: 0em;
-          margin-left: ;
+    }
+
+    .text-block-container ul a {
+          font-size: .8em;
+          font-weight: 600;
     }
 
     .text-block-container ul li {
@@ -1282,10 +1284,48 @@ label.valid {
     identifying badge gets positioned via the .badge abstraction. The badge also gets 
     added to the article headline. */
 
-.related-event-box {
-}
+.related-event-box { }
 
 
+
+/* PRESENTS-BOX  ================================================================
+    This object mostly just employs the default text-block-container style. An 
+    identifying badge gets positioned via the .badge abstraction. */
+
+.presents-box { }
+    
+    .presents-box h5 {
+        margin-bottom: 1em;
+    }
+
+    .presents-box li a {
+        text-transform: capitalize; 
+    }
+
+    .presents-box .arrow-svg {
+        height: .95em;
+        margin-top: .125em;
+    }
+
+
+    .presents-box li {
+        padding-top: .66em;
+        border-top: 1px solid; 
+    }
+
+    .presents-box p {
+        /* display: inline; */
+    }
+
+    .presents-box li img {
+        float: left;
+        margin-top: 0.3em;
+        margin-bottom: 0em;
+        padding-right: .75em;
+        height: auto;
+        width: 40%;
+        background-color: none;
+    }
 
 /* BADGE  ================================================================
     Use this to position a badge on an aside box or on the article headline  */
