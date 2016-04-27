@@ -112,8 +112,10 @@
                 {% include 00-atoms/text/paragraph.html custom-parag-content="" %}
 
 
-                <!--A SLIDESHOW. -->
-                {% comment %} {% include 02-organisms/media/slideshow.html %} {% endcomment %}
+                <!--Here's a FIGURE containing a SLIDESHOW. 
+                    All media within an article body should be called from within a figure object or an aside. -->
+                {% include 01-molecules/blocks/figure.html figure-contents="01-molecules/media/slideshow" %}
+
 
 
                 {% include 00-atoms/text/paragraph.html %}
