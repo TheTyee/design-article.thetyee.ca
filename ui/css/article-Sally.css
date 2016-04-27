@@ -225,11 +225,14 @@
   font-weight: bold;
   color: #555;
 }
+
 .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form {
+  max-width: 1200px;
   margin: 18px 0px 0px 0px;
   border: none;
   border-radius: 0px;
 }
+
 .search-block {
   overflow: hidden;
   padding: 12px 10px 12px 0px;
