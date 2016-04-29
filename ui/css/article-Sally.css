@@ -11,6 +11,12 @@
   background-color: #fff;
   width: 100%;
 }
+
+
+
+
+
+
 .show {
   display: block;
 }
@@ -18,6 +24,27 @@
 .hide {
   display: none;
 }
+
+
+
+@media (min-width: 992px) {
+
+  .site__header{
+  background-color: #fff;
+  width: 100%;
+  border-bottom-style: double;
+  border-bottom-color: #949594;
+  border-top: 1px solid #949594;
+  margin-top: 2px;
+  height: 79px;
+  margin-bottom: 60px;
+}
+
+
+
+}
+
+
 
 /* == BOOTSTRAP OVERRIDES == */
 
@@ -61,7 +88,8 @@
 @media (min-width: 992px) {
     /* BOOTSTRAP OVERRIDES */
     /* == Overrides rounded corners, padding and default Bootstrap borders on nav == */
-    .navbar {
+   
+     .navbar {
       border-radius: 0px;
       background-color: #fff;
     }
@@ -83,6 +111,10 @@
     }
     .navbar-collapse {
       padding: 0px;
+    }
+
+    .primary-nav, .menu {
+      background-color: transparent;
     }
     /* == Turns off relative positioning so the dropdowns will align on the left === */
     .nav >li {
@@ -267,15 +299,10 @@
 
 /* WIDE NAV ========================================================================== */ 
 @media (min-width: 992px) {
-  .menu {
-    border-top: 1px solid  #949594;
-    margin-top: 2px;
-  }
   .menu_left-nav-wrap, .menu_right-nav-wrap {
     padding: 0px;
     position: static;
-    border-bottom-style: double;
-    border-bottom-color: #949594;
+
     width: 37.5%;
     float: left;
   }
@@ -316,6 +343,7 @@
   .menu__logo {
     padding: 0px;
     position: static;
+    background-color: #fff;
   }
   .menu__logo li {
     width: 100%;
