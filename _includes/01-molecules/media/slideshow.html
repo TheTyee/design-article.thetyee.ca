@@ -1,11 +1,20 @@
 <!-- begin 01-molecules/media/slideshow -->
+{% comment %}
+-----------------------------------------------------------------------------------------
+This is a restyled bootstrap carousel. https://getbootstrap.com/javascript/#carousel
+-----------------------------------------------------------------------------------------
+NOTE: If you want to use multiple carousels on one page you need to assign unique IDs. 
+Carousels require the use of an id on the outermost container (the .carousel) for 
+carousel controls to function properly. When adding multiple carousels, or when changing 
+a carousel's id, be sure to update the relevant controls.
+{% endcomment %}
 
-<div id="slide-carousel" class="carousel slide" data-ride="carousel">
+<div id="slide-carousel" class="carousel slide" data-ride="carousel" data-interval=false>
 
   {% comment %}
   The indicators are removed to prevent clutter, esp. as some slideshows will have 20+ slides.
   May need to put the indicators back in to aid in slide navigation.
-  
+
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#slide-carousel" data-slide-to="0" class="active"></li>
@@ -60,5 +69,5 @@
 
 </div>
 
-<!-- END 02-organisms/media/slideshow -->
+<!-- END 01-molecules/media/slideshow -->
 
