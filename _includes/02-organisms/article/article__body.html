@@ -56,7 +56,7 @@
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Presents-box follows." %}
 
                 <!--An ASIDE containing a PRESENTS BOX. -->
-                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/presents-box" content-source="" aside-caption=false media-credit=false aside-class="" %}
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/presents-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" %}
 
 
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Blockquote follows." %}
@@ -109,15 +109,33 @@
 
 
                 {% include 00-atoms/text/paragraph.html %}
-                {% include 00-atoms/text/paragraph.html custom-parag-content="" %}
+                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html custom-parag-content="Figure with slideshow follows." %}
 
 
-                <!--A SLIDESHOW. -->
-                {% comment %} {% include 02-organisms/media/slideshow.html %} {% endcomment %}
+                <!--Here's a FIGURE containing a SLIDESHOW. 
+                    All media within an article body should be called from within a figure object or an aside. -->
+                {% include 01-molecules/blocks/figure.html figure-contents="01-molecules/media/slideshow" %}
+
 
 
                 {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html custom-parag-content="XL Figure with slideshow follows." %}
 
+                <!--Here's an XL FIGURE containing a SLIDESHOW. 
+                    All media within an article body should be called from within a figure object or an aside. -->
+                {% include 01-molecules/blocks/figure.html figure-class="figure--xl" figure-contents="01-molecules/media/slideshow" %}
+
+                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html custom-parag-content="XXL Figure with slideshow follows." %}
+
+                <!--Here's an XXL FIGURE containing a SLIDESHOW. 
+                    All media within an article body should be called from within a figure object or an aside. -->
+                {% include 01-molecules/blocks/figure.html figure-class="figure--xxl" figure-contents="01-molecules/media/slideshow" %}
+
+                {% include 00-atoms/text/paragraph.html %}
+                {% include 00-atoms/text/paragraph.html %}
 
                 <!--SUBHEADER -->
                 {% include 00-atoms/text/article-subheader.html subheader-content="Here’s a subheader that’s somewhat longer than average" %}

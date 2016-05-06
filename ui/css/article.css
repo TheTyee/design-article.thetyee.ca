@@ -171,7 +171,7 @@ p {
 
 /* LINKS  ========================================================================== */
 
-a, a:link, a:visited {color: #82AD00}
+a, a:link, a:visited {color: #82AD00;}
 a:hover {color: #6F9400;}
 a:active {color: #82AD00;}
 
@@ -276,6 +276,9 @@ p a:hover {color: #6F9400;}
     font-size: 0.777em;
     font-weight: 700;
     line-height: 1.5em;
+    color: #404040;
+    text-align: left;
+    text-shadow: none;
 }
 
     .caption__media--credit {
@@ -1207,7 +1210,6 @@ label.valid {
     padding-right: 0;
     padding-bottom: 0.5em;
     background-color: white;
-    
 }
 
     .text-block-container h3 {
@@ -1290,9 +1292,20 @@ label.valid {
 
 /* PRESENTS-BOX  ================================================================
     This object mostly just employs the default text-block-container style. An 
-    identifying badge gets positioned via the .badge abstraction. */
+    identifying badge gets positioned via the .badge abstraction.
+    Similar to the fact, the presents-box appears at the bottom of the article by 
+    default, but appears in the sidebar in wider viewports. This is done by changing 
+    the .presents-box display property based on location/context and viewport width. 
+    The additional .hide-on-narrow-vp class gets applied to the containing 
+    <aside> because it needs to get hidden earlier than other asides do. (This ugly 
+    class could probably be eliminated if asides were simply a class rather than a 
+    container, or if an aside's margins were applied to it's contents instead of the 
+    container itself.) 
+     */
 
-.presents-box { }
+.presents-box { 
+    padding-bottom: 0;
+}
     
     .presents-box h5 {
         margin-bottom: 1em;
@@ -1325,8 +1338,41 @@ label.valid {
         padding-right: .75em;
         height: auto;
         width: 40%;
+        max-width: 6em;
         background-color: none;
     }
+
+.presents-col-container {
+    margin-top: -1.5em;
+    margin-bottom: 3em;
+}
+
+    .presents-col-container .presents-box h5 {
+        margin-top: 1.75em;
+    }
+
+    .presents-col-container .presents-box li {
+        min-height: 4.75em;
+    }
+
+
+    /*  IN WIDER VIEWPORTS: 
+        - don't show the fact-box at the bottom of the article-body
+        - show the aside containing the fact-bax (.hide-on-narrow-vp)
+        - show the factbox within an aside */
+    @media screen and (min-width: 939px) {
+
+        .presents-box {
+            display: none;
+        }
+
+        .aside .presents-box {
+            display: block;
+        }
+
+    }
+
+
 
 /* BADGE  ================================================================
     Use this to position a badge on an aside box or on the article headline  */
@@ -1403,10 +1449,10 @@ label.valid {
     in the sidebar in wider viewports. This is done by changing the .fact-box 
     display property based on location/context and viewport width. 
     The additional .hide-on-narrow-vp class gets applied to the containing 
-    <aside> so that its margin doesn't cut into the the text column when
-    the fact box is hidden. (This ugly class could probably be eliminated if 
-    asides were simply a class rather than a container, or if an aside's 
-    margins were applied to it's contents instead of the container itself.) */
+    <aside> because it needs to get hidden earlier than other asides do. (This ugly 
+    class could probably be eliminated if asides were simply a class rather than a 
+    container, or if an aside's margins were applied to it's contents instead of the 
+    container itself.) */
 
 
 .fact-box {
@@ -1489,6 +1535,55 @@ label.valid {
           display: none;
         }
     }
+
+
+
+/* SLIDE CAROUSEL  ========================================================================== 
+    We use the standard bootstrap slide carousel. Here's some custom styling. */
+
+.carousel { }
+    
+    .carousel img {
+        width: 100%;
+    }
+
+    .carousel-control {
+        font-size: 2.5em;
+        color: #fff !important; /* overides the global link hover colours */
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    }
+
+
+    .carousel-indicators {
+        bottom: 0px;
+        margin-bottom: 0;
+    }
+
+    .carousel-control.right, .carousel-control.left {
+        background-image: none;
+    }
+
+    .carousel-control .glyphicon-chevron-right {
+        right: 20%;
+        top: 45%;
+        font-size: 1em;
+    }
+
+    .carousel-control .glyphicon-chevron-left {
+        left: 20%;
+        top: 45%;
+        font-size: 1em;
+    }
+
+    .carousel-caption {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: 0px;
+        width: inherit;
+        background: none;
+    }
+
 
 
 

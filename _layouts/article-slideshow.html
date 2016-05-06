@@ -23,9 +23,19 @@
 
     {% include 02-organisms/article/article__header.html %}  
 
-    {% include 02-organisms/article/featured-media.html %}   <!-- NEEDS WORK add full-width format -->
+<section class="featured-media" data-dev-object-descrip="02-organisms/article/featured-media" data-dev-status="IN-PROGRESS">
+
+    <div class="container-fluid">
+
+        {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-source="2015CS-TYEEads-buffy-halfpage2.jpg" %}
+
+        {% include 01-molecules/blocks/figure.html figure-contents="01-molecules/media/slideshow" %}
+
+    </div> <!--END .container-fluid-->
+
+</section>
     
-    {% include 02-organisms/article/article__body.html %}    
+    {% include 02-organisms/article/article__body-slideshow.html %}    
     
 
     <!-- =============================== -->
