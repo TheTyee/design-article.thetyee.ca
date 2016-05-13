@@ -228,7 +228,7 @@
 
 .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form {
   max-width: 1200px;
-  margin: 18px 0px 0px 0px;
+  margin: 0px;
   border: none;
   border-radius: 0px;
 }
