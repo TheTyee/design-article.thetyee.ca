@@ -218,6 +218,7 @@
 }
 .menu__search--wrapper {
   width: 100vw;
+  max-width: 1200px;
 }
 .search-block .dropdown-toggle {
   text-transform: uppercase;
