@@ -19,13 +19,15 @@ You can also specify a caption string, media credit and a content-source paramet
 If the aside contains a related-story object then you must set the parameter related-story-title. This will get passed on to the related-story object. For example:
     [% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" related-story-title="A Tyee Kinder Morgan Reader" content-source="/ui/img/KinderMorgExpansion_600px.jpg" %]
 
+If the aside contains a fact-box then you must set a fact-box__content parameter and a fact-box__title parameter (if your fact-box needs a title). fact-box__content should be written in html (e.g. text should be within <p> tags), but all quote marks must be escaped like this: \" otherwise Jeckyll won't compile properly.
+
 Sometimes the content of an aside is too big or too long to float next to paragraph text in narrow viewports and is intended to display below the article (as in the case of a fact-box). In this case the aside should receive the class "hide-on-narrow-vp", like this:
 	[% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/fact-box" aside-class="hide-on-narrow-vp" %]
 -->
 {% endcomment %}
 
 <aside class="aside {{ include.aside-class }}" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
-	{% include {{ include.aside-contents }}.html content-source=include.content-source related-story-title=include.related-story-title %}
+	{% include {{ include.aside-contents }}.html content-source=include.content-source related-story-title=include.related-story-title fact-box__title=include.fact-box__title fact-box__content=include.fact-box__content %}
 	
 	{% if include.aside-caption or include.media-credit %}
 		<div class="caption">{{ include.aside-caption }} {% comment %}(Aside content is {{ include.aside-contents }}. Content source is {{ include.content-source }}){% endcomment %} <span class="caption__media--credit"> {{ include.media-credit }}</span></div>
