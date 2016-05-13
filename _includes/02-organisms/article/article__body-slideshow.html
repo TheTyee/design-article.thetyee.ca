@@ -8,6 +8,9 @@
         <!--An ASIDE containing a SERIES BOX. -->
         {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/series-box" content-source="" aside-caption=false media-credit=false aside-class="" %}
 
+        <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" fact-box__content="<p>This series was produced by Tyee Solutions Society. It was made possible through the financial support of Simon Fraser University's VanCity Office of Community Engagement. This support for this project does not necessarily imply endorsement of the findings or content of this report. TSS funders neither influence nor endorse the particular content of TSS reporting. Other publications wishing to publish this story or other TSS produced articles, please see this website for contacts and information.</p>" %}
+
         {% include 01-molecules/text/lead-in-text.html lead-in-content="At one point, Ken Lyotier was literally sleeping on the streets. It was the eighties, and Lyotier was living in the Downtown Eastside -- Skid Row it was called then -- and struggling with alcohol. His makeshift tent of tarp and pallet barely kept out the winter rains under the dead-end that was the north end of Main Street." %}
 
         <p>At other times he "bounced around" between the single-resident occupancy (SRO) hotels that dot the neighbourhood. "The conditions in the hotels were just appalling -- they still are," he says, sitting on a stool in his home of nearly three decades in the Four Sisters Co-op on Powell Street. "There was no heat, no light, no running water in the wintertime, broken windows, people dying in bathtubs."</p>
@@ -104,6 +107,10 @@
 <p data-dev-object-descrip="molecules/text/paragraph-with-end-mark" data-dev-status="IN-PROGRESS">
 "Where it started for people like Jim [Green]," he recalls, "was that housing is a right and we need to see it as a right. It's a psychological shift that happens -- a spiritual shift." {% include 00-atoms/images/end-mark-icon.html %}
 </p>
+
+                <!--FACT-BOX will display here at bottom of article in narrow viewports -->
+                <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. This ID must not appear in the sidebar fact-box html! -->
+                {% include 01-molecules/blocks/Fact-box.html fact-box__content="<p>This series was produced by Tyee Solutions Society. It was made possible through the financial support of Simon Fraser University's VanCity Office of Community Engagement. This support for this project does not necessarily imply endorsement of the findings or content of this report. TSS funders neither influence nor endorse the particular content of TSS reporting. Other publications wishing to publish this story or other TSS produced articles, please see this website for contacts and information.</p>" %}
 
     </div> <!--END .container-fluid-->
 
