@@ -1210,7 +1210,6 @@ label.valid {
     padding-right: 0;
     padding-bottom: 0.5em;
     background-color: white;
-    
 }
 
     .text-block-container h3 {
@@ -1293,9 +1292,20 @@ label.valid {
 
 /* PRESENTS-BOX  ================================================================
     This object mostly just employs the default text-block-container style. An 
-    identifying badge gets positioned via the .badge abstraction. */
+    identifying badge gets positioned via the .badge abstraction.
+    Similar to the fact, the presents-box appears at the bottom of the article by 
+    default, but appears in the sidebar in wider viewports. This is done by changing 
+    the .presents-box display property based on location/context and viewport width. 
+    The additional .hide-on-narrow-vp class gets applied to the containing 
+    <aside> because it needs to get hidden earlier than other asides do. (This ugly 
+    class could probably be eliminated if asides were simply a class rather than a 
+    container, or if an aside's margins were applied to it's contents instead of the 
+    container itself.) 
+     */
 
-.presents-box { }
+.presents-box { 
+    padding-bottom: 0;
+}
     
     .presents-box h5 {
         margin-bottom: 1em;
@@ -1328,8 +1338,41 @@ label.valid {
         padding-right: .75em;
         height: auto;
         width: 40%;
+        max-width: 6em;
         background-color: none;
     }
+
+.presents-col-container {
+    margin-top: -1.5em;
+    margin-bottom: 3em;
+}
+
+    .presents-col-container .presents-box h5 {
+        margin-top: 1.75em;
+    }
+
+    .presents-col-container .presents-box li {
+        min-height: 4.75em;
+    }
+
+
+    /*  IN WIDER VIEWPORTS: 
+        - don't show the fact-box at the bottom of the article-body
+        - show the aside containing the fact-bax (.hide-on-narrow-vp)
+        - show the factbox within an aside */
+    @media screen and (min-width: 939px) {
+
+        .presents-box {
+            display: none;
+        }
+
+        .aside .presents-box {
+            display: block;
+        }
+
+    }
+
+
 
 /* BADGE  ================================================================
     Use this to position a badge on an aside box or on the article headline  */
@@ -1406,10 +1449,10 @@ label.valid {
     in the sidebar in wider viewports. This is done by changing the .fact-box 
     display property based on location/context and viewport width. 
     The additional .hide-on-narrow-vp class gets applied to the containing 
-    <aside> so that its margin doesn't cut into the the text column when
-    the fact box is hidden. (This ugly class could probably be eliminated if 
-    asides were simply a class rather than a container, or if an aside's 
-    margins were applied to it's contents instead of the container itself.) */
+    <aside> because it needs to get hidden earlier than other asides do. (This ugly 
+    class could probably be eliminated if asides were simply a class rather than a 
+    container, or if an aside's margins were applied to it's contents instead of the 
+    container itself.) */
 
 
 .fact-box {
