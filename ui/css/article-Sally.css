@@ -260,7 +260,10 @@
   .menu__left-nav li ul li, .menu__right-nav li ul li {
     border-bottom: none;
   }
-  .menu__join {
+}
+
+@media (min-width: 992px) {
+   .menu__join {
     padding-bottom: 12px!important;
   }
 }
