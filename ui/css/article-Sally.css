@@ -426,6 +426,12 @@
   }
 }
 
+
+@media (max-width: 990px ){
+    .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form { margin: 18px 0 0 0;
+	}
+}
+
 @media (min-width: 1200px) {
 
   .primary-nav {
