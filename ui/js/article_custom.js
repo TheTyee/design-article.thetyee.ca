@@ -22,9 +22,10 @@
 
         //Moves focus directly to search field when user begins typing
         $('.search-block').on('show.bs.dropdown', function(event) {
-            $(document).keydown(function(){
-                $('input#menu__search--input').focus();
-            });
+           
+		   setTimeout(function(){
+ 				$('input#menu__search--input').focus();
+				}, 500);
         });
 
 
@@ -86,8 +87,16 @@
             //for each item from the API, plug info into a story object
             $.each(recentItems, function(key, value){
 
-                //Format the API img uri's so they don't point at cachefly
                 latestStoryImage = value._source.related_media[0].uri;
+				
+				// get the smallest image > 200px available
+				var bestWidth = value._source.related_media[0].width;
+				for (var key in value._source.related_media[0].thumbnails) {
+				  var thumb = value._source.related_media[0].thumbnails[key];
+					if (thumb.width >= 200 && thumb.width <= bestWidth) { bestWidth = thumb.width; latestStoryImage = thumb.uri;  }
+				}
+				
+                //Format the API img uri's so they don't point at cachefly
                 latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
 
                 //Use moment.js to format the date

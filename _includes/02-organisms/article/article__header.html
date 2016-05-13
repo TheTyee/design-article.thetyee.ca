@@ -6,11 +6,11 @@
 
     <div class="container-fluid">
 
-        {% comment %}[% if page.series == "Yes" %]{% endcomment %}
+        {% if page.series == true %}
 
         {% include 00-atoms/images/series-badge.html series-badge-position="badge--headline-placement" %}
         
-        {% comment %}[% endif %]{% endcomment %}
+        {% endif %}
 
         <h6 class="category-label"><a href="#" data-bind="category">{{ page.meta-category }}</a></h6>
 

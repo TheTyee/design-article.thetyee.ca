@@ -218,6 +218,7 @@
 }
 .menu__search--wrapper {
   width: 100vw;
+  max-width: 1200px;
 }
 .search-block .dropdown-toggle {
   text-transform: uppercase;
@@ -228,7 +229,7 @@
 
 .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form {
   max-width: 1200px;
-  margin: 18px 0px 0px 0px;
+  margin: 0px;
   border: none;
   border-radius: 0px;
 }
@@ -426,6 +427,12 @@
    .menu__logo img{
     top: 16px;
   }
+}
+
+
+@media (max-width: 990px ){
+    .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form { margin: 18px 0 0 0;
+	}
 }
 
 @media (min-width: 1200px) {
