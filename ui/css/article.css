@@ -150,6 +150,7 @@ p {
 .dollar-heart-svg {
    height: 1.25em;
    vertical-align: bottom;
+   margin-right: -.2em;
 }
 
 
@@ -868,7 +869,6 @@ aside { }
             .btn-join span {
                 display: inline-block;
                 vertical-align: top;
-                margin-left: -0.2em;
                 padding-top: .1em;
                 font-weight: 700
             }
