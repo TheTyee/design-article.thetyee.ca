@@ -630,6 +630,7 @@ aside { }
     (Requires jquery, polyfill.js and this: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/ )  */
         display: block;
     }
+
     
     /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
     @media screen and (min-width: 500px)              
@@ -1485,11 +1486,34 @@ label.valid {
     .aside .fact-box {
         display: none;
     }
+
+
+    /*  FACT-BOX--EXPLAINER 
+        Explainers provide secondary infomation about a story. E.g.: sponsorship credit.
+        */
+    .fact-box--explainer {
+        padding-top: 1em; 
+        font-style: italic;
+    }
+
+    .fact-box--explainer h4 {
+        display: none; /* explainers never have headers */
+    }
+
+        /*  Bring explainers into closer proximity with the preceding series-box */
+        .aside .fact-box--explainer {
+            margin-top: -2em !important;
+            border: none !important;
+        }
+
+
     /*  In default narrow views show the fact-box anchor link text (the html for this should 
         be placed inside article body text. */
     .fact-box__anchor-link {
       display: inline;
     }
+
+
 
     .hide-on-narrow-vp {
       display: none;
@@ -1535,6 +1559,7 @@ label.valid {
           display: none;
         }
     }
+
 
 
 
