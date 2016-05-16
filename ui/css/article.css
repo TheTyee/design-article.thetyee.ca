@@ -1487,6 +1487,19 @@ label.valid {
         display: none;
     }
 
+
+    /*  FACT-BOX--EXPLAINER 
+        Explainers provide secondary infomation about a story. E.g.: sponsorship credit.
+        */
+    .fact-box--explainer {
+        padding-top: 1em; 
+        font-style: italic;
+    }
+
+    .fact-box--explainer h4 {
+        display: none; /* explainers never have headers */
+    }
+
         /*  Bring explainers into closer proximity with the preceding series-box */
         .aside .fact-box--explainer {
             margin-top: -2em !important;
@@ -1500,14 +1513,6 @@ label.valid {
       display: inline;
     }
 
-    .fact-box--explainer {
-        padding-top: 1em;
-        font-style: italic;
-    }
-
-    .fact-box--explainer h4 {
-        display: none;
-    }
 
 
     .hide-on-narrow-vp {
