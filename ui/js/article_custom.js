@@ -24,14 +24,14 @@ var menuheight = 0;
 			menuheight = $(".menu__latest-stories .dropdown-menu").outerHeight();
 			$(".article__header").animate({
 				marginTop: "+=" +menuheight
-				 }, 500, function() {
+				 }, 250, function() {
   			  // Animation complete.
  				 });
 		});
 		$('.menu__latest-stories').on('hide.bs.dropdown', function(event) {
 				$(".article__header").animate({
 				marginTop: "-=" +menuheight
-				 }, 500, function() {
+				 }, 250, function() {
   			  // Animation complete.
  				 });
 		
