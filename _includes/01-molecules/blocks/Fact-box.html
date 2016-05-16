@@ -12,18 +12,18 @@
     ... as seen in the atom fact-box-anchor-link.html which can be embedded into the paragraph.html atom.
     This link will be set to display:none in wider viewports. 
     There is empty <span id="fact-box-1"></span> at the bottom of the article__body to serve as the destination anchor for this link. (Assign #fact-box-1 to the fact-box object itself wouldn't work because the html for this object appears in 2 locations on the page.)
+    
+    ++++++++++++++++++++++++++++++++
+    You must set a fact-box__content parameter and a fact-box__title parameter (if your fact-box needs a title). fact-box__content should be written in html (e.g. text should be within <p> tags), but all quote marks must be escaped like this: \" otherwise Jeckyll won't compile properly.
+    ++++++++++++++++++++++++++++++++
 -->
 {% endcomment %}
 
 <div class="fact-box" data-dev-object-descrip="01-molecules/blocks/fact-box" data-dev-status="IN-PROGRESS">
 
-	<h4 class="title">UNDERGROUND GAS STORAGE: A LEGACY OF LEAKS</h4>
+    <h4 class="title">{{ include.fact-box__title }}</h4>
         
-    <p>The gas storage industry, now 90 years old, has experienced lots of gas migration problems and its facilities "can create a serious risk of explosions and risks especially when located in urban settings," say the petroleum experts who authored <em>Gas Migration</em>.</p>
-    <p>Leaks occur through faults, wells and cracks in cap rock. Operators <a href="http://www.co2captureproject.org/viewresult.php?downid=190">admit</a> that during the 50-year life of any operation, methane will leak and erupt into aquifers, soils and the atmosphere. </p>
-    <p>The following incidents illustrate that the Aliso Canyon disaster represents just one of the hazards of injecting and storing gases underground. </p>
-    <p><a href="http://www.chron.com/news/houston-texas/article/Valve-failure-sends-flames-into-sky-at-Moss-Bluff-1969876.php">Moss Bluff, Texas, 2004:</a> An explosion at this facility north of Houston lit up the sky with 200-foot flames and damaged a wellhead. As a result, the facility released nearly $30-million worth of methane into the atmosphere. More than 100 local residents were evacuated.</p>
-    <p>-- <em>Andrew Nikiforuk</em></p>
+    {{ include.fact-box__content }}
 
 </div>
 
