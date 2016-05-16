@@ -15,9 +15,30 @@
                     "click":             function() { this.closable = true; },
                     "hide.bs.dropdown":  function() { return this.closable; }
             });
-        }
+        } else {
 
+// this function not related to above just piggybacking on the if statement. It pushes the main content down when latest stories is open
 
+var menuheight = 0;
+		$('.menu__latest-stories').on('show.bs.dropdown', function(event) {
+			menuheight = $(".menu__latest-stories .dropdown-menu").outerHeight();
+			$(".article__header").animate({
+				marginTop: "+=" +menuheight
+				 }, 500, function() {
+  			  // Animation complete.
+ 				 });
+		});
+		$('.menu__latest-stories').on('hide.bs.dropdown', function(event) {
+				$(".article__header").animate({
+				marginTop: "-=" +menuheight
+				 }, 500, function() {
+  			  // Animation complete.
+ 				 });
+		
+			});
+		
+		
+		}
 
 
         //Moves focus directly to search field when user begins typing
@@ -28,6 +49,7 @@
 				}, 500);
         });
 
+		
 
         //LATEST STORIES
 
