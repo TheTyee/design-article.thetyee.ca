@@ -136,6 +136,11 @@ p {
 
 }
 
+/* EDITOR'S NOTE */
+.editors-note {
+    font-style: italic;
+    font-weight: 300;
+}
 
 
 /* ARROW ICON atom */
@@ -243,6 +248,8 @@ p a:hover {color: #6F9400;}
     } */
 
 
+
+/* LEAD-IN WITH DROPCAP  ============================================================= */
 
 .lead-in {
     overflow: hidden;
