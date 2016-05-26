@@ -7,9 +7,11 @@
     <div class="container-fluid">
 
         {% if page.series == true %}
-
         {% include 00-atoms/images/series-badge.html series-badge-position="badge--headline-placement" %}
-        
+        {% endif %}
+
+        {% if page.presents == true %}
+        {% include 00-atoms/images/presents-badge.html badge-position="badge--headline-placement" %}
         {% endif %}
 
         <h6 class="category-label"><a href="#" data-bind="category">{{ page.meta-category }}</a></h6>
