@@ -1225,6 +1225,10 @@ label.valid {
       line-height: 1.4em;
     }
 
+        .story-item__description:first-child {
+          padding-top: .25em;
+        }
+
         .story-item__description h5 {
           margin:.4em 0 .65em;
           padding: 0;
