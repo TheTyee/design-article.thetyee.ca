@@ -124,15 +124,38 @@ p {
 
 /* Tyee Presents label */
 h6.tyee-presents-label {
-    width: 100%;
+    display: block;
+    float: none;
+    overflow: hidden;
     border-bottom: 1px solid #90AD00;
     padding-top: .5em;
     padding-bottom: 0.15em;
+    margin-bottom: 1.5em;
     color: black;
     font-size: .9em;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: .02em;
 }
+
+/* h6.tyee-presents-label a{
+    color: black;
+} */
+
+    /* BREAKPOINT: 1024px // Show asides at viewports wider than 500px */
+    @media screen and (min-width: 1024px)              
+        {
+        h6.tyee-presents-label {
+               display: block;
+               width: 100%;
+        }
+        h6.tyee-presents-label a:before{
+            font-size: .9em;
+            font-weight: 700;
+            letter-spacing: .06em;
+            content:"TYEE PRESENTS: "
+       }
+    }
+
 
 
 /* Modals */
@@ -1202,6 +1225,10 @@ label.valid {
       line-height: 1.4em;
     }
 
+        .story-item__description:first-child {
+          padding-top: .25em;
+        }
+
         .story-item__description h5 {
           margin:.4em 0 .65em;
           padding: 0;
@@ -1410,6 +1437,12 @@ label.valid {
         transform: scale(.8);
     }
 
+        .badge--aside-placement--presents {
+            /* left: calc(100% / 2 - 2.5em);
+            top: -2.65rem;
+            transform: scale(.88); */
+        }
+
     .badge--headline-placement {
         display: block;
         position:relative;
@@ -1419,13 +1452,18 @@ label.valid {
         transform: scale(.8);
     }
 
-        .badge--aside-placement--presents {
-            /* left: calc(100% / 2 - 2.5em);
-            top: -2.65rem;
-            transform: scale(.88); */
-        }
+            .badge--headline-placement--presents {  /* Moves presents badge to align with a stacked h6 category label. */
+                margin-top: 1.55em;
+            }
+
+                /* BREAKPOINT: 557px // Moves presents badge to align with h6 when it no longer breaks across lines */
+                @media screen and (min-width: 576px) {
+                    .badge--headline-placement--presents {
+                        margin-top: .75em;
+                    }
+                }
         
-         /* BREAKPOINT: 600px // Make headline series badge bigger */
+         /* BREAKPOINT: 500px // Make headline series badge bigger */
         @media screen and (min-width: 500px) {
             .badge--headline-placement {
                 transform: scale(.95);
@@ -1440,6 +1478,10 @@ label.valid {
                 margin-left: -5.25em;
                 transform: scale(1.15);
             }
+
+             .badge--headline-placement--presents { /* Aligns presents badge with first letter of headline. */
+                        margin-top: 4.25em; 
+                    }
         }
 
       
@@ -1527,6 +1569,11 @@ label.valid {
             border: none !important;
         }
 
+
+        /*  Adjust explainer position to align with first line of text col when not preceded by a series-box */
+        .aside .fact-box--explainer:first-child {
+            margin-top: -1.5em !important;
+        }
 
     /*  In default narrow views show the fact-box anchor link text (the html for this should 
         be placed inside article body text. */
