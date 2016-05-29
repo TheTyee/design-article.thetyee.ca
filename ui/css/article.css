@@ -1566,6 +1566,11 @@ label.valid {
         }
 
 
+        /*  Adjust explainer position to align with first line of text col when not preceded by a series-box */
+        .aside .fact-box--explainer:first-child {
+            margin-top: -1.5em !important;
+        }
+
     /*  In default narrow views show the fact-box anchor link text (the html for this should 
         be placed inside article body text. */
     .fact-box__anchor-link {
