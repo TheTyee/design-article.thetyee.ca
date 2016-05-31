@@ -20,15 +20,15 @@
 // this function not related to above just piggybacking on the if statement. It pushes the main content down when latest stories is open
 
 var menuheight = 0;
-		$('.menu__latest-stories').on('show.bs.dropdown', function(event) {
-			menuheight = $(".menu__latest-stories .dropdown-menu").outerHeight();
+		$('.col-sm-12 .dropdown').on('show.bs.dropdown', function(event) {
+			menuheight = $(this).children(".dropdown-menu").outerHeight();
 			$(".article__header").animate({
 				marginTop: "+=" +menuheight
 				 }, 250, function() {
   			  // Animation complete.
  				 });
 		});
-		$('.menu__latest-stories').on('hide.bs.dropdown', function(event) {
+		$('.col-sm-12 .dropdown').on('hide.bs.dropdown', function(event) {
 				$(".article__header").animate({
 				marginTop: "-=" +menuheight
 				 }, 250, function() {
