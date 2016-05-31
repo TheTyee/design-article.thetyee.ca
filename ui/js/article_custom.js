@@ -21,20 +21,23 @@
 
 var menuheight = 0;
 		$('.col-sm-12 .dropdown').on('show.bs.dropdown', function(event) {
+			if ($(window).width() > 991) {
 			menuheight = $(this).children(".dropdown-menu").outerHeight();
 			$(".article__header").animate({
 				marginTop: "+=" +menuheight
 				 }, 250, function() {
   			  // Animation complete.
  				 });
+			}
 		});
 		$('.col-sm-12 .dropdown').on('hide.bs.dropdown', function(event) {
+			if ($(window).width() > 991) {
 				$(".article__header").animate({
 				marginTop: "-=" +menuheight
 				 }, 250, function() {
   			  // Animation complete.
  				 });
-		
+			}
 			});
 		
 		
