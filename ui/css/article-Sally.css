@@ -218,6 +218,7 @@
 }
 .menu__search--wrapper {
   width: 100vw;
+  max-width: 1200px;
 }
 .search-block .dropdown-toggle {
   text-transform: uppercase;
@@ -260,7 +261,10 @@
   .menu__left-nav li ul li, .menu__right-nav li ul li {
     border-bottom: none;
   }
-  .menu__join {
+}
+
+@media (min-width: 992px) {
+   .menu__join {
     padding-bottom: 12px!important;
   }
 }
@@ -423,6 +427,12 @@
    .menu__logo img{
     top: 16px;
   }
+}
+
+
+@media (max-width: 990px ){
+    .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form { margin: 18px 0 0 0;
+	}
 }
 
 @media (min-width: 1200px) {

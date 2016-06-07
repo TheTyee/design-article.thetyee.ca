@@ -8,6 +8,9 @@
         <!--An ASIDE containing a SERIES BOX. -->
         {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/series-box" content-source="" aside-caption=false media-credit=false aside-class="" %}
 
+        <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--explainer" fact-box__content="<p>This series was produced by Tyee Solutions Society. It was made possible through the financial support of Simon Fraser University's VanCity Office of Community Engagement. This support for this project does not necessarily imply endorsement of the findings or content of this report. TSS funders neither influence nor endorse the particular content of TSS reporting. Other publications wishing to publish this story or other TSS produced articles, please see this website for contacts and information.</p>" %}
+
         {% include 01-molecules/text/lead-in-text.html lead-in-content="Picture this scene: It's a bright spring morning. A light breeze scented with sea salt sets wildflowers nodding. Overhead, a pair of cappuccino-coloured butterflies the size of quarters flicker and pirouette around gnarled trees freshly dressed in green. In the deeper shade, a keen eye might pick out, like a fat comma in bright blue, the slow advance of a slug across a rotting leaf. Suddenly a small bird bursts up into the spring air, the sun catching its lemon-yellow face and black raccoon-mask, a sharp musical trill following its rise. " %}
 
 
@@ -86,6 +89,11 @@
 <p data-dev-object-descrip="molecules/text/paragraph-with-end-mark" data-dev-status="IN-PROGRESS">
 	Garry Oaks should be with us for a long time. Climate change will even be kind to the tough, drought- and flood-tolerant trees. The Propertius Duskywing and Sharp-tailed snake however, the Horned Lark, and more than a hundred other condemned species, are more likely to meet the end of their lines on a death row as pretty as paradise. {% include 00-atoms/images/end-mark-icon.html %}
 </p>
+
+                <!--FACT-BOX will display here at bottom of article in narrow viewports -->
+                <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. This ID must not appear in the sidebar fact-box html! -->
+                {% include 01-molecules/blocks/Fact-box.html object-class="fact-box--explainer" fact-box__content="<p>This series was produced by Tyee Solutions Society. It was made possible through the financial support of Simon Fraser University's VanCity Office of Community Engagement. This support for this project does not necessarily imply endorsement of the findings or content of this report. TSS funders neither influence nor endorse the particular content of TSS reporting. Other publications wishing to publish this story or other TSS produced articles, please see this website for contacts and information.</p>" %}
+
 
     </div> <!--END .container-fluid-->
 

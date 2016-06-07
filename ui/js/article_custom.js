@@ -15,18 +15,44 @@
                     "click":             function() { this.closable = true; },
                     "hide.bs.dropdown":  function() { return this.closable; }
             });
-        }
+        } else {
 
+// this function not related to above just piggybacking on the if statement. It pushes the main content down when latest stories is open
 
+var menuheight = 0;
+		$('.col-sm-12 .dropdown').on('show.bs.dropdown', function(event) {
+			if ($(window).width() > 991) {
+			menuheight = $(this).children(".dropdown-menu").outerHeight();
+			$(".article__header").animate({
+				marginTop: "+=" +menuheight
+				 }, 250, function() {
+  			  // Animation complete.
+ 				 });
+			}
+		});
+		$('.col-sm-12 .dropdown').on('hide.bs.dropdown', function(event) {
+			if ($(window).width() > 991) {
+				$(".article__header").animate({
+				marginTop: "-=" +menuheight
+				 }, 250, function() {
+  			  // Animation complete.
+ 				 });
+			}
+			});
+		
+		
+		}
 
 
         //Moves focus directly to search field when user begins typing
         $('.search-block').on('show.bs.dropdown', function(event) {
-            $(document).keydown(function(){
-                $('input#menu__search--input').focus();
-            });
+           
+		   setTimeout(function(){
+ 				$('input#menu__search--input').focus();
+				}, 500);
         });
 
+		
 
         //LATEST STORIES
 
@@ -86,8 +112,16 @@
             //for each item from the API, plug info into a story object
             $.each(recentItems, function(key, value){
 
-                //Format the API img uri's so they don't point at cachefly
                 latestStoryImage = value._source.related_media[0].uri;
+				
+				// get the smallest image > 200px available
+				var bestWidth = value._source.related_media[0].width;
+				for (var key in value._source.related_media[0].thumbnails) {
+				  var thumb = value._source.related_media[0].thumbnails[key];
+					if (thumb.width >= 200 && thumb.width <= bestWidth) { bestWidth = thumb.width; latestStoryImage = thumb.uri;  }
+				}
+				
+                //Format the API img uri's so they don't point at cachefly
                 latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
 
                 //Use moment.js to format the date
