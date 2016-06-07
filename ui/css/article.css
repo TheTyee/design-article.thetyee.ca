@@ -127,9 +127,11 @@ h6.tyee-presents-label {
     display: block;
     float: none;
     overflow: hidden;
+    border-top: 1px solid #90AD00;
     border-bottom: 1px solid #90AD00;
-    padding-top: .5em;
-    padding-bottom: 0.15em;
+    padding-top: .375em;
+    padding-bottom: 0.33em;
+    margin-top: 2.3em;
     margin-bottom: 1.5em;
     color: black;
     font-size: .9em;
@@ -137,16 +139,32 @@ h6.tyee-presents-label {
     letter-spacing: .02em;
 }
 
+h6.tyee-presents-label {
+    margin-top: 2.66em;
+    margin-bottom: 1.125em;
+}
+
+
 /* h6.tyee-presents-label a{
     color: black;
 } */
 
-    /* BREAKPOINT: 1024px // Show asides at viewports wider than 500px */
+
+    /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
+    @media screen and (min-width: 593px)              
+        {
+        h6.tyee-presents-label {
+              margin-bottom: 1.5em;
+        }
+    }
+
+    /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 1024px)              
         {
         h6.tyee-presents-label {
                display: block;
                width: 100%;
+               margin-bottom: 1em;
         }
         h6.tyee-presents-label a:before{
             font-size: .9em;
@@ -1456,10 +1474,10 @@ label.valid {
                 margin-top: 1.55em;
             }
 
-                /* BREAKPOINT: 557px // Moves presents badge to align with h6 when it no longer breaks across lines */
-                @media screen and (min-width: 576px) {
+                /* BREAKPOINT: 593px // Moves presents badge to align with h6 when it no longer breaks across lines */
+                @media screen and (min-width: 593px) {
                     .badge--headline-placement--presents {
-                        margin-top: .75em;
+                        margin-top: 1.125em;
                     }
                 }
         
@@ -1480,7 +1498,7 @@ label.valid {
             }
 
              .badge--headline-placement--presents { /* Aligns presents badge with first letter of headline. */
-                        margin-top: 4.25em; 
+                        margin-top: 4.33em;
                     }
         }
 
