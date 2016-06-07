@@ -229,7 +229,6 @@ h6.tyee-presents-label {
   }
 
 
-
 /* LINKS  ========================================================================== */
 
 a, a:link, a:visited {color: #82AD00;}
@@ -1083,6 +1082,20 @@ aside { }
 
 
 
+/* SLIDESHOW  ========================================================================== */
+
+.series-link {
+  margin-bottom: 0em;
+  font-style:italic;
+}
+
+  .series-link .arrow-svg {
+      position: relative;
+      top: .125em;
+      left: .125em;
+  }
+
+
 /* MESSAGING BLOCK  ========================================================================== */
 
 .messaging-zone {
@@ -1542,7 +1555,8 @@ label.valid {
     background-color: #F4F4F4;
     border-top: none;
     padding: .33em 1em 1em 1em;
-    margin-top: 3em;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
     overflow: auto;
 }
 
@@ -1573,7 +1587,7 @@ label.valid {
         Explainers provide secondary infomation about a story. E.g.: sponsorship credit.
         */
     .fact-box--explainer {
-        padding-top: 1em; 
+        padding-top: 1em;
         font-style: italic;
     }
 

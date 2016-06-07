@@ -90,6 +90,12 @@
 	Garry Oaks should be with us for a long time. Climate change will even be kind to the tough, drought- and flood-tolerant trees. The Propertius Duskywing and Sharp-tailed snake however, the Horned Lark, and more than a hundred other condemned species, are more likely to meet the end of their lines on a death row as pretty as paradise. {% include 00-atoms/images/end-mark-icon.html %}
 </p>
 
+    {% if page.series == true %}
+        
+        {% include 01-molecules/text/series-link.html %}
+        
+    {% endif %}
+
                 <!--FACT-BOX will display here at bottom of article in narrow viewports -->
                 <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. This ID must not appear in the sidebar fact-box html! -->
                 {% include 01-molecules/blocks/Fact-box.html object-class="fact-box--explainer" fact-box__content="<p>This series was produced by Tyee Solutions Society. It was made possible through the financial support of Simon Fraser University's VanCity Office of Community Engagement. This support for this project does not necessarily imply endorsement of the findings or content of this report. TSS funders neither influence nor endorse the particular content of TSS reporting. Other publications wishing to publish this story or other TSS produced articles, please see this website for contacts and information.</p>" %}
