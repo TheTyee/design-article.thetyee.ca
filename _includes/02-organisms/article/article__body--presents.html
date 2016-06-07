@@ -92,6 +92,13 @@
 
         <p>"Growing up, I was always an outsider, and I'm still an outsider. That's part of my psyche. I take the role of an outsider as an asset, when I go to Hong Kong or Toronto or when I come back to Vancouver -- I always talk as an outsider. It's the way I like to be. It keeps me fresh.  There is a global trend of migration which is not going to stop -- it's going to accelerate, especially in Canada. It's something you'll have to get used to and figure out, because anybody who comes from someplace else with different habits is going to shake you up. And maybe being shaken up is a good thing." {% include 00-atoms/images/end-mark-icon.html %}</p>
 
+        {% if page.series == true %}
+        
+            {% include 01-molecules/text/series-link.html %}
+        
+        {% endif %}
+
+
         <!--FACT-BOX will display here at bottom of article in narrow viewports -->
         <span id="fact-box-2"></span> <!--Anchor for inline fact-box text link. This ID must not appear in the sidebar fact-box html! -->
         {% include 01-molecules/blocks/Fact-box.html fact-box__title="About the UBC Margolese National Design for Living Prize" fact-box__content="<p><strong>Created by</strong> a generous estate gift made to the University of British Columbia by Leonard Herbert Margolese.</p><p><strong>Awarded to</strong> a Canadian who has made outstanding contributions to the development or improvement of living environments for Canadians of all economic classes.</p><p><strong>Prize Amount:</strong> $50,000 CAD.</p><p><strong>Deadline for applying:</strong> Oct. 1, 2014</p><p><strong>Eligibility:</strong> Nominees must be Canadian citizens still actively making outstanding contributions to the development or improvement of living environments for Canadians of all economic classes.</p><p>More on the award, including past stories by The Tyee, can be found <a href=\"http://thetyee.ca/Presents/2014/07/14/Margolese-National-Design-for-Living\" target=\"_blank\">here</a>.</p>" %}
