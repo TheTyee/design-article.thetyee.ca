@@ -659,7 +659,7 @@ footer .footer__menu {
 }
 .latest-stories__media-wrapper .media .media-image {
   padding: 15px 0px;
-  height: 100px;
+  height: auto;
   overflow: hidden;
 }
 
