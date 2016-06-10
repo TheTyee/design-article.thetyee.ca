@@ -32,11 +32,20 @@
     {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
 
     {% include 02-organisms/sections/messaging-zone.html %}
-
-    {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
+	
 
 
     {% include 02-organisms/sections/comments.html %}          <!-- NEEDS WORK -->
+    <div id="latest_bottom_wrap">
+    <div class="main-col-container container-fluid short">
+    <section>
+    <strong>LATEST STORIES</strong>
+    </section>
+    </div>
+    {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
+    
+    </div>
+    
     
     {% assign barometer = 'true' %}
     

@@ -263,6 +263,12 @@
   }
 }
 
+@media(max-width:768px) {
+#latest_bottom_wrap {
+	border-bottom: none !important;	
+}
+}
+
 @media (min-width: 992px) {
    .menu__join {
     padding-bottom: 12px!important;
@@ -624,6 +630,12 @@ footer .footer__menu {
 
 /* LATEST STORIES ========================================================================== */ 
 
+#latest_bottom_wrap {
+	border-top: 1px #929292 solid;
+ 	border-bottom: 1px #929292 solid;
+    padding: 10px 0;
+    margin: 40px 0;
+}
 .latest-stories {
   background-color: #fff;
   color: #82AD00;
