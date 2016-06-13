@@ -44,6 +44,7 @@
   max-width:none;
   margin-left:auto;
   margin-right:auto;
+  border-top: #949594 solid 1px;
 }
 .menu__left-nav .open > a, .menu__left-nav .open > a:hover, .menu__left-nav .open > a:focus,
 .menu__left-nav > li > a:hover, .menu__left-nav > li > a:focus,
