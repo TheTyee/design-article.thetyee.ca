@@ -405,15 +405,14 @@ p a:hover {color: #6F9400;}
     
     /* BREAKPOINT: 1400px // At views wider than 1120px the feature-media organism shrinks 
        and sits left-aligned to make room for the adjacent bigbox--1st-position */
-    @media screen and (min-width: 1400px) {
+    @media screen and (min-width: 1200px) {
         .featured-media {
              position: relative;
-             left: -12.7em;
-             max-width: 53.75em;
+             left: -10.7em;
+             max-width: 48em;
              margin: 0 auto 0 auto;
              padding-left: 1em;
              padding-right: 1em;
-
         }
         
     }
@@ -1049,7 +1048,7 @@ aside { }
         }
 
     /* BREAKPOINT: 1320px */
-    @media screen and (min-width: 1400px) {
+    @media screen and (min-width: 1200px) {
 
 
         .ad-box--halfpage {
