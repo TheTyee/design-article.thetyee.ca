@@ -10,6 +10,10 @@ function imageExists(image_url){
 
 }
 
+
+
+
+
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
@@ -53,6 +57,19 @@ var menuheight = 0;
 		
 		}
 
+		// resets margin-top on .article__header when window resized to prevent stuck margin on resize/orientation shift
+
+function resizedw(){
+	   $(".open").removeClass("open");
+   $(".article__header").css("margin-top", 0);
+}
+
+
+var doit;
+window.onresize = function(){
+  clearTimeout(doit);
+  doit = setTimeout(resizedw, 100);
+};
 
         //Moves focus directly to search field when user begins typing
         $('.search-block').on('show.bs.dropdown', function(event) {
@@ -129,8 +146,8 @@ var menuheight = 0;
 				for (var key in value._source.related_media[0].thumbnails) {
 				  var thumb = value._source.related_media[0].thumbnails[key];
 				  					thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
-				  //console.log("http://thetyee.ca/" +thumb.uri + ", " +imageExists(thumb.uri) )
 					if (
+					// re-enable live to filter out not yet published thumbnails
 		//			imageExists(thumb.uri) == true &&
 					 thumb.width >= 200 && thumb.width <= bestWidth) { 
 					bestWidth = thumb.width; 
