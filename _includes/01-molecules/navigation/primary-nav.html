@@ -22,12 +22,14 @@
 
 <!-- WIDE MENU -->
   <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="[ collapse row navbar-collapse  ] menu" id="bs-example-navbar-collapse-1">
+  <div style="position:relative;" class="[ collapse row navbar-collapse  ] menu" id="bs-example-navbar-collapse-1">
+            
 
     <nav class="[ navbar-nav col-xs-12 col-sm-12 col-md-4 col-lg-4 ] menu_left-nav-wrap">
-          <div id="fakeborderleftwrap">
-          <div id="fakeborderleft"></div>
-          </div>
+  <div style="width:100%; height:100%;position:relative;">
+   <div id="fakeborderleft"></div>
+  </div>
+
       <ul class="[ col-sm-12 ] menu__left-nav ">
         <li class="menu__latest-stories [ dropdown keep-open ]">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -62,20 +64,22 @@
       
       <!--LOGO-->
       <nav class="[ hidden-xs hidden-sm col-lg-4 ] menu_center-nav-wrap">
+                
         <ul class="[ hidden-xs ] menu__logo ">
           <li class="[ hidden-xs hidden-sm hidden-md ]">
              <img src="{{site.url}}ui/img/tyee_logo.png" alt="Logo Alt Text" />
+            
           </li>
         </ul>
       </nav>
 
       <!--RIGHT NAV -->
       <nav class="[ navbar-nav col-xs-12 col-sm-12 col-md-4 col-lg-4 ] menu_right-nav-wrap">
-           <div id="fakeborderrightwrap">
-                <div id="fakeborderright"></div>
-                </div>
+         <div style="width:100%; height:100%;position:relative;">
+   <div id="fakeborderright"></div>
+  </div>
 
-      <ul class="[ col-sm-12 ] menu__right-nav ">
+               <ul class="[ col-sm-12 ] menu__right-nav ">
         <li class="menu__join">
           <a href="#" class="btn-join">{% include 00-atoms/images/dollar-heart-icon.html %}<span>Join</span></a>
         </li>
