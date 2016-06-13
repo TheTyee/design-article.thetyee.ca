@@ -402,10 +402,9 @@ p a:hover {color: #6F9400;}
           padding-right: 1em;
         }
     }
-    
-    /* BREAKPOINT: 1400px // At views wider than 1120px the feature-media organism shrinks 
-       and sits left-aligned to make room for the adjacent bigbox--1st-position */
-    @media screen and (min-width: 1200px) {
+	
+	
+	  @media screen and (min-width: 1200px) {
         .featured-media {
              position: relative;
              left: -10.7em;
@@ -413,6 +412,23 @@ p a:hover {color: #6F9400;}
              margin: 0 auto 0 auto;
              padding-left: 1em;
              padding-right: 1em;
+        }
+        
+    }
+
+	
+    
+    /* BREAKPOINT: 1400px // At views wider than 1120px the feature-media organism shrinks 
+       and sits left-aligned to make room for the adjacent bigbox--1st-position */
+    @media screen and (min-width: 1400px) {
+        .featured-media {
+             position: relative;
+             left: -12.7em;
+             max-width: 53.75em;
+             margin: 0 auto 0 auto;
+             padding-left: 1em;
+             padding-right: 1em;
+
         }
         
     }
@@ -1048,6 +1064,28 @@ aside { }
         }
 
     /* BREAKPOINT: 1320px */
+    @media screen and (min-width: 1400px) {
+
+
+        .ad-box--halfpage {
+            display: block;
+            position: relative;
+            float:right;
+            margin-top: 0.24em;
+            margin-right: -19em;
+            width: 300px;
+            height: 600px;
+            background-color: none;
+            border: none;
+        }
+
+        .ad-box--halfpage:before { 
+           display: none;
+           margin-top: 0;
+        }
+    }
+
+
     @media screen and (min-width: 1200px) {
 
 
