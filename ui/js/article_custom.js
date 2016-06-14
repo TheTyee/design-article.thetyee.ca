@@ -1,3 +1,19 @@
+//check if an image exists
+function imageExists(image_url){
+
+    var http = new XMLHttpRequest();
+
+    http.open('HEAD', image_url, false);
+    http.send();
+
+    return http.status != 404;
+
+}
+
+
+
+
+
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
@@ -16,9 +32,7 @@
                     "hide.bs.dropdown":  function() { return this.closable; }
             });
         } else {
-
 // this function not related to above just piggybacking on the if statement. It pushes the main content down when latest stories is open
-
 var menuheight = 0;
 		$('.col-sm-12 .dropdown').on('show.bs.dropdown', function(event) {
 			if ($(window).width() > 991) {
@@ -43,6 +57,19 @@ var menuheight = 0;
 		
 		}
 
+		// resets margin-top on .article__header when window resized to prevent stuck margin on resize/orientation shift
+
+function resizedw(){
+	   $(".open").removeClass("open");
+   $(".article__header").css("margin-top", 0);
+}
+
+
+var doit;
+window.onresize = function(){
+  clearTimeout(doit);
+  doit = setTimeout(resizedw, 100);
+};
 
         //Moves focus directly to search field when user begins typing
         $('.search-block').on('show.bs.dropdown', function(event) {
@@ -118,7 +145,13 @@ var menuheight = 0;
 				var bestWidth = value._source.related_media[0].width;
 				for (var key in value._source.related_media[0].thumbnails) {
 				  var thumb = value._source.related_media[0].thumbnails[key];
-					if (thumb.width >= 200 && thumb.width <= bestWidth) { bestWidth = thumb.width; latestStoryImage = thumb.uri;  }
+				  					thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
+					if (
+					// re-enable live to filter out not yet published thumbnails
+		//			imageExists(thumb.uri) == true &&
+					 thumb.width >= 200 && thumb.width <= bestWidth) { 
+					bestWidth = thumb.width; 
+					latestStoryImage = thumb.uri;  }
 				}
 				
                 //Format the API img uri's so they don't point at cachefly
@@ -154,9 +187,9 @@ var menuheight = 0;
 
                     if (key === 0){
                         // TODO swap this out when closer to production
-                        $(this).find('a').attr('href', '#');
+                        //$(this).find('a').attr('href', '#');
                         // Old value
-                        // $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+                        $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
                         $(this).find('img').attr('src', storyObjects[topCounter].image);
                         $(this).find('h4').html(storyObjects[topCounter].hed);
                         $(this).find('p').html(storyObjects[topCounter].dek);
