@@ -409,16 +409,33 @@ p a:hover {color: #6F9400;}
 	@media screen and (min-width: 1200px) {
         .featured-media {
              position: relative;
+             overflow:;
              left: -9.7em;
              max-width: 48em;
              margin: 0 auto 0 auto;
              padding-left: 1em;
              padding-right: 1em;
         }
+
+       .featured-media .figure img {    
+            display: block;
+            height: 600px;          /* This sets image height equal to the height of the adjacent halfpage ad. */
+            object-fit: cover;      /* This maintains the image's proper aspect ratio and CLIPS any overflow width. */
+        }
+    }
+
+	/* BREAKPOINT: 1200px // IE10+ FALLBACK. 
+	There's no fallback for IE9 and lower (so they may end up with a stretched or squeezed image.) */
+	@media screen and (min-width: 1200px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+       .featured-media .responsive-img {
+            width: 100%;
+            height: auto;
+        }
         
     }
 
-	
+
     
     /* BREAKPOINT: 1400px // At views wider than 1400px the feature-media organism shrinks 
        and sits left-aligned to make room for the adjacent bigbox--1st-position */
