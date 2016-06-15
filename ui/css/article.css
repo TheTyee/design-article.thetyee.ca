@@ -409,7 +409,7 @@ p a:hover {color: #6F9400;}
 	@media screen and (min-width: 1200px) {
         .featured-media {
              position: relative;
-             left: -10.7em;
+             left: -9.7em;
              max-width: 48em;
              margin: 0 auto 0 auto;
              padding-left: 1em;
