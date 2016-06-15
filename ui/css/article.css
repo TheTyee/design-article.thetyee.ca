@@ -16,7 +16,7 @@
 
 /* Default Border Color - set border-color:inherit on elements to inherit the default */
 * {
-  border-color: #888;
+  /* border-color: #888; */
 }
 
 
