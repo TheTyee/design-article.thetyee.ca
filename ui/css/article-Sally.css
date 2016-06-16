@@ -39,12 +39,11 @@
    
 }
 .site-nav .navbar-collapse {
- 
-  box-shadow: none;
-  max-width:none;
-  margin-left:auto;
-  margin-right:auto;
-  border-top: #949594 solid 1px;
+ box-shadow: none;
+ max-width:none;
+ margin-left:auto;
+ margin-right:auto;
+ /* border-top: #949594 solid 1px; */
 }
 .menu__left-nav .open > a, .menu__left-nav .open > a:hover, .menu__left-nav .open > a:focus,
 .menu__left-nav > li > a:hover, .menu__left-nav > li > a:focus,
@@ -65,6 +64,21 @@
   background-color: transparent;
   color: #859c01 !important;
 }
+
+ul.book_profile {
+  padding-left: 0;
+}
+
+.book_profile li {
+    list-style-type: none;
+    font-weight: 300;
+    /* border-bottom: 1px dotted; */
+    /* width: 90%; */
+    display: block;
+    line-height: 0.9em;
+    padding: 0.2em;
+}
+
 
 @media (min-width: 992px) {
     /* BOOTSTRAP OVERRIDES */
