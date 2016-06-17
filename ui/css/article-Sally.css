@@ -21,6 +21,11 @@
 
 /* == BOOTSTRAP OVERRIDES == */
 
+.ad-box--halfpage.smaller {
+    margin-left: 1em;
+    }
+
+
 .modal-content {
   position: relative;
   background-color: transparent;
@@ -39,12 +44,11 @@
    
 }
 .site-nav .navbar-collapse {
- 
-  box-shadow: none;
-  max-width:none;
-  margin-left:auto;
-  margin-right:auto;
-  border-top: #949594 solid 1px;
+ box-shadow: none;
+ max-width:none;
+ margin-left:auto;
+ margin-right:auto;
+ /* border-top: #949594 solid 1px; */
 }
 .menu__left-nav .open > a, .menu__left-nav .open > a:hover, .menu__left-nav .open > a:focus,
 .menu__left-nav > li > a:hover, .menu__left-nav > li > a:focus,
@@ -57,7 +61,7 @@
 }
 /* == turns off default handling for .open ===== */
 .menu__left-nav .open a, .block--site-header .menu__right-nav .open a, .menu__left-nav .open, .menu__right-nav .open{
-  color: #859c01;
+  color: #333;
   background-color: transparent;
 }
 /* == Overrides the hover and active states from Bootstrap === */
@@ -66,9 +70,69 @@
   color: #859c01 !important;
 }
 
+ul.book_profile {
+  padding-left: 0;
+}
+
+.book_profile li {
+    list-style-type: none;
+    font-weight: 300;
+    /* border-bottom: 1px dotted; */
+    /* width: 90%; */
+    display: block;
+    line-height: 0.9em;
+    padding: 0.2em;
+}
+
+/* bryan's temp small and medium feature image hack for old stories */
+  figure.figure.small {
+		  width: 37%;
+		  max-width: 20vw;
+		  margin-top: .25em;
+		  float:right;
+		  margin-bottom: 1em;
+   		 margin-left: 1em;
+		 clear:none;
+  }
+  
+   figure.figure.medium {
+		  width: 50%;
+		  margin-top: .25em;
+		  float:right;
+		  margin-bottom: 1em;
+   		 margin-left: 1em;
+		 clear:none;
+
+  }
+  
+@media (max-width: 1100px) and (min-width:760px) {
+   figure.figure.medium,figure.figure.small {
+    max-width: 20vw;
+   }
+  
+}
+
+
+@media (max-width: 400px) {
+   figure.figure.medium,figure.figure.small {
+   max-width:none;
+   width: 100%;
+   }
+   p {
+    float:left;
+   }
+  
+}
+
+
+/* end bryan small/med hack */
+
+
 @media (min-width: 992px) {
     /* BOOTSTRAP OVERRIDES */
     /* == Overrides rounded corners, padding and default Bootstrap borders on nav == */
+    
+    
     .navbar {
       border-radius: 0px;
       background-color: #fff;
@@ -268,13 +332,15 @@
   }
   .menu__left-nav li ul li, .menu__right-nav li ul li {
     border-bottom: none;
-  }
+  } 
+  
 }
 
 @media(max-width:768px) {
 #latest_bottom_wrap {
 	border-bottom: none !important;	
 }
+
 }
 
 @media (min-width: 992px) {
@@ -285,152 +351,153 @@
 
 /* WIDE NAV ========================================================================== */ 
 @media (min-width: 992px) {
-  .menu {
-    border-top: 1px solid  #949594;
-    margin-top: 2px;
-  }
-  
-   .primary-nav {
-		
-   }
-  #fakeborderleft {
-    border-bottom-style: double;
-    border-bottom-color: #949594;
-    position: absolute;
-    right: -5px;
-    bottom: -80px;
-    width: 100%; 
-	z-index: 200;
-  }
-  
-    #fakeborderright {
-	     border-bottom-style: double;
-    border-bottom-color: #949594;
-    position: absolute;
-   left: -5px;
-    bottom: -80px;
-    width: 100%; 
-	z-index:200;
-  }
-  
-  #fakeborderrightwrap {
-		position:  
-  }
-  
-  .wraptwo {
-	position:relative;  
-  }
-  
-  .menu_left-nav-wrap, .menu_right-nav-wrap {
-    padding: 0px;
-    position: static;
-    width: 37.5%;
-    float: left;
-  }
-  .menu__left-nav, .menu__right-nav{
-    margin-bottom: 0px;
-  }
-  .menu__left-nav{
-    text-align: right;
-  }
-  .menu__right-nav {
-    text-align: left;
-  }
-  .menu__left-nav >li{
-    padding-left: 0px;
-    padding-top: 40px;
-    margin-right: 6%;
-  }
-  .menu__right-nav >li {
-    margin-right: 3.2%;
-    padding-top: 37px;
-  }
-  .menu__right-nav >li:last-child {
-    margin-right: 0;
-  }
 
-  .menu__left-nav > li > a, .menu__right-nav > li > a, .dropdown-toggle {
-    padding: 0px;
-  }
-  .menu__left-nav li, .menu__right-nav li {
-    border-bottom: none;
-    position: static;
-  }
-  .menu_center-nav-wrap{
-    position: relative;
-    float: left;
-    width: 25%;
-	max-width: 300px;
-  }
-  .menu__logo {
-    padding: 0px;
-    position: static;
-  }
-  .menu__logo li {
-    width: 100%;
-    display: inline-block!important;
+      .menu {
+        border-top: 1px solid  #949594;
+        margin-top: 2px;
+      }
 
-  }
-  .menu__logo img{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    top: 26px;
-    text-align: center;
-    clear:both;
-    float: none;
-    max-width: 90%;
-    min-width: 90%;
-  }
-  .menu__more ul li{
-    display: block;
-    text-align: left;
-  }
-  .menu__facebook{
-    margin: 0px 20px 0px 0px;
-  }
-  .menu__twitter {
-    margin: 0px 20px 0px 0px;
-  }
-  /* == Makes the carets in wide nav bigger ==*/
-  .open .caret {
-    -ms-transform: rotate(180deg); /* IE 9 */
-    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-    transform: rotate(180deg);
-    transition: all 0.5s ease;
-  }
-  .caret{
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 2px;
-    vertical-align: middle;
-    border-top: 6px solid;
-    border-right: 6px solid transparent;
-    border-left: 6px solid transparent;
-    transition: all 0.5s ease;
-  }
-    .menu__search ul{
-      padding: 20px 0px;
-    }
-    .search-block {
-      padding: 0px;
-    }
-    .search-block .dropdown-toggle {  
-      padding-right: 15px;
-      position: relative;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding-top: 0px;
-    }
-    .search-block .dropdown-toggle .glyphicon {
-      margin-right: 4px;
-      font-size: 1.2em;
-    }
-    .search-block .dropdown-toggle span {
-      vertical-align: middle;
-      display: inline-block;
-    }
+       .primary-nav {
+
+       }
+      #fakeborderleft {
+        border-bottom-style: double;
+        border-bottom-color: #949594;
+        position: absolute;
+        /* right: -5px; --AG. seems unecessary and creates a gap */
+        bottom: -80px;
+        width: 100%; 
+        z-index: 200;
+      }
+
+        #fakeborderright {
+             border-bottom-style: double;
+        border-bottom-color: #949594;
+        position: absolute;
+        /* left: -5px; --AG. seems unecessary and creates a gap */
+        bottom: -80px;
+        width: 100%; 
+        z-index:200;
+      }
+
+      #fakeborderrightwrap {
+      }
+
+      .wraptwo {
+        position:relative;  
+      }
+
+      .menu_left-nav-wrap, .menu_right-nav-wrap {
+        padding: 0px;
+        position: static;
+        width: 37.5%;
+        /* width: calc(50% - 150px); */
+        float: left;
+      }
+      .menu__left-nav, .menu__right-nav{
+        margin-bottom: 0px;
+      }
+      .menu__left-nav{
+        text-align: right;
+      }
+      .menu__right-nav {
+        text-align: left;
+      }
+      .menu__left-nav >li{
+        padding-left: 0px;
+        padding-top: 40px;
+        margin-right: 6%;
+      }
+      .menu__right-nav >li {
+        margin-right: 3.2%;
+        padding-top: 37px;
+      }
+      .menu__right-nav >li:last-child {
+        margin-right: 0;
+      }
+
+      .menu__left-nav > li > a, .menu__right-nav > li > a, .dropdown-toggle {
+        padding: 0px;
+      }
+      .menu__left-nav li, .menu__right-nav li {
+        border-bottom: none;
+        position: static;
+      }
+      .menu_center-nav-wrap{
+        position: relative;
+        float: left;
+        width: 25%;
+        max-width: 300px;
+      }
+      .menu__logo {
+        padding: 0px;
+        position: static;
+      }
+      .menu__logo li {
+        width: 100%;
+        display: inline-block!important;
+
+      }
+      .menu__logo img{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        top: 26px;
+        text-align: center;
+        clear:both;
+        float: none;
+        max-width: 90%;
+        min-width: 90%;
+      }
+      .menu__more ul li{
+        display: block;
+        text-align: left;
+      }
+      .menu__facebook{
+        margin: 0px 20px 0px 0px;
+      }
+      .menu__twitter {
+        margin: 0px 20px 0px 0px;
+      }
+      /* == Makes the carets in wide nav bigger ==*/
+      .open .caret {
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+        transition: all 0.5s ease;
+      }
+      .caret{
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 2px;
+        vertical-align: middle;
+        border-top: 6px solid;
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+        transition: all 0.5s ease;
+      }
+      .menu__search ul{
+        padding: 20px 0px;
+      }
+      .search-block {
+        padding: 0px;
+      }
+      .search-block .dropdown-toggle {  
+        padding-right: 15px;
+        position: relative;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding-top: 0px;
+      }
+      .search-block .dropdown-toggle .glyphicon {
+        margin-right: 4px;
+        font-size: 1.2em;
+      }
+      .search-block .dropdown-toggle span {
+        vertical-align: middle;
+        display: inline-block;
+      }
 }
 
 @media (min-width: 1020px) {
@@ -482,16 +549,21 @@
 
 @media (min-width: 1200px) {
 
-  .primary-nav {
-    max-width: none;
-    margin: 0 auto;
-  }
-  .menu__logo img{
-	  
-    top: 15px;
-  }
+    .primary-nav {
+      max-width: none;
+      margin: 0 auto;
+    }
+    .menu__logo img{
 
+      top: 15px;
+    }
+
+    .menu_left-nav-wrap, .menu_right-nav-wrap {
+      width: 37.5%; /* Fallback for older browsers */
+      width: calc(50% - 150px);
+    }
 }
+
 
 /* FOOTER ========================================================================== */
 
@@ -683,6 +755,11 @@ footer .footer__menu {
   color: #82AD00;
   font-size: 16px;
 }
+
+.latest-stories h4 {
+  font-size: 1.125em;
+}
+
 .latest-stories a {
   color: #82AD00;
 }
@@ -696,7 +773,7 @@ footer .footer__menu {
   border-top: solid 1px #A8A8A8;
 }
 .latest-stories__media-wrapper li{
-  color: #555;
+  /* color: #555; */
   border-bottom: solid 1px #A8A8A8;
   line-height: 1.75em;
 }
@@ -722,9 +799,8 @@ footer .footer__menu {
 }
 .latest-stories__hed {
   color: #82AD00;
-  font-size: 0.8em;
-  line-height: 1.25em;
-  font-weight: bold;
+  font-size: em;
+  font-weight: 600;
 }
 
 .hed_preload_placeholder{
@@ -739,15 +815,31 @@ footer .footer__menu {
   min-width: 100px;
 }
 .latest-stories__dek {
-  font-size: 0.8em;
+  /* font-size: 0.8em; */
   line-height: 1.25em;
-  color: #888;
+  /* color: #888; */
 }
 .latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
   text-transform: capitalize;
-  font-style: oblique;
-  font-size: 0.8em;
+  font-size: 1em;
 }
+
+.latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
+  font-style: oblique;
+}
+
+.latest-stories .latest-stories__media-wrapper .media .latest-stories__date:after {
+  content: "|";
+  padding-left: .65em;
+  padding-right: .5em;
+}
+
+.latest-stories .media .media-meta {
+    padding-top: 1em;
+    overflow: visible;
+    clear: left;
+}
+  
 
 @media (min-width: 768px) {
   .latest-stories .latest-stories__media-wrapper{
@@ -760,6 +852,7 @@ footer .footer__menu {
     border-top: none;
   }
   .latest-stories .latest-stories__media-wrapper li {
+    height: 100%;
     border-right: solid 1px #A8A8A8;
     padding: 0px 10px 10px 10px;
     position: relative;
@@ -776,7 +869,7 @@ footer .footer__menu {
     text-align: left;
   }
   .latest-stories__hed {
-    line-height: 1.55em;
+    /* line-height: 1.55em; */
     margin-bottom: 5px;
   }
   .latest-stories__dek {
@@ -794,9 +887,8 @@ footer .footer__menu {
     padding: 0px 5px;
   }
   .latest-stories .media .media-meta {
-    bottom: 0px;
-    position: absolute;
-    padding: 0px 5px;
+    /* bottom: 0px; */
+    /* position: absolute; */
   }
 }
 
@@ -857,12 +949,12 @@ footer .footer__menu {
     border-top: none;
   }
   .latest-stories .latest-stories__media-wrapper li {
-    border-right: solid 1px #A8A8A8;
-    padding: 0px 10px 10px 10px;
-    position: relative;
-    float: left;
-    border-bottom: none;
-    border-top: none;
+    /* border-right: solid 1px #A8A8A8; */
+    /* padding: 0px 10px 10px 10px; */
+    /* position: relative; */
+    /* float: left; */
+    /* border-bottom: none; */
+    /* border-top: none; */
     min-height: 255px;
   }
   .latest-stories .latest-stories__media-wrapper li:last-child {
@@ -873,7 +965,7 @@ footer .footer__menu {
     text-align: left;
   }
   .latest-stories__hed {
-    line-height: 1.55em;
+    /* line-height: 1.55em; */
     margin-bottom: 5px;
   }
   .latest-stories__dek {
@@ -892,9 +984,8 @@ footer .footer__menu {
     color: #555;
   }
   .latest-stories .media .media-meta {
-    bottom: 0px;
-    position: absolute;
-    padding: 0px 5px;
+    /* bottom: 0px; */
+    /* position: absolute; */
   }
 }
 
