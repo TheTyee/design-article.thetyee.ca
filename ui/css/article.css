@@ -325,6 +325,11 @@ p a:hover {color: #6F9400;}
     color: #424242;
 }
 
+@-moz-document url-prefix() {
+  .lead-in:first-letter {
+    padding-top: 0.15em;
+  }
+}
 
 
 
