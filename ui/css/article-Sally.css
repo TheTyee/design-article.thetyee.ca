@@ -21,6 +21,11 @@
 
 /* == BOOTSTRAP OVERRIDES == */
 
+.ad-box--halfpage.smaller {
+    margin-left: 1em;
+    }
+
+
 .modal-content {
   position: relative;
   background-color: transparent;
@@ -79,10 +84,55 @@ ul.book_profile {
     padding: 0.2em;
 }
 
+/* bryan's temp small and medium feature image hack for old stories */
+  figure.figure.small {
+		  width: 37%;
+		  max-width: 20vw;
+		  margin-top: .25em;
+		  float:right;
+		  margin-bottom: 1em;
+   		 margin-left: 1em;
+		 clear:none;
+  }
+  
+   figure.figure.medium {
+		  width: 50%;
+		  margin-top: .25em;
+		  float:right;
+		  margin-bottom: 1em;
+   		 margin-left: 1em;
+		 clear:none;
+
+  }
+  
+@media (max-width: 1100px) and (min-width:760px) {
+   figure.figure.medium,figure.figure.small {
+    max-width: 20vw;
+   }
+  
+}
+
+
+@media (max-width: 400px) {
+   figure.figure.medium,figure.figure.small {
+   max-width:none;
+   width: 100%;
+   }
+   p {
+    float:left;
+   }
+  
+}
+
+
+/* end bryan small/med hack */
+
 
 @media (min-width: 992px) {
     /* BOOTSTRAP OVERRIDES */
     /* == Overrides rounded corners, padding and default Bootstrap borders on nav == */
+    
+    
     .navbar {
       border-radius: 0px;
       background-color: #fff;
@@ -282,13 +332,15 @@ ul.book_profile {
   }
   .menu__left-nav li ul li, .menu__right-nav li ul li {
     border-bottom: none;
-  }
+  } 
+  
 }
 
 @media(max-width:768px) {
 #latest_bottom_wrap {
 	border-bottom: none !important;	
 }
+
 }
 
 @media (min-width: 992px) {
