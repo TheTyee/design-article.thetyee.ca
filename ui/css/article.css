@@ -325,13 +325,11 @@ p a:hover {color: #6F9400;}
     color: #424242;
 }
 
-@-moz-document url-prefix() {
-  .lead-in:first-letter {
-    padding-top: 0.15em;
-  }
-}
-
-
+ @-moz-document url-prefix() {
+   .lead-in:first-letter {
+     padding-top: 0.15em;
+   }
+ }
 
 /* CAPTIONS  ========================================================================== */
 
@@ -484,6 +482,29 @@ p a:hover {color: #6F9400;}
         }
     }
 
+
+/* more attempts at cross browser / os alignment issues w/ small image in play  BC */
+ @media screen and (min-width: 700px) and (max-width: 880px) {
+  .main-col-container {
+     margin-left: auto;
+          margin-right: auto;
+    left: -7%; 
+   left: calc( -1 * ( ((100vw - 33em) / 2) - (3em) ) );
+   /* left:-webkit-calc( -1 * ( ((100vw - 33em) / 2) - (2em) ));*/
+   */
+ }
+ }
+
+ @media screen and (min-width: 640px) and (max-width: 755px){
+    .main-col-container {
+      max-width: 90%;
+    }
+ }
+  @media screen and (min-width: 740px) and (max-width: 880px) {
+    .ad-box--halfpage.smaller {
+    margin-right: -25%;
+    }
+ }
 
 
 
@@ -1139,7 +1160,7 @@ aside { }
             position: relative;
             float:right;
             margin-top: 0.24em;
-            margin-right: calc( -1 * ( ((100vw - 22em) / 2) - (5em) ) );
+            margin-right: calc( -1 * ( ((100vw - 22em) / 2) - (4em) ) );
             width: 300px;
             height: 600px;
             background-color: none;

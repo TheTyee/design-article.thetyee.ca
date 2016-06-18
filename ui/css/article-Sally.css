@@ -105,6 +105,12 @@ ul.book_profile {
 
   }
   
+  @media (min-width: 700px) and (max-width:760px) {
+    figure.figure.medium,figure.figure.small {
+      margin-right: -3em;
+    }
+  } 
+  
 @media (max-width: 1100px) and (min-width:760px) {
    figure.figure.medium,figure.figure.small {
     max-width: 20vw;
@@ -300,7 +306,7 @@ ul.book_profile {
 }
 
 .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form {
-  max-width: 1200px;
+  width: 100vw;
   margin: 0px;
   border: none;
   border-radius: 0px;
@@ -478,7 +484,7 @@ ul.book_profile {
         transition: all 0.5s ease;
       }
       .menu__search ul{
-        padding: 20px 0px;
+        padding: 10px 0px;
       }
       .search-block {
         padding: 0px;
