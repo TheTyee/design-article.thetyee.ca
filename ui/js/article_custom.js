@@ -1,43 +1,30 @@
 //check if an image exists
 function imageExists(image_url){
-
     var http = new XMLHttpRequest();
-
     http.open('HEAD', image_url, false);
     http.send();
-
     return http.status != 404;
-
 }
-  
-
-  
   
 
 function fixFeaturedMediaOffset(){
 	    if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
 		console.log(">1200");
-		var mediaHeight=  $('.featured-media .figure').height();
-			console.log(mediaHeight);
-    
-		var sectionHeight=  $("section.featured-media").height();
+		var mediaHeight=  $('.featured-media .figure').outerHeight();
+			console.log(mediaHeight);  
+		var sectionHeight=  $(".featured-media .ad-box").outerHeight();;
 				console.log(sectionHeight);
-    
-		if (mediaHeight <=  sectionHeight) {
-			console.log("islarger");
+		if (  (sectionHeight - mediaHeight) >= 0) {
+			console.log("islarger difference is :" +(sectionHeight - mediaHeight) + "px");
     
 		    var mediamargin =  mediaHeight - sectionHeight + 30;
 					console.log("margin is" +mediamargin);
-    
 		    $("section.featured-media").css("margin-bottom", mediamargin);
 		}
-	    } else {
-		
+	    } else {	
 		 $("section.featured-media").css("margin-bottom", "inherit");
 	    }
-	
 	}
-
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
@@ -79,19 +66,24 @@ var menuheight = 0;
  				 });
 			}
 			});
-		
-		
 		}
-
 		// resets margin-top on .article__header when window resized to prevent stuck margin on resize/orientation shift
-
 function resizedw(){
-	   $(".open").removeClass("open");
+//modified to fire after only 100ms so that it doesn't go multiple times per resize
+    // Store the window width
+    var windowWidth = $(window).width();
+    // Resize Event
+        // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
+        if ($(window).width() != windowWidth) {
+            // Update the window width for next time
+            windowWidth = $(window).width();
+            // Do stuff here
+    $(".open").removeClass("open");
    $(".article__header").css("margin-top", 0);
    fixFeaturedMediaOffset();
-}
-
-
+        }
+        // Otherwise do nothing
+};
 var doit;
 window.onresize = function(){
   clearTimeout(doit);
