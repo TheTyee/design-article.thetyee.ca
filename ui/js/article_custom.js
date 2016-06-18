@@ -30,6 +30,8 @@ function fixFeaturedMediaOffset(){
     $(document).ready(function() {
 	//fix offset
 	
+var windowWidth = $(window).width();	
+	
 	fixFeaturedMediaOffset();
 
         //Do not kill the dropdowns when users click in them)
@@ -71,7 +73,6 @@ var menuheight = 0;
 function resizedw(){
 //modified to fire after only 100ms so that it doesn't go multiple times per resize
     // Store the window width
-    var windowWidth = $(window).width();
     // Resize Event
         // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
         if ($(window).width() != windowWidth) {
