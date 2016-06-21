@@ -89,13 +89,25 @@ summary" />
     })();
     </script>
     <script type='text/javascript'>
+    var gptAdSlots = [];
     googletag.cmd.push(function() {
-        var mappingBox = googletag.sizeMapping().
+        var mapping300x600 = googletag.sizeMapping().
             addSize([0,0 ], []).
             addSize([1050,200 ], [300, 600]).
             build();
+        var mappingLeaderboard = googletag.sizeMapping().
+            addSize([0,0 ], []).
+            addSize([1050,200 ], [728, 90]).
+            build();
+        var mappingBigBoxes = googletag.sizeMapping().
+            addSize([0,0 ], [300, 250]).
+            build();
 
-        googletag.defineSlot('/1001962/RD-Box-A', [[300, 600]], 'gpt-rd-box').defineSizeMapping(mappingBox).addService(googletag.pubads());
+        gptAdSlots[0] = googletag.defineSlot('/21234062/Tyee_Leaderboard', [[728, 90]], 'ad-leaderboard').defineSizeMapping(mappingLeaderboard).addService(googletag.pubads());
+        gptAdSlots[1] = googletag.defineSlot('/21234062/300x600', [[300, 600]], 'ad-300x600').defineSizeMapping(mapping300x600).addService(googletag.pubads());
+        gptAdSlots[2] = googletag.defineSlot('/21234062/Tyee_In_Story_BigBox', [[300, 250]], 'ad-bigbox').defineSizeMapping(mappingBigBoxes).addService(googletag.pubads());
+        gptAdSlots[3] = googletag.defineSlot('/21234062/Tyee_In_Story_BigBox_Lower', [[300, 250]], 'ad-bigboxlower').defineSizeMapping(mappingBigBoxes).addService(googletag.pubads());
+
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
     });
