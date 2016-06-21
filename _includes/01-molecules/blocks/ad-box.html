@@ -5,11 +5,12 @@
             [% include 01-molecules/blocks/ad-box.html ad-size="ad-box--bigbox" ad-source="VFF-bigbox.gif" %]
      There is also a half-page ad format. Halfpage ads are marked up within the featured-media section and they
         are only visible on the widest screens. To include them just change the ad-size parameter:
-            [% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-source="2015CS-TYEEads-buffy-halfpage2.jpg" %] -->
+            [% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-source="" %] -->
 {% endcomment %}
 
 <aside class="ad-box {{ include.ad-size}}" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">
-    <div class="advertisement" id="gpt-rd-box">
+    <div class="advertisement" id="{{ include.ad-slot }}" style="text-align:center">
     </div>
 </aside>
+
 <!-- END 01-molecules/blocks/ad-box -->
