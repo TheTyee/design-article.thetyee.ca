@@ -224,7 +224,7 @@ window.onresize = function(){
                         // TODO swap this out when closer to production
                         //$(this).find('a').attr('href', '#');
                         // Old value
-                        $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
+                        $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[bottomCounter].urlPath);
                         $(this).find('img').attr('src', storyObjects[bottomCounter].image);
                         $(this).find('h4').html(storyObjects[bottomCounter].hed);
                         $(this).find('p').html(storyObjects[bottomCounter].dek);
