@@ -1065,7 +1065,7 @@ aside { }
    they're marked up relative to the text content.  */
 
 .ad-box {
-  float: left; /* This prevents the ad-block from colliding with any asides. */
+ /* float: left; *\/* This prevents the ad-block from colliding with any asides -AG. Disabled because causes ads to 'clump' sometimes and to break up paragraphs. Watching for the collision issue couln't reproduce -BC */
   margin: 1em 0 1.75em 0;
   border-color: inherit;
   border-top: 1px solid #ddd; /* Ad block borders are paler than default border */
