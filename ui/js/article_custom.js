@@ -1,3 +1,6 @@
+
+
+
 //check if an image exists
 function imageExists(image_url){
     var http = new XMLHttpRequest();
@@ -5,28 +8,34 @@ function imageExists(image_url){
     http.send();
     return http.status != 404;
 }
-
+  
 
 function fixFeaturedMediaOffset(){
-    if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
-        var mediaHeight=  $('.featured-media .figure').outerHeight();
-        var sectionHeight=  $(".featured-media .ad-box").outerHeight();;
-        if (  (sectionHeight - mediaHeight) >= 0) {
-            var mediamargin =  mediaHeight - sectionHeight + 30;
-            $("section.featured-media").css("margin-bottom", mediamargin);
-        }
-    } else {	
-        $("section.featured-media").css("margin-bottom", "inherit");
-    }
-}
+	    if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
+		console.log(">1200");
+		var mediaHeight=  $('.featured-media .figure').outerHeight();
+			console.log(mediaHeight);  
+		var sectionHeight=  $(".featured-media .ad-box").outerHeight();;
+				console.log(sectionHeight);
+		if (  (sectionHeight - mediaHeight) >= 0) {
+			console.log("islarger difference is :" +(sectionHeight - mediaHeight) + "px");
+    
+		    var mediamargin =  mediaHeight - sectionHeight + 30;
+					console.log("margin is" +mediamargin);
+		    $("section.featured-media").css("margin-bottom", mediamargin);
+		}
+	    } else {	
+		 $("section.featured-media").css("margin-bottom", "inherit");
+	    }
+	}
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
-        //fix offset
-
-        var windowWidth = $(window).width();	
-
-        fixFeaturedMediaOffset();
+	//fix offset
+	
+var windowWidth = $(window).width();	
+	
+	fixFeaturedMediaOffset();
 
         //Do not kill the dropdowns when users click in them)
         $('.dropdown-menu').children().click(function(e){
@@ -41,59 +50,59 @@ function fixFeaturedMediaOffset(){
                     "hide.bs.dropdown":  function() { return this.closable; }
             });
         } else {
-            // this function not related to above just piggybacking on the if statement. It pushes the main content down when latest stories is open
-            var menuheight = 0;
-            $('.col-sm-12 .dropdown').on('show.bs.dropdown', function(event) {
-                if ($(window).width() > 991) {
-                    menuheight = $(this).children(".dropdown-menu").outerHeight();
-                    $(".article__header").animate({
-                        marginTop: "+=" +menuheight
-                    }, 250, function() {
-                        // Animation complete.
-                    });
-                }
-            });
-            $('.col-sm-12 .dropdown').on('hide.bs.dropdown', function(event) {
-                if ($(window).width() > 991) {
-                    $(".article__header").animate({
-                        marginTop: "-=" +menuheight
-                    }, 250, function() {
-                        // Animation complete.
-                    });
-                }
-            });
+// this function not related to above just piggybacking on the if statement. It pushes the main content down when latest stories is open
+var menuheight = 0;
+		$('.col-sm-12 .dropdown').on('show.bs.dropdown', function(event) {
+			if ($(window).width() > 991) {
+			menuheight = $(this).children(".dropdown-menu").outerHeight();
+			$(".article__header").animate({
+				marginTop: "+=" +menuheight
+				 }, 250, function() {
+  			  // Animation complete.
+ 				 });
+			}
+		});
+		$('.col-sm-12 .dropdown').on('hide.bs.dropdown', function(event) {
+			if ($(window).width() > 991) {
+				$(".article__header").animate({
+				marginTop: "-=" +menuheight
+				 }, 250, function() {
+  			  // Animation complete.
+ 				 });
+			}
+			});
+		}
+		// resets margin-top on .article__header when window resized to prevent stuck margin on resize/orientation shift
+function resizedw(){
+//modified to fire after only 100ms so that it doesn't go multiple times per resize
+    // Store the window width
+    // Resize Event
+        // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
+        if ($(window).width() != windowWidth) {
+            // Update the window width for next time
+            windowWidth = $(window).width();
+            // Do stuff here
+    $(".open").removeClass("open");
+   $(".article__header").css("margin-top", 0);
+   fixFeaturedMediaOffset();
         }
-        // resets margin-top on .article__header when window resized to prevent stuck margin on resize/orientation shift
-        function resizedw(){
-            //modified to fire after only 100ms so that it doesn't go multiple times per resize
-            // Store the window width
-            // Resize Event
-            // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
-            if ($(window).width() != windowWidth) {
-                // Update the window width for next time
-                windowWidth = $(window).width();
-                // Do stuff here
-                $(".open").removeClass("open");
-                $(".article__header").css("margin-top", 0);
-                fixFeaturedMediaOffset();
-            }
-            // Otherwise do nothing
-        };
-        var doit;
-        window.onresize = function(){
-            clearTimeout(doit);
-            doit = setTimeout(resizedw, 100);
-        };
+        // Otherwise do nothing
+};
+var doit;
+window.onresize = function(){
+  clearTimeout(doit);
+  doit = setTimeout(resizedw, 100);
+};
 
         //Moves focus directly to search field when user begins typing
         $('.search-block').on('show.bs.dropdown', function(event) {
-
-            setTimeout(function(){
-                $('input#menu__search--input').focus();
-            }, 500);
+           
+		   setTimeout(function(){
+ 				$('input#menu__search--input').focus();
+				}, 500);
         });
 
-
+		
 
         //LATEST STORIES
 
@@ -129,12 +138,14 @@ function fixFeaturedMediaOffset(){
                 data: response,
                 crossDomain: true,
                 success: function(response){
+                    //console.log(response);
                     returnedStories = returnedStories.responseJSON.hits.hits;
                     //pass data to the create function so I can create my own story objects
                     recentItems = createStoryObjects(returnedStories);
                     return recentItems;
                 },
                 error: function(){
+                    //console.log('NO DICE SISTER');
                 }
             });
         }//end lateststories()
@@ -152,20 +163,20 @@ function fixFeaturedMediaOffset(){
             $.each(recentItems, function(key, value){
 
                 latestStoryImage = value._source.related_media[0].uri;
-
-                // get the smallest image > 200px available
-                var bestWidth = value._source.related_media[0].width;
-                for (var key in value._source.related_media[0].thumbnails) {
-                    var thumb = value._source.related_media[0].thumbnails[key];
-                    thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
-                    if (
-                        // re-enable live to filter out not yet published thumbnails
-                        //			imageExists(thumb.uri) == true &&
-                        thumb.width >= 200 && thumb.width <= bestWidth) { 
-                            bestWidth = thumb.width; 
-                            latestStoryImage = thumb.uri;  }
-                }
-
+				
+				// get the smallest image > 200px available
+				var bestWidth = value._source.related_media[0].width;
+				for (var key in value._source.related_media[0].thumbnails) {
+				  var thumb = value._source.related_media[0].thumbnails[key];
+				  					thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
+					if (
+					// re-enable live to filter out not yet published thumbnails
+		//			imageExists(thumb.uri) == true &&
+					 thumb.width >= 200 && thumb.width <= bestWidth) { 
+					bestWidth = thumb.width; 
+					latestStoryImage = thumb.uri;  }
+				}
+				
                 //Format the API img uri's so they don't point at cachefly
                 latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
 
@@ -211,9 +222,9 @@ function fixFeaturedMediaOffset(){
                     }
                     if (key == 1){
                         // TODO swap this out when closer to production
-                        $(this).find('a').attr('href', '#');
+                        //$(this).find('a').attr('href', '#');
                         // Old value
-                        // $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+                        $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
                         $(this).find('img').attr('src', storyObjects[bottomCounter].image);
                         $(this).find('h4').html(storyObjects[bottomCounter].hed);
                         $(this).find('p').html(storyObjects[bottomCounter].dek);
@@ -240,8 +251,10 @@ function fixFeaturedMediaOffset(){
         function scrollLatestStories(){
             //Get the next group of stories on click
 
+            //console.log(key + ' ' + value);
             $('.latest-stories__media-wrapper').each(function(key, index){
                 $(this).on('click', '.next', function(event){
+                    //	console.log($(this).find('li'));
 
                     $(this).parent().find('li').each(function(i, details){
 
@@ -309,6 +322,7 @@ function fixFeaturedMediaOffset(){
                         }
 
                         if (key == 1){
+                            //console.log('left click - ' + bottomPrevCounter);
                             $(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
                             $(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
