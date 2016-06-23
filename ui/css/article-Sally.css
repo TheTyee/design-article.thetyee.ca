@@ -1202,7 +1202,7 @@ footer .footer__menu {
   -moz-border-radius: 2px;
 }
 
-section.messaging-block.messaging-block--barometer ul {
+section.messaging-block.messaging-block--barometer ul, section.messaging-block.messaging-block--barometer li {
     width: 100%;
     clear: both;
 }
