@@ -802,6 +802,7 @@ footer .footer__menu {
 
 .latest-stories__media-wrapper .media .media-image .media-object{
   max-width: 100%;
+  height: auto;
 }
 .latest-stories__hed {
   color: #82AD00;

@@ -166,6 +166,7 @@ window.onresize = function(){
 				
 				// get the smallest image > 200px available
 				var bestWidth = value._source.related_media[0].width;
+				var bestHeight = value._source.related_media[0].height;
 				for (var key in value._source.related_media[0].thumbnails) {
 				  var thumb = value._source.related_media[0].thumbnails[key];
 				  					thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
@@ -174,6 +175,7 @@ window.onresize = function(){
 		//			imageExists(thumb.uri) == true &&
 					 thumb.width >= 200 && thumb.width <= bestWidth) { 
 					bestWidth = thumb.width; 
+					bestHeight = thumb.height;
 					latestStoryImage = thumb.uri;  }
 				}
 				
@@ -200,6 +202,8 @@ window.onresize = function(){
                 Story.dek = value._source.teaser;
                 Story.date = formattedDate;
                 Story.authour = value._source.byline;
+				Story.imageWidth = bestWidth;
+				Story.imageHeight = bestHeight;
 
                 //Put all objects into a new array for easier handling
                 storyObjects.push(Story);
@@ -214,6 +218,8 @@ window.onresize = function(){
                         // Old value
                         $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
                         $(this).find('img').attr('src', storyObjects[topCounter].image);
+						$(this).find('img').attr('width',storyObjects[topCounter].imageWidth);
+						$(this).find('img').attr('height', storyObjects[topCounter].imageHeight);
                         $(this).find('h4').html(storyObjects[topCounter].hed);
                         $(this).find('p').html(storyObjects[topCounter].dek);
                         $(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
@@ -226,6 +232,8 @@ window.onresize = function(){
                         // Old value
                         $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[bottomCounter].urlPath);
                         $(this).find('img').attr('src', storyObjects[bottomCounter].image);
+						$(this).find('img').attr('width',storyObjects[topCounter].imageWidth);
+						$(this).find('img').attr('height', storyObjects[topCounter].imageHeight);
                         $(this).find('h4').html(storyObjects[bottomCounter].hed);
                         $(this).find('p').html(storyObjects[bottomCounter].dek);
                         $(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
