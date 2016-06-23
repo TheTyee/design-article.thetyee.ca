@@ -1202,6 +1202,11 @@ footer .footer__menu {
   -moz-border-radius: 2px;
 }
 
+section.messaging-block.messaging-block--barometer ul {
+    width: 100%;
+    clear: both;
+}
+
 
 
 /* ===== Popup =======*/
