@@ -1945,7 +1945,7 @@ label.valid {
         }
 
         .latest-stories__date, .latest-stories__author {
-          font-weight: 300;
+          font-weight: 400;
           color: #959595;
         }
 
@@ -2701,6 +2701,7 @@ footer .footer__menu {
     padding-top: 1em;
     overflow: visible;
     clear: left;
+    font-size: .85em;
 }
   
 
