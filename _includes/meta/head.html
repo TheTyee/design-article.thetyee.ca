@@ -52,28 +52,60 @@ summary" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <!-- CSS -->
-    <link rel="stylesheet/less" href="{{ site.url }}bower_components/bootstrap/less/bootstrap.less">
+    <link rel="stylesheet" href="{{ site.url }}bower_components/bootstrap/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="{{ site.url }}ui/css/article.css" type="text/css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="{{ site.url }}ui/css/article-Sally.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <!-- /CSS -->
     <!-- JS Head -->
 
-    <script src="{{ site.url }}/bower_components/less/dist/less.js"></script>
     <script type="text/javascript" charset="utf-8" src="{{ site.url }}bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" charset="utf-8" src="{{ site.url }}bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script type="text/javascript" charset="utf-8" src="{{ site.url }}bower_components/underscore/underscore.js"></script>
-    <script type="text/javascript" charset="utf-8" src="{{ site.url }}bower_components/backbone/backbone.js"></script>
     <script type="text/javascript" charset="utf-8" src="{{ site.url }}bower_components/moment/moment.js"></script>
     <script type="text/javascript" charset="utf-8" src="{{ site.url }}bower_components/js-cookie/src/js.cookie.js"></script>
     <script type="text/javascript" charset="utf-8" src="{{ site.url }}bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="{{ site.url }}bower_components/urijs/src/URI.min.js"></script>
     <script src="{{ site.url }}bower_components/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="{{ site.url }}bower_components/backbone.stickit/backbone.stickit.js"></script>
     <script type="text/javascript" charset="utf-8" src="{{ site.url }}ui/js/jquery.slides.min.js"></script>
     
     <script type="text/javascript" src="//use.typekit.net/uky8tja.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') + 
+            '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+    <script type='text/javascript'>
+    var gptAdSlots = [];
+    googletag.cmd.push(function() {
+        var mapping300x600 = googletag.sizeMapping().
+            addSize([0,0 ], []).
+            addSize([1050,200 ], [300, 600]).
+            build();
+        var mappingLeaderboard = googletag.sizeMapping().
+            addSize([0,0 ], []).
+            addSize([1050,200 ], [728, 90]).
+            build();
+        var mappingBigBoxes = googletag.sizeMapping().
+            addSize([0,0 ], [300, 250]).
+            build();
 
+        gptAdSlots[0] = googletag.defineSlot('/21234062/Tyee_Leaderboard', [[728, 90]], 'ad-leaderboard').defineSizeMapping(mappingLeaderboard).addService(googletag.pubads());
+        gptAdSlots[1] = googletag.defineSlot('/21234062/300x600', [[300, 600]], 'ad-300x600').defineSizeMapping(mapping300x600).addService(googletag.pubads());
+        gptAdSlots[2] = googletag.defineSlot('/21234062/Tyee_In_Story_BigBox', [[300, 250]], 'ad-bigbox').defineSizeMapping(mappingBigBoxes).addService(googletag.pubads());
+        gptAdSlots[3] = googletag.defineSlot('/21234062/Tyee_In_Story_BigBox_Lower', [[300, 250]], 'ad-bigboxlower').defineSizeMapping(mappingBigBoxes).addService(googletag.pubads());
+
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+    </script>
     <!-- /JS Head -->
 </head>
