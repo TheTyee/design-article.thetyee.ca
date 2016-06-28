@@ -828,6 +828,12 @@ ul.book_profile {
   font-size: 0.95em;
   margin-bottom: 0px;
 }
+
+.menu__left-nav .more li{
+  font-size: 1.075em;
+  margin-bottom: 0px;
+}
+
 .menu__left-nav li, .menu__right-nav li{
   border-bottom: solid 1px #A8A8A8;
   list-style-type: none;
