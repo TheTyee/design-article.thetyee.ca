@@ -2689,11 +2689,12 @@ footer .footer__menu {
 
 .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
   font-style: oblique;
+  white-space: nowrap;
 }
 
 .latest-stories .latest-stories__media-wrapper .media .latest-stories__date:after {
-  content: "|";
-  padding-left: .65em;
+  content: "";
+  padding-left: .35em;
   padding-right: .5em;
 }
 
@@ -2701,7 +2702,7 @@ footer .footer__menu {
     padding-top: 1em;
     overflow: visible;
     clear: left;
-    font-size: .85em;
+    font-size: .88em;
 }
   
 
