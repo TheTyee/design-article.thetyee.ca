@@ -679,6 +679,10 @@ ul.book_profile {
 
   }
   
+  .margintop {
+	  margin-top: 20px;
+  }
+  
   @media (min-width: 700px) and (max-width:760px) {
     figure.figure.medium,figure.figure.small {
       margin-right: -3em;
@@ -1657,6 +1661,7 @@ aside { }
     .ad-box--halfpage {
         display: none;
         height: 600px;
+        margin-bottom: 3em;
     }
 
         .ad-box--halfpage img {
@@ -1684,6 +1689,48 @@ aside { }
            margin-top: 0;
         }
     }
+
+/*
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+      .featured-media .figure, .featured-media figcaption {
+        width:calc(100vw - ( 325px + 1em) );        
+      }
+      
+      section.featured-media {
+        margin:0;
+        padding:0;
+        width: 100%;
+        max-width:100%;
+      }
+      
+      .featured-media .figure img {
+        height: auto;
+      }
+        .ad-box--halfpage {
+            display: block;
+            position: relative;
+            float:right;
+            margin-top: 0.24em;
+            margin-right: 0;
+            width: 300px;
+            height: 600px;
+            background-color: none;
+            border: none;
+        }
+
+        .ad-box--halfpage:before { 
+           display: none;
+           margin-top: 0;
+        }      
+      
+      .main-col-container .container-fluid p:nth-child(-n+3) {
+       
+      }
+      
+      
+    }
+    
+    */
 
 
     @media screen and (min-width: 1200px) {
