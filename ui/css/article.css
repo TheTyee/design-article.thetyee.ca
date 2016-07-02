@@ -1631,7 +1631,8 @@ aside { }
    they're marked up relative to the text content.  */
 
 .ad-box {
- /* float: left; *\/* This prevents the ad-block from colliding with any asides -AG. Disabled because causes ads to 'clump' sometimes and to break up paragraphs. Watching for the collision issue couln't reproduce -BC */
+  float: left;/* This prevents the ad-block from colliding with any asides -AG. Disabled because causes ads to 'clump' sometimes and to break up paragraphs. Watching for the collision issue couln't reproduce -BC
+  I've re-enabled this because of all the reports about ads colliding with asides' */
   margin: 1em 0 1.75em 0;
   border-color: inherit;
   border-top: 1px solid #ddd; /* Ad block borders are paler than default border */
@@ -1648,17 +1649,16 @@ aside { }
         height: auto;
     }
 
-     .ad-box:before { 
-       display: block; 
+     .ad-box:before {
+       display: block;
        margin: 0.8em auto 2em auto;
-       text-align: center; 
+       text-align: center;
        content: "ADVERTISEMENT";
        color: #ACACAC;
        font-size: .6em;
        line-height:1em;
        font-weight: 400;
        letter-spacing: 0.15em;
- 
     }
 
     /* HALFPAGE AD  ---------------------------------------------- */
