@@ -1313,6 +1313,11 @@ aside { }
         display: block;
     }
 
+
+	aside#placehold {
+			width: 0;
+			height:0;
+	}
     
     /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
     @media screen and (min-width: 500px)              
