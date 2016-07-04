@@ -40,11 +40,9 @@ body {
   color: #404040;
 }
 
-
-h1,
-h2,
-h3,
-h4 {
+/* Reset to prevent some articles form displaying in italics */
+h1, h2, h3, h4, h5, h6, p, a, blockquote, .ad-box {
+  font-style: normal
 }
 
 h1 {
