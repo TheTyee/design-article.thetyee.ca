@@ -475,6 +475,11 @@ p a:hover {color: #6F9400;}
 }
 
 
+
+/* MAIN-COLUMN-CONTAINER ==================================================================
+The .main-col-container styling is really the scaffold of the layout and most other things hang off of it or are contained by it, so any changes to it are likely to cause problems. The best thing is if objects just sit inside it and are positioned relative to it (like figures and asides).
+*/
+
 .main-col-container {/* the text column remains centred after hitting its max width. */
      position: relative;
      max-width: 34em;
@@ -496,7 +501,7 @@ p a:hover {color: #6F9400;}
     }
 
 
-/* The following rules cause irregularities in the positioning of hte main column asides --AG
+/* The following rules cause irregularities in the positioning of the main column asides --AG
 
               more attempts at cross browser / os alignment issues w/ small image in play  BC 
                @media screen and (min-width: 700px) and (max-width: 880px) {
