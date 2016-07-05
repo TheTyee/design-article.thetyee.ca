@@ -1315,8 +1315,7 @@ aside { }
 
 
 	aside#placehold {
-			width: 0;
-			height:0;
+			display:none;
 	}
     
     /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
