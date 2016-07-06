@@ -1,0 +1,67 @@
+---
+---
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+{% include meta/head.html %}
+  <body class="{{ page.layout }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+
+    <!-- =============================== -->
+    <!-- ===== Header ===== -->
+
+    {% include 01-molecules/messaging/alerts--browser-support.html %}
+
+    {% include 01-molecules/blocks/ad-banner.html ad-source="UBCMUD-leaderboard.jpg" %}
+    
+    {% include 02-organisms/global/header.html %}
+
+
+    <!-- =============================== -->
+    <!-- ===== Article components ===== -->
+
+    {% include 02-organisms/article/article__header.html %}  
+
+    {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-slot="ad-300x600" ad-source="" %}
+    <figure class="figure medium" data-dev-object-descrip="01-molecules/blocks/figure" data-dev-status="IN-PROGRESS">
+	<!-- 00-atoms/images/image -->
+                <img src="/ui/img/Jenny-Kwan-300px.jpg" class="responsive-img" alt="image atom">
+		<figcaption class="caption">NDP immigration critic Jenny Kwan: Vulnerable North Korean refugees 'need support.'<span class="caption__media--credit"></span></figcaption>
+    </figure>
+
+    {% include 02-organisms/article/article__body--legacyimage.html %}    
+    
+
+    <!-- =============================== -->
+    <!-- ===== Tertiary components ===== -->    
+
+    {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+
+    {% include 02-organisms/sections/messaging-zone.html %}
+
+    {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
+
+
+    {% include 02-organisms/sections/comments.html %}          <!-- NEEDS WORK -->
+    
+    {% assign barometer = 'true' %}
+    
+    {% include 02-organisms/sections/messaging-zone.html %}
+
+    <div class="presents-col-container main-col-container container-fluid">{% include 01-molecules/blocks/presents-box.html %}</div>
+
+
+    <!-- =============================== -->
+    <!-- ===== Footer ===== -->
+
+    {% include footer.html %}                 <!-- NEEDS WORK -->
+
+    {% include footer_scripts_standard.html %}
+
+    {% include 02-organisms/sections/subscription-modal.html %} 
+
+    </body>
+
+</html>
+
