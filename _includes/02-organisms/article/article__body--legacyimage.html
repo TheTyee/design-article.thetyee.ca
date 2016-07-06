@@ -3,7 +3,16 @@
 <article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
     <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
 
-    <div class="container-fluid clearfix">
+    <div class="container-fluid clearfix margintop">
+
+
+    {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-slot="ad-300x600" ad-source="" %}
+    <figure class="figure medium" data-dev-object-descrip="01-molecules/blocks/figure" data-dev-status="IN-PROGRESS">
+	<!-- 00-atoms/images/image -->
+        <img src="{{ site.url }}ui/img/Jenny-Kwan-300px.jpg" class="responsive-img" alt="image atom">
+		<figcaption class="caption">NDP immigration critic Jenny Kwan: Vulnerable North Korean refugees 'need support.'<span class="caption__media--credit"></span></figcaption>
+    </figure>
+
 
         <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
         {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/fact-box-article-standard" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" %}
