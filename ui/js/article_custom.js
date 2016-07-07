@@ -31,8 +31,26 @@ function fixFeaturedMediaOffset(){
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
-	//fix offset
+
+	$('a').click(function(e){
+			e.preventDefault();
+			var href = $(this).attr("href");
+    $('html, body').animate({
+        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+    }, 500, function(){ 
+			if (href.indexOf("comments") >= 0) {
+		$(".comments-section button").click();
+	}
 	
+			});
+	
+	    return false;
+	
+
+	
+});
+
+	//fix offset
 var windowWidth = $(window).width();	
 	
 	fixFeaturedMediaOffset();
