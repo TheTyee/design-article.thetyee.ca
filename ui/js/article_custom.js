@@ -131,7 +131,7 @@ function fixFeaturedMediaOffset(){
 
         //Returned stories from the API
         function getLatestStories(){
-            storiesRequested = 50;
+            storiesRequested = 25;
             returnedStories = $.ajax({
                 method: 'POST',
                 url: 'http://api.thetyee.ca/v1/latest/' + storiesRequested,
@@ -273,7 +273,7 @@ function fixFeaturedMediaOffset(){
 
                             topCounter++;
 
-                            if (topCounter >=50){
+                            if (topCounter >= storiesRequested){
                                 topCounter = 0;
                             }
 
@@ -289,7 +289,7 @@ function fixFeaturedMediaOffset(){
                             $(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
                             bottomCounter++;
 
-                            if (bottomCounter >=50){
+                            if (bottomCounter >= storiesRequested){
                                 bottomCounter = 0;
                             }
                         }
