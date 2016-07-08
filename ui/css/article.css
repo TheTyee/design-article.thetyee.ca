@@ -116,6 +116,8 @@ h6 {
   letter-spacing: .04em;
 }
 
+h6.
+
 p {
   margin-bottom: 1em;
   font-style: normal;
@@ -186,6 +188,9 @@ h6.tyee-presents-label {
   display: none;
 }
 
+.category-label {
+  text-transform: uppercase;
+}
 
 
 /* Modals */
