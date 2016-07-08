@@ -1,6 +1,6 @@
 <!-- BEGIN 01-molecules/blocks/fact-box -->
 {% comment %}
-<!-- The fact appears at the bottom of the article by default, but appears in the sidebar in wider viewports. This is done by marking up the fact-box twice (at both in the aside and also at the bottom of the main text column) and then display visibility of one or the other is determined by css according to view width.
+<!-- The fact-box appears at the bottom of the article by default, but appears in the sidebar in wider viewports. This is done by marking up the fact-box twice (both in the aside and also at the bottom of the main text column) and then displaying one or the other according to view width via css.
     The additional .hide-on-narrow-vp class gets applied to the containing 
     <aside> so that its margin doesn't cut into the the text column when
     the fact box is hidden. (This ugly class could probably be eliminated if 
