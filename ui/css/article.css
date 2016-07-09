@@ -1416,6 +1416,7 @@ aside { }
       float: left;
       margin-top: 0.25em;
       margin-bottom: 0.25em;
+      margin-right: 0.75em;
       height: 2.3em;
       width: auto;
       background-color: none;
@@ -1439,7 +1440,6 @@ aside { }
       position: relative;
       max-height: 4em;
       overflow:hidden;
-      padding-left: 0.75em;
     }
 
     .author-more{
