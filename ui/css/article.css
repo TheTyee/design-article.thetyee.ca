@@ -669,6 +669,12 @@ ul.book_profile {
     padding: 0.2em;
 }
 
+/* fix figure at as first element in gallery issue */
+
+  .gallery_output figure:first-child {
+    float:none;
+  }
+
 /* bryan's temp small and medium feature image hack for old stories */
   figure.figure.small {
 		  width: 37%;
@@ -1310,7 +1316,7 @@ aside { }
         !Use :has pseudo-class to display asides that contain essential story content! */
         clear: right;
         position: relative;
-        width: 43%;
+        width: 42%;
         float: right;
         padding: 0.6em 0 0em 2em; /* Aligns asides flush right inside article__body */
         margin-top: 1em;
@@ -1324,8 +1330,7 @@ aside { }
 
 
 	aside#placehold {
-			width: 0;
-			height:0;
+			display:none;
 	}
     
     /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
@@ -2447,6 +2452,15 @@ label.valid {
         background: none;
     }
 
+	
+.carousel-caption:after {
+		visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+	}
 
 
 
