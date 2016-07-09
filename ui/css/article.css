@@ -1445,7 +1445,7 @@ aside { }
     .author-more{
       display: none;
       position: absolute;
-      bottom: 0em;
+      bottom: 0.05em;
       right: 0em;
       width: auto;
       margin: 0px;
