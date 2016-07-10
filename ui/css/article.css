@@ -116,8 +116,6 @@ h6 {
   letter-spacing: .04em;
 }
 
-h6.
-
 p {
   margin-bottom: 1em;
   font-style: normal;
@@ -429,7 +427,6 @@ p a:hover {color: #6F9400;}
 	@media screen and (min-width: 1200px) {
         .featured-media {
              position: relative;
-             overflow:;
              left: -9.7em;
              max-width: 48em;
              margin: 0 auto 0 auto;
@@ -577,7 +574,6 @@ The .main-col-container styling is really the scaffold of the layout and most ot
 
 
     .site-nav .navbar-toggle {
-      margin-top: ;
       margin-right: 0px;
       border: none;
 
@@ -861,7 +857,8 @@ ul.book_profile {
   font-size: 0.75em;
   padding-right: 2px;
 }
-.menu__left-nav > .open a, .menu__right-nav > .open a, .menu__left-nav > .open , .menu__right-nav > .open, {
+.menu__left-nav > .open a, .menu__right-nav > .open a, .menu__left-nav > .open , .menu__right-nav > .open 
+{
   color: #859c01;
   background-color: #eef1d4;
   border-bottom: none;
@@ -1175,7 +1172,6 @@ ul.book_profile {
 
     .blockquote figcaption {
         padding: 0rem 1.55rem;
-        text-align: ;
         font-size: .9em;
         font-weight: 300;
         font-style: italic;
@@ -1529,7 +1525,6 @@ aside { }
                 bottom: 0;
                 width: 30px;
                 line-height: 32px;
-                font-size:;
                 text-align: center;
                 border-right: none;
             }
@@ -1565,7 +1560,6 @@ aside { }
               padding-right: 0em;
               background-color: transparent;
               text-transform: uppercase;
-              text-align:;
         }
             
             .btn-join span {
@@ -2055,7 +2049,6 @@ label.valid {
           padding-bottom: 0em;
           font-size: 1em;
           font-weight:700;
-          text-align: ;
           text-transform: uppercase;
     }
 
@@ -2314,7 +2307,6 @@ label.valid {
       margin-top: 1em;
       margin-bottom: 1em;
       padding-bottom: 0em;
-      text-align:;
       font-size: 1em;
       font-weight:600;
       border-bottom: 1px solid #A8A8A8;
