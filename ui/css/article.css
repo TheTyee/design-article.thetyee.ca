@@ -1196,9 +1196,22 @@ figure {
   margin-bottom: 2em;
 }
 
+    @media screen and (min-width: 956px) { 
+    /* This removes the float from figures so that they don't get pushed out of position by asides. */
+    /* At this width there's no risk of collision between main column elements and asides so the float no longer necessary. */
+
+      .figure {
+          float: none;
+          clear: none;
+          padding-top: 1em
+      }
+    }
+
+
     .featured-media figure {
         clear: none;
         margin-top: 0.25em;
+        padding: 0;
     }
 
     /* FIGURE XL -------------------------------------------------------------------- */
@@ -1668,6 +1681,24 @@ aside { }
        font-weight: 400;
        letter-spacing: 0.15em;
     }
+
+    @media screen and (min-width: 956px) {
+
+      .ad-box--bigbox {
+          float: none;
+      }
+    /* This removes the float from bigbox ads so that they don't get pushed out of position by asides. */
+    /* At this width there's no risk of collision between main column elements and asides so the float no longer necessary. */
+
+      .ad-box--bigbox {
+          float: none;
+          clear: none;
+          margin-top: 2em
+      }
+      
+    }
+
+
 
     /* HALFPAGE AD  ---------------------------------------------- */
     /* Halfpage ads are marked up within the featured-media section and they
