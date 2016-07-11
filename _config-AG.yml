@@ -60,4 +60,6 @@ exclude:
   - Gemfile.lock
 
 # server settings
-host: 192.168.0.60
+host: localhost
+host: 192.168.1.70
+port: 4000

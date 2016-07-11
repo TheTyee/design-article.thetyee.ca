@@ -3,21 +3,21 @@
 <article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
     <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
 
-    <div class="container-fluid clearfix">
+    <div class="container-fluid clearfix margintop">
+
+
+    {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-slot="ad-300x600" ad-source="" %}
+    <figure class="figure medium" data-dev-object-descrip="01-molecules/blocks/figure" data-dev-status="IN-PROGRESS">
+	<!-- 00-atoms/images/image -->
+        <img src="{{ site.url }}ui/img/Jenny-Kwan-300px.jpg" class="responsive-img" alt="image atom">
+		<figcaption class="caption">NDP immigration critic Jenny Kwan: Vulnerable North Korean refugees 'need support.'<span class="caption__media--credit"></span></figcaption>
+    </figure>
+
 
         <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
         {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/fact-box-article-standard" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" %}
 
         {% include 01-molecules/text/lead-in-text.html lead-in-content="Sixty-four years ago, a tiny B.C. Aboriginal community was paid $1,292 for a corporation's right to forever pump oil through its reserve." %}
-
-        <!--An ASIDE containing a RELATED STORY. -->
-        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" related-story-title="Kinder Morgan Pipeline Expansion Designed to Carry Much More Oil" content-source="/ui/img/tankersea600px.jpg" %}
-
-        <!--An ASIDE containing a RELATED STORY. -->
-        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" related-story-title="Kinder Morgan Pipeline Expansion Designed to Carry Much More Oil" content-source="/ui/img/tankersea600px.jpg" %}
-
-        <!--An ASIDE containing a RELATED STORY. -->
-        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/related-story" related-story-title="Kinder Morgan Pipeline Expansion Designed to Carry Much More Oil" content-source="/ui/img/tankersea600px.jpg" %}
 
         <p>Now the Coldwater Indian Band is <a href="http://www.thetyee.ca/Documents/2016/01/26/ColdwaterBrief.pdf">suing</a> to kill that deal -- a challenge that threatens to derail the $6.8-billion expansion of that pipeline proposed by current owner Kinder Morgan.</p>
         <p>The latest step in the fight came last week, when Coldwater representatives testified at the National Energy Board hearing, urging a rejection of the expansion pipeline.</p>
@@ -75,22 +75,23 @@
         <p>The company admitted in 2014 that its decades-old pipeline on the Coldwater reserve was leaking. Crews dug up the pipeline and welded patches, the chief said.  </p>
 
 
-        <!--Here's a FIGURE containing an IMAGE. 
-            All media within an article body should be called from within a figure object or an aside. -->
-        {% include 01-molecules/blocks/figure.html figure-class="" figure-contents="00-atoms/images/image" figure-caption="Oil leak of the Trans Mountain pipeline on Coldwater Indian Band reserve in 2014. " media-credit="Source: band's lawyer." content-source="ui/img/KinderMorganColdwaterLeak_610px.jpg" %}
+                <!--Here's a FIGURE containing an IMAGE. 
+                    All media within an article body should be called from within a figure object or an aside. -->
+                {% include 01-molecules/blocks/figure.html figure-class="figure--xl" figure-contents="00-atoms/images/image" figure-caption="Oil leak of the Trans Mountain pipeline on Coldwater Indian Band reserve in 2014. " media-credit="Source: band's lawyer." content-source="ui/img/KinderMorganColdwaterLeak_610px.jpg" %}
 
-        <!--AD in the 2ND POSITION. (Set ad-position parameter.) -->
-        {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--bigbox" ad-source="" ad-slot="ad-bigboxlower" %}
 
         <p>The band then hired a hydrologist to see if the reserve's drinking water was put at risk. Tests came back showing petrochemical traces, called polycyclic aromatic hydrocarbons, including naphthalene, phenanthrene, fluorine and pyrene.</p>
+
+
 
         <p>"The pipeline is a potential source," said the chief.</p>
         <p>But Kinder Morgan is not ready to agree its pipeline's leaking has affected the band's drinking water. </p>
 
-        <p>"To date, there are no findings to confirm groundwater contamination," a company spokesperson told The Tyee in an email. "We have been working co-operatively with the community on cleanup of the historical contaminated soil found in 2014. We are currently in the planning stages and will be pursuing remediation later this year."</p>
 
-        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/audio--wnyc-player" figure-caption="This is a caption describing an audio object inside a figure." media-credit="Source attribution goes here" content-source="" %}
-        
+        <!--AD in the 2ND POSITION. (Set ad-position parameter.) -->
+        {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--bigbox" ad-source="" ad-slot="ad-bigboxlower" %}
+
+        <p>"To date, there are no findings to confirm groundwater contamination," a company spokesperson told The Tyee in an email. "We have been working co-operatively with the community on cleanup of the historical contaminated soil found in 2014. We are currently in the planning stages and will be pursuing remediation later this year."</p>
         <p>Last summer Kinder Morgan also told the NEB: "The existing pipeline has operated for more than 60 years with only four spills that are known to have affected groundwater resources, none of which affected the Coldwater Indian Reserve."</p>
         <p>Frustrated, the band launched a federal appeal in 2015 of the minister's decision. The case is ongoing.</p>
 
@@ -102,7 +103,6 @@
         {% include 00-atoms/text/article-subheader.html subheader-content="A community in need, and conflicted" %}
 
         <p>Despite his band's past and current grievances, the chief admits it may do a deal with Kinder Morgan for the pipeline expansion in order to obtain new sources of revenue. The community only has enough houses for 336 of its 800 members -- and many off reserve want to come home.</p>
-
         <p>"It's very difficult. Some of our people want it, and some of our people don't want it," he said. </p>
         <p>"We need programs for our people, we need infrastructure, we need housing. We need to fix our water wells." </p>
         <p>The chief says Kinder Morgan Canada's CEO Ian Anderson has pressed personally to meet with him.  </p>
@@ -119,3 +119,4 @@
 </article>
 
 <!-- END organisms/article/article__body -->
+
