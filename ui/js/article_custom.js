@@ -32,6 +32,16 @@ function fixFeaturedMediaOffset(){
             return false;
         });
 
+	// read more expand instead of following link
+		
+$(".author-more").click(function(e){
+    e.preventDefault();
+    $(this).hide();
+    $(this).parent().css("overflow", "visible");
+});
+
+	
+	
         //fix offset
         var windowWidth = $(window).width();
 
