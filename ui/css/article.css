@@ -1196,9 +1196,30 @@ figure {
   margin-bottom: 2em;
 }
 
+    /* Remove float when view is wide enough */
+    @media screen and (min-width: 976px) { 
+    /* This removes the float from figures so that they don't get pushed out of position by asides. */
+    /* At this width there's no risk of collision between main column elements and asides so the float no longer necessary. */
+
+      figure {
+          float: none;
+          clear: none;
+          padding-top: 1em;
+      }
+
+      .figure--xl, .figure--xl { /* Larger figures extend beyond the main column area so they still require the float. */
+          clear: right; 
+          float:left; 
+          padding-top: 0;      
+      }
+      
+    }
+
+
     .featured-media figure {
         clear: none;
         margin-top: 0.25em;
+        padding: 0;
     }
 
     /* FIGURE XL -------------------------------------------------------------------- */
@@ -1639,7 +1660,7 @@ aside { }
    they're marked up relative to the text content.  */
 
 .ad-box {
-  float: left;/* This prevents the ad-block from colliding with any asides -AG. Disabled because causes ads to 'clump' sometimes and to break up paragraphs. Watching for the collision issue couln't reproduce -BC
+  float: left; /* This prevents the ad-block from colliding with any asides -AG. Disabled because causes ads to 'clump' sometimes and to break up paragraphs. Watching for the collision issue couln't reproduce -BC
   I've re-enabled this because of all the reports about ads colliding with asides' */
   margin: 1em 0 1.75em 0;
   border-color: inherit;
@@ -1669,6 +1690,20 @@ aside { }
        letter-spacing: 0.15em;
     }
 
+    @media screen and (min-width: 976px) {
+    /* This removes the float from bigbox ads so that they don't get pushed out of position by asides. */
+    /* At this width there's no risk of collision between main column elements and asides so the float no longer necessary. */
+
+      .ad-box--bigbox {
+          float: none;
+          clear: none;
+          margin-top: 2em
+      }
+      
+    }
+
+
+
     /* HALFPAGE AD  ---------------------------------------------- */
     /* Halfpage ads are marked up within the featured-media section and they
     are only visible on the widest screens. */
@@ -1683,27 +1718,27 @@ aside { }
             height: 600px;
         }
 
-    /* BREAKPOINT: 1320px */
-    @media screen and (min-width: 1400px) {
+        /* BREAKPOINT: 1400px */
+        @media screen and (min-width: 1400px) {
 
 
-        .ad-box--halfpage {
-            display: block;
-            position: relative;
-            float:right;
-            margin-top: 0.24em;
-            margin-right: -19em;
-            width: 300px;
-            height: 600px;
-            background-color: none;
-            border: none;
+            .ad-box--halfpage {
+                display: block;
+                position: relative;
+                float:right;
+                margin-top: 0.24em;
+                margin-right: -19em;
+                width: 300px;
+                height: 600px;
+                background-color: none;
+                border: none;
+            }
+
+            .ad-box--halfpage:before { 
+               display: none;
+               margin-top: 0;
+            }
         }
-
-        .ad-box--halfpage:before { 
-           display: none;
-           margin-top: 0;
-        }
-    }
 
 /*
     @media screen and (min-width: 768px) and (max-width: 1200px) {
@@ -1791,18 +1826,18 @@ aside { }
     }
 
 
-   @media screen and (min-width: 880px) {
-    .ad-box--halfpage.smaller {
-      margin-right: calc( -1 * ( ((100vw - 22em) / 2) - (1em) ) );
+    @media screen and (min-width: 880px) {
+        .ad-box--halfpage.smaller {
+          margin-right: calc( -1 * ( ((100vw - 22em) / 2) - (1em) ) );
+        }
     }
-   }
 
- @media screen and (min-width: 1100px) {
-  .ad-box--halfpage.smaller {
-  margin-right: -18em;
-  }
-  
- }
+    @media screen and (min-width: 1100px) {
+        .ad-box--halfpage.smaller {
+        margin-right: -18em;
+        }
+
+    }
 
 
 /* end bryan hack */
