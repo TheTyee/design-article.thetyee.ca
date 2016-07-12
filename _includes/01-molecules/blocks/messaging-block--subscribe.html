@@ -1,33 +1,69 @@
 <!-- BEGIN 01-molecules/blocks/messaging-block--subscribe -- -->
-<section class="messaging-block messaging-block--subscribe" data-dev-object-descrip="01-molecules/blocks/messaging-block--subscribe" data-dev-status="IN-PROGRESS">
+<section class="messaging-block messaging-block--subscribe" data-dev-object-descrip="01-molecules/blocks/messaging-block--subscribe" id="subscribesection">
     <h3>Get The Tyee in your inbox</h3>
-    <form class="hidden-xs">
+    <form id="subForm" action="https://webhooks.thetyee.ca/subscribe/" method="POST" class="hidden-xs">
+                        <input type="hidden" name="slid" value="6B5869DC547D3D46CFC60A3DF69EE7EB" />
+                        <input type="hidden" name="cmd" value="subscribe" />
+                        <input type="hidden" name="errors_to" value="" />
+                        <input type="hidden" name="custom_pref_tyeenews_casl" value="1" />
+                        <input type="hidden" id="format_mime" name="format" value="mime" />
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Enter your email address...">
+            <input type="text" name="email" class="form-control" placeholder="Enter your email address...">
             <span class="input-group-addon">
-                <select>
-                    <option>Daily</option>
-                    <option>Weekly</option>
-                    <option>National (weekly)</option>
+                <select id="bigoption" class="frequency">
+                    <option value="custom_pref_enews_daily">Daily</option>
+                    <option value="custom_pref_enews_weekly">Weekly</option>
+                    <option value="custom_pref_enews_national">National (weekly)</option>
                 </select>
             </span>
             <span class="input-group-btn">
-                <button class="btn btn-default btn--subscribe" type="button">Subscribe now</button>
+                <button id="big" class="btn btn-default btn--subscribe" type="button">Subscribe now</button>
             </span>
         </div><!-- /input-group -->
         <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
     </form>
-    <form class="hidden-sm hidden-md hidden-lg">
-            <input type="text" class="form-control" placeholder="Enter your email address...">
-            <select class="form-control subscribe-frequency">
-                <option>Daily</option>
-                <option>Weekly</option>
-                <option>National (weekly)</option>
+    <form action="https://webhooks.thetyee.ca/subscribe/" class="hidden-sm hidden-md hidden-lg">
+                  <input type="hidden" name="slid" value="6B5869DC547D3D46CFC60A3DF69EE7EB" />
+                        <input type="hidden" name="cmd" value="subscribe" />
+                        <input type="hidden" name="errors_to" value="" />
+                        <input type="hidden" name="custom_pref_tyeenews_casl" value="1" />
+                        <input type="hidden" id="format_mime" name="format" value="mime" />
+            <input type="text" name="email" class="form-control" placeholder="Enter your email address...">
+            <select id="smalloption" class="frequency form-control subscribe-frequency">
+                <option value="custom_pref_enews_daily">Daily</option>
+                <option value="custom_pref_enews_daily">Weekly</option>
+                <option value="custom_pref_enews_national">National (weekly)</option>
             </select>
-            <button class="btn btn-default btn--subscribe form-control" type="button">Subscribe now</button>
+            <button id="small" class="btn btn-default btn--subscribe form-control" type="button">Subscribe now</button>
         <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
     </form>
-
+<script type="text/javascript">
+        $(".btn--subscribe").click(function(e){
+ e.preventDefault();
+            var theForm = $(this).parents("form")[0];
+            var selectid =  $(this).attr("id") + "option";
+            console.log("select id = " + selectid);
+            var selectvalue = $("#" +selectid).val();
+            console.log("select_value = " + selectvalue);
+             $('<input />').attr('type', 'hidden')
+          .attr('name', selectvalue)
+          .attr('value', "1")
+          .appendTo(theForm);
+          var theData = $(theForm).serialize();
+                $.ajax({
+                type : 'POST',
+                url : 'https://webhooks.thetyee.ca/subscribe/',           
+                data: theData,
+                success:function (data) {
+                    console.log(data);
+                    $("#subscribesection").hide().html("<h3>Thank you for subscribing!</h3> Now you're on the list. You can expect your Tyee email edition to arrive soon.").fadeIn('slow');
+                }          
+            });         
+          
+        
+            
+        });  
+</script>
 </section>
 <!-- Modal -->
 <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel">
