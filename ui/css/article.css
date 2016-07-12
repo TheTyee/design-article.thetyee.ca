@@ -1446,6 +1446,14 @@ aside { }
     }
 
 
+/* fix date spacing on bric */
+ @media screen and (min-width: 600px) {
+   .author-info__date {
+  margin-left:-4px;
+   }
+ }
+/* end fix */
+
     .author-info__bio {
       display: none;
       padding-top: 0.15em;
