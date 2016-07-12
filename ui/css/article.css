@@ -873,8 +873,9 @@ ul.book_profile {
 }
 .menu__left-nav > .open a, .menu__right-nav > .open a, .menu__left-nav > .open , .menu__right-nav > .open 
 {
-  /* color: #859c01; */
+  /* color: #859c01; 
   background-color: #eef1d4;
+  */
   border-bottom: none;
 }
 .menu__join .btn-join span{
