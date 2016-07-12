@@ -48,6 +48,9 @@ function fixFeaturedMediaOffset(){
 
 readMore();
 
+$(".aside:has(> img)").css("display", "block");
+
+
 	// read more expand instead of following link
 		
 $(".author-more").click(function(e){
