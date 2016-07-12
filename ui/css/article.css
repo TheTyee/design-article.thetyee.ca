@@ -790,14 +790,28 @@ ul.book_profile {
   color: #929292;
   border-bottom-style:double;
 }
+.hamburger-container {
+  padding-right: 0; /* remove bootstrap col padding so button doesn't break on iphone5s' */
+}
+
 .menu__hamburger{
   border: none;
   display: block;
   min-height: 50px;
   min-width: 77px;
   float: left;
+  padding-left: 0; /* remove bootstrap col padding so button doesn't break on iphone5s' */
   background-color: transparent;
 }
+
+    @media (max-width: 350px) { /* Shrinks button so it doesn't break the bootstrap col on iphone5s' */
+      .menu__hamburger{
+          min-width: 60px;
+          padding-right: 0;
+    }
+
+}
+
 .menu__hamburger:focus {
   outline:0;
 } 
