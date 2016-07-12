@@ -1503,8 +1503,14 @@ aside { }
         }
 
         .author-more{
-          display: block;
+          display: none;
         }
+		
+		.overflow {
+			overflow:visible !important;
+			max-height:none !important;
+		}
+		
 
     }
 
