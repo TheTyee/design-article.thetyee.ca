@@ -16,6 +16,8 @@
 
     </script>
 {% endif %}
+
+<!-- This implements the :has Pseudo-Class selector from editor's draft of the CSS Selectors Level 4 as described here: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/. Requires jquery, polyfill.js)-->
 <script>
     Polyfill({
         selectors: [":has"]
@@ -26,6 +28,7 @@
         });
     });
 </script>
+
 <!-- Serve ads-->
 <script type='text/javascript'>
 googletag.cmd.push(function() { googletag.display('ad-300x600'); });

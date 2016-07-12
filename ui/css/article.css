@@ -642,7 +642,7 @@ The .main-col-container styling is really the scaffold of the layout and most ot
 }
 /* == turns off default handling for .open ===== */
 .menu__left-nav .open a, .block--site-header .menu__right-nav .open a, .menu__left-nav .open, .menu__right-nav .open{
-  color: #333;
+  /* color: #333; This rule seems badly scoped so I'm commenting out this part of it. --AG */
   background-color: transparent;
 }
 /* == Overrides the hover and active states from Bootstrap === */
@@ -790,14 +790,28 @@ ul.book_profile {
   color: #929292;
   border-bottom-style:double;
 }
+.hamburger-container {
+  padding-right: 0; /* remove bootstrap col padding so button doesn't break on iphone5s' */
+}
+
 .menu__hamburger{
   border: none;
   display: block;
   min-height: 50px;
   min-width: 77px;
   float: left;
+  padding-left: 0; /* remove bootstrap col padding so button doesn't break on iphone5s' */
   background-color: transparent;
 }
+
+    @media (max-width: 350px) { /* Shrinks button so it doesn't break the bootstrap col on iphone5s' */
+      .menu__hamburger{
+          min-width: 60px;
+          padding-right: 0;
+    }
+
+}
+
 .menu__hamburger:focus {
   outline:0;
 } 
@@ -859,7 +873,7 @@ ul.book_profile {
 }
 .menu__left-nav > .open a, .menu__right-nav > .open a, .menu__left-nav > .open , .menu__right-nav > .open 
 {
-  color: #859c01;
+  /* color: #859c01; */
   background-color: #eef1d4;
   border-bottom: none;
 }
@@ -1340,81 +1354,91 @@ aside { }
         margin-bottom: 2em;
     }
 
-    .aside:has(> img) { /* Shows asides that contain img child element. 
-    (Requires jquery, polyfill.js and this: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/ )  */
-        display: block;
-    }
-
-
-	aside#placehold {
-			display:none;
-	}
-    
-    /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
-    @media screen and (min-width: 500px)              
-       {
-        .aside {
-            display: block; /* ... show related-story block */
+        .aside:has(> img) { /* Shows asides that contain img child element. 
+        (Requires jquery, polyfill.js and this: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/ )  */
+            display: block;
         }
-    }
 
-    /* BREAKPOINT: 696px // gradually moves aside outward to align flush right w/ viewport */
-    @media screen and (min-width: 696px) {
-        /* When viewport exceeds width of article__body ...
-           [article__body max-width] - [article__body left margin]
-           =          34em           -          -5.5em              
-           >> if this value is set in px then the 5.5em should be omitted. (612px) <<  */
-        .aside {
-            margin-right: calc(38.5em - 100vw);
-            /* ... aligns asides flush right with viewport. */
-            
+            /* BREAKPOINT: < 500px // Style asides that contain img child element for mobile */
+            @media screen and (max-width: 499px)              
+               {
+                .aside {
+                     width: 100%; 
+                     float: none;
+                     padding: 0; /* ... show related-story block */
+                     margin-top: 2em;
+                }
+            }
+
+        aside#placehold {
+            display:none;
         }
-    }
-    
-    /* BREAKPOINT: 742px // keep aside flush right w/ viewport */
-    @media screen and (min-width: 742px) {
-    /* When viewport exceeds  ... 742px
-     */
-        .aside {
-            margin-right: calc( -1 * (((100vw - 34em) / 2) - (1em)));
-            /*         ( [make neg] [right textcol margin] - [right articleheader margin] )
-                       ( [make neg] [view - textcol] / 2)  - [right articleheader margin] )
 
-            ... compensate for the centering of the article__body to keep asides flush 
-                right with viewport.  */
+        /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
+        @media screen and (min-width: 500px)              
+           {
+            .aside {
+                display: block; /* ... show related-story block */
+            }
         }
-    }
 
-    /* BREAKPOINT: 880px //  */
-    @media screen and (min-width: 880px) 
-    /* When viewport exceeds the max-width of the article__header and article__body shifts to
-       to left-align with article__header ... */
-             
-       {
-        .aside {
-            margin-right: calc( -1 * ( ((100vw - 34em) / 2) - (1em) ) - 4.5em );
-            /*         (                      [prior breakpoint calc] - 4.5em )
+        /* BREAKPOINT: 696px // gradually moves aside outward to align flush right w/ viewport */
+        @media screen and (min-width: 696px) {
+            /* When viewport exceeds width of article__body ...
+               [article__body max-width] - [article__body left margin]
+               =          34em           -          -5.5em              
+               >> if this value is set in px then the 5.5em should be omitted. (612px) <<  */
+            .aside {
+                margin-right: calc(38.5em - 100vw);
+                /* ... aligns asides flush right with viewport. */
 
-            ... compensate for the left-align shift of the article__body to keep asides flush 
-                right with viewport.  */
+            }
         }
-    }
 
-    /* BREAKPOINT: 1025px //  */
-    @media screen and (min-width: 1025px) 
-    /* When viewport exceeds the max desired width of the page ... */
-             
-       {
-        .aside {
-            margin-right: -15em;/* ... keep the aside at a constant offset from the text column (article__body) */
+        /* BREAKPOINT: 742px // keep aside flush right w/ viewport */
+        @media screen and (min-width: 742px) {
+        /* When viewport exceeds  ... 742px
+         */
+            .aside {
+                margin-right: calc( -1 * (((100vw - 34em) / 2) - (1em)));
+                /*         ( [make neg] [right textcol margin] - [right articleheader margin] )
+                           ( [make neg] [view - textcol] / 2)  - [right articleheader margin] )
+
+                ... compensate for the centering of the article__body to keep asides flush 
+                    right with viewport.  */
+            }
         }
-    }
 
-    .aside--1stposition {
-        margin-top: 0;
-    }
+        /* BREAKPOINT: 880px //  */
+        @media screen and (min-width: 880px) 
+        /* When viewport exceeds the max-width of the article__header and article__body shifts to
+           to left-align with article__header ... */
 
-    .aside--pullquote { }
+           {
+            .aside {
+                margin-right: calc( -1 * ( ((100vw - 34em) / 2) - (1em) ) - 4.5em );
+                /*         (                      [prior breakpoint calc] - 4.5em )
+
+                ... compensate for the left-align shift of the article__body to keep asides flush 
+                    right with viewport.  */
+            }
+        }
+
+        /* BREAKPOINT: 1025px //  */
+        @media screen and (min-width: 1025px) 
+        /* When viewport exceeds the max desired width of the page ... */
+
+           {
+            .aside {
+                margin-right: -15em;/* ... keep the aside at a constant offset from the text column (article__body) */
+            }
+        }
+
+        .aside--1stposition {
+            margin-top: 0;
+        }
+
+        .aside--pullquote { }
 
 
 
@@ -2053,7 +2077,7 @@ label.valid {
         }
 
         .latest-stories__date, .latest-stories__author {
-          font-weight: 300;
+          font-weight: 400;
           color: #959595;
         }
 
@@ -2803,12 +2827,11 @@ footer .footer__menu {
 }
 
 .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
-  font-style: oblique;
+  white-space: nowrap;
 }
 
 .latest-stories .latest-stories__media-wrapper .media .latest-stories__date:after {
-  content: "|";
-  padding-left: .65em;
+  content: "";
   padding-right: .5em;
 }
 
