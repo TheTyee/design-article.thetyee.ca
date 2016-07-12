@@ -211,7 +211,7 @@ $(".author-more").click(function(e){
                 latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
 
                 //Use moment.js to format the date
-                formattedDate = moment(value._source.storyDate).format("DD MMM");
+                formattedDate = moment.utc(value._source.storyDate).format("DD MMM");
 
                 //Set default values for the Story object
                 var Story = {
