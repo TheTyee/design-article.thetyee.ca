@@ -26,7 +26,7 @@ function fixFeaturedMediaOffset(){
         var sectionHeight=  $(".featured-media .ad-box").outerHeight();
         if (  (sectionHeight - mediaHeight) >= 0) {
 
-            var mediamargin =  mediaHeight - sectionHeight + 30;
+            var mediamargin =  mediaHeight - sectionHeight + -13;
             $("section.featured-media").css("margin-bottom", mediamargin);
         }
     } else {
