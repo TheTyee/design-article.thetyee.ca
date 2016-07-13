@@ -251,7 +251,7 @@ a:hover {color: #6F9400;}
 a:active {color: #82AD00;}
 
 /* Text links within paragraphs get a dotted underscores */
-p a, p a:link, p a:visited {color: #82AD00; font-weight:400; border-bottom: 1.5px solid #82AD00;}
+p a, p a:link, p a:visited {color: #82AD00;font-weight:400;border-bottom: 1.5px solid #82AD00;}
 p a:hover {color: #6F9400;}
 
 
@@ -1898,8 +1898,14 @@ aside { }
 
 .series-link {
   margin-bottom: 0em;
+  border: none;
   font-style:italic;
 }
+
+.series-link a {
+  border: none !important;
+}
+
 
   .series-link .arrow-svg {
       position: relative;
