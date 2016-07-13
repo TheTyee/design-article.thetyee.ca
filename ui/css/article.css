@@ -866,6 +866,7 @@ ul.book_profile {
   display: inline-block;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: .03em; 
 }
 .menu__left-nav li a i, .menu__right-nav li a i { 
   font-size: 0.75em;
