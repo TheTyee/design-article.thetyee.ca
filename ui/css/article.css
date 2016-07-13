@@ -1929,13 +1929,16 @@ aside { }
       font-size: 1.1em;
       line-height: 1.33em;
       font-weight: 700;
-
     }
+
+        aside .messaging-block h3 {
+            font-size: 1em;
+        }
 
     .messaging-block--ask span{
       display: inline-block;
       max-width: 325px; /* prevents bad line breaks */
-      padding-top: 0.2em;
+      padding-top: 0em;
       font-size: 1.1em;
       line-height: 1.33em;
       font-weight: 600;
@@ -1945,6 +1948,10 @@ aside { }
       hyphens: auto; */
       hyphens: none;
     }
+
+        aside .messaging-block--ask span {
+            font-size: 1em;
+        }
 
     .messaging-zone .messaging-block {
       border-top: none;
