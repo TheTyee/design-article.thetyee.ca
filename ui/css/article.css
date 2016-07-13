@@ -933,7 +933,6 @@ ul.book_profile {
 
 @media (min-width: 768px) {
   .menu__left-nav li, .menu__right-nav li {
-    border-bottom: solid 1px #e8e8e8;
   }
   .menu__left-nav li ul li, .menu__right-nav li ul li {
     border-bottom: none;
