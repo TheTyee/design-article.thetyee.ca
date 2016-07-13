@@ -876,6 +876,7 @@ ul.book_profile {
 {
   color: #555 !important;
   border-bottom: none;
+  
 }
 .menu__join .btn-join span{
   color: #82AD00;
@@ -3051,7 +3052,7 @@ footer .footer__menu {
   }
   .sections__categories ul {
     text-align: left;
-    border-right: solid 1px #859c01;
+    border-right: solid 1px #A8A8A8;
   }
   .sections__categories ul li {
     width: 100%;
