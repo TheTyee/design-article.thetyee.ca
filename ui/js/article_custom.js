@@ -26,7 +26,7 @@ function fixFeaturedMediaOffset(){
         var sectionHeight=  $(".featured-media .ad-box").outerHeight();
         if (  (sectionHeight - mediaHeight) >= 0) {
 
-            var mediamargin =  mediaHeight - sectionHeight + 30;
+            var mediamargin =  mediaHeight - sectionHeight + -13;
             $("section.featured-media").css("margin-bottom", mediamargin);
         }
     } else {
@@ -47,6 +47,13 @@ function fixFeaturedMediaOffset(){
         });
 
 readMore();
+
+
+// Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
+// http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
+// The polyfill is no longer working so this is now done via js
+$(".aside:has(> img)").css("display", "block");
+
 
 	// read more expand instead of following link
 		
