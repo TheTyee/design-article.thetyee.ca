@@ -932,7 +932,6 @@ ul.book_profile {
 
 @media (min-width: 768px) {
   .menu__left-nav li, .menu__right-nav li {
-    border-bottom: solid 1px #e8e8e8;
   }
   .menu__left-nav li ul li, .menu__right-nav li ul li {
     border-bottom: none;
@@ -3004,12 +3003,13 @@ footer .footer__menu {
   background: white;
   padding-top: 8px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: .9em;
   padding-bottom: 8px;
   text-transform: uppercase;
+  text-align: left;
   margin: 0px;
-  border-bottom-style: double;
-  border-bottom-color: #859c01;
+  border-bottom-style: solid;
+  border-width: 1px;
   width: 100%;
   padding-left: 0px;
 }
@@ -3051,7 +3051,7 @@ footer .footer__menu {
   }
   .sections__categories ul {
     text-align: left;
-    border-right: solid 1px #859c01;
+    border-right: none;
   }
   .sections__categories ul li {
     width: 100%;
