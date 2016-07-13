@@ -4,7 +4,7 @@
     <div class="tool-bar clearfix" data-dev-object-descrip="USES CODE FROM: molecules/blocks/tool-bar" data-dev-status="IN-PROGRESS">
         <ul class="clearfix">
             <li>
-               <a style="color:white;" href="#" onclick="share_fb(window.location.href);return false;" rel="nofollow" share_url="<?=$escaped_url ?>" target="_blank"> 
+               <a class="fbshare" style="color:white;" href="#" onclick="share_fb(window.location.href);return false;" rel="nofollow" share_url="<?=$escaped_url ?>" target="_blank"> 
                 <button type="button" class="btn btn-default btn-facebook">
                     <span class="fa fa-facebook" aria-hidden="true"></span><span class="messaging-block--share-button--label">&nbsp; Share on Facebook</span>
             
@@ -12,7 +12,7 @@
             </a>
             </li>
                 <li>
-                          <a style="color:white;"  onclick="share_tw('url'); return false;" href="#">
+                          <a class="twshare" style="color:white;"  onclick="share_tw('url'); return false;" href="#">
                 <button type="button" class="btn btn-default btn-twitter">
 
                     <span class="fa fa-twitter" aria-hidden="true"></span><span class="messaging-block--share-button--label">&nbsp; Share on Twitter</span>
@@ -21,7 +21,7 @@
               </a>
             </li>
             <li><button type="button" class="btn btn-default btn-email" data-toggle="modal" data-target="#share-email">
-                    <span class="fa fa-envelope" aria-hidden="true"></span><span class="messaging-block--share-button--label">&nbsp; Forward by Email</span>
+                    <span class="fa fa-envelope" aria-hidden="true"></span><span class="messaging-block--share-button--label emshare">&nbsp; Forward by Email</span>
             </button></li>
         </ul>
     </section>
