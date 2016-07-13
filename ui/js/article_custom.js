@@ -200,6 +200,7 @@ $(".author-more").click(function(e){
                 var bestHeight = value._source.related_media[0].height;
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
+															if (thumb.uri.indexOf("square") > -1) { continue; }
                     thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
                     if (
                         // re-enable live to filter out not yet published thumbnails
