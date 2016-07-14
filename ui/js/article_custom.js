@@ -384,8 +384,7 @@ $(".author-more").click(function(e){
             var disqus_div = $('#disqus_thread');
             var anim_height = disqus_div.height() + 40;
             el.css({
-                "height": 400,
-                "max-height": 9999
+                "height": disqus_div.height,
             })
             .animate({
                 "height": anim_height
