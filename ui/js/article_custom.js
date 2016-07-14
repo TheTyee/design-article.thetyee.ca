@@ -377,6 +377,15 @@ $(".author-more").click(function(e){
         }//END LATEST STORIES SCROLLER
 
 
+        function checkClickInDisqus() {
+            if (document.activeElement && document.activeElement === $("#disqus_thread iframe")[0] ) {
+                    var e = $("#disqus_thread");
+                    console.log( e.height() );
+                    var nheight = e.height() + 100;
+                    $(".comments-section").css("height", nheight);
+                }
+        }
+
         // Show Disqus comments
         $(".comments-section .btn").click(function(e) {
             e.preventDefault();
@@ -392,9 +401,13 @@ $(".author-more").click(function(e){
 
             // fade out read-more
             $('.read-more').fadeOut();
+
+            setInterval(checkClickInDisqus, 1000);
         });
 
 
     });
 
 })(jQuery, ResponsiveBootstrapToolkit);
+
+
