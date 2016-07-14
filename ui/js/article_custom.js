@@ -30,7 +30,8 @@ function fixFeaturedMediaOffset(){
             $("section.featured-media").css("margin-bottom", mediamargin);
 			
 			if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)  { 
-							$(".container-fluid aside")[0].css("margin-top", (-1 *mediamargin));
+							var negmargin = -1 * mediamargin;
+							$($("article .container-fluid aside")[0]).css("margin-top", negmargin);
 		}
         }
     } else {
