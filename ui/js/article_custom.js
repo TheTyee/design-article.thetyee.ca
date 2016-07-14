@@ -8,16 +8,16 @@ function imageExists(image_url){
 
 
 function readMore(){
-var author = $(".author-info div")[0];
+    var author = $(".author-info div")[0];
 
-if (author) {
-	if (author.offsetHeight < author.scrollHeight && !$(".author-info__text").hasClass("overflow") ) {
-			$(".author-more").css("display","block");
-	} else {
-		$(".author-more").css("display","none");
-	}
-	
-}
+    if (author) {
+        if (author.offsetHeight < author.scrollHeight && !$(".author-info__text").hasClass("overflow") ) {
+            $(".author-more").css("display","block");
+        } else {
+            $(".author-more").css("display","none");
+        }
+
+    }
 }
 
 function fixFeaturedMediaOffset(){
@@ -28,9 +28,15 @@ function fixFeaturedMediaOffset(){
 
             var mediamargin =  mediaHeight - sectionHeight + -13;
             $("section.featured-media").css("margin-bottom", mediamargin);
+			
+			if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)  { 
+							var negmargin = -1 * mediamargin;
+							$($("article .container-fluid aside")[0]).css("margin-top", negmargin);
+		}
         }
     } else {
         $("section.featured-media").css("margin-bottom", "inherit");
+		$($("article .container-fluid aside")[0]).removeAttr("style");
     }
 }
 
@@ -46,23 +52,26 @@ function fixFeaturedMediaOffset(){
             return false;
         });
 
-readMore();
+        readMore();
 
 $(".aside:has(> img)").css("display", "block");
 
-
-	// read more expand instead of following link
-		
-$(".author-more").click(function(e){
-    e.preventDefault();
-    $(this).hide();
-    $(".author-info__text").addClass("overflow");
-});
+        // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
+        // http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
+        // The polyfill is no longer working so this is now done via js
+        $(".aside:has(> img)").css("display", "block");
 
 
+        // read more expand instead of following link
 
-	
-	
+        $(".author-more").click(function(e){
+            e.preventDefault();
+            $(this).hide();
+            $(".author-info__text").addClass("overflow");
+        });
+
+
+
         //fix offset
         var windowWidth = $(window).width();
 
@@ -116,7 +125,7 @@ $(".author-more").click(function(e){
                 $(".open").removeClass("open");
                 $(".article__header").css("margin-top", 0);
                 fixFeaturedMediaOffset();
-				readMore();
+                readMore();
             }
             // Otherwise do nothing
         }
@@ -195,24 +204,12 @@ $(".author-more").click(function(e){
 
                 latestStoryImage = value._source.related_media[0].uri;
 
-                // get the smallest image > 200px available
-                var bestWidth = value._source.related_media[0].width;
-                var bestHeight = value._source.related_media[0].height;
-                for (var k in value._source.related_media[0].thumbnails) {
-                    var thumb = value._source.related_media[0].thumbnails[k];
-															if (thumb.uri.indexOf("square") > -1) { continue; }
-                    thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
-                    if (
-                        // re-enable live to filter out not yet published thumbnails
-                        //			imageExists(thumb.uri) == true &&
-                        thumb.width >= 200 && thumb.width <= bestWidth) {
-                            bestWidth = thumb.width;
-                            bestHeight = thumb.height;
-                            latestStoryImage = thumb.uri;  }
-                }
+                var bestWidth = '250';
+                 var bestHeight = '165';
+
 
                 //Format the API img uri's so they don't point at cachefly
-                latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
+                latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thumbor.thetyee.ca/unsafe/250x165/smart/thetyee.ca");
 
                 //Use moment.js to format the date
                 formattedDate = moment.utc(value._source.storyDate).format("DD MMM");
