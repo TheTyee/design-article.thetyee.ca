@@ -28,6 +28,10 @@ function fixFeaturedMediaOffset(){
 
             var mediamargin =  mediaHeight - sectionHeight + -13;
             $("section.featured-media").css("margin-bottom", mediamargin);
+			
+			if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)  { 
+							$(".container-fluid aside")[0].css("margin-top", (-1 *mediamargin));
+		}
         }
     } else {
         $("section.featured-media").css("margin-bottom", "inherit");
