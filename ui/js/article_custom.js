@@ -28,9 +28,15 @@ function fixFeaturedMediaOffset(){
 
             var mediamargin =  mediaHeight - sectionHeight + -13;
             $("section.featured-media").css("margin-bottom", mediamargin);
+			
+			if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)  { 
+							var negmargin = -1 * mediamargin;
+							$($("article .container-fluid aside")[0]).css("margin-top", negmargin);
+		}
         }
     } else {
         $("section.featured-media").css("margin-bottom", "inherit");
+		$($("article .container-fluid aside")[0]).removeAttr("style");
     }
 }
 
@@ -204,6 +210,7 @@ $(".author-more").click(function(e){
                 var bestHeight = value._source.related_media[0].height;
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
+															if (thumb.uri.indexOf("square") > -1) { continue; }
                     thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
                     if (
                         // re-enable live to filter out not yet published thumbnails
