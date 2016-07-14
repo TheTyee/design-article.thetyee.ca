@@ -251,7 +251,7 @@ a:hover {color: #6F9400;}
 a:active {color: #82AD00;}
 
 /* Text links within paragraphs get a dotted underscores */
-p a, p a:link, p a:visited {color: #82AD00; font-weight:400; border-bottom: 1.5px solid #82AD00;}
+p a, p a:link, p a:visited {color: #82AD00;font-weight:400;border-bottom: 1.5px solid #82AD00;}
 p a:hover {color: #6F9400;}
 
 
@@ -866,6 +866,7 @@ ul.book_profile {
   display: inline-block;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: .03em; 
 }
 .menu__left-nav li a i, .menu__right-nav li a i { 
   font-size: 0.75em;
@@ -873,8 +874,7 @@ ul.book_profile {
 }
 .menu__left-nav > .open a, .menu__right-nav > .open a, .menu__left-nav > .open , .menu__right-nav > .open 
 {
-  /* color: #859c01; */
-  background-color: #eef1d4;
+  color: #555 !important;
   border-bottom: none;
 }
 .menu__join .btn-join span{
@@ -932,7 +932,6 @@ ul.book_profile {
 
 @media (min-width: 768px) {
   .menu__left-nav li, .menu__right-nav li {
-    border-bottom: solid 1px #e8e8e8;
   }
   .menu__left-nav li ul li, .menu__right-nav li ul li {
     border-bottom: none;
@@ -1355,7 +1354,10 @@ aside { }
     }
 
         .aside:has(> img) { /* Shows asides that contain img child element. 
-        (Requires jquery, polyfill.js and this: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/ )  */
+        (Requires jquery, polyfill.js and this: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/ )  
+        The polyfill is not currently so this display functionality has been implemented directly via js in ui/js/article_custom.js:
+        $(".aside:has(> img)").css("display", "block");
+        Issue thread: https://github.com/TheTyee/design-article.thetyee.ca/issues/236#issuecomment-232096002; */
             display: block;
         }
 
@@ -1896,8 +1898,14 @@ aside { }
 
 .series-link {
   margin-bottom: 0em;
+  border: none;
   font-style:italic;
 }
+
+.series-link a {
+  border: none !important;
+}
+
 
   .series-link .arrow-svg {
       position: relative;
@@ -1927,13 +1935,16 @@ aside { }
       font-size: 1.1em;
       line-height: 1.33em;
       font-weight: 700;
-
     }
+
+        aside .messaging-block h3 {
+            font-size: 1em;
+        }
 
     .messaging-block--ask span{
       display: inline-block;
       max-width: 325px; /* prevents bad line breaks */
-      padding-top: 0.2em;
+      padding-top: 0em;
       font-size: 1.1em;
       line-height: 1.33em;
       font-weight: 600;
@@ -1943,6 +1954,10 @@ aside { }
       hyphens: auto; */
       hyphens: none;
     }
+
+        aside .messaging-block--ask span {
+            font-size: 1em;
+        }
 
     .messaging-zone .messaging-block {
       border-top: none;
@@ -3001,12 +3016,13 @@ footer .footer__menu {
   background: white;
   padding-top: 8px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: .9em;
   padding-bottom: 8px;
   text-transform: uppercase;
+  text-align: left;
   margin: 0px;
-  border-bottom-style: double;
-  border-bottom-color: #859c01;
+  border-bottom-style: solid;
+  border-width: 1px;
   width: 100%;
   padding-left: 0px;
 }
@@ -3048,7 +3064,7 @@ footer .footer__menu {
   }
   .sections__categories ul {
     text-align: left;
-    border-right: solid 1px #859c01;
+    border-right: none;
   }
   .sections__categories ul li {
     width: 100%;

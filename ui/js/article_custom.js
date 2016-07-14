@@ -26,11 +26,17 @@ function fixFeaturedMediaOffset(){
         var sectionHeight=  $(".featured-media .ad-box").outerHeight();
         if (  (sectionHeight - mediaHeight) >= 0) {
 
-            var mediamargin =  mediaHeight - sectionHeight + 30;
+            var mediamargin =  mediaHeight - sectionHeight + -13;
             $("section.featured-media").css("margin-bottom", mediamargin);
+			
+			if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)  { 
+							var negmargin = -1 * mediamargin;
+							$($("article .container-fluid aside")[0]).css("margin-top", negmargin);
+		}
         }
     } else {
         $("section.featured-media").css("margin-bottom", "inherit");
+		$($("article .container-fluid aside")[0]).removeAttr("style");
     }
 }
 
@@ -47,6 +53,13 @@ function fixFeaturedMediaOffset(){
         });
 
 readMore();
+
+
+// Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
+// http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
+// The polyfill is no longer working so this is now done via js
+$(".aside:has(> img)").css("display", "block");
+
 
 	// read more expand instead of following link
 		
@@ -197,6 +210,7 @@ $(".author-more").click(function(e){
                 var bestHeight = value._source.related_media[0].height;
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
+															if (thumb.uri.indexOf("square") > -1) { continue; }
                     thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
                     if (
                         // re-enable live to filter out not yet published thumbnails
