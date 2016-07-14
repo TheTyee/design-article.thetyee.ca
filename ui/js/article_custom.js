@@ -36,6 +36,7 @@ function fixFeaturedMediaOffset(){
         }
     } else {
         $("section.featured-media").css("margin-bottom", "inherit");
+		$($("article .container-fluid aside")[0]).removeAttr("style");
     }
 }
 
