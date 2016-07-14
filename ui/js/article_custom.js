@@ -381,21 +381,13 @@ $(".author-more").click(function(e){
         $(".comments-section .btn").click(function(e) {
             e.preventDefault();
             var el = $('.comments-section');
-            var disqus_div = $('#disqus_thread');
-            var anim_height = disqus_div.height() + 40;
             el.css({
-                "height": 400,
-                "max-height": 9999
+                "height": "auto", 
             })
-            .animate({
-                "height": anim_height
-            });
-
+         
             // fade out read-more
             $('.read-more').fadeOut();
         });
-
-
     });
 
 })(jQuery, ResponsiveBootstrapToolkit);
