@@ -7,18 +7,6 @@ function imageExists(image_url){
 }
 
 
-function readMore(){
-var author = $(".author-info div")[0];
-
-if (author) {
-	if (author.offsetHeight < author.scrollHeight && !$(".author-info__text").hasClass("overflow") ) {
-			$(".author-more").css("display","block");
-	} else {
-		$(".author-more").css("display","none");
-	}
-	
-}
-}
 
 function fixFeaturedMediaOffset(){
     if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
@@ -52,7 +40,6 @@ function fixFeaturedMediaOffset(){
             return false;
         });
 
-readMore();
 
 
 // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
@@ -126,7 +113,6 @@ $(".author-more").click(function(e){
                 $(".open").removeClass("open");
                 $(".article__header").css("margin-top", 0);
                 fixFeaturedMediaOffset();
-				readMore();
             }
             // Otherwise do nothing
         }
