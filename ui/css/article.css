@@ -2536,8 +2536,7 @@ label.valid {
     background-color: #F4F4F4;
     margin-top: 1.75em;
     margin-bottom: 1.75em;
-    min-height: 100px;
-    height: 460px;
+    height:460px;
     overflow: hidden;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
