@@ -1448,6 +1448,7 @@ aside { }
 
 .author-info {
   margin-top: 0.75em;
+  margin-bottom: 1em;
   padding: 0.45em 0  0.4em 0;
   border-top: 1px solid;
   border-bottom: 1px solid;
@@ -1472,13 +1473,13 @@ aside { }
     }
 
 
-/* fix date spacing on bric */
+/* fix date spacing on bric 
  @media screen and (min-width: 600px) {
    .author-info__date {
   margin-left:-4px;
    }
  }
-/* end fix */
+ end fix */ /* This was causing a gap at the bottom of author-info__text --AG */
 
     .author-info__bio {
       display: none;
@@ -1489,27 +1490,17 @@ aside { }
 
     .author-info div {
       position: relative;
-      max-height: 4.35em;
-      overflow:hidden;
-    }
-
-    .author-more{
-      display: none;
-      position: absolute;
-      bottom: 0.05em;
-      right: 0em;
-      width: auto;
-      margin: 0px;
-      padding-left: 0.2em;
-      padding-right: 2em;
-      color: #82AD00;
-      background-color: white;
-      font-weight: 400;
-      font-size: .97em;
     }
 
     /* BREAKPOINT: 600px // Display author bio teaser, enlarge author photo, set date inline */
     @media screen and (min-width: 600px) {
+
+        /* Apply margin to author text only if an img is present.
+           Otherwise, the text should align flush left.  */
+        img ~ .author-info__text {
+          margin-left: 4.35em;
+        }
+
 
         .author-info img{
           height: 3.6em;
@@ -1522,21 +1513,12 @@ aside { }
 
         .author-info__date:before {
           content:", ";
+          margin-left: -3px
         }
 
         .author-info__bio {
           display: block;
-        }
-
-        .author-more{
-          display: none;
-        }
-		
-		.overflow {
-			overflow:visible !important;
-			max-height:none !important;
-		}
-		
+        }		
 
     }
 
