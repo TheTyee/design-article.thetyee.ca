@@ -1472,6 +1472,10 @@ aside { }
       font-weight: 300;
     }
 
+	 .author-more {
+      display:none;
+    }
+
 
 /* fix date spacing on bric 
  @media screen and (min-width: 600px) {
