@@ -7,18 +7,6 @@ function imageExists(image_url){
 }
 
 
-function readMore(){
-var author = $(".author-info div")[0];
-
-if (author) {
-	if (author.offsetHeight < author.scrollHeight && !$(".author-info__text").hasClass("overflow") ) {
-			$(".author-more").css("display","block");
-	} else {
-		$(".author-more").css("display","none");
-	}
-	
-}
-}
 
 function fixFeaturedMediaOffset(){
     if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
@@ -52,7 +40,6 @@ function fixFeaturedMediaOffset(){
             return false;
         });
 
-readMore();
 
 
 // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
@@ -126,7 +113,6 @@ $(".author-more").click(function(e){
                 $(".open").removeClass("open");
                 $(".article__header").css("margin-top", 0);
                 fixFeaturedMediaOffset();
-				readMore();
             }
             // Otherwise do nothing
         }
@@ -204,25 +190,11 @@ $(".author-more").click(function(e){
             $.each(recentItems, function(key, value){
 
                 latestStoryImage = value._source.related_media[0].uri;
-
-                // get the smallest image > 200px available
-                var bestWidth = value._source.related_media[0].width;
-                var bestHeight = value._source.related_media[0].height;
-                for (var k in value._source.related_media[0].thumbnails) {
-                    var thumb = value._source.related_media[0].thumbnails[k];
-															if (thumb.uri.indexOf("square") > -1) { continue; }
-                    thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
-                    if (
-                        // re-enable live to filter out not yet published thumbnails
-                        //			imageExists(thumb.uri) == true &&
-                        thumb.width >= 200 && thumb.width <= bestWidth) {
-                            bestWidth = thumb.width;
-                            bestHeight = thumb.height;
-                            latestStoryImage = thumb.uri;  }
-                }
+				var bestWidth = '250';
+				 var bestHeight = '165';
 
                 //Format the API img uri's so they don't point at cachefly
-                latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
+                latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thumbor.thetyee.ca/unsafe/250x165/smart/thetyee.ca");
 
                 //Use moment.js to format the date
                 formattedDate = moment.utc(value._source.storyDate).format("DD MMM");
@@ -395,21 +367,13 @@ $(".author-more").click(function(e){
         $(".comments-section .btn").click(function(e) {
             e.preventDefault();
             var el = $('.comments-section');
-            var disqus_div = $('#disqus_thread');
-            var anim_height = disqus_div.height() + 40;
             el.css({
-                "height": 400,
-                "max-height": 9999
+                "height": "auto", 
             })
-            .animate({
-                "height": anim_height
-            });
-
+         
             // fade out read-more
             $('.read-more').fadeOut();
         });
-
-
     });
 
 })(jQuery, ResponsiveBootstrapToolkit);
