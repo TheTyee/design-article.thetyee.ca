@@ -1449,7 +1449,7 @@ aside { }
 .author-info {
   margin-top: 0.75em;
   margin-bottom: 1em;
-  padding: 0.45em 0  0.4em 0;
+  padding: 0.45em 0  0.5em 0;
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: inherit;
@@ -1472,6 +1472,10 @@ aside { }
       font-weight: 300;
     }
 
+	 .author-more {
+      display:none;
+    }
+
 
 /* fix date spacing on bric 
  @media screen and (min-width: 600px) {
@@ -1490,6 +1494,10 @@ aside { }
 
     .author-info div {
       position: relative;
+    }
+
+    .author-info p {
+      margin-bottom: 0;
     }
 
     /* BREAKPOINT: 600px // Display author bio teaser, enlarge author photo, set date inline */
@@ -2532,8 +2540,7 @@ label.valid {
     background-color: #F4F4F4;
     margin-top: 1.75em;
     margin-bottom: 1.75em;
-    min-height: 100px;
-    max-height: 460px;
+    height:460px;
     overflow: hidden;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
