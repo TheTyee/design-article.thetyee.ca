@@ -1720,6 +1720,13 @@ aside { }
        letter-spacing: 0.15em;
     }
 
+    /* Hide bigbox ads when ad blocker is active */
+    .ad-blocker .ad-box--bigbox {
+        background-color: #e9e9e9;
+        display: none;
+    }
+
+    /* BREAKPOINT */
     @media screen and (min-width: 976px) {
     /* This removes the float from bigbox ads so that they don't get pushed out of position by asides. */
     /* At this width there's no risk of collision between main column elements and asides so the float no longer necessary. */
@@ -1743,6 +1750,10 @@ aside { }
         height: 600px;
         margin-bottom: 3em;
     }
+
+        .ad-blocker .ad-box--halfpage {
+            background-color: #e9e9e9;
+        }
 
         .ad-box--halfpage img {
             height: 600px;
@@ -1834,8 +1845,7 @@ aside { }
         }
     }
 
-
-/* bryan small-med feature image hack for old stories */
+    /* bryan small-med feature image hack for old stories */
     @media screen and (min-width: 760px) {
         .ad-box--halfpage.smaller {
             display: block;
@@ -1868,9 +1878,14 @@ aside { }
         }
 
     }
+    /* end bryan hack */
 
+    /* Show ad label when ad blocker is active */
+    .ad-box--halfpage:before { 
+       display: block;
+       margin-top: 2em;
+    }
 
-/* end bryan hack */
 
 
 
