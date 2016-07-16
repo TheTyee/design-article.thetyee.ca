@@ -1533,11 +1533,10 @@ aside { }
 
 
 /* TOOL-BAR  ========================================================================== */
-/* THIS OBJECT IS A TOTAL MESS! 
-   -->> Start again from scratch using the basic bootstrap button markup, like I already 
-   started in the messaging-zone buttons. <<--
-   For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. -- AG */
+/* This object is a mess! 
+   Might be best to start again from scratch using the basic bootstrap button markup, like I already 
+   started in the messaging-zone buttons.
+   For some reason the bootstrap default button html & css wasn't working. -- AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
