@@ -3398,6 +3398,7 @@ div.ntnl-sgnup-modal {
       float: left !important;
     }
     .ntnl-sgnup-modal .form-control {
+      max-width: 95.5%;
       padding: 0px;
     }
     .ntnl-sgnup-modal .modal-header h2 { margin-top: 40px; } 
