@@ -1880,7 +1880,7 @@ aside { }
     /* end bryan hack */
 
     /* Show ad label when ad blocker is active */
-    .ad-box--halfpage:before { 
+    .ad-blocker .ad-box--halfpage:before { 
        display: block;
        margin-top: 2em;
     }
