@@ -1449,7 +1449,7 @@ aside { }
 .author-info {
   margin-top: 0.75em;
   margin-bottom: 1em;
-  padding: 0.45em 0  0.4em 0;
+  padding: 0.45em 0  0.5em 0;
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: inherit;
@@ -1496,6 +1496,10 @@ aside { }
       position: relative;
     }
 
+    .author-info p {
+      margin-bottom: 0;
+    }
+
     /* BREAKPOINT: 600px // Display author bio teaser, enlarge author photo, set date inline */
     @media screen and (min-width: 600px) {
 
@@ -1529,11 +1533,10 @@ aside { }
 
 
 /* TOOL-BAR  ========================================================================== */
-/* THIS OBJECT IS A TOTAL MESS! 
-   -->> Start again from scratch using the basic bootstrap button markup, like I already 
-   started in the messaging-zone buttons. <<--
-   For some reason the bootstrap default button html & css wasn't working so I had to hack 
-   some crap together. -- AG */
+/* This object is a mess! 
+   Might be best to start again from scratch using the basic bootstrap button markup, like I already 
+   started in the messaging-zone buttons.
+   For some reason the bootstrap default button html & css wasn't working. -- AG */
 
 .tool-bar{
   margin: .85em 0 .3em 0;
@@ -1716,6 +1719,13 @@ aside { }
        letter-spacing: 0.15em;
     }
 
+    /* Hide bigbox ads when ad blocker is active */
+    .ad-blocker .ad-box--bigbox {
+        background-color: #e9e9e9;
+        display: none;
+    }
+
+    /* BREAKPOINT */
     @media screen and (min-width: 976px) {
     /* This removes the float from bigbox ads so that they don't get pushed out of position by asides. */
     /* At this width there's no risk of collision between main column elements and asides so the float no longer necessary. */
@@ -1739,6 +1749,10 @@ aside { }
         height: 600px;
         margin-bottom: 3em;
     }
+
+        .ad-blocker .ad-box--halfpage {
+            background-color: #e9e9e9;
+        }
 
         .ad-box--halfpage img {
             height: 600px;
@@ -1830,8 +1844,7 @@ aside { }
         }
     }
 
-
-/* bryan small-med feature image hack for old stories */
+    /* bryan small-med feature image hack for old stories */
     @media screen and (min-width: 760px) {
         .ad-box--halfpage.smaller {
             display: block;
@@ -1864,9 +1877,14 @@ aside { }
         }
 
     }
+    /* end bryan hack */
 
+    /* Show ad label when ad blocker is active */
+    .ad-box--halfpage:before { 
+       display: block;
+       margin-top: 2em;
+    }
 
-/* end bryan hack */
 
 
 
@@ -3380,6 +3398,7 @@ div.ntnl-sgnup-modal {
       float: left !important;
     }
     .ntnl-sgnup-modal .form-control {
+      max-width: 95.5%;
       padding: 0px;
     }
     .ntnl-sgnup-modal .modal-header h2 { margin-top: 40px; } 
