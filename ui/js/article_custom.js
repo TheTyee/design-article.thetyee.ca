@@ -41,6 +41,12 @@ function fixFeaturedMediaOffset(){
         });
 
 
+// add .ad-blocker if ad blocker present
+
+if (canRunAds) {
+    $("body").addClass("ad-blocker");
+};
+
 
 // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
 // http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
