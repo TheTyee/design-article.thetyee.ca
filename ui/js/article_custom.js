@@ -7,6 +7,11 @@ function imageExists(image_url){
 }
 
 
+// add .ad-blocker if ad blocker present
+	if(typeof canRunAds == "undefined") {
+		$("body").addClass("ad-blocker");	
+	};
+	
 
 function fixFeaturedMediaOffset(){
     if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
@@ -40,12 +45,6 @@ function fixFeaturedMediaOffset(){
             return false;
         });
 
-
-// add .ad-blocker if ad blocker present
-
-if (!canRunAds) {
-    $("body").addClass("ad-blocker");
-};
 
 
 // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
