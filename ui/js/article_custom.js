@@ -7,6 +7,11 @@ function imageExists(image_url){
 }
 
 
+// add .ad-blocker if ad blocker present
+	if(typeof canRunAds == "undefined") {
+		$("body").addClass("ad-blocker");	
+	};
+	
 
 function fixFeaturedMediaOffset(){
     if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
