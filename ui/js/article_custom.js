@@ -43,7 +43,7 @@ function fixFeaturedMediaOffset(){
 
 // add .ad-blocker if ad blocker present
 
-if (canRunAds) {
+if (!canRunAds) {
     $("body").addClass("ad-blocker");
 };
 
