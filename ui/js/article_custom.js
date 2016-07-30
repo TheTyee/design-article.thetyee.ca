@@ -33,6 +33,24 @@ function fixFeaturedMediaOffset(){
     }
 }
 
+
+// function to hide comments unless a link being followed to a specific comment ( comments are not hidden in css anymore by default)
+
+$(window).load(function() {
+    var hash = window.location.hash;
+    if (hash.indexOf("comment") !== -1 ) {
+    		    $('.read-more').fadeOut();
+    } else {
+	        var el = $('.comments-section');
+            el.css(
+                "height", "460px"
+            );
+    }
+});
+
+
+
+
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
@@ -195,11 +213,25 @@ $(".author-more").click(function(e){
             $.each(recentItems, function(key, value){
 
                 latestStoryImage = value._source.related_media[0].uri;
-				var bestWidth = '250';
-				 var bestHeight = '165';
+
+                // get the smallest image > 200px available
+                var bestWidth = value._source.related_media[0].width;
+                var bestHeight = value._source.related_media[0].height;
+                for (var k in value._source.related_media[0].thumbnails) {
+                    var thumb = value._source.related_media[0].thumbnails[k];
+															if (thumb.uri.indexOf("square") > -1) { continue; }
+                    thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
+                    if (
+                        // re-enable live to filter out not yet published thumbnails
+                        //			imageExists(thumb.uri) == true &&
+                        thumb.width >= 200 && thumb.width <= bestWidth) {
+                            bestWidth = thumb.width;
+                            bestHeight = thumb.height;
+                            latestStoryImage = thumb.uri;  }
+                }
 
                 //Format the API img uri's so they don't point at cachefly
-                latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thumbor.thetyee.ca/unsafe/250x165/smart/thetyee.ca");
+                latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
 
                 //Use moment.js to format the date
                 formattedDate = moment.utc(value._source.storyDate).format("DD MMM");
