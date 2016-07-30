@@ -33,6 +33,24 @@ function fixFeaturedMediaOffset(){
     }
 }
 
+
+// function to hide comments unless a link being followed to a specific comment ( comments are not hidden in css anymore by default)
+
+$(window).load(function() {
+    var hash = window.location.hash;
+    if (hash.indexOf("comment") !== -1 ) {
+    		    $('.read-more').fadeOut();
+    } else {
+	        var el = $('.comments-section');
+            el.css(
+                "height", "460px"
+            );
+    }
+});
+
+
+
+
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
