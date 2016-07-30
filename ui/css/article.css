@@ -1880,7 +1880,7 @@ aside { }
     /* end bryan hack */
 
     /* Show ad label when ad blocker is active */
-    .ad-blocker .ad-box--halfpage:before { 
+    .ad-box--halfpage:before { 
        display: block;
        margin-top: 2em;
     }
@@ -2554,7 +2554,7 @@ label.valid {
     background-color: #F4F4F4;
     margin-top: 1.75em;
     margin-bottom: 1.75em;
-    height:460px;
+    height:auto;
     overflow: hidden;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
