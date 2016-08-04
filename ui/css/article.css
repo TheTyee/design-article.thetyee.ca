@@ -1879,8 +1879,8 @@ aside { }
     }
     /* end bryan hack */
 
-    /* Show ad label when ad blocker is active */
-    .ad-box--halfpage:before { 
+    /* Show ad label ONLY when ad blocker is active */
+    .ad-blocker .ad-box--halfpage:before { 
        display: block;
        margin-top: 2em;
     }
@@ -3002,8 +3002,8 @@ footer .footer__menu {
     color: #555;
   }
   .latest-stories .media .media-meta {
-    /* bottom: 0px; */
-    /* position: absolute; */
+     bottom: 0px; 
+     position: absolute; 
   }
 }
 
