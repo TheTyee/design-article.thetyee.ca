@@ -12,6 +12,20 @@ function imageExists(image_url){
 		$("body").addClass("ad-blocker");	
 	};
 	
+	
+function latestFix(){
+   var latestHeight= 0;
+   $(".latest-stories__media-wrapper li").height("auto");
+$(".latest-stories__media-wrapper li").each(function(){
+if (latestHeight < $(this).height()) {
+	latestHeight =  $(this).height();
+    }
+
+});
+    
+    $(".latest-stories__media-wrapper li").height(latestHeight + 10);
+};	
+	
 
 function fixFeaturedMediaOffset(){
     if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
@@ -37,6 +51,8 @@ function fixFeaturedMediaOffset(){
 // function to hide comments unless a link being followed to a specific comment ( comments are not hidden in css anymore by default)
 
 $(window).load(function() {
+// attaching to window load
+latestFix();
     var hash = window.location.hash;
     if (hash.indexOf("comment") !== -1 ) {
     		    $('.read-more').fadeOut();
@@ -136,6 +152,7 @@ $(".author-more").click(function(e){
                 $(".open").removeClass("open");
                 $(".article__header").css("margin-top", 0);
                 fixFeaturedMediaOffset();
+				latestFix();
             }
             // Otherwise do nothing
         }
