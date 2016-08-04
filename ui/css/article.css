@@ -3002,8 +3002,8 @@ footer .footer__menu {
     color: #555;
   }
   .latest-stories .media .media-meta {
-    /* bottom: 0px; */
-    /* position: absolute; */
+     bottom: 0px; 
+     position: absolute; 
   }
 }
 
