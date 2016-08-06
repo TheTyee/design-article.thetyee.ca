@@ -1727,13 +1727,12 @@ aside { }
 
     /* BREAKPOINT */
     @media screen and (min-width: 976px) {
-    /* This removes the float from bigbox ads so that they don't get pushed out of position by asides. */
-    /* At this width there's no risk of collision between main column elements and asides so the float no longer necessary. */
+    /* Turns out we still need the ad-box to float in order to prevent collisions with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
 
       .ad-box--bigbox {
-          float: none;
+          /* float: none; */
           clear: none;
-          margin-top: 2em
+          margin-top: 1.5em;
       }
       
     }
