@@ -941,7 +941,14 @@ ul.book_profile {
 
 @media(max-width:768px) {
 #latest_bottom_wrap {
-	border-bottom: none !important;	
+	border-bottom: none !important;
+    max-width: 34em;
+    margin: auto !important;
+}
+
+
+#latest_bottom_wrap div section:first-child{
+  border-bottom: 1px #929292 solid;
 }
 
 }
@@ -2762,14 +2769,12 @@ footer .footer__menu {
 
 
 #latest_bottom_wrap {
-	border-top: 1px #929292 solid;
  	border-bottom: 1px #929292 solid;
     padding: 10px 0;
     margin: 40px 0;
 }
 .latest-stories {
   background-color: #fff;
-  color: #82AD00;
   font-size: 16px;
 }
 
