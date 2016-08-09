@@ -10,7 +10,7 @@ jQuery.sharedCount = function(url, fn) {
 	url = (url || location.href);
 	url = url.replace("preview.thetyee.ca", "thetyee.ca");
     url = encodeURIComponent(url);
-    var domain = "//free.sharedcount.com/"; /* SET DOMAIN */
+    var domain = "//plus.sharedcount.com/"; /* SET DOMAIN */
     var apikey = "c1773060d572969ccecffcfe72d72b886475bc2b" /*API KEY HERE*/
     var arg = {
       data: {
@@ -111,7 +111,7 @@ latestFix();
 
   $.sharedCount(location.href, function(data){
 	var total = data.Twitter + data.Facebook.share_count + data.GooglePlusOne + data.LinkedIn + data.Reddit;
-     $("#sharecount span").text(total);  
+     $("#sharecount span.count").text(total);  
 	 $("#sharecount").fadeIn();
 
 });
