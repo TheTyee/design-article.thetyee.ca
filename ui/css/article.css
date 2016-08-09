@@ -1563,6 +1563,15 @@ aside { }
         margin-right: .7em;
     }
 
+
+    @media screen and (max-width: 400px) {
+      
+      .tool-bar .text {
+        
+        display:none;
+      }
+    }
+
         .btn-social-icon { /* This is adapted from bootstrap */
             position:relative;
             padding-left:44px;
