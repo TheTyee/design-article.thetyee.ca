@@ -941,14 +941,7 @@ ul.book_profile {
 
 @media(max-width:768px) {
 #latest_bottom_wrap {
-	border-bottom: none !important;
-    max-width: 34em;
-    margin: auto !important;
-}
-
-
-#latest_bottom_wrap div section:first-child{
-  border-bottom: 1px #929292 solid;
+	border-bottom: none !important;	
 }
 
 }
@@ -1734,12 +1727,13 @@ aside { }
 
     /* BREAKPOINT */
     @media screen and (min-width: 976px) {
-    /* Turns out we still need the ad-box to float in order to prevent collisions with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
+    /* This removes the float from bigbox ads so that they don't get pushed out of position by asides. */
+    /* At this width there's no risk of collision between main column elements and asides so the float no longer necessary. */
 
       .ad-box--bigbox {
-          /* float: none; */
+          float: none;
           clear: none;
-          margin-top: 1.5em;
+          margin-top: 2em
       }
       
     }
@@ -2769,12 +2763,14 @@ footer .footer__menu {
 
 
 #latest_bottom_wrap {
+	border-top: 1px #929292 solid;
  	border-bottom: 1px #929292 solid;
     padding: 10px 0;
     margin: 40px 0;
 }
 .latest-stories {
   background-color: #fff;
+  color: #82AD00;
   font-size: 16px;
 }
 
@@ -2864,6 +2860,11 @@ footer .footer__menu {
   
 
 @media (min-width: 768px) {
+	
+	.latest-stories {
+		border-top: 1px #929292 solid;	
+	}
+	
   .latest-stories .latest-stories__media-wrapper{
     padding: 10px;
   }
