@@ -110,7 +110,7 @@ latestFix();
 // populate shared count
 
   $.sharedCount(location.href, function(data){
-	var total = data.Twitter + data.Facebook.share_count + data.GooglePlusOne + data.LinkedIn + data.Reddit;
+	var total = data.Twitter + data.Facebook.total_count + data.GooglePlusOne + data.LinkedIn + data.Reddit;
      $("#sharecount span.count").text(total);  
 	 $("#sharecount").fadeIn();
 

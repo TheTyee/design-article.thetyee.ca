@@ -2873,6 +2873,11 @@ footer .footer__menu {
   
 
 @media (min-width: 768px) {
+	
+	.latest-stories {
+		border-top: 1px #929292 solid;	
+	}
+	
   .latest-stories .latest-stories__media-wrapper{
     padding: 10px;
   }
