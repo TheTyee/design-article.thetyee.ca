@@ -8,3 +8,5 @@ Gemfile.lock
 .DS_Store
 node_modules
 bower_components
+
+_includes/01-molecules/blocks/latest-story-item.html
