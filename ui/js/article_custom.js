@@ -6,7 +6,53 @@ function imageExists(image_url){
     return http.status != 404;
 }
 
+jQuery.sharedCount = function(url, fn) {
+	url = (url || location.href);
+	url = url.replace("preview.thetyee.ca", "thetyee.ca");
+    url = encodeURIComponent(url);
+    var domain = "//plus.sharedcount.com/"; /* SET DOMAIN */
+    var apikey = "c1773060d572969ccecffcfe72d72b886475bc2b"; /*API KEY HERE*/
+    var arg = {
+      data: {
+        url : url,
+        apikey : apikey
+      },
+        url: domain,
+        cache: true,
+        dataType: "json"
+    };
+    if ('withCredentials' in new XMLHttpRequest) {
+        arg.success = fn;
+    }
+    else {
+        var cb = "sc_" + url.replace(/\W/g, '');
+        window[cb] = fn;
+        arg.jsonpCallback = cb;
+        arg.dataType += "p";
+    }
+    return jQuery.ajax(arg);
+};
 
+
+// add .ad-blocker if ad blocker present
+if(typeof canRunAds == "undefined") {
+        $("body").addClass("ad-blocker");	
+}
+	
+	
+function latestFix(){
+   var latestHeight= 0;
+   $(".latest-stories__media-wrapper li").height("auto");
+$(".latest-stories__media-wrapper li").each(function(){
+if (latestHeight < $(this).height()) {
+	latestHeight =  $(this).height();
+    }
+
+});
+    
+    $(".latest-stories__media-wrapper li").height(latestHeight + 10);
+};	
+	
 
 function fixFeaturedMediaOffset(){
     if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
@@ -28,6 +74,36 @@ function fixFeaturedMediaOffset(){
     }
 }
 
+
+// function to hide comments unless a link being followed to a specific comment ( comments are not hidden in css anymore by default)
+
+function mobileFriendlyCommentsStr() {
+    // Adds the .stric-comment-cnt class to the Disqus comment counter 
+    // so it can be hidden on mobile
+    var str = $('.str-comment').html();
+    var newstr = str.replace(/comments/i, '<span class="str-comment-cnt hidden-sm hidden-xs">Comments</span>');
+    $('.str-comment').html(newstr);
+}
+
+$(window).load(function() {
+// attaching to window load
+    latestFix();
+    mobileFriendlyCommentsStr();
+    //TODO @MrBryan This should be moved to a function, then called here.
+    var hash = window.location.hash;
+    if (hash.indexOf("comment") !== -1 ) {
+    		    $('.read-more').fadeOut();
+    } else {
+	        var el = $('.comments-section');
+            el.css(
+                "height", "460px"
+            );
+    }
+});
+
+
+
+
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
@@ -39,6 +115,16 @@ function fixFeaturedMediaOffset(){
             });
             return false;
         });
+
+
+// populate shared count
+
+  $.sharedCount(location.href, function(data){
+	var total = data.Twitter + data.Facebook.total_count + data.GooglePlusOne + data.LinkedIn + data.Reddit;
+     $("#sharecount span.count").text(total);  
+	 $("#sharecount").fadeIn();
+
+});
 
 
 
@@ -113,6 +199,7 @@ $(".author-more").click(function(e){
                 $(".open").removeClass("open");
                 $(".article__header").css("margin-top", 0);
                 fixFeaturedMediaOffset();
+				latestFix();
             }
             // Otherwise do nothing
         }
@@ -190,11 +277,25 @@ $(".author-more").click(function(e){
             $.each(recentItems, function(key, value){
 
                 latestStoryImage = value._source.related_media[0].uri;
-				var bestWidth = '250';
-				 var bestHeight = '165';
+
+                // get the smallest image > 200px available
+                var bestWidth = value._source.related_media[0].width;
+                var bestHeight = value._source.related_media[0].height;
+                for (var k in value._source.related_media[0].thumbnails) {
+                    var thumb = value._source.related_media[0].thumbnails[k];
+															if (thumb.uri.indexOf("square") > -1) { continue; }
+                    thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
+                    if (
+                        // re-enable live to filter out not yet published thumbnails
+                        //			imageExists(thumb.uri) == true &&
+                        thumb.width >= 200 && thumb.width <= bestWidth) {
+                            bestWidth = thumb.width;
+                            bestHeight = thumb.height;
+                            latestStoryImage = thumb.uri;  }
+                }
 
                 //Format the API img uri's so they don't point at cachefly
-                latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thumbor.thetyee.ca/unsafe/250x165/smart/thetyee.ca");
+                latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
 
                 //Use moment.js to format the date
                 formattedDate = moment.utc(value._source.storyDate).format("DD MMM");
@@ -369,7 +470,7 @@ $(".author-more").click(function(e){
             var el = $('.comments-section');
             el.css({
                 "height": "auto", 
-            })
+            });
          
             // fade out read-more
             $('.read-more').fadeOut();
