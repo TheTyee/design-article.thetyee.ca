@@ -85,12 +85,8 @@ function mobileFriendlyCommentsStr() {
     $('.str-comment').html(newstr);
 }
 
-$(window).load(function() {
-// attaching to window load
-    latestFix();
-    mobileFriendlyCommentsStr();
-    //TODO @MrBryan This should be moved to a function, then called here.
-    var hash = window.location.hash;
+function hideIfNoHash() {
+ var hash = window.location.hash;
     if (hash.indexOf("comment") !== -1 ) {
     		    $('.read-more').fadeOut();
     } else {
@@ -99,6 +95,14 @@ $(window).load(function() {
                 "height", "460px"
             );
     }
+};
+
+$(window).load(function() {
+// attaching to window load
+    latestFix();
+    mobileFriendlyCommentsStr();
+	hideIfNoHash()   
+	
 });
 
 
@@ -107,15 +111,15 @@ $(window).load(function() {
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
-        $('a.btn-comment').click(function(e){
+        
+$('a.btn-comment, a.str-comment').click(function(e){
             $('html, body').animate({
-                scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+                scrollTop: $("#disqus_thread").offset().top
             }, 500, function(){
                 $(".comments-section button").click();
             });
             return false;
         });
-
 
 // populate shared count
 
