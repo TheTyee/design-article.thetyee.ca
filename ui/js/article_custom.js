@@ -11,7 +11,7 @@ jQuery.sharedCount = function(url, fn) {
 	url = url.replace("preview.thetyee.ca", "thetyee.ca");
     url = encodeURIComponent(url);
     var domain = "//plus.sharedcount.com/"; /* SET DOMAIN */
-    var apikey = "c1773060d572969ccecffcfe72d72b886475bc2b" /*API KEY HERE*/
+    var apikey = "c1773060d572969ccecffcfe72d72b886475bc2b"; /*API KEY HERE*/
     var arg = {
       data: {
         url : url,
