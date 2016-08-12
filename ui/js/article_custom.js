@@ -11,7 +11,7 @@ jQuery.sharedCount = function(url, fn) {
 	url = url.replace("preview.thetyee.ca", "thetyee.ca");
     url = encodeURIComponent(url);
     var domain = "//plus.sharedcount.com/"; /* SET DOMAIN */
-    var apikey = "c1773060d572969ccecffcfe72d72b886475bc2b" /*API KEY HERE*/
+    var apikey = "c1773060d572969ccecffcfe72d72b886475bc2b"; /*API KEY HERE*/
     var arg = {
       data: {
         url : url,
@@ -35,9 +35,9 @@ jQuery.sharedCount = function(url, fn) {
 
 
 // add .ad-blocker if ad blocker present
-	if(typeof canRunAds == "undefined") {
-		$("body").addClass("ad-blocker");	
-	};
+if(typeof canRunAds == "undefined") {
+        $("body").addClass("ad-blocker");	
+}
 	
 	
 function latestFix(){
@@ -77,10 +77,16 @@ function fixFeaturedMediaOffset(){
 
 // function to hide comments unless a link being followed to a specific comment ( comments are not hidden in css anymore by default)
 
-$(window).load(function() {
-// attaching to window load
-latestFix();
-    var hash = window.location.hash;
+function mobileFriendlyCommentsStr() {
+    // Adds the .stric-comment-cnt class to the Disqus comment counter 
+    // so it can be hidden on mobile
+    var str = $('.str-comment').html();
+    var newstr = str.replace(/comments/i, '<span class="str-comment-cnt hidden-sm hidden-xs">Comments</span>');
+    $('.str-comment').html(newstr);
+}
+
+function hideIfNoHash() {
+ var hash = window.location.hash;
     if (hash.indexOf("comment") !== -1 ) {
     		    $('.read-more').fadeOut();
     } else {
@@ -89,6 +95,14 @@ latestFix();
                 "height", "460px"
             );
     }
+};
+
+$(window).load(function() {
+// attaching to window load
+    latestFix();
+    mobileFriendlyCommentsStr();
+	hideIfNoHash()   
+	
 });
 
 
@@ -97,15 +111,15 @@ latestFix();
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
-        $('a.btn-comment').click(function(e){
+        
+$('a.btn-comment, a.str-comment').click(function(e){
             $('html, body').animate({
-                scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+                scrollTop: $("#disqus_thread").offset().top
             }, 500, function(){
                 $(".comments-section button").click();
             });
             return false;
         });
-
 
 // populate shared count
 
@@ -460,7 +474,7 @@ $(".author-more").click(function(e){
             var el = $('.comments-section');
             el.css({
                 "height": "auto", 
-            })
+            });
          
             // fade out read-more
             $('.read-more').fadeOut();
