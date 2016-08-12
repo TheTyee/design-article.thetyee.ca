@@ -11,7 +11,7 @@ jQuery.sharedCount = function(url, fn) {
 	url = url.replace("preview.thetyee.ca", "thetyee.ca");
     url = encodeURIComponent(url);
     var domain = "//plus.sharedcount.com/"; /* SET DOMAIN */
-    var apikey = "c1773060d572969ccecffcfe72d72b886475bc2b" /*API KEY HERE*/
+    var apikey = "c1773060d572969ccecffcfe72d72b886475bc2b"; /*API KEY HERE*/
     var arg = {
       data: {
         url : url,
@@ -35,9 +35,9 @@ jQuery.sharedCount = function(url, fn) {
 
 
 // add .ad-blocker if ad blocker present
-	if(typeof canRunAds == "undefined") {
-		$("body").addClass("ad-blocker");	
-	};
+if(typeof canRunAds == "undefined") {
+        $("body").addClass("ad-blocker");	
+}
 	
 	
 function latestFix(){
@@ -77,9 +77,19 @@ function fixFeaturedMediaOffset(){
 
 // function to hide comments unless a link being followed to a specific comment ( comments are not hidden in css anymore by default)
 
+function mobileFriendlyCommentsStr() {
+    // Adds the .stric-comment-cnt class to the Disqus comment counter 
+    // so it can be hidden on mobile
+    var str = $('.str-comment').html();
+    var newstr = str.replace(/comments/i, '<span class="str-comment-cnt visible-md visible-lg">Comments</span>');
+    $('.str-comment').html(newstr);
+}
+
 $(window).load(function() {
 // attaching to window load
-latestFix();
+    latestFix();
+    mobileFriendlyCommentsStr();
+    //TODO @MrBryan This should be moved to a function, then called here.
     var hash = window.location.hash;
     if (hash.indexOf("comment") !== -1 ) {
     		    $('.read-more').fadeOut();
@@ -460,7 +470,7 @@ $(".author-more").click(function(e){
             var el = $('.comments-section');
             el.css({
                 "height": "auto", 
-            })
+            });
          
             // fade out read-more
             $('.read-more').fadeOut();
