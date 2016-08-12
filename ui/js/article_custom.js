@@ -470,7 +470,7 @@ $(".author-more").click(function(e){
             var el = $('.comments-section');
             el.css({
                 "height": "auto", 
-            })
+            });
          
             // fade out read-more
             $('.read-more').fadeOut();
