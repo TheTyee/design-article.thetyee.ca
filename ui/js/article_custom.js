@@ -77,9 +77,19 @@ function fixFeaturedMediaOffset(){
 
 // function to hide comments unless a link being followed to a specific comment ( comments are not hidden in css anymore by default)
 
+function mobileFriendlyCommentsStr() {
+    // Adds the .stric-comment-cnt class to the Disqus comment counter 
+    // so it can be hidden on mobile
+    var str = $('.str-comment').html();
+    var newstr = str.replace(/comments/i, '<span class="str-comment-cnt visible-md visible-lg">Comments</span>');
+    $('.str-comment').html(newstr);
+}
+
 $(window).load(function() {
 // attaching to window load
-latestFix();
+    latestFix();
+    mobileFriendlyCommentsStr();
+    //TODO @MrBryan This should be moved to a function, then called here.
     var hash = window.location.hash;
     if (hash.indexOf("comment") !== -1 ) {
     		    $('.read-more').fadeOut();
