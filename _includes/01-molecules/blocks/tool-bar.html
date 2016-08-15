@@ -15,9 +15,11 @@
       <li><a class="btn-print">
                 <span class="glyphicon glyphicon-print"></span></a></li>
              -->
-        <li><a class="btn-comment" href="#comments">
-                <span class="glyphicon glyphicon-comment"></span></a></li>   
         <li><a target="_blank" class="btn-join" href="http://support.thetyee.ca"><?php include( $gitrootinc . "00-atoms/images/dollar-heart-icon.html") ?><span class="text">Join</span></a></li>
+        <li><a class="btn-comment" href="#comments">
+                <span class="glyphicon glyphicon-comment"></span></a>
+            <a class="str-comment" href="http://thetyee.ca<?= $_SERVER['REQUEST_URI'];?>#disqus_thread"></a>
+        </li>   
 
 
     </ul>
