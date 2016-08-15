@@ -7,7 +7,7 @@ function imageExists(image_url){
 }
 
 jQuery.sharedCount = function(url, fn) {
-	url = (url || location.href);
+	url = (url || location.href).split('#')[0];
 	url = url.replace("preview.thetyee.ca", "thetyee.ca");
     url = encodeURIComponent(url);
     var domain = "//plus.sharedcount.com/"; /* SET DOMAIN */
