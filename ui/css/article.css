@@ -1556,6 +1556,15 @@ aside { }
         margin-right: .7em;
     }
 
+
+    @media screen and (max-width: 400px) {
+      
+      .tool-bar .text {
+        
+        display:none;
+      }
+    }
+
         .btn-social-icon { /* This is adapted from bootstrap */
             position:relative;
             padding-left:44px;
@@ -1878,7 +1887,7 @@ aside { }
     }
     /* end bryan hack */
 
-    /* Show ad label when ad blocker is active */
+    /* Show ad label ONLY when ad blocker is active */
     .ad-blocker .ad-box--halfpage:before { 
        display: block;
        margin-top: 2em;
@@ -2244,7 +2253,6 @@ label.valid {
         margin-bottom: 0em;
         padding-right: .75em;
         height: auto;
-        width: 40%;
         max-width: 6em;
         background-color: none;
     }
@@ -2553,7 +2561,7 @@ label.valid {
     background-color: #F4F4F4;
     margin-top: 1.75em;
     margin-bottom: 1.75em;
-    height:460px;
+    height:auto;
     overflow: hidden;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
@@ -2860,6 +2868,11 @@ footer .footer__menu {
   
 
 @media (min-width: 768px) {
+	
+	.latest-stories {
+		border-top: 1px #929292 solid;	
+	}
+	
   .latest-stories .latest-stories__media-wrapper{
     padding: 10px;
   }
@@ -3002,8 +3015,8 @@ footer .footer__menu {
     color: #555;
   }
   .latest-stories .media .media-meta {
-    /* bottom: 0px; */
-    /* position: absolute; */
+     bottom: 0px; 
+     position: absolute; 
   }
 }
 
@@ -3397,6 +3410,7 @@ div.ntnl-sgnup-modal {
       float: left !important;
     }
     .ntnl-sgnup-modal .form-control {
+      max-width: 95.5%;
       padding: 0px;
     }
     .ntnl-sgnup-modal .modal-header h2 { margin-top: 40px; } 
