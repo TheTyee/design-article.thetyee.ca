@@ -1556,6 +1556,15 @@ aside { }
         margin-right: .7em;
     }
 
+
+    @media screen and (max-width: 400px) {
+      
+      .tool-bar .text {
+        
+        display:none;
+      }
+    }
+
         .btn-social-icon { /* This is adapted from bootstrap */
             position:relative;
             padding-left:44px;
@@ -2859,6 +2868,11 @@ footer .footer__menu {
   
 
 @media (min-width: 768px) {
+	
+	.latest-stories {
+		border-top: 1px #929292 solid;	
+	}
+	
   .latest-stories .latest-stories__media-wrapper{
     padding: 10px;
   }
