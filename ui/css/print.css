@@ -1,48 +1,62 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* ==========================================================================
+   Hide elements not required in print
+   ========================================================================== */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+.ad-banner, .tool-bar, .ad-box, .series-box, aside .fact-box, .related-story, .presents-box, .messaging-block, .related-event-box, 
+.messaging-zone, .latest-stories, .comments-section, footer {
+    display: none;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-  display: block;
+
+
+/* ==========================================================================
+   Show elements that are required in print
+   ========================================================================== */
+   
+
+/* Show fact-box at bottom of story (as in narrow viewports) */
+div.fact-box {
+    display: block;
 }
+
+
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+
+@page {
+      margin: 2cm;
+}
+
+
 body {
-  line-height: 1;
+      color: #000;
+      background: #fff;
 }
-ol, ul {
-  list-style: none;
+
+h1, h2, h3, h4 {
+   page-break-after: avoid;
 }
-blockquote, q {
-  quotes: none;
+
+img {
+   page-break-inside: avoid;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
+
+
+/* LINK STYLES  ============================================================= */
+
+article a {
+  font-weight: bolder;
+  text-decoration: none;
 }
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+
+/* Show link urls */
+article a[href^=http]:after {
+  content:" <" attr(href) "> ";
+}
+
+/* Hide anchor link urls */
+article a[href^="#"]:after {
+   content: "";
 }
