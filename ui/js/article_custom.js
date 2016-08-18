@@ -125,8 +125,8 @@ $('a.btn-comment, a.str-comment').click(function(e){
 
   $.sharedCount(location.href, function(data){
 	var total = data.Twitter + data.Facebook.total_count + data.GooglePlusOne + data.LinkedIn + data.Reddit;
-     $("#sharecount span.count").text(total);  
-	 $("#sharecount").fadeIn();
+    // $("#sharecount span.count").text(total);  
+	 // $("#sharecount").fadeIn();
 
 });
 
