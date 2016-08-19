@@ -43,6 +43,7 @@ h1, h2, h3, h4 {
    page-break-after: avoid;
 }
 
+
 .site__header {
     height: 25px;
 }
@@ -60,12 +61,28 @@ h1, h2, h3, h4 {
 }
 
 .mobile-toggle, .narrow__search {
+    height: 30px;
     border-bottom-style: double;
+    width: 37%
+}
+
+.site-nav .col-xs-6 {
+    width: 26%;
 }
 
 #site-logo {
-    width: 100px;
-    top: 0px;
+    position: absolute;
+    top: 0;
+    width: 75%;
+    margin-left: 5.25%;
+}
+
+h6.category-label {
+    margin-top: 2em;
+}
+
+.badge--headline-placement {
+    margin-top: .1em;
 }
 
 img, figure, .pullquote {
