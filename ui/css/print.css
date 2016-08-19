@@ -60,3 +60,41 @@ article a[href^=http]:after {
 article a[href^="#"]:after {
    content: "";
 }
+
+
+/* PULLQUOTES  ========================================================================== */
+
+.pullquote {
+  position: relative;
+  float: left; /* prevents collisions with asides */
+  margin: 0.4em 0em 1.33em 0em;
+  border-top: 8px solid;
+  border-bottom: 1px solid;
+  border-color: #444;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-family: Georgia, Serif;
+  font-weight: 800;
+  font-size: 1.15em;
+  line-height: 1.333em;
+}
+
+.pullquote {
+    margin-left: 2.125em;
+    margin-right: 2.125em;
+}
+
+
+/* BLOCK QUOTES  ============================================================= */
+
+.blockquote {
+    margin: 1em 0 2em 0;
+}
+
+blockquote {
+    margin: 0 0 1rem 0;
+    padding: 0rem 1.25rem;
+    border-left: .3rem solid #eee;
+    font-size: .9em;
+    font-weight: 300;
+}
