@@ -1,26 +1,4 @@
 /* ==========================================================================
-   Hide elements not required in print
-   ========================================================================== */
-
-.ad-banner, .mobile-toggle button, .search-block, .tool-bar, .ad-box, .series-box, aside .fact-box, .related-story, .presents-box, .messaging-block, .related-event-box, 
-.messaging-zone, .latest-stories, .comments-section, footer {
-    display: none;
-}
-
-
-/* ==========================================================================
-   Show elements that are required in print
-   ========================================================================== */
-   
-
-/* Show fact-box at bottom of story (as in narrow viewports) */
-div.fact-box, header.site__header, .navbar {
-    display: block;
-}
-
-
-
-/* ==========================================================================
    Print styles
    ========================================================================== */
 
@@ -29,6 +7,10 @@ div.fact-box, header.site__header, .navbar {
       margin: 2cm;
 }
 
+/* Set body width to limit the variability of browser print driver scaling */
+body {
+    width: 800px !important;
+}
 
 body {
       color: #000;
@@ -39,10 +21,54 @@ body {
       line-height: 1.39em;
 }
 
+iframe {
+    background-color: 777;
+}
+
+
+
+/* HIDE ELEMENTS THAT ARE NOT REQUIRED IN PRINT  =================================== */
+
+.ad-banner, .mobile-toggle button, .search-block, .tool-bar, .ad-box, .series-box, aside .fact-box, .related-story, .presents-box, .messaging-block, .related-event-box, 
+.messaging-zone, .latest-stories, .comments-section, footer {
+    display: none;
+}
+
+/* Hide wide viewport nav (required for Safari) */
+#bs-example-navbar-collapse-1 {
+    display: none !important;
+}
+
+
+
+/* SHOW ELEMENTS THAT ARE REQUIRED IN PRINT  =================================== */
+   
+
+/* Show narrow viewport nav (required for Safari) */
+header.site__header, .narrow-menu, .navbar {
+    display: block !important;
+}
+
+/* Show fact-box at bottom of story (as in narrow viewports) */
+div.fact-box {
+    display: block;
+}
+
+
+
+/* PAGE BREAK STYLES  ============================================================= */
+
 h1, h2, h3, h4 {
    page-break-after: avoid;
 }
 
+img, figure, aside, .pullquote, .fact-box {
+   page-break-inside: avoid;
+}
+
+
+
+/* HEADER STYLES  ============================================================= */
 
 .site__header {
     height: 25px;
@@ -85,9 +111,29 @@ h6.category-label {
     margin-top: .1em;
 }
 
-img, figure, .pullquote {
-   page-break-inside: avoid;
+
+
+/* FIGURE STYLES  ============================================================= */
+
+figure, .figure--xl, .figure--xxl {
+    position: relative;
+    left: 0;
+    float: left;
+    clear: none;    
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 2em;
 }
+
+.featured-media {
+    position: relative;
+    left: 0;
+    max-width: 800px;
+    margin: 0 auto 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 
 
 /* LINK STYLES  ============================================================= */
@@ -118,6 +164,7 @@ article a[href^="#fact-box"]:after {
 }
 
 
+
 /* BLOCK QUOTES  ============================================================= */
 
 .blockquote {
@@ -143,6 +190,3 @@ article a[href^="#fact-box"]:after {
         font-weight: 300 !important;
         font-style: italic !important;
     }
-
-
-
