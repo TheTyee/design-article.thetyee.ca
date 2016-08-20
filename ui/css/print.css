@@ -115,14 +115,17 @@ h6.category-label {
 
 /* FIGURE STYLES  ============================================================= */
 
-figure, .figure--xl, .figure--xxl {
+figure, .figure--xl, .figure--xxl, aside, .aside {
     position: relative;
     left: 0;
-    float: left;
+    float: none;
     clear: none;    
     width: 100%;
     margin-top: 1em;
     margin-bottom: 2em;
+    margin-right: 0 !important; 
+    padding: 0;
+
 }
 
 .featured-media {
