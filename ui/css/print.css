@@ -1,0 +1,195 @@
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+
+@page {
+      margin: 2cm;
+}
+
+/* Set body width to limit the variability of browser print driver scaling */
+body {
+    width: 800px !important;
+}
+
+body {
+      color: #000;
+      background: #fff;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.39em;
+}
+
+iframe {
+    background-color: 777;
+}
+
+
+
+/* HIDE ELEMENTS THAT ARE NOT REQUIRED IN PRINT  =================================== */
+
+.ad-banner, .mobile-toggle button, .search-block, .tool-bar, .ad-box, .series-box, aside .fact-box, .related-story, .presents-box, .messaging-block, .related-event-box, 
+.messaging-zone, .latest-stories, .comments-section, footer {
+    display: none;
+}
+
+/* Hide wide viewport nav (required for Safari) */
+#bs-example-navbar-collapse-1 {
+    display: none !important;
+}
+
+
+
+/* SHOW ELEMENTS THAT ARE REQUIRED IN PRINT  =================================== */
+   
+
+/* Show narrow viewport nav (required for Safari) */
+header.site__header, .narrow-menu, .navbar {
+    display: block !important;
+}
+
+/* Show fact-box at bottom of story (as in narrow viewports) */
+div.fact-box {
+    display: block;
+}
+
+
+
+/* PAGE BREAK STYLES  ============================================================= */
+
+h1, h2, h3, h4 {
+   page-break-after: avoid;
+}
+
+img, figure, aside, .pullquote, .fact-box {
+   page-break-inside: avoid;
+}
+
+
+
+/* HEADER STYLES  ============================================================= */
+
+.site__header {
+    height: 25px;
+}
+
+.site-nav {
+    padding-top: 0px;
+    border: none;
+}
+
+.narrow-menu {
+    min-height: 52px;
+    position: relative;
+    color: #929292;
+    border: none;
+}
+
+.mobile-toggle, .narrow__search {
+    height: 30px;
+    border-bottom-style: double;
+    width: 37%
+}
+
+.site-nav .col-xs-6 {
+    width: 26%;
+}
+
+#site-logo {
+    position: absolute;
+    top: 0;
+    width: 75%;
+    margin-left: 5.25%;
+}
+
+h6.category-label {
+    margin-top: 2em;
+}
+
+.badge--headline-placement {
+    margin-top: .1em;
+}
+
+
+
+/* FIGURE STYLES  ============================================================= */
+
+figure, .figure--xl, .figure--xxl, aside, .aside {
+    position: relative;
+    left: 0;
+    float: none;
+    clear: none;    
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-right: 0 !important; 
+    padding: 0;
+
+}
+
+.featured-media {
+    position: relative;
+    left: 0;
+    max-width: 800px;
+    margin: 0 auto 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
+/* LINK STYLES  ============================================================= */
+
+article a {
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+/* Show link urls */
+article a[href^=http]:after {
+  content:" <" attr(href) "> ";
+}
+
+/* Hide anchor link decoration */
+article a[href^="#"] {
+   border: none;
+}
+
+/* Hide anchor link urls */
+article a[href^="#"]:after {
+   content: "";
+}
+
+/* Explain anchor links */
+article a[href^="#fact-box"]:after {
+   content: " [See fact-box at bottom of this article.]";
+}
+
+
+
+/* BLOCK QUOTES  ============================================================= */
+
+.blockquote {
+    margin: 1em 0 2em 0 !important;
+
+    page-break-inside: avoid;
+}
+
+    blockquote {
+        margin: 0 0 1rem 0 !important;
+        padding: 0rem 1.25rem !important;
+        border: none !important;
+        border-left: .3rem solid #eee !important;
+        font-size: .9em !important;
+        font-weight: 300 !important;
+
+        page-break-inside: avoid;
+    }
+
+    .blockquote figcaption {
+        padding: 0rem 1.55rem !important;
+        font-size: .9em !important;
+        font-weight: 300 !important;
+        font-style: italic !important;
+    }
