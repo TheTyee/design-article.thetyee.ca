@@ -94,15 +94,22 @@ $('a.btn-comment, a.str-comment').click(function(e){
         });
 
 // populate shared count
+    
+    var shareAPI; 
+    if ( location.host === 'thetyee.ca' ) {
+        shareAPI = 'https://widgets.thetyee.ca';
+    } else if ( location.host === 'preview.thetyee.ca' ) {
+        shareAPI = 'http://preview.widgets.thetyee.ca';
+    } else {
+        shareAPI = 'http://127.0.0.1:3000';
+    }
+    var meta = $('meta[property="og:url"]');
+    var url = meta.attr("content");
+    $.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
+         $("#sharecount span.count").text(data.result.total);  
+         $("#sharecount").fadeIn();
 
-  $.sharedCount(location.href, function(data){
-	var total = data.Twitter + data.Facebook.total_count + data.GooglePlusOne + data.LinkedIn + data.Reddit;
-     $("#sharecount span.count").text(total);  
-	 $("#sharecount").fadeIn();
-
-});
-
-
+    });
 
 // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
 // http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
