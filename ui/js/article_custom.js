@@ -8,23 +8,23 @@ function imageExists(image_url){
 
 // add .ad-blocker if ad blocker present
 if(typeof canRunAds == "undefined") {
-        $("body").addClass("ad-blocker");	
+    $("body").addClass("ad-blocker");
 }
-	
-	
-function latestFix(){
-   var latestHeight= 0;
-   $(".latest-stories__media-wrapper li").height("auto");
-$(".latest-stories__media-wrapper li").each(function(){
-if (latestHeight < $(this).height()) {
-	latestHeight =  $(this).height();
-    }
 
-});
-    
+
+function latestFix(){
+    var latestHeight= 0;
+    $(".latest-stories__media-wrapper li").height("auto");
+    $(".latest-stories__media-wrapper li").each(function(){
+        if (latestHeight < $(this).height()) {
+            latestHeight =  $(this).height();
+        }
+
+    });
+
     $(".latest-stories__media-wrapper li").height(latestHeight + 10);
-};	
-	
+}
+
 
 function fixFeaturedMediaOffset(){
     if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
@@ -34,15 +34,15 @@ function fixFeaturedMediaOffset(){
 
             var mediamargin =  mediaHeight - sectionHeight + -13;
             $("section.featured-media").css("margin-bottom", mediamargin);
-			
-			if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)  { 
-							var negmargin = -1 * mediamargin;
-							$($("article .container-fluid aside")[0]).css("margin-top", negmargin);
-		}
+
+            if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)  {
+                var negmargin = -1 * mediamargin;
+                $($("article .container-fluid aside")[0]).css("margin-top", negmargin);
+            }
         }
     } else {
         $("section.featured-media").css("margin-bottom", "inherit");
-		$($("article .container-fluid aside")[0]).removeAttr("style");
+        $($("article .container-fluid aside")[0]).removeAttr("style");
     }
 }
 
@@ -50,7 +50,7 @@ function fixFeaturedMediaOffset(){
 // function to hide comments unless a link being followed to a specific comment ( comments are not hidden in css anymore by default)
 
 function mobileFriendlyCommentsStr() {
-    // Adds the .stric-comment-cnt class to the Disqus comment counter 
+    // Adds the .stric-comment-cnt class to the Disqus comment counter
     // so it can be hidden on mobile
     var str = $('.str-comment').html();
     var newstr = str.replace(/comments/i, '<span class="str-comment-cnt hidden-sm hidden-xs">Comments</span>');
@@ -58,23 +58,23 @@ function mobileFriendlyCommentsStr() {
 }
 
 function hideIfNoHash() {
- var hash = window.location.hash;
+    var hash = window.location.hash;
     if (hash.indexOf("comment") !== -1 ) {
-    		    $('.read-more').fadeOut();
+        $('.read-more').fadeOut();
     } else {
-	        var el = $('.comments-section');
-            el.css(
-                "height", "460px"
-            );
+        var el = $('.comments-section');
+        el.css(
+            "height", "460px"
+        );
     }
-};
+}
 
 $(window).load(function() {
-// attaching to window load
+    // attaching to window load
     latestFix();
     mobileFriendlyCommentsStr();
-	hideIfNoHash()   
-	
+    hideIfNoHash();
+
 });
 
 
@@ -83,8 +83,8 @@ $(window).load(function() {
 // Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
-        
-$('a.btn-comment, a.str-comment').click(function(e){
+
+        $('a.btn-comment, a.str-comment').click(function(e){
             $('html, body').animate({
                 scrollTop: $("#disqus_thread").offset().top
             }, 500, function(){
@@ -93,42 +93,42 @@ $('a.btn-comment, a.str-comment').click(function(e){
             return false;
         });
 
-// populate shared count
-    
-    var shareAPI; 
-    if ( location.host === 'thetyee.ca' ) {
-        shareAPI = 'https://widgets.thetyee.ca';
-    } else if ( location.host === 'preview.thetyee.ca' ) {
-        shareAPI = 'http://preview.widgets.thetyee.ca';
-    } else {
-        shareAPI = 'http://127.0.0.1:3000';
-    }
-    var meta = $('meta[property="og:url"]');
-    var url = meta.attr("content");
-    $.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
-         $("#sharecount span.count").text(data.result.total);  
-         $("#sharecount").fadeIn();
+        // populate shared count
 
-    });
+        var shareAPI;
+        if ( location.host === 'thetyee.ca' ) {
+            shareAPI = 'https://widgets.thetyee.ca';
+        } else if ( location.host === 'preview.thetyee.ca' ) {
+            shareAPI = 'http://preview.widgets.thetyee.ca';
+        } else {
+            shareAPI = 'http://127.0.0.1:3000';
+        }
+        var meta = $('meta[property="og:url"]');
+        var url = meta.attr("content");
+        $.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
+            $("#sharecount span.count").text(data.result.total);
+            $("#sharecount").fadeIn();
 
-// Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
-// http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
-// The polyfill is no longer working so this is now done via js
-$(".aside:has(> img)").css("display", "block");
+        });
 
-
-	// read more expand instead of following link
-		
-$(".author-more").click(function(e){
-    e.preventDefault();
-    $(this).hide();
-    $(".author-info__text").addClass("overflow");
-});
+        // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
+        // http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
+        // The polyfill is no longer working so this is now done via js
+        $(".aside:has(> img)").css("display", "block");
 
 
+        // read more expand instead of following link
 
-	
-	
+        $(".author-more").click(function(e){
+            e.preventDefault();
+            $(this).hide();
+            $(".author-info__text").addClass("overflow");
+        });
+
+
+
+
+
         //fix offset
         var windowWidth = $(window).width();
 
@@ -182,7 +182,7 @@ $(".author-more").click(function(e){
                 $(".open").removeClass("open");
                 $(".article__header").css("margin-top", 0);
                 fixFeaturedMediaOffset();
-				latestFix();
+                latestFix();
             }
             // Otherwise do nothing
         }
@@ -266,7 +266,7 @@ $(".author-more").click(function(e){
                 var bestHeight = value._source.related_media[0].height;
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
-															if (thumb.uri.indexOf("square") > -1) { continue; }
+                    if (thumb.uri.indexOf("square") > -1) { continue; }
                     thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
                     if (
                         // re-enable live to filter out not yet published thumbnails
@@ -452,9 +452,9 @@ $(".author-more").click(function(e){
             e.preventDefault();
             var el = $('.comments-section');
             el.css({
-                "height": "auto", 
+                "height": "auto",
             });
-         
+
             // fade out read-more
             $('.read-more').fadeOut();
         });
