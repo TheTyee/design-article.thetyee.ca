@@ -6,34 +6,6 @@ function imageExists(image_url){
     return http.status != 404;
 }
 
-jQuery.sharedCount = function(url, fn) {
-	url = (url || location.href);
-	url = url.replace("preview.thetyee.ca", "thetyee.ca");
-    url = encodeURIComponent(url);
-    var domain = "//plus.sharedcount.com/"; /* SET DOMAIN */
-    var apikey = "c1773060d572969ccecffcfe72d72b886475bc2b"; /*API KEY HERE*/
-    var arg = {
-      data: {
-        url : url,
-        apikey : apikey
-      },
-        url: domain,
-        cache: true,
-        dataType: "json"
-    };
-    if ('withCredentials' in new XMLHttpRequest) {
-        arg.success = fn;
-    }
-    else {
-        var cb = "sc_" + url.replace(/\W/g, '');
-        window[cb] = fn;
-        arg.jsonpCallback = cb;
-        arg.dataType += "p";
-    }
-    return jQuery.ajax(arg);
-};
-
-
 // add .ad-blocker if ad blocker present
 if(typeof canRunAds == "undefined") {
         $("body").addClass("ad-blocker");	
