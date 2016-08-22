@@ -1545,6 +1545,7 @@ aside { }
    started in the messaging-zone buttons.
    For some reason the bootstrap default button html & css wasn't working. -- AG */
 
+
 .tool-bar{
   margin: .85em 0 .3em 0;
 }
@@ -1566,7 +1567,7 @@ aside { }
 
     @media screen and (max-width: 400px) {
       
-      .tool-bar .text {
+      .tool-bar .text, .tool-bar li.count img {
         
         display:none;
       }
