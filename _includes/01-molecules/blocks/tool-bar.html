@@ -2,7 +2,7 @@
 
 <div class="tool-bar clearfix" data-dev-object-descrip="molecules/blocks/tool-bar" data-dev-status="IN-PROGRESS">
     <ul class="clearfix">
-        <li><img src="/ui/img/shareicon.png" width="32" height="32"><strong style="display:none;" id="sharecount"><span class="count"></span> <span class="text"></span></strong></li>
+        <li class="count" ><img src="/ui/img/shareicon.png" width="32" height="32"><strong style="display:none;" id="sharecount"><span class="count"></span> <span class="text"></span></strong></li>
         <li><a style="color:white;" href="#" onclick="share_fb(window.location.href);return false;" rel="nofollow" share_url="<?=$escaped_url ?> target="_blank" class="btn btn-social-icon btn-facebook">
                 <span class="fa fa-facebook"></span>
         </a></li>
@@ -20,8 +20,6 @@
                 <span class="glyphicon glyphicon-comment"></span></a>
             <a class="str-comment" href="http://thetyee.ca<?= $_SERVER['REQUEST_URI'];?>#disqus_thread"></a>
         </li>   
-
-
     </ul>
 
 </div>
