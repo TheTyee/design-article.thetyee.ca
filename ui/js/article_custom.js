@@ -69,16 +69,35 @@ function hideIfNoHash() {
     }
 }
 
+function enableEmailSubscription() {
+    $(".btn--subscribe").click(function(e){
+        e.preventDefault();
+        var theForm = $(this).parents("form")[0];
+        var selectid =  $(this).attr("id") + "option";
+        var selectvalue = $("#" +selectid).val();
+        $('<input />').attr('type', 'hidden').attr('name', selectvalue).attr('value', "1").appendTo(theForm);
+        var theData = $(theForm).serialize();
+        $.ajax({
+            type : 'POST',
+            url : 'https://webhooks.thetyee.ca/subscribe/',
+            data: theData,
+            success: function (data) {
+                $("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'><h2><span class='glyphicon glyphicon-check' aria-hidden='true'></span> Thank you for subscribing!</h2> <p>Now you're on the list. You can expect your Tyee email edition to arrive soon.</p></div></section>").fadeIn('slow');
+            },
+            error: function(jqXHR, string) {
+                $("#subscribesection .subscription-error").removeClass('hidden');
+            }
+        });
+    });  
+}
+
 $(window).load(function() {
     // attaching to window load
     latestFix();
     mobileFriendlyCommentsStr();
     hideIfNoHash();
-
+    enableEmailSubscription();
 });
-
-
-
 
 // Wrap IIFE around your code
 (function($, viewport){
