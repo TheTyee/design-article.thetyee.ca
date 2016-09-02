@@ -1583,7 +1583,7 @@ aside { }
     }
     @media screen and (max-width: 400px) {
       
-      .tool-bar .text, .tool-bar li.count img {
+       .tool-bar li.count img {
         
         display:none;
       }
