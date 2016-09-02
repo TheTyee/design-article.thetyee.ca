@@ -1670,7 +1670,15 @@ aside { }
               background-color: transparent;
               font-size: 1.2em;
         }
-
+        
+        @media screen and (max-width: 400px) {
+        .btn-print {
+          display:none;
+        }
+   
+          
+        }
+       
         .btn-join:hover, .btn-print:hover, .btn-comment:hover {          
               cursor: pointer;
         }
