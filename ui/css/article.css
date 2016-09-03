@@ -1538,6 +1538,7 @@ aside { }
    started in the messaging-zone buttons.
    For some reason the bootstrap default button html & css wasn't working. -- AG */
 
+
 .tool-bar{
   margin: .85em 0 .3em 0;
 }
@@ -1556,10 +1557,33 @@ aside { }
         margin-right: .7em;
     }
 
-
+    .tool-bar .count {
+      width: 35px;
+      height: 40px;
+      
+    }
+    
+  .tool-bar .count img {
+    position: absolute;
+    top: 10px;
+    width: auto;
+    height: 15px !important;
+    left: -15px;
+  }
+  
+    #sharecount .count {
+      position: absolute;
+      top:0px;
+    }
+    
+    .tool-bar .count .text {
+      font-size: 10px;
+      position: absolute;
+      bottom:0px;
+    }
     @media screen and (max-width: 400px) {
       
-      .tool-bar .text {
+      .tool-bar a .text, .tool-bar li.count img {
         
         display:none;
       }
@@ -1646,7 +1670,15 @@ aside { }
               background-color: transparent;
               font-size: 1.2em;
         }
-
+        
+        @media screen and (max-width: 400px) {
+        .btn-print {
+          display:none;
+        }
+   
+          
+        }
+       
         .btn-join:hover, .btn-print:hover, .btn-comment:hover {          
               cursor: pointer;
         }
