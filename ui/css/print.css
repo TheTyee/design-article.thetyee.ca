@@ -156,6 +156,9 @@ article a {
 section.featured-media a[href^=http]:after, article a[href^=http]:after {
   content:" (" attr(href) ") ";
   font-style: italic;
+  border-bottom: 1px solid white;  
+  color: #000;
+
 }
 
 /* Hide anchor link decoration */
