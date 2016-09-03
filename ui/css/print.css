@@ -30,7 +30,7 @@ iframe {
 /* HIDE ELEMENTS THAT ARE NOT REQUIRED IN PRINT  =================================== */
 
 .ad-banner, .mobile-toggle button, .search-block, .tool-bar, .ad-box, .series-box, aside .fact-box, .related-story, .presents-box, .messaging-block, .related-event-box, 
-.messaging-zone, .latest-stories, .comments-section, footer {
+.messaging-zone, #filed-in, #latest_bottom_wrap, .latest-stories, .comments-section, footer {
     display: none;
 }
 
@@ -146,9 +146,16 @@ article a {
   text-decoration: none;
 }
 
+/* Hide unwanted link urls */
+.site__header a:after, .article__header a:after {
+  content: none;
+}
+
+
 /* Show link urls */
-article a[href^=http]:after {
-  content:" <" attr(href) "> ";
+section.featured-media a[href^=http]:after, article a[href^=http]:after {
+  content:" (" attr(href) ") ";
+  font-style: italic;
 }
 
 /* Hide anchor link decoration */
@@ -158,7 +165,7 @@ article a[href^="#"] {
 
 /* Hide anchor link urls */
 article a[href^="#"]:after {
-   content: "";
+   content: none;
 }
 
 /* Explain anchor links */
