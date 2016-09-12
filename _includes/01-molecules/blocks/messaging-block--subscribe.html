@@ -37,33 +37,6 @@
             <button id="small" class="btn btn-default btn--subscribe form-control" type="button">Subscribe now</button>
         <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
     </form>
-<script type="text/javascript">
-        $(".btn--subscribe").click(function(e){
- e.preventDefault();
-            var theForm = $(this).parents("form")[0];
-            var selectid =  $(this).attr("id") + "option";
-            console.log("select id = " + selectid);
-            var selectvalue = $("#" +selectid).val();
-            console.log("select_value = " + selectvalue);
-             $('<input />').attr('type', 'hidden')
-          .attr('name', selectvalue)
-          .attr('value', "1")
-          .appendTo(theForm);
-          var theData = $(theForm).serialize();
-                $.ajax({
-                type : 'POST',
-                url : 'https://webhooks.thetyee.ca/subscribe/',           
-                data: theData,
-                success:function (data) {
-                    console.log(data);
-                    $("#subscribesection").hide().html("<h3>Thank you for subscribing!</h3> Now you're on the list. You can expect your Tyee email edition to arrive soon.").fadeIn('slow');
-                }          
-            });         
-          
-        
-            
-        });  
-</script>
 </section>
 <!-- Modal -->
 <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel">
