@@ -39,6 +39,24 @@ iframe {
     display: none !important;
 }
 
+/* eliminate dropcaps (print driver rendering seems inconsistent) */
+.lead-in:first-letter {
+    display: inline;
+    overflow: hidden;
+    float: inherit;
+    padding-right: inherit;
+    padding-bottom:inherit;
+    margin-top: inherit;
+    margin-bottom: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    color: inherit;
+}
+
 
 
 /* SHOW ELEMENTS THAT ARE REQUIRED IN PRINT  =================================== */
