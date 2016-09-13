@@ -283,17 +283,31 @@ $(window).load(function() {
                 // get the smallest image > 200px available
                 var bestWidth = value._source.related_media[0].width;
                 var bestHeight = value._source.related_media[0].height;
+                 var latestThumbFound=0;
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
-                    if (thumb.uri.indexOf("square") > -1) { continue; }
                     thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
-                    if (
-                        // re-enable live to filter out not yet published thumbnails
-                        //			imageExists(thumb.uri) == true &&
-                        thumb.width >= 200 && thumb.width <= bestWidth) {
-                            bestWidth = thumb.width;
-                            bestHeight = thumb.height;
-                            latestStoryImage = thumb.uri;  }
+                    if (thumb.uri.indexOf("latest") > -1) {
+                        latestStoryImage = thumb.uri;
+                        LatestThumbFound = 1;
+                        break; }
+                    };
+
+                if (latestThumbFound < 1) {
+                    for (var k in value._source.related_media[0].thumbnails) {
+                        var thumb = value._source.related_media[0].thumbnails[k];
+                        if (thumb.uri.indexOf("square") > -1) { continue; }
+                        thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
+                        if (
+                            // re-enable live to filter out not yet published thumbnails
+                            //			imageExists(thumb.uri) == true &&
+                            thumb.width >= 200 && thumb.width <= bestWidth) {
+                                bestWidth = thumb.width;
+                                bestHeight = thumb.height;
+                                latestStoryImage = thumb.uri;
+                                }
+                          
+                    }
                 }
 
                 //Format the API img uri's so they don't point at cachefly
