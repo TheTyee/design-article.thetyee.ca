@@ -38,6 +38,7 @@ body {
   font-size: 18px;
   line-height: 1.39em;
   color: #404040;
+  overflow-x: hidden;
 }
 
 /* Reset to prevent some articles form displaying in italics */
