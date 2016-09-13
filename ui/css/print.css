@@ -177,7 +177,7 @@ section.featured-media a[href^=http]:after, article a[href^=http]:after {
   font-style: italic;
   border-bottom: 1px solid white;  
   color: #000;
-
+  word-wrap: break-word;
 }
 
 /* Hide anchor link decoration */
