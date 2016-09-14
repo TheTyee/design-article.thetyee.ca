@@ -38,6 +38,7 @@ body {
   font-size: 18px;
   line-height: 1.39em;
   color: #404040;
+  overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
 }
 
 /* Reset to prevent some articles form displaying in italics */
@@ -1779,12 +1780,13 @@ aside { }
 
     /* BREAKPOINT */
     @media screen and (min-width: 976px) {
-    /* Turns out we still need the ad-box to float in order to prevent collisions with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
 
       .ad-box--bigbox {
-          /* float: none; */
+          float: none; /* Float can be removed if overflow is set to auto. Prevents buggy wrapping of body text in 
+          Firefox and also allows for more accurate ad positioning by editors. */
           clear: none;
           margin-top: 1.5em;
+          overflow: auto; /* Prevents collision with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
       }
       
     }
