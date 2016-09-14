@@ -7,9 +7,9 @@ function imageExists(image_url){
 }
 
 // add .ad-blocker if ad blocker present
-if(typeof canRunAds == "undefined") {
-    $("body").addClass("ad-blocker");
-}
+// if(typeof canRunAds == "undefined") {
+//     $("body").addClass("ad-blocker");
+// }
 
 
 function latestFix(){
