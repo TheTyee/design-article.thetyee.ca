@@ -1214,6 +1214,7 @@ ul.book_profile {
 
 figure {
   clear: right; /* This prevents the figure from colliding with any asides. */
+  clear:left; /* This MAY prevent the figure from breaking paragraphs. */
   float:left; /* This prevents the figure from colliding with any asides. */
   width: 100%;
   margin-top: 1em;
