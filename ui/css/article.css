@@ -197,6 +197,8 @@ h6.tyee-presents-label {
     background-color: white !important;
 }
 
+
+
 /* READ-MORE atom */
 
 .read-more {
@@ -206,12 +208,20 @@ h6.tyee-presents-label {
 
 }
 
+
+
 /* EDITOR'S NOTE */
+
 .editors-note {
     font-style: italic;
     font-weight: 300;
     color: #000;
 }
+
+.editors-note p {
+    font-style: italic;
+} /* overrides regular p styling when p's are nested in ed note */
+
 
 
 /* ARROW ICON atom */
