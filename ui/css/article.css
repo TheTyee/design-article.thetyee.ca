@@ -737,7 +737,7 @@ ul.book_profile {
    width: 100%;
    }
    p {
-    float:left;
+    /* float:left; - seems unnecessary and causes layout problems */ 
    }
   
 }
@@ -2025,6 +2025,11 @@ aside { }
 
         aside .messaging-block--ask span {
             font-size: 1em;
+        }
+
+        aside .messaging-block--ask .dollar-heart-svg {
+            margin-right: -.35em;
+            margin-left: -.25em;
         }
 
     .messaging-zone .messaging-block {
