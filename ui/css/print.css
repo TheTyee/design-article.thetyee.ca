@@ -176,6 +176,7 @@ figure {
     display:none;
 }
 
+/* Use border hack to create a printing background color. */
 .responsive-embed:before {
    display: block;
    position: absolute;
