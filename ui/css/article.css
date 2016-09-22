@@ -2029,6 +2029,7 @@ aside { }
 
         aside .messaging-block--ask .dollar-heart-svg {
             margin-right: -.35em;
+            margin-left: -.25em;
         }
 
     .messaging-zone .messaging-block {
