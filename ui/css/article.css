@@ -38,6 +38,7 @@ body {
   font-size: 18px;
   line-height: 1.39em;
   color: #404040;
+  overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
 }
 
 /* Reset to prevent some articles form displaying in italics */
@@ -196,6 +197,8 @@ h6.tyee-presents-label {
     background-color: white !important;
 }
 
+
+
 /* READ-MORE atom */
 
 .read-more {
@@ -205,12 +208,20 @@ h6.tyee-presents-label {
 
 }
 
+
+
 /* EDITOR'S NOTE */
+
 .editors-note {
     font-style: italic;
     font-weight: 300;
     color: #000;
 }
+
+.editors-note p {
+    font-style: italic;
+} /* overrides regular p styling when p's are nested in ed note */
+
 
 
 /* ARROW ICON atom */
@@ -1213,6 +1224,7 @@ ul.book_profile {
 
 figure {
   clear: right; /* This prevents the figure from colliding with any asides. */
+  clear:left; /* This MAY prevent the figure from breaking paragraphs. */
   float:left; /* This prevents the figure from colliding with any asides. */
   width: 100%;
   margin-top: 1em;
@@ -1779,12 +1791,13 @@ aside { }
 
     /* BREAKPOINT */
     @media screen and (min-width: 976px) {
-    /* Turns out we still need the ad-box to float in order to prevent collisions with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
 
       .ad-box--bigbox {
-          /* float: none; */
+          float: none; /* Float can be removed if overflow is set to auto. Prevents buggy wrapping of body text in 
+          Firefox and also allows for more accurate ad positioning by editors. */
           clear: none;
           margin-top: 1.5em;
+          overflow: auto; /* Prevents collision with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
       }
       
     }
@@ -2814,7 +2827,6 @@ footer .footer__menu {
 
 
 #latest_bottom_wrap {
-	border-top: 1px #929292 solid;
  	border-bottom: 1px #929292 solid;
     padding: 10px 0;
     margin: 40px 0;
