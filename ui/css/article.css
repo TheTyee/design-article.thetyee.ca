@@ -737,7 +737,7 @@ ul.book_profile {
    width: 100%;
    }
    p {
-    float:left;
+    /* float:left; - seems unnecessary and causes layout problems */ 
    }
   
 }
