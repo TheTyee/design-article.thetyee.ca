@@ -2947,6 +2947,23 @@ footer .footer__menu {
     border-top: none;
     min-height: 265px;
   }
+  
+  .latest-stories .latest-stories__media-wrapper li.sponsored {
+    background: #ededed;
+  }
+  
+  .latest-stories .latest-stories__media-wrapper li.sponsored strong {
+    display: inline-block;
+    border-bottom: 1px solid #5b6470;
+    color: #5b6470;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  .latest-stories .latest-stories__media-wrapper li.sponsored h4 {
+    margin-top: 0;
+  }
+  
   .latest-stories .latest-stories__media-wrapper li:last-child {
     border-right: none;
   } 
@@ -2972,6 +2989,8 @@ footer .footer__menu {
     position: relative;
     padding: 0px 5px;
   }
+  
+  
   .latest-stories .media .media-meta {
     /* bottom: 0px; */
     /* position: absolute; */
