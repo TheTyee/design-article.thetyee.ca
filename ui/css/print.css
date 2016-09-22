@@ -153,9 +153,53 @@ figure, .figure--xl, .figure--xxl, aside, .aside {
     margin: 0 auto 0 auto;
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: 0 !important; /* Eliminates negative margins imposed by js when featured image is shorter than the ad */
+    margin-bottom: 0 !important; /* Eliminates negative margins imposed by js when 
+    featured image is shorter than the ad */
 }
 
+
+
+/* MEDIA STYLES  ============================================================= */
+/* Hides embedded media objects. Adds a grey background to their container and labels
+the block as a media player. */
+
+
+figure {
+    position: relative;
+}
+
+.responsive-embed {
+    padding-bottom: 25%;
+}
+
+.responsive-embed iframe {
+    display:none;
+}
+
+.responsive-embed:before {
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -99999999;
+   text-align: center;
+   content: "";
+   border: solid 500px #ddd; 
+}
+
+.responsive-embed:after {
+   display: block;
+   margin: 11% auto 2em auto;
+   text-align: center;
+   content: "[ MEDIA PLAYER ]";
+   font-size: .9em;
+   font-family:;
+   line-height:1em;
+   font-weight: 400;
+   letter-spacing: 0.15em;
+}
 
 
 /* LINK STYLES  ============================================================= */
