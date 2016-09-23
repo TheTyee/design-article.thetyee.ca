@@ -332,7 +332,7 @@ p a:hover {color: #6F9400;}
 /* LEAD-IN WITH DROPCAP  ============================================================= */
 
 .lead-in {
-    overflow: hidden;
+   /* overflow: hidden; */
 }
 
 .lead-in:first-letter {
