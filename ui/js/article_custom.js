@@ -348,8 +348,8 @@ $(window).load(function() {
                         //$(this).find('a').attr('href', '#');
                         // Old value
                         $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
-                        if (storyObjects[topCounter].urlPath.indexOf("/Presents") > -1) {
-                          $(this).find('.media-body').prepend('<a href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                        if (storyObjects[topCounter].urlPath.indexOf("/Presents/") > -1) {
+                          $(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
                             $(this).addClass("sponsored");
                         }
                         $(this).find('img').attr('src', storyObjects[topCounter].image);
@@ -366,8 +366,8 @@ $(window).load(function() {
                         //$(this).find('a').attr('href', '#');
                         // Old value
                         $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[bottomCounter].urlPath);
-                        if (storyObjects[bottomCounter].urlPath.indexOf("/Presents") > -1) {
-                            $(this).find('.media-body').prepend('<a href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                        if (storyObjects[bottomCounter].urlPath.indexOf("/Presents/") > -1) {
+                            $(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
                             $(this).addClass("sponsored");
                         }
                         $(this).find('img').attr('src', storyObjects[bottomCounter].image);
@@ -404,6 +404,14 @@ $(window).load(function() {
                     $(this).parent().find('li').each(function(i, details){
 
                         if (key === 0){
+                             $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
+                        if (storyObjects[topCounter].urlPath.indexOf("/Presents/") > -1) {
+                            $(this).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                            $(this).addClass("sponsored");
+                        } else {
+                           $(this).find(".remove").remove();
+                           $(this).removeClass("sponsored");
+                        }
                             $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[topCounter].image);
                             $(this).find('h4').html(storyObjects[topCounter].hed);
@@ -420,7 +428,14 @@ $(window).load(function() {
                         }
 
                         if (key == 1){
+                            if (storyObjects[bottomCounter].urlPath.indexOf("/Presents/") > -1) {
+                            $(this).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                            $(this).addClass("sponsored");
+                        } else {
+                            $(this).find(".remove").remove();
+                           $(this).removeClass("sponsored");
 
+                        }
                             $(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[bottomCounter].image);
                             $(this).find('h4').html(storyObjects[bottomCounter].hed);
