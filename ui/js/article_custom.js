@@ -474,6 +474,14 @@ $(window).load(function() {
                             $(this).find('p').html(storyObjects[topPrevCounter].dek);
                             $(this).find('.latest-stories__date').html(storyObjects[topPrevCounter].date);
                             $(this).find('.latest-stories__authour').html(storyObjects[topPrevCounter].authour);
+                            if (storyObjects[topPrevCounter].urlPath.indexOf("/Presents/") > -1) {
+                                    $(this).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                                    $(this).addClass("sponsored");
+                            } else {
+                                   $(this).find(".remove").remove();
+                                   $(this).removeClass("sponsored");
+                            }
+                                 
                             topPrevCounter--;
                         }
 
@@ -488,6 +496,13 @@ $(window).load(function() {
                             $(this).find('p').html(storyObjects[bottomPrevCounter].dek);
                             $(this).find('.latest-stories__date').html(storyObjects[bottomPrevCounter].date);
                             $(this).find('.latest-stories__authour').html(storyObjects[bottomPrevCounter].authour);
+                                                        if (storyObjects[bottomPrevCounter].urlPath.indexOf("/Presents/") > -1) {
+                                    $(this).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                                    $(this).addClass("sponsored");
+                            } else {
+                                   $(this).find(".remove").remove();
+                                   $(this).removeClass("sponsored");
+                            }
                             bottomPrevCounter--;
                         }
 
