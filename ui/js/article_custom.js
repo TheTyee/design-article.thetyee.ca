@@ -415,15 +415,8 @@ $(window).load(function() {
                         if (key === 0){
                             
                             if (storyObjects[topCounter]) {
-                             $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
-                            
-                        if (storyObjects[topCounter].urlPath.indexOf("/Presents/") > -1) {
-                            $(this).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
-                            $(this).addClass("sponsored");
-                        } else {
-                           $(this).find(".remove").remove();
-                           $(this).removeClass("sponsored");
-                        }
+                             stylePresents(storyObjects[topCounter], this);
+                             $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);                            
                             $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[topCounter].image);
                             $(this).find('h4').html(storyObjects[topCounter].hed);
@@ -441,15 +434,7 @@ $(window).load(function() {
 
                         if (key == 1){
                            if (storyObjects[bottomCounter]) {
-
-                                        if (storyObjects[bottomCounter].urlPath.indexOf("/Presents/") > -1) {
-                                        $(this).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
-                                        $(this).addClass("sponsored");
-                                    } else {
-                                        $(this).find(".remove").remove();
-                                       $(this).removeClass("sponsored");
-            
-                                    }
+                                        stylePresents(storyObjects[bottomCounter], this);
                                         $(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
                                         $(this).find('img').attr('src', storyObjects[bottomCounter].image);
                                         $(this).find('h4').html(storyObjects[bottomCounter].hed);
@@ -503,7 +488,7 @@ $(window).load(function() {
 
                         if (key == 1){
                              if (storyObjects[topPrevCounter]) {
-                            stylePresents(storyObjects[bottomPrevCounter]);
+                            stylePresents(storyObjects[bottomPrevCounter], this);
                             $(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
                             $(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
                             $(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
