@@ -494,6 +494,8 @@ p a:hover {color: #6F9400;}
 
 
 
+/* ARTICLE BODY ========================================================================== */
+
 .article__body {
      padding-bottom: 2em;
 }
@@ -511,6 +513,11 @@ The .main-col-container styling is really the scaffold of the layout and most ot
      margin-left: auto;
      margin-right: auto;
 }
+
+    /* Set a top margin on article__body for LEGACY ARTICLES that don't have a featured-media section */
+    .article-legacy-image .article__body.main-col-container {
+        margin-top: 20px;
+    }
 
     /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
     @media screen and (min-width: 880px) {
@@ -693,59 +700,6 @@ ul.book_profile {
   .gallery_output figure:first-child {
     float:none;
   }
-
-/* bryan's temp small and medium feature image hack for old stories */
-  figure.figure.small {
-		  width: 37%;
-		  max-width: 20vw;
-		  margin-top: .25em;
-		  float:right;
-		  margin-bottom: 1em;
-   		 margin-left: 1em;
-		 clear:none;
-  }
-  
-   figure.figure.medium {
-		  width: 50%;
-		  margin-top: .25em;
-		  float:right;
-		  margin-bottom: 1em;
-   		 margin-left: 1em;
-		 clear:none;
-
-  }
-  
-  .margintop {
-	  margin-top: 20px;
-  }
-  
-  @media (min-width: 700px) and (max-width:760px) {
-    figure.figure.medium,figure.figure.small {
-      margin-right: -3em;
-    }
-  } 
-  
-@media (max-width: 1100px) and (min-width:760px) {
-   figure.figure.medium,figure.figure.small {
-    max-width: 20vw;
-   }
-  
-}
-
-
-@media (max-width: 400px) {
-   figure.figure.medium,figure.figure.small {
-   max-width:none;
-   width: 100%;
-   }
-   p {
-    /* float:left; - seems unnecessary and causes layout problems */ 
-   }
-  
-}
-
-
-/* end bryan small/med hack */
 
 
 @media (min-width: 992px) {
@@ -1252,12 +1206,66 @@ figure {
       
     }
 
-
     .featured-media figure {
         clear: none;
         margin-top: 0.25em;
         padding: 0;
     }
+
+
+    /* FIGURE SMALL and MEDIUM --------------------------------------------------------------------
+    bryan's temp small and medium feature image hack for old stories */
+
+    figure.figure.small {
+        width: 37%;
+        max-width: 20vw;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+         margin-left: 1em;
+       clear:none;
+    }
+    
+     figure.figure.medium {
+        width: 50%;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+         margin-left: 1em;
+       clear:none;
+
+    }
+    
+    .margintop {
+      margin-top: 20px;
+    }
+    
+    @media (min-width: 700px) and (max-width:760px) {
+      figure.figure.medium,figure.figure.small {
+        margin-right: -3em;
+      }
+    } 
+    
+  @media (max-width: 1100px) and (min-width:760px) {
+     figure.figure.medium,figure.figure.small {
+      max-width: 20vw;
+     }
+    
+  }
+
+  @media (max-width: 400px) {
+     figure.figure.medium,figure.figure.small {
+     max-width:none;
+     width: 100%;
+     }
+     p {
+      /* float:left; - seems unnecessary and causes layout problems */ 
+     }
+    
+  }
+
+  /* end bryan small/med hack */
+
 
     /* FIGURE XL -------------------------------------------------------------------- */
 

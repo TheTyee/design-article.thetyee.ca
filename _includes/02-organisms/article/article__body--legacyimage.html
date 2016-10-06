@@ -1,9 +1,12 @@
-<!-- Begin organisms/article/article__body -->
+<!-- Begin organisms/article/article__body--legacyimage -->
+{% comment %}
+    This article__body--legacyimage include is for use with old content lacking a high-res image suitable for a featured media placement. Instead of a featured media the image asset gets placed within a figure.medium at the start of the article__body content. The half-page ad-box gets included at the very beginning of the article__body container.
+{% endcomment %}
 
 <article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
     <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
 
-    <div class="container-fluid clearfix margintop">
+    <div class="container-fluid clearfix">
 
 
     {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-slot="ad-300x600" ad-source="" %}
