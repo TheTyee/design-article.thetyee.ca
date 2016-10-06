@@ -694,59 +694,6 @@ ul.book_profile {
     float:none;
   }
 
-/* bryan's temp small and medium feature image hack for old stories */
-  figure.figure.small {
-		  width: 37%;
-		  max-width: 20vw;
-		  margin-top: .25em;
-		  float:right;
-		  margin-bottom: 1em;
-   		 margin-left: 1em;
-		 clear:none;
-  }
-  
-   figure.figure.medium {
-		  width: 50%;
-		  margin-top: .25em;
-		  float:right;
-		  margin-bottom: 1em;
-   		 margin-left: 1em;
-		 clear:none;
-
-  }
-  
-  .margintop {
-	  margin-top: 20px;
-  }
-  
-  @media (min-width: 700px) and (max-width:760px) {
-    figure.figure.medium,figure.figure.small {
-      margin-right: -3em;
-    }
-  } 
-  
-@media (max-width: 1100px) and (min-width:760px) {
-   figure.figure.medium,figure.figure.small {
-    max-width: 20vw;
-   }
-  
-}
-
-
-@media (max-width: 400px) {
-   figure.figure.medium,figure.figure.small {
-   max-width:none;
-   width: 100%;
-   }
-   p {
-    /* float:left; - seems unnecessary and causes layout problems */ 
-   }
-  
-}
-
-
-/* end bryan small/med hack */
-
 
 @media (min-width: 992px) {
     /* BOOTSTRAP OVERRIDES */
@@ -1252,12 +1199,66 @@ figure {
       
     }
 
-
     .featured-media figure {
         clear: none;
         margin-top: 0.25em;
         padding: 0;
     }
+
+
+    /* FIGURE SMALL and MEDIUM --------------------------------------------------------------------
+    bryan's temp small and medium feature image hack for old stories */
+
+    figure.figure.small {
+        width: 37%;
+        max-width: 20vw;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+         margin-left: 1em;
+       clear:none;
+    }
+    
+     figure.figure.medium {
+        width: 50%;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+         margin-left: 1em;
+       clear:none;
+
+    }
+    
+    .margintop {
+      margin-top: 20px;
+    }
+    
+    @media (min-width: 700px) and (max-width:760px) {
+      figure.figure.medium,figure.figure.small {
+        margin-right: -3em;
+      }
+    } 
+    
+  @media (max-width: 1100px) and (min-width:760px) {
+     figure.figure.medium,figure.figure.small {
+      max-width: 20vw;
+     }
+    
+  }
+
+  @media (max-width: 400px) {
+     figure.figure.medium,figure.figure.small {
+     max-width:none;
+     width: 100%;
+     }
+     p {
+      /* float:left; - seems unnecessary and causes layout problems */ 
+     }
+    
+  }
+
+  /* end bryan small/med hack */
+
 
     /* FIGURE XL -------------------------------------------------------------------- */
 
