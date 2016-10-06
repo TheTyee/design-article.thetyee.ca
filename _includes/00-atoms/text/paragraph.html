@@ -3,7 +3,8 @@
         [% include 00-atoms/text/paragraph.html inline-atom="00-atoms/text/fact-box-anchor-link" %]
     The lorem ipsum text can be replaced using the paragraph-content parameter.
     A CUSTOM PARAGRAPH CLASS can be assigned using the custom-class parameter.
-    To create an EDITOR'S NOTE use a normal paragraph and assign the class "editors-note". The editor's note should always be the first paragraph in the article-body, preceding the lead-in-paragraph (dropcap).
+    EDITOR'S NOTEs may run for multiple paragraphs, so an ed note should be set as normal p's wrapped in a div.editors-note.
+    The editor's note should always be the first paragraph in the article-body, preceding the lead-in-paragraph (dropcap).
 {% endcomment %}
 <p class="{{ include.custom-class }}" >
     {% if include.paragraph-content %}
