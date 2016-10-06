@@ -122,8 +122,8 @@ p {
   font-style: normal;
 }
 
-/* Tyee Presents label */
-h6.tyee-presents-label {
+/* Special category labels */
+h6.tyee-presents-label, h6.poll-label {
     display: block;
     float: none;
     overflow: hidden;
@@ -131,18 +131,14 @@ h6.tyee-presents-label {
     border-bottom: 1px solid #90AD00;
     padding-top: .375em;
     padding-bottom: 0.33em;
-    margin-top: 2.3em;
-    margin-bottom: 1.5em;
+    margin-top: 2.66em;
+    margin-bottom: 1.125em;
     color: black;
     font-size: .9em;
     font-weight: 400;
     letter-spacing: .02em;
 }
 
-h6.tyee-presents-label {
-    margin-top: 2.66em;
-    margin-bottom: 1.125em;
-}
 
 
 /* h6.tyee-presents-label a{
@@ -153,7 +149,7 @@ h6.tyee-presents-label {
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 593px)              
         {
-        h6.tyee-presents-label {
+        h6.tyee-presents-label, h6.poll-label {
               margin-bottom: 1.5em;
         }
     }
@@ -161,7 +157,7 @@ h6.tyee-presents-label {
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 1024px)              
         {
-        h6.tyee-presents-label {
+        h6.tyee-presents-label, h6.poll-label {
                display: block;
                width: 100%;
                margin-bottom: 1em;
@@ -171,6 +167,12 @@ h6.tyee-presents-label {
             font-weight: 700;
             letter-spacing: .06em;
             content:"TYEE PRESENTS: "
+       }
+       h6.poll-label a:before{
+            font-size: .9em;
+            font-weight: 700;
+            letter-spacing: .06em;
+            content:"THE BAROMETER: "
        }
     }
 
