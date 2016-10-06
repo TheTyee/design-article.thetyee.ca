@@ -1,0 +1,45 @@
+<!-- Begin organisms/article/article__body--poll -->
+{% comment %}
+    Polls have no featured-media so they should follow the form of an article-legacy-image. In these cases the feature-media section is omitted and instead the image asset gets placed within a figure.medium at the start of the article__body content. 
+    Polls shouldn't begin with a dropcap because their text content is very brief.
+{% endcomment %}
+
+
+<article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
+    <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
+
+    <div class="container-fluid clearfix">
+
+        {% if page.series == true %}
+            {% comment %}
+                The only difference between a Presents story and a Presents-series is the inclusion of this presents-series-box.
+            {% endcomment %}
+
+            <!--An ASIDE containing a PRESENTS SERIES BOX. -->
+            {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/presents-series-box" content-source="" aside-caption=false media-credit=false aside-class="" %}
+        
+        {% endif %}
+
+        {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-slot="ad-300x600" ad-source="" %}
+
+        <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--explainer" fact-box__content="<p>Please note that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+
+        <p>What does the future hold for the public education system in British Columbia? Here at The Tyee, our education beat regularly covers the goings-on of schools including school closures, budget cuts, and bright lights that inspire us. But now, we want to look to what lies ahead.</p>
+
+        <p>On October 5, The Tyee is hosting The Future of Public Education: Beyond the Headlines, an evening of speakers who will explore innovations and challenges ahead for our education system.</p>
+
+        <p>If you’re in Vancouver, please join us. Even if you can’t make it, we want to hear from you.</p>
+
+       <p>The poll form will go here.</p> 
+
+        <!--FACT-BOX will display here at bottom of article in narrow viewports -->
+        <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. This ID must not appear in the sidebar fact-box html! -->
+        {% include 01-molecules/blocks/Fact-box.html object-class="fact-box--explainer" fact-box__content="<p>Please note that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+
+
+    </div> <!--END .container-fluid-->
+
+</article>
+
+<!-- END organisms/article/article__body -->

@@ -122,8 +122,8 @@ p {
   font-style: normal;
 }
 
-/* Tyee Presents label */
-h6.tyee-presents-label {
+/* Special category labels */
+h6.tyee-presents-label, h6.poll-label {
     display: block;
     float: none;
     overflow: hidden;
@@ -131,18 +131,14 @@ h6.tyee-presents-label {
     border-bottom: 1px solid #90AD00;
     padding-top: .375em;
     padding-bottom: 0.33em;
-    margin-top: 2.3em;
-    margin-bottom: 1.5em;
+    margin-top: 2.66em;
+    margin-bottom: 1.125em;
     color: black;
     font-size: .9em;
     font-weight: 400;
     letter-spacing: .02em;
 }
 
-h6.tyee-presents-label {
-    margin-top: 2.66em;
-    margin-bottom: 1.125em;
-}
 
 
 /* h6.tyee-presents-label a{
@@ -153,7 +149,7 @@ h6.tyee-presents-label {
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 593px)              
         {
-        h6.tyee-presents-label {
+        h6.tyee-presents-label, h6.poll-label {
               margin-bottom: 1.5em;
         }
     }
@@ -161,7 +157,7 @@ h6.tyee-presents-label {
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 1024px)              
         {
-        h6.tyee-presents-label {
+        h6.tyee-presents-label, h6.poll-label {
                display: block;
                width: 100%;
                margin-bottom: 1em;
@@ -171,6 +167,12 @@ h6.tyee-presents-label {
             font-weight: 700;
             letter-spacing: .06em;
             content:"TYEE PRESENTS: "
+       }
+       h6.poll-label a:before{
+            font-size: .9em;
+            font-weight: 700;
+            letter-spacing: .06em;
+            content:"THE BAROMETER: "
        }
     }
 
@@ -405,8 +407,7 @@ p a:hover {color: #6F9400;}
 
 
 
-/* ARTICLE LAYOUT  ========================================================================== */
-
+/* ARTICLE LAYOUT - HEADER ========================================================================== */
 
 .article__header { /* article__header is always centered on the page */
   position: relative;
@@ -425,6 +426,7 @@ p a:hover {color: #6F9400;}
     }
 
 
+/* ARTICLE LAYOUT - FEATURED MEDIA ========================================================================== */
 
 .featured-media { /* featured-media organism is centered on the page and occupies full page column 
                      width at medium and small view widths */
@@ -492,6 +494,8 @@ p a:hover {color: #6F9400;}
 
 
 
+/* ARTICLE BODY ========================================================================== */
+
 .article__body {
      padding-bottom: 2em;
 }
@@ -509,6 +513,12 @@ The .main-col-container styling is really the scaffold of the layout and most ot
      margin-left: auto;
      margin-right: auto;
 }
+
+    /* Set a top margin on article__body for LEGACY ARTICLES and POLLS that don't have a featured-media section */
+    .article-legacy-image .article__body.main-col-container, .article-poll .article__body.main-col-container {
+        margin-top: 20px;
+    }
+
 
     /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
     @media screen and (min-width: 880px) {
@@ -691,59 +701,6 @@ ul.book_profile {
   .gallery_output figure:first-child {
     float:none;
   }
-
-/* bryan's temp small and medium feature image hack for old stories */
-  figure.figure.small {
-		  width: 37%;
-		  max-width: 20vw;
-		  margin-top: .25em;
-		  float:right;
-		  margin-bottom: 1em;
-   		 margin-left: 1em;
-		 clear:none;
-  }
-  
-   figure.figure.medium {
-		  width: 50%;
-		  margin-top: .25em;
-		  float:right;
-		  margin-bottom: 1em;
-   		 margin-left: 1em;
-		 clear:none;
-
-  }
-  
-  .margintop {
-	  margin-top: 20px;
-  }
-  
-  @media (min-width: 700px) and (max-width:760px) {
-    figure.figure.medium,figure.figure.small {
-      margin-right: -3em;
-    }
-  } 
-  
-@media (max-width: 1100px) and (min-width:760px) {
-   figure.figure.medium,figure.figure.small {
-    max-width: 20vw;
-   }
-  
-}
-
-
-@media (max-width: 400px) {
-   figure.figure.medium,figure.figure.small {
-   max-width:none;
-   width: 100%;
-   }
-   p {
-    /* float:left; - seems unnecessary and causes layout problems */ 
-   }
-  
-}
-
-
-/* end bryan small/med hack */
 
 
 @media (min-width: 992px) {
@@ -1250,12 +1207,66 @@ figure {
       
     }
 
-
     .featured-media figure {
         clear: none;
         margin-top: 0.25em;
         padding: 0;
     }
+
+
+    /* FIGURE SMALL and MEDIUM --------------------------------------------------------------------
+    bryan's temp small and medium feature image hack for old stories */
+
+    figure.figure.small {
+        width: 37%;
+        max-width: 20vw;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+         margin-left: 1em;
+       clear:none;
+    }
+    
+     figure.figure.medium {
+        width: 50%;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+         margin-left: 1em;
+       clear:none;
+
+    }
+    
+    .margintop {
+      margin-top: 20px;
+    }
+    
+    @media (min-width: 700px) and (max-width:760px) {
+      figure.figure.medium,figure.figure.small {
+        margin-right: -3em;
+      }
+    } 
+    
+  @media (max-width: 1100px) and (min-width:760px) {
+     figure.figure.medium,figure.figure.small {
+      max-width: 20vw;
+     }
+    
+  }
+
+  @media (max-width: 400px) {
+     figure.figure.medium,figure.figure.small {
+     max-width:none;
+     width: 100%;
+     }
+     p {
+      /* float:left; - seems unnecessary and causes layout problems */ 
+     }
+    
+  }
+
+  /* end bryan small/med hack */
+
 
     /* FIGURE XL -------------------------------------------------------------------- */
 
@@ -1562,9 +1573,15 @@ aside { }
    For some reason the bootstrap default button html & css wasn't working. -- AG */
 
 
-.tool-bar{
+.tool-bar {
   margin: .85em 0 .3em 0;
 }
+      /* Add top border if article is a poll (has no author-info block) */
+      .article-poll .article__header .tool-bar {
+          padding-top: 1em;
+          border-top: 1px solid;
+          border-color: inherit; 
+      }
 
     .tool-bar ul {
           display: block;
@@ -1612,6 +1629,8 @@ aside { }
       }
     }
 
+        /* TOOL-BAR BUTTONS */
+
         .btn-social-icon { /* This is adapted from bootstrap */
             position:relative;
             padding-left:44px;
@@ -1640,9 +1659,6 @@ aside { }
           height: 100%;
           font-size: 1.5em;
         }
-
-
-
 
         .btn-twitter {
               color: #fff;
@@ -1694,14 +1710,18 @@ aside { }
               font-size: 1.2em;
         }
         
-        @media screen and (max-width: 400px) {
-        .btn-print {
-          display:none;
-        }
-   
-          
-        }
+            @media screen and (max-width: 400px) {
+                .btn-print {
+                  display:none;
+                }
+                      
+            }
        
+        /* HIDE BUTTONS ON POLL STORIES */
+        .article-poll .btn-join, .article-poll .btn-comment, .article-poll .str-comment {
+            display: none;
+        }
+
         .btn-join:hover, .btn-print:hover, .btn-comment:hover {          
               cursor: pointer;
         }
