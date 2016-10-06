@@ -407,8 +407,7 @@ p a:hover {color: #6F9400;}
 
 
 
-/* ARTICLE LAYOUT  ========================================================================== */
-
+/* ARTICLE LAYOUT - HEADER ========================================================================== */
 
 .article__header { /* article__header is always centered on the page */
   position: relative;
@@ -427,6 +426,7 @@ p a:hover {color: #6F9400;}
     }
 
 
+/* ARTICLE LAYOUT - FEATURED MEDIA ========================================================================== */
 
 .featured-media { /* featured-media organism is centered on the page and occupies full page column 
                      width at medium and small view widths */
@@ -514,10 +514,11 @@ The .main-col-container styling is really the scaffold of the layout and most ot
      margin-right: auto;
 }
 
-    /* Set a top margin on article__body for LEGACY ARTICLES that don't have a featured-media section */
-    .article-legacy-image .article__body.main-col-container {
+    /* Set a top margin on article__body for LEGACY ARTICLES and POLLS that don't have a featured-media section */
+    .article-legacy-image .article__body.main-col-container, .article-poll .article__body.main-col-container {
         margin-top: 20px;
     }
+
 
     /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
     @media screen and (min-width: 880px) {
@@ -1572,9 +1573,15 @@ aside { }
    For some reason the bootstrap default button html & css wasn't working. -- AG */
 
 
-.tool-bar{
+.tool-bar {
   margin: .85em 0 .3em 0;
 }
+      /* Add top border if article is a poll (has no author-info block) */
+      .article-poll .tool-bar {
+          padding-top: 1em;
+          border-top: 1px solid;
+          border-color: inherit; 
+      }
 
     .tool-bar ul {
           display: block;
