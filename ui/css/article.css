@@ -494,6 +494,8 @@ p a:hover {color: #6F9400;}
 
 
 
+/* ARTICLE BODY ========================================================================== */
+
 .article__body {
      padding-bottom: 2em;
 }
@@ -511,6 +513,11 @@ The .main-col-container styling is really the scaffold of the layout and most ot
      margin-left: auto;
      margin-right: auto;
 }
+
+    /* Set a top margin on article__body for LEGACY ARTICLES that don't have a featured-media section */
+    .article-legacy-image .article__body.main-col-container {
+        margin-top: 20px;
+    }
 
     /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
     @media screen and (min-width: 880px) {
