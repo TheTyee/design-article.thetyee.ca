@@ -149,7 +149,7 @@ h6.tyee-presents-label, h6.poll-label {
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 593px)              
         {
-        h6.tyee-presents-label {
+        h6.tyee-presents-label, h6.poll-label {
               margin-bottom: 1.5em;
         }
     }
