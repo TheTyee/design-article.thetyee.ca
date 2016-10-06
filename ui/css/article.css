@@ -1629,6 +1629,8 @@ aside { }
       }
     }
 
+        /* TOOL-BAR BUTTONS */
+
         .btn-social-icon { /* This is adapted from bootstrap */
             position:relative;
             padding-left:44px;
@@ -1657,9 +1659,6 @@ aside { }
           height: 100%;
           font-size: 1.5em;
         }
-
-
-
 
         .btn-twitter {
               color: #fff;
@@ -1711,14 +1710,18 @@ aside { }
               font-size: 1.2em;
         }
         
-        @media screen and (max-width: 400px) {
-        .btn-print {
-          display:none;
-        }
-   
-          
-        }
+            @media screen and (max-width: 400px) {
+                .btn-print {
+                  display:none;
+                }
+                      
+            }
        
+        /* HIDE BUTTONS ON POLL STORIES */
+        .article-poll .btn-join, .article-poll .btn-comment, .article-poll .str-comment {
+            display: none;
+        }
+
         .btn-join:hover, .btn-print:hover, .btn-comment:hover {          
               cursor: pointer;
         }
