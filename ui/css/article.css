@@ -139,7 +139,11 @@ h6.tyee-presents-label, h6.poll-label {
     letter-spacing: .02em;
 }
 
-
+h6.poll-label {
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+    color: black !i;
+}
 
 /* h6.tyee-presents-label a{
     color: black;
@@ -172,6 +176,7 @@ h6.tyee-presents-label, h6.poll-label {
             font-size: .9em;
             font-weight: 700;
             letter-spacing: .06em;
+            color: #555;
             content:"THE BAROMETER: "
        }
     }
