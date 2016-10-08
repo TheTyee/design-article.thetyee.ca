@@ -2409,6 +2409,18 @@ label.valid {
                         margin-top: 1.125em;
                     }
                 }
+
+            .badge--headline-placement--barometer {  /* Moves presents badge to align with a stacked h6 category label. */
+                margin-top: 0.85em;
+            }
+
+                /* BREAKPOINT: 500px // Moves presents badge to align with h6 */
+                @media screen and (min-width: 500px) {
+                    .badge--headline-placement--barometer {
+                        margin-top: 0.75em;
+                    }
+
+                }
         
          /* BREAKPOINT: 500px // Make headline series badge bigger */
         @media screen and (min-width: 500px) {
@@ -2427,6 +2439,10 @@ label.valid {
             }
 
              .badge--headline-placement--presents { /* Aligns presents badge with first letter of headline. */
+                        margin-top: 4.4em;
+                    }
+             
+             .badge--headline-placement--barometer { /* Aligns Barometer badge with first letter of headline. */
                         margin-top: 4.4em;
                     }
         }
