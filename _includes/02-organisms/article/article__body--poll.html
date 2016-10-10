@@ -10,16 +10,6 @@
 
     <div class="container-fluid clearfix">
 
-        {% if page.series == true %}
-            {% comment %}
-                The only difference between a Presents story and a Presents-series is the inclusion of this presents-series-box.
-            {% endcomment %}
-
-            <!--An ASIDE containing a PRESENTS SERIES BOX. -->
-            {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/presents-series-box" content-source="" aside-caption=false media-credit=false aside-class="" %}
-        
-        {% endif %}
-
         {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-slot="ad-300x600" ad-source="" %}
 
         <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
