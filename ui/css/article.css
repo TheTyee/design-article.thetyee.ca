@@ -125,6 +125,7 @@ p {
 /* Special category labels */
 h6.tyee-presents-label, h6.poll-label {
     display: block;
+    position: relative;
     float: none;
     overflow: hidden;
     border-top: 1px solid #90AD00;
@@ -148,6 +149,24 @@ h6.poll-label {
 /* h6.tyee-presents-label a{
     color: black;
 } */
+
+    h6.poll-label a {
+        float: left;
+        margin-right: 0.5em;
+    }
+
+    .poll-label__background {
+        display: block;
+        overflow: auto;
+        opacity: 0.9; 
+        height: .9em;
+        margin-top: .025em;
+        background-color: ;
+        background-image: url("barometer-label__background.svg");
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="33px" height="23px" viewBox="0 0 33 23" enable-background="new 0 0 33 23" xml:space="preserve"><rect y="13" fill="#92BF52" width="7" height="10"/><rect x="11" fill="#92BF52" width="7" height="23"/><rect x="22" y="7" fill="#92BF52" width="7" height="16"/></svg>');
+        background-repeat: repeat-x;
+        background-size: auto 100%; 
+    }
 
 
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
