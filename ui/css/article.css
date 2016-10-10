@@ -2002,6 +2002,34 @@ aside { }
 
 
 
+    /* POLL SPONSOR AD  ---------------------------------------------- */
+    /* linked client image would only be 300x250. Graphic still delivered as it was 
+    in the past: hard-coded into page, not trafficked through DFP. */
+
+    @media screen and (min-width: 1200px) {
+
+
+        .ad-box--poll-sponsor {
+            display: block;
+            overflow:hidden;
+            position: relative;
+            float: right;
+            margin-top: 0.24em;
+            margin-right: -19em;
+            width: 300px;
+            height: 250px;
+            background-color: none;
+            border: none;
+        }
+
+        .ad-box--poll-sponsor:before { 
+           display: none;
+           margin-top: 0;
+        }
+    }
+
+
+
 
 /* SLIDESHOW  ========================================================================== */
 
