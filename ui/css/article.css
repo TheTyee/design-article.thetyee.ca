@@ -2004,12 +2004,47 @@ aside { }
 
     /* POLL SPONSOR AD  ---------------------------------------------- */
     /* linked client image would only be 300x250. Graphic still delivered as it was 
-    in the past: hard-coded into page, not trafficked through DFP. */
+    in the past: hard-coded into page, not trafficked through DFP.
+    Use this markup to place the ad: 
+    {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--poll-sponsor" 
+    ad-slot="ad-300x250" ad-source="/ui/img/client_image-placeholder-300x250.png" %} 
+    The ad needs to get marked up twice (similar to fact-boxes): Once at the beginning of article__body and
+    again at the end (before the final fact-box). 
+    By default CSS will display only the 2nd one, but at viewports wider than 1200px
+    it will display only the 1st one and put it in the margin. */
+
+    .ad-box--poll-sponsor {
+            border: none;
+        }
+
+    /* Hide first poll-sponsor ad */
+    .ad-box--poll-sponsor:first-of-type {
+        display: none;
+    }
+
+    .ad-box--poll-sponsor:before {
+           display: block;
+           margin: .8em auto 2em auto;
+           text-align: center;
+           content: "this poll sponsored by";
+           text-transform: uppercase;
+           color: #ACACAC;
+           font-size: .6em;
+           line-height:1em;
+           font-weight: 400;
+           letter-spacing: 0.15em;
+        }
+
 
     @media screen and (min-width: 1200px) {
 
-
+        /* Hide poll-sponsor ad */
         .ad-box--poll-sponsor {
+            display: none;
+        }
+
+        /* Show only first poll-sponsor ad */
+        .ad-box--poll-sponsor:first-of-type {
             display: block;
             overflow:hidden;
             position: relative;
@@ -2017,13 +2052,12 @@ aside { }
             margin-top: 0.24em;
             margin-right: -19em;
             width: 300px;
-            height: 250px;
+            height: 300px;
             background-color: none;
             border: none;
         }
 
         .ad-box--poll-sponsor:before { 
-           display: none;
            margin-top: 0;
         }
     }
