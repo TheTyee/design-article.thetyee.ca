@@ -3,17 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="33px"
 	 height="23px" viewBox="0 0 33 23" enable-background="new 0 0 33 23" xml:space="preserve">
-<g id="Layer_1">
-</g>
-<g id="badges">
-	<g>
-		<g>
-			<rect y="13" fill="#80BF01" width="7" height="10"/>
-			<rect x="11" fill="#80BF01" width="7" height="23"/>
-			<rect x="22" y="7" fill="#80BF01" width="7" height="16"/>
-		</g>
-	</g>
-</g>
-<g id="Layer_3">
-</g>
+			<rect y="13" fill="#92BF52" width="7" height="10"/>
+			<rect x="11" fill="#92BF52" width="7" height="23"/>
+			<rect x="22" y="7" fill="#bbb" width="7" height="16"/>
 </svg>
