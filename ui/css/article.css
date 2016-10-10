@@ -2624,6 +2624,14 @@ label.valid {
 
 
 
+/* TWITTER WIDGET  ========================================================================== 
+   Reduces space created by aside margins between this widget and the preceding fact-box. */
+
+.poll-sponsor-twitter {
+    margin-top: -5em;
+}
+
+
 
 /* SLIDE CAROUSEL  ========================================================================== 
     We use the standard bootstrap slide carousel. Here's some custom styling. */

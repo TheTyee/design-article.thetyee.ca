@@ -13,7 +13,10 @@
         {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-slot="ad-300x600" ad-source="" %}
 
         <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
-        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--explainer" fact-box__content="<p>Please note that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--explainer" fact-box__content="<p><strong>Please note</strong> that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+
+        <!--An ASIDE containing a Twitter widget. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/media/twitter-widget" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="" fact-box__content="" %}
 
         <p>What does the future hold for the public education system in British Columbia? Here at The Tyee, our education beat regularly covers the goings-on of schools including school closures, budget cuts, and bright lights that inspire us. But now, we want to look to what lies ahead.</p>
 
@@ -22,7 +25,7 @@
         <p>If you’re in Vancouver, please join us. Even if you can’t make it, we want to hear from you.</p>
 
         <!--READER POLL. Embedded from Wufoo. -->
-        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/media/reader-poll" figure-caption="" media-credit="" content-source="" %}
+        {% include 01-molecules/blocks/figure.html figure-contents="01-molecules/media/reader-poll" figure-caption="" media-credit="" content-source="" %}
 
         <!--FACT-BOX will display here at bottom of article in narrow viewports -->
         <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. This ID must not appear in the sidebar fact-box html! -->
