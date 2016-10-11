@@ -2064,6 +2064,28 @@ aside { }
 
 
 
+/* WUFOO POLL STYLING  ========================================================================== 
+ */
+
+/* Prevents the widgets from clearing and creating huge gaps in page. */
+div.fc {
+    clear: none;
+}
+
+div.embedded-poll {
+    background-color: #f1f8ec;
+    padding: 20px;
+}
+
+/* Style headings in poll report widgets. */
+.fc caption h4 {
+    font-size:24px !important;
+    font-family: 'Source Sans Pro', arial, sans-serif;
+    font-weight: 600 !important;
+    color: #444;
+}
+
+
 
 /* SLIDESHOW  ========================================================================== */
 
@@ -2692,30 +2714,6 @@ label.valid {
 .poll-sponsor-twitter {
     margin-top: -5em;
 }
-
-
-
-/* WUFOO POLL STYLING  ========================================================================== 
- */
-
-/* Prevents the widgets from clearing and creating huge gaps in page. */
-div.fc {
-    clear: none;
-}
-
-div.embedded-poll {
-    background-color: #f1f8ec;
-    padding: 20px;
-}
-
-/* Style headings in poll report widgets. */
-.fc caption h4 {
-    font-size:24px !important;
-    font-family: 'Source Sans Pro', arial, sans-serif;
-    font-weight: 600 !important;
-    color: #444;
-}
-
 
 
 /* SLIDE CAROUSEL  ========================================================================== 
