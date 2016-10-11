@@ -2695,6 +2695,15 @@ label.valid {
 
 
 
+/* WUFOO POLL REPORT WIDGETS  ========================================================================== 
+   Prevents the widgets from clearing and creating huge gaps in page. */
+
+div.fc {
+    clear: none;
+}
+
+
+
 /* SLIDE CAROUSEL  ========================================================================== 
     We use the standard bootstrap slide carousel. Here's some custom styling. */
 
