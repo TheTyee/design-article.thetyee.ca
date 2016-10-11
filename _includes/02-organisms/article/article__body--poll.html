@@ -6,24 +6,25 @@
 
 
 <article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
-    <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
+
+    <!--This script should toggle the display of the poll form or poll report widgets based on the value of results. -->
+    <script type="text/javascript" charset="utf-8" src="{{ site.url }}ui/js/polls-toggle.js"></script>
 
     <div class="container-fluid clearfix">
 
-        {% if page.series == true %}
-            {% comment %}
-                The only difference between a Presents story and a Presents-series is the inclusion of this presents-series-box.
-            {% endcomment %}
-
-            <!--An ASIDE containing a PRESENTS SERIES BOX. -->
-            {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/presents-series-box" content-source="" aside-caption=false media-credit=false aside-class="" %}
-        
+        <!-- Include either sponsor graphic or thanks-reader-block -->
+        {% if page.poll--sponsored %}
+            {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--poll-sponsor" ad-slot="ad-300x250" ad-source="/ui/img/client_image-placeholder-300x250.png" %}
+        {% else %}
+                <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" fact-box__title="Thanks, reader." fact-box__content="<p>The Tyee couldn't do what we do without your generous monthly support. Reader contributions to the Tyee Builder program keep investigative and solutions-focused journalism rolling out daily, and help build the kind of media our province and country needs: Fearlessly independent. High impact. Sustainable.</p>" %}
         {% endif %}
 
-        {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--halfpage" ad-slot="ad-300x600" ad-source="" %}
-
         <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
-        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--explainer" fact-box__content="<p>Please note that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--explainer" fact-box__content="<p><strong>Please note</strong> that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+
+        <!--An ASIDE containing a Twitter widget. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/media/twitter-widget" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="" fact-box__content="" %}
 
         <p>What does the future hold for the public education system in British Columbia? Here at The Tyee, our education beat regularly covers the goings-on of schools including school closures, budget cuts, and bright lights that inspire us. But now, we want to look to what lies ahead.</p>
 
@@ -31,11 +32,22 @@
 
         <p>If you’re in Vancouver, please join us. Even if you can’t make it, we want to hear from you.</p>
 
-       <p>The poll form will go here.</p> 
+        <!--READER POLL. Embedded from Wufoo. -->
+        {% include 01-molecules/blocks/figure.html figure-class="poll-form" figure-contents="01-molecules/media/reader-poll" figure-caption="" media-credit="" content-source="" %}
+
+
+        <!-- POLL RESULTS WIDGETS. JS will display them if results==true  -->
+        <script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cscript src='" + host + "thetyee.wufoo.com/scripts/widget/embed.js?w=xf9qFwuslashKaefPfhDtqBqBnAwmdyDRK7O20pHyiHYIToR0=' type='text/javascript'%3E%3C/script%3E"));</script>
+        <script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cscript src='" + host + "thetyee.wufoo.com/scripts/widget/embed.js?w=y5UjrkDftqOD9FMzza5Wi75sz96trNDetML0qq1isdY=' type='text/javascript'%3E%3C/script%3E"));</script>
+
+        <!-- If poll is sponsored then include sponsor graphic -->
+        {% if page.poll--sponsored %}
+            {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--poll-sponsor" ad-slot="ad-300x250" ad-source="/ui/img/client_image-placeholder-300x250.png" %}
+        {% endif %}
 
         <!--FACT-BOX will display here at bottom of article in narrow viewports -->
         <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. This ID must not appear in the sidebar fact-box html! -->
-        {% include 01-molecules/blocks/Fact-box.html object-class="fact-box--explainer" fact-box__content="<p>Please note that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+        {% include 01-molecules/blocks/Fact-box.html object-class="fact-box--explainer" fact-box__content="<p><strong>Please note</strong> that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
 
 
     </div> <!--END .container-fluid-->

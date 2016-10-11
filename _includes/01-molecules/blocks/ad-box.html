@@ -10,6 +10,9 @@
 
 <aside class="ad-box {{ include.ad-size}}" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">
     <div class="advertisement" id="{{ include.ad-slot }}" style="text-align:center">
+            {% if include.ad-source != "" %}
+                <img src='{{ site.url }}{{ include.ad-source }}' class="responsive-img" alt="image atom"/>
+            {% endif %}
     </div>
 </aside>
 
