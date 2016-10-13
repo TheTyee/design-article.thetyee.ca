@@ -29,17 +29,10 @@
 
     {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
 
-    {% include 02-organisms/sections/messaging-zone.html %}
+    {% include 02-organisms/sections/messaging-zone--poll.html %}
 
     {% include 02-organisms/sections/latest-stories.html %}
-
-
-    {% include 02-organisms/sections/comments.html %}
-    
-    {% assign barometer = 'true' %}
-    
-    {% include 02-organisms/sections/messaging-zone.html %}
-
+        
 
     <!-- =============================== -->
     <!-- ===== Footer ===== -->

@@ -1,0 +1,8 @@
+<!-- 00-atoms/images/series-badge -->
+{% comment %}
+This badge indicates that an article is part of a series and the badge links ot the series index page. When calling the include use the parameter series-badge-position to specify whether the badge is being used in an article headline or in a series box. You also need to include the "badge--aside-placement--presents" position extension for aside placements of the presents badge E.g:
+	[% include 00-atoms/images/presents-badge.html badge-position="badge--headline-placement badge--headline-placement--presents" %]
+    OR
+    [% include 00-atoms/images/presents-badge.html badge-position="badge--aside-placement badge--aside-placement--presents" %]
+{% endcomment %}
+<a href="http://thetyee.ca/About/Advertise/Tyee-Presents/" class="series-badge {{ include.badge-position }}"><img src="{{ site.url }}ui/img/badge-presents.svg"></a>
