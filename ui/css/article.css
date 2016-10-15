@@ -1263,10 +1263,14 @@ figure {
         margin-top: .25em;
         float:right;
         margin-bottom: 1em;
-         margin-left: 1em;
-       clear:none;
-
+        margin-left: 1em;
+        clear:none;
     }
+        
+        /* Removes padding when a medium figure appears at top of article (instead of featured-media). */
+        .ad-box--halfpage  + figure.figure.medium { 
+            padding-top: 0;
+        }
     
     .margintop {
       margin-top: 20px;
