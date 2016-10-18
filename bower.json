@@ -18,7 +18,6 @@
   ],
   "dependencies": {
     "bootstrap": "~3.1.1",
-    "backbone": "~1.1.2",
     "modernizr": "~2.8.3",
     "less": "less.js#~2.6.1",
     "moment": "momentjs#^2.12.0",
