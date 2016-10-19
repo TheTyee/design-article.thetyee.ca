@@ -115,7 +115,7 @@ $(window).load(function() {
         // populate shared count
 
         var shareAPI;
-        if ( location.host === 'thetyee.ca' ) {
+        if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
             shareAPI = 'https://widgets.thetyee.ca';
         } else if ( location.host === 'preview.thetyee.ca' ) {
             shareAPI = 'http://preview.widgets.thetyee.ca';

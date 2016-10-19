@@ -1,9 +1,5 @@
 ---
 ---
-{% comment %}
-    An article-legacy-image is an old story lacking a high-res image suitable for a featured media placement. In these cases the feature-media section is omitted and instead the image asset gets placed within a figure.medium at the start of the article__body content. 
-{% endcomment %}
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -11,7 +7,6 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 {% include meta/head.html %}
   <body class="{{ page.layout }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
-
     <!-- =============================== -->
     <!-- ===== Header ===== -->
 
@@ -21,13 +16,12 @@
     
     {% include 02-organisms/global/header.html %}
 
-
     <!-- =============================== -->
     <!-- ===== Article components ===== -->
 
-    {% include 02-organisms/article/article__header.html %}  
-
-    {% include 02-organisms/article/article__body--legacyimage.html %}    
+    {% include 02-organisms/article/article-poll__header.html %}  
+    
+    {% include 02-organisms/article/article__body--poll.html %}    
     
 
     <!-- =============================== -->
@@ -35,30 +29,21 @@
 
     {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
 
-    {% include 02-organisms/sections/messaging-zone.html %}
+    {% include 02-organisms/sections/messaging-zone--poll.html %}
 
-    {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
-
-
-    {% include 02-organisms/sections/comments.html %}          <!-- NEEDS WORK -->
-    
-    {% assign barometer = 'true' %}
-    
-    {% include 02-organisms/sections/messaging-zone.html %}
-
-    <div class="presents-col-container main-col-container container-fluid">{% include 01-molecules/blocks/presents-box.html %}</div>
-
+    {% include 02-organisms/sections/latest-stories.html %}
+        
 
     <!-- =============================== -->
     <!-- ===== Footer ===== -->
 
-    {% include footer.html %}                 <!-- NEEDS WORK -->
+    {% include footer.html %}
 
     {% include footer_scripts_standard.html %}
 
-    {% include 02-organisms/sections/subscription-modal.html %} 
+     {% include 02-organisms/sections/subscription-modal.html %} 
+
 
     </body>
 
 </html>
-

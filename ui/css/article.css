@@ -122,38 +122,64 @@ p {
   font-style: normal;
 }
 
-/* Tyee Presents label */
-h6.tyee-presents-label {
+/* Special category labels */
+h6.tyee-presents-label, h6.poll-label {
     display: block;
+    position: relative;
     float: none;
     overflow: hidden;
     border-top: 1px solid #90AD00;
     border-bottom: 1px solid #90AD00;
     padding-top: .375em;
     padding-bottom: 0.33em;
-    margin-top: 2.3em;
-    margin-bottom: 1.5em;
+    margin-top: 2.66em;
+    margin-bottom: 1.125em;
     color: black;
     font-size: .9em;
     font-weight: 400;
     letter-spacing: .02em;
 }
 
-h6.tyee-presents-label {
-    margin-top: 2.66em;
-    margin-bottom: 1.125em;
+h6.poll-label {
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+    color: black !i;
 }
-
 
 /* h6.tyee-presents-label a{
     color: black;
 } */
 
+    h6.poll-label a {
+        float: left;
+        margin-right: 0.5em;
+        color: #6BA100,
+    }
+
+    .poll-label__background {
+        display: none;
+    }
+
+    /* BREAKPOINT: 500px // Adds background image to poll-label */
+    @media screen and (min-width: 500px) {
+        .poll-label__background {
+            display: block;
+            overflow: auto;
+            opacity: 0.95; 
+            height: .9em;
+            margin-top: .025em;
+            background-color: none;
+            background-image: url("barometer-label__background.svg");
+            background-repeat: repeat-x;
+            background-size: auto 100%; 
+        }
+    }
+
 
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 593px)              
         {
-        h6.tyee-presents-label {
+        h6.tyee-presents-label, h6.poll-label {
               margin-bottom: 1.5em;
         }
     }
@@ -161,7 +187,7 @@ h6.tyee-presents-label {
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 1024px)              
         {
-        h6.tyee-presents-label {
+        h6.tyee-presents-label, h6.poll-label {
                display: block;
                width: 100%;
                margin-bottom: 1em;
@@ -171,6 +197,13 @@ h6.tyee-presents-label {
             font-weight: 700;
             letter-spacing: .06em;
             content:"TYEE PRESENTS: "
+       }
+       h6.poll-label a:before{
+            font-size: .9em;
+            font-weight: 700;
+            letter-spacing: .06em;
+            color: #555;
+            content:"THE BAROMETER: "
        }
     }
 
@@ -332,7 +365,7 @@ p a:hover {color: #6F9400;}
 /* LEAD-IN WITH DROPCAP  ============================================================= */
 
 .lead-in {
-   /* overflow: hidden; */
+   overflow: hidden;
 }
 
 .lead-in:first-letter {
@@ -405,8 +438,7 @@ p a:hover {color: #6F9400;}
 
 
 
-/* ARTICLE LAYOUT  ========================================================================== */
-
+/* ARTICLE LAYOUT - HEADER ========================================================================== */
 
 .article__header { /* article__header is always centered on the page */
   position: relative;
@@ -425,6 +457,7 @@ p a:hover {color: #6F9400;}
     }
 
 
+/* ARTICLE LAYOUT - FEATURED MEDIA ========================================================================== */
 
 .featured-media { /* featured-media organism is centered on the page and occupies full page column 
                      width at medium and small view widths */
@@ -492,6 +525,8 @@ p a:hover {color: #6F9400;}
 
 
 
+/* ARTICLE BODY ========================================================================== */
+
 .article__body {
      padding-bottom: 2em;
 }
@@ -509,6 +544,12 @@ The .main-col-container styling is really the scaffold of the layout and most ot
      margin-left: auto;
      margin-right: auto;
 }
+
+    /* Set a top margin on article__body for LEGACY ARTICLES and POLLS that don't have a featured-media section */
+    .article-legacy-image .article__body.main-col-container, .article-poll .article__body.main-col-container {
+        margin-top: 20px;
+    }
+
 
     /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
     @media screen and (min-width: 880px) {
@@ -691,59 +732,6 @@ ul.book_profile {
   .gallery_output figure:first-child {
     float:none;
   }
-
-/* bryan's temp small and medium feature image hack for old stories */
-  figure.figure.small {
-		  width: 37%;
-		  max-width: 20vw;
-		  margin-top: .25em;
-		  float:right;
-		  margin-bottom: 1em;
-   		 margin-left: 1em;
-		 clear:none;
-  }
-  
-   figure.figure.medium {
-		  width: 50%;
-		  margin-top: .25em;
-		  float:right;
-		  margin-bottom: 1em;
-   		 margin-left: 1em;
-		 clear:none;
-
-  }
-  
-  .margintop {
-	  margin-top: 20px;
-  }
-  
-  @media (min-width: 700px) and (max-width:760px) {
-    figure.figure.medium,figure.figure.small {
-      margin-right: -3em;
-    }
-  } 
-  
-@media (max-width: 1100px) and (min-width:760px) {
-   figure.figure.medium,figure.figure.small {
-    max-width: 20vw;
-   }
-  
-}
-
-
-@media (max-width: 400px) {
-   figure.figure.medium,figure.figure.small {
-   max-width:none;
-   width: 100%;
-   }
-   p {
-    /* float:left; - seems unnecessary and causes layout problems */ 
-   }
-  
-}
-
-
-/* end bryan small/med hack */
 
 
 @media (min-width: 992px) {
@@ -1257,12 +1245,70 @@ figure {
       
     }
 
-
     .featured-media figure {
         clear: none;
         margin-top: 0.25em;
         padding: 0;
     }
+
+
+    /* FIGURE SMALL and MEDIUM --------------------------------------------------------------------
+    bryan's temp small and medium feature image hack for old stories */
+
+    figure.figure.small {
+        width: 37%;
+        max-width: 20vw;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+         margin-left: 1em;
+       clear:none;
+    }
+    
+     figure.figure.medium {
+        width: 50%;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        clear:none;
+    }
+        
+        /* Removes padding when a medium figure appears at top of article (instead of featured-media). */
+        .ad-box--halfpage  + figure.figure.medium { 
+            padding-top: 0;
+        }
+    
+    .margintop {
+      margin-top: 20px;
+    }
+    
+    @media (min-width: 700px) and (max-width:760px) {
+      figure.figure.medium,figure.figure.small {
+        margin-right: -3em;
+      }
+    } 
+    
+  @media (max-width: 1100px) and (min-width:760px) {
+     figure.figure.medium,figure.figure.small {
+      max-width: 20vw;
+     }
+    
+  }
+
+  @media (max-width: 400px) {
+     figure.figure.medium,figure.figure.small {
+     max-width:none;
+     width: 100%;
+     }
+     p {
+      /* float:left; - seems unnecessary and causes layout problems */ 
+     }
+    
+  }
+
+  /* end bryan small/med hack */
+
 
     /* FIGURE XL -------------------------------------------------------------------- */
 
@@ -1569,9 +1615,15 @@ aside { }
    For some reason the bootstrap default button html & css wasn't working. -- AG */
 
 
-.tool-bar{
+.tool-bar {
   margin: .85em 0 .3em 0;
 }
+      /* Add top border if article is a poll (has no author-info block) */
+      .article-poll .article__header .tool-bar {
+          padding-top: 1em;
+          border-top: 1px solid;
+          border-color: inherit; 
+      }
 
     .tool-bar ul {
           display: block;
@@ -1619,6 +1671,8 @@ aside { }
       }
     }
 
+        /* TOOL-BAR BUTTONS */
+
         .btn-social-icon { /* This is adapted from bootstrap */
             position:relative;
             padding-left:44px;
@@ -1647,9 +1701,6 @@ aside { }
           height: 100%;
           font-size: 1.5em;
         }
-
-
-
 
         .btn-twitter {
               color: #fff;
@@ -1701,14 +1752,18 @@ aside { }
               font-size: 1.2em;
         }
         
-        @media screen and (max-width: 400px) {
-        .btn-print {
-          display:none;
-        }
-   
-          
-        }
+            @media screen and (max-width: 400px) {
+                .btn-print {
+                  display:none;
+                }
+                      
+            }
        
+        /* HIDE BUTTONS ON POLL STORIES */
+        .article-poll .btn-join, .article-poll .btn-comment, .article-poll .str-comment {
+            display: none;
+        }
+
         .btn-join:hover, .btn-print:hover, .btn-comment:hover {          
               cursor: pointer;
         }
@@ -1956,6 +2011,94 @@ aside { }
        margin-top: 2em;
     }
 
+
+
+    /* POLL SPONSOR AD  ---------------------------------------------- */
+    /* linked client image would only be 300x250. Graphic still delivered as it was 
+    in the past: hard-coded into page, not trafficked through DFP.
+    Use this markup to place the ad: 
+    {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--poll-sponsor" 
+    ad-slot="ad-300x250" ad-source="/ui/img/client_image-placeholder-300x250.png" %} 
+    The ad needs to get marked up twice (similar to fact-boxes): Once at the beginning of article__body and
+    again at the end (before the final fact-box). 
+    By default CSS will display only the 2nd one, but at viewports wider than 1200px
+    it will display only the 1st one and put it in the margin. */
+
+    .ad-box--poll-sponsor {
+            float:none;
+            border: none;
+            margin-top: 2em;
+            margin-bottom: 0;
+        }
+
+    /* Hide first poll-sponsor ad */
+    .ad-box--poll-sponsor:first-of-type {
+        display: none;
+    }
+
+    .ad-box--poll-sponsor:before {
+           display: block;
+           margin: .8em auto 2em auto;
+           text-align: center;
+           content: "this poll sponsored by";
+           text-transform: uppercase;
+           color: #ACACAC;
+           font-size: .6em;
+           line-height:1em;
+           font-weight: 400;
+           letter-spacing: 0.15em;
+        }
+
+
+    @media screen and (min-width: 1200px) {
+
+        /* Hide poll-sponsor ad */
+        .ad-box--poll-sponsor {
+            display: none;
+        }
+
+        /* Show only first poll-sponsor ad */
+        .ad-box--poll-sponsor:first-of-type {
+            display: block;
+            overflow:hidden;
+            position: relative;
+            float: right;
+            margin-top: 0.24em;
+            margin-right: -19em;
+            margin-bottom: 1.75em;
+            width: 300px;
+            height: 300px;
+            background-color: none;
+            border: none;
+        }
+
+        .ad-box--poll-sponsor:before { 
+           margin-top: 0;
+        }
+    }
+
+
+
+/* WUFOO POLL STYLING  ========================================================================== 
+ */
+
+/* Prevents the widgets from clearing and creating huge gaps in page. */
+div.fc {
+    clear: none;
+}
+
+div.embedded-poll {
+    background-color: #f1f8ec;
+    padding: 20px;
+}
+
+/* Style headings in poll report widgets. */
+.fc caption h4 {
+    font-size:24px !important;
+    font-family: 'Source Sans Pro', arial, sans-serif;
+    font-weight: 600 !important;
+    color: #444;
+}
 
 
 
@@ -2396,6 +2539,18 @@ label.valid {
                         margin-top: 1.125em;
                     }
                 }
+
+            .badge--headline-placement--barometer {  /* Moves presents badge to align with a stacked h6 category label. */
+                margin-top: 0.85em;
+            }
+
+                /* BREAKPOINT: 500px // Moves presents badge to align with h6 */
+                @media screen and (min-width: 500px) {
+                    .badge--headline-placement--barometer {
+                        margin-top: 0.75em;
+                    }
+
+                }
         
          /* BREAKPOINT: 500px // Make headline series badge bigger */
         @media screen and (min-width: 500px) {
@@ -2414,6 +2569,10 @@ label.valid {
             }
 
              .badge--headline-placement--presents { /* Aligns presents badge with first letter of headline. */
+                        margin-top: 4.4em;
+                    }
+             
+             .badge--headline-placement--barometer { /* Aligns Barometer badge with first letter of headline. */
                         margin-top: 4.4em;
                     }
         }
@@ -2563,6 +2722,13 @@ label.valid {
     }
 
 
+
+/* TWITTER WIDGET  ========================================================================== 
+   Reduces space created by aside margins between this widget and the preceding fact-box. */
+
+.poll-sponsor-twitter {
+    margin-top: -5em;
+}
 
 
 /* SLIDE CAROUSEL  ========================================================================== 

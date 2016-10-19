@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Wufoo forms customization
+   ========================================================================== */
+
+.wufoo li {
+    width: 100%;
+}
+
+/* Styles poll instruction rollovers to stay within view when li is at width 100% */
+form li.focused .instruct, form li:hover .instruct {
+  left: 45%;
+  }
