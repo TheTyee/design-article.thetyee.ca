@@ -96,15 +96,6 @@ $(window).load(function() {
 (function($, viewport){
     $(document).ready(function() {
 
-        // Animate comment expansion
-        $('a.btn-comment, a.str-comment').click(function(e){
-            $('html, body').animate({
-                scrollTop: $("#disqus_thread").offset().top
-            }, 500, function(){
-                $(".comments-section button").click();
-            });
-            return false;
-        });
 
         // Populate shared count
         var shareAPI;
@@ -146,7 +137,8 @@ $(window).load(function() {
                     "hide.bs.dropdown":  function() { return this.closable; }
             });
         } else {
-            // this function not related to above just piggybacking on the if statement. It pushes the main content down when latest stories is open
+            // This function not related to above just piggybacking on the if statement. 
+            // It pushes the main content down when latest stories is open
             var menuheight = 0;
             $('.col-sm-12 .dropdown').on('show.bs.dropdown', function(event) {
                 if ($(window).width() > 991) {
@@ -194,17 +186,12 @@ $(window).load(function() {
 
         //Moves focus directly to search field when user begins typing
         $('.search-block').on('show.bs.dropdown', function(event) {
-
             setTimeout(function(){
                 $('input#menu__search--input').focus();
             }, 500);
         });
 
-
-
         //LATEST STORIES
-
-
         jQuery.fn.reverse = function() {
             return this.pushStack(this.get().reverse(), arguments);
         };
@@ -212,7 +199,7 @@ $(window).load(function() {
 
         //GLOBALS
         var totalStoryPositions;
-        var counter =0;
+        var counter = 0;
         var topCounter = 0;
         var bottomCounter = 0;
         var response;
@@ -244,7 +231,7 @@ $(window).load(function() {
                 error: function(){
                 }
             });
-        }//end lateststories()
+        }
 
         //Format the json data for ease of manipulation
         function createStoryObjects(returnedStories, callback){
@@ -260,10 +247,10 @@ $(window).load(function() {
 
                 latestStoryImage = value._source.related_media[0].uri;
 
-                // get the smallest image > 200px available
+                // Get the smallest image > 200px available
                 var bestWidth = value._source.related_media[0].width;
                 var bestHeight = value._source.related_media[0].height;
-                 var latestThumbFound=0;
+                var latestThumbFound = 0;
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
                     thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
@@ -271,7 +258,7 @@ $(window).load(function() {
                         latestStoryImage = thumb.uri;
                         LatestThumbFound = 1;
                         break; }
-                    };
+                }
 
                 if (latestThumbFound < 1) {
                     for (var k in value._source.related_media[0].thumbnails) {
@@ -285,8 +272,8 @@ $(window).load(function() {
                                 bestWidth = thumb.width;
                                 bestHeight = thumb.height;
                                 latestStoryImage = thumb.uri;
-                                }
-                          
+                            }
+
                     }
                 }
 
@@ -329,7 +316,7 @@ $(window).load(function() {
                         // Old value
                         $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
                         if (storyObjects[topCounter].urlPath.indexOf("/Presents/") > -1) {
-                          $(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                            $(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
                             $(this).addClass("sponsored");
                         }
                         $(this).find('img').attr('src', storyObjects[topCounter].image);
@@ -376,33 +363,33 @@ $(window).load(function() {
             //Get the next group of stories on click
 
             function stylePresents(counter, element) {
-                                                            if (counter && counter.urlPath.indexOf("/Presents/") > -1) {
-                                    $(element).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
-                                    $(element).addClass("sponsored");
-                            } else {
-                                   $(element).find(".remove").remove();
-                                   $(element).removeClass("sponsored");
-                            }
-    
-    
-}
-            
+                if (counter && counter.urlPath.indexOf("/Presents/") > -1) {
+                    $(element).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                    $(element).addClass("sponsored");
+                } else {
+                    $(element).find(".remove").remove();
+                    $(element).removeClass("sponsored");
+                }
+
+
+            }
+
             $('.latest-stories__media-wrapper').each(function(key, index){
                 $(this).on('click', '.next', function(event){
 
                     $(this).parent().find('li').each(function(i, details){
 
                         if (key === 0){
-                            
+
                             if (storyObjects[topCounter]) {
-                             stylePresents(storyObjects[topCounter], this);
-                             $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);                            
-                            $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
-                            $(this).find('img').attr('src', storyObjects[topCounter].image);
-                            $(this).find('h4').html(storyObjects[topCounter].hed);
-                            $(this).find('p').html(storyObjects[topCounter].dek);
-                            $(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
-                            $(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+                                stylePresents(storyObjects[topCounter], this);
+                                $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);                            
+                                $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+                                $(this).find('img').attr('src', storyObjects[topCounter].image);
+                                $(this).find('h4').html(storyObjects[topCounter].hed);
+                                $(this).find('p').html(storyObjects[topCounter].dek);
+                                $(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+                                $(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
                             }
                             topCounter++;
 
@@ -413,16 +400,16 @@ $(window).load(function() {
                         }
 
                         if (key == 1){
-                           if (storyObjects[bottomCounter]) {
-                                        stylePresents(storyObjects[bottomCounter], this);
-                                        $(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
-                                        $(this).find('img').attr('src', storyObjects[bottomCounter].image);
-                                        $(this).find('h4').html(storyObjects[bottomCounter].hed);
-                                        $(this).find('p').html(storyObjects[bottomCounter].dek);
-                                        $(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
-                                        $(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
-                            
-                             }
+                            if (storyObjects[bottomCounter]) {
+                                stylePresents(storyObjects[bottomCounter], this);
+                                $(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+                                $(this).find('img').attr('src', storyObjects[bottomCounter].image);
+                                $(this).find('h4').html(storyObjects[bottomCounter].hed);
+                                $(this).find('p').html(storyObjects[bottomCounter].dek);
+                                $(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+                                $(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+
+                            }
                             bottomCounter++;
 
                             if (bottomCounter >= storiesRequested){
@@ -449,16 +436,16 @@ $(window).load(function() {
                             topPrevCounter = (storiesRequested-1);
                         }
                         if (key === 0){
-                        if (storyObjects[topPrevCounter]) {
-                            stylePresents(storyObjects[topPrevCounter], this);
-                            $(this).find('a').attr('href', storyObjects[topPrevCounter].urlPath);
-                            $(this).find('img').attr('src', storyObjects[topPrevCounter].image);
-                            $(this).find('h4').html(storyObjects[topPrevCounter].hed);
-                            $(this).find('p').html(storyObjects[topPrevCounter].dek);
-                            $(this).find('.latest-stories__date').html(storyObjects[topPrevCounter].date);
-                            $(this).find('.latest-stories__authour').html(storyObjects[topPrevCounter].authour);
+                            if (storyObjects[topPrevCounter]) {
+                                stylePresents(storyObjects[topPrevCounter], this);
+                                $(this).find('a').attr('href', storyObjects[topPrevCounter].urlPath);
+                                $(this).find('img').attr('src', storyObjects[topPrevCounter].image);
+                                $(this).find('h4').html(storyObjects[topPrevCounter].hed);
+                                $(this).find('p').html(storyObjects[topPrevCounter].dek);
+                                $(this).find('.latest-stories__date').html(storyObjects[topPrevCounter].date);
+                                $(this).find('.latest-stories__authour').html(storyObjects[topPrevCounter].authour);
 
-                        }        
+                            }        
                             topPrevCounter--;
                         }
 
@@ -467,17 +454,17 @@ $(window).load(function() {
                         }
 
                         if (key == 1){
-                             if (storyObjects[topPrevCounter]) {
-                            stylePresents(storyObjects[bottomPrevCounter], this);
-                            $(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
-                            $(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
-                            $(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
-                            $(this).find('p').html(storyObjects[bottomPrevCounter].dek);
-                            $(this).find('.latest-stories__date').html(storyObjects[bottomPrevCounter].date);
-                            $(this).find('.latest-stories__authour').html(storyObjects[bottomPrevCounter].authour);
-                             }
+                            if (storyObjects[topPrevCounter]) {
+                                stylePresents(storyObjects[bottomPrevCounter], this);
+                                $(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
+                                $(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
+                                $(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
+                                $(this).find('p').html(storyObjects[bottomPrevCounter].dek);
+                                $(this).find('.latest-stories__date').html(storyObjects[bottomPrevCounter].date);
+                                $(this).find('.latest-stories__authour').html(storyObjects[bottomPrevCounter].authour);
+                            }
                             bottomPrevCounter--;
-                                console.log(bottomPrevCounter);
+                            console.log(bottomPrevCounter);
                         }
 
                     });
@@ -491,6 +478,15 @@ $(window).load(function() {
 
         }//END LATEST STORIES SCROLLER
 
+        // Animate comment expansion
+        $('a.btn-comment, a.str-comment').click(function(e){
+            $('html, body').animate({
+                scrollTop: $("#disqus_thread").offset().top
+            }, 500, function(){
+                $(".comments-section button").click();
+            });
+            return false;
+        });
 
         // Show Disqus comments
         $(".comments-section .btn").click(function(e) {
