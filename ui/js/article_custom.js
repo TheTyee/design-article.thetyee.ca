@@ -41,7 +41,37 @@ function fixFeaturedMediaOffset(){
 }
 
 
-// function to hide comments unless a link being followed 
+//========================================================
+// Functions only relevant to article pages with comments,
+// subscribe, and so on...
+//========================================================
+
+// Animate comment expansion
+function enableCommentAnimation() {
+    $('a.btn-comment, a.str-comment').click(function(e){
+        $('html, body').animate({
+            scrollTop: $("#disqus_thread").offset().top
+        }, 500, function(){
+            $(".comments-section button").click();
+        });
+        return false;
+    });
+}
+
+// Show Disqus comments
+function enableCommentExpansion() {
+    $(".comments-section .btn").click(function(e) {
+        e.preventDefault();
+        var el = $('.comments-section');
+        el.css({
+            "height": "auto",
+        });
+        // fade out read-more
+        $('.read-more').fadeOut();
+    });
+}
+
+// Function to hide comments unless a link being followed 
 // to a specific comment (comments are not hidden in css anymore by default)
 function mobileFriendlyCommentsStr() {
     // Adds the .stric-comment-cnt class to the Disqus comment counter
@@ -111,6 +141,8 @@ $(window).load(function() {
     hideIfNoHash();
     enableEmailSubscription();
     loadSharedCount();
+    enableCommentAnimation();
+    enableCommentExpansion();
 });
 
 (function($, viewport){
@@ -357,7 +389,7 @@ $(window).load(function() {
 
 
 
-        //takes parameters of current slider
+        //Takes parameters of current slider
         function scrollLatestStories(){
             //Get the next group of stories on click
 
@@ -476,33 +508,6 @@ $(window).load(function() {
             });
 
         }//END LATEST STORIES SCROLLER
-
-        //========================================================
-        // Functions only relevant to article pages with comments,
-        // subscribe, and so on...
-        //========================================================
-
-        // Animate comment expansion
-        $('a.btn-comment, a.str-comment').click(function(e){
-            $('html, body').animate({
-                scrollTop: $("#disqus_thread").offset().top
-            }, 500, function(){
-                $(".comments-section button").click();
-            });
-            return false;
-        });
-
-        // Show Disqus comments
-        $(".comments-section .btn").click(function(e) {
-            e.preventDefault();
-            var el = $('.comments-section');
-            el.css({
-                "height": "auto",
-            });
-
-            // fade out read-more
-            $('.read-more').fadeOut();
-        });
     });
 
 })(jQuery, ResponsiveBootstrapToolkit);
