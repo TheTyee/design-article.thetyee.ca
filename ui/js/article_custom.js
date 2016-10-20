@@ -1,4 +1,6 @@
-//check if an image exists
+// Check if an image exists
+// Global function
+// (Currently unused, and kludey at best)
 function imageExists(image_url){
     var http = new XMLHttpRequest();
     http.open('HEAD', image_url, false);
@@ -6,6 +8,8 @@ function imageExists(image_url){
     return http.status != 404;
 }
 
+// Fix height of latest story widgets
+// Global function
 function latestFix(){
     var latestHeight= 0;
     $(".latest-stories__media-wrapper li").height("auto");
@@ -15,18 +19,18 @@ function latestFix(){
         }
 
     });
-
     $(".latest-stories__media-wrapper li").height(latestHeight + 10);
 }
 
-
+// Fix height of the first media object
+// Global
 function fixFeaturedMediaOffset(){
     if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
-        var mediaHeight=  $('.featured-media .figure').outerHeight();
-        var sectionHeight=  $(".featured-media .ad-box").outerHeight();
+        var mediaHeight =  $('.featured-media .figure').outerHeight();
+        var sectionHeight =  $(".featured-media .ad-box").outerHeight();
         if (  (sectionHeight - mediaHeight) >= 0) {
-
             var mediamargin =  mediaHeight - sectionHeight + -13;
+            console.log(mediamargin);
             $("section.featured-media").css("margin-bottom", mediamargin);
 
             if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)  {
