@@ -85,18 +85,7 @@ function enableEmailSubscription() {
     });  
 }
 
-$(window).load(function() {
-    // attaching to window load
-    latestFix();
-    mobileFriendlyCommentsStr();
-    hideIfNoHash();
-    enableEmailSubscription();
-});
-
-(function($, viewport){
-    $(document).ready(function() {
-
-
+function loadSharedCount() {
         // Populate shared count
         var shareAPI;
         if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
@@ -113,6 +102,21 @@ $(window).load(function() {
             $("#sharecount").fadeIn();
 
         });
+}
+
+$(window).load(function() {
+    // attaching to window load
+    latestFix();
+    mobileFriendlyCommentsStr();
+    hideIfNoHash();
+    enableEmailSubscription();
+    loadSharedCount();
+});
+
+(function($, viewport){
+    $(document).ready(function() {
+
+
 
         // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
         // http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
@@ -191,11 +195,10 @@ $(window).load(function() {
             }, 500);
         });
 
-        //LATEST STORIES
+        // Prototype function needed for latest stories
         jQuery.fn.reverse = function() {
             return this.pushStack(this.get().reverse(), arguments);
         };
-
 
         //GLOBALS
         var totalStoryPositions;
@@ -473,6 +476,11 @@ $(window).load(function() {
             });
 
         }//END LATEST STORIES SCROLLER
+
+        //========================================================
+        // Functions only relevant to article pages with comments,
+        // subscribe, and so on...
+        //========================================================
 
         // Animate comment expansion
         $('a.btn-comment, a.str-comment').click(function(e){
