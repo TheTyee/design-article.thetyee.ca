@@ -6,12 +6,6 @@ function imageExists(image_url){
     return http.status != 404;
 }
 
-// add .ad-blocker if ad blocker present
-// if(typeof canRunAds == "undefined") {
-//     $("body").addClass("ad-blocker");
-// }
-
-
 function latestFix(){
     var latestHeight= 0;
     $(".latest-stories__media-wrapper li").height("auto");
