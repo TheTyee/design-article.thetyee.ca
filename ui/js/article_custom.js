@@ -1,5 +1,5 @@
 // Check if an image exists
-// Global function
+// Context: Global
 // (Currently unused, and kludey at best)
 function imageExists(image_url){
     var http = new XMLHttpRequest();
@@ -9,7 +9,7 @@ function imageExists(image_url){
 }
 
 // Fix height of latest story widgets
-// Global function
+// Context: Global
 function latestFix(){
     var latestHeight= 0;
     $(".latest-stories__media-wrapper li").height("auto");
@@ -22,8 +22,14 @@ function latestFix(){
     $(".latest-stories__media-wrapper li").height(latestHeight + 10);
 }
 
+
+
+//========================================================
+// Functions only relevant to article pages with comments,
+// subscribe, featured media and so on...
+//========================================================
+
 // Fix height of the first media object
-// Global
 function fixFeaturedMediaOffset(){
     if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
         var mediaHeight =  $('.featured-media .figure').outerHeight();
@@ -43,13 +49,6 @@ function fixFeaturedMediaOffset(){
         $($("article .container-fluid aside")[0]).removeAttr("style");
     }
 }
-
-
-//========================================================
-// Functions only relevant to article pages with comments,
-// subscribe, and so on...
-//========================================================
-
 // Animate comment expansion
 function enableCommentAnimation() {
     $('a.btn-comment, a.str-comment').click(function(e){
@@ -140,7 +139,8 @@ function loadSharedCount() {
 
 $(window).load(function() {
     // attaching to window load
-    latestFix();
+    latestFix(); // Global
+
     mobileFriendlyCommentsStr();
     hideIfNoHash();
     enableEmailSubscription();
@@ -151,9 +151,6 @@ $(window).load(function() {
 
 (function($, viewport){
     $(document).ready(function() {
-
-
-
         // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
         // http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
         // The polyfill is no longer working so this is now done via js
