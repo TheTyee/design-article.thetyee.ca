@@ -41,8 +41,8 @@ function fixFeaturedMediaOffset(){
 }
 
 
-// function to hide comments unless a link being followed to a specific comment ( comments are not hidden in css anymore by default)
-
+// function to hide comments unless a link being followed 
+// to a specific comment (comments are not hidden in css anymore by default)
 function mobileFriendlyCommentsStr() {
     // Adds the .stric-comment-cnt class to the Disqus comment counter
     // so it can be hidden on mobile
@@ -93,10 +93,10 @@ $(window).load(function() {
     enableEmailSubscription();
 });
 
-// Wrap IIFE around your code
 (function($, viewport){
     $(document).ready(function() {
 
+        // Animate comment expansion
         $('a.btn-comment, a.str-comment').click(function(e){
             $('html, body').animate({
                 scrollTop: $("#disqus_thread").offset().top
@@ -106,8 +106,7 @@ $(window).load(function() {
             return false;
         });
 
-        // populate shared count
-
+        // Populate shared count
         var shareAPI;
         if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
             shareAPI = 'https://widgets.thetyee.ca';
@@ -130,21 +129,8 @@ $(window).load(function() {
         $(".aside:has(> img)").css("display", "block");
 
 
-        // read more expand instead of following link
-
-        $(".author-more").click(function(e){
-            e.preventDefault();
-            $(this).hide();
-            $(".author-info__text").addClass("overflow");
-        });
-
-
-
-
-
-        //fix offset
+        //Fix offset
         var windowWidth = $(window).width();
-
         fixFeaturedMediaOffset();
 
         //Do not kill the dropdowns when users click in them)
