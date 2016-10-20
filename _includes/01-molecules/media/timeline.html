@@ -1,0 +1,32 @@
+<!-- begin 01-molecules/media/timeline -->
+{% comment %}
+-----------------------------------------------------------------------------------------
+JQuery vertical timeline. http://code.minnpost.com/jquery-vertical-timeline/
+-----------------------------------------------------------------------------------------
+{% endcomment %}
+
+<script src="{{ site.url }}bower_components/eventie/eventie.js"></script>
+<script src="{{ site.url }}bower_components/eventEmitter/EventEmitter.js"></script>
+<script src="{{ site.url }}bower_components/underscore/underscore.js"></script>
+<script src="{{ site.url }}bower_components/tabletop/src/tabletop.js"></script>
+<script src="{{ site.url }}bower_components/imagesloaded/imagesloaded.js"></script>
+<script src="{{ site.url }}bower_components/isotope/jquery.isotope.js"></script>
+<script src="/ui/js/jquery-vertical-timeline.js"></script>
+<link rel="stylesheet" href="{{ site.url }}ui/css/jquery-vertical-timeline.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<div id="timeline"></div>
+  <script>
+      $('#timeline').verticalTimeline(
+        {
+          key: '0AvnsL1HLUEQbdEIxNV9lYjBLS2NuZkZWRmk2LXoyYUE',
+          sheetName: 'Sheet1',
+        }
+    );
+  // Script variables
+  //var timelineConfig = {
+   //       key: '0AvnsL1HLUEQbdEIxNV9lYjBLS2NuZkZWRmk2LXoyYUE', // Input the key for the spreadsheet
+    //      sheetName: 'Sheet1' // change to name of spreadsheet 'sheet' that contains the data
+    //  };
+  </script>
+
+<!-- END 01-molecules/media/timeline -->
+

@@ -1,5 +1,17 @@
 ### Changelog
 
+**2.6.3**
+Propagating 2.6.2 changes correctly.
+
+**2.6.2**
+Removing issue with module.exports (issue #39).
+
+**2.6.1**
+Adding CommonJS exports.
+
+**2.6.0**
+Registering the package in NPM registry and adding gulp build setup.
+
 **2.5.1**
 Delaying the injection of visibility div container into `body` until `$(document).ready()`, and thus allowing the inclusion of library inside `<head>` section.
 
