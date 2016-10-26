@@ -1,6 +1,6 @@
 
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
 
 
 var queryString = window.location.href;
