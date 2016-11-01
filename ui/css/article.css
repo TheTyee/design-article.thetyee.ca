@@ -2042,6 +2042,10 @@ aside { }
            letter-spacing: 0.15em;
         }
 
+      #sidebar {
+        height: auto;
+      }
+
 
     @media screen and (min-width: 1200px) {
 
