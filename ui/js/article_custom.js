@@ -100,7 +100,7 @@ jQuery(window).load(function() {
 });
 
 // Wrap IIFE around your code
-(function(jQuery, viewport){
+(function($, viewport){
     jQuery(document).ready(function() {
 
         jQuery('a.btn-comment, a.str-comment').click(function(e){
