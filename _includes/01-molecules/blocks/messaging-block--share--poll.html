@@ -3,14 +3,25 @@
     <h3>Share this poll</h3>
     <div class="tool-bar clearfix" data-dev-object-descrip="USES CODE FROM: molecules/blocks/tool-bar" data-dev-status="IN-PROGRESS">
         <ul class="clearfix">
-            <li><button type="button" class="btn btn-default btn-facebook">
+            <li>
+               <a class="fbshare" style="color:white;" href="#" onclick="share_fb(window.location.href);return false;" rel="nofollow" share_url="<?=$escaped_url ?>" target="_blank"> 
+                <button type="button" class="btn btn-default btn-facebook">
                     <span class="fa fa-facebook" aria-hidden="true"></span><span class="messaging-block--share-button--label">&nbsp; Share on Facebook</span>
-            </button></li>
-            <li><button type="button" class="btn btn-default btn-twitter">
+            
+            </button>
+            </a>
+            </li>
+                <li>
+                          <a class="twshare" style="color:white;"  onclick="share_tw('url'); return false;" href="#">
+                <button type="button" class="btn btn-default btn-twitter">
+
                     <span class="fa fa-twitter" aria-hidden="true"></span><span class="messaging-block--share-button--label">&nbsp; Share on Twitter</span>
-            </button></li>
+                   
+                </button>
+              </a>
+            </li>
             <li><button type="button" class="btn btn-default btn-email" data-toggle="modal" data-target="#share-email">
-                    <span class="fa fa-envelope" aria-hidden="true"></span><span class="messaging-block--share-button--label">&nbsp; Forward by Email</span>
+                    <span class="fa fa-envelope" aria-hidden="true"></span><span class="messaging-block--share-button--label emshare">&nbsp; Forward by Email</span>
             </button></li>
         </ul>
     </section>
@@ -21,16 +32,17 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="share-email-label">Share poll via email</h4>
+                    <h4 class="modal-title" id="share-email-label">Share article via email</h4>
                 </div>
                 <div class="modal-body">
 
                     <div id="errors"></div>
                     <div id="messages"></div>
 
-                    <form role="form" id="share">
+                    <form  role="form" id="share">
+                       
                         <div class="form-group">
-                            <label for="email_to">Send this poll to:</label>
+                            <label for="email_to">Send this article to:</label>
                             <textarea class="form-control" rows="2" placeholder="Enter one email address, or multiple (up to 10) separated with a comma or one on each line." name="email_to" id="email_to"></textarea>
                         </div>
                         <div class="form-group">
