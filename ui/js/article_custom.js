@@ -8,41 +8,41 @@ function imageExists(image_url){
 
 // add .ad-blocker if ad blocker present
 // if(typeof canRunAds == "undefined") {
-//     $("body").addClass("ad-blocker");
+//     jQuery("body").addClass("ad-blocker");
 // }
 
 
 function latestFix(){
     var latestHeight= 0;
-    $(".latest-stories__media-wrapper li").height("auto");
-    $(".latest-stories__media-wrapper li").each(function(){
-        if (latestHeight < $(this).height()) {
-            latestHeight =  $(this).height();
+    jQuery(".latest-stories__media-wrapper li").height("auto");
+    jQuery(".latest-stories__media-wrapper li").each(function(){
+        if (latestHeight < jQuery(this).height()) {
+            latestHeight =  jQuery(this).height();
         }
 
     });
 
-    $(".latest-stories__media-wrapper li").height(latestHeight + 10);
+    jQuery(".latest-stories__media-wrapper li").height(latestHeight + 10);
 }
 
 
 function fixFeaturedMediaOffset(){
-    if ($(window).width() >= 1200 && ($('.featured-media .figure').height() >= 5 )  ) {
-        var mediaHeight=  $('.featured-media .figure').outerHeight();
-        var sectionHeight=  $(".featured-media .ad-box").outerHeight();
+    if (jQuery(window).width() >= 1200 && (jQuery('.featured-media .figure').height() >= 5 )  ) {
+        var mediaHeight=  jQuery('.featured-media .figure').outerHeight();
+        var sectionHeight=  jQuery(".featured-media .ad-box").outerHeight();
         if (  (sectionHeight - mediaHeight) >= 0) {
 
             var mediamargin =  mediaHeight - sectionHeight + -13;
-            $("section.featured-media").css("margin-bottom", mediamargin);
+            jQuery("section.featured-media").css("margin-bottom", mediamargin);
 
             if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)  {
                 var negmargin = -1 * mediamargin;
-                $($("article .container-fluid aside")[0]).css("margin-top", negmargin);
+                jQuery(jQuery("article .container-fluid aside")[0]).css("margin-top", negmargin);
             }
         }
     } else {
-        $("section.featured-media").css("margin-bottom", "inherit");
-        $($("article .container-fluid aside")[0]).removeAttr("style");
+        jQuery("section.featured-media").css("margin-bottom", "inherit");
+        jQuery(jQuery("article .container-fluid aside")[0]).removeAttr("style");
     }
 }
 
@@ -52,17 +52,17 @@ function fixFeaturedMediaOffset(){
 function mobileFriendlyCommentsStr() {
     // Adds the .stric-comment-cnt class to the Disqus comment counter
     // so it can be hidden on mobile
-    var str = $('.str-comment').html();
+    var str = jQuery('.str-comment').html();
     var newstr = str.replace(/comments/i, '<span class="str-comment-cnt hidden-sm hidden-xs">Comments</span>');
-    $('.str-comment').html(newstr);
+    jQuery('.str-comment').html(newstr);
 }
 
 function hideIfNoHash() {
     var hash = window.location.hash;
     if (hash.indexOf("comment") !== -1 ) {
-        $('.read-more').fadeOut();
+        jQuery('.read-more').fadeOut();
     } else {
-        var el = $('.comments-section');
+        var el = jQuery('.comments-section');
         el.css(
             "height", "460px"
         );
@@ -70,28 +70,28 @@ function hideIfNoHash() {
 }
 
 function enableEmailSubscription() {
-    $(".btn--subscribe").click(function(e){
+    jQuery(".btn--subscribe").click(function(e){
         e.preventDefault();
-        var theForm = $(this).parents("form")[0];
-        var selectid =  $(this).attr("id") + "option";
-        var selectvalue = $("#" +selectid).val();
-        $('<input />').attr('type', 'hidden').attr('name', selectvalue).attr('value', "1").appendTo(theForm);
-        var theData = $(theForm).serialize();
-        $.ajax({
+        var theForm = jQuery(this).parents("form")[0];
+        var selectid =  jQuery(this).attr("id") + "option";
+        var selectvalue = jQuery("#" +selectid).val();
+        jQuery('<input />').attr('type', 'hidden').attr('name', selectvalue).attr('value', "1").appendTo(theForm);
+        var theData = jQuery(theForm).serialize();
+        jQuery.ajax({
             type : 'POST',
             url : 'https://webhooks.thetyee.ca/subscribe/',
             data: theData,
             success: function (data) {
-                $("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'><h2><span class='glyphicon glyphicon-check' aria-hidden='true'></span> Thank you for subscribing!</h2> <p>Now you're on the list. You can expect your Tyee email edition to arrive soon.</p></div></section>").fadeIn('slow');
+                jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'><h2><span class='glyphicon glyphicon-check' aria-hidden='true'></span> Thank you for subscribing!</h2> <p>Now you're on the list. You can expect your Tyee email edition to arrive soon.</p></div></section>").fadeIn('slow');
             },
             error: function(jqXHR, string) {
-                $("#subscribesection .subscription-error").removeClass('hidden');
+                jQuery("#subscribesection .subscription-error").removeClass('hidden');
             }
         });
     });  
 }
 
-$(window).load(function() {
+jQuery(window).load(function() {
     // attaching to window load
     latestFix();
     mobileFriendlyCommentsStr();
@@ -101,13 +101,13 @@ $(window).load(function() {
 
 // Wrap IIFE around your code
 (function($, viewport){
-    $(document).ready(function() {
+    jQuery(document).ready(function() {
 
-        $('a.btn-comment, a.str-comment').click(function(e){
-            $('html, body').animate({
-                scrollTop: $("#disqus_thread").offset().top
+        jQuery('a.btn-comment, a.str-comment').click(function(e){
+            jQuery('html, body').animate({
+                scrollTop: jQuery("#disqus_thread").offset().top
             }, 500, function(){
-                $(".comments-section button").click();
+                jQuery(".comments-section button").click();
             });
             return false;
         });
@@ -122,26 +122,26 @@ $(window).load(function() {
         } else {
             shareAPI = 'http://127.0.0.1:3000';
         }
-        var meta = $('meta[property="og:url"]');
+        var meta = jQuery('meta[property="og:url"]');
         var url = meta.attr("content");
-        $.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
-            $("#sharecount span.count").text(data.result.total);
-            $("#sharecount").fadeIn();
+        jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
+            jQuery("#sharecount span.count").text(data.result.total);
+            jQuery("#sharecount").fadeIn();
 
         });
 
         // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
         // http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
         // The polyfill is no longer working so this is now done via js
-        $(".aside:has(> img)").css("display", "block");
+        jQuery(".aside:has(> img)").css("display", "block");
 
 
         // read more expand instead of following link
 
-        $(".author-more").click(function(e){
+        jQuery(".author-more").click(function(e){
             e.preventDefault();
-            $(this).hide();
-            $(".author-info__text").addClass("overflow");
+            jQuery(this).hide();
+            jQuery(".author-info__text").addClass("overflow");
         });
 
 
@@ -149,18 +149,18 @@ $(window).load(function() {
 
 
         //fix offset
-        var windowWidth = $(window).width();
+        var windowWidth = jQuery(window).width();
 
         fixFeaturedMediaOffset();
 
         //Do not kill the dropdowns when users click in them)
-        $('.dropdown-menu').children().click(function(e){
+        jQuery('.dropdown-menu').children().click(function(e){
             e.stopPropagation();
         });
 
         //*======= ALLOW MULTIPLE NAV ITEMS TO BE OPEN AT ONCE IN MOBILE
-        if ($(window).width() < 992){
-            $('.dropdown.keep-open').on({
+        if (jQuery(window).width() < 992){
+            jQuery('.dropdown.keep-open').on({
                 "shown.bs.dropdown": function() { this.closable = false; },
                     "click":             function() { this.closable = true; },
                     "hide.bs.dropdown":  function() { return this.closable; }
@@ -168,19 +168,19 @@ $(window).load(function() {
         } else {
             // this function not related to above just piggybacking on the if statement. It pushes the main content down when latest stories is open
             var menuheight = 0;
-            $('.col-sm-12 .dropdown').on('show.bs.dropdown', function(event) {
-                if ($(window).width() > 991) {
-                    menuheight = $(this).children(".dropdown-menu").outerHeight();
-                    $(".article__header").animate({
+            jQuery('.col-sm-12 .dropdown').on('show.bs.dropdown', function(event) {
+                if (jQuery(window).width() > 991) {
+                    menuheight = jQuery(this).children(".dropdown-menu").outerHeight();
+                    jQuery(".article__header").animate({
                         marginTop: "+=" +menuheight
                     }, 250, function() {
                         // Animation complete.
                     });
                 }
             });
-            $('.col-sm-12 .dropdown').on('hide.bs.dropdown', function(event) {
-                if ($(window).width() > 991) {
-                    $(".article__header").animate({
+            jQuery('.col-sm-12 .dropdown').on('hide.bs.dropdown', function(event) {
+                if (jQuery(window).width() > 991) {
+                    jQuery(".article__header").animate({
                         marginTop: "-=" +menuheight
                     }, 250, function() {
                         // Animation complete.
@@ -194,12 +194,12 @@ $(window).load(function() {
             // Store the window width
             // Resize Event
             // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
-            if ($(window).width() != windowWidth) {
+            if (jQuery(window).width() != windowWidth) {
                 // Update the window width for next time
-                windowWidth = $(window).width();
+                windowWidth = jQuery(window).width();
                 // Do stuff here
-                $(".open").removeClass("open");
-                $(".article__header").css("margin-top", 0);
+                jQuery(".open").removeClass("open");
+                jQuery(".article__header").css("margin-top", 0);
                 fixFeaturedMediaOffset();
                 latestFix();
             }
@@ -213,10 +213,10 @@ $(window).load(function() {
         };
 
         //Moves focus directly to search field when user begins typing
-        $('.search-block').on('show.bs.dropdown', function(event) {
+        jQuery('.search-block').on('show.bs.dropdown', function(event) {
 
             setTimeout(function(){
-                $('input#menu__search--input').focus();
+                jQuery('input#menu__search--input').focus();
             }, 500);
         });
 
@@ -249,7 +249,7 @@ $(window).load(function() {
         //Returned stories from the API
         function getLatestStories(){
             storiesRequested = 25;
-            returnedStories = $.ajax({
+            returnedStories = jQuery.ajax({
                 method: 'POST',
                 url: 'http://api.thetyee.ca/v1/latest/' + storiesRequested,
                 dataType: 'jsonp',
@@ -269,14 +269,14 @@ $(window).load(function() {
         //Format the json data for ease of manipulation
         function createStoryObjects(returnedStories, callback){
             //remove the placeholder classes
-            $('.latest-stories__hed').removeClass('hed_preload_placeholder');
-            $('.latest-stories__dek').removeClass('dek_preload_placeholder');
+            jQuery('.latest-stories__hed').removeClass('hed_preload_placeholder');
+            jQuery('.latest-stories__dek').removeClass('dek_preload_placeholder');
 
             //API data, to feed into an array of custom story objects
             recentItems = returnedStories;
 
             //for each item from the API, plug info into a story object
-            $.each(recentItems, function(key, value){
+            jQuery.each(recentItems, function(key, value){
 
                 latestStoryImage = value._source.related_media[0].uri;
 
@@ -340,43 +340,43 @@ $(window).load(function() {
                 storyObjects.push(Story);
             });
             // on load, populate the DOM
-            $('.latest-stories__media-wrapper').each(function(key, index){
-                $(this).parent().find('li').each(function(i, details){
+            jQuery('.latest-stories__media-wrapper').each(function(key, index){
+                jQuery(this).parent().find('li').each(function(i, details){
 
                     if (key === 0){
                         // TODO swap this out when closer to production
-                        //$(this).find('a').attr('href', '#');
+                        //jQuery(this).find('a').attr('href', '#');
                         // Old value
-                        $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
+                        jQuery(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
                         if (storyObjects[topCounter].urlPath.indexOf("/Presents/") > -1) {
-                          $(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
-                            $(this).addClass("sponsored");
+                          jQuery(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                            jQuery(this).addClass("sponsored");
                         }
-                        $(this).find('img').attr('src', storyObjects[topCounter].image);
-                        $(this).find('img').attr('width',storyObjects[topCounter].imageWidth);
-                        $(this).find('img').attr('height', storyObjects[topCounter].imageHeight);
-                        $(this).find('h4').html(storyObjects[topCounter].hed);
-                        $(this).find('p').html(storyObjects[topCounter].dek);
-                        $(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
-                        $(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+                        jQuery(this).find('img').attr('src', storyObjects[topCounter].image);
+                        jQuery(this).find('img').attr('width',storyObjects[topCounter].imageWidth);
+                        jQuery(this).find('img').attr('height', storyObjects[topCounter].imageHeight);
+                        jQuery(this).find('h4').html(storyObjects[topCounter].hed);
+                        jQuery(this).find('p').html(storyObjects[topCounter].dek);
+                        jQuery(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+                        jQuery(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
                         topCounter++;
                     }
                     if (key == 1){
                         // TODO swap this out when closer to production
-                        //$(this).find('a').attr('href', '#');
+                        //jQuery(this).find('a').attr('href', '#');
                         // Old value
-                        $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[bottomCounter].urlPath);
+                        jQuery(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[bottomCounter].urlPath);
                         if (storyObjects[bottomCounter].urlPath.indexOf("/Presents/") > -1) {
-                            $(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
-                            $(this).addClass("sponsored");
+                            jQuery(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                            jQuery(this).addClass("sponsored");
                         }
-                        $(this).find('img').attr('src', storyObjects[bottomCounter].image);
-                        $(this).find('img').attr('width',storyObjects[topCounter].imageWidth);
-                        $(this).find('img').attr('height', storyObjects[topCounter].imageHeight);
-                        $(this).find('h4').html(storyObjects[bottomCounter].hed);
-                        $(this).find('p').html(storyObjects[bottomCounter].dek);
-                        $(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
-                        $(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+                        jQuery(this).find('img').attr('src', storyObjects[bottomCounter].image);
+                        jQuery(this).find('img').attr('width',storyObjects[topCounter].imageWidth);
+                        jQuery(this).find('img').attr('height', storyObjects[topCounter].imageHeight);
+                        jQuery(this).find('h4').html(storyObjects[bottomCounter].hed);
+                        jQuery(this).find('p').html(storyObjects[bottomCounter].dek);
+                        jQuery(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+                        jQuery(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
                         bottomCounter++;
                     }
                 });
@@ -397,32 +397,32 @@ $(window).load(function() {
 
             function stylePresents(counter, element) {
                                                             if (counter && counter.urlPath.indexOf("/Presents/") > -1) {
-                                    $(element).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
-                                    $(element).addClass("sponsored");
+                                    jQuery(element).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
+                                    jQuery(element).addClass("sponsored");
                             } else {
-                                   $(element).find(".remove").remove();
-                                   $(element).removeClass("sponsored");
+                                   jQuery(element).find(".remove").remove();
+                                   jQuery(element).removeClass("sponsored");
                             }
     
     
 }
             
-            $('.latest-stories__media-wrapper').each(function(key, index){
-                $(this).on('click', '.next', function(event){
+            jQuery('.latest-stories__media-wrapper').each(function(key, index){
+                jQuery(this).on('click', '.next', function(event){
 
-                    $(this).parent().find('li').each(function(i, details){
+                    jQuery(this).parent().find('li').each(function(i, details){
 
                         if (key === 0){
                             
                             if (storyObjects[topCounter]) {
                              stylePresents(storyObjects[topCounter], this);
-                             $(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);                            
-                            $(this).find('a').attr('href', storyObjects[topCounter].urlPath);
-                            $(this).find('img').attr('src', storyObjects[topCounter].image);
-                            $(this).find('h4').html(storyObjects[topCounter].hed);
-                            $(this).find('p').html(storyObjects[topCounter].dek);
-                            $(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
-                            $(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
+                             jQuery(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);                            
+                            jQuery(this).find('a').attr('href', storyObjects[topCounter].urlPath);
+                            jQuery(this).find('img').attr('src', storyObjects[topCounter].image);
+                            jQuery(this).find('h4').html(storyObjects[topCounter].hed);
+                            jQuery(this).find('p').html(storyObjects[topCounter].dek);
+                            jQuery(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
+                            jQuery(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
                             }
                             topCounter++;
 
@@ -435,12 +435,12 @@ $(window).load(function() {
                         if (key == 1){
                            if (storyObjects[bottomCounter]) {
                                         stylePresents(storyObjects[bottomCounter], this);
-                                        $(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
-                                        $(this).find('img').attr('src', storyObjects[bottomCounter].image);
-                                        $(this).find('h4').html(storyObjects[bottomCounter].hed);
-                                        $(this).find('p').html(storyObjects[bottomCounter].dek);
-                                        $(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
-                                        $(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
+                                        jQuery(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
+                                        jQuery(this).find('img').attr('src', storyObjects[bottomCounter].image);
+                                        jQuery(this).find('h4').html(storyObjects[bottomCounter].hed);
+                                        jQuery(this).find('p').html(storyObjects[bottomCounter].dek);
+                                        jQuery(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
+                                        jQuery(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
                             
                              }
                             bottomCounter++;
@@ -462,8 +462,8 @@ $(window).load(function() {
 
 
 
-                $(this).on('click', '.prev', function(event){
-                    $(this).parent().find('li').reverse().each(function(i, details){
+                jQuery(this).on('click', '.prev', function(event){
+                    jQuery(this).parent().find('li').reverse().each(function(i, details){
                         //infinite backwards scroll
                         if (topPrevCounter <=0){
                             topPrevCounter = (storiesRequested-1);
@@ -471,12 +471,12 @@ $(window).load(function() {
                         if (key === 0){
                         if (storyObjects[topPrevCounter]) {
                             stylePresents(storyObjects[topPrevCounter], this);
-                            $(this).find('a').attr('href', storyObjects[topPrevCounter].urlPath);
-                            $(this).find('img').attr('src', storyObjects[topPrevCounter].image);
-                            $(this).find('h4').html(storyObjects[topPrevCounter].hed);
-                            $(this).find('p').html(storyObjects[topPrevCounter].dek);
-                            $(this).find('.latest-stories__date').html(storyObjects[topPrevCounter].date);
-                            $(this).find('.latest-stories__authour').html(storyObjects[topPrevCounter].authour);
+                            jQuery(this).find('a').attr('href', storyObjects[topPrevCounter].urlPath);
+                            jQuery(this).find('img').attr('src', storyObjects[topPrevCounter].image);
+                            jQuery(this).find('h4').html(storyObjects[topPrevCounter].hed);
+                            jQuery(this).find('p').html(storyObjects[topPrevCounter].dek);
+                            jQuery(this).find('.latest-stories__date').html(storyObjects[topPrevCounter].date);
+                            jQuery(this).find('.latest-stories__authour').html(storyObjects[topPrevCounter].authour);
 
                         }        
                             topPrevCounter--;
@@ -489,12 +489,12 @@ $(window).load(function() {
                         if (key == 1){
                              if (storyObjects[topPrevCounter]) {
                             stylePresents(storyObjects[bottomPrevCounter], this);
-                            $(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
-                            $(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
-                            $(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
-                            $(this).find('p').html(storyObjects[bottomPrevCounter].dek);
-                            $(this).find('.latest-stories__date').html(storyObjects[bottomPrevCounter].date);
-                            $(this).find('.latest-stories__authour').html(storyObjects[bottomPrevCounter].authour);
+                            jQuery(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
+                            jQuery(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
+                            jQuery(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
+                            jQuery(this).find('p').html(storyObjects[bottomPrevCounter].dek);
+                            jQuery(this).find('.latest-stories__date').html(storyObjects[bottomPrevCounter].date);
+                            jQuery(this).find('.latest-stories__authour').html(storyObjects[bottomPrevCounter].authour);
                              }
                             bottomPrevCounter--;
                                 console.log(bottomPrevCounter);
@@ -513,15 +513,15 @@ $(window).load(function() {
 
 
         // Show Disqus comments
-        $(".comments-section .btn").click(function(e) {
+        jQuery(".comments-section .btn").click(function(e) {
             e.preventDefault();
-            var el = $('.comments-section');
+            var el = jQuery('.comments-section');
             el.css({
                 "height": "auto",
             });
 
             // fade out read-more
-            $('.read-more').fadeOut();
+            jQuery('.read-more').fadeOut();
         });
     });
 

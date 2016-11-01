@@ -84,9 +84,13 @@ summary" />
         var node = document.getElementsByTagName('script')[0];
         node.parentNode.insertBefore(gads, node);
     })();
+    
     </script>
     <script type='text/javascript'>
+        var adloaded = 0;
+        var adlogged = 0;
     var gptAdSlots = [];
+    var slotTrack= [];
     googletag.cmd.push(function() {
         var mapping300x600 = googletag.sizeMapping().
             addSize([0,0 ], []).
@@ -104,10 +108,37 @@ summary" />
         gptAdSlots[1] = googletag.defineSlot('/21234062/300x600', [[300, 600]], 'ad-300x600').defineSizeMapping(mapping300x600).addService(googletag.pubads());
         gptAdSlots[2] = googletag.defineSlot('/21234062/Tyee_In_Story_BigBox', [[300, 250]], 'ad-bigbox').defineSizeMapping(mappingBigBoxes).addService(googletag.pubads());
         gptAdSlots[3] = googletag.defineSlot('/21234062/Tyee_In_Story_BigBox_Lower', [[300, 250]], 'ad-bigboxlower').defineSizeMapping(mappingBigBoxes).addService(googletag.pubads());
-
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
+        
+                 googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+            adloaded = 1;
+            if (adlogged < 1 ) {		
+slotTrack.push("loadMain");
+                                        adlogged = 1;
+                }
+slotTrack.push(event.size[0] + 'x' + event.size[1] + event.slot['D']) ;
+            });
     });
+    
+
     </script>
+    <script>
+
+window.addEventListener('load', function(){
+                           ga('create', 'UA-169022-1');     
+console.log("created UA-169022-1");
+
+    for(var i=0; i < slotTrack.length; i++) {
+        console.log("tracking " + slotTrack[i]);
+            ga('send', 'event', "googleads", slotTrack[i] );
+
+    };
+     
+}, false);
+
+</script>
+    
+    
     <!-- /JS Head -->
 </head>

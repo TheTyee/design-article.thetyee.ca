@@ -1,5 +1,5 @@
 // Validation and submission of email to a friend form
-var validator = $('form#share').validate({
+var validator = jQuery('form#share').validate({
     errorPlacement: function(error, element) {
         if (element.attr("name") == "subscription" ) {
             error.insertAfter("#radio-error");
@@ -43,7 +43,7 @@ var validator = $('form#share').validate({
         }
     },
     highlight: function(element) {
-        $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+        jQuery(element).closest('.form-group').removeClass('has-success').addClass('has-error');
     },
     success: function(element) {
         element
@@ -55,18 +55,18 @@ var email_to;
 var email_from;
 var message;
 var wc_sub_pref;
-$("form#share").submit(function(event) {
+jQuery("form#share").submit(function(event) {
     event.preventDefault();
-    $('#messages').html('');
-    $('#errors').html('');
+    jQuery('#messages').html('');
+    jQuery('#errors').html('');
     var valid = validator.form(); 
     if ( valid === true ) {
-        $("form#share").attr('disabled');
+        jQuery("form#share").attr('disabled');
         getCurrentValues();
-        var title = $('meta[property="og:title"]').attr("content");
-        var summary = $('meta[property="og:description"]').attr("content");
-        var image = $('meta[property="og:image"]').attr("content");
-        var url = $('meta[property="og:url"]').attr("content");
+        var title = jQuery('meta[property="og:title"]').attr("content");
+        var summary = jQuery('meta[property="og:description"]').attr("content");
+        var image = jQuery('meta[property="og:image"]').attr("content");
+        var url = jQuery('meta[property="og:url"]').attr("content");
         var shareAPI;
         var current_url = document.URL;
         if ( current_url.indexOf("preview.thetyee.ca") !== -1 ) {
@@ -87,30 +87,30 @@ $("form#share").submit(function(event) {
         }, function( data ) { 
             var result = data.result;
             $.each(result, function( index, value ) {
-                $('#messages').append('<p class="alert alert-info">' + value + '</p>');
+                jQuery('#messages').append('<p class="alert alert-info">' + value + '</p>');
             });
             var errors = data.errors;
             $.each(errors, function( index, value ) {
-                $('#errors').append('<p class="alert alert-danger">' + value + '</p>');
+                jQuery('#errors').append('<p class="alert alert-danger">' + value + '</p>');
             });
             if ( data.result || data.errors ) {
-                $("form#share").toggle();
-                $("#showForm").toggle();
+                jQuery("form#share").toggle();
+                jQuery("#showForm").toggle();
             }
         });
     }
 });
 function getCurrentValues () {
-    email_to = $('textarea[name="email_to"]').prop("value");
-    email_from = $('input[name="email_from"]').prop("value");
-    message = $('textarea[name="message"]').prop("value");
-    wc_sub_pref = $('input:checked[name="subscription"]').prop("value");
+    email_to = jQuery('textarea[name="email_to"]').prop("value");
+    email_from = jQuery('input[name="email_from"]').prop("value");
+    message = jQuery('textarea[name="message"]').prop("value");
+    wc_sub_pref = jQuery('input:checked[name="subscription"]').prop("value");
 }
-$('#showForm').click(
+jQuery('#showForm').click(
     function(event) {
         event.preventDefault();
-        $("form#share").toggle();
-        $('#showForm').toggle();
+        jQuery("form#share").toggle();
+        jQuery('#showForm').toggle();
     }
 );
 

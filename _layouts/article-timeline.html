@@ -1,0 +1,67 @@
+---
+---
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+{% include meta/head.html %}
+  <body class="{{ page.layout }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+    <!-- =============================== -->
+    <!-- ===== Header ===== -->
+
+    {% include 01-molecules/messaging/alerts--browser-support.html %}
+
+    {% include 01-molecules/blocks/ad-banner.html ad-source="UBCMUD-leaderboard.jpg" %}
+    
+    {% include 02-organisms/global/header.html %}
+
+    <!-- =============================== -->
+    <!-- ===== Article components ===== -->
+
+    {% include 02-organisms/article/article__header.html %}  
+
+    {% include 02-organisms/article/featured-media.html %}   <!-- NEEDS WORK add full-width format -->
+    
+    {% include 02-organisms/article/article__body-timeline.html %}    
+    
+
+    <!-- =============================== -->
+    <!-- ===== Tertiary components ===== -->    
+
+    {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+
+    {% include 02-organisms/sections/messaging-zone.html %}
+	
+
+
+    {% include 02-organisms/sections/comments.html %}          <!-- NEEDS WORK -->
+    <div id="latest_bottom_wrap">
+    <div class="main-col-container container-fluid short">
+    <section>
+    <strong>LATEST STORIES</strong>
+    </section>
+    </div>
+    {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
+    
+    </div>
+    
+    
+    {% assign barometer = 'true' %}
+    
+    {% include 02-organisms/sections/messaging-zone.html %}
+
+
+    <!-- =============================== -->
+    <!-- ===== Footer ===== -->
+
+    {% include footer.html %}                 <!-- NEEDS WORK -->
+
+    {% include footer_scripts_standard.html %}
+
+     <!-- disasbled for now include 02-organisms/sections/subscription-modal.html --> 
+
+
+    </body>
+
+</html>
