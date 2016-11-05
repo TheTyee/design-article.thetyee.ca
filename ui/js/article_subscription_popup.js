@@ -62,20 +62,20 @@ function showPopup() {
         evt.preventDefault();
        // console.log("#" + lid + " .tog");
         
-        var inPut  = $(this).children("input"); //$("#" + lid + " input");
+        var inPut  = $("#" + lid + " input");
         var checkBox = $(this).children(".form-checkbox");
         $(checkBox).toggleClass("checked");
         var newVal;
-        if ( $(input).attr("value") < 1 ) {
+        if ( $(inPut).attr("value") < 1 ) {
             newVal = 1;
         } else {
             newVal = 0
         }
         
-        $(input).attr("value", newVal);
+        $(inPut).attr("value", newVal);
         
         
-      //  console.log($(inPut).attr("value"));
+        console.log($(inPut).attr("value"));
 //       $(checkBoxes.prop("checked", !checkBoxes.prop("checked"));
 //            $(checkboxes).prop("checked");
  
