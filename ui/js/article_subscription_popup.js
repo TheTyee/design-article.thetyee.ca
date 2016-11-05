@@ -29,7 +29,7 @@ if ( userDoesntWantSubOffer === false  ) {
     // Are they already a subscriber?
     if ( userIsaSubscriber === false ) {
         // Has enough time passed?
-        if ( elapsed > 604800000) { // only show if 7 days (604800000 miliseconds) have passed 
+        if ( elapsed > 604800000 | 1 > 0) { // only show if 7 days (604800000 miliseconds) have passed 
             // Then... Fire the popup (immediately for now) 
             window.setTimeout(showPopup, 0);
         } else {
@@ -62,17 +62,17 @@ function showPopup() {
         evt.preventDefault();
        // console.log("#" + lid + " .tog");
         
-        var inPut  = $(this).children("input"); //$("#" + lid + " input");
+        var inPut  = $("#" + lid + " input");
         var checkBox = $(this).children(".form-checkbox");
         $(checkBox).toggleClass("checked");
         var newVal;
-        if ( $(input).attr("value") < 1 ) {
+        if ( $(inPut).attr("value") < 1 ) {
             newVal = 1;
         } else {
             newVal = 0
         }
         
-        $(input).attr("value", newVal);
+        $(inPut).attr("value", newVal);
         
         
       //  console.log($(inPut).attr("value"));
