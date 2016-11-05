@@ -75,7 +75,7 @@ function showPopup() {
         $("#" + lid + " input").attr("value", newVal);
         
         
-        console.log($(inPut).attr("value"));
+      //  console.log($(inPut).attr("value"));
 //       $(checkBoxes.prop("checked", !checkBoxes.prop("checked"));
 //            $(checkboxes).prop("checked");
  
