@@ -75,7 +75,7 @@ function showPopup() {
         $(inPut).attr("value", newVal);
         
         
-        console.log($(inPut).attr("value"));
+       // console.log($(inPut).attr("value"));
 //       $(checkBoxes.prop("checked", !checkBoxes.prop("checked"));
 //            $(checkboxes).prop("checked");
  
@@ -88,7 +88,7 @@ function showPopup() {
         event.preventDefault();
         var email = jQuery('#InputEmail1').val();
         var data = jQuery( "#modal-sub-form").serialize();
-        console.log(data);
+       // console.log(data);
         var url = "https://webhooks.thetyee.ca/subscribe/";
         jQuery.post( url , data )
         .done(function(data) {
