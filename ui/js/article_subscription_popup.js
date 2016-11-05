@@ -63,7 +63,7 @@ function showPopup() {
        // console.log("#" + lid + " .tog");
         
         var inPut  = $("#" + lid + " input");
-        var checkBox = $(this).children(".form-checkbox");
+        var checkBox = $("#" + lid + " .form-checkbox");
         $(checkBox).toggleClass("checked");
         var newVal;
         if ( $(inPut).attr("value") < 1 ) {
