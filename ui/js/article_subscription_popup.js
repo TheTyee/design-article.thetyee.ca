@@ -29,7 +29,7 @@ if ( userDoesntWantSubOffer === false  ) {
     // Are they already a subscriber?
     if ( userIsaSubscriber === false ) {
         // Has enough time passed?
-        if ( elapsed > 604800000 ) { // only show if 7 days (604800000 miliseconds) have passed 
+        if ( elapsed > 604800000) { // only show if 7 days (604800000 miliseconds) have passed 
             // Then... Fire the popup (immediately for now) 
             window.setTimeout(showPopup, 0);
         } else {
@@ -55,19 +55,42 @@ function showPopup() {
     });
     // Make radio buttons work like checkboxes
     jQuery('.ntnl-sgnup-modal label.checkbox').each(function(){
+        var lid = $(this).attr("id");
         jQuery(this).click(function(evt){
             var presentationDiv = jQuery(this).children('.form-checkbox');
-            evt.stopPropagation();
-            evt.preventDefault();
-            jQuery(this).find('input[type="radio"]').not(':checked').prop("checked", true);
-            presentationDiv.toggleClass("checked");
-        })
+           evt.stopPropagation();
+        evt.preventDefault();
+       // console.log("#" + lid + " .tog");
+        
+        var inPut  = $("#" + lid + " input");
+        var checkBox = $("#" + lid + " .form-checkbox");
+        $(checkBox).toggleClass("checked");
+        var newVal;
+        if ( $(inPut).attr("value") < 1 ) {
+            newVal = 1;
+        } else {
+            newVal = 0
+        }
+        
+        $(inPut).attr("value", newVal);
+        
+        
+       // console.log($(inPut).attr("value"));
+//       $(checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+//            $(checkboxes).prop("checked");
+ 
+
+            
+        });
     });
     // Handle subscription
     jQuery( "#modal-sub-form" ).submit(function( event ) {
         event.preventDefault();
         var email = jQuery('#InputEmail1').val();
-        jQuery.post( post, jQuery( "#modal-sub-form").serialize() )
+        var data = jQuery( "#modal-sub-form").serialize();
+       // console.log(data);
+        var url = "https://webhooks.thetyee.ca/subscribe/";
+        jQuery.post( url , data )
         .done(function(data) {
             // Set UserIsaSubscriber cookie to prevent further sub offers
             Cookies.set("user_is_a_subscriber", "true", { expires: 365/*, domain: '.thetyee.ca'*/ });
