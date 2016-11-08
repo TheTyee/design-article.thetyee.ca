@@ -29,7 +29,7 @@ if ( userDoesntWantSubOffer === false  ) {
     // Are they already a subscriber?
     if ( userIsaSubscriber === false ) {
         // Has enough time passed?
-        if ( elapsed > 604800000) { // only show if 7 days (604800000 miliseconds) have passed 
+        if ( elapsed > 604800000 | 1 > 0) { // only show if 7 days (604800000 miliseconds) have passed 
             // Then... Fire the popup (immediately for now) 
             window.setTimeout(showPopup, 0);
         } else {

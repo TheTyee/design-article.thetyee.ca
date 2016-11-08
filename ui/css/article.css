@@ -3493,6 +3493,23 @@ div.ntnl-sgnup-modal {
   line-height: 28px;
   color: #555;
 }
+
+@media screen and (max-width: 400px) {
+  
+  div.ntnl-sgnup-modal {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .subscription-popup {
+    padding: 0px !important;
+  }
+  
+  .modal-dialog {
+    margin: 0;
+  }
+  
+}
 .ntnl-sgnup-modal h2 { 
     font-style: normal;
 }
