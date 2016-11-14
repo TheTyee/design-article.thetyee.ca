@@ -118,7 +118,7 @@ jQuery(window).load(function() {
         if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
             shareAPI = 'https://widgets.thetyee.ca';
         } else if ( location.host === 'preview.thetyee.ca' ) {
-            shareAPI = 'http://preview.widgets.thetyee.ca';
+            shareAPI = 'https://preview.widgets.thetyee.ca';
         } else {
             shareAPI = 'http://127.0.0.1:3000';
         }
@@ -251,7 +251,7 @@ jQuery(window).load(function() {
             storiesRequested = 25;
             returnedStories = jQuery.ajax({
                 method: 'POST',
-                url: 'http://api.thetyee.ca/v1/latest/' + storiesRequested,
+                url: 'https://api.thetyee.ca/v1/latest/' + storiesRequested,
                 dataType: 'jsonp',
                 data: response,
                 crossDomain: true,
