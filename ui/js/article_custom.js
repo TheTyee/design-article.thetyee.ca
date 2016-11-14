@@ -286,7 +286,7 @@ jQuery(window).load(function() {
                  var latestThumbFound=0;
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
-                    thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
+                    thumb.uri = thumb.uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
                     if (thumb.uri.indexOf("latest") > -1) {
                         latestStoryImage = thumb.uri;
                         LatestThumbFound = 1;
