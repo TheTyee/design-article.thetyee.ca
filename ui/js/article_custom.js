@@ -118,7 +118,7 @@ jQuery(window).load(function() {
         if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
             shareAPI = 'https://widgets.thetyee.ca';
         } else if ( location.host === 'preview.thetyee.ca' ) {
-            shareAPI = 'http://preview.widgets.thetyee.ca';
+            shareAPI = 'https://preview.widgets.thetyee.ca';
         } else {
             shareAPI = 'http://127.0.0.1:3000';
         }
@@ -251,7 +251,7 @@ jQuery(window).load(function() {
             storiesRequested = 25;
             returnedStories = jQuery.ajax({
                 method: 'POST',
-                url: 'http://api.thetyee.ca/v1/latest/' + storiesRequested,
+                url: 'https://api.thetyee.ca/v1/latest/' + storiesRequested,
                 dataType: 'jsonp',
                 data: response,
                 crossDomain: true,
@@ -286,7 +286,7 @@ jQuery(window).load(function() {
                  var latestThumbFound=0;
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
-                    thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
+                    thumb.uri = thumb.uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
                     if (thumb.uri.indexOf("latest") > -1) {
                         latestStoryImage = thumb.uri;
                         LatestThumbFound = 1;
@@ -347,7 +347,7 @@ jQuery(window).load(function() {
                         // TODO swap this out when closer to production
                         //jQuery(this).find('a').attr('href', '#');
                         // Old value
-                        jQuery(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);
+                        jQuery(this).find('a').attr('href', "//thetyee.ca" + storyObjects[topCounter].urlPath);
                         if (storyObjects[topCounter].urlPath.indexOf("/Presents/") > -1) {
                           jQuery(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
                             jQuery(this).addClass("sponsored");
@@ -365,7 +365,7 @@ jQuery(window).load(function() {
                         // TODO swap this out when closer to production
                         //jQuery(this).find('a').attr('href', '#');
                         // Old value
-                        jQuery(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[bottomCounter].urlPath);
+                        jQuery(this).find('a').attr('href', "//thetyee.ca" + storyObjects[bottomCounter].urlPath);
                         if (storyObjects[bottomCounter].urlPath.indexOf("/Presents/") > -1) {
                             jQuery(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
                             jQuery(this).addClass("sponsored");
@@ -416,7 +416,7 @@ jQuery(window).load(function() {
                             
                             if (storyObjects[topCounter]) {
                              stylePresents(storyObjects[topCounter], this);
-                             jQuery(this).find('a').attr('href', "http://thetyee.ca" + storyObjects[topCounter].urlPath);                            
+                             jQuery(this).find('a').attr('href', "//thetyee.ca" + storyObjects[topCounter].urlPath);                            
                             jQuery(this).find('a').attr('href', storyObjects[topCounter].urlPath);
                             jQuery(this).find('img').attr('src', storyObjects[topCounter].image);
                             jQuery(this).find('h4').html(storyObjects[topCounter].hed);
