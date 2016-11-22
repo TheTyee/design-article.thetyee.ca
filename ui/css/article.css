@@ -365,7 +365,7 @@ p a:hover {color: #6F9400;}
 /* LEAD-IN WITH DROPCAP  ============================================================= */
 
 .lead-in {
-    overflow: hidden;
+   overflow: hidden;
 }
 
 .lead-in:first-letter {
@@ -2042,6 +2042,10 @@ aside { }
            letter-spacing: 0.15em;
         }
 
+      #sidebar {
+        height: auto;
+      }
+
 
     @media screen and (min-width: 1200px) {
 
@@ -3118,6 +3122,23 @@ footer .footer__menu {
     border-top: none;
     min-height: 265px;
   }
+  
+  .latest-stories .latest-stories__media-wrapper li.sponsored {
+    background: #ededed;
+  }
+  
+  .latest-stories .latest-stories__media-wrapper li.sponsored strong {
+    display: inline-block;
+    border-bottom: 1px solid #5b6470;
+    color: #5b6470;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  .latest-stories .latest-stories__media-wrapper li.sponsored h4 {
+    margin-top: 0;
+  }
+  
   .latest-stories .latest-stories__media-wrapper li:last-child {
     border-right: none;
   } 
@@ -3143,6 +3164,8 @@ footer .footer__menu {
     position: relative;
     padding: 0px 5px;
   }
+  
+  
   .latest-stories .media .media-meta {
     /* bottom: 0px; */
     /* position: absolute; */
@@ -3469,6 +3492,23 @@ div.ntnl-sgnup-modal {
   font-size: 18px;
   line-height: 28px;
   color: #555;
+}
+
+@media screen and (max-width: 400px) {
+  
+  div.ntnl-sgnup-modal {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .subscription-popup {
+    padding: 0px !important;
+  }
+  
+  .modal-dialog {
+    margin: 0;
+  }
+  
 }
 .ntnl-sgnup-modal h2 { 
     font-style: normal;
