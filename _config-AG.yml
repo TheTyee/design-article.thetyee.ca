@@ -66,5 +66,5 @@ exclude:
 
 # server settings
 host: localhost
-host: 192.168.1.66
+host: 192.168.1.67
 port: 4000
