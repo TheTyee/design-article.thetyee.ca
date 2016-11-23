@@ -3712,6 +3712,53 @@ div.ntnl-sgnup-modal {
 
 
 
+  /* BUILDER MODAL STYLES ======================================================= */ 
+
+.modal--builder .bg-pattern {
+    background: url("/ui/img/Tyee-Builders-background.jpg") left bottom repeat-x #041E41;
+    }
+div.modal--builder {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 28px;
+	color: #FFF;
+}
+.modal--builder h2 {
+	margin-bottom: 0px;
+}
+.modal--builder p {
+	margin-bottom: 6px;
+}
+.modal--builder h2 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 36px;
+	color: #FFF;
+	overflow:auto;
+	margin-top: 22px;
+}
+
+    /* ---------  links ------------ */
+    /* unvisited link */
+    .modal--builder a:link {
+        color: #fff;
+    }
+    /* visited link */
+    .modal--builder a:visited {
+        color: #fff;
+    }
+    /* mouse over link */
+    .modal--builder a:hover {
+        color: #DDECC7;
+    }
+    /* selected link */
+    .modal--builder a:active {
+        color: #fff;
+    }
+
+
 
     /* ARTICLE HEADER ========*/
     /* .author-info__bio{
