@@ -3750,6 +3750,7 @@ div.modal--builder {
 	font-style: normal;
 }
 .modal--builder .cta {
+  color: #ceed9f;
   font-size: 1.2em;
   text-decoration: underline; 
 }
@@ -3769,8 +3770,8 @@ div.modal--builder {
     	color: #fff;
     }
     /* mouse over link */
-    .modal--builder a:hover {
-    	color: #DDECC7;
+    .modal--builder a:hover, .modal--builder a:hover .cta {
+    	color: #DDECC7 !important;
     }
     /* selected link */
     .modal--builder a:active {
