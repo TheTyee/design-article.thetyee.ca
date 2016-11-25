@@ -1,19 +1,14 @@
 <!-- BEGIN 01-molecules/blocks/messaging-block--subscribe -- -->
-<section class="messaging-block messaging-block--subscribe" data-dev-object-descrip="01-molecules/blocks/messaging-block--subscribe" data-dev-status="IN-PROGRESS" id="subscribesection">
+<section class="messaging-block messaging-block--subscribe" data-dev-object-descrip="01-molecules/blocks/messaging-block--subscribe" id="subscribesection">
     <h3>Get The Tyee in your inbox</h3>
-    <div class="subscription-error hidden alert alert-danger" role="alert">
-      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-      <span class="sr-only">Error:</span>
-        There was a problem with your subscription. Please e-mail helpfulfish@thetyee.ca to be added to the list.
-    </div>
-    <form class="hidden-xs">
-        <input type="hidden" name="slid" value="6B5869DC547D3D46CFC60A3DF69EE7EB" />
-        <input type="hidden" name="cmd" value="subscribe" />
-        <input type="hidden" name="errors_to" value="" />
-        <input type="hidden" name="custom_pref_tyeenews_casl" value="1" />
-        <input type="hidden" id="format_mime" name="format" value="mime" />
+    <form id="subForm" action="https://webhooks.thetyee.ca/subscribe/" method="POST" class="hidden-xs">
+                        <input type="hidden" name="slid" value="6B5869DC547D3D46CFC60A3DF69EE7EB" />
+                        <input type="hidden" name="cmd" value="subscribe" />
+                        <input type="hidden" name="errors_to" value="" />
+                        <input type="hidden" name="custom_pref_tyeenews_casl" value="1" />
+                        <input type="hidden" id="format_mime" name="format" value="mime" />
         <div class="input-group">
-            <input type="text" name="email" class="email-subscribe form-control" placeholder="Enter your email address...">
+            <input type="text" name="email" class="form-control" placeholder="Enter your email address...">
             <span class="input-group-addon">
                 <select id="bigoption" class="frequency">
                     <option value="custom_pref_enews_daily">Daily</option>
@@ -27,14 +22,14 @@
         </div><!-- /input-group -->
         <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
     </form>
-    <form class="hidden-sm hidden-md hidden-lg">
-            <input type="hidden" name="slid" value="6B5869DC547D3D46CFC60A3DF69EE7EB" />
-            <input type="hidden" name="cmd" value="subscribe" />
-            <input type="hidden" name="errors_to" value="" />
-            <input type="hidden" name="custom_pref_tyeenews_casl" value="1" />
-            <input type="hidden" id="format_mime" name="format" value="mime" />
-            <input type="text" name="email" class="email-subscribe form-control" placeholder="Enter your email address...">
-            <select class="form-control subscribe-frequency frequency" id="smalloption">
+    <form action="https://webhooks.thetyee.ca/subscribe/" class="hidden-sm hidden-md hidden-lg">
+                  <input type="hidden" name="slid" value="6B5869DC547D3D46CFC60A3DF69EE7EB" />
+                        <input type="hidden" name="cmd" value="subscribe" />
+                        <input type="hidden" name="errors_to" value="" />
+                        <input type="hidden" name="custom_pref_tyeenews_casl" value="1" />
+                        <input type="hidden" id="format_mime" name="format" value="mime" />
+            <input type="text" name="email" class="form-control" placeholder="Enter your email address...">
+            <select id="smalloption" class="frequency form-control subscribe-frequency">
                 <option value="custom_pref_enews_daily">Daily</option>
                 <option value="custom_pref_enews_daily">Weekly</option>
                 <option value="custom_pref_enews_national">National (weekly)</option>
@@ -42,7 +37,6 @@
             <button id="small" class="btn btn-default btn--subscribe form-control" type="button">Subscribe now</button>
         <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
     </form>
-
 </section>
 <!-- Modal -->
 <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel">

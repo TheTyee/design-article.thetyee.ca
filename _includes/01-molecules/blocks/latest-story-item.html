@@ -1,20 +1,7 @@
 <!-- BEGIN 01-molecules/blocks/latest-story-item -->
-{% comment %}
-<!-- The story-item object is a list-item (although it doesn't need to appear in a list) that consists of the meta-info about an article. It's intended for use in places like the Latest Stories organism and the Related Story molecule.
-
-HOW TO INCLUDE THIS ASIDE OBJECT
----------------------------------
-Use the content-source parameter parameter to specify the path of its contained image. Like this: 
-	[% include 01-molecules/blocks/latest-story-item.html content-source="http://baconmockup.com/300/200" %]
-
-If you want to adapt the object you can extend it by using the story-item-class parameter to add a new BEM class. Like this:
-	[% include 01-molecules/blocks/story-item.html content-source="http://baconmockup.com/300/200" story-item-class="story-item--latest-stories" %]
--->
-{% endcomment %}
-
-	<div class="media-image col-sm-12 col-xs-4">
+<div class="media-image col-sm-12 col-xs-4">
         <a href="#">
-		<img class="media-object" src="{{ site.url }}/ui/img/placeholder.svg"/>
+		<img class="media-object" src="<?=$wwwroot?>/ui/img/placeholder.svg"/>
                 </a>
 
 	</div>
@@ -28,6 +15,4 @@ If you want to adapt the object you can extend it by using the story-item-class 
 		<span class="latest-stories__date hidden-xs"></span>
 		<span class="latest-stories__authour hidden-xs"></span>
 	</div>
-
-
 <!-- END 01-molecules/blocks/story-item -->
