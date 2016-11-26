@@ -11,11 +11,14 @@
       </button>
     </div>
     <!--logo -->
-    <a class="col-xs-6" href="/"><img src="<?=$wwwroot?>ui/img/tyee_logo.png" class="narrow-menu__logo" id="site-logo" alt="Logo Alt Text" /></a>
+    <a class="col-xs-6" href="/"><img src="{{ site.url }}ui/img/tyee_logo.png" class="narrow-menu__logo" id="site-logo" alt="Logo 
+    Alt 
+    Text" 
+    /></a>
 
     <!--search-->
     <div class="narrow__search [ col-xs-3 ]">
-        <?php include($gitrootinc . "01-molecules/blocks/search-block.html")?>
+        {% include 01-molecules/blocks/search-block.html %}
     </div>
   </div>
 
@@ -67,7 +70,7 @@
                 
         <ul class="[ hidden-xs ] menu__logo ">
           <li class="[ hidden-xs hidden-sm hidden-md ]">
-             <a href="/"><img src="<?=$wwwroot?>/ui/img/tyee_logo.png" alt="Logo Alt Text" /></a>
+             <a href="/"><img src="{{ site.url }}/ui/img/tyee_logo.png" alt="Logo Alt Text" /></a>
             
           </li>
         </ul>
