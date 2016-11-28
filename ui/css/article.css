@@ -212,6 +212,44 @@ h6.poll-label {
   background-color: #fff;
   width: 100%;
 }
+
+#https {
+  
+ background: rgba(154,189,49,1);
+}
+
+@media screen and (max-width: 650px) {
+  #https span {
+    display:block;
+    clear:right;
+  }
+   #https span:last-child {
+    position: relative;
+    left: 18px;
+   }
+}
+
+#https a, #https a:link, #https a:visited {
+  border-bottom: 1.5px solid white;
+  cursor: pointer;
+  color: white;
+}
+
+#https a:hover {
+    cursor: pointer;
+
+  
+}
+
+#https div {
+  max-width: 54em;
+  color: white;
+  font-weight: normal;
+  font-size: .75em;
+  line-height:1.6em;
+  height: auto;
+  padding: 5px 0;
+}
 .show {
   display: block;
 }
