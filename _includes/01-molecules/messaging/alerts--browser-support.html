@@ -12,32 +12,6 @@ This page requires Javascript. Your browser either doesn't support JavaScript or
 <!-- note sneaking this into includes/01-molecules/messaging/alerts--browser-support.html whereas it should be in 02-organisms/sections/httpswarning 
 in the repo -- avoiding mass republish  -->
 
-<div id="https" style="display:none;" class="[ container-fluid ]" data-dev-object-descrip="molecules/blocks/ad-banner">
-<div class="container-fluid">
 
-<span>
-	<img src="/ui/img/lock.png" height="15" width="auto" style="position:relative;top:-1px;"> <a href="https://thetyee.ca">
-		The Tyee now available in https (click to redirect).
-	</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>
-<span> <a href="/story">Click here</a> to learn more about why.
-</span>
-</div>
-</div>
-<script>
-$(window).load(function(){
-
-setTimeout(function() { showHttps(); }, 200);
-setTimeout(function() { hideHttps(); }, 12000);
-
-	
-});
-function hideHttps() {
-	$("#https").hide("slow");
-}
-function showHttps() {
-	$("#https").show("slow");
-}
-
-</script>
 <!-- END 02-organisms/sections/httpswarning ( 01-molecules/messaging/alerts--browser-support.html actually)  -->
+<?php include($gitrootinc . "02-organisms/sections/httpswarning.html")?>
