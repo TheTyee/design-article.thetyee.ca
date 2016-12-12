@@ -124,6 +124,8 @@ jQuery(window).load(function() {
         }
         var meta = jQuery('meta[property="og:url"]');
         var url = meta.attr("content");
+        url = url.replace(/http:/i, "https:");
+        
         jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
             jQuery("#sharecount span.count").text(data.result.total);
             jQuery("#sharecount").fadeIn();
