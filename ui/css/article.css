@@ -3827,6 +3827,113 @@ div.modal--builder {
 	line-height: 1.1;
 }
 
+/* hide disqus ads*/
+
+#dsq-app4 {
+  display:none;
+}
+
+
+/* timeline ammendum */
+
+.timeline_entry {
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 20px;
+  float: none !important;
+  overflow: hidden;
+  position: relative;
+}
+.timeline_entry .ar {
+  float: right !important;
+}
+.timeline_entry .seemore, .timeline_entry .readmore {
+  letter-spacing: 1px;
+}
+.timeline_entry .timelinedate {
+  width: 90%;
+  color: #ED1D25;
+  background: #EFEFEF;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.timeline_entry .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25% !important;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-bottom: 20px;
+  max-width: 100% !important;
+}
+.timeline_entry .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+}
+.timeline_entry .quote {
+  margin-bottom: 20px;
+}
+.timeline_entry .quote strong {
+  font-size: 24px !important;
+  line-height: 30px !important;
+}
+.timeline_entry .expand {
+  max-height: 136px;
+  overflow: hidden;
+  position: relative;
+}
+.timeline_entry .expand span, .timeline_entry .expand span p {
+  clear: both;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.timeline_entry .expand p {
+  margin-bottom: 0px;
+}
+.timeline_entry .expand.expanded {
+  max-height: none;
+  overflow: auto;
+}
+.timeline_entry.last {
+  margin-bottom: 60px;
+}
+.timeline_entry.last .bg {
+  background: none;
+}
+
+.timeline_entry .three {
+  width: 25%;
+  min-height: 5px;
+  float:left;
+}
+
+.timeline_entry .nine {
+  width: 70%;
+  margin-left: 4%;
+  float:left;  
+}
+.timeline_entry .bg {
+  background: url("/ui/img/dotted_vertical.png") repeat-y;
+  background-position: top center;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 25%;
+}
+/* end timeline ammendum"
+
 
 /*! == Support modal transition, positioning and chrome */ 
 /*! Center the modal (except on mobile) and eliminate motion from fade-in transition */
