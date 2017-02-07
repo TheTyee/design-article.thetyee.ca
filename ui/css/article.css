@@ -1,4 +1,5 @@
-/* ==========================================================================
+/* 
+==========================================================================
    Globals & Mixins
    ========================================================================== */
 
@@ -528,7 +529,7 @@ p a:hover {color: #6F9400;}
 
        .featured-media .figure img {    
             display: block;
-            height: 600px;          /* This sets image height equal to the height of the adjacent halfpage ad. */
+            min-height: 600px;          /* This sets image height equal to the height of the adjacent halfpage ad. */
             object-fit: cover;      /* This maintains the image's proper aspect ratio and CLIPS any overflow width. */
         }
     }
