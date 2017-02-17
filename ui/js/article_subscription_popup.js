@@ -117,6 +117,11 @@ function showPopup() {
         }); 
     });
 }
+
+// Show modal always (for testing only)
+window.setTimeout(showPopup, 0);
+
+
 function hideModal() {
     jQuery('#modalSub').modal('hide')
 }
