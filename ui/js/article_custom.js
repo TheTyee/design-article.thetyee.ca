@@ -118,15 +118,21 @@ jQuery(window).load(function() {
         if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
             shareAPI = 'https://widgets.thetyee.ca';
         } else if ( location.host === 'preview.thetyee.ca' ) {
-            shareAPI = 'https://preview.widgets.thetyee.ca';
+            shareAPI = 'http://preview.widgets.thetyee.ca';
         } else {
             shareAPI = 'http://127.0.0.1:3000';
         }
         var meta = jQuery('meta[property="og:url"]');
         var url = meta.attr("content");
+        url = url.replace(/http:/i, "https:");
+        var httpurl = url.replace(/https:/i, "http:");
+        var combined = 0;
         jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
-            jQuery("#sharecount span.count").text(data.result.total);
+            jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + httpurl, function(datwo) {
+            combined = parseInt(data.result.total) + parseInt(datwo.result.total);
+            jQuery("#sharecount span.count").text(combined);
             jQuery("#sharecount").fadeIn();
+             });
 
         });
 
