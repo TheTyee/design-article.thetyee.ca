@@ -212,6 +212,44 @@ h6.poll-label {
   background-color: #fff;
   width: 100%;
 }
+
+#https {
+  
+ background: rgba(154,189,49,1);
+}
+
+@media screen and (max-width: 650px) {
+  #https span {
+    display:block;
+    clear:right;
+  }
+   #https span:last-child {
+    position: relative;
+    left: 18px;
+   }
+}
+
+#https a, #https a:link, #https a:visited {
+  border-bottom: 1.5px solid white;
+  cursor: pointer;
+  color: white;
+}
+
+#https a:hover {
+    cursor: pointer;
+
+  
+}
+
+#https div {
+  max-width: 54em;
+  color: white;
+  font-weight: normal;
+  font-size: .75em;
+  line-height:1.6em;
+  height: auto;
+  padding: 5px 0;
+}
 .show {
   display: block;
 }
@@ -2042,6 +2080,10 @@ aside { }
            letter-spacing: 0.15em;
         }
 
+      #sidebar {
+        height: auto;
+      }
+
 
     @media screen and (min-width: 1200px) {
 
@@ -3489,6 +3531,23 @@ div.ntnl-sgnup-modal {
   line-height: 28px;
   color: #555;
 }
+
+@media screen and (max-width: 400px) {
+  
+  div.ntnl-sgnup-modal {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .subscription-popup {
+    padding: 0px !important;
+  }
+  
+  .modal-dialog {
+    margin: 0;
+  }
+  
+}
 .ntnl-sgnup-modal h2 { 
     font-style: normal;
 }
@@ -3691,12 +3750,179 @@ div.ntnl-sgnup-modal {
 
 
 
+/* BUILDER MODAL STYLES ======================================================= */ 
+/*! ---------------------------------------------------------------------------- */
+/*! Customization of bootstrap modal styles for 2016 Tyee support/builder campaign popup ad
+/*! It's based on an 2015 Tyee support/builder campaign pop-up, but I've used the .modal--builder class (instead of .support-modal) to (hopefully) prevent any styling conflicts
+/*! Where possible I've narrowed the selector scope to target only elements within .modal--builder so that other modals can still adhere to the standard bootstrap style. But we'll probably want to standardize the styling for all modals at some point.
+/*! Alexg */
 
-    /* ARTICLE HEADER ========*/
-    /* .author-info__bio{
-      display: block;
+div.modal--builder {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 28px;
+	color: #FFF;
+}
+.modal--builder h2 {
+	margin-bottom: 0px;
+}
+.modal--builder p {
+	margin-bottom: 6px;
+}
+.modal--builder h2 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 36px;
+	color: #FFF;
+	overflow:auto;
+	margin-top: 22px;
+}
+.modal--builder small {
+	font-size: 72%;
+	line-height: 85%;
+}
+.modal--builder small a {
+	font-family: "Source Sans Pro",sans-serif;
+	font-style: normal;
+}
+.modal--builder .cta {
+  color: #ceed9f;
+  font-size: 1.2em;
+  text-decoration: underline; 
+}
+
+.modal--builder .text-center {
+    text-align: center;
+}
+
+
+    /* ---------  links ------------ */
+    /* unvisited link */
+    .modal--builder a:link {
+    	color: #fff;
     }
-    Not sure why this is here but it's preventing the .author-info__bio from disappear so I'm commenting it out. --AG */
+    /* visited link */
+    .modal--builder a:visited {
+    	color: #fff;
+    }
+    /* mouse over link */
+    .modal--builder a:hover, .modal--builder a:hover .cta {
+    	color: #DDECC7 !important;
+    }
+    /* selected link */
+    .modal--builder a:active {
+    	color: #fff;
+    }
+
+.modal--builder .fsize18 {
+	font-size: 18px;
+	line-height: 1.1;
+}
+
+
+/*! == Support modal transition, positioning and chrome */ 
+/*! Center the modal (except on mobile) and eliminate motion from fade-in transition */
+@media screen and (min-width: 768px) {
+	.modal--builder.modal {
+  	text-align: center;
+	}
+  .modal--builder.modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+	.modal--builder .modal-dialog {
+		display: inline-block;
+		text-align: left;
+		vertical-align: middle;
+	}
+
+	.modal--builder.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+       -o-transform: translate(0, 0);
+          transform: translate(0, 0);
+    }
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=70);
+  opacity: .7;
+}
+.modal--builder .close {
+    float: right;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+    text-shadow: none;
+    opacity: 0.95;
+    color: #FFF;
+}
+.modal--builder .close:hover,
+.modal--builder .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .9;
+}
+.modal--builder .no-border-top {
+	border-top: none;
+}
+
+/*! ==  modal content layout */
+.modal--builder .modal-header {
+    min-height: 20px;
+    padding: 19px 24px 16px 24px;
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+.modal--builder .modal-body {
+    position: relative;
+    margin-top: 0px;
+    padding: 33px 24px 30px 24px;
+}
+.modal--builder .modal-footer{
+	padding: 10px 24px 18px 24px;
+	margin-top: 24px;
+}
+
+.bg-pattern  {background: url("/ui/img/Tyee-Builders-background.jpg") left bottom repeat-x #041E41;} */
+
+.btn-green {
+	color: #fff;
+	background-color: #9AAB00;
+	border-color: #9AAB00;
+}
+.modal--builder .modal-content{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+}
+.modal--builder .modal-backdrop {
+  background-color: #000;
+    }
+
+/*! End of modal customization for Tyee Builder campaign popup */
+/*! ---------------------------------------------------------------------------- */
+
+
+
+
+
+/* ARTICLE HEADER ========*/
+/* .author-info__bio{
+  display: block;
+}
+Not sure why this is here but it's preventing the .author-info__bio from disappear so I'm commenting it out. --AG */
 
 
 

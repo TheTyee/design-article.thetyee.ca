@@ -7,6 +7,16 @@
 
 <article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
 
+    <!-- this script manually puts variables in place for use with the toggle below, which will be added via brioolage and the wufoo API in live -->
+<script>
+    wufooArr = [];
+  wufooArr.name = 'Poll: Electoral Reform';
+  wufooArr.startdate = '2016-10-20 09:15:00';
+  wufooArr.hash = 'q5bsygn1mx1cf2';
+  wufooArr.dateupdated = '2016-10-21 14:24:03';
+  wufooArr.enddate = '2016-10-27 23:45:00';
+  wufooArr.url = 'poll-electoral-reform';
+  </script>
     <!--This script should toggle the display of the poll form or poll report widgets based on the value of results. -->
     <script type="text/javascript" charset="utf-8" src="{{ site.url }}ui/js/polls-toggle.js"></script>
 
@@ -43,9 +53,28 @@
 
 
         <!-- POLL RESULTS WIDGETS. JS will display them if results==true  -->
-        <script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cscript src='" + host + "thetyee.wufoo.com/scripts/widget/embed.js?w=xf9qFwuslashKaefPfhDtqBqBnAwmdyDRK7O20pHyiHYIToR0=' type='text/javascript'%3E%3C/script%3E"));</script>
-        <script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cscript src='" + host + "thetyee.wufoo.com/scripts/widget/embed.js?w=y5UjrkDftqOD9FMzza5Wi75sz96trNDetML0qq1isdY=' type='text/javascript'%3E%3C/script%3E"));</script>
+        
+<div class="wfo_widget fc">
+                   <iframe id="polliframe" src="poll_inc.html" style="border: 0px; width:100%; height: 4400px; overflow:hidden;" scrolling="no" scroll="no"></iframe>
 
+    </div>
+
+<script language="javaScript">
+
+function autoResize(){
+    var fHeight = parseInt($('#polliframe').contents().find("#poll").height()) +30;
+    $('#polliframe').height(fHeight);
+}
+
+
+ $('#polliframe').on('load', function(){
+        autoResize();
+    });
+
+</script>   
+       
+
+        
         <!--FACT-BOX will display here at bottom of article in narrow viewports -->
         <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. This ID must not appear in the sidebar fact-box html! -->
         {% include 01-molecules/blocks/Fact-box.html object-class="fact-box--explainer" fact-box__content="<p><strong>Please note</strong> that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}

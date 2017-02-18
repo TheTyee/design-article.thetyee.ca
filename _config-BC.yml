@@ -58,13 +58,6 @@ exclude:
   - Gruntfile.js
   - gemfile
   - Gemfile.lock
-  - bower_components/isotope/index.html
-  - bower_components/isotope/_posts/
-  - bower_components/isotope/_includes/
-  - bower_components/isotope/_layouts/
-
 
 # server settings
-host: localhost
-host: 192.168.1.67
-port: 4000
+host: 127.0.0.1
