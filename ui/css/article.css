@@ -4144,9 +4144,10 @@ body.cmnt--visibility { }
    See https://smacss.com/book/state
    ========================================================================== */
 @media screen and (min-width: 768px) {
-#ad-leaderboard {
-	height: 90px;
-	width:100%;
+    #ad-leaderboard {
+    	height: 90px;
+    	width:100%;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /* Adjust for standard desktop */
@@ -4157,6 +4158,7 @@ body.cmnt--visibility { }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   /* Put high-resolution display styles here */
 }
+
 
 
 
@@ -4217,4 +4219,13 @@ body.cmnt--visibility { }
   }
 }
 
+
+/* ==========================================================================
+   Temporary testing styles
+   ========================================================================== 
+
+.container *:not(.row):not(section), .container-fluid *:not(.row):not(section) {
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
 
