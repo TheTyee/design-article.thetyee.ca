@@ -1,0 +1,8 @@
+<!-- BEGIN 01-molecules/blocks/story-item--section-story-list -->
+{% comment %}
+This object is just a wrapper that puts bootstrap markup around story-item.html for when the story-item appears in a section index list.
+{% endcomment %}
+
+<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4 | story item
+    {% include 01-molecules/blocks/story-item.html content-source=include.content-source story-item-class=include.story-item-class story-item-headline=include.story-item-headline story-item-dek=include.story-item-dek %}
+</div>
