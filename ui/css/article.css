@@ -1877,6 +1877,16 @@ aside { }
        letter-spacing: 0.15em;
     }
 
+    .ad-box--no-label {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .ad-box--no-label:before {
+      display: none;
+    }
+
     /* Hide bigbox ads when ad blocker is active */
     .ad-blocker .ad-box--bigbox {
         background-color: #e9e9e9;
