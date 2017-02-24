@@ -2369,6 +2369,19 @@ label.valid {
           font-style: italic; 
         }
 
+
+        #index-page__story-list .story-item__description {
+          margin-right: 0;
+          margin-left: 0;
+          font-size: 1em;
+        }
+
+        #index-page__featured-story .story-item__description h5 {
+          font-size: 1.75em;
+        }
+
+
+
 /* TEXT-BLOCK-CONTAINER  ================================================================
     This css abstracts the styling of text container that occur within asides. 
     (E.g. related-event block) (Also fact-box, although fact-box currently has its own css
