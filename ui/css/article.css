@@ -2367,7 +2367,8 @@ label.valid {
 
 
 /* STORY-ITEM  ========================================================================== 
-   This object is nested inside related-story blocks. */
+   This object is nested inside related-story blocks.
+   It's also used on index pages and the CSS is partly used in the latest-stories block. */
 
 .story-item { }
 
@@ -2397,15 +2398,19 @@ label.valid {
         }
 
 
-        #index-page__story-list .story-item__description {
-          margin-right: 0;
-          margin-left: 0;
-          font-size: 1em;
+        .story-item--index-page {
+            margin-bottom: 4em;
         }
 
-        #index-page__featured-story .story-item__description h5 {
-          font-size: 1.75em;
-        }
+            .story-item--index-page .story-item__description {
+              margin-right: 0;
+              margin-left: 0;
+              font-size: 1em;
+            }
+
+            #index-page__featured-story .story-item--index-page .story-item__description h5 {
+              font-size: 1.75em;
+            }
 
 
 
