@@ -2376,6 +2376,7 @@ label.valid {
       margin: 0.75em 0.5rem 0 0.5rem;
       font-size: 0.8em;
       line-height: 1.4em;
+      font-weight: 300
     }
 
         .story-item__description:first-child {
@@ -2383,18 +2384,24 @@ label.valid {
         }
 
         .story-item__description h5 {
-          margin:.4em 0 .65em;
+          margin: .85em 0 .4em;
           padding: 0;
-          line-height: 1.4em;
+          font-size: 1.33em;
+          line-height: 1.35em;
         }
 
-        .latest-stories__date, .latest-stories__author {
-          font-weight: 400;
-          color: #959595;
+        .story-item--deck {
+            margin-bottom: .66em;
         }
 
-        .latest-stories__author {
-          font-style: italic; 
+        .story-item__date, .story-item__author {
+          font-weight: 600;
+          font-size: .85em;
+          text-transform: uppercase;
+        }
+
+        .story-item__author {
+          color: #90AD00;
         }
 
 
@@ -2410,7 +2417,9 @@ label.valid {
 
             #index-page__featured-story .story-item--index-page .story-item__description h5 {
               font-size: 1.75em;
+              margin-top: .75em;
             }
+
 
 
 
