@@ -1906,6 +1906,10 @@ aside { }
       
     }
 
+    #index-page__story-list .ad-box--bigbox {
+        margin-top: -2.3em; /* Aligns the ad graphic with the story-items in the index list. */
+    }
+
 
 
     /* HALFPAGE AD  ---------------------------------------------- */
