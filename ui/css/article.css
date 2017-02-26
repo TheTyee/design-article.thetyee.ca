@@ -1868,6 +1868,7 @@ aside { }
      .ad-box:before {
        display: block;
        margin: 0.8em auto 2em auto;
+       margin-bottom: 1.5em; /* Aligns the ad graphic with the story-items in the index list. */
        text-align: center;
        content: "ADVERTISEMENT";
        color: #ACACAC;
@@ -1907,7 +1908,7 @@ aside { }
     }
 
     #index-page__story-list .ad-box--bigbox {
-        margin-top: -2.3em; /* Aligns the ad graphic with the story-items in the index list. */
+        margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
     }
 
 
@@ -2189,8 +2190,8 @@ div.embedded-poll {
 }
 
     #index-page__story-list .messaging-zone {
-        margin-top: -1.33em;
-        padding-bottom: 3.5em;
+        padding-top: .66em;
+        padding-bottom: 1.5em;
     }
 
 .messaging-block {
@@ -2414,13 +2415,18 @@ label.valid {
 
 
         .story-item--index-page {
-            margin-bottom: 4em;
+            margin-top: 2em;
+            margin-bottom: 2em;
         }
 
             .story-item--index-page .story-item__description {
               margin-right: 0;
               margin-left: 0;
               font-size: 1em;
+            }
+
+            #index-page__featured-story .story-item--index-page {
+              margin-top: 0em;
             }
 
             #index-page__featured-story .story-item--index-page .story-item__description h5 {
