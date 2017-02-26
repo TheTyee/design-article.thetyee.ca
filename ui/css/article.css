@@ -477,6 +477,15 @@ p a:hover {color: #6F9400;}
 
 
 
+/* SECTION PAGE LAYOUT ========================================================================== */
+
+.index-list-spacing {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+
 /* ARTICLE LAYOUT - HEADER ========================================================================== */
 
 .article__header { /* article__header is always centered on the page */
@@ -2190,8 +2199,8 @@ div.embedded-poll {
 }
 
     #index-page__story-list .messaging-zone {
-        padding-top: 2em;  /* should be same as story-item--index-page margin */
-        padding-bottom: 2em;  /* should be same as story-item--index-page margin */
+        padding-bottom: 0em; /* Required because .index-list-spacing sets spacing with margin
+                                but messaging-zone sets spacing with padding. :( */
     }
 
 .messaging-block {
@@ -2415,8 +2424,6 @@ label.valid {
 
 
         .story-item--index-page {
-            margin-top: 2em;
-            margin-bottom: 2em;
         }
 
             .story-item--index-page .story-item__description {
