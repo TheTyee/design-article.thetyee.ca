@@ -2188,6 +2188,10 @@ div.embedded-poll {
     padding-bottom: 2em;
 }
 
+    #index-page__story-list .messaging-zone {
+        margin-top: -1.33em;
+        padding-bottom: 3.5em;
+    }
 
 .messaging-block {
     padding-bottom: 1.5em;
