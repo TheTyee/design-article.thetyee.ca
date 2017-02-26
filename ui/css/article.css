@@ -2190,8 +2190,8 @@ div.embedded-poll {
 }
 
     #index-page__story-list .messaging-zone {
-        padding-top: .66em;
-        padding-bottom: 1.5em;
+        padding-top: 2em;  /* should be same as story-item--index-page margin */
+        padding-bottom: 2em;  /* should be same as story-item--index-page margin */
     }
 
 .messaging-block {
