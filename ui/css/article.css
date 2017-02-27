@@ -479,6 +479,19 @@ p a:hover {color: #6F9400;}
 
 /* SECTION PAGE LAYOUT ========================================================================== */
 
+
+.section__header {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+    .section__header h1 {
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: .075em;
+    }
+
 .index-list-spacing {
     margin-top: 2em;
     margin-bottom: 2em;
