@@ -509,6 +509,33 @@ p a:hover {color: #6F9400;}
       Note: If these margin values are changed then the .ad-box:before margin-bottom must be 
       updated to maintain proper alignment of the ad graphic. */
 
+.btn--load-more {
+    color: #74A600;
+    background-color: white;
+    font-size: .9em;
+    font-weight: 700;
+    line-height: 1.33;
+    letter-spacing: .075em;
+    border-radius: 0px;
+    border-color: #74A600;
+    width: 100%;
+    padding-top: 1.5em;
+    padding-bottom: .75em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.btn--load-more:hover {
+    color: #fff;
+    background-color: #74A600;
+    border-color: #74A600;
+}
+
+    .btn--load-more span {    
+        font-size: 1.25em;
+    }
+
+
 
 
 /* ARTICLE LAYOUT - HEADER ========================================================================== */
