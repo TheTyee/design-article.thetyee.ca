@@ -481,15 +481,24 @@ p a:hover {color: #6F9400;}
 
 
 .section__header {
-    margin-top: 1em;
-    margin-bottom: 2em;
+    margin-top: .66em;
+    margin-bottom: 1.75em;
     text-align: center;
 }
 
     .section__header h1 {
-        font-size: 2em;
+        display: inline-block;
+        font-size: 2.2em;
+        font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+        font-weight: 800;
+        color: #828282;
         text-transform: uppercase;
         letter-spacing: .075em;
+        border-bottom: 5px solid;
+    }
+
+    .section-sponsor-blurb {
+        font-weight: 200;
     }
 
 .index-list-spacing {
