@@ -480,6 +480,9 @@ p a:hover {color: #6F9400;}
 /* SECTION PAGE LAYOUT ========================================================================== */
 
 
+#index-page__story-list {
+    margin-bottom: 2em;
+}
 .section__header {
     margin-top: .66em;
     margin-bottom: 1.75em;
