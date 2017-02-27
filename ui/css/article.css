@@ -495,7 +495,10 @@ p a:hover {color: #6F9400;}
 .index-list-spacing {
     margin-top: 2em;
     margin-bottom: 2em;
-}
+}  /* Use this class to set universal vertical spacing between objects within the index list
+      e.g. story-items, messaging-zones, ad-box--bigbox. 
+      Note: If these margin values are changed then the .ad-box:before margin-bottom must be 
+      updated to maintain proper alignment of the ad graphic. */
 
 
 
@@ -1890,7 +1893,8 @@ aside { }
      .ad-box:before {
        display: block;
        margin: 0.8em auto 2em auto;
-       margin-bottom: 1.5em; /* Aligns the ad graphic with the story-items in the index list. */
+       margin-bottom: 1.5em; /* Aligns the ad graphic with the story-items in the index list. 
+                                Should be 0.5em less than .index-list-spacing's' margin-top. */
        text-align: center;
        content: "ADVERTISEMENT";
        color: #ACACAC;
