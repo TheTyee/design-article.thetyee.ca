@@ -539,6 +539,14 @@ p a:hover {color: #6F9400;}
     }
 
 
+#most-stories-block {
+    margin-bottom: 4em;
+    padding: .66em 0 1.75em;
+    border-top: 7px solid #9D9D9C;
+    border-bottom: 1px solid #9D9D9C;
+}
+
+
 
 
 /* ARTICLE LAYOUT - HEADER ========================================================================== */
