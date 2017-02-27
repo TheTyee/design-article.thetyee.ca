@@ -214,42 +214,43 @@ h6.poll-label {
 }
 
 #https {
-  
- background: rgba(154,189,49,1);
+    background: rgba(154,189,49,1);
 }
 
-@media screen and (max-width: 650px) {
-  #https span {
-    display:block;
-    clear:right;
-  }
-   #https span:last-child {
-    position: relative;
-    left: 18px;
-   }
-}
+    @media screen and (max-width: 650px) {
+      #https span {
+        display:block;
+        clear:right;
+      }
+       #https span:last-child {
+        position: relative;
+        left: 18px;
+       }
+    }
 
-#https a, #https a:link, #https a:visited {
-  border-bottom: 1.5px solid white;
-  cursor: pointer;
-  color: white;
-}
+    #https a, #https a:link, #https a:visited {
+      border-bottom: 1.5px solid white;
+      cursor: pointer;
+      color: white;
+    }
 
-#https a:hover {
-    cursor: pointer;
+    #https a:hover {
+        cursor: pointer;
 
-  
-}
+      
+    }
 
-#https div {
-  max-width: 54em;
-  color: white;
-  font-weight: normal;
-  font-size: .75em;
-  line-height:1.6em;
-  height: auto;
-  padding: 5px 0;
-}
+    #https div {
+      max-width: 54em;
+      color: white;
+      font-weight: normal;
+      font-size: .75em;
+      line-height:1.6em;
+      height: auto;
+      padding: 5px 0;
+    }
+
+
 .show {
   display: block;
 }
@@ -473,6 +474,78 @@ p a:hover {color: #6F9400;}
     together. These apply largely to the Organism and Template levels. 
     https://smacss.com/book/type-layout )
    ========================================================================== */
+
+
+
+/* SECTION PAGE LAYOUT ========================================================================== */
+
+
+#index-page__story-list {
+    margin-bottom: 2em;
+}
+.section__header {
+    margin-top: .66em;
+    margin-bottom: 1.75em;
+    text-align: center;
+}
+
+    .section__header h1 {
+        display: inline-block;
+        font-size: 2.2em;
+        font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+        font-weight: 800;
+        color: #828282;
+        text-transform: uppercase;
+        letter-spacing: .075em;
+        border-bottom: 5px solid;
+    }
+
+    .section-sponsor-blurb {
+        font-weight: 200;
+    }
+
+.index-list-spacing {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}  /* Use this class to set universal vertical spacing between objects within the index list
+      e.g. story-items, messaging-zones, ad-box--bigbox. 
+      Note: If these margin values are changed then the .ad-box:before margin-bottom must be 
+      updated to maintain proper alignment of the ad graphic. */
+
+.btn--load-more {
+    color: #74A600;
+    background-color: white;
+    font-size: .9em;
+    font-weight: 700;
+    line-height: 1.33;
+    letter-spacing: .075em;
+    border-radius: 0px;
+    border-color: #74A600;
+    width: 100%;
+    padding-top: 1.5em;
+    padding-bottom: .75em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.btn--load-more:hover {
+    color: #fff;
+    background-color: #74A600;
+    border-color: #74A600;
+}
+
+    .btn--load-more span {    
+        font-size: 1.25em;
+    }
+
+
+#most-stories-block {
+    margin-bottom: 4em;
+    padding: .66em 0 1.75em;
+    border-top: 7px solid #9D9D9C;
+    border-bottom: 1px solid #9D9D9C;
+}
+
 
 
 
@@ -1867,6 +1940,8 @@ aside { }
      .ad-box:before {
        display: block;
        margin: 0.8em auto 2em auto;
+       margin-bottom: 1.5em; /* Aligns the ad graphic with the story-items in the index list. 
+                                Should be 0.5em less than .index-list-spacing's' margin-top. */
        text-align: center;
        content: "ADVERTISEMENT";
        color: #ACACAC;
@@ -1874,6 +1949,16 @@ aside { }
        line-height:1em;
        font-weight: 400;
        letter-spacing: 0.15em;
+    }
+
+    .ad-box--no-label {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .ad-box--no-label:before {
+      display: none;
     }
 
     /* Hide bigbox ads when ad blocker is active */
@@ -1893,6 +1978,10 @@ aside { }
           overflow: auto; /* Prevents collision with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
       }
       
+    }
+
+    #index-page__story-list .ad-box--bigbox {
+        margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
     }
 
 
@@ -2173,6 +2262,10 @@ div.embedded-poll {
     padding-bottom: 2em;
 }
 
+    #index-page__story-list .messaging-zone {
+        padding-bottom: 0em; /* Required because .index-list-spacing sets spacing with margin
+                                but messaging-zone sets spacing with padding. :( */
+    }
 
 .messaging-block {
     padding-bottom: 1.5em;
@@ -2258,21 +2351,48 @@ div.embedded-poll {
 
 /* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
 
-.messaging-block--subscribe form {
-  margin-top: .5em;
-  margin-bottom: 0;
-}
+    .messaging-block--subscribe form {
+      margin-top: .5em;
+      margin-bottom: 0;
+    }
 
-.messaging-block--subscribe select.subscribe-frequency {
-    margin-top: .35em;
-    margin-bottom: .35em;
-}
+    .messaging-block--subscribe select.subscribe-frequency {
+        margin-top: .35em;
+        margin-bottom: .35em;
+    }
 
-.messaging-block--subscribe .input-group select {
-    background-color: transparent;
-    border: none;
-    height: 18px;
-}
+    .messaging-block--subscribe .input-group select {
+        background-color: transparent;
+        border: none;
+        height: 18px;
+    }
+
+    /* On INDEX PAGES reverse the display of horizontal vs stacked form layouts.
+       The subscribe-block will be in the sidebar at medium and large views so it
+       should show the stacked layout in those views as well as in xs views. But in
+       sm views the horizontal layout should be shown. 
+       This is a bit nuts as it subverts the bootstrap layout classes. */
+
+    #index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+      display: block !important; /* Show the stacked layout in all views. */
+    }
+
+        /* BREAKPOINT: 768px-991px // Hide stacked form layout in small views. */
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+
+            #index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+                display: none !important;
+            }
+        }
+
+        /* BREAKPOINT: 992px // Hide horizontal form layout in medium medium and larger. 
+                                Horizontal layout is already hidden in xs views. */
+        @media screen and (min-width: 992px) {
+
+            #index-page__story-list .messaging-block--subscribe form.hidden-xs {
+                display: none !important;
+            }
+        }
 
 /* MESSAGING-BLOCK-SHARE  ========================================================================== */
 
@@ -2329,7 +2449,8 @@ label.valid {
 
 
 /* STORY-ITEM  ========================================================================== 
-   This object is nested inside related-story blocks. */
+   This object is nested inside related-story blocks.
+   It's also used on index pages and the CSS is partly used in the latest-stories block. */
 
 .story-item { }
 
@@ -2337,6 +2458,7 @@ label.valid {
       margin: 0.75em 0.5rem 0 0.5rem;
       font-size: 0.8em;
       line-height: 1.4em;
+      font-weight: 300
     }
 
         .story-item__description:first-child {
@@ -2344,19 +2466,47 @@ label.valid {
         }
 
         .story-item__description h5 {
-          margin:.4em 0 .65em;
+          margin: .85em 0 .4em;
           padding: 0;
-          line-height: 1.4em;
+          font-size: 1.33em;
+          line-height: 1.35em;
         }
 
-        .latest-stories__date, .latest-stories__author {
-          font-weight: 400;
-          color: #959595;
+        .story-item--deck {
+            margin-bottom: .66em;
         }
 
-        .latest-stories__author {
-          font-style: italic; 
+        .story-item__date, .story-item__author {
+          font-weight: 600;
+          font-size: .85em;
+          text-transform: uppercase;
         }
+
+        .story-item__author {
+          color: #90AD00;
+        }
+
+
+        .story-item--index-page {
+        }
+
+            .story-item--index-page .story-item__description {
+              margin-right: 0;
+              margin-left: 0;
+              font-size: 1em;
+            }
+
+            #index-page__featured-story .story-item--index-page {
+              margin-top: 0em;
+            }
+
+            #index-page__featured-story .story-item--index-page .story-item__description h5 {
+              font-size: 1.75em;
+              margin-top: .75em;
+            }
+
+
+
 
 /* TEXT-BLOCK-CONTAINER  ================================================================
     This css abstracts the styling of text container that occur within asides. 
@@ -4143,9 +4293,10 @@ body.cmnt--visibility { }
    See https://smacss.com/book/state
    ========================================================================== */
 @media screen and (min-width: 768px) {
-#ad-leaderboard {
-	height: 90px;
-	width:100%;
+    #ad-leaderboard {
+    	height: 90px;
+    	width:100%;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /* Adjust for standard desktop */
@@ -4156,6 +4307,7 @@ body.cmnt--visibility { }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   /* Put high-resolution display styles here */
 }
+
 
 
 
@@ -4216,4 +4368,13 @@ body.cmnt--visibility { }
   }
 }
 
+
+/* ==========================================================================
+   Temporary testing styles
+   ========================================================================== 
+
+.container *:not(.row):not(section), .container-fluid *:not(.row):not(section) {
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
 
