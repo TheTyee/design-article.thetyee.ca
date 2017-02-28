@@ -534,7 +534,7 @@ p a:hover {color: #6F9400;}
     border-color: #74A600;
 }
 
-    .btn--load-more span {    
+    .btn--load-more span {
         font-size: 1.25em;
     }
 
@@ -543,9 +543,53 @@ p a:hover {color: #6F9400;}
     margin-bottom: 4em;
     padding: .66em 0 1.75em;
     border-top: 7px solid #9D9D9C;
-    border-bottom: 1px solid #9D9D9C;
+    /* border-bottom: 1px solid #9D9D9C; */
 }
 
+h2.index-list-header {
+    color: #bbb;
+    font-family: Georgia, Serif;
+    font-weight: 700;
+    font-size: 1.75em;
+    line-height: 1.333em;
+    margin-top: .25em;
+    margin-bottom: 1em;
+}
+
+/*--- BLOCK LIST STYLING  ---*/
+/* This uses the stylikng method from https://www.w3.org/Style/Examples/007/color-bullets.en.html */
+.index-list ol {
+    padding-left: 1.5em;
+    list-style: none; 
+    counter-reset: li;
+}
+
+    .index-list li {
+        margin-bottom: 1.5em;
+        list-style-position: outside;
+        counter-increment: li;
+        font-weight: 600;
+    }
+
+    .index-list li::before {
+        content: counter(li);
+        display: inline-block;
+        color: #bbb;
+        font-weight: 700;
+        width: 1em;
+        margin-left: -1.25em;
+        margin-right: 0.25em;
+        /* text-align: right; */
+        direction: rtl;
+    }
+
+    .index-list li a {
+        color: #404040;
+    }
+
+    span.list-metric {
+        font-weight: 100;
+    }
 
 
 
