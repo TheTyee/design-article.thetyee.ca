@@ -589,7 +589,6 @@ p a:hover {color: #6F9400;}
 
         .index-list li {
             margin-bottom: 1.5em;
-            list-style-position: outside;
             counter-increment: li;
             font-weight: 600;
         }
@@ -600,7 +599,7 @@ p a:hover {color: #6F9400;}
             color: #bbb;
             font-weight: 700;
             width: 1em;
-            margin-left: -1.25em;
+            margin-left: -1.5em;
             margin-right: 0.25em;
             /* text-align: right; */
             direction: rtl;
