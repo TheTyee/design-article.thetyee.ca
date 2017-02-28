@@ -2574,6 +2574,14 @@ label.valid {
               margin-top: .75em;
             }
 
+             .story-item__description h5 a {
+              color: #424242;
+            }
+
+            .story-item__description h5 a:hover {
+                color: #6F9400;
+            }
+
 
 
 
