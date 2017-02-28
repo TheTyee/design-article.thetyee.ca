@@ -101,18 +101,13 @@ meta-url: "http://thetyee.ca/News"
                         {% include 01-molecules/blocks/story-item--section-story-list.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home."%}
 
                         {% include 01-molecules/blocks/story-item--section-story-list.html content-source="ui/img/Christy-Clark.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="Poll Offers Hope, Fears For Both Main Parties" story-item-dek="Majority think economy strong, but one-third of British Columbians worried about their personal financial situation."%}
-
-                        <!--AD bottom bigbox. -->
-                        <div class="col-xs-12 col-md-4">
-                            {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--bigbox index-list-spacing" ad-source="" ad-slot="ad-bigboxbottom" %}
-                        </div>
                 </div>
 
                 <div class="row">
                         <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
                                 <button type="button" class="btn btn-default btn-lg btn--load-more">
                                     LOAD MORE STORIES <br>
-                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> 
+                                    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> 
                                 </button>
                         </div>
                 </div>
@@ -122,9 +117,75 @@ meta-url: "http://thetyee.ca/News"
 
         <section id="most-stories-block">
             <div class="row">
-                <div class="col-sm-4">Most Popular</div>
-                <div class="col-sm-4">Most Emailed</div>
-                <div class="col-sm-4">Most Emailed</div>
+                <div class="col-sm-4">
+                        <div class="index-list most-popular-list">
+                                <h2 class="index-list-header">Most Popular&nbsp;</h2>
+                                <ol>
+                                    <li>
+                                        <a href="">Raw Logs and Lost Jobs: How the BC Government Has Sacrificed Forest Communities</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Study Confirms Deadly Disease in BC Salmon Farms</a>
+                                    </li>
+                                    <li>
+                                        <a href="">The BC Liberals’ Time-Bomb Budget</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Why the Left Coast May Be Writing off Justin Trudeau</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Trade Deal Ups Risks in Chinese Firm’s Takeover of Seniors’ Care Giant</a>
+                                    </li>
+                                </ol>
+                        </div>
+                </div>
+                <div class="col-sm-4">
+                        <div class="index-list most-popular-list">
+                                <h2 class="index-list-header">Most Emailed</h2>
+                                <ol>
+                                    <li>
+                                        <a href="">The Real Reason You Can’t Afford a Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Why the Left Coast May Be Writing off Justin Trudeau</a>
+                                    </li>
+                                    <li>
+                                        <a href="">To Critics, Massey Bridge Is an Environmental and Planning Disaster</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Another Wild West Show? BC’s Regulatory Experiment with Professional Reliance</a>
+                                    </li>
+                                    <li>
+                                        <a href="">How BC Taxpayers Ended Up Paying for the $3.5-Billion Massey Bridge</a>
+                                    </li>
+                                    <li>
+                                        <a href="">The BC Liberals’ Time-Bomb Budget</a>
+                                    </li>
+                                </ol>
+                        </div>
+                </div>
+                <div class="col-sm-4">
+                        <div class="index-list most-popular-list">
+                                <h2 class="index-list-header">Most Commented</h2>
+                                <ol>
+                                    <li>
+                                        <a href="">Why the Left Coast May Be Writing off Justin Trudeau</a><span class="list-metric">299&nbsp;comments</span>
+                                    </li>
+                                    <li>
+                                        <a href="">Refugees: Ready or Not, Here They Come</a><span class="list-metric">236&nbsp;comments</span>
+                                    </li>
+                                    <li>
+                                        <a href="">How BC Taxpayers Ended Up Paying for the $3.5-Billion Massey Bridge</a><span class="list-metric">144&nbsp;comments</span>
+                                    </li>
+                                    <li>
+                                        <a href="">MSP Premiums Slashed In Pre-Election Budget</a><span class="list-metric">87&nbsp;comments</span>
+                                    </li>
+                                    <li>
+                                        <a href="">The Real Reason You Can’t Afford a Home</a><span class="list-metric">148&nbsp;comments</span>
+                                    </li>
+                                </ol>
+                        </div>
+                </div>
             </div>
         </section>
 
