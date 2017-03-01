@@ -561,7 +561,7 @@ p a:hover {color: #6F9400;}
     
     /* BREAKPOINT: in xs views remove top-border from block and apply it to each list,
        also, adjust vertial spacing */
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         #most-stories-block {
             margin-top: 1em;
             margin-bottom: 2.66em;
@@ -2556,6 +2556,7 @@ label.valid {
 
 
         .story-item--index-page {
+            position: relative;
         }
 
             .story-item--index-page .story-item__description {
@@ -2836,6 +2837,25 @@ label.valid {
              .badge--headline-placement--barometer { /* Aligns Barometer badge with first letter of headline. */
                         margin-top: 4.4em;
                     }
+        }
+
+
+    .badge--story-item-placement {
+        display: block;
+        position: absolute;
+        width: auto;
+        left: -1em;
+        top: -1.5em;
+        transform: scale(1);
+    }
+
+        /* BREAKPOINT: 768px // Enlarge badges on featured-stories in wider layouts */
+        @media screen and (min-width: 768px) {
+            #index-page__featured-story .badge--story-item-placement {
+                transform: scale(1.35);
+                left: -.75em;
+                top: -1em;
+            }
         }
 
       

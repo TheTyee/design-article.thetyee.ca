@@ -1,0 +1,13 @@
+<!-- 00-atoms/images/story-badge -->
+{% comment %}
+
+Use this object to add story badges to a story-item (e.g. a story-item on a section page), an article__header (e.g. for a presents story or a series story), or a block (e.g. a presents-box).
+This is a universal object that combines (and will replace) presents-badge.html and series-badge.html.
+
+When calling the include use the series-badge-position parameter to specify the required positioning, "badge--story-item-placement", "badge--headline-placement badge--headline-placement--presents", "badge--aside-placement", or "badge--aside-placement badge--aside-placement--presents".
+Use the story-badge parameter to set what type of badge it should be, e.g. "presents", "series", or "bc-votes".
+	
+    [% include 00-atoms/images/story-badge.html badge-position="badge--headline-placement badge--headline-placement--presents" story-badge="presents" %]
+
+{% endcomment %}
+<a href="#badge-link" class="series-badge {{ include.badge-position }}"><img src="{{ site.url }}ui/img/badge-{{ include.story-badge }}.svg"></a>
