@@ -561,7 +561,7 @@ p a:hover {color: #6F9400;}
     
     /* BREAKPOINT: in xs views remove top-border from block and apply it to each list,
        also, adjust vertial spacing */
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         #most-stories-block {
             margin-top: 1em;
             margin-bottom: 2.66em;
