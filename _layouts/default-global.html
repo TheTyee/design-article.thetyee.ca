@@ -25,11 +25,14 @@
     {{ content }}
     
     <!-- =============================== -->
-    <!-- ===== Tertiary components ===== -->    
+    <!-- ===== Tertiary components ===== -->  
 
-    {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+    {% if page.page-type == article %}                 
 
-    {% include 02-organisms/sections/messaging-zone.html %}
+        {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+        {% include 02-organisms/sections/messaging-zone.html %}
+
+    {% endif %} 
 
 
     <!-- =============================== -->
