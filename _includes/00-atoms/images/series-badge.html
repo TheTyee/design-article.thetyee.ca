@@ -1,8 +1,12 @@
 <!-- 00-atoms/images/series-badge -->
 {% comment %}
+
+>> THIS OBJECT IS DEPRECATED. USE THE UNIVERSAL story-badge.html OBJECT INSTEAD. <<
+
 This badge indicates that an article is part of a series and the badge links ot the series index page. When calling the include use the parameter series-badge-position to specify whether the badge is being used in an article headline or in a series box. E.g:
 	[% include 00-atoms/images/series-badge.html series-badge-position="badge--headline-placement" %]
     OR
     [% include 00-atoms/images/series-badge.html series-badge-position="badge--aside-placement" %]
+
 {% endcomment %}
 <a href="#series-listview-link" class="series-badge {{ include.series-badge-position }}"><img src="{{ site.url }}ui/img/badge-series.svg"></a>
