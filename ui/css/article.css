@@ -2695,7 +2695,7 @@ label.valid {
 .presents-box { 
     padding-bottom: 0;
 }
-    
+        
     .presents-box h5 {
         margin-bottom: 1em;
     }
@@ -2709,12 +2709,20 @@ label.valid {
         height: .95em;
         margin-top: .125em;
     }
-
+    
+    .presents-box ul {
+        margin-bottom: 0; 
+    } /* overrides bootstrap ul margin */
 
     .presents-box li {
         padding-top: .66em;
         border-top: 1px solid; 
     }
+
+        .presents-box--index-page li {
+            min-height: 5.5em; 
+        }
+
 
     .presents-box p {
         /* display: inline; */
@@ -2757,8 +2765,24 @@ label.valid {
         .aside .presents-box {
             display: block;
         }
-
     }
+
+
+    /* PRESENTS-BOX ON INDEX PAGES (e.g. section pages) */
+    .index-page__story-list .presents-box { }
+
+        #index-page__story-list .presents-box {
+            display: block;  /* Show presents-box at all views on index-pages. */
+        }
+        
+        .presents-box.index-list-spacing { 
+            margin-top: 2em;
+        }  /* Matches margin to the common index-list-spacing margin */
+
+        .presents-box--index-page li img {
+            max-width: 7em;
+        }   /* Makes thumbnail bigger on index pages (e.g. section pages) */
+
 
 
 
