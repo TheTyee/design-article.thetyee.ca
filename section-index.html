@@ -101,27 +101,33 @@ meta-url: "http://thetyee.ca/News"
 
                             <!-- USE presents-box.html HERE. AD LOGIC TO ADAPT THE OBJECT FOR THE INDEX PAGE -->
                             
-                            <div class="presents-box text-block-container">
+                            <div class="presents-box presents-box--index-page text-block-container index-list-spacing">
                                 {% include 00-atoms/images/presents-badge.html badge-position="badge--aside-placement badge--aside-placement--presents" %}
                                 <h5>Contests, events & more from Tyee and select partners</h5>
-                                
-                                <ul>
-                                    <li>
-                                        {% include 00-atoms/images/image.html content-source="/ui/img/Kitten-200x138.jpg" %}
-                                        <a href="/News/2016/01/28/Nature-Death-Row-BC/">Working with media, A Tyee Master Class with Lesli Boldt. {% include 00-atoms/images/arrow-icon.html %}</a>
-                                        <p>Learn how to create a winning media strategy with a seasoned communications pro. April 23 in Vancouver.</p>
-                                    </li>
-                                    <li>
-                                        {% include 00-atoms/images/image.html content-source="/ui/img/Kitten-200x138.jpg" %}
-                                        <a href="/News/2016/01/28/Nature-Death-Row-BC/">Tyee Master Class: Strategic Frames and Messaging. {% include 00-atoms/images/arrow-icon.html %}</a>
-                                        <p>Back by popular demand! Take a deep dive into framing and learn how to craft messages that will connect with your audience. April 30 in Vancouver.</p>
-                                    </li>
-                                </ul>
+
+                                    <ul>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6">
+                                                    <li>
+                                                        {% include 00-atoms/images/image.html content-source="/ui/img/Kitten-200x138.jpg" %}
+                                                        <a href="/News/2016/01/28/Nature-Death-Row-BC/">Working with media, A Tyee Master Class with Lesli Boldt. {% include 00-atoms/images/arrow-icon.html %}</a>
+                                                        <p>Learn how to create a winning media strategy with a seasoned communications pro. April 23 in Vancouver.</p>
+                                                    </li>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                    <li>
+                                                        {% include 00-atoms/images/image.html content-source="/ui/img/Kitten-200x138.jpg" %}
+                                                        <a href="/News/2016/01/28/Nature-Death-Row-BC/">Tyee Master Class: Strategic Frames and Messaging. {% include 00-atoms/images/arrow-icon.html %}</a>
+                                                        <p>Back by popular demand! Take a deep dive into framing and learn how to craft messages that will connect with your audience. April 30 in Vancouver.</p>
+                                                    </li>
+                                            </div>
+                                        </div>
+                                    </ul>
 
                             </div>   
                         </div>                 
                 </div>
-                
+
 
                 <div class="row">
                         {% include 01-molecules/blocks/story-item--section-story-list.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home."%}
