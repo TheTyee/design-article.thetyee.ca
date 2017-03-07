@@ -2046,6 +2046,10 @@ aside { }
           overflow: auto; /* Prevents collision with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
       }
       
+      #index-page__story-list .ad-box--bigbox {
+          overflow: visible; /* Prevents bigbox ads from getting clipped on index-pages in md views. */
+      }
+      
     }
 
 
