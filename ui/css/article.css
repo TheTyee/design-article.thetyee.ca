@@ -2569,9 +2569,12 @@ label.valid {
               margin-top: 0em;
             }
 
-            #index-page__featured-story .story-item--index-page .story-item__description h5 {
-              font-size: 1.75em;
-            }
+                /* BREAKPOINT: 768px // Sets bigger headline for featured-story in larger views (sm and wider) */
+                @media (min-width: 768px) { 
+                    #index-page__featured-story .story-item--index-page .story-item__description h5 {
+                      font-size: 1.75em;
+                    }
+                }
 
              .story-item__description h5 a {
               color: #424242;
