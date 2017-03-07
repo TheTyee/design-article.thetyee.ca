@@ -2048,9 +2048,16 @@ aside { }
       
     }
 
-    #index-page__story-list .ad-box--bigbox {
-        margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
-    }
+
+    #index-page__story-list .ad-box--bigbox { }
+
+        /* BREAKPOINT */
+        @media screen and (min-width: 992px){
+
+            #index-page__story-list .ad-box--bigbox {
+                margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
+            }
+        }
 
 
 
