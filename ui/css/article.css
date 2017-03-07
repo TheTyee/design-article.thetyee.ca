@@ -2534,14 +2534,14 @@ label.valid {
         }
 
         .story-item__description h5 {
-          margin: .85em 0 .4em;
+          margin: .66em 0 .33em;
           padding: 0;
           font-size: 1.33em;
           line-height: 1.35em;
         }
 
         .story-item--deck {
-            margin-bottom: .66em;
+            margin-bottom: .33em;
         }
 
         .story-item__date, .story-item__author {
