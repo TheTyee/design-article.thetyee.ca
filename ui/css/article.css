@@ -483,6 +483,11 @@ p a:hover {color: #6F9400;}
 #index-page__story-list {
     margin-bottom: 0em;
 }
+
+#index-page__container {
+    max-width: 1000px; /* Sets a limit on the width of the bootstrap layout */
+}
+
 .section__header {
     margin-top: .66em;
     margin-bottom: 1.75em;
