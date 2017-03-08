@@ -2065,6 +2065,8 @@ aside { }
 
             #index-page__story-list .ad-box--bigbox {
                 margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
+                border: 0; /* removes border when ad is in sidebar */
+                padding-top: 1px; /* Compensates for removal of border(maintains alignment) */
             }
         }
 
