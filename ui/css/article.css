@@ -490,7 +490,7 @@ p a:hover {color: #6F9400;}
 
 .section__header {
     margin-top: .66em;
-    margin-bottom: 1.75em;
+    margin-bottom: 1.5em;
     text-align: center;
 }
 
@@ -499,10 +499,10 @@ p a:hover {color: #6F9400;}
         font-size: 2.2em;
         font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
         font-weight: 800;
-        color: #828282;
+        color: #333;
         text-transform: uppercase;
-        letter-spacing: .075em;
-        border-bottom: 5px solid;
+        letter-spacing: .04em;
+        border-bottom: 5px solid #90AD00;
     }
 
     .section-sponsor-blurb {
@@ -1059,7 +1059,7 @@ ul.book_profile {
   display: inline-block;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: .03em; 
+  letter-spacing: .03em;
 }
 .menu__left-nav li a i, .menu__right-nav li a i { 
   font-size: 0.75em;
