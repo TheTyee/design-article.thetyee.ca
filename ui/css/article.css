@@ -483,9 +483,14 @@ p a:hover {color: #6F9400;}
 #index-page__story-list {
     margin-bottom: 0em;
 }
+
+#index-page__container {
+    max-width: 1000px; /* Sets a limit on the width of the bootstrap layout */
+}
+
 .section__header {
     margin-top: .66em;
-    margin-bottom: 1.75em;
+    margin-bottom: 1.5em;
     text-align: center;
 }
 
@@ -494,10 +499,10 @@ p a:hover {color: #6F9400;}
         font-size: 2.2em;
         font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
         font-weight: 800;
-        color: #828282;
+        color: #333;
         text-transform: uppercase;
-        letter-spacing: .075em;
-        border-bottom: 5px solid;
+        letter-spacing: .04em;
+        border-bottom: 5px solid #90AD00;
     }
 
     .section-sponsor-blurb {
@@ -1054,7 +1059,7 @@ ul.book_profile {
   display: inline-block;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: .03em; 
+  letter-spacing: .03em;
 }
 .menu__left-nav li a i, .menu__right-nav li a i { 
   font-size: 0.75em;
@@ -2048,9 +2053,19 @@ aside { }
       
     }
 
-    #index-page__story-list .ad-box--bigbox {
-        margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
-    }
+
+    #index-page__story-list .ad-box--bigbox { }
+
+        /* BREAKPOINT */
+        @media screen and (min-width: 992px){
+
+            #index-page__story-list .ad-box--bigbox {
+                overflow: visible; /* Prevents bigbox ads from getting clipped on index-pages in md views. */
+                margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
+                border: 0; /* removes border when ad is in sidebar */
+                padding-top: 1px; /* Compensates for removal of border(maintains alignment) */
+            }
+        }
 
 
 
@@ -2534,14 +2549,14 @@ label.valid {
         }
 
         .story-item__description h5 {
-          margin: .85em 0 .4em;
+          margin: .66em 0 .33em;
           padding: 0;
           font-size: 1.33em;
           line-height: 1.35em;
         }
 
         .story-item--deck {
-            margin-bottom: .66em;
+            margin-bottom: .33em;
         }
 
         .story-item__date, .story-item__author {
@@ -2569,10 +2584,12 @@ label.valid {
               margin-top: 0em;
             }
 
-            #index-page__featured-story .story-item--index-page .story-item__description h5 {
-              font-size: 1.75em;
-              margin-top: .75em;
-            }
+                /* BREAKPOINT: 768px // Sets bigger headline for featured-story in larger views (sm and wider) */
+                @media (min-width: 768px) { 
+                    #index-page__featured-story .story-item--index-page .story-item__description h5 {
+                      font-size: 1.75em;
+                    }
+                }
 
              .story-item__description h5 a {
               color: #424242;
