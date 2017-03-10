@@ -2605,7 +2605,9 @@ label.valid {
 /* TEXT-BLOCK-CONTAINER  ================================================================
     This css abstracts the styling of text container that occur within asides. 
     (E.g. related-event block) (Also fact-box, although fact-box currently has its own css
-    rules due to its dual presence within asides and within the main text column)  */
+    rules due to its dual presence within asides and within the main text column)
+    NOTE: this class is also used for presents-box--index-page which appears within the main
+    column. */
 
 .text-block-container {
     position: relative; /* required for the absolute positioning of the badge. */
