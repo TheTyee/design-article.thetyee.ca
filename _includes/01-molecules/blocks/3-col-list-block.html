@@ -1,0 +1,35 @@
+<!-- BEGIN 01-molecules/blocks/3-col-list-block -->
+{% comment %}
+This object spans a bootstrap row to create a 3-column layout. Primarily used for the Most Stories Block.
+Object parameters:
+extension-class  // no extensions currently
+{% endcomment %}
+
+        <section class="col-3-block {{ include.extension-class }}">
+
+            <div class="row">
+
+                <div class="col-sm-4">
+
+                        {% include 01-molecules/text/index-list.html list-class-extension="" list-heading="Most Popular&nbsp;" list-metrics="no" list-metrics-label="" %}
+
+                </div>
+
+                <div class="col-sm-4">
+
+                        {% include 01-molecules/text/index-list.html list-class-extension="" list-heading="Most Emailed" list-metrics="no" list-metrics-label="" %}
+
+                </div>
+
+                <div class="col-sm-4">
+
+                        {% include 01-molecules/text/index-list.html list-class-extension="" list-heading="Most Commented" list-metrics="yes" list-metrics-label="comments" %}
+
+                </div>
+
+            </div> <!-- end of Most Section bs row -->
+
+        </section> <!-- end of Most Section -->
+
+<!-- END 01-molecules/blocks/3-col-list-block -->
+

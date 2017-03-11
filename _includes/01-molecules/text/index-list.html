@@ -1,0 +1,34 @@
+<!-- Begin molecules/text/index-list -->
+{% comment %}
+Object parameters:
+list-class-extension // no extensions currently
+list-heading // enter a string to be the heading of the list
+list-metrics // yes or no
+list-metrics-label // enter a string to be the label of the metric value
+{% endcomment %}
+
+<div class="index-list {{ include.list-class-extension }}">
+        <h2 class="index-list-header">{{ include.list-heading }}</h2>
+        <ol>
+            <li>
+                <a href="">Why the Left Coast May Be Writing off Justin Trudeau</a>
+                {% if include.list-metrics == "yes" %}<span class="list-metric">299&nbsp;{{ include.list-metrics-label }}</span>{% endif %}
+            </li>
+            <li>
+                <a href="">Refugees: Ready or Not, Here They Come</a>
+                {% if include.list-metrics == "yes" %}<span class="list-metric">236&nbsp;{{ include.list-metrics-label }}</span>{% endif %}
+            </li>
+            <li>
+                <a href="">How BC Taxpayers Ended Up Paying for the $3.5-Billion Massey Bridge</a>
+                {% if include.list-metrics == "yes" %}<span class="list-metric">144&nbsp;{{ include.list-metrics-label }}</span>{% endif %}
+            </li>
+            <li>
+                <a href="">MSP Premiums Slashed In Pre-Election Budget</a>
+                {% if include.list-metrics == "yes" %}<span class="list-metric">87&nbsp;{{ include.list-metrics-label }}</span>{% endif %}
+            </li>
+            <li>
+                <a href="">The Real Reason You Can’t Afford a Home</a>
+                {% if include.list-metrics == "yes" %}<span class="list-metric">22&nbsp;{{ include.list-metrics-label }}</span>{% endif %}
+            </li>
+        </ol>
+</div>
