@@ -544,9 +544,9 @@ p a:hover {color: #6F9400;}
     }
 
 
-/*--- MOST STORIES BLOCK ---*/
+/*--- 3-COL-BLOCK (most sotires block) ---*/
 
-#most-stories-block {
+.col-3-block {
     margin-top: 3.75em; 
     margin-bottom: 3em;
     padding: .66em 0 1.5em;
@@ -567,7 +567,7 @@ p a:hover {color: #6F9400;}
     /* BREAKPOINT: in xs views remove top-border from block and apply it to each list,
        also, adjust vertial spacing */
     @media (max-width: 767px) {
-        #most-stories-block {
+        .col-3-block {
             margin-top: 1em;
             margin-bottom: 2.66em;
             padding: 0em 0 0em;
