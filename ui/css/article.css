@@ -480,7 +480,7 @@ p a:hover {color: #6F9400;}
 /* SECTION PAGE LAYOUT ========================================================================== */
 
 
-#index-page__story-list {
+.index-page__story-list {
     margin-bottom: 0em;
 }
 
@@ -2054,12 +2054,12 @@ aside { }
     }
 
 
-    #index-page__story-list .ad-box--bigbox { }
+    .index-page__story-list .ad-box--bigbox { }
 
         /* BREAKPOINT */
         @media screen and (min-width: 992px){
 
-            #index-page__story-list .ad-box--bigbox {
+            .index-page__story-list .ad-box--bigbox {
                 overflow: visible; /* Prevents bigbox ads from getting clipped on index-pages in md views. */
                 margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
                 border: 0; /* removes border when ad is in sidebar */
@@ -2345,7 +2345,7 @@ div.embedded-poll {
     padding-bottom: 2em;
 }
 
-    #index-page__story-list .messaging-zone {
+    .index-page__story-list .messaging-zone {
         padding-bottom: 0em; /* Required because .index-list-spacing sets spacing with margin
                                 but messaging-zone sets spacing with padding. :( */
     }
@@ -2456,14 +2456,14 @@ div.embedded-poll {
        sm views the horizontal layout should be shown. 
        This is a bit nuts as it subverts the bootstrap layout classes. */
 
-    #index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+    .index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
       display: block !important; /* Show the stacked layout in all views. */
     }
 
         /* BREAKPOINT: 768px-991px // Hide stacked form layout in small views. */
         @media screen and (min-width: 768px) and (max-width: 991px) {
 
-            #index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+            .index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
                 display: none !important;
             }
         }
@@ -2472,7 +2472,7 @@ div.embedded-poll {
                                 Horizontal layout is already hidden in xs views. */
         @media screen and (min-width: 992px) {
 
-            #index-page__story-list .messaging-block--subscribe form.hidden-xs {
+            .index-page__story-list .messaging-block--subscribe form.hidden-xs {
                 display: none !important;
             }
         }
@@ -2790,7 +2790,7 @@ label.valid {
     /* PRESENTS-BOX ON INDEX PAGES (e.g. section pages) */
     .index-page__story-list .presents-box { }
 
-        #index-page__story-list .presents-box {
+        .index-page__story-list .presents-box {
             display: block;  /* Show presents-box at all views on index-pages. */
         }
         
