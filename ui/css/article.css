@@ -484,7 +484,7 @@ p a:hover {color: #6F9400;}
     margin-bottom: 0em;
 }
 
-#index-page__container {
+.index-page__container {
     max-width: 1000px; /* Sets a limit on the width of the bootstrap layout */
 }
 
