@@ -3,29 +3,51 @@
 The Presents box will contain a max of three stories.
 {% endcomment %}
 
-<div class="presents-box text-block-container" data-dev-object-descrip="01-molecules/blocks/presents-box" data-dev-status="IN-PROGRESS">
-    {% include 00-atoms/images/presents-badge.html badge-position="badge--aside-placement badge--aside-placement--presents" %}
-    <h5>Contests, events & more from Tyee and select partners</h5>
-    
-    <ul>
-        <li>
-            {% include 00-atoms/images/image.html content-source="/ui/img/Kitten-200x138.jpg" %}
-            <a href="/News/2016/01/28/Nature-Death-Row-BC/">Working with media, A Tyee Master Class with Lesli Boldt. {% include 00-atoms/images/arrow-icon.html %}</a>
-            <p>Learn how to create a winning media strategy with a seasoned communications pro. April 23 in Vancouver.</p>
-        </li>
-        <li>
-            {% include 00-atoms/images/image.html content-source="/ui/img/Kitten-200x138.jpg" %}
-            <a href="/News/2016/01/28/Nature-Death-Row-BC/">Tyee Master Class: Strategic Frames and Messaging. {% include 00-atoms/images/arrow-icon.html %}</a>
-            <p>Back by popular demand! Take a deep dive into framing and learn how to craft messages that will connect with your audience. April 30 in Vancouver.</p>
-        </li>
-        <li>
-            {% include 00-atoms/images/image.html content-source="/ui/img/Kitten-200x138.jpg" %}
-            <a href="/News/2016/01/28/Nature-Death-Row-BC/">A Future We Can’t Afford? {% include 00-atoms/images/arrow-icon.html %}</a>
-            <p>Join young citymakers in a discussion about one of Vancouver’s hottest topics for young people: Affordability. April 22nd at the Museum of Vancouver.</p>
-        </li>
-    </ul>
+{% if page.page-type == "section" or page.page-type == "topic" %}
 
-</div>
+        <div class="presents-box presents-box--index-page text-block-container index-list-spacing">
+            {% include 00-atoms/images/presents-badge.html badge-position="badge--aside-placement badge--aside-placement--presents" %}
+            <h5>Contests, events & more from Tyee and select partners</h5>
+
+                <ul>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                                <li>
+                                    {% include 01-molecules/blocks/story-item--simple.html %}
+                                </li>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                                <li>
+                                    {% include 01-molecules/blocks/story-item--simple.html %}
+                                </li>
+                        </div>
+                    </div>
+                </ul>
+        </div>   
+
+{% else %}
+
+        <div class="presents-box text-block-container" data-dev-object-descrip="01-molecules/blocks/presents-box" data-dev-status="IN-PROGRESS">
+            {% include 00-atoms/images/presents-badge.html badge-position="badge--aside-placement badge--aside-placement--presents" %}
+            <h5>Contests, events & more from Tyee and select partners</h5>
+            
+            <ul>
+                <li>
+                    {% include 01-molecules/blocks/story-item--simple.html %}
+                </li>
+                <li>
+                    {% include 01-molecules/blocks/story-item--simple.html %}
+                </li>
+                <li>
+                    {% include 01-molecules/blocks/story-item--simple.html %}
+                </li>
+            </ul>
+
+        </div>
+
+
+{% endif %}
+
 
 <!-- END 01-molecules/blocks/presents-box -->
 

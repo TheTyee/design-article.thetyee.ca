@@ -480,11 +480,11 @@ p a:hover {color: #6F9400;}
 /* SECTION PAGE LAYOUT ========================================================================== */
 
 
-#index-page__story-list {
+.index-page__story-list {
     margin-bottom: 0em;
 }
 
-#index-page__container {
+.index-page__container {
     max-width: 1000px; /* Sets a limit on the width of the bootstrap layout */
 }
 
@@ -544,9 +544,9 @@ p a:hover {color: #6F9400;}
     }
 
 
-/*--- MOST STORIES BLOCK ---*/
+/*--- 3-COL-BLOCK (most sotires block) ---*/
 
-#most-stories-block {
+.col-3-block {
     margin-top: 3.75em; 
     margin-bottom: 3em;
     padding: .66em 0 1.5em;
@@ -567,7 +567,7 @@ p a:hover {color: #6F9400;}
     /* BREAKPOINT: in xs views remove top-border from block and apply it to each list,
        also, adjust vertial spacing */
     @media (max-width: 767px) {
-        #most-stories-block {
+        .col-3-block {
             margin-top: 1em;
             margin-bottom: 2.66em;
             padding: 0em 0 0em;
@@ -587,7 +587,7 @@ p a:hover {color: #6F9400;}
     /* This uses the stylikng method from https://www.w3.org/Style/Examples/007/color-bullets.en.html */
 
     .index-list ol {
-        padding-left: 1.5em;
+        padding-left: 1.83em;
         list-style: none; 
         counter-reset: li;
     }
@@ -601,10 +601,19 @@ p a:hover {color: #6F9400;}
         .index-list li::before {
             content: counter(li);
             display: inline-block;
-            color: #bbb;
-            font-weight: 700;
-            width: 1em;
-            margin-left: -1.5em;
+            color: #fff;
+            background-color: #bbb;
+            border-radius: 0.7em;
+            text-align:center;
+            font-weight: 600;
+            width: 1.33em;
+            height: 1.33em;
+
+            -ms-transform: scale(0.85); /* IE 9 */
+            -webkit-transform: scale(0.85); /* Safari */
+            transform: scale(.85);
+            
+            margin-left: -1.83em;
             margin-right: 0.25em;
             /* text-align: right; */
             direction: rtl;
@@ -2054,12 +2063,12 @@ aside { }
     }
 
 
-    #index-page__story-list .ad-box--bigbox { }
+    .index-page__story-list .ad-box--bigbox { }
 
         /* BREAKPOINT */
         @media screen and (min-width: 992px){
 
-            #index-page__story-list .ad-box--bigbox {
+            .index-page__story-list .ad-box--bigbox {
                 overflow: visible; /* Prevents bigbox ads from getting clipped on index-pages in md views. */
                 margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
                 border: 0; /* removes border when ad is in sidebar */
@@ -2345,7 +2354,7 @@ div.embedded-poll {
     padding-bottom: 2em;
 }
 
-    #index-page__story-list .messaging-zone {
+    .index-page__story-list .messaging-zone {
         padding-bottom: 0em; /* Required because .index-list-spacing sets spacing with margin
                                 but messaging-zone sets spacing with padding. :( */
     }
@@ -2456,14 +2465,14 @@ div.embedded-poll {
        sm views the horizontal layout should be shown. 
        This is a bit nuts as it subverts the bootstrap layout classes. */
 
-    #index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+    .index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
       display: block !important; /* Show the stacked layout in all views. */
     }
 
         /* BREAKPOINT: 768px-991px // Hide stacked form layout in small views. */
         @media screen and (min-width: 768px) and (max-width: 991px) {
 
-            #index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+            .index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
                 display: none !important;
             }
         }
@@ -2472,7 +2481,7 @@ div.embedded-poll {
                                 Horizontal layout is already hidden in xs views. */
         @media screen and (min-width: 992px) {
 
-            #index-page__story-list .messaging-block--subscribe form.hidden-xs {
+            .index-page__story-list .messaging-block--subscribe form.hidden-xs {
                 display: none !important;
             }
         }
@@ -2605,7 +2614,9 @@ label.valid {
 /* TEXT-BLOCK-CONTAINER  ================================================================
     This css abstracts the styling of text container that occur within asides. 
     (E.g. related-event block) (Also fact-box, although fact-box currently has its own css
-    rules due to its dual presence within asides and within the main text column)  */
+    rules due to its dual presence within asides and within the main text column)
+    NOTE: this class is also used for presents-box--index-page which appears within the main
+    column. */
 
 .text-block-container {
     position: relative; /* required for the absolute positioning of the badge. */
@@ -2751,7 +2762,7 @@ label.valid {
         margin-bottom: 0em;
         padding-right: .75em;
         height: auto;
-        max-width: 6em;
+        max-width: 5.5em;
         background-color: none;
     }
 
@@ -2788,7 +2799,7 @@ label.valid {
     /* PRESENTS-BOX ON INDEX PAGES (e.g. section pages) */
     .index-page__story-list .presents-box { }
 
-        #index-page__story-list .presents-box {
+        .index-page__story-list .presents-box {
             display: block;  /* Show presents-box at all views on index-pages. */
         }
         
@@ -3016,6 +3027,19 @@ label.valid {
         .fact-box {
             display: none;
         }
+
+            .index-page__story-list .fact-box {
+                display:block;
+                background-color: transparent;
+                margin-top:2em;
+                margin-bottom: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .index-page__story-list .fact-box h4 {
+                margin-top:0;
+            }
 
         .hide-on-narrow-vp {
           display: block;
