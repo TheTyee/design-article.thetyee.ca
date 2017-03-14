@@ -602,7 +602,7 @@ p a:hover {color: #6F9400;}
             content: counter(li);
             display: inline-block;
             color: #fff;
-            background-color: #404040;
+            background-color: #bbb;
             border-radius: 0.7em;
             text-align:center;
             font-weight: 600;
