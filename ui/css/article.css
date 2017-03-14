@@ -3028,6 +3028,19 @@ label.valid {
             display: none;
         }
 
+            .index-page__story-list .fact-box {
+                display:block;
+                background-color: transparent;
+                margin-top:2em;
+                margin-bottom: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .index-page__story-list .fact-box h4 {
+                margin-top:0;
+            }
+
         .hide-on-narrow-vp {
           display: block;
         }
