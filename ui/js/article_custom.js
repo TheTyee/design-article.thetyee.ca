@@ -293,6 +293,7 @@ jQuery(window).load(function() {
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
                     thumb.uri = thumb.uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
+                    thumb.url = thumb.uri.replace("http://thetyee", "//thetyee");
                     if (thumb.uri.indexOf("latest") > -1) {
                         latestStoryImage = thumb.uri;
                         LatestThumbFound = 1;
@@ -318,6 +319,8 @@ jQuery(window).load(function() {
 
                 //Format the API img uri's so they don't point at cachefly
                 latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
+               // also remove http references
+                latestStoryImage = latestStoryImage.replace("http://thetyee", "//thetyee");
 
                 //Use moment.js to format the date
                 formattedDate = moment.utc(value._source.storyDate).format("DD MMM");

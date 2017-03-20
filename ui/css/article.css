@@ -215,42 +215,43 @@ h6.poll-label {
 }
 
 #https {
-  
- background: rgba(154,189,49,1);
+    background: rgba(154,189,49,1);
 }
 
-@media screen and (max-width: 650px) {
-  #https span {
-    display:block;
-    clear:right;
-  }
-   #https span:last-child {
-    position: relative;
-    left: 18px;
-   }
-}
+    @media screen and (max-width: 650px) {
+      #https span {
+        display:block;
+        clear:right;
+      }
+       #https span:last-child {
+        position: relative;
+        left: 18px;
+       }
+    }
 
-#https a, #https a:link, #https a:visited {
-  border-bottom: 1.5px solid white;
-  cursor: pointer;
-  color: white;
-}
+    #https a, #https a:link, #https a:visited {
+      border-bottom: 1.5px solid white;
+      cursor: pointer;
+      color: white;
+    }
 
-#https a:hover {
-    cursor: pointer;
+    #https a:hover {
+        cursor: pointer;
 
-  
-}
+      
+    }
 
-#https div {
-  max-width: 54em;
-  color: white;
-  font-weight: normal;
-  font-size: .75em;
-  line-height:1.6em;
-  height: auto;
-  padding: 5px 0;
-}
+    #https div {
+      max-width: 54em;
+      color: white;
+      font-weight: normal;
+      font-size: .75em;
+      line-height:1.6em;
+      height: auto;
+      padding: 5px 0;
+    }
+
+
 .show {
   display: block;
 }
@@ -474,6 +475,160 @@ p a:hover {color: #6F9400;}
     together. These apply largely to the Organism and Template levels. 
     https://smacss.com/book/type-layout )
    ========================================================================== */
+
+
+
+/* SECTION PAGE LAYOUT ========================================================================== */
+
+
+.index-page__story-list {
+    margin-bottom: 0em;
+}
+
+.index-page__container {
+    max-width: 1000px; /* Sets a limit on the width of the bootstrap layout */
+}
+
+.section__header {
+    margin-top: .66em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+    .section__header h1 {
+        display: inline-block;
+        font-size: 2.2em;
+        font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+        font-weight: 800;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        border-bottom: 5px solid #90AD00;
+    }
+
+    .section-sponsor-blurb {
+        font-weight: 200;
+    }
+
+.index-list-spacing {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}  /* Use this class to set universal vertical spacing between objects within the index list
+      e.g. story-items, messaging-zones, ad-box--bigbox. 
+      Note: If these margin values are changed then the .ad-box:before margin-bottom must be 
+      updated to maintain proper alignment of the ad graphic. */
+
+.btn--load-more {
+    color: #74A600;
+    background-color: white;
+    font-size: .9em;
+    font-weight: 700;
+    line-height: 1.33;
+    letter-spacing: .075em;
+    border-radius: 0px;
+    border-color: #74A600;
+    width: 100%;
+    padding-top: 1.5em;
+    padding-bottom: .75em;
+    margin-top: 2em;
+    margin-bottom: 0em;
+}
+
+.btn--load-more:hover {
+    color: #fff;
+    background-color: #74A600;
+    border-color: #74A600;
+}
+
+    .btn--load-more span {
+        font-size: 1.25em;
+    }
+
+
+/*--- 3-COL-BLOCK (most sotires block) ---*/
+
+.col-3-block {
+    margin-top: 3.75em; 
+    margin-bottom: 3em;
+    padding: .66em 0 1.5em;
+    border-top: 7px solid #ccc;
+    /* border-bottom: 1px solid #9D9D9C; */
+}
+
+    h2.index-list-header {
+        color: #ccc;
+        font-family: Georgia, Serif;
+        font-weight: 700;
+        font-size: 1.75em;
+        line-height: 1.333em;
+        margin-top: .25em;
+        margin-bottom: 1em;
+    }
+    
+    /* BREAKPOINT: in xs views remove top-border from block and apply it to each list,
+       also, adjust vertial spacing */
+    @media (max-width: 767px) {
+        .col-3-block {
+            margin-top: 1em;
+            margin-bottom: 2.66em;
+            padding: 0em 0 0em;
+            border-top: 0;
+        }
+
+        h2.index-list-header {
+            margin-top: 1.66em;
+            border-top: 7px solid #ccc; 
+            padding-top: .66em;
+            margin-bottom: .75em;
+        }
+    }
+
+
+    /*--- BLOCK LIST STYLING  ---*/
+    /* This uses the stylikng method from https://www.w3.org/Style/Examples/007/color-bullets.en.html */
+
+    .index-list ol {
+        padding-left: 1.83em;
+        list-style: none; 
+        counter-reset: li;
+    }
+
+        .index-list li {
+            margin-bottom: 1.5em;
+            counter-increment: li;
+            font-weight: 600;
+        }
+
+        .index-list li::before {
+            content: counter(li);
+            display: inline-block;
+            color: #fff;
+            background-color: #bbb;
+            border-radius: 0.7em;
+            text-align:center;
+            font-weight: 600;
+            width: 1.33em;
+            height: 1.33em;
+
+            -ms-transform: scale(0.85); /* IE 9 */
+            -webkit-transform: scale(0.85); /* Safari */
+            transform: scale(.85);
+            
+            margin-left: -1.83em;
+            margin-right: 0.25em;
+            /* text-align: right; */
+            direction: rtl;
+        }
+
+        .index-list li a {
+            color: #404040;
+            padding-right: .75em;
+        }
+
+        span.list-metric {
+            font-weight: 100;
+            color: #aaa;
+        }
 
 
 
@@ -914,7 +1069,7 @@ ul.book_profile {
   display: inline-block;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: .03em; 
+  letter-spacing: .03em;
 }
 .menu__left-nav li a i, .menu__right-nav li a i { 
   font-size: 0.75em;
@@ -1875,6 +2030,8 @@ aside { }
      .ad-box:before {
        display: block;
        margin: 0.8em auto 2em auto;
+       margin-bottom: 1.5em; /* Aligns the ad graphic with the story-items in the index list. 
+                                Should be 0.5em less than .index-list-spacing's' margin-top. */
        text-align: center;
        content: "ADVERTISEMENT";
        color: #ACACAC;
@@ -1882,6 +2039,16 @@ aside { }
        line-height:1em;
        font-weight: 400;
        letter-spacing: 0.15em;
+    }
+
+    .ad-box--no-label {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .ad-box--no-label:before {
+      display: none;
     }
 
     /* Hide bigbox ads when ad blocker is active */
@@ -1902,6 +2069,20 @@ aside { }
       }
       
     }
+
+
+    .index-page__story-list .ad-box--bigbox { }
+
+        /* BREAKPOINT */
+        @media screen and (min-width: 992px){
+
+            .index-page__story-list .ad-box--bigbox {
+                overflow: visible; /* Prevents bigbox ads from getting clipped on index-pages in md views. */
+                margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
+                border: 0; /* removes border when ad is in sidebar */
+                padding-top: 1px; /* Compensates for removal of border(maintains alignment) */
+            }
+        }
 
 
 
@@ -2155,7 +2336,7 @@ div.embedded-poll {
 
 
 
-/* SLIDESHOW  ========================================================================== */
+/* SERIES LINK  ========================================================================== */
 
 .series-link {
   margin-bottom: 0em;
@@ -2181,6 +2362,10 @@ div.embedded-poll {
     padding-bottom: 2em;
 }
 
+    .index-page__story-list .messaging-zone {
+        padding-bottom: 0em; /* Required because .index-list-spacing sets spacing with margin
+                                but messaging-zone sets spacing with padding. :( */
+    }
 
 .messaging-block {
     padding-bottom: 1.5em;
@@ -2266,21 +2451,48 @@ div.embedded-poll {
 
 /* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
 
-.messaging-block--subscribe form {
-  margin-top: .5em;
-  margin-bottom: 0;
-}
+    .messaging-block--subscribe form {
+      margin-top: .5em;
+      margin-bottom: 0;
+    }
 
-.messaging-block--subscribe select.subscribe-frequency {
-    margin-top: .35em;
-    margin-bottom: .35em;
-}
+    .messaging-block--subscribe select.subscribe-frequency {
+        margin-top: .35em;
+        margin-bottom: .35em;
+    }
 
-.messaging-block--subscribe .input-group select {
-    background-color: transparent;
-    border: none;
-    height: 18px;
-}
+    .messaging-block--subscribe .input-group select {
+        background-color: transparent;
+        border: none;
+        height: 18px;
+    }
+
+    /* On INDEX PAGES reverse the display of horizontal vs stacked form layouts.
+       The subscribe-block will be in the sidebar at medium and large views so it
+       should show the stacked layout in those views as well as in xs views. But in
+       sm views the horizontal layout should be shown. 
+       This is a bit nuts as it subverts the bootstrap layout classes. */
+
+    .index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+      display: block !important; /* Show the stacked layout in all views. */
+    }
+
+        /* BREAKPOINT: 768px-991px // Hide stacked form layout in small views. */
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+
+            .index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+                display: none !important;
+            }
+        }
+
+        /* BREAKPOINT: 992px // Hide horizontal form layout in medium medium and larger. 
+                                Horizontal layout is already hidden in xs views. */
+        @media screen and (min-width: 992px) {
+
+            .index-page__story-list .messaging-block--subscribe form.hidden-xs {
+                display: none !important;
+            }
+        }
 
 /* MESSAGING-BLOCK-SHARE  ========================================================================== */
 
@@ -2337,7 +2549,8 @@ label.valid {
 
 
 /* STORY-ITEM  ========================================================================== 
-   This object is nested inside related-story blocks. */
+   This object is nested inside related-story blocks.
+   It's also used on index pages and the CSS is partly used in the latest-stories block. */
 
 .story-item { }
 
@@ -2345,6 +2558,7 @@ label.valid {
       margin: 0.75em 0.5rem 0 0.5rem;
       font-size: 0.8em;
       line-height: 1.4em;
+      font-weight: 300
     }
 
         .story-item__description:first-child {
@@ -2352,24 +2566,65 @@ label.valid {
         }
 
         .story-item__description h5 {
-          margin:.4em 0 .65em;
+          margin: .66em 0 .33em;
           padding: 0;
-          line-height: 1.4em;
+          font-size: 1.33em;
+          line-height: 1.35em;
         }
 
-        .latest-stories__date, .latest-stories__author {
-          font-weight: 400;
-          color: #959595;
+        .story-item--deck {
+            margin-bottom: .33em;
         }
 
-        .latest-stories__author {
-          font-style: italic; 
+        .story-item__date, .story-item__author {
+          font-weight: 600;
+          font-size: .85em;
+          text-transform: uppercase;
         }
+
+        .story-item__author {
+          color: #90AD00;
+        }
+
+
+        .story-item--index-page {
+            position: relative;
+        }
+
+            .story-item--index-page .story-item__description {
+              margin-right: 0;
+              margin-left: 0;
+              font-size: 1em;
+            }
+
+            .index-page__featured-story .story-item--index-page {
+              margin-top: 0em;
+            }
+
+                /* BREAKPOINT: 768px // Sets bigger headline for featured-story in larger views (sm and wider) */
+                @media (min-width: 768px) { 
+                    .index-page__featured-story .story-item--index-page .story-item__description h5 {
+                      font-size: 1.75em;
+                    }
+                }
+
+             .story-item__description h5 a {
+              color: #424242;
+            }
+
+            .story-item__description h5 a:hover {
+                color: #6F9400;
+            }
+
+
+
 
 /* TEXT-BLOCK-CONTAINER  ================================================================
     This css abstracts the styling of text container that occur within asides. 
     (E.g. related-event block) (Also fact-box, although fact-box currently has its own css
-    rules due to its dual presence within asides and within the main text column)  */
+    rules due to its dual presence within asides and within the main text column)
+    NOTE: this class is also used for presents-box--index-page which appears within the main
+    column. */
 
 .text-block-container {
     position: relative; /* required for the absolute positioning of the badge. */
@@ -2476,7 +2731,7 @@ label.valid {
 .presents-box { 
     padding-bottom: 0;
 }
-    
+        
     .presents-box h5 {
         margin-bottom: 1em;
     }
@@ -2490,12 +2745,20 @@ label.valid {
         height: .95em;
         margin-top: .125em;
     }
-
+    
+    .presents-box ul {
+        margin-bottom: 0; 
+    } /* overrides bootstrap ul margin */
 
     .presents-box li {
         padding-top: .66em;
         border-top: 1px solid; 
     }
+
+        .presents-box--index-page li {
+            min-height: 5.5em; 
+        }
+
 
     .presents-box p {
         /* display: inline; */
@@ -2507,7 +2770,7 @@ label.valid {
         margin-bottom: 0em;
         padding-right: .75em;
         height: auto;
-        max-width: 6em;
+        max-width: 5.5em;
         background-color: none;
     }
 
@@ -2538,8 +2801,24 @@ label.valid {
         .aside .presents-box {
             display: block;
         }
-
     }
+
+
+    /* PRESENTS-BOX ON INDEX PAGES (e.g. section pages) */
+    .index-page__story-list .presents-box { }
+
+        .index-page__story-list .presents-box {
+            display: block;  /* Show presents-box at all views on index-pages. */
+        }
+        
+        .presents-box.index-list-spacing { 
+            margin-top: 2em;
+        }  /* Matches margin to the common index-list-spacing margin */
+
+        .presents-box--index-page li img {
+            max-width: 7em;
+        }   /* Makes thumbnail bigger on index pages (e.g. section pages) */
+
 
 
 
@@ -2618,6 +2897,25 @@ label.valid {
              .badge--headline-placement--barometer { /* Aligns Barometer badge with first letter of headline. */
                         margin-top: 4.4em;
                     }
+        }
+
+
+    .badge--story-item-placement {
+        display: block;
+        position: absolute;
+        width: auto;
+        left: -1em;
+        top: -1.5em;
+        transform: scale(1);
+    }
+
+        /* BREAKPOINT: 768px // Enlarge badges on featured-stories in wider layouts */
+        @media screen and (min-width: 768px) {
+            .index-page__featured-story .badge--story-item-placement {
+                transform: scale(1.35);
+                left: -.75em;
+                top: -1em;
+            }
         }
 
       
@@ -2737,6 +3035,19 @@ label.valid {
         .fact-box {
             display: none;
         }
+
+            .index-page__story-list .fact-box {
+                display:block;
+                background-color: transparent;
+                margin-top:2em;
+                margin-bottom: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .index-page__story-list .fact-box h4 {
+                margin-top:0;
+            }
 
         .hide-on-narrow-vp {
           display: block;
@@ -3044,9 +3355,6 @@ footer .footer__menu {
 
 /* LATEST STORIES ========================================================================== */ 
 
-
-
-
 #latest_bottom_wrap {
  	border-bottom: 1px #929292 solid;
     padding: 10px 0;
@@ -3314,7 +3622,7 @@ footer .footer__menu {
   }
 }
 
-/* SECTIONS ========================================================================== */ 
+/* SECTIONS NAVIGATION ========================================================================== */ 
 
 .sections, .sections ul, .sections__categories, .sections__list-one, .sections__list-two, .sections__list-three, .sections__list-four, .sections__list-five {
   padding: 0px;
@@ -3539,93 +3847,93 @@ div.ntnl-sgnup-modal {
   color: #555;
 }
 
-@media screen and (max-width: 400px) {
-  
-  div.ntnl-sgnup-modal {
-    width: 100%;
-    margin: 0;
-  }
-  
-  .subscription-popup {
-    padding: 0px !important;
-  }
-  
-  .modal-dialog {
-    margin: 0;
-  }
-  
-}
-.ntnl-sgnup-modal h2 { 
-    font-style: normal;
-}
-.ntnl-sgnup-modal p, .ntnl-sgnup-modal h2 {
-  margin-bottom: 24px;
-}
-.modal-header h2 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 38px;
-  color: #424242;
-  overflow:hidden;
-}
+    @media screen and (max-width: 400px) {
+      
+      div.ntnl-sgnup-modal {
+        width: 100%;
+        margin: 0;
+      }
+      
+      .subscription-popup {
+        padding: 0px !important;
+      }
+      
+      .modal-dialog {
+        margin: 0;
+      }
+      
+    }
+    .ntnl-sgnup-modal h2 { 
+        font-style: normal;
+    }
+    .ntnl-sgnup-modal p, .ntnl-sgnup-modal h2 {
+      margin-bottom: 24px;
+    }
+    .modal-header h2 {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 38px;
+      color: #424242;
+      overflow:hidden;
+    }
 
-.modal-national-logo {
-    position: relative;
-    top: 8px;
-    margin-right: 16px;
-}
-.modal-national-logo {
-    float: left !important;
-}
+    .modal-national-logo {
+        position: relative;
+        top: 8px;
+        margin-right: 16px;
+    }
+    .modal-national-logo {
+        float: left !important;
+    }
 
-.ntnl-sgnup-modal small {
-  font-size: 72%;
-  line-height: 85%;
-}
-.ntnl-sgnup-modal .text-center {
-    text-align: center;
-}
-/* unvisited link */
-.ntnl-sgnup-modal a:link {
-  color: #8A9900;
-}
-/* visited link */
-.ntnl-sgnup-modal a:visited {
-  color: #8A9900;
-}
-/* mouse over link */
-.ntnl-sgnup-modal a:hover {
-  color: #8A9900;
-}
-/* selected link */
-.ntnl-sgnup-modal a:active {
-  color: #8A9900;
-}
-.ntnl-sgnup-modal .fsize18 {
-  font-size: 18px;
-  line-height: 1.1;
-}
+    .ntnl-sgnup-modal small {
+      font-size: 72%;
+      line-height: 85%;
+    }
+    .ntnl-sgnup-modal .text-center {
+        text-align: center;
+    }
+    /* unvisited link */
+    .ntnl-sgnup-modal a:link {
+      color: #8A9900;
+    }
+    /* visited link */
+    .ntnl-sgnup-modal a:visited {
+      color: #8A9900;
+    }
+    /* mouse over link */
+    .ntnl-sgnup-modal a:hover {
+      color: #8A9900;
+    }
+    /* selected link */
+    .ntnl-sgnup-modal a:active {
+      color: #8A9900;
+    }
+    .ntnl-sgnup-modal .fsize18 {
+      font-size: 18px;
+      line-height: 1.1;
+    }
 
-.bg-pale-green{
-  background-color: #EEF0D9;
-}
+    .bg-pale-green{
+      background-color: #EEF0D9;
+    }
 
-.modal-header {
-  border-color: transparent;
-}
-.form-checkbox {
-  background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.png');
-  background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.svg'), none;
-  height: 29px;
-  width: 35px;
-  background-repeat: no-repeat;
-  background-position: 0 -23px;
-  display: inline-block;
-}
-.modal-footer {
-  text-align: center;
-}
+    .modal-header {
+      border-color: transparent;
+    }
+    .form-checkbox {
+      background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.png');
+      background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.svg'), none;
+      height: 29px;
+      width: 35px;
+      background-repeat: no-repeat;
+      background-position: 0 -23px;
+      display: inline-block;
+    }
+    .modal-footer {
+      text-align: center;
+    }
 
 /*! == National modal transition, positioning and chrome */ 
 /*! Center the modal (except on mobile) and eliminate motion from fade-in transition */
@@ -3771,62 +4079,38 @@ div.modal--builder {
 	line-height: 28px;
 	color: #FFF;
 }
-.modal--builder h2 {
-	margin-bottom: 0px;
-}
-.modal--builder p {
-	margin-bottom: 6px;
-}
-.modal--builder h2 {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 700;
-	font-size: 28px;
-	line-height: 36px;
-	color: #FFF;
-	overflow:auto;
-	margin-top: 22px;
-}
-.modal--builder small {
-	font-size: 72%;
-	line-height: 85%;
-}
-.modal--builder small a {
-	font-family: "Source Sans Pro",sans-serif;
-	font-style: normal;
-}
-.modal--builder .cta {
-  color: #ceed9f;
-  font-size: 1.2em;
-  text-decoration: underline; 
-}
-
-.modal--builder .text-center {
-    text-align: center;
-}
-
-
-    /* ---------  links ------------ */
-    /* unvisited link */
-    .modal--builder a:link {
-    	color: #fff;
+    .modal--builder h2 {
+    	margin-bottom: 0px;
     }
-    /* visited link */
-    .modal--builder a:visited {
-    	color: #fff;
+    .modal--builder p {
+    	margin-bottom: 6px;
     }
-    /* mouse over link */
-    .modal--builder a:hover, .modal--builder a:hover .cta {
-    	color: #DDECC7 !important;
+    .modal--builder h2 {
+    	font-family: 'Source Sans Pro', sans-serif;
+    	font-weight: 700;
+    	font-size: 28px;
+    	line-height: 36px;
+    	color: #FFF;
+    	overflow:auto;
+    	margin-top: 22px;
     }
-    /* selected link */
-    .modal--builder a:active {
-    	color: #fff;
+    .modal--builder small {
+    	font-size: 72%;
+    	line-height: 85%;
+    }
+    .modal--builder small a {
+    	font-family: "Source Sans Pro",sans-serif;
+    	font-style: normal;
+    }
+    .modal--builder .cta {
+      color: #ceed9f;
+      font-size: 1.2em;
+      text-decoration: underline; 
     }
 
-.modal--builder .fsize18 {
-	font-size: 18px;
-	line-height: 1.1;
-}
+    .modal--builder .text-center {
+        text-align: center;
+    }
 
 /* hide disqus ads*/
 
@@ -3936,94 +4220,118 @@ div.modal--builder {
 /* end timeline ammendum"
 
 
-/*! == Support modal transition, positioning and chrome */ 
-/*! Center the modal (except on mobile) and eliminate motion from fade-in transition */
-@media screen and (min-width: 768px) {
-	.modal--builder.modal {
-  	text-align: center;
-	}
-  .modal--builder.modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
-	.modal--builder .modal-dialog {
-		display: inline-block;
-		text-align: left;
-		vertical-align: middle;
-	}
+        /* ---------  links ------------ */
+        /* unvisited link */
+        .modal--builder a:link {
+        	color: #fff;
+        }
+        /* visited link */
+        .modal--builder a:visited {
+        	color: #fff;
+        }
+        /* mouse over link */
+        .modal--builder a:hover, .modal--builder a:hover .cta {
+        	color: #DDECC7 !important;
+        }
+        /* selected link */
+        .modal--builder a:active {
+        	color: #fff;
+        }
 
-	.modal--builder.modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform .3s ease-out;
-       -o-transition:      -o-transform .3s ease-out;
-          transition:         transform .3s ease-out;
-  -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-       -o-transform: translate(0, 0);
-          transform: translate(0, 0);
+    .modal--builder .fsize18 {
+    	font-size: 18px;
+    	line-height: 1.1;
     }
-}
-.modal-backdrop.in {
-  filter: alpha(opacity=70);
-  opacity: .7;
-}
-.modal--builder .close {
-    float: right;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 1;
-    text-shadow: none;
-    opacity: 0.95;
-    color: #FFF;
-}
-.modal--builder .close:hover,
-.modal--builder .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-  filter: alpha(opacity=50);
-  opacity: .9;
-}
-.modal--builder .no-border-top {
-	border-top: none;
-}
 
-/*! ==  modal content layout */
-.modal--builder .modal-header {
-    min-height: 20px;
-    padding: 19px 24px 16px 24px;
-    border-bottom: none;
-    margin-bottom: 0px;
-}
-.modal--builder .modal-body {
-    position: relative;
-    margin-top: 0px;
-    padding: 33px 24px 30px 24px;
-}
-.modal--builder .modal-footer{
-	padding: 10px 24px 18px 24px;
-	margin-top: 24px;
-}
 
-.bg-pattern  {background: url("/ui/img/Tyee-Builders-background.jpg") left bottom repeat-x #041E41;} */
+    /*! == Support modal transition, positioning and chrome */ 
+    /*! Center the modal (except on mobile) and eliminate motion from fade-in transition */
+    @media screen and (min-width: 768px) {
+    	.modal--builder.modal {
+      	text-align: center;
+    	}
+      .modal--builder.modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+      }
+    	.modal--builder .modal-dialog {
+    		display: inline-block;
+    		text-align: left;
+    		vertical-align: middle;
+    	}
 
-.btn-green {
-	color: #fff;
-	background-color: #9AAB00;
-	border-color: #9AAB00;
-}
-.modal--builder .modal-content{
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    -o-box-shadow: none;
-    box-shadow: none;
-    border: none;
-    border-radius: 0px;
-}
-.modal--builder .modal-backdrop {
-  background-color: #000;
+    	.modal--builder.modal.fade .modal-dialog {
+      -webkit-transition: -webkit-transform .3s ease-out;
+           -o-transition:      -o-transform .3s ease-out;
+              transition:         transform .3s ease-out;
+      -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+           -o-transform: translate(0, 0);
+              transform: translate(0, 0);
+        }
     }
+    .modal-backdrop.in {
+      filter: alpha(opacity=70);
+      opacity: .7;
+    }
+    .modal--builder .close {
+        float: right;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1;
+        text-shadow: none;
+        opacity: 0.95;
+        color: #FFF;
+    }
+    .modal--builder .close:hover,
+    .modal--builder .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      filter: alpha(opacity=50);
+      opacity: .9;
+    }
+    .modal--builder .no-border-top {
+    	border-top: none;
+    }
+
+    /*! ==  modal content layout */
+    .modal--builder .modal-header {
+        min-height: 20px;
+        padding: 19px 24px 16px 24px;
+        border-bottom: none;
+        margin-bottom: 0px;
+    }
+    .modal--builder .modal-body {
+        position: relative;
+        margin-top: 0px;
+        padding: 33px 24px 30px 24px;
+    }
+    .modal--builder .modal-footer{
+    	padding: 10px 24px 18px 24px;
+    	margin-top: 24px;
+    }
+
+    .bg-pattern  {background: url("/ui/img/Tyee-Builders-background.jpg") left bottom repeat-x #041E41;} */
+
+    .btn-green {
+    	color: #fff;
+    	background-color: #9AAB00;
+    	border-color: #9AAB00;
+    }
+    .modal--builder .modal-content{
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 0px;
+    }
+    .modal--builder .modal-backdrop {
+      background-color: #000;
+        }
 
 /*! End of modal customization for Tyee Builder campaign popup */
 /*! ---------------------------------------------------------------------------- */
@@ -4257,9 +4565,10 @@ body.cmnt--visibility { }
    See https://smacss.com/book/state
    ========================================================================== */
 @media screen and (min-width: 768px) {
-#ad-leaderboard {
-	height: 90px;
-	width:100%;
+    #ad-leaderboard {
+    	height: 90px;
+    	width:100%;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   /* Adjust for standard desktop */
@@ -4270,6 +4579,7 @@ body.cmnt--visibility { }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   /* Put high-resolution display styles here */
 }
+
 
 
 
@@ -4330,4 +4640,13 @@ body.cmnt--visibility { }
   }
 }
 
+
+/* ==========================================================================
+   Temporary testing styles
+   ========================================================================== 
+
+.container *:not(.row):not(section), .container-fluid *:not(.row):not(section) {
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
 

@@ -1,0 +1,15 @@
+<!-- Begin organisms/section/index-page__header -->
+<!--Section header, including section/topic name and sponsor blurb-->
+<header class="section__header" data-dev-object-descrip="organisms/section/section__header">
+
+    <div class="row">
+        <div class="col-xs-12">
+                <h1 class="" data-bind="title">{{ page.section-name }}</h1>
+                
+                {% if page.sponsored == true %}
+                    <div class="section-sponsor-blurb">{{ page.sponsor-blurb }}</div>
+                {% endif %}
+        </div>
+    </div>
+
+</header>
