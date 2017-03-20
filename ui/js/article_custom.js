@@ -319,6 +319,8 @@ jQuery(window).load(function() {
 
                 //Format the API img uri's so they don't point at cachefly
                 latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
+               // also remove http references
+                latestStoryImage = latestStoryImage.replace("http://thetyee", "//thetyee");
 
                 //Use moment.js to format the date
                 formattedDate = moment.utc(value._source.storyDate).format("DD MMM");
