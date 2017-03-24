@@ -554,7 +554,7 @@ p a:hover {color: #6F9400;}
     /* border-bottom: 1px solid #9D9D9C; */
 }
 
-    h2.index-list-header {
+    h2.index-list-header, .index-list h2 {
         color: #ccc;
         font-family: Georgia, Serif;
         font-weight: 700;
