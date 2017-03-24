@@ -624,7 +624,7 @@ p a:hover {color: #6F9400;}
             padding-right: .75em;
         }
 
-        span.list-metric {
+        span.list-metric, .index-list span {
             font-weight: 100;
             color: #aaa;
         }
