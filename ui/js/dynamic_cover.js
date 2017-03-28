@@ -98,11 +98,11 @@ function renderRow(num){
     }
     
     if (rowCount == 0) {
-    console.log("rowcount < 1 :");
+   // console.log("rowcount < 1 :");
     text += '<div class="col-xs-12 col-md-4"><div id="subscribefill" class="messaging-zone index-list-spacing"></div></div>';
     $.get( "/design-article.thetyee.ca/_includes/01-molecules/blocks/messaging-block--subscribe.html", function( data ) {
     jQuery("#subscribefill").html(data);
-
+    enableEmailSubscription();
 }, "html");
   
     
