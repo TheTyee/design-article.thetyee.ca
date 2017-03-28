@@ -2,7 +2,25 @@ function renderLead(unit){
 
    var target = jQuery(".index-page__featured-story.dummy");
    jQuery(".index-page__featured-story.dummy .mainimage").attr("href", unit.uri);
-      jQuery(".index-page__featured-story.dummy .mainimage img").attr("src", unit.related_media[0].uri.replace("thetyee.cachefly.net", "thetyee.ca"));
+   
+   var thumbImg;
+            thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
+
+for (var k in unit.related_media[0].thumbnails) {   
+        var thumb = unit.related_media[0].thumbnails[k];
+        if (thumb.uri.indexOf("page_thumb") !=-1) {
+          //  console.log("found 960: "  +thumb.uri);
+            thumbImg = thumb.uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
+        } else {
+        }
+                       
+    
+}
+ thumbImg = thumbImg.replace("http://", "//");
+   
+      jQuery(".index-page__featured-story.dummy .mainimage img").attr("src", thumbImg.replace("thetyee.cachefly.net", "thetyee.ca"));
+          
+          
             jQuery(".index-page__featured-story.dummy .story-item__description a").attr("href", unit.uri);
             jQuery(".index-page__featured-story.dummy .story-item__description a").text(unit.title);
             jQuery(".index-page__featured-story.dummy .story-item--deck").text(unit.teaser);
@@ -37,16 +55,20 @@ text += '<div class="story-item story-item--index-page index-list-spacing" data-
 
 text += '<a href="' + unit.uri + '"><!-- 00-atoms/images/image -->';
 var thumbImg;
+            thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
+
 for (var k in unit.related_media[0].thumbnails) {   
         var thumb = unit.related_media[0].thumbnails[k];
-        if (thumb.uri.indexOf("newcover") > -1) {
+        if (thumb.uri.indexOf("newcover") !=-1) {
+          ///  console.log("found newcover: "  +thumb.uri);
             thumbImg = thumb.uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
         } else {
-            thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
         }
-                        thumbImg = thumbImg.replace("http://", "//");
+                       
     
 }
+ thumbImg = thumbImg.replace("http://", "//");
+
 text += '<img src="' + thumbImg + '" class="responsive-img" alt="image atom">';
 text += '</a>';
 text +='<div class="story-item__description">';
