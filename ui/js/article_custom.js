@@ -130,7 +130,15 @@ jQuery(window).load(function() {
         jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
             jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + httpurl, function(datwo) {
             combined = parseInt(data.result.total) + parseInt(datwo.result.total);
-            jQuery("#sharecount span.count").text(combined);
+            var unixStoryDate = parseInt(jQuery( "meta[name='unix_date']" ).attr("content"));
+            var httpsSwitchDate = 1480291200;
+            if (unixStoryDate > httpsSwitchDate) {
+             jQuery("#sharecount span.count").text(data.result.total);
+
+            } else {
+                                           jQuery("#sharecount span.count").text(combined);
+
+            }
             jQuery("#sharecount").fadeIn();
              });
 
