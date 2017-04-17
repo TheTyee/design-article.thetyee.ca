@@ -2,7 +2,25 @@ function renderLead(unit){
 
    var target = jQuery(".index-page__featured-story.dummy");
    jQuery(".index-page__featured-story.dummy .mainimage").attr("href", unit.uri);
-      jQuery(".index-page__featured-story.dummy .mainimage img").attr("src", unit.related_media[0].uri.replace("thetyee.cachefly.net", "thetyee.ca"));
+   
+   var thumbImg;
+            thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
+
+for (var k in unit.related_media[0].thumbnails) {   
+        var thumb = unit.related_media[0].thumbnails[k];
+        if (thumb.uri.indexOf("page_thumb") !=-1) {
+          //  console.log("found 960: "  +thumb.uri);
+            thumbImg = thumb.uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
+        } else {
+        }
+                       
+    
+}
+ thumbImg = thumbImg.replace("http://", "//");
+   
+      jQuery(".index-page__featured-story.dummy .mainimage img").attr("src", thumbImg.replace("thetyee.cachefly.net", "thetyee.ca"));
+          
+          
             jQuery(".index-page__featured-story.dummy .story-item__description a").attr("href", unit.uri);
             jQuery(".index-page__featured-story.dummy .story-item__description a").text(unit.title);
             jQuery(".index-page__featured-story.dummy .story-item--deck").text(unit.teaser);
@@ -37,16 +55,20 @@ text += '<div class="story-item story-item--index-page index-list-spacing" data-
 
 text += '<a href="' + unit.uri + '"><!-- 00-atoms/images/image -->';
 var thumbImg;
+            thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
+
 for (var k in unit.related_media[0].thumbnails) {   
         var thumb = unit.related_media[0].thumbnails[k];
-        if (thumb.uri.indexOf("newcover") > -1) {
+        if (thumb.uri.indexOf("newcover") !=-1) {
+          ///  console.log("found newcover: "  +thumb.uri);
             thumbImg = thumb.uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
         } else {
-            thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
         }
-                        thumbImg = thumbImg.replace("http://", "//");
+                       
     
 }
+ thumbImg = thumbImg.replace("http://", "//");
+
 text += '<img src="' + thumbImg + '" class="responsive-img" alt="image atom">';
 text += '</a>';
 text +='<div class="story-item__description">';
@@ -76,11 +98,11 @@ function renderRow(num){
     }
     
     if (rowCount == 0) {
-    console.log("rowcount < 1 :");
+   // console.log("rowcount < 1 :");
     text += '<div class="col-xs-12 col-md-4"><div id="subscribefill" class="messaging-zone index-list-spacing"></div></div>';
     $.get( "/design-article.thetyee.ca/_includes/01-molecules/blocks/messaging-block--subscribe.html", function( data ) {
     jQuery("#subscribefill").html(data);
-
+    enableEmailSubscription();
 }, "html");
   
     
@@ -124,7 +146,7 @@ function renderRow(num){
      
          text += '</div>';
     rowCount++;
-    console.log("rowCount is " + rowCount);
+ //   console.log("rowCount is " + rowCount);
    jQuery(".index-page__story-list .filler").append(text);
 
         i++;
@@ -150,12 +172,12 @@ function renderRow(num){
                     //pass data to the create function so I can create my own Unit objects
                     recentItems = createUnitObjects(returnedStories);
                     ajaxSuccess = 1;
-                    console.log("ajaxsucces shouldbe true: " + ajaxSuccess);
+                   // console.log("ajaxsucces shouldbe true: " + ajaxSuccess);
                     if (ajaxSuccess > 0) {  
-                            console.log("ajaxsuccess");
+                          //  console.log("ajaxsuccess");
                             var halfnumber = number/2;
                             if (render > 0) {
-                                console.log("render=true");
+                               // console.log("render=true");
                                 renderRow(halfnumber);
                             }
                     }
@@ -215,7 +237,7 @@ function renderRow(num){
                 //Put all objects into a new array for easier handling
                // console.log(value._source);
                 UnitObjects.push(value._source);
-                console.log("Done unit");
+                // console.log("Done unit");
             });
   
          
@@ -245,7 +267,7 @@ function renderRow(num){
 
        
 topic = jQuery("#topictitle").text();
-     console.log("topic title: " + topic);
+    // console.log("topic title: " + topic);
     topic = encodeURI(topic);
         
    
