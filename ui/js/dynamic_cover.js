@@ -146,7 +146,7 @@ function renderRow(num){
      
          text += '</div>';
     rowCount++;
-    console.log("rowCount is " + rowCount);
+ //   console.log("rowCount is " + rowCount);
    jQuery(".index-page__story-list .filler").append(text);
 
         i++;
@@ -172,12 +172,12 @@ function renderRow(num){
                     //pass data to the create function so I can create my own Unit objects
                     recentItems = createUnitObjects(returnedStories);
                     ajaxSuccess = 1;
-                    console.log("ajaxsucces shouldbe true: " + ajaxSuccess);
+                   // console.log("ajaxsucces shouldbe true: " + ajaxSuccess);
                     if (ajaxSuccess > 0) {  
-                            console.log("ajaxsuccess");
+                          //  console.log("ajaxsuccess");
                             var halfnumber = number/2;
                             if (render > 0) {
-                                console.log("render=true");
+                               // console.log("render=true");
                                 renderRow(halfnumber);
                             }
                     }
@@ -237,7 +237,7 @@ function renderRow(num){
                 //Put all objects into a new array for easier handling
                // console.log(value._source);
                 UnitObjects.push(value._source);
-                console.log("Done unit");
+                // console.log("Done unit");
             });
   
          
@@ -267,7 +267,7 @@ function renderRow(num){
 
        
 topic = jQuery("#topictitle").text();
-     console.log("topic title: " + topic);
+    // console.log("topic title: " + topic);
     topic = encodeURI(topic);
         
    
