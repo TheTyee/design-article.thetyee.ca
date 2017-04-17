@@ -53,8 +53,10 @@ function mobileFriendlyCommentsStr() {
     // Adds the .stric-comment-cnt class to the Disqus comment counter
     // so it can be hidden on mobile
     var str = jQuery('.str-comment').html();
+    if (str) {
     var newstr = str.replace(/comments/i, '<span class="str-comment-cnt hidden-sm hidden-xs">Comments</span>');
     jQuery('.str-comment').html(newstr);
+    }
 }
 
 function hideIfNoHash() {
