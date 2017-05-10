@@ -134,8 +134,8 @@ jQuery(window).load(function() {
               
         jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
             jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
-                console.log("fb : " + data.result.share.sharecount + " email :  " + datatwo.result.email.shares + "twitter ; " +datatwo.result.twitter.count );
-            combined = + parseInt(data.result.share.sharecount) + parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
+                console.log("fb : " + data.share.sharecount + " email :  " + datatwo.result.email.shares + "twitter ; " +datatwo.result.twitter.count );
+            combined = + parseInt(data.share.sharecount) + parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
       //      var unixStoryDate = parseInt(jQuery( "meta[name='unix_date']" ).attr("content"));
      //       var httpsSwitchDate = 1480291200;
              jQuery("#sharecount span.count").text(combined);
