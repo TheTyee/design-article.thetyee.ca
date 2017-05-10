@@ -133,19 +133,11 @@ jQuery(window).load(function() {
         var combined = 0;
               
         jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
-          //  console.log(data);
-        //    console.log("fbshares : " + data[Object.keys(data)[0]].share.share_count);
             combined = combined + parseInt(data[Object.keys(data)[0]].share.share_count);
             jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
-            //    console.log("emailshares : " + datatwo.result.email.shares + "twitter : " + datatwo.result.twitter.count  ); 
-            //console.log(datatwo);
             combined = combined +  parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
-      //      var unixStoryDate = parseInt(jQuery( "meta[name='unix_date']" ).attr("content"));
-     //       var httpsSwitchDate = 1480291200;
              jQuery("#sharecount span.count").text(combined);
-
             jQuery("#sharecount").fadeIn();
-             
             });
 
         });
