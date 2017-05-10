@@ -129,20 +129,18 @@ jQuery(window).load(function() {
         url = url.replace(/http:/i, "https:");
         var httpurl = url.replace(/https:/i, "http:");
         var combined = 0;
-        jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
-            jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + httpurl, function(datwo) {
-            combined = parseInt(data.result.total) + parseInt(datwo.result.total);
-            var unixStoryDate = parseInt(jQuery( "meta[name='unix_date']" ).attr("content"));
-            var httpsSwitchDate = 1480291200;
-            if (unixStoryDate > httpsSwitchDate) {
-             jQuery("#sharecount span.count").text(data.result.total);
+              
+        jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
+            jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
+                console.log("fb : " + data.result.share.sharecount + " email :  " + datatwo.result.email.shares + "twitter ; " +datatwo.result.twitter.count );
+            combined = + parseInt(data.result.share.sharecount) + parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
+      //      var unixStoryDate = parseInt(jQuery( "meta[name='unix_date']" ).attr("content"));
+     //       var httpsSwitchDate = 1480291200;
+             jQuery("#sharecount span.count").text(combined);
 
-            } else {
-                                           jQuery("#sharecount span.count").text(combined);
-
-            }
             jQuery("#sharecount").fadeIn();
-             });
+             
+            });
 
         });
 
