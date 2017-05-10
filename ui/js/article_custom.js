@@ -128,6 +128,8 @@ jQuery(window).load(function() {
         var url = meta.attr("content");
         url = url.replace(/http:/i, "https:");
         var httpurl = url.replace(/https:/i, "http:");
+        url = url.replace(/preview.thetyee/i, "thetyee");
+
         var combined = 0;
               
         jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
