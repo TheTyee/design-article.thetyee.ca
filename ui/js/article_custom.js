@@ -135,7 +135,7 @@ jQuery(window).load(function() {
         jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
           //  console.log(data);
         //    console.log("fbshares : " + data[Object.keys(data)[0]].share.share_count);
-          //  combined = combined + parseInt(data[Object.keys(data)[0]].share.share_count);
+            combined = combined + parseInt(data[Object.keys(data)[0]].share.share_count);
             jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
             //    console.log("emailshares : " + datatwo.result.email.shares + "twitter : " + datatwo.result.twitter.count  ); 
             //console.log(datatwo);
