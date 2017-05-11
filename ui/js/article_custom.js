@@ -103,6 +103,47 @@ jQuery(window).load(function() {
 window.data;
 window.url;
 window.encodedURL;
+window.combined;
+window.datatwo;
+
+function showShares() {
+    
+      if (combined > 10) {
+                         jQuery("#sharecount span.count").text(combined);
+                        jQuery("#sharecount").fadeIn();
+                     } else {
+                        jQuery(".tool-bar .count").hide();
+                        console.log("facebook sharecount not loading");
+                     }  
+    
+}
+
+function sharesFromFB() {
+    console.log("adding / usng shares direct from fb");
+     var encodedURL = encodeURIComponent(url);
+        var fbfetch = 'https://graph.facebook.com/?ids=' + encodedURL;
+        var abc;
+        var request = jQuery.ajax({
+                dataType: "jsonp",
+                url:fbfetch,
+                data: abc,
+                success: function(dd ) {
+                    window.data = dd;
+                        combined = combined + parseInt(window.data[url].share.share_count);
+                   showShares();
+                    },
+                timeout: 4000
+            }).fail( function( xhr, status ) {
+                if( status == "timeout" ) {
+                    // do stuff in case of timeout
+                }
+            });
+    
+
+}
+
+
+
 // Wrap IIFE around your code
 (function($, viewport){
     jQuery(document).ready(function() {
@@ -132,24 +173,30 @@ window.encodedURL;
         var httpurl = url.replace(/https:/i, "http:");
         url = url.replace(/preview.thetyee/i, "thetyee");
 
-        var combined = 0;
-        encodedURL = encodeURIComponent(url);
-        jQuery.getJSON('https://graph.facebook.com/?ids=' + encodedURL, function(data) {
-           // console.log(data);
-            window.data = data;
-            
-            combined = combined + parseInt(data[url].share.share_count);
-          //  jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
-           // combined = combined +  parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
-         if (combined > 10) {
-             jQuery("#sharecount span.count").text(combined);
-            jQuery("#sharecount").fadeIn();
-         } else {
-            jQuery(".tool-bar .count").hide();
-            console.log("facebook sharecount not loading");
-         }  
-          //  });
-        });
+        combined = 0;
+      
+              function getShares() {
+                  
+                   jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(dttwo) {
+                    datatwo = dttwo;
+                        combined = combined +  parseInt(datatwo.result.total);    
+                  if (combined < 1 ||  parseInt(datatwo.result.facebook.share.share_count) < 1 ) {
+                    sharesFromFB();
+                  } else {
+                  console.log("using widget share count");
+                  showShares();
+                  
+                  }
+                  
+                  }).error(function() {  sharesFromFB();   });
+                
+       
+       }
+        getShares();
+       
+       
+       
+       
 
         // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
         // http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
