@@ -102,6 +102,7 @@ jQuery(window).load(function() {
 });
 window.data;
 window.url;
+window.encodedURL;
 // Wrap IIFE around your code
 (function($, viewport){
     jQuery(document).ready(function() {
@@ -132,10 +133,11 @@ window.url;
         url = url.replace(/preview.thetyee/i, "thetyee");
 
         var combined = 0;
-              
-        jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
+        encodedURL = encodeURIComponent(url);
+        jQuery.getJSON('https://graph.facebook.com/?ids=' + encodedURL, function(data) {
            // console.log(data);
             window.data = data;
+            
             combined = combined + parseInt(data[url].share.share_count);
           //  jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
            // combined = combined +  parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
