@@ -100,7 +100,8 @@ jQuery(window).load(function() {
     hideIfNoHash();
     enableEmailSubscription();
 });
-
+window.data;
+window.url;
 // Wrap IIFE around your code
 (function($, viewport){
     jQuery(document).ready(function() {
@@ -125,7 +126,7 @@ jQuery(window).load(function() {
             shareAPI = 'http://127.0.0.1:3000';
         }
         var meta = jQuery('meta[property="og:url"]');
-        var url = meta.attr("content");
+       url = meta.attr("content");
         url = url.replace(/http:/i, "https:");
         var httpurl = url.replace(/https:/i, "http:");
         url = url.replace(/preview.thetyee/i, "thetyee");
@@ -133,14 +134,19 @@ jQuery(window).load(function() {
         var combined = 0;
               
         jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
-            console.log(data);
+           // console.log(data);
+            window.data = data;
             combined = combined + parseInt(data[url].share.share_count);
           //  jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
            // combined = combined +  parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
+         if (combined > 10) {
              jQuery("#sharecount span.count").text(combined);
             jQuery("#sharecount").fadeIn();
+         } else {
+            jQuery(".tool-bar .count").hide();
+            console.log("facebook sharecount not loading");
+         }  
           //  });
-
         });
 
         // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
