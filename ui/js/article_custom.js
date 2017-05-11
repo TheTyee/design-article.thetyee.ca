@@ -133,12 +133,13 @@ jQuery(window).load(function() {
         var combined = 0;
               
         jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
+            console.log(data);
             combined = combined + parseInt(data[Object.keys(data)[0]].share.share_count);
-            jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
-            combined = combined +  parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
+          //  jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
+           // combined = combined +  parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
              jQuery("#sharecount span.count").text(combined);
             jQuery("#sharecount").fadeIn();
-            });
+          //  });
 
         });
 
