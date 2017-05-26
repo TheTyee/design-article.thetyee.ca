@@ -408,7 +408,9 @@ p a:hover {color: #6F9400;}
 }
 
  @media screen and (max-width: 401px) {   
-     overflow: visible !important;
+    .lead-in {
+      overflow: visible !important;
+    }
 }
 
 .lead-in:first-letter {
