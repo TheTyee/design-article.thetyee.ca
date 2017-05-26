@@ -408,6 +408,12 @@ p a:hover {color: #6F9400;}
    overflow: hidden;
 }
 
+ @media screen and (max-width: 401px) {   
+    .lead-in {
+      overflow: visible !important;
+    }
+}
+
 .lead-in:first-letter {
     display: block;
     overflow: hidden;
