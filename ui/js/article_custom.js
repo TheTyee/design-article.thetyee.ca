@@ -134,10 +134,12 @@ jQuery(window).load(function() {
               
         jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
             combined = combined + parseInt(data[Object.keys(data)[0]].share.share_count);
+            console.log(data);
             jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
             combined = combined +  parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
              jQuery("#sharecount span.count").text(combined);
             jQuery("#sharecount").fadeIn();
+
             });
 
         });
@@ -537,6 +539,7 @@ jQuery(window).load(function() {
 
             // fade out read-more
             jQuery('.read-more').fadeOut();
+            jQuery('#comment_agreement').fadeOut();
         });
     });
 
