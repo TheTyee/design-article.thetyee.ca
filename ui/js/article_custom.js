@@ -593,6 +593,7 @@ function sharesFromFB() {
 
             // fade out read-more
             jQuery('.read-more').fadeOut();
+	    jQuery('#comment_agreement').fadeOut();
         });
     });
 
