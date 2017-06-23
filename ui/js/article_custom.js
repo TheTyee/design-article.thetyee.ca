@@ -66,8 +66,11 @@ function hideIfNoHash() {
     } else {
         var el = jQuery('.comments-section');
         el.css(
-            "height", "460px"
+            "height", "660px"
         );
+        
+    
+        
     }
 }
 
