@@ -160,10 +160,14 @@ function renderRow(num){
         //Returned stories from the API
         function getUnitStories(number, start, render){
             var ajaxSuccess;
+            var inPreview; var ess = 's';
+            if (window.location.hostname.indexOf("preview") >= 0) {inPreview = "preview."; ess = '';}
+            
+            
             storiesRequested = number;
             returnedStories = jQuery.ajax({
                 method: 'POST',
-                url: 'https://api.thetyee.ca/v1/searchme/' + query + '/' + storiesRequested + '/' + start,
+                url: 'http' + ess + '://' + inPreview + 'api.thetyee.ca/v1/searchme/' + query + '/' + storiesRequested + '/' + start,
                 dataType: 'jsonp',
                 data: response,
                 crossDomain: true,
@@ -276,7 +280,7 @@ topic = jQuery("#topictitle").text();
 
         //make UnitObjects global, so I don't have to keep hitting the API
         UnitObjects = UnitObjects;
-                getUnitStories(17,1);
+                getUnitStories(17,0);
         });
        
        var storiesLoaded = 18;
