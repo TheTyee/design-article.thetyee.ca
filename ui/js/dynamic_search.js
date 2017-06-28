@@ -160,7 +160,7 @@ function renderRow(num){
         //Returned stories from the API
         function getUnitStories(number, start, render){
             var ajaxSuccess;
-            var inPreview; var ess = 's';
+            var inPreview = ''; var ess = 's';
             if (window.location.hostname.indexOf("preview") >= 0) {inPreview = "preview."; ess = '';}
             
             
