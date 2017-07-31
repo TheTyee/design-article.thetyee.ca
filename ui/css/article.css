@@ -751,7 +751,7 @@ The .main-col-container styling is really the scaffold of the layout and most ot
 }
 
     /* Set a top margin on article__body for LEGACY ARTICLES and POLLS that don't have a featured-media section */
-    .article-legacy-image .article__body.main-col-container, .article-poll .article__body.main-col-container {
+    .article-legacy-image .article__body.main-col-container, .article-poll .article__body.main-col-container, .advertpage .article__body.main-col-container {
         margin-top: 20px;
     }
 
