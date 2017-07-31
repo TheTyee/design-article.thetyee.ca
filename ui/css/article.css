@@ -54,6 +54,12 @@ h1 {
   margin-bottom: 0.25em;
 }
 
+    .h1--border-bottom {
+        padding-bottom: .85rem;
+        border-bottom: 1px solid;
+        margin-bottom: 1rem;
+    }
+
     /* BREAKPOINT: 600px // Increase article headline size */
     @media screen and (min-width: 600px) {
 
