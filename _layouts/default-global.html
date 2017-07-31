@@ -6,7 +6,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 {% include meta/head.html %}
-  <body class="{{ page.layout }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+  <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
 
     <!-- =============================== -->
     <!-- ===== Header ===== -->
