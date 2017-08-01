@@ -1,0 +1,71 @@
+<!-- Begin organisms/article/article__body--advertpage -->
+
+
+<article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
+
+    <div class="container-fluid clearfix">
+
+        <!-- Include either sponsor graphic or thanks-reader-block -->
+        {% if page.poll--sponsored %}
+            {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--poll-sponsor" ad-slot="ad-300x250" ad-source="/ui/img/client_image-placeholder-300x250.png" %}
+        {% else %}
+                <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" fact-box__title="Thanks, reader." fact-box__content="<p>The Tyee couldn't do what we do without your generous monthly support. Reader contributions to the Tyee Builder program keep investigative and solutions-focused journalism rolling out daily, and help build the kind of media our province and country needs: Fearlessly independent. High impact. Sustainable.</p>" %}
+        {% endif %}
+
+        <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--explainer" fact-box__content="<p><strong>Please note</strong> that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+
+        <!--An ASIDE containing a Twitter widget. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/media/twitter-widget" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="" fact-box__content="" %}
+
+        <p>Reach the most loyal, discerning, highly educated, active and web-savvy leaders and influentials in B.C. and beyond with ads, contests, and sponsorship opportunities on The Tyee.</p>
+
+        <p>The Tyee receives an average of 800,000 to one million page views per month, and around 300,000 unique visitors per month. More than 60 per cent of our visitors are from within B.C. (and 30+ per cent from the Greater Vancouver area.) We also have more than 40,000 subscribers who receive our headlines by email, 47,000 Twitter followers, 17,000 Facebook fans, and more than 20,000 registered commenters.</p>
+
+        <h2>How can I advertise with The Tyee?</h2>
+
+        <p>In addition to <b>traditional IAB standard display ad offerings</b> (with geo-targeting, rich media, e-newsletter ads, and more), we also offer:</p>
+
+        <ul>
+            <li>sponsored reader polls</li>
+            <li>custom partner emails</li>
+            <li>media partnership packages, and</li>
+            <li>highly customized branded contest promotions and original storytelling in our <a href="https://thetyee.ca/About/Advertise/Tyee-Presents/">Tyee Presents</a> section, which include social media promotion and lead generation</li>
+        </ul>
+
+        <p>There’s an advertising solution for every budget and engagement strategy -- <a href="mailto:adsales@thetyee.ca">contact us</a> to discuss how to achieve the most effective results for your campaign.</p>
+
+        <p>Find our full ad kit <a href="https://thetyee.ca/About/Tyee_AdKitMarch2017_Final.pdf">here</a>.</p>
+
+        <p><strong>Let’s start talking about your marketing, outreach, and engagement goals, and figure out how The Tyee can help.</strong></p>
+
+        <p><strong>Contact us for detailed case studies:</strong></p>
+
+        <p>
+            Jeanette Ageson <br>
+            Chief Revenue Officer <br>
+            Phone: 604-689-7489 <br>
+            Email: <a href="mailto:adsales@thetyee.ca">adsales@thetyee.ca</a>
+        </p>
+
+        <p><strong>Clients we’ve worked with:</strong></p>
+
+        <!-- If poll is sponsored then include sponsor graphic.
+             In narrow views spnsr grc appears here w/in the text col -->
+        {% if page.poll--sponsored %}
+            {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--poll-sponsor" ad-slot="ad-300x250" ad-source="/ui/img/client_image-placeholder-300x250.png" %}
+        {% endif %}
+               
+
+        
+        <!--FACT-BOX will display here at bottom of article in narrow viewports -->
+        <span id="fact-box-1"></span> <!--Anchor for inline fact-box text link. This ID must not appear in the sidebar fact-box html! -->
+        {% include 01-molecules/blocks/Fact-box.html object-class="fact-box--explainer" fact-box__content="<p><strong>Please note</strong> that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+
+
+    </div> <!--END .container-fluid-->
+
+</article>
+
+<!-- END organisms/article/article__body -->
