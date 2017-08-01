@@ -1,9 +1,11 @@
 ---
 layout: default-global
 body-class: advertpage # adds a class to the page's body tag
+page-type: article
 series: false # true or false
 presents: No # Yes or No
 poll--sponsored: true # true or false
+messaging-zone: 'no'  # 'yes' or 'no' -- default is 'yes'
 permalink: /advertpage.html
 title: "Advertise with The Tyee"
 description:
@@ -21,4 +23,8 @@ featured-media-credit:
 
     {% include 02-organisms/article/advertpage__header.html %}  
     
-    {% include 02-organisms/article/article__body--poll.html %}    
+    {% comment %}
+        The advert page has no featured-media so they should follow the form of an article-legacy-image. Like the poll page, the feature-media section is omitted. 
+    {% endcomment %}
+
+    {% include 02-organisms/article/article__body--advertpage.html %}    
