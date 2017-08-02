@@ -53,8 +53,10 @@ function mobileFriendlyCommentsStr() {
     // Adds the .stric-comment-cnt class to the Disqus comment counter
     // so it can be hidden on mobile
     var str = jQuery('.str-comment').html();
+    if (str) {
     var newstr = str.replace(/comments/i, '<span class="str-comment-cnt hidden-sm hidden-xs">Comments</span>');
     jQuery('.str-comment').html(newstr);
+    }
 }
 
 function hideIfNoHash() {
@@ -126,13 +128,19 @@ jQuery(window).load(function() {
         var url = meta.attr("content");
         url = url.replace(/http:/i, "https:");
         var httpurl = url.replace(/https:/i, "http:");
+        url = url.replace(/preview.thetyee/i, "thetyee");
+
         var combined = 0;
-        jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(data) {
-            jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + httpurl, function(datwo) {
-            combined = parseInt(data.result.total) + parseInt(datwo.result.total);
-            jQuery("#sharecount span.count").text(combined);
+              
+        jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
+            combined = combined + parseInt(data[Object.keys(data)[0]].share.share_count);
+            console.log(data);
+            jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
+            combined = combined +  parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
+             jQuery("#sharecount span.count").text(combined);
             jQuery("#sharecount").fadeIn();
-             });
+
+            });
 
         });
 
@@ -293,6 +301,7 @@ jQuery(window).load(function() {
                 for (var k in value._source.related_media[0].thumbnails) {
                     var thumb = value._source.related_media[0].thumbnails[k];
                     thumb.uri = thumb.uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
+                    thumb.url = thumb.uri.replace("http://thetyee", "//thetyee");
                     if (thumb.uri.indexOf("latest") > -1) {
                         latestStoryImage = thumb.uri;
                         LatestThumbFound = 1;
@@ -318,6 +327,8 @@ jQuery(window).load(function() {
 
                 //Format the API img uri's so they don't point at cachefly
                 latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
+               // also remove http references
+                latestStoryImage = latestStoryImage.replace("http://thetyee", "//thetyee");
 
                 //Use moment.js to format the date
                 formattedDate = moment.utc(value._source.storyDate).format("DD MMM");
@@ -528,6 +539,7 @@ jQuery(window).load(function() {
 
             // fade out read-more
             jQuery('.read-more').fadeOut();
+            jQuery('#comment_agreement').fadeOut();
         });
     });
 

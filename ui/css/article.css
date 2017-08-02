@@ -54,6 +54,12 @@ h1 {
   margin-bottom: 0.25em;
 }
 
+    .h1--border-bottom {
+        padding-bottom: .85rem;
+        border-bottom: 1px solid;
+        margin-bottom: 1rem;
+    }
+
     /* BREAKPOINT: 600px // Increase article headline size */
     @media screen and (min-width: 600px) {
 
@@ -205,6 +211,13 @@ h6.poll-label {
             color: #555;
             content:"THE BAROMETER: "
        }
+    }
+
+
+ul { }
+
+    .main-col-container ul {
+        margin-bottom: 1em;
     }
 
 
@@ -407,6 +420,12 @@ p a:hover {color: #6F9400;}
    overflow: hidden;
 }
 
+ @media screen and (max-width: 401px) {   
+    .lead-in {
+      overflow: visible !important;
+    }
+}
+
 .lead-in:first-letter {
     display: block;
     overflow: hidden;
@@ -554,7 +573,7 @@ p a:hover {color: #6F9400;}
     /* border-bottom: 1px solid #9D9D9C; */
 }
 
-    h2.index-list-header {
+    h2.index-list-header, .index-list h2 {
         color: #ccc;
         font-family: Georgia, Serif;
         font-weight: 700;
@@ -624,7 +643,7 @@ p a:hover {color: #6F9400;}
             padding-right: .75em;
         }
 
-        span.list-metric {
+        span.list-metric, .index-list span {
             font-weight: 100;
             color: #aaa;
         }
@@ -739,7 +758,7 @@ The .main-col-container styling is really the scaffold of the layout and most ot
 }
 
     /* Set a top margin on article__body for LEGACY ARTICLES and POLLS that don't have a featured-media section */
-    .article-legacy-image .article__body.main-col-container, .article-poll .article__body.main-col-container {
+    .article-legacy-image .article__body.main-col-container, .article-poll .article__body.main-col-container, .advertpage .article__body.main-col-container {
         margin-top: 20px;
     }
 
@@ -3064,6 +3083,15 @@ label.valid {
           
         .fact-box__anchor-link {
           display: none;
+        }
+
+        .aside .fact-box--no_border {
+            margin-top: -1.6em;
+            border: none;
+        }
+
+        .fact-box--no_border h4 {
+            margin-top: 0em;
         }
     }
 
