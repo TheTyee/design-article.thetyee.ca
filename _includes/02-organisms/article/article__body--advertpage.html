@@ -5,19 +5,12 @@
 
     <div class="container-fluid clearfix">
 
-        <!-- Include either sponsor graphic or thanks-reader-block -->
-        {% if page.poll--sponsored %}
-            {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--poll-sponsor" ad-slot="ad-300x250" ad-source="/ui/img/client_image-placeholder-300x250.png" %}
-        {% else %}
-                <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
-                {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" fact-box__title="Thanks, reader." fact-box__content="<p>The Tyee couldn't do what we do without your generous monthly support. Reader contributions to the Tyee Builder program keep investigative and solutions-focused journalism rolling out daily, and help build the kind of media our province and country needs: Fearlessly independent. High impact. Sustainable.</p>" %}
-        {% endif %}
+        <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--no_border" fact-box__title="Call us, and we’ll get started on a tailored plan for you." fact-box__content="<p><strong>Jeanette Ageson</strong><br>Chief Revenue Officer<br>Phone: 604-689-7489 x104<br>Email: <a href=\"mailto:adsales@thetyee.ca\">adsales@thetyee.ca</a></p>" %}
 
         <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
-        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--explainer" fact-box__content="<p><strong>Please note</strong> that Tyee Barometer polls are only intended as a quick and engaging non-scientific snapshot of our readers' opinions on various topics that fit with The Tyee's very broad editorial mandate. They are not intended to be seen as a representative sampling of BC opinion.</p>" %}
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--no_border" fact-box__title="Tyee readers are:" fact-box__content="<p><strong>Educated</strong>: 74% attended post-secondary institutions. <br><strong>Affluent</strong>: 40% earn more than $60,000 annually. <br><strong>Conscious consumers</strong>: 95% seek out green and fair trade products.<br><strong>Charitable</strong>: 87% donate to non-profits.<br><strong>Globetrotters</strong>: 64% purchased airline tickets last year.<br><strong>Artsy</strong>: 92% go to concerts, 86% attended a conference or speaker event, and 70% see new movies in the theatre.<br><strong>Key age</strong>: 74% are 35+ (the largest and fastest growing consumer group in Canada).<br><strong>Loyal</strong>: More than 80% of readers surveyed agree that “no one compares to The Tyee.”</p>" %}
 
-        <!--An ASIDE containing a Twitter widget. -->
-        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/media/twitter-widget" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="" fact-box__content="" %}
 
         <p>Reach the most loyal, discerning, highly educated, active and web-savvy leaders and influentials in B.C. and beyond with ads, contests, and sponsorship opportunities on The Tyee.</p>
 
@@ -37,6 +30,7 @@
         <p>There’s an advertising solution for every budget and engagement strategy -- <a href="mailto:adsales@thetyee.ca">contact us</a> to discuss how to achieve the most effective results for your campaign.</p>
 
         <p>Find our full ad kit <a href="https://thetyee.ca/About/Tyee_AdKitMarch2017_Final.pdf">here</a>.</p>
+        <br>
 
         <p><strong>Let’s start talking about your marketing, outreach, and engagement goals, and figure out how The Tyee can help.</strong></p>
 
@@ -49,14 +43,8 @@
             Email: <a href="mailto:adsales@thetyee.ca">adsales@thetyee.ca</a>
         </p>
 
-        <p><strong>Clients we’ve worked with:</strong></p>
-
-        <!-- If poll is sponsored then include sponsor graphic.
-             In narrow views spnsr grc appears here w/in the text col -->
-        {% if page.poll--sponsored %}
-            {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--poll-sponsor" ad-slot="ad-300x250" ad-source="/ui/img/client_image-placeholder-300x250.png" %}
-        {% endif %}
-               
+        <h2>Clients we’ve worked with:</h2>
+        <p>client logos go here</p>
 
         
         <!--FACT-BOX will display here at bottom of article in narrow viewports -->
