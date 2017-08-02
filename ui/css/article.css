@@ -3077,6 +3077,15 @@ label.valid {
         .fact-box__anchor-link {
           display: none;
         }
+
+        .aside .fact-box--no_border {
+            margin-top: -1.6em;
+            border: none;
+        }
+
+        .fact-box--no_border h4 {
+            margin-top: 0em;
+        }
     }
 
 
