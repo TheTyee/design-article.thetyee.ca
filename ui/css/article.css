@@ -214,6 +214,13 @@ h6.poll-label {
     }
 
 
+ul { }
+
+    .main-col-container ul {
+        margin-bottom: 1em;
+    }
+
+
 .site__header{
   background-color: #fff;
   width: 100%;
