@@ -3025,7 +3025,47 @@ label.valid {
     .fact-box__anchor-link {
       display: inline;
     }
+    
+    .fact-box--CTA {
+        background-color: transparent;
+        padding: 0;
+        margin-top: 0em;
+        margin-bottom: 0em;
+    }
 
+        .fact-box--CTA p {
+            font-size: 1em
+        }
+
+
+        /* .fact-box--CTA:before {
+            display: block;
+            border-radius: 50%;
+            height: 6em;
+            width: 6em;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            content:"";
+            background: url(/ui/img/mychaylo-prystupa.jpg) no-repeat;
+            background-size: 100%;
+        } */
+
+        .fact-box--CTA h4 {
+            border-bottom: none;
+            font-size: 1.33em;
+            color: #82AD00;
+        }
+
+        img.fact-box--headshot {
+            float: left;
+            margin-top: 0em;
+            margin-bottom: 0em;
+            margin-right: 1.25em;
+            height: 6em;
+            width: auto;
+            background-color: none;
+            border-radius: 50%;
+        }
 
 
     .hide-on-narrow-vp {
@@ -3092,6 +3132,17 @@ label.valid {
 
         .fact-box--no_border h4 {
             margin-top: 0em;
+        }
+
+        img.fact-box--headshot {
+            float: none;
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+            margin-right: 0.75em;
+            height: 6em;
+            width: auto;
+            background-color: none;
+            border-radius: 50%;
         }
     }
 
