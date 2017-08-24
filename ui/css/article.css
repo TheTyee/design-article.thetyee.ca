@@ -4324,6 +4324,12 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
    ========================================================================== */
 
 
+.border-below-Ps p {
+     padding-bottom: .5em;
+     border-bottom: 1px dotted #777;
+     margin-bottom: .5em;
+}
+
 
 /*  ACCENT COLOR HELPER CLASSES  ========================================================================== 
     These classes can get applied to elements that should employ the accent 
