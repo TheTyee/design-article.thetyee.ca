@@ -3067,6 +3067,10 @@ label.valid {
             border-radius: 50%;
         }
 
+        .fact-box--CTA.fact-box--headshot h4 {
+            margin-bottom:0;
+        }
+
 
     .hide-on-narrow-vp {
       display: none;
