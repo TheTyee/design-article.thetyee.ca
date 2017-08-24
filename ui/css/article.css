@@ -3069,7 +3069,7 @@ label.valid {
 
         .fact-box--CTA.fact-box--headshot h4 {
             margin-bottom:0;
-        }
+        } /* Narrows gap between CTA and contact info */
 
 
     .hide-on-narrow-vp {
