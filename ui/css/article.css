@@ -129,7 +129,7 @@ p {
 }
 
 /* Special category labels */
-h6.tyee-presents-label, h6.poll-label {
+h6.tyee-presents-label, h6.poll-label, h6.advertpg-label {
     display: block;
     position: relative;
     float: none;
@@ -146,10 +146,19 @@ h6.tyee-presents-label, h6.poll-label {
     letter-spacing: .02em;
 }
 
-h6.poll-label {
+h6.poll-label, h6.advertpg-label {
     border-top: 1px solid #888;
     border-bottom: 1px solid #888;
     color: black !i;
+}
+
+h6.advertpg-label {
+    font-size: .85em;
+    line-height: 1.25em;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: #555;
+    text-transform:uppercase;
 }
 
 /* h6.tyee-presents-label a{
@@ -179,13 +188,21 @@ h6.poll-label {
             background-repeat: repeat-x;
             background-size: auto 100%; 
         }
+        h6.advertpg-label:after {
+            font-weight: 400;
+            color: #82AD00;
+            font-size: 1.025em;
+            text-transform: lowercase;
+            letter-spacing: 0.02em;
+            content: " and help independent media thrive."
+        }
     }
 
 
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 593px)              
         {
-        h6.tyee-presents-label, h6.poll-label {
+        h6.tyee-presents-label, h6.poll-label, h6.advertpg-label {
               margin-bottom: 1.5em;
         }
     }
@@ -193,7 +210,7 @@ h6.poll-label {
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 1024px)              
         {
-        h6.tyee-presents-label, h6.poll-label {
+        h6.tyee-presents-label, h6.poll-label, h6.advertpg-label {
                display: block;
                width: 100%;
                margin-bottom: 1em;
