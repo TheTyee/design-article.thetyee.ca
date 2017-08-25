@@ -3139,7 +3139,7 @@ label.valid {
         }
 
             .fact-box h4 {
-              border: none
+              border: none;
             }
           
         .fact-box__anchor-link {
@@ -3934,8 +3934,7 @@ section.messaging-block.messaging-block--barometer ul, section.messaging-block.m
 /* Used on advert page */
 
 .logo-grid {
-    float: left;
-    margin-top: -.33em
+    float: left
 }
 
 .logo-grid div {
@@ -4394,6 +4393,12 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 }
 
 
+
+.border-bottom {
+    padding-bottom: .5em !important;
+    border-bottom: 1px solid #777 !important;
+    width: 100%;
+}
 
 .border-below-Ps p {
      padding-bottom: .5em;
