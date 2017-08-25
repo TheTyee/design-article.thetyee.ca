@@ -1,0 +1,20 @@
+{% for field in site.data.example_stories limit:1 %}
+
+<!-- Begin organisms/article/article__header -->
+<!--Article header, including hed, dek, author and social links-->
+<header class="article__header" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">
+
+    <div class="container-fluid">
+        
+        {% include 00-atoms/images/story-badge.html badge-position="badge--headline-placement badge--headline-placement--barometer" story-badge="partner" %}
+        <h6 class="advertpg-label">Partner with us</h6>
+
+        <h1 class="h1--border-bottom" data-bind="title">{{ page.title }}</h1>
+
+        {% comment %} {% include 01-molecules/blocks/tool-bar.html %} {% endcomment %}
+
+    </div> <!--END .container-fluid-->
+
+</header>
+
+{% endfor %}
