@@ -129,7 +129,7 @@ p {
 }
 
 /* Special category labels */
-h6.tyee-presents-label, h6.poll-label {
+h6.tyee-presents-label, h6.poll-label, h6.advertpg-label {
     display: block;
     position: relative;
     float: none;
@@ -146,10 +146,19 @@ h6.tyee-presents-label, h6.poll-label {
     letter-spacing: .02em;
 }
 
-h6.poll-label {
+h6.poll-label, h6.advertpg-label {
     border-top: 1px solid #888;
     border-bottom: 1px solid #888;
     color: black !i;
+}
+
+h6.advertpg-label {
+    font-size: .85em;
+    line-height: 1.25em;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: #555;
+    text-transform:uppercase;
 }
 
 /* h6.tyee-presents-label a{
@@ -179,13 +188,21 @@ h6.poll-label {
             background-repeat: repeat-x;
             background-size: auto 100%; 
         }
+        h6.advertpg-label:after {
+            font-weight: 400;
+            color: #82AD00;
+            font-size: 1.025em;
+            text-transform: lowercase;
+            letter-spacing: 0.02em;
+            content: " and help independent media thrive."
+        }
     }
 
 
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 593px)              
         {
-        h6.tyee-presents-label, h6.poll-label {
+        h6.tyee-presents-label, h6.poll-label, h6.advertpg-label {
               margin-bottom: 1.5em;
         }
     }
@@ -193,7 +210,7 @@ h6.poll-label {
     /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
     @media screen and (min-width: 1024px)              
         {
-        h6.tyee-presents-label, h6.poll-label {
+        h6.tyee-presents-label, h6.poll-label, h6.advertpg-label {
                display: block;
                width: 100%;
                margin-bottom: 1em;
@@ -3025,7 +3042,51 @@ label.valid {
     .fact-box__anchor-link {
       display: inline;
     }
+    
+    .fact-box--CTA {
+        background-color: transparent;
+        padding: 0;
+        margin-top: 0em;
+        margin-bottom: 0em;
+    }
 
+        .fact-box--CTA p {
+            font-size: 1em
+        }
+
+
+        /* .fact-box--CTA:before {
+            display: block;
+            border-radius: 50%;
+            height: 6em;
+            width: 6em;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            content:"";
+            background: url(/ui/img/mychaylo-prystupa.jpg) no-repeat;
+            background-size: 100%;
+        } */
+
+        .fact-box--CTA h4 {
+            border-bottom: none;
+            font-size: 1.33em;
+            color: #82AD00;
+        }
+
+        img.fact-box--headshot {
+            float: left;
+            margin-top: 0em;
+            margin-bottom: 0em;
+            margin-right: 1.25em;
+            height: 6em;
+            width: auto;
+            background-color: none;
+            border-radius: 50%;
+        }
+
+        .fact-box--CTA.fact-box--headshot h4 {
+            margin-bottom:0;
+        } /* Narrows gap between CTA and contact info */
 
 
     .hide-on-narrow-vp {
@@ -3078,7 +3139,7 @@ label.valid {
         }
 
             .fact-box h4 {
-              border: none
+              border: none;
             }
           
         .fact-box__anchor-link {
@@ -3092,6 +3153,17 @@ label.valid {
 
         .fact-box--no_border h4 {
             margin-top: 0em;
+        }
+
+        img.fact-box--headshot {
+            float: none;
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+            margin-right: 0.75em;
+            height: 6em;
+            width: auto;
+            background-color: none;
+            border-radius: 50%;
         }
     }
 
@@ -3858,6 +3930,19 @@ section.messaging-block.messaging-block--barometer ul, section.messaging-block.m
 
 
 
+/* ===== Logo Grid ======= */
+/* Used on advert page */
+
+.logo-grid {
+    float: left
+}
+
+.logo-grid div {
+    padding: 1.25em 1.9em;
+}
+
+
+
 /* ===== Popup =======*/
 
 div.ntnl-sgnup-modal {
@@ -4268,6 +4353,58 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
    #HELPER Classes
    ========================================================================== */
 
+
+/* Spacing helper classes =================================================== */
+
+.p-b-1 {
+      padding-bottom: .5em;
+}
+
+.m-b-1 {
+      margin-bottom: .5em;
+}
+
+.m-b-2 {
+      margin-bottom: 1em;
+}
+
+.m-b-3 {
+      margin-bottom: 2em;
+}
+
+.m-b-4 {
+      margin-bottom: 3em;
+}
+
+.m-t-1 {
+      margin-top: .5em;
+}
+
+.m-t-2 {
+      margin-top: 1em;
+}
+
+.m-t-3 {
+      margin-top: 2em;
+}
+
+.m-t-4 {
+      margin-top: 3em;
+}
+
+
+
+.border-bottom {
+    padding-bottom: .5em !important;
+    border-bottom: 1px solid #777 !important;
+    width: 100%;
+}
+
+.border-below-Ps p {
+     padding-bottom: .5em;
+     border-bottom: 1px dotted #777;
+     margin-bottom: .5em;
+}
 
 
 /*  ACCENT COLOR HELPER CLASSES  ========================================================================== 
