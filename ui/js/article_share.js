@@ -70,9 +70,9 @@ jQuery("form#share").submit(function(event) {
         var shareAPI;
         var current_url = document.URL;
         if ( current_url.indexOf("preview.thetyee.ca") !== -1 ) {
-            shareAPI = "http://preview.share.thetyee.ca/send.json?cb=?";
+            shareAPI = "https://preview.share.thetyee.ca/send.json?cb=?";
         } else {
-            shareAPI = "http://share.thetyee.ca/send.json?cb=?";
+            shareAPI = "https://share.thetyee.ca/send.json?cb=?";
         }
         $.getJSON( shareAPI, {
             format: "jsonp",

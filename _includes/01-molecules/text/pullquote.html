@@ -9,5 +9,9 @@
 {% endcomment %}
 
 <aside class="pullquote" data-dev-object-descrip="molecules/text/pullquote" data-dev-status="IN-PROGRESS">
-     This is a pullquote! W3C recommends using the aside tag to mark up things like pullquotes, or related content that might go in a sidebar. Blockquotes are reserved for content quoted from another source and so they should not be used here.
+     {% if include.pullquote__content %}
+        {{ include.pullquote__content }}
+    {% else %}
+    This is a pullquote! W3C recommends using the aside tag to mark up things like pullquotes, or related content that might go in a sidebar. Blockquotes are reserved for content quoted from another source and so they should not be used here.
+    {% endif %}
 </aside>
