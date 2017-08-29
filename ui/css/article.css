@@ -3233,6 +3233,32 @@ label.valid {
      height: 0;
 	}
 
+/* OBJECT GRID ================================================================================= */
+/* Used on Presents Partner page */
+
+.grid-container {
+    display: -webkit-flex;
+    display: flex;
+    webkit-justify-content: space-between;
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin: -45px 0 0 -72px;
+}
+
+.grid__cell {
+    width: 33.33%;
+    padding: 45px 0 0 72px;
+}
+
+    @media (min-width: 550px) {
+        .grid__cell {
+            width: calc(25%);
+            padding: 45px 0 0 72px;
+        }
+    }
+
+
 
 
 /* COMMENTS-SECTION  ========================================================================== */
