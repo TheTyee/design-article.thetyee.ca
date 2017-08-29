@@ -2890,13 +2890,13 @@ label.valid {
                     }
                 }
 
-            .badge--headline-placement--barometer {  /* Moves presents badge to align with a stacked h6 category label. */
+            .badge--headline-placement--barometer, .badge--headline-placement--partner {  /* Moves presents badge to align with a stacked h6 category label. */
                 margin-top: 0.85em;
             }
 
                 /* BREAKPOINT: 500px // Moves presents badge to align with h6 */
                 @media screen and (min-width: 500px) {
-                    .badge--headline-placement--barometer {
+                    .badge--headline-placement--barometer, .badge--headline-placement--partner {
                         margin-top: 0.75em;
                     }
 
@@ -2922,7 +2922,7 @@ label.valid {
                         margin-top: 4.4em;
                     }
              
-             .badge--headline-placement--barometer { /* Aligns Barometer badge with first letter of headline. */
+             .badge--headline-placement--barometer, .badge--headline-placement--partner { /* Aligns Barometer badge with first letter of headline. */
                         margin-top: 4.4em;
                     }
         }
