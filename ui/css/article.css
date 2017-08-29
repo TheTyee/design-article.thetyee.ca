@@ -153,6 +153,7 @@ h6.poll-label, h6.advertpg-label {
 }
 
 h6.advertpg-label {
+    margin-bottom: 1.5em;
     font-size: .85em;
     line-height: 1.25em;
     font-weight: 700;
@@ -2883,6 +2884,10 @@ label.valid {
                 margin-top: 1.55em;
             }
 
+            .badge--headline-placement--presents--partner {  /* Moves presents badge on presents-partner page to align with h6 category label (not stacked). */
+                margin-top: 1em;
+            }
+
                 /* BREAKPOINT: 593px // Moves presents badge to align with h6 when it no longer breaks across lines */
                 @media screen and (min-width: 593px) {
                     .badge--headline-placement--presents {
@@ -2890,14 +2895,14 @@ label.valid {
                     }
                 }
 
-            .badge--headline-placement--barometer {  /* Moves presents badge to align with a stacked h6 category label. */
-                margin-top: 0.85em;
+            .badge--headline-placement--barometer, .badge--headline-placement--partner {  /* Moves presents badge to align with a stacked h6 category label. */
+                margin-top: 1em;
             }
 
                 /* BREAKPOINT: 500px // Moves presents badge to align with h6 */
                 @media screen and (min-width: 500px) {
-                    .badge--headline-placement--barometer {
-                        margin-top: 0.75em;
+                    .badge--headline-placement--barometer, .badge--headline-placement--partner {
+                        margin-top: 1em;
                     }
 
                 }
@@ -2922,7 +2927,7 @@ label.valid {
                         margin-top: 4.4em;
                     }
              
-             .badge--headline-placement--barometer { /* Aligns Barometer badge with first letter of headline. */
+             .badge--headline-placement--barometer, .badge--headline-placement--partner, .badge--headline-placement--presents--partner { /* Aligns Barometer badge with first letter of headline. */
                         margin-top: 4.4em;
                     }
         }
@@ -3232,6 +3237,32 @@ label.valid {
      clear: both;
      height: 0;
 	}
+
+/* OBJECT GRID ================================================================================= */
+/* Used on Presents Partner page */
+
+.grid-container {
+    display: -webkit-flex;
+    display: flex;
+    webkit-justify-content: space-between;
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin: -45px 0 0 -72px;
+}
+
+.grid__cell {
+    width: 33.33%;
+    padding: 45px 0 0 72px;
+}
+
+    @media (min-width: 550px) {
+        .grid__cell {
+            width: calc(25%);
+            padding: 45px 0 0 72px;
+        }
+    }
+
 
 
 
