@@ -3258,8 +3258,7 @@ label.valid {
 
     @media (min-width: 550px) {
         .grid__cell {
-            width: calc(25%);
-            padding: 45px 0 0 72px;
+            width: 25%;
         }
     }
 
