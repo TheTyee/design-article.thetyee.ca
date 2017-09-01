@@ -3245,7 +3245,6 @@ label.valid {
     display: -webkit-flex;
     display: flex;
     webkit-justify-content: space-between;
-    justify-content: center;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     margin: -45px 0 0 -72px;
@@ -3258,8 +3257,7 @@ label.valid {
 
     @media (min-width: 550px) {
         .grid__cell {
-            width: calc(25%);
-            padding: 45px 0 0 72px;
+            width: 25%;
         }
     }
 
@@ -4407,6 +4405,10 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
       margin-bottom: 3em;
 }
 
+.m-b-5 {
+      margin-bottom: 4em;
+}
+
 .m-t-1 {
       margin-top: .5em;
 }
@@ -4421,6 +4423,10 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 
 .m-t-4 {
       margin-top: 3em;
+}
+
+.m-t-5 {
+      margin-top: 4em;
 }
 
 
