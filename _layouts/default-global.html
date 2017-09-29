@@ -6,7 +6,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 {% include meta/head.html %}
-  <body class="{{ page.layout }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+  <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
 
     <!-- =============================== -->
     <!-- ===== Header ===== -->
@@ -27,12 +27,14 @@
     <!-- =============================== -->
     <!-- ===== Tertiary components ===== -->  
 
-    {% if page.page-type == article %}                 
+    {% if page.page-type == 'article' and page.messaging-zone != 'no' %}                 
 
         {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+
         {% include 02-organisms/sections/messaging-zone.html %}
 
     {% endif %} 
+
 
 
     <!-- =============================== -->
