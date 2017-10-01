@@ -1,0 +1,88 @@
+---
+layout: default-global
+page-type: section  # article, section, topic or home
+series: no
+permalink: /events-index.html
+meta-category: Events
+title: Events index 
+section-name: Events
+sponsored: true
+sponsor-blurb: Supported by Lee’s Benevolent Society
+index-page-fact-box: false # true or false (if editors want to display info about this index page a fact-box will appear in the first row of the index list replacing the subscribe block)
+meta-url: "http://thetyee.ca/events"
+---
+
+    <!-- ===== Section Index ===== -->
+
+    <div class="container index-page__container">
+
+        <section class="index-page__story-list">
+
+                {% include 02-organisms/sections/index-page__header.html %}
+                
+                {% comment %} 
+                FEATURED STORY Section incl halfpage ad 
+                {% endcomment %}
+                {% include 02-organisms/sections/index-page__featured-story--events.html extension-class="" %}
+
+
+                {% comment %} 
+                MAIN STORY LIST INDEX LOOP
+                {% endcomment %}
+                        
+                        {% comment %} STORY LIST - FIRST ROW has Subscribe block or Factbox {% endcomment %}
+                            {% include 02-organisms/sections/index-page__story-list-loop.html story-badge="series" messaging-block="subscribe-or-fact" %}
+
+
+                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                            {% include 02-organisms/sections/index-page__story-list-loop.html story-badge="presents" messaging-block="" %}
+                        
+                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                            {% include 02-organisms/sections/index-page__story-list-loop.html story-badge=nil messaging-block="" %}
+                        
+                        {% comment %} STORY LIST - NORMAL ROW with ad {% endcomment %}
+                            {% include 02-organisms/sections/index-page__story-list-loop.html story-badge=nil messaging-block="ad-box--bigbox" %}
+
+                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                            {% include 02-organisms/sections/index-page__story-list-loop.html story-badge=nil messaging-block="" %}
+                        
+                        {% comment %} STORY LIST - DONATION BLOCK {% endcomment %}
+                            <div class="row">
+                                    <div class="col-xs-12 col-md-8">
+                                            <div class="messaging-zone index-list-spacing">{% include 01-molecules/blocks/messaging-block--ask.html %}</div>
+                                    </div>
+                            </div>
+                        
+                        {% comment %} STORY LIST - NORMAL ROW with ad {% endcomment %}
+                            {% include 02-organisms/sections/index-page__story-list-loop.html story-badge=nil messaging-block="ad-bigboxlower" %}
+
+                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                            {% include 02-organisms/sections/index-page__story-list-loop.html story-badge=nil messaging-block="" %}
+
+                        {% comment %} PRESENTS BLOCK {% endcomment %}
+                            <div class="row">
+                                    <div class="col-xs-12 col-md-8">
+                                        
+                                        {% include 01-molecules/blocks/presents-box.html  %}   
+
+                                    </div>                 
+                            </div>
+
+                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                            {% include 02-organisms/sections/index-page__story-list-loop.html story-badge=nil messaging-block="" %}
+
+                {% comment %} END of MAIN STORY LIST INDEX LOOP {% endcomment %}
+
+                {% comment %} LOAD MORE BUTTON {% endcomment %}
+                    <div class="row">
+                            {% include 00-atoms/buttons/load-more-button.html bootstrap-classes="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" extension-class="" %}
+                    </div>
+
+
+        </section> <!-- index-page__story-list -->
+
+
+        {% comment %} MOST STORIES SECTION {% endcomment %}
+            {% include 01-molecules/blocks/3-col-list-block.html extension-class="" list-class-extension="" %}
+
+    </div> <!-- bs container -->
