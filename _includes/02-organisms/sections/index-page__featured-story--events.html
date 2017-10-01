@@ -2,15 +2,32 @@
               This contains the current upcoming event.
 {% endcomment %}
 <!--index-page__featured-story -->
-<section class="index-page__featured-story {{ include.extension-class }}">
+
+
+
+<section class="index-page__featured-story story-item {{ include.extension-class }}">
     <div class="row">
-          <div class="col-12 col-md-8">
-            {% include 01-molecules/blocks/story-item.html content-source="ui/img/future_of_work-TyeeStory-960x600.jpg" story-item-class="story-item--index-page index-list-spacing" story-item-headline="(In)secure: The Future of Working, a Tyee Beyond the Headlines Event" story-item-dek="How work has changed in Canada from the 20th century to now and what might come next." story-badge="series" %}
-          </div>
-          
-          <!--AD Halfpage. -->
-          <div class="col-md-4 hidden-xs hidden-sm">
-                {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--no-label index-list-spacing" ad-slot="ad-300x600" ad-source="" %}
-          </div>
+        <div class="col-12 col-md-8">
+
+            {% if include.story-badge != nil %}
+                
+                {% include 00-atoms/images/story-badge.html badge-position="badge--story-item-placement" story-badge=include.story-badge %}
+            
+            {% endif %}
+
+            <a href="">{% include 00-atoms/images/image.html content-source=include.content-source %}</a>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <div class="story-item__description">
+                <h5><a href="">{{ include.story-item-headline }}</a></h5>
+                
+                <p class="story-item--deck">{{ include.story-item-dek }}</p>
+                
+                <span class="story-item__author">J Alston-O'Connor &ensp;</span>
+                <span class="story-item__date">30 Sept</span>
+            </div>
+        </div>
     </div>
+
 </section>
