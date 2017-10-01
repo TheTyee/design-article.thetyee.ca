@@ -358,6 +358,23 @@ ul { }
   }
 
 
+
+.button {
+  background-color: #82AD00;
+  padding: 4px 10px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: normal;
+  display: block;
+  color: #fff !important;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+
+
+
 /* LINKS  ========================================================================== */
 
 a, a:link, a:visited {color: #82AD00;}
