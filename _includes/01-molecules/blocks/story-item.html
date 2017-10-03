@@ -3,7 +3,7 @@
 <!-- The story-item object is a list-item (although it doesn't need to appear in a list) that consists of the meta-info about an article. It's intended for use in places like the Latest Stories organism and the Related Story molecule.
 NOTE: this object is not currently being used in the Latest Stories section.
 
-HOW TO INCLUDE THIS ASIDE OBJECT
+HOW TO INCLUDE THIS OBJECT
 ---------------------------------
 Use the content-source parameter parameter to specify the path of its contained image. Like this: 
 	[% include 01-molecules/blocks/story-item.html content-source="http://baconmockup.com/300/200" %]
@@ -15,7 +15,7 @@ You may also want to add a story badge (e.g. a series-badge), like this:
 	[% include 01-molecules/blocks/story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home." story-badge="presents" %]
 -->
 {% endcomment %}
-<div class="story-item {{ include.story-item-class }}" data-dev-object-descrip="01-molecules/blocks/story-item" data-dev-status="IN-PROGRESS">
+<div class="story-item {{ include.story-item-class }}">
 
 	{% if include.story-badge != nil %}
         
