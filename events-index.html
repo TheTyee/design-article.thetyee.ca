@@ -31,8 +31,8 @@ meta-url: "http://thetyee.ca/events"
                 MAIN STORY LIST INDEX LOOP
                 {% endcomment %}
                         
-                        {% comment %} STORY LIST - FIRST ROW has Subscribe block or Factbox {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge="series" messaging-block="subscribe-or-fact" %}
+                        {% comment %} STORY LIST - FIRST ROW has Subscribe block {% endcomment %}
+                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge="series" messaging-block="subscribe" %}
 
 
                         {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
@@ -41,33 +41,17 @@ meta-url: "http://thetyee.ca/events"
                         {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                             {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
                         
-                        {% comment %} STORY LIST - NORMAL ROW with ad {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="ad-box--bigbox" %}
-
-                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
-                        
-                        {% comment %} STORY LIST - DONATION BLOCK {% endcomment %}
-                            <div class="row">
-                                    <div class="col-xs-12 col-md-8">
-                                            <div class="messaging-zone index-list-spacing">{% include 01-molecules/blocks/messaging-block--ask.html %}</div>
-                                    </div>
-                            </div>
-                        
-                        {% comment %} STORY LIST - NORMAL ROW with ad {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="ad-bigboxlower" %}
-
                         {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                             {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
 
-                        {% comment %} PRESENTS BLOCK {% endcomment %}
-                            <div class="row">
-                                    <div class="col-xs-12 col-md-8">
-                                        
-                                        {% include 01-molecules/blocks/presents-box.html  %}   
+                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                                                
+                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
 
-                                    </div>                 
-                            </div>
+                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
 
                         {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                             {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}

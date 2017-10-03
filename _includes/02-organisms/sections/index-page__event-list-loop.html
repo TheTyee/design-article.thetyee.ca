@@ -16,31 +16,12 @@ messaging-block -- sets what goes in the sidebar ("subscribe-or-fact" "ad-box--b
             {% include 01-molecules/blocks/story-item.html content-source="ui/img/Christy-Clark.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="Poll Offers Hope, Fears For Both Main Parties" story-item-dek="Majority think economy strong, but one-third of British Columbians worried about their personal financial situation." story-badge=include.story-badge %}
         </div>
 
-        {% if include.messaging-block == "subscribe-or-fact" %}
+        {% if include.messaging-block == "subscribe" %}
 
                 {% comment %} MESSAGING ZONE - This column block will contain either a Subscribe block or a Factbox {% endcomment %}
-                {% if page.index-page-fact-box == "subscribe-or-fact" %}
-                        <div class="hidden-xs hidden-sm col-md-4">
-                            <!--a FACT BOX. This aside will be hidden in narrow viewports. -->
-                            {% include 01-molecules/blocks/Fact-box.html content-source="" fact-box__title="TITLE OF FACT-BOX ABOUT THIS INDEX PAGE" fact-box__content="<p>Here's some dummy fact-box content: The gas storage industry, now 90 years old, has experienced lots of gas migration problems and its facilities \"can create a serious risk of explosions and risks especially when located in urban settings,\" say the petroleum experts who authored <em>Gas Migration</em>.</p><p>Leaks occur through faults, wells and cracks in cap rock. Operators <a href=\"http://www.co2captureproject.org/viewresult.php?downid=190\">admit</a> that during the 50-year life of any operation, methane will leak and erupt into aquifers, soils and the atmosphere. </p>" %}
-                        </div>
-                {% else %}
-                        <div class="col-xs-12 col-md-4">
-                                <div class="messaging-zone index-list-spacing">{% include 01-molecules/blocks/messaging-block--subscribe.html %}</div>
-                        </div>
-                {% endif %}
-
-        {% elsif include.messaging-block == "ad-box--bigbox" %}
-
                 <div class="col-xs-12 col-md-4">
-                    {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--bigbox index-list-spacing" ad-source="" ad-slot="ad-bigbox" %}
+                        <div class="messaging-zone index-list-spacing">{% include 01-molecules/blocks/messaging-block--subscribe.html %}</div>
                 </div>
-
-        {% elsif include.messaging-block == "ad-bigboxlower" %}
-
-                <div class="col-xs-12 col-md-4">
-                    {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--bigbox index-list-spacing" ad-source="" ad-slot="ad-bigboxlower" %}
-                </div>
-
         {% endif %}
+
 </div>
