@@ -1,12 +1,11 @@
 <!-- BEGIN 01-molecules/blocks/story-item -->
 {% comment %}
-<!-- The story-item object is a list-item (although it doesn't need to appear in a list) that consists of the meta-info about an article. It's intended for use in places like the Latest Stories organism and the Related Story molecule.
-NOTE: this object is not currently being used in the Latest Stories section.
+<!-- The story-item--event object is a variation on the story-item that is suited to events. It's intended primarilyfor use on the events-index page.
 
 HOW TO INCLUDE THIS OBJECT
 ---------------------------------
 Use the content-source parameter parameter to specify the path of its contained image. Like this: 
-	[% include 01-molecules/blocks/story-item.html content-source="http://baconmockup.com/300/200" %]
+	[% include 01-molecules/blocks/story-item--event.html content-source="http://baconmockup.com/300/200" %]
 
 If you want to adapt the object you can extend it by using the story-item-class parameter to add a new BEM class. Like this:
 	[% include 01-molecules/blocks/story-item.html content-source="http://baconmockup.com/300/200" story-item-class="story-item--latest-stories" %]
@@ -26,12 +25,14 @@ You may also want to add a story badge (e.g. a series-badge), like this:
 	<a href="">{% include 00-atoms/images/image.html content-source=include.content-source %}</a>
 	
 	<div class="story-item__description">
+        <div class="story-item--event__details">
+            <span class="story-item__date--event">30 Oct. 2017 &ensp; | &ensp; 7:00 P.M.</span>
+            <span class="story-item__date--event">Djavad Mowafaghian Cinema</span>
+        </div>
+
 		<h5><a href="">{{ include.story-item-headline }}</a></h5>
-		
 		<p class="story-item--deck">{{ include.story-item-dek }}</p>
-		
-		<span class="story-item__author">J Alston-O'Connor &ensp;</span>
-		<span class="story-item__date">30 Sept</span>
+		<a href="#" class="button button--get-tickets m-t-2">Get Tickets</a>
 	</div>
 
 </div>

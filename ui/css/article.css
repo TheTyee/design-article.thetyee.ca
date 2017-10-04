@@ -358,6 +358,23 @@ ul { }
   }
 
 
+
+.button {
+  background-color: #82AD00;
+  padding: 4px 10px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: normal;
+  display: block;
+  color: #fff !important;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+
+
+
 /* LINKS  ========================================================================== */
 
 a, a:link, a:visited {color: #82AD00;}
@@ -534,7 +551,7 @@ p a:hover {color: #6F9400;}
     .section__header h1 {
         display: inline-block;
         font-size: 2.2em;
-        font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+        font-family: 'Source Sans Pro', sans-serif;
         font-weight: 800;
         color: #333;
         text-transform: uppercase;
@@ -579,6 +596,28 @@ p a:hover {color: #6F9400;}
     .btn--load-more span {
         font-size: 1.25em;
     }
+
+
+
+/* EVENTS PAGE LAYOUT ========================================================================== */
+
+/* custom bootstrap float reset required for column list https://stackoverflow.com/a/24590544/8305003 */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .event-list-grid>.clear:nth-child(4n)::before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+@media (min-width: 992px) {
+    .event-list-grid>.clear:nth-child(6n)::before {  
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+
 
 
 /*--- 3-COL-BLOCK (most sotires block) ---*/
@@ -2605,7 +2644,7 @@ label.valid {
             margin-bottom: .33em;
         }
 
-        .story-item__date, .story-item__author {
+        .story-item__date, .story-item__author, .story-item__date--event {
           font-weight: 600;
           font-size: .85em;
           text-transform: uppercase;
@@ -2632,7 +2671,7 @@ label.valid {
 
                 /* BREAKPOINT: 768px // Sets bigger headline for featured-story in larger views (sm and wider) */
                 @media (min-width: 768px) { 
-                    .index-page__featured-story .story-item--index-page .story-item__description h5 {
+                    .index-page__featured-story .story-item--index-page .story-item__description h5, .index-page__featured-story.story-item--index-page .story-item__description h5 {
                       font-size: 1.75em;
                     }
                 }
@@ -2644,6 +2683,20 @@ label.valid {
             .story-item__description h5 a:hover {
                 color: #6F9400;
             }
+
+            .story-item--event { }
+
+                .story-item--event__details {
+                    margin-bottom: -.5em;
+                }
+
+                .story-item__date--event {
+                    display: block;
+                }
+
+                .index-page__story-list--archived-events .button.button--get-tickets {
+                    display:none;
+                }
 
 
 
@@ -4384,6 +4437,10 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 
 
 /* Spacing helper classes =================================================== */
+
+.p-t-1 {
+      padding-bottom: .5em;
+}
 
 .p-b-1 {
       padding-bottom: .5em;
