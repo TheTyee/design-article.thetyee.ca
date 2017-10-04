@@ -30,7 +30,7 @@ jQuery(".index-page__featured-story.dummy .mainimage img").remove(); // remove i
             jQuery(".index-page__featured-story.dummy .story-item__description a").text(unit.title);
             jQuery(".index-page__featured-story.dummy .story-item--deck").text(unit.teaser);
             jQuery(".index-page__featured-story.dummy .story-item__author").text(unit.byline);
-            formattedDate = moment.utc(unit.storyDate).format("DD MMM");
+            formattedDate = moment.utc(unit.storyDate).format("DD MMM YYYY");
             jQuery(".index-page__featured-story.dummy .story-item__date").text(formattedDate);
                jQuery(".index-page__featured-story.dummy .badge--story-item-placement a").attr("href", unit.series);
             if ( unit.series.indexOf('not set') >= 0 ) {
@@ -81,7 +81,7 @@ text +='<div class="story-item__description">';
 text +=	'<h5><a href="' + unit.uri + ' ">' + unit.title + '</a></h5>';  
 text +=	'<p class="story-item--deck">' + unit.teaser + '</p>';
 text +=	'<span class="story-item__author">' + unit.byline +'&ensp;</span>';
-text +=	'<span class="story-item__date">' + moment.utc(unit.storyDate).format("DD MMM") + '</span>';
+text +=	'<span class="story-item__date">' + moment.utc(unit.storyDate).format("DD MMM YYYY") + '</span>';
 text +=	'</div>';
 text += '</div>';
 text += '<!-- END 01-molecules/blocks/story-item -->';
@@ -227,7 +227,7 @@ function renderRow(num){
                 //Format the API img uri's so they don't point at cachefly
 
                 //Use moment.js to format the date
-                formattedDate = moment.utc(value._source.UnitDate).format("DD MMM");
+                formattedDate = moment.utc(value._source.UnitDate).format("DD MMM YYYY");
 
                 //Set default values for the Unit object
                 // none fo the Unit stuff being used
