@@ -305,9 +305,9 @@ topic = jQuery("#topictitle").text();
                 
             });
             
-          //  if (UnitObjects[0].related_media && UnitObjects[0].related_media[0]) {
+            if (UnitObjects[0].related_media && UnitObjects[0].related_media[0]) {
             renderLead(UnitObjects.shift());
-	//	}
+		}
             renderRow(8);
             
         });
