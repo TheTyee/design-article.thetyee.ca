@@ -2,7 +2,8 @@ function renderLead(unit){
 
    var target = jQuery(".index-page__featured-story.dummy");
    jQuery(".index-page__featured-story.dummy .mainimage").attr("href", unit.uri);
-   
+
+if (unit.related_media && unit.related_media[0]) {   
    var thumbImg;
             thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
 
@@ -16,11 +17,15 @@ for (var k in unit.related_media[0].thumbnails) {
                        
     
 }
+
  thumbImg = thumbImg.replace("http://", "//");
+
+
    
       jQuery(".index-page__featured-story.dummy .mainimage img").attr("src", thumbImg.replace("thetyee.cachefly.net", "thetyee.ca"));
-          
-          
+          } else {
+jQuery(".index-page__featured-story.dummy .mainimage img").remove(); // remove if there is no image to replace there
+}          
             jQuery(".index-page__featured-story.dummy .story-item__description a").attr("href", unit.uri);
             jQuery(".index-page__featured-story.dummy .story-item__description a").text(unit.title);
             jQuery(".index-page__featured-story.dummy .story-item--deck").text(unit.teaser);
@@ -53,10 +58,10 @@ text += '<div class="story-item story-item--index-page index-list-spacing" data-
                 }
             }
 
+if (unit.related_media && unit.related_media[0]) {
 text += '<a href="' + unit.uri + '"><!-- 00-atoms/images/image -->';
 var thumbImg;
             thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
-
 for (var k in unit.related_media[0].thumbnails) {   
         var thumb = unit.related_media[0].thumbnails[k];
         if (thumb.uri.indexOf("newcover") !=-1) {
@@ -71,6 +76,7 @@ for (var k in unit.related_media[0].thumbnails) {
 
 text += '<img src="' + thumbImg + '" class="responsive-img" alt="image atom">';
 text += '</a>';
+} // end if there is an image
 text +='<div class="story-item__description">';
 text +=	'<h5><a href="' + unit.uri + ' ">' + unit.title + '</a></h5>';  
 text +=	'<p class="story-item--deck">' + unit.teaser + '</p>';
@@ -185,6 +191,8 @@ function renderRow(num){
                                 renderRow(halfnumber);
                             }
                     }
+  console.log("search url : " +url);
+
                     return recentItems;
 
                 },
@@ -207,10 +215,13 @@ function renderRow(num){
             recentItems = returnedStories;
 
             //for each item from the API, plug info into a Unit object
-            jQuery.each(recentItems, function(key, value){
+	            jQuery.each(recentItems, function(key, value){
+		if (value._source.related_media && value._source.related_media[0]) {
 
                 latestUnitImage = value._source.related_media[0].uri;
-
+		} else {
+		  latestUnitImage = "/ui/img/Blank.JPG";
+		}
 
 
                 //Format the API img uri's so they don't point at cachefly
@@ -294,8 +305,9 @@ topic = jQuery("#topictitle").text();
                 
             });
             
-            
+          //  if (UnitObjects[0].related_media && UnitObjects[0].related_media[0]) {
             renderLead(UnitObjects.shift());
+	//	}
             renderRow(8);
             
         });
