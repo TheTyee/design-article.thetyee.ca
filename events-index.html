@@ -30,9 +30,13 @@ meta-url: "http://thetyee.ca/events"
                 {% comment %} 
                 MAIN EVENT LIST INDEX LOOP
                 {% endcomment %}
+
+                <div class="row">
                         
                         {% comment %} STORY LIST - FIRST ROW has Subscribe block {% endcomment %}
                             {% include 02-organisms/sections/index-page__event-list-loop.html story-badge="series" messaging-block="subscribe" %}
+
+                </div>
 
                 {% comment %} END of MAIN EVENT LIST INDEX LOOP {% endcomment %}
 
@@ -47,29 +51,32 @@ meta-url: "http://thetyee.ca/events"
 
                 <h2 class="border-bottom">Archived Events</h2>
                         
-                        {% comment %} STORY LIST - FIRST ROW has Subscribe block {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                        <div class="row">
 
-                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
-                        
-                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
-                        
-                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                            {% comment %} STORY LIST - FIRST ROW has Subscribe block {% endcomment %}
+                                {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
 
-                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
-                                                
-                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                            {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                                {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                            
+                            {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                                {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                            
+                            {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                                {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
 
-                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                            {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                                {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                                                    
+                            {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                                {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
 
-                        {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                            {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                            {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                                {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+
+                            {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                                {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                        </div>
 
                 {% comment %} END of ARCHIVED EVENT LIST INDEX LOOP {% endcomment %}
 
