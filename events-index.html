@@ -40,6 +40,11 @@ meta-url: "http://thetyee.ca/events"
                 ARCHIVE EVENT LIST INDEX LOOP
                 {% endcomment %}
 
+        </section> <!-- index-page__story-list -->
+
+
+        <section class="index-page__story-list index-page__story-list--archived-events">
+
                 <h2 class="border-bottom">Archived Events</h2>
                         
                         {% comment %} STORY LIST - FIRST ROW has Subscribe block {% endcomment %}
@@ -73,8 +78,7 @@ meta-url: "http://thetyee.ca/events"
                             {% include 00-atoms/buttons/load-more-button.html bootstrap-classes="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" extension-class="" %}
                     </div>
 
-
-        </section> <!-- index-page__story-list -->
+        </section> <!-- index-page__story-list--archived-events -->
 
 
         {% comment %} MOST STORIES SECTION {% endcomment %}
