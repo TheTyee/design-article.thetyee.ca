@@ -598,6 +598,28 @@ p a:hover {color: #6F9400;}
     }
 
 
+
+/* EVENTS PAGE LAYOUT ========================================================================== */
+
+/* custom bootstrap float reset required for column list https://stackoverflow.com/a/24590544/8305003 */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .event-list-grid>.clear:nth-child(4n)::before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+@media (min-width: 992px) {
+    .event-list-grid>.clear:nth-child(6n)::before {  
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+
+
+
 /*--- 3-COL-BLOCK (most sotires block) ---*/
 
 .col-3-block {
