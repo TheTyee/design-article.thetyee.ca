@@ -8,12 +8,13 @@ messaging-block -- sets what goes in the sidebar ("subscribe-or-fact" "ad-box--b
 <!--index-page__story-list-loop -->
 {% comment %} FIRST ROW should include an Event Subscribe block {% endcomment %}
 <div class="row">
+
         <div class="col-xs-12 col-sm-6 col-md-4">
-            {% include 01-molecules/blocks/story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home." story-badge=include.story-badge %}
+            {% include 01-molecules/blocks/story-item--event.html content-source="ui/img/HomeForGood-presentsbanner-960x600.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="Home For Good" story-item-dek="A Tyee event on bold solutions for secure, affordable rental housing." story-badge=include.story-badge %}
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-4">
-            {% include 01-molecules/blocks/story-item.html content-source="ui/img/Christy-Clark.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="Poll Offers Hope, Fears For Both Main Parties" story-item-dek="Majority think economy strong, but one-third of British Columbians worried about their personal financial situation." story-badge=include.story-badge %}
+            {% include 01-molecules/blocks/story-item--event.html content-source="ui/img/future_of_work-TyeeStory-960x600.jpg" story-item-class="story-item--index-page index-list-spacing" story-item-headline="(In)secure: The&nbsp;Future of Working" story-item-dek="How work has changed in Canada from the 20th century to now and what might come next." story-badge=include.story-badge %}
         </div>
 
         {% if include.messaging-block == "subscribe" %}

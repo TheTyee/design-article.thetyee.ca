@@ -2622,7 +2622,7 @@ label.valid {
             margin-bottom: .33em;
         }
 
-        .story-item__date, .story-item__author {
+        .story-item__date, .story-item__author, .story-item__date--event {
           font-weight: 600;
           font-size: .85em;
           text-transform: uppercase;
@@ -2661,6 +2661,16 @@ label.valid {
             .story-item__description h5 a:hover {
                 color: #6F9400;
             }
+
+            .story-item--event { }
+
+                .story-item--event__details {
+                    margin-bottom: -.5em;
+                }
+
+                .story-item__date--event {
+                    display: block;
+                }
 
 
 
