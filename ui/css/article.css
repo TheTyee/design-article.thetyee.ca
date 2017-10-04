@@ -2672,6 +2672,10 @@ label.valid {
                     display: block;
                 }
 
+                .index-page__story-list--archived-events .button.button--get-tickets {
+                    display:none;
+                }
+
 
 
 
