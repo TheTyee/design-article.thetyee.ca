@@ -1774,6 +1774,14 @@ aside { }
       border-radius: 50%;
     }
 
+.author-info__bio img {
+display:inline-block;
+width: auto !important;
+height: auto !important;
+float: none;
+margin: 0;
+}
+
     .author-info__date {
       display: block;
       font-weight: 300;
