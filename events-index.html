@@ -40,12 +40,17 @@ meta-url: "http://thetyee.ca/events"
                             {% include 01-molecules/blocks/story-item--event.html content-source="ui/img/future_of_work-TyeeStory-960x600.jpg" story-item-class="story-item--index-page index-list-spacing" story-item-headline="(In)secure: The&nbsp;Future of Working" story-item-dek="How work has changed in Canada from the 20th century to now and what might come next." story-badge=include.story-badge %}
                         </div>
 
-                        {% comment %} MESSAGING ZONE - This column will contain either a Subscribe block for the Event mailing list {% endcomment %}
-                        <div class="col-xs-12 col-md-4">
-                                <div class="messaging-zone index-list-spacing">{% include 01-molecules/blocks/messaging-block--subscribe.html %}</div>
-                        </div>
                 </div>
                 {% comment %} END of MAIN EVENT LIST INDEX LOOP {% endcomment %}
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        {% comment %} MESSAGING ZONE - This row will contain either a Subscribe block for the Event mailing list {% endcomment %}
+                        <div class="">
+                                <div class="messaging-zone index-list-spacing">{% include 01-molecules/blocks/messaging-block--subscribe.html %}</div>
+                        </div>
+                    </div>
+                </div>
 
         </section> <!-- index-page__story-list -->
 
