@@ -25,14 +25,17 @@ You may also want to add a story badge (e.g. a series-badge), like this:
 	<a href="">{% include 00-atoms/images/image.html content-source=include.content-source %}</a>
 	
 	<div class="story-item__description">
-        <div class="story-item--event__details">
-            <span class="story-item__date--event">30 Oct. 2017 &ensp; | &ensp; 7:00 P.M.</span>
-            <span class="story-item__date--event">Djavad Mowafaghian Cinema</span>
-        </div>
+        <a href="#" class="button button--get-tickets m-t-2">Get Tickets</a>
+
 
 		<h5><a href="">{{ include.story-item-headline }}</a></h5>
 		<p class="story-item--deck">{{ include.story-item-dek }}</p>
-		<a href="#" class="button button--get-tickets m-t-2">Get Tickets</a>
+
+		<div class="story-item--event__details">
+            <span class="story-item__date--event">30 Oct. 2017 &ensp; | &ensp; 7:00 P.M.</span>
+            <span class="story-item__date--event">Djavad Mowafaghian Cinema</span>
+        </div>
+		
 	</div>
 
 </div>
