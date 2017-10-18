@@ -2641,7 +2641,7 @@ label.valid {
         }
 
         .story-item--deck {
-            margin-bottom: .33em;
+            margin-bottom: .66em;
         }
 
         .story-item__date, .story-item__author, .story-item__date--event {
@@ -2686,8 +2686,8 @@ label.valid {
 
             .story-item--event { }
 
-                .story-item--event__details {
-                    margin-bottom: -.5em;
+                .index-page__featured-story .story-item--event__details {
+                    margin-bottom: -.5em; */
                 }
 
                 .story-item__date--event {
