@@ -2519,17 +2519,17 @@ div.embedded-poll {
 
 /* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
 
-    .messaging-block--subscribe form {
+    .messaging-block--subscribe form, .messaging-block--subscribe--events form {
       margin-top: .5em;
       margin-bottom: 0;
     }
 
-    .messaging-block--subscribe select.subscribe-frequency {
+    .messaging-block--subscribe select.subscribe-frequency, .messaging-block--subscribe--events select.subscribe-frequency {
         margin-top: .35em;
         margin-bottom: .35em;
     }
 
-    .messaging-block--subscribe .input-group select {
+    .messaging-block--subscribe .input-group select, .messaging-block--subscribe--events .input-group select {
         background-color: transparent;
         border: none;
         height: 18px;
