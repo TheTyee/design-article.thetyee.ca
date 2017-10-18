@@ -79,11 +79,12 @@ meta-url: "http://thetyee.ca/events"
                     {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                         {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
 
-                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                    <!-- Add an event to test an odd-numbered list: -->
+                    <div class="col-xs-12 col-sm-6 col-md-4"> 
+                        {% include 01-molecules/blocks/story-item--event.html content-source="ui/img/HomeForGood-presentsbanner-960x600.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="Home For Good" story-item-dek="A Tyee event on bold solutions for secure, affordable rental housing." story-badge=include.story-badge %}
+                    </div>
+                    <div class="clear"></div> <!-- custom bootstrap float reset required for column list -->
 
-                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
                 </div>
 
                 {% comment %} END of ARCHIVED EVENT LIST INDEX LOOP {% endcomment %}
