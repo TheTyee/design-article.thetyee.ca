@@ -358,6 +358,7 @@ ul { }
   }
 
 
+/* BUTTON styles */
 
 .button {
   background-color: #82AD00;
@@ -371,6 +372,12 @@ ul { }
   border-radius: 2px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
+}
+
+.button:hover, .button:focus, .button:active, 
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+  color: white;
+  background-color:darkgreen;
 }
 
 
