@@ -1,0 +1,109 @@
+---
+layout: default-global
+page-type: section  # article, section, topic or home
+series: no
+permalink: /bio-alt.html
+meta-category: Bio
+title: News Articles & commentary by David Beers | The Tyee 
+section-name: 
+sponsored: 
+sponsor-blurb: 
+index-page-fact-box: false # true or false (if editors want to display info about this index page a fact-box will appear in the first row of the index list replacing the subscribe block)
+meta-url: "http://thetyee.ca/----"
+---
+
+{% comment %} 
+This version of the bio page uses the non-bootstrap article__body main-col-container layout for the heading and bio text.
+{% endcomment %}
+
+    <!-- ===== Bio page ===== -->
+
+    <!--bio header -->
+    <header class="article__header" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">
+
+        <div class="container-fluid">
+            
+            {% include 00-atoms/images/story-badge.html badge-position="badge--headline-placement badge--headline-placement--partner" story-badge="partner" %}
+            <h6 class="advertpg-label">Contributors</h6>
+
+            <h1 class="h1--border-bottom" data-bind="title">David Beers</h1>
+
+            {% comment %} {% include 01-molecules/blocks/tool-bar.html %} {% endcomment %}
+
+        </div> <!--END .container-fluid-->
+
+    </header>
+
+<article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
+
+    <div class="container-fluid clearfix">
+
+        <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--no_border fact-box--CTA fact-box--headshot" fact-box__title="<img class=\"fact-box--headshot\" src=\"ui/img/jeanette-ageson.gif\">" fact-box__content="" %}
+
+
+        <p>David Beers is the Tyee's founding editor. Under his leadership from 2003 to 2014, The Tyee's traffic grew to eclipse a million page views in a month and its team won many prizes including, twice, Canada's Excellence in Journalism Award, and, twice, the North America-wide Edward R. Murrow Award.</p>
+
+        <p>He remains committed to the aim that gave rise to The Tyee -- pursuing sustainable models for journalism.</p>
+
+        <p>He also co-founded Tyee Solutions Society, a non-profit that seeks philanthropic support for journalism in the public interest, reporting projects made available to be published by other publications as well as The Tyee.</p>
+
+        <p>He is an independent consultant to digital publishers on editorial and business structures.</p>
+
+        <p>He is an adjunct professor at the University of British Columbia Graduate School of Journalism.</p>
+
+        <p>Previous to The Tyee, Beers was Chief Features Editor creating new projects and sections at the Vancouver Sun, and before that was senior editor at Mother Jones magazine and the San Francisco Examiner before the Hearst Corporation merged it with the San Francisco Chronicle. He has written for numerous publications including Harper's, National Geographic and the Globe and Mail, and authored a highly praised memoir of growing up in Silicon Valley, Blue Sky Dream.</p>
+
+    </div> <!--END .container-fluid-->
+</article>
+
+    <div class="container index-page__container">
+
+        {% comment %} 
+        ARTICLE LIST INDEX LOOP
+        {% endcomment %}
+
+        <section class="index-page__story-list index-page__story-list--archived-events">
+                        
+                <div class="row event-list-grid">
+
+                    {% comment %} STORY LIST - FIRST ROW has Subscribe block {% endcomment %}
+                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+
+                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                    
+                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                    
+                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+
+                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+                                            
+                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+
+                    <!-- Add an event to test an odd-numbered list: -->
+                    <div class="col-xs-12 col-sm-6 col-md-4"> 
+                        {% include 01-molecules/blocks/story-item--event.html content-source="ui/img/HomeForGood-presentsbanner-960x600.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="Home For Good" story-item-dek="A Tyee event on bold solutions for secure, affordable rental housing." story-badge=include.story-badge %}
+                    </div>
+                    <div class="clear"></div> <!-- custom bootstrap float reset required for column list -->
+
+                </div>
+
+                {% comment %} END of ARCHIVED EVENT LIST INDEX LOOP {% endcomment %}
+
+                {% comment %} LOAD MORE BUTTON {% endcomment %}
+                    <div class="row">
+                            {% include 00-atoms/buttons/load-more-button.html bootstrap-classes="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" extension-class="" %}
+                    </div>
+
+        </section> <!-- index-page__story-list--archived-events -->
+
+
+        {% comment %} MOST STORIES SECTION {% endcomment %}
+            {% include 01-molecules/blocks/3-col-list-block.html extension-class="" list-class-extension="" %}
+
+    </div> <!-- bs container -->
