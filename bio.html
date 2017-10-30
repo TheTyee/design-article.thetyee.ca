@@ -12,46 +12,55 @@ index-page-fact-box: false # true or false (if editors want to display info abou
 meta-url: "http://thetyee.ca/events"
 ---
 
-    <!-- ===== Bio page ===== -->
+<!-- ===== Bio page ===== -->
 
-    <!--bio header -->
-    <header class="article__header" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">
+<!--bio header -->
+<header class="text-center">
 
-        <div class="container-fluid">
-            
-            {% include 00-atoms/images/story-badge.html badge-position="badge--headline-placement badge--headline-placement--partner" story-badge="partner" %}
-            <h6 class="advertpg-label">Contributors</h6>
+    <div class="container">
+        <div class="row">        
+            <div class="col-xs-12 col-md-8 col-md-offset-2 p-x-4">
+                    <h6 class="category-label">Contributors</h6>
+            </div>    
+        </div>    
+        <div class="row">        
+            <div class="col-xs-12 col-md-8 col-md-offset-2 p-x-4">
+                    <img class="fact-box--headshot" src="ui/img/dbeersbio.jpg">
+            </div>    
+        </div>    
+        <div class="row">        
+            <div class="col-xs-12 col-md-8 col-md-offset-2 p-x-4">
+                    <h1 class="" data-bind="title">David Beers</h1>            
+                    {% comment %} {% include 01-molecules/blocks/tool-bar.html %} {% endcomment %}
+            </div>    
+        </div>    
+    </div> <!--END .container-fluid-->
 
-            <h1 class="h1--border-bottom" data-bind="title">David Beers</h1>
+</header>
 
-            {% comment %} {% include 01-molecules/blocks/tool-bar.html %} {% endcomment %}
+<section class=""> <!--bio text -->
 
-        </div> <!--END .container-fluid-->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2 p-x-4">
 
-    </header>
+                    <p>David Beers is the Tyee's founding editor. Under his leadership from 2003 to 2014, The Tyee's traffic grew to eclipse a million page views in a month and its team won many prizes including, twice, Canada's Excellence in Journalism Award, and, twice, the North America-wide Edward R. Murrow Award.</p>
 
-<article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
+                    <p>He remains committed to the aim that gave rise to The Tyee -- pursuing sustainable models for journalism.</p>
 
-    <div class="container-fluid clearfix">
+                    <p>He also co-founded Tyee Solutions Society, a non-profit that seeks philanthropic support for journalism in the public interest, reporting projects made available to be published by other publications as well as The Tyee.</p>
 
-        <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
-        {% include 01-molecules/blocks/aside.html aside-contents="01-molecules/blocks/Fact-box" content-source="" aside-caption=false media-credit=false aside-class="hide-on-narrow-vp" object-class="fact-box--no_border fact-box--CTA fact-box--headshot" fact-box__title="<img class=\"fact-box--headshot\" src=\"ui/img/jeanette-ageson.gif\">" fact-box__content="" %}
+                    <p>He is an independent consultant to digital publishers on editorial and business structures.</p>
 
+                    <p>He is an adjunct professor at the University of British Columbia Graduate School of Journalism.</p>
 
-        <p>David Beers is the Tyee's founding editor. Under his leadership from 2003 to 2014, The Tyee's traffic grew to eclipse a million page views in a month and its team won many prizes including, twice, Canada's Excellence in Journalism Award, and, twice, the North America-wide Edward R. Murrow Award.</p>
-
-        <p>He remains committed to the aim that gave rise to The Tyee -- pursuing sustainable models for journalism.</p>
-
-        <p>He also co-founded Tyee Solutions Society, a non-profit that seeks philanthropic support for journalism in the public interest, reporting projects made available to be published by other publications as well as The Tyee.</p>
-
-        <p>He is an independent consultant to digital publishers on editorial and business structures.</p>
-
-        <p>He is an adjunct professor at the University of British Columbia Graduate School of Journalism.</p>
-
-        <p>Previous to The Tyee, Beers was Chief Features Editor creating new projects and sections at the Vancouver Sun, and before that was senior editor at Mother Jones magazine and the San Francisco Examiner before the Hearst Corporation merged it with the San Francisco Chronicle. He has written for numerous publications including Harper's, National Geographic and the Globe and Mail, and authored a highly praised memoir of growing up in Silicon Valley, Blue Sky Dream.</p>
+                    <p>Previous to The Tyee, Beers was Chief Features Editor creating new projects and sections at the Vancouver Sun, and before that was senior editor at Mother Jones magazine and the San Francisco Examiner before the Hearst Corporation merged it with the San Francisco Chronicle. He has written for numerous publications including Harper's, National Geographic and the Globe and Mail, and authored a highly praised memoir of growing up in Silicon Valley, Blue Sky Dream.</p>
+            </div>    
+        </div>    
 
     </div> <!--END .container-fluid-->
-</article>
+
+</section>
 
     <div class="container index-page__container">
 
@@ -60,7 +69,7 @@ meta-url: "http://thetyee.ca/events"
         {% endcomment %}
 
         <section class="index-page__story-list index-page__story-list--archived-events">
-                        
+               <h2 class="border-bottom">News, Articles & Commentary by David Beers</h2>
                 <div class="row event-list-grid">
 
                     {% comment %} STORY LIST - FIRST ROW has Subscribe block {% endcomment %}
