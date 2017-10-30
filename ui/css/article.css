@@ -610,6 +610,8 @@ p a:hover {color: #6F9400;}
 
 /* custom bootstrap float reset required for column list https://stackoverflow.com/a/24590544/8305003 */
 
+/* In Small views clear every 4th element with .clear class that is a direct child of .event-list-grid */
+/* This clear floats after every 2nd list item. */
 @media (min-width: 768px) and (max-width: 991px) {
     .event-list-grid>.clear:nth-child(4n)::before {
       content: '';
@@ -617,6 +619,8 @@ p a:hover {color: #6F9400;}
       clear: both;
     }
 }
+/* In Medium views and wider, clear every 6th element with .clear class that is a direct child of .event-list-grid */
+/* This clear floats after every 3rd list item. */
 @media (min-width: 992px) {
     .event-list-grid>.clear:nth-child(6n)::before {  
       content: '';
