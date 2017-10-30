@@ -1890,7 +1890,13 @@ aside { }
     border-radius: 50%;
 }
 
-
+ /* BREAKPOINT: 1200px // Add padding to make text col narrower */
+    @media screen and (min-width: 1200px) {
+        .biopage__text {
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+    }
 
 
 
