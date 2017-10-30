@@ -610,6 +610,8 @@ p a:hover {color: #6F9400;}
 
 /* custom bootstrap float reset required for column list https://stackoverflow.com/a/24590544/8305003 */
 
+/* >> THIS HAS BEEN ABSTRACTED INTO AN index-list-grid HELPER CLASS << */
+
 /* In Small views clear every 4th element with .clear class that is a direct child of .event-list-grid */
 /* This clear floats after every 2nd list item. */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -4542,6 +4544,38 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 .m-t-5 {
       margin-top: 4em;
 }
+
+
+
+/* FLOAT CLEARING FOR INDEX LISTS - Helper classes ========================================================== */
+
+/* custom bootstrap float reset required for column list https://stackoverflow.com/a/24590544/8305003 
+   This applies proper clearing of floats when the number of items per line changes at different breakpoints. */
+
+/* CLEAR-0-2-3-3 -------------------------------------------------------------------- */
+/* All list items should be within one single bootstrap row.
+   The index-list-grid class should be applied to the bootstrap row. 
+   Then add an empty div.clear-0-2-3-3 after every bootstrap column element. */
+/* In XS views do nothing. */
+/* In Small views clear every 4th element with .clear-0-2-3-3 class that is a direct child of .event-list-grid */
+/* This clear floats after every 2nd list item. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .index-list-grid>.clear-0-2-3-3:nth-child(4n)::before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+/* In Medium views and wider, clear every 6th element with .clear-0-2-3-3 class that is a direct child of .event-list-grid */
+/* This clear floats after every 3rd list item. */
+@media (min-width: 992px) {
+    .index-list-grid>.clear-0-2-3-3:nth-child(6n)::before {  
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+
 
 
 
