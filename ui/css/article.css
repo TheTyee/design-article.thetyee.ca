@@ -1877,6 +1877,25 @@ aside { }
 
 
 
+
+/* BIO PAGE =========================================================================== */
+
+.headshot-bio {
+    float: none;
+    margin-top: 1.95em;
+    margin-right: 0.75em;
+    height: 6em;
+    width: auto;
+    background-color: none;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
 /* TOOL-BAR  ========================================================================== */
 /* This object is a mess! 
    Might be best to start again from scratch using the basic bootstrap button markup, like I already 
@@ -3141,7 +3160,7 @@ label.valid {
 
         img.fact-box--headshot {
             float: left;
-            margin-top: 0em;
+            margin-top: 0em; 
             margin-bottom: 0em;
             margin-right: 1.25em;
             height: 6em;
