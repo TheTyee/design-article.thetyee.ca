@@ -1888,9 +1888,11 @@ aside { }
 
 .headshot-bio {
     float: none;
+    object-fit: cover;
+    -o-object-fit: cover;
     margin-top: 1.95em;
     height: 6em;
-    width: auto;
+    width: 6em;
     background-color: none;
     border-radius: 50%;
 }
