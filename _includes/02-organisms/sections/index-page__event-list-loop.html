@@ -1,0 +1,21 @@
+{% comment %}
+This object outputs one row of the events index. 
+It is based on index-page__story-list-loop.html but uses event-items instead of story-items and omits ads and messaging blocks.
+PARAMETERS:
+story-badge -- gets passed on to story-item.html (can be "series" or "presents" or "bc-votes" or any other story-badge)
+{% endcomment %}
+<!--index-page__story-list-loop -->
+{% comment %} {% endcomment %}
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            {% include 01-molecules/blocks/story-item--event.html content-source="ui/img/HomeForGood-presentsbanner-960x600.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="Home For Good" story-item-dek="A Tyee event on bold solutions for secure, affordable rental housing." story-badge=include.story-badge %}
+        </div>
+        <div class="clear"></div> <!-- custom bootstrap float reset required for column list -->
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            {% include 01-molecules/blocks/story-item--event.html content-source="ui/img/future_of_work-TyeeStory-960x600.jpg" story-item-class="story-item--index-page index-list-spacing" story-item-headline="(In)secure: The&nbsp;Future of Working" story-item-dek="How work has changed in Canada from the 20th century to now and what might come next." story-badge=include.story-badge %}
+        </div>
+        <div class="clear"></div> <!-- custom bootstrap float reset required for column list -->
+
+        
+
