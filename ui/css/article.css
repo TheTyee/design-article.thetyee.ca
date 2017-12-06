@@ -3679,8 +3679,14 @@ footer .footer__menu {
     padding-top: 1em;
     overflow: visible;
     clear: left;
+text-overflow: ellipsis;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
 }
   
+
+
 
 @media (min-width: 768px) {
 	
