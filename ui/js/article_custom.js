@@ -81,7 +81,7 @@ function enableEmailSubscription() {
         var theData = jQuery(theForm).serialize();
         jQuery.ajax({
             type : 'POST',
-            url : 'https://webhooks.thetyee.ca/subscribe/',
+            url : 'https://preview.webhooks.thetyee.ca/subscribe/',
             data: theData,
             success: function (data) {
                 jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'><h2><span class='glyphicon glyphicon-check' aria-hidden='true'></span> Thank you for subscribing!</h2> <p>Now you're on the list. You can expect your Tyee email edition to arrive soon.</p></div></section>").fadeIn('slow');
