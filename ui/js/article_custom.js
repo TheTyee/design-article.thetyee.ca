@@ -86,8 +86,9 @@ function enableEmailSubscription() {
             success: function (data) {
                 jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'><h2><span class='glyphicon glyphicon-check' aria-hidden='true'></span> Thank you for subscribing!</h2> <p>Now you're on the list. You can expect your Tyee email edition to arrive soon.</p></div></section>").fadeIn('slow');
             },
-            error: function(jqXHR, string) {
-                jQuery("#subscribesection .subscription-error").removeClass('hidden');
+            error: function(jqXHR, string, errorThrown) {
+                var errorString = jqXHR.responseText;
+                jQuery("#subscribesection").hide().html('<div class="subscription-error alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>' + errorString + '</div>').fadeIn('slow');
             }
         });
     });  
