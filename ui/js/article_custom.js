@@ -77,9 +77,9 @@ function hideIfNoHash() {
 function enableEmailSubscription() {
     var proxAPI;
     if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
-        proxAPI = 'https://webhooks.thetyee.ca/subsribe';
+        proxAPI = 'https://webhooks.thetyee.ca/subsribe/';
     } else if ( location.host === 'preview.thetyee.ca' ) {
-        proxyAPI = 'https://preview.webhooks.thetyee.ca/subscribe';
+        proxyAPI = 'https://preview.webhooks.thetyee.ca/subscribe/';
     } else {
         proxyAPI = 'http://127.0.0.1:3000';
     }
