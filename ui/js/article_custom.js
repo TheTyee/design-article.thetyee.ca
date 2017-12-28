@@ -92,8 +92,9 @@ function enableEmailSubscription() {
             type : 'POST',
             url : proxyAPI,
             data: theData,
-            success: function (data) {
-                jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'><h2><span class='glyphicon glyphicon-check' aria-hidden='true'></span> Thank you for subscribing!</h2> <p>Now you're on the list. You can expect your Tyee email edition to arrive soon.</p></div></section>").fadeIn('slow');
+            success: function (data, status, jqXHR) {
+                var successString = jqXHR.responseText;
+                jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'>" + successString + "</div></section>").fadeIn('slow');
             },
             error: function(jqXHR, string, errorThrown) {
                 var errorString = jqXHR.responseText;
