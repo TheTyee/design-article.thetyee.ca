@@ -72,6 +72,15 @@ function hideIfNoHash() {
 }
 
 function enableEmailSubscription() {
+    var proxAPI;
+    if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
+        proxAPI = 'https://webhooks.thetyee.ca/subsribe';
+    } else if ( location.host === 'preview.thetyee.ca' ) {
+        proxyAPI = 'https://preview.webhooks.thetyee.ca/subscribe';
+    } else {
+        proxyAPI = 'http://127.0.0.1:3000';
+    }
+
     jQuery(".btn--subscribe").click(function(e){
         e.preventDefault();
         var theForm = jQuery(this).parents("form")[0];
@@ -81,7 +90,7 @@ function enableEmailSubscription() {
         var theData = jQuery(theForm).serialize();
         jQuery.ajax({
             type : 'POST',
-            url : 'https://preview.webhooks.thetyee.ca/subscribe/',
+            url : proxyAPI,
             data: theData,
             success: function (data) {
                 jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'><h2><span class='glyphicon glyphicon-check' aria-hidden='true'></span> Thank you for subscribing!</h2> <p>Now you're on the list. You can expect your Tyee email edition to arrive soon.</p></div></section>").fadeIn('slow');
