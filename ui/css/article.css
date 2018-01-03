@@ -2189,6 +2189,7 @@ margin: 0;
           clear: none;
           margin-top: 1.5em;
           overflow: auto; /* Prevents collision with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
+	min-height:315px;
       }
       
     }
