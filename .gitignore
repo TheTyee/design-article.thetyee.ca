@@ -7,5 +7,9 @@ _vendor
 Gemfile.lock
 .DS_Store
 node_modules
+<<<<<<< HEAD
 bower_components
 _includes/01-molecules/blocks/latest-story-item.html
+=======
+.ruby-version
+>>>>>>> e97b238a4be41fceaebf144a1afe958bbd4c42e1
