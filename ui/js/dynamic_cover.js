@@ -26,7 +26,9 @@ for (var k in unit.related_media[0].thumbnails) {
 if (unit.teaser) {
             jQuery(".index-page__featured-story.dummy .story-item--deck").text(unit.teaser);
 }
+if (unit.byline) {
             jQuery(".index-page__featured-story.dummy .story-item__author").text(unit.byline);
+  }
             formattedDate = moment.utc(unit.storyDate).format("DD MMM YYYY");
             jQuery(".index-page__featured-story.dummy .story-item__date").text(formattedDate);
                jQuery(".index-page__featured-story.dummy .badge--story-item-placement a").attr("href", unit.series);
@@ -78,7 +80,9 @@ text +=	'<h5><a href="' + unit.uri + ' ">' + unit.title + '</a></h5>';
 if (unit.teaser) {  
 text +=	'<p class="story-item--deck">' + unit.teaser + '</p>';
 }
+if (unit.byline) {
 text +=	'<span class="story-item__author">' + unit.byline +'&ensp;</span>';
+}
 text +=	'<span class="story-item__date">' + moment.utc(unit.storyDate).format("DD MMM YYYY") + '</span>';
 text +=	'</div>';
 text += '</div>';
