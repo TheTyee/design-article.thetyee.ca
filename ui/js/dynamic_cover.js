@@ -37,7 +37,7 @@ if (unit.byline) {
             } else if ( unit.series.indexOf('Balance') >= 0 ) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement a img").attr("src", "/ui/img/badge-election.svg");
              } else if ( unit.series.indexOf('RafeMair') >= 0 ) {
-                             jQuery(".index-page__featured-story.dummy .badge--story-item-placement a img").attr("src", "/ui/img/badge-rafemair.png");
+                             jQuery(".index-page__featured-story.dummy.badge--story-item-placement a img").attr("src", "/ui/img/badge-rafemair.png");
             }
             jQuery(target).show();
 }
@@ -50,11 +50,11 @@ text += '<div class="story-item story-item--index-page index-list-spacing" data-
             if ( unit.series.indexOf("not set") >= 0 ) {
                 
             } else {
-                 text += '<!-- 00-atoms/images/story-badge -->';
+                text += '<!-- 00-atoms/images/story-badge -->';
                 text += '<a href="' + unit.series +'" class="series-badge badge--story-item-placement">';
                 if ( unit.series.indexOf('Balance') >= 0 ) {
                 text += '<img src="/ui/img/badge-election.svg"></a>';
-} else if ( unit.series.indexOf('RafeMair') >= 0 ) {
+		} elsif ( unit.series.indexOf('RafeMair') >= 0 ) {
                 text += '<img src="/ui/img/badge-rafemair.png"></a>';
                 } else {
                 text += '<img src="/ui/img/badge-series.svg"></a>';
