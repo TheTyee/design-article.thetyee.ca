@@ -37,7 +37,7 @@ if (unit.byline) {
             } else if ( unit.series.indexOf('Balance') >= 0 ) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-election.svg");
              } else if ( unit.series.indexOf('RafeMair') >= 0 ) {
-                             jQuery(".index-page__featured-story.dummy.badge--story-item-placement  img").attr("src", "/ui/img/badge-rafemair.png");
+                             jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-rafemair.png");
             }
             jQuery(target).show();
 }
