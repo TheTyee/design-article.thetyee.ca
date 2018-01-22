@@ -101,7 +101,7 @@ function renderRow(num){
     while (i < num) {
 
 
-    var text = '<div class="row index-list-grid" id="storyrow' + rowCount +'" >';
+    var text = '';
     if (UnitObjects.length > 0) {
     text += renderRegular(UnitObjects.shift());
     }
@@ -110,10 +110,9 @@ function renderRow(num){
     }
        if (UnitObjects.length > 0) {
     text += renderRegular(UnitObjects.shift());
-    }
+    };
 
     
-         text += '</div>';
     rowCount++;
  //   console.log("rowCount is " + rowCount);
    jQuery(".index-page__story-list .filler").append(text);
