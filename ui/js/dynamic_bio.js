@@ -91,7 +91,9 @@ text +=	'<span class="story-item__date">' + moment.utc(unit.storyDate).format("D
 text +=	'</div>';
 text += '</div>';
 text += '<!-- END 01-molecules/blocks/story-item -->';
-text += '</div>';
+text += '</div>'
+text += '<div class="clear-0-2-3-3"></div>';
+;
 
 return text;
 }
