@@ -85,11 +85,9 @@ function showPopup() {
         
         $(inPut).attr("value", newVal);
         
-        
-       // console.log($(inPut).attr("value"));
-//       $(checkBoxes.prop("checked", !checkBoxes.prop("checked"));
-//            $(checkboxes).prop("checked");
- 
+        // console.log($(inPut).attr("value"));
+        // $(checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+        // $(checkboxes).prop("checked");
 
             
         });
@@ -100,24 +98,24 @@ function showPopup() {
         var email = jQuery('#InputEmail1').val();
         var data = jQuery( "#modal-sub-form").serialize();
        // console.log(data);
-        var url = "https://webhooks.thetyee.ca/subscribe/";
-        jQuery.post( url , data )
-        .done(function(data) {
+        //var url = "https://webhooks.thetyee.ca/subscribe/";
+        jQuery.post( proxyAPI, data )
+        .done(function(data, status, jqXHR) {
+            // Get the success message back from the subscribe service
+            var successString = jqXHR.responseText;
             // Set UserIsaSubscriber cookie to prevent further sub offers
             Cookies.set("user_is_a_subscriber", "true", { expires: 365/*, domain: '.thetyee.ca'*/ });
+            // Show the message to the user
             var content = '<div class="alert alert-success" role="alert">' +
-                'Thank you for subscribing! Now you\'re on the list.' + 
-                '<br />You can expect your Tyee email edition to arrive soon...' +
+                successString + 
                 '</div>';
             jQuery( "#modalSub .modal-body" ).empty().append( content );
-            window.setTimeout(hideModal, 4000 );
+            window.setTimeout(hideModal, 6000 );
         })
-        .fail(function(data){
-            console.log('failed...');
+        .fail(function(jqXHR, textStatus, errorThrown){
+            var errorString = jqXHR.responseText;
             var content = '<div class="alert alert-danger" role="alert">' +
-                'Something went terribly wrong! :-(' + 
-                '<br />' +
-                'To subscribe manually, <a href="http://subscribe.thetyee.ca" target="_blank">click here</a>' +
+                errorString + 
                 '</div>';
             jQuery( "#modalSub .modal-body" ).empty().append( content );
         }); 
