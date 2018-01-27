@@ -11,13 +11,19 @@ if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch) {
 var queryString = window.location.href;
 queryString = URI.parse(queryString); 
 queryString = queryString.query;
-
 queryObject = URI.parseQuery(queryString);
 
 
+var proxAPI;
+if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
+    proxAPI = 'https://webhooks.thetyee.ca/subsribe/';
+} else if ( location.host === 'preview.thetyee.ca' ) {
+    proxyAPI = 'https://preview.webhooks.thetyee.ca/subscribe/';
+} else {
+    proxyAPI = 'http://127.0.0.1:3000';
+}
 
-
-// If they are, set the subscriber cookie
+// If they are coming from an email, set the subscriber cookie
 if ( queryObject.utm_medium === 'email' ) {
     Cookies.set("user_is_a_subscriber", "true", { expires: 365/*, domain: '.thetyee.ca'*/ });
 }
