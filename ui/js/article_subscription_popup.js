@@ -102,18 +102,20 @@ function showPopup() {
         jQuery.post( proxyAPI, data )
         .done(function(data, status, jqXHR) {
             // Get the success message back from the subscribe service
-            var successString = jqXHR.responseText;
+            var successJSON   = jqXHR.responseJSON;
+            var successHtml = successJSON.html;
             // Set UserIsaSubscriber cookie to prevent further sub offers
             Cookies.set("user_is_a_subscriber", "true", { expires: 365/*, domain: '.thetyee.ca'*/ });
             // Show the message to the user
             var content = '<div class="alert alert-success" role="alert">' +
-                successString + 
+                successHtml + 
                 '</div>';
             jQuery( "#modalSub .modal-body" ).empty().append( content );
             window.setTimeout(hideModal, 6000 );
         })
         .fail(function(jqXHR, textStatus, errorThrown){
-            var errorString = jqXHR.responseText;
+            var errorJSON   = jqXHR.responseJSON;
+            var errorString = errorJSON.text;
             var content = '<div class="alert alert-danger" role="alert">' +
                 errorString + 
                 '</div>';
