@@ -93,11 +93,13 @@ function enableEmailSubscription() {
             url : proxyAPI,
             data: theData,
             success: function (data, status, jqXHR) {
-                var successString = jqXHR.responseText;
-                jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'>" + successString + "</div></section>").fadeIn('slow');
+                var successJSON = jqXHR.responseJSON;
+                var successHtml = successJSON.html;
+                jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'>" + successHtml + "</div></section>").fadeIn('slow');
             },
             error: function(jqXHR, string, errorThrown) {
-                var errorString = jqXHR.responseText;
+                var errorJSON = jqXHR.responseJSON;
+                var errorString = errorJSON.text;
                 jQuery("#subscribesection").hide().html('<div class="subscription-error alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>' + errorString + '</div>').fadeIn('slow');
             }
         });
