@@ -68,12 +68,15 @@ jQuery("form#share").submit(function(event) {
         var image = jQuery('meta[property="og:image"]').attr("content");
         var url = jQuery('meta[property="og:url"]').attr("content");
         var shareAPI;
-        var current_url = document.URL;
-        if ( current_url.indexOf("preview.thetyee.ca") !== -1 ) {
-            shareAPI = "https://preview.share.thetyee.ca/send.json?cb=?";
+
+        if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
+            shareAPI = 'https://share.thetyee.ca/send.json?cb=?"';
+        } else if ( location.host === 'preview.thetyee.ca' ) {
+            shareAPI = 'https://preview.share.thetyee.ca/send.json?cb=?';
         } else {
-            shareAPI = "https://share.thetyee.ca/send.json?cb=?";
+            shareAPI = 'http://127.0.0.1:5000/send.json?cb=?';
         }
+
         $.getJSON( shareAPI, {
             format: "jsonp",
             url: url,
