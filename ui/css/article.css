@@ -670,6 +670,15 @@ p a:hover {color: #6F9400;}
             padding-top: .66em;
             margin-bottom: .75em;
         }
+
+	/* this is to make category labels manageable in narrow views - hides all except first label */
+	.article__header .category-label, .article__header strong {
+	 display:none;
+
+	}
+	 .article__header .category-label:first-child {
+	  display:inline-block;
+	}
     }
 
 
