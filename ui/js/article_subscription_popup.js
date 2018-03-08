@@ -14,9 +14,9 @@ queryString = queryString.query;
 queryObject = URI.parseQuery(queryString);
 
 
-var proxAPI;
+var proxyAPI;
 if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
-    proxAPI = 'https://webhooks.thetyee.ca/subsribe/';
+    proxyAPI = 'https://webhooks.thetyee.ca/subsribe/';
 } else if ( location.host === 'preview.thetyee.ca' ) {
     proxyAPI = 'https://preview.webhooks.thetyee.ca/subscribe/';
 } else {
