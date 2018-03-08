@@ -36,6 +36,8 @@ if (unit.byline) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement").remove();
             } else if ( unit.series.indexOf('Balance') >= 0 ) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-election.svg");
+ 	   } else if ( unit.topics.indexOf('ElectoralReform') >= 0 ) {
+                jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-battleground.svg");
              } else if ( unit.series.indexOf('RafeMair') >= 0 ) {
                              jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-rafemair.png");
             }
@@ -288,7 +290,7 @@ topic = jQuery("#topictitle").text();
 
         //make UnitObjects global, so I don't have to keep hitting the API
         UnitObjects = UnitObjects;
-                getUnitStories(17,1);
+                getUnitStories(17,0);
         });
        
        var storiesLoaded = 18;
