@@ -676,7 +676,7 @@ p a:hover {color: #6F9400;}
 	 display:none;
 
 	}
-	 .article__header .category-label:first-child {
+	 .article__header .category-label:first-of-type {
 	  display:inline-block;
 	}
     }
