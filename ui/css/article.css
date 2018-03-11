@@ -1025,7 +1025,7 @@ ul.book_profile {
     float:none;
   }
 
-open>.dropdown-menu {
+.open > .dropdown-menu {
     display: block;
     }
 
