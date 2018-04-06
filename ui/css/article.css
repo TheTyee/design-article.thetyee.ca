@@ -1025,6 +1025,10 @@ ul.book_profile {
     float:none;
   }
 
+.open > .dropdown-menu {
+    display: block;
+    }
+
 
 @media (min-width: 992px) {
     /* BOOTSTRAP OVERRIDES */
