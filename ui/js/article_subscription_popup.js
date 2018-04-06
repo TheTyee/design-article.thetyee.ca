@@ -96,6 +96,20 @@ function showPopup() {
     jQuery( "#modal-sub-form" ).submit(function( event ) {
         event.preventDefault();
         var email = jQuery('#InputEmail1').val();
+
+if ( (parseInt(jQuery('[name="custom_pref_enews_weekly"]').val()) + parseInt(jQuery('[name="custom_pref_enews_daily"]').val()) +  parseInt(jQuery('[name="custom_pref_enews_national"]').val()) ) < 1 ) {
+
+$("<div class='alert alert-warning fade in'>Please check at least one box above before submitting</div>")
+        .insertAfter('#modal-sub-form')
+        .delay(6000)
+        .queue(function() {
+            $(this).remove();
+        });
+return;
+ 
+}
+
+
         var data = jQuery( "#modal-sub-form").serialize();
        // console.log(data);
         //var url = "https://webhooks.thetyee.ca/subscribe/";
