@@ -74,7 +74,7 @@ jQuery("form#share").submit(function(event) {
         } else {
             shareAPI = "https://share.thetyee.ca/send.json?cb=?";
         }
-        $.getJSON( shareAPI, {
+        jQuery.getJSON( shareAPI, {
             format: "jsonp",
             url: url,
             title: title,
@@ -86,11 +86,11 @@ jQuery("form#share").submit(function(event) {
             wc_sub_pref: wc_sub_pref
         }, function( data ) { 
             var result = data.result;
-            $.each(result, function( index, value ) {
+            jQuery.each(result, function( index, value ) {
                 jQuery('#messages').append('<p class="alert alert-info">' + value + '</p>');
             });
             var errors = data.errors;
-            $.each(errors, function( index, value ) {
+            jQuery.each(errors, function( index, value ) {
                 jQuery('#errors').append('<p class="alert alert-danger">' + value + '</p>');
             });
             if ( data.result || data.errors ) {
