@@ -68,16 +68,13 @@ jQuery("form#share").submit(function(event) {
         var image = jQuery('meta[property="og:image"]').attr("content");
         var url = jQuery('meta[property="og:url"]').attr("content");
         var shareAPI;
-
-        if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
-            shareAPI = 'https://share.thetyee.ca/send.json?cb=?"';
-        } else if ( location.host === 'preview.thetyee.ca' ) {
-            shareAPI = 'https://preview.share.thetyee.ca/send.json?cb=?';
+        var current_url = document.URL;
+        if ( current_url.indexOf("preview.thetyee.ca") !== -1 ) {
+            shareAPI = "https://preview.share.thetyee.ca/send.json?cb=?";
         } else {
-            shareAPI = 'http://127.0.0.1:5000/send.json?cb=?';
+            shareAPI = "https://share.thetyee.ca/send.json?cb=?";
         }
-
-        $.getJSON( shareAPI, {
+        jQuery.getJSON( shareAPI, {
             format: "jsonp",
             url: url,
             title: title,
@@ -89,11 +86,11 @@ jQuery("form#share").submit(function(event) {
             wc_sub_pref: wc_sub_pref
         }, function( data ) { 
             var result = data.result;
-            $.each(result, function( index, value ) {
+            jQuery.each(result, function( index, value ) {
                 jQuery('#messages').append('<p class="alert alert-info">' + value + '</p>');
             });
             var errors = data.errors;
-            $.each(errors, function( index, value ) {
+            jQuery.each(errors, function( index, value ) {
                 jQuery('#errors').append('<p class="alert alert-danger">' + value + '</p>');
             });
             if ( data.result || data.errors ) {

@@ -3121,8 +3121,12 @@ label.valid {
 
     #fact-box-1 {}
 
-    .fact-box p {
-      font-size: .8em;
+    .fact-box p, .fact-box ul {
+      font-size: .8em !important;
+    }
+    
+    .fact-box ul {
+     margin-left: 17px;
     }
 
     .fact-box h4 {
