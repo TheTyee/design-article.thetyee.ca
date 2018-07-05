@@ -3121,7 +3121,7 @@ label.valid {
 
     #fact-box-1 {}
 
-    .fact-box p {
+    .fact-box p, .fact-box ul {
       font-size: .8em !important;
     }
     
