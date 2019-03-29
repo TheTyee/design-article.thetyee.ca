@@ -36,7 +36,7 @@ if (unit.byline) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement").remove();
             } else if ( unit.series.indexOf('Balance') >= 0 ) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-election.svg");
- 	   } else if ( unit.topics.indexOf('ElectoralReform') >= 0 ) {
+	    } else if ( unit.topics.indexOf('attleground') >= 0 ) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-battleground.svg");
              } else if ( unit.series.indexOf('RafeMair') >= 0 ) {
                              jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-rafemair.png");
@@ -93,7 +93,9 @@ text +=	'<span class="story-item__date">' + moment.utc(unit.storyDate).format("D
 text +=	'</div>';
 text += '</div>';
 text += '<!-- END 01-molecules/blocks/story-item -->';
-text += '</div>';
+text += '</div>'
+text += '<div class="clear-0-2-3-3"></div>';
+;
 
 return text;
 }
@@ -103,62 +105,18 @@ function renderRow(num){
     while (i < num) {
 
 
-    var text = '<div class="row" id="storyrow' + rowCount +'" >';
+    var text = '';
     if (UnitObjects.length > 0) {
     text += renderRegular(UnitObjects.shift());
     }
     if (UnitObjects.length > 0) {
     text += renderRegular(UnitObjects.shift());
     }
-    
-    if (rowCount == 0) {
-   // console.log("rowcount < 1 :");
-    text += '<div class="col-xs-12 col-md-4"><div id="subscribefill" class="messaging-zone index-list-spacing"></div></div>';
-    $.get( "/design-article.thetyee.ca/_includes/01-molecules/blocks/messaging-block--subscribe.html", function( data ) {
-    jQuery("#subscribefill").html(data);
-    enableEmailSubscription();
-}, "html");
-  
-    
-    }
-    
-    if (rowCount == 3) {
-               
-        text += '</div><div class="row"><div class="col-xs-12 col-md-8" id="joinadfill"></div></div><div class="blank">';
-        $.get( "/inc/joinad/include.php", function( data ) {
-         jQuery("#joinadfill").html(data);
-    }, "html");
+       if (UnitObjects.length > 0) {
+    text += renderRegular(UnitObjects.shift());
+    };
 
-    }
-     if (rowCount == 2) {
-        
-    text += '<div class="col-xs-12 col-md-4" id="adfilltop">';
-    text += '<aside class="ad-box ad-box--bigbox" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">';
-    text += '<div class="advertisement" id="ad-bigbox" style="text-align:center">';
-    text += '</div>';
-    text +='</aside>            </div>';
-                
-     }
-     
-          if (rowCount == 4) {
-        
-    text += '<div class="col-xs-12 col-md-4" id="adfilltop">';
-    text += '<aside class="ad-box ad-box--bigbox" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">';
-    text += '<div class="advertisement" id="ad-bigboxlower" style="text-align:center">';
-    text += '</div>';
-    text +='</aside>            </div>';
-                
-     }
     
-         if (rowCount == 5) {
-            
-            
-        jQuery("#presentsfill").appendTo(".filler");
-            
-            
-         }
-     
-         text += '</div>';
     rowCount++;
  //   console.log("rowCount is " + rowCount);
    jQuery(".index-page__story-list .filler").append(text);
@@ -177,7 +135,7 @@ function renderRow(num){
             storiesRequested = number;
             returnedStories = jQuery.ajax({
                 method: 'POST',
-                url: 'https://api.thetyee.ca/v1/topic/' + topic + '/' + storiesRequested + '/' + start,
+                url: 'https://api.thetyee.ca/v1/author/' + topic + '/' + storiesRequested + '/' + start,
                 dataType: 'jsonp',
                 data: response,
                 crossDomain: true,
@@ -279,18 +237,12 @@ function renderRow(num){
             return this.pushStack(this.get().reverse(), arguments);
         };
 
-       
-topic = jQuery("#topictitle").text();
-    // console.log("topic title: " + topic);
-    topic = encodeURI(topic);
-        
-   
-    
-       
-
+var segments = window.location.href.split("/");
+topic = segments[(segments.length - 2)]; 
+if (topic == "Zoe_Ducklow") { topic = "Zoë_Ducklow" };
         //make UnitObjects global, so I don't have to keep hitting the API
         UnitObjects = UnitObjects;
-                getUnitStories(17,0);
+                getUnitStories(18,0);
         });
        
        var storiesLoaded = 18;
@@ -305,7 +257,6 @@ topic = jQuery("#topictitle").text();
             });
             
             
-            renderLead(UnitObjects.shift());
             renderRow(8);
             
         });

@@ -11,13 +11,19 @@ if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch) {
 var queryString = window.location.href;
 queryString = URI.parse(queryString); 
 queryString = queryString.query;
-
 queryObject = URI.parseQuery(queryString);
 
 
+var proxyAPI;
+if ( location.host === 'thetyee.ca' || location.host === 'www.thetyee.ca') {
+    proxyAPI = 'https://webhooks.thetyee.ca/subscribe/';
+} else if ( location.host === 'preview.thetyee.ca' ) {
+    proxyAPI = 'https://preview.webhooks.thetyee.ca/subscribe/';
+} else {
+    proxyAPI = 'http://127.0.0.1:3000';
+}
 
-
-// If they are, set the subscriber cookie
+// If they are coming from an email, set the subscriber cookie
 if ( queryObject.utm_medium === 'email' ) {
     Cookies.set("user_is_a_subscriber", "true", { expires: 365/*, domain: '.thetyee.ca'*/ });
 }
@@ -79,11 +85,9 @@ function showPopup() {
         
         $(inPut).attr("value", newVal);
         
-        
-       // console.log($(inPut).attr("value"));
-//       $(checkBoxes.prop("checked", !checkBoxes.prop("checked"));
-//            $(checkboxes).prop("checked");
- 
+        // console.log($(inPut).attr("value"));
+        // $(checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+        // $(checkboxes).prop("checked");
 
             
         });
@@ -92,26 +96,42 @@ function showPopup() {
     jQuery( "#modal-sub-form" ).submit(function( event ) {
         event.preventDefault();
         var email = jQuery('#InputEmail1').val();
+
+if ( (parseInt(jQuery('[name="custom_pref_enews_weekly"]').val()) + parseInt(jQuery('[name="custom_pref_enews_daily"]').val()) +  parseInt(jQuery('[name="custom_pref_enews_national"]').val()) ) < 1 ) {
+
+$("<div class='alert alert-warning fade in'>Please check at least one box above before submitting</div>")
+        .insertAfter('#modal-sub-form')
+        .delay(6000)
+        .queue(function() {
+            $(this).remove();
+        });
+return;
+ 
+}
+
+
         var data = jQuery( "#modal-sub-form").serialize();
        // console.log(data);
-        var url = "https://webhooks.thetyee.ca/subscribe/";
-        jQuery.post( url , data )
-        .done(function(data) {
+        //var url = "https://webhooks.thetyee.ca/subscribe/";
+        jQuery.post( proxyAPI, data )
+        .done(function(data, status, jqXHR) {
+            // Get the success message back from the subscribe service
+            var successJSON   = jqXHR.responseJSON;
+            var successHtml = successJSON.html;
             // Set UserIsaSubscriber cookie to prevent further sub offers
             Cookies.set("user_is_a_subscriber", "true", { expires: 365/*, domain: '.thetyee.ca'*/ });
+            // Show the message to the user
             var content = '<div class="alert alert-success" role="alert">' +
-                'Thank you for subscribing! Now you\'re on the list.' + 
-                '<br />You can expect your Tyee email edition to arrive soon...' +
+                successHtml + 
                 '</div>';
             jQuery( "#modalSub .modal-body" ).empty().append( content );
-            window.setTimeout(hideModal, 4000 );
+            window.setTimeout(hideModal, 6000 );
         })
-        .fail(function(data){
-            console.log('failed...');
+        .fail(function(jqXHR, textStatus, errorThrown){
+            var errorJSON   = jqXHR.responseJSON;
+            var errorString = errorJSON.text;
             var content = '<div class="alert alert-danger" role="alert">' +
-                'Something went terribly wrong! :-(' + 
-                '<br />' +
-                'To subscribe manually, <a href="http://subscribe.thetyee.ca" target="_blank">click here</a>' +
+                errorString + 
                 '</div>';
             jQuery( "#modalSub .modal-body" ).empty().append( content );
         }); 

@@ -1,4 +1,5 @@
-/* ==========================================================================
+/* 
+==========================================================================
    Globals & Mixins
    ========================================================================== */
 
@@ -669,6 +670,15 @@ p a:hover {color: #6F9400;}
             padding-top: .66em;
             margin-bottom: .75em;
         }
+
+	/* this is to make category labels manageable in narrow views - hides all except first label */
+	.article__header .category-label, .article__header strong {
+	 display:none;
+
+	}
+	 .article__header .category-label:first-of-type {
+	  display:inline-block;
+	}
     }
 
 
@@ -772,7 +782,7 @@ p a:hover {color: #6F9400;}
 
        .featured-media .figure img {    
             display: block;
-            height: 600px;          /* This sets image height equal to the height of the adjacent halfpage ad. */
+            min-height: 600px;          /* This sets image height equal to the height of the adjacent halfpage ad. */
             object-fit: cover;      /* This maintains the image's proper aspect ratio and CLIPS any overflow width. */
         }
     }
@@ -1015,6 +1025,10 @@ ul.book_profile {
     float:none;
   }
 
+.open > .dropdown-menu {
+    display: block;
+    }
+
 
 @media (min-width: 992px) {
     /* BOOTSTRAP OVERRIDES */
@@ -1232,7 +1246,14 @@ ul.book_profile {
 
 @media(max-width:768px) {
 #latest_bottom_wrap {
-	border-bottom: none !important;	
+	border-bottom: none !important;
+    max-width: 34em;
+    margin: auto !important;
+}
+
+
+#latest_bottom_wrap div section:first-child{
+  border-bottom: 1px #929292 solid;
 }
 
 }
@@ -1818,6 +1839,14 @@ aside { }
       border-radius: 50%;
     }
 
+.author-info__bio img {
+display:inline-block;
+width: auto !important;
+height: auto !important;
+float: none;
+margin: 0;
+}
+
     .author-info__date {
       display: block;
       font-weight: 300;
@@ -2173,6 +2202,7 @@ aside { }
           clear: none;
           margin-top: 1.5em;
           overflow: auto; /* Prevents collision with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
+	min-height:315px;
       }
       
     }
@@ -3091,8 +3121,12 @@ label.valid {
 
     #fact-box-1 {}
 
-    .fact-box p {
-      font-size: .8em;
+    .fact-box p, .fact-box ul {
+      font-size: .8em !important;
+    }
+    
+    .fact-box ul {
+     padding-left: 17px;
     }
 
     .fact-box h4 {
@@ -3348,11 +3382,13 @@ label.valid {
     padding: 45px 0 0 72px;
 }
 
-    @media (min-width: 550px) {
+/*    @media (min-width: 550px) {
         .grid__cell {
             width: 25%;
         }
     }
+*./
+
 
 
 
@@ -3576,7 +3612,6 @@ footer .footer__menu {
 }
 .latest-stories {
   background-color: #fff;
-  color: #82AD00;
   font-size: 16px;
 }
 
@@ -3662,8 +3697,14 @@ footer .footer__menu {
     padding-top: 1em;
     overflow: visible;
     clear: left;
+text-overflow: ellipsis;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
 }
   
+
+
 
 @media (min-width: 768px) {
 	
@@ -4339,6 +4380,113 @@ div.modal--builder {
     .modal--builder .text-center {
         text-align: center;
     }
+
+/* hide disqus ads*/
+
+#dsq-app4 {
+  display:none;
+}
+
+
+/* timeline ammendum */
+
+.timeline_entry {
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 20px;
+  float: none !important;
+  overflow: hidden;
+  position: relative;
+}
+.timeline_entry .ar {
+  float: right !important;
+}
+.timeline_entry .seemore, .timeline_entry .readmore {
+  letter-spacing: 1px;
+}
+.timeline_entry .timelinedate {
+  width: 90%;
+  color: #ED1D25;
+  background: #EFEFEF;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.timeline_entry .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25% !important;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-bottom: 20px;
+  max-width: 100% !important;
+}
+.timeline_entry .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+}
+.timeline_entry .quote {
+  margin-bottom: 20px;
+}
+.timeline_entry .quote strong {
+  font-size: 24px !important;
+  line-height: 30px !important;
+}
+.timeline_entry .expand {
+  max-height: 136px;
+  overflow: hidden;
+  position: relative;
+}
+.timeline_entry .expand span, .timeline_entry .expand span p {
+  clear: both;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.timeline_entry .expand p {
+  margin-bottom: 0px;
+}
+.timeline_entry .expand.expanded {
+  max-height: none;
+  overflow: auto;
+}
+.timeline_entry.last {
+  margin-bottom: 60px;
+}
+.timeline_entry.last .bg {
+  background: none;
+}
+
+.timeline_entry .three {
+  width: 25%;
+  min-height: 5px;
+  float:left;
+}
+
+.timeline_entry .nine {
+  width: 70%;
+  margin-left: 4%;
+  float:left;  
+}
+.timeline_entry .bg {
+  background: url("/ui/img/dotted_vertical.png") repeat-y;
+  background-position: top center;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 25%;
+}
+/* end timeline ammendum"
 
 
         /* ---------  links ------------ */

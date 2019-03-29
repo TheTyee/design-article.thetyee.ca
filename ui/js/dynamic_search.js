@@ -2,7 +2,8 @@ function renderLead(unit){
 
    var target = jQuery(".index-page__featured-story.dummy");
    jQuery(".index-page__featured-story.dummy .mainimage").attr("href", unit.uri);
-   
+
+if (unit.related_media && unit.related_media[0]) {   
    var thumbImg;
             thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
 
@@ -16,30 +17,26 @@ for (var k in unit.related_media[0].thumbnails) {
                        
     
 }
+
  thumbImg = thumbImg.replace("http://", "//");
+
+
    
       jQuery(".index-page__featured-story.dummy .mainimage img").attr("src", thumbImg.replace("thetyee.cachefly.net", "thetyee.ca"));
-          
-          
+          } else {
+jQuery(".index-page__featured-story.dummy .mainimage img").remove(); // remove if there is no image to replace there
+}          
             jQuery(".index-page__featured-story.dummy .story-item__description a").attr("href", unit.uri);
             jQuery(".index-page__featured-story.dummy .story-item__description a").text(unit.title);
-if (unit.teaser) {
             jQuery(".index-page__featured-story.dummy .story-item--deck").text(unit.teaser);
-}
-if (unit.byline) {
             jQuery(".index-page__featured-story.dummy .story-item__author").text(unit.byline);
-  }
             formattedDate = moment.utc(unit.storyDate).format("DD MMM YYYY");
             jQuery(".index-page__featured-story.dummy .story-item__date").text(formattedDate);
                jQuery(".index-page__featured-story.dummy .badge--story-item-placement a").attr("href", unit.series);
             if ( unit.series.indexOf('not set') >= 0 ) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement").remove();
             } else if ( unit.series.indexOf('Balance') >= 0 ) {
-                jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-election.svg");
- 	   } else if ( unit.topics.indexOf('ElectoralReform') >= 0 ) {
-                jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-battleground.svg");
-             } else if ( unit.series.indexOf('RafeMair') >= 0 ) {
-                             jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-rafemair.png");
+                jQuery(".index-page__featured-story.dummy .badge--story-item-placement a img").attr("src", "/ui/img/badge-election.svg");
             }
             jQuery(target).show();
 }
@@ -52,21 +49,19 @@ text += '<div class="story-item story-item--index-page index-list-spacing" data-
             if ( unit.series.indexOf("not set") >= 0 ) {
                 
             } else {
-                text += '<!-- 00-atoms/images/story-badge -->';
+                 text += '<!-- 00-atoms/images/story-badge -->';
                 text += '<a href="' + unit.series +'" class="series-badge badge--story-item-placement">';
                 if ( unit.series.indexOf('Balance') >= 0 ) {
                 text += '<img src="/ui/img/badge-election.svg"></a>';
-		} else if ( unit.series.indexOf('RafeMair') >= 0 ) {
-                text += '<img src="/ui/img/badge-rafemair.png"></a>';
                 } else {
                 text += '<img src="/ui/img/badge-series.svg"></a>';
                 }
             }
 
+if (unit.related_media && unit.related_media[0]) {
 text += '<a href="' + unit.uri + '"><!-- 00-atoms/images/image -->';
 var thumbImg;
             thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
-
 for (var k in unit.related_media[0].thumbnails) {   
         var thumb = unit.related_media[0].thumbnails[k];
         if (thumb.uri.indexOf("newcover") !=-1) {
@@ -81,14 +76,11 @@ for (var k in unit.related_media[0].thumbnails) {
 
 text += '<img src="' + thumbImg + '" class="responsive-img" alt="image atom">';
 text += '</a>';
+} // end if there is an image
 text +='<div class="story-item__description">';
-text +=	'<h5><a href="' + unit.uri + ' ">' + unit.title + '</a></h5>';
-if (unit.teaser) {  
+text +=	'<h5><a href="' + unit.uri + ' ">' + unit.title + '</a></h5>';  
 text +=	'<p class="story-item--deck">' + unit.teaser + '</p>';
-}
-if (unit.byline) {
 text +=	'<span class="story-item__author">' + unit.byline +'&ensp;</span>';
-}
 text +=	'<span class="story-item__date">' + moment.utc(unit.storyDate).format("DD MMM YYYY") + '</span>';
 text +=	'</div>';
 text += '</div>';
@@ -174,10 +166,14 @@ function renderRow(num){
         //Returned stories from the API
         function getUnitStories(number, start, render){
             var ajaxSuccess;
+            var inPreview = ''; var ess = 's';
+            if (window.location.hostname.indexOf("preview") >= 0) {inPreview = "preview."; ess = '';}
+            
+            
             storiesRequested = number;
             returnedStories = jQuery.ajax({
                 method: 'POST',
-                url: 'https://api.thetyee.ca/v1/topic/' + topic + '/' + storiesRequested + '/' + start,
+                url: 'http' + ess + '://' + inPreview + 'api.thetyee.ca/v1/searchme/' + query + '/' + storiesRequested + '/' + start,
                 dataType: 'jsonp',
                 data: response,
                 crossDomain: true,
@@ -195,6 +191,8 @@ function renderRow(num){
                                 renderRow(halfnumber);
                             }
                     }
+  console.log("search url : " +url);
+
                     return recentItems;
 
                 },
@@ -217,16 +215,19 @@ function renderRow(num){
             recentItems = returnedStories;
 
             //for each item from the API, plug info into a Unit object
-            jQuery.each(recentItems, function(key, value){
+	            jQuery.each(recentItems, function(key, value){
+		if (value._source.related_media && value._source.related_media[0]) {
 
                 latestUnitImage = value._source.related_media[0].uri;
-
+		} else {
+		  latestUnitImage = "/ui/img/Blank.JPG";
+		}
 
 
                 //Format the API img uri's so they don't point at cachefly
 
                 //Use moment.js to format the date
-                formattedDate = moment.utc(value._source.UnitDate).format("DD MMM");
+                formattedDate = moment.utc(value._source.UnitDate).format("DD MMM YYYY");
 
                 //Set default values for the Unit object
                 // none fo the Unit stuff being used
@@ -304,8 +305,9 @@ topic = jQuery("#topictitle").text();
                 
             });
             
-            
+            if (UnitObjects[0].related_media && UnitObjects[0].related_media[0]) {
             renderLead(UnitObjects.shift());
+		}
             renderRow(8);
             
         });
