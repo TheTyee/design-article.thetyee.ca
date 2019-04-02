@@ -1,0 +1,38 @@
+<!-- BEGIN 01-molecules/blocks/homepg-story-item -->
+{% comment %}
+<!-- The story-item object is a list-item (although it doesn't need to appear in a list) that consists of the meta-info about an article. It's intended for use in places like the Latest Stories organism and the Related Story molecule.
+NOTE: this object is not currently being used in the Latest Stories section.
+
+HOW TO INCLUDE THIS OBJECT
+---------------------------------
+Use the content-source parameter parameter to specify the path of its contained image. Like this:
+	[% include 01-molecules/blocks/story-item.html content-source="http://baconmockup.com/300/200" %]
+
+If you want to adapt the object you can extend it by using the story-item-class parameter to add a new BEM class. Like this:
+	[% include 01-molecules/blocks/story-item.html content-source="http://baconmockup.com/300/200" story-item-class="story-item--latest-stories" %]
+
+You may also want to add a story badge (e.g. a series-badge), like this:
+	[% include 01-molecules/blocks/story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home." story-badge="presents" %]
+-->
+{% endcomment %}
+<div class="story-item {{ include.story-item-class }}">
+
+	{% if include.story-badge != nil %}
+
+        {% include 00-atoms/images/story-badge.html badge-position="badge--story-item-placement" story-badge=include.story-badge %}
+
+    {% endif %}
+
+	<a href="">{% include 00-atoms/images/image.html content-source=include.content-source %}</a>
+
+	<div class="story-item__description">
+		<h5><a href="">{{ include.story-item-headline }}</a></h5>
+
+		<p class="story-item--deck">{{ include.story-item-dek }}</p>
+
+		<span class="story-item__author">David Beers &ensp;</span>
+		<span class="story-item__date">30 Sept</span>
+	</div>
+
+</div>
+<!-- END 01-molecules/blocks/story-item -->
