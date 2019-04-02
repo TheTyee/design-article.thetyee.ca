@@ -15,8 +15,9 @@
 
     {% include 02-organisms/sections/httpswarning.html %}
 
-    {% include 02-organisms/global/header.html %}
-
+    {% comment %} (Omit article page header and nav)
+        {% include 02-organisms/global/header.html %}
+    {% endcomment %}
 
     <!-- =============================== -->
 
@@ -38,7 +39,9 @@
     <!-- =============================== -->
     <!-- ===== Footer ===== -->
 
-    {% include footer.html %}                 <!-- NEEDS WORK -->
+    {% comment %} (Omit article page footer)
+        {% include footer.html %}
+    {% endcomment %}
 
     {% include footer_scripts_standard.html %}
 
