@@ -12,10 +12,10 @@ If you want to adapt the object you can extend it by using the story-item-class 
 	[% include 01-molecules/blocks/story-item.html content-source="http://baconmockup.com/300/200" story-item-class="story-item--latest-stories" %]
 
 You may also want to add a story badge (e.g. a series-badge), like this:
-	[% include 01-molecules/blocks/story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home." story-badge="presents" %]
+	[% include 01-molecules/blocks/story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page index-list-spacing" story-item-category="news" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home." story-badge="presents" %]
 -->
 {% endcomment %}
-<div class="story-item {{ include.story-item-class }}">
+<article class="story-item {{ include.story-item-class }}">
 
 	{% if include.story-badge != nil %}
 
@@ -23,16 +23,24 @@ You may also want to add a story badge (e.g. a series-badge), like this:
 
     {% endif %}
 
-	<a href="">{% include 00-atoms/images/image.html content-source=include.content-source %}</a>
+  <figure>
+	   <a href="">
+        {% include 00-atoms/images/image.html content-source=include.content-source %}
+    </a>
+  </figure>
 
 	<div class="story-item__description">
-		<h5><a href="">{{ include.story-item-headline }}</a></h5>
+    <div class="category-label"><a href="/category-link-here/" data-bind="category">{{ include.story-item-category }}</a><div>
 
-		<p class="story-item--deck">{{ include.story-item-dek }}</p>
+		<h1 class="story-item__headline"><a href="">{{ include.story-item-headline }}</a></h1>
 
-		<span class="story-item__author">David Beers &ensp;</span>
-		<span class="story-item__date">30 Sept</span>
+		<p class="story-item__deck">{{ include.story-item-dek }}</p>
+
+    <footer>
+  		<span class="story-item__author">David Beers &ensp;•&ensp;</span>
+  		<span class="story-item__date">30 Sep 2018</span>
+    </footer>
 	</div>
 
-</div>
+</article>
 <!-- END 01-molecules/blocks/story-item -->
