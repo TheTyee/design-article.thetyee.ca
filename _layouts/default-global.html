@@ -10,12 +10,10 @@
 
     <!-- =============================== -->
     <!-- ===== Header ===== -->
-    
-    {% include 01-molecules/messaging/alerts--browser-support.html %}
-    
-    {% include 02-organisms/sections/httpswarning.html %}
 
-    {% include 01-molecules/blocks/ad-banner.html ad-source="UBCMUD-leaderboard.jpg" %}
+    {% include 01-molecules/messaging/alerts--browser-support.html %}
+
+    {% include 02-organisms/sections/httpswarning.html %}
 
     {% include 02-organisms/global/header.html %}
 
@@ -23,17 +21,17 @@
     <!-- =============================== -->
 
     {{ content }}
-    
-    <!-- =============================== -->
-    <!-- ===== Tertiary components ===== -->  
 
-    {% if page.page-type == 'article' and page.messaging-zone != 'no' %}                 
+    <!-- =============================== -->
+    <!-- ===== Tertiary components ===== -->
+
+    {% if page.page-type == 'article' and page.messaging-zone != 'no' %}
 
         {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
 
         {% include 02-organisms/sections/messaging-zone.html %}
 
-    {% endif %} 
+    {% endif %}
 
 
 
@@ -44,7 +42,7 @@
 
     {% include footer_scripts_standard.html %}
 
-    {% include 02-organisms/sections/subscription-modal.html %} 
+    {% include 02-organisms/sections/subscription-modal.html %}
 
     </body>
 
