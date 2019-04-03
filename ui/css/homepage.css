@@ -13,6 +13,38 @@
 /* Global...............Globally-available variables and config. */
 
 
+/* SET BASE PARAMETERS */
+
+:root {
+  /* Set REM size */
+  font-size: 18px;
+  /* set base unit for modular grid */
+  --grid-unit: 8px;
+}
+
+
+/* MODULAR SCALE */
+/* Use the Base Parameters to derive a modular scale. */
+
+
+
+/* TYPORGRAPHY SYSTEM */
+/* Use the Modular Scale to derive a typescale. */
+
+
+
+/* GRID SYSTEM */
+/* Use the Modular Scale to derive a modular grid. */
+
+:root {
+  /* standard gutter width */
+  --gutter: calc(var(--grid-unit) * 5);
+  /* use half of gutter width when column borders are required */
+  --gutter-padding: calc(var(--gutter) / 2);
+}
+
+
+
 /*------------------------------------*\
   #FONTS
 \*------------------------------------*/
