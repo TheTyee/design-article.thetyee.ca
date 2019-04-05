@@ -23,7 +23,7 @@
 
 /* Base Units */
 :root {
-  /* Set REM size */
+  /* set REM size */
   font-size: 18px;
   /* set base unit for modular grid */
   --grid-unit: 8px;
@@ -31,7 +31,11 @@
 
 /* Base Colours */
 :root {
-  --brand-colour: yellow;
+  --brand-colour: hsla(49,100%,100%,1); /* Tyee Orange.                 */
+    --brand-colour__hue: 49;            /* HSLA values are broken into  */
+    --brand-colour__sat: 100%;          /* separate variables for       */
+    --brand-colour__lig: 100%;          /* computational manipulation   */
+    --brand-colour__alp: 1;             /* in Colour System below.      */
   --link-colour: yellow;
 }
 
