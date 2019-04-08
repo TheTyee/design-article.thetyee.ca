@@ -83,6 +83,8 @@ https://caniuse.com/#feat=css3-colors
   --gutter-padding: calc(var(--gutter) / 2);
 }
 
+    /* >> Use pseudo element :after to create the column borders */
+
 
 
 
@@ -111,7 +113,19 @@ https://caniuse.com/#feat=css3-colors
     grid-column: span 3;
   }
 
-    /* >> Use pseudo element :after to create the column borders */
+
+
+
+/*------------------------------------*\
+  #MOLECULES
+\*------------------------------------*/
+
+/* STORY ITEM molecule */
+
+        .story-item--index-page {
+            position: relative;
+        }
+
 
 
 
