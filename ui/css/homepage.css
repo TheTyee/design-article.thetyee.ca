@@ -127,7 +127,7 @@ body {
     grid-column: span 3;
   }
 
-
+    /* >> Use pseudo element :after to create the column borders */
 
 
 /*------------------------------------*\
