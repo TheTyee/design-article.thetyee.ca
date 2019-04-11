@@ -106,12 +106,19 @@ https://caniuse.com/#feat=css3-colors
 .hmpg-org-recent-stories__top-stories {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: var(--gutter);
 }
-  .hmpg-org-recent-stories__top-stories :first-child {
+
+    .hmpg-org-recent-stories__top-stories :first-child {
     grid-column: span 3;
-  }
+    }
+
+    .hmpg-org-recent-stories__top-stories .hmpg-ad-box--halfpage {
+      grid-column: 4;
+      grid-row: 1;
+    }
+
 
 
 
@@ -122,9 +129,33 @@ https://caniuse.com/#feat=css3-colors
 
 /* STORY ITEM molecule */
 
-        .story-item--index-page {
-            position: relative;
-        }
+.story-item--index-page {
+    position: relative;
+}
+
+
+/* HMPG AD BOX molecule */
+
+.hmpg-ad-box {
+  position: relative;
+}
+
+  .hmpg-ad-box--halfpage {
+  }
+
+  .hmpg-ad-box iframe {
+    /* width:100%; This prevents the ad from breaking the col but it will get crops the graphic */
+  }
+
+  /* Towards a scaling ad solution: */
+  .hmpg-ad-box--halfpage iframe {
+    /*
+    position: absolute;   --> This pulls ad out of flow and lets grid col size properly
+    top:0;
+    left:0;
+    transform: scale(.8) translate(-55px, -75px);  --> translations must be calculated relative grid col size depending on viewport width
+    */
+  }
 
 
 
