@@ -44,6 +44,32 @@
   --link-colour: yellow;
 }
 
+/* Responsive Settings */
+/* CSS variables can't be used within media query selectors, so these responsive settings are for reference only. */
+/* If we want to use CSS variables to create a layout grid that responds to viewport dimensions then we could set the grid properties via a variable and set that variable relative to the viewport dimension.
+Simple examples:
+    --column-gutter: calc(5vw+10px);
+
+    .container {
+      grid-column-gap:var(--column-gutter);
+    }
+
+    --col-grid-main: 1fr 1fr;
+    @media screen and (min-width: 1368px) { --col-grid-main: 2fr 1fr 1fr 1fr; }
+
+    .hmpg-org-recent-stories__top-stories {
+        grid-template-columns: var(--col-grid-main);
+      }
+ */
+/* :root {
+  breakpoint-width-xs: 0;
+  breakpoint-width-s: 0;
+  breakpoint-width-m: 684px;
+  breakpoint-width-l: 1368px;
+  breakpoint-width-xl: 1368px;
+}
+*/
+
 
 
 
@@ -106,19 +132,28 @@ https://caniuse.com/#feat=css3-colors
 .hmpg-org-recent-stories__top-stories {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: var(--gutter);
 }
 
-    .hmpg-org-recent-stories__top-stories :first-child {
-    grid-column: span 3;
+  /* Recent Stories responsive rules */
+
+  @media screen and (min-width: 1368px) {
+
+    .hmpg-org-recent-stories__top-stories {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
-    .hmpg-org-recent-stories__top-stories .hmpg-ad-box--halfpage {
-      grid-column: 4;
-      grid-row: 1;
-    }
+        .hmpg-org-recent-stories__top-stories :first-child {
+        grid-column: span 3;
+        }
 
+        .hmpg-org-recent-stories__top-stories .hmpg-ad-box--halfpage {
+          grid-column: 4;
+          grid-row: 1;
+        }
+  }
+
+/* end of Recent Stories */
 
 
 
