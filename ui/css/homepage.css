@@ -137,6 +137,7 @@ https://caniuse.com/#feat=css3-colors
 
   /* Recent Stories responsive rules */
 
+  /* old span version
   @media screen and (min-width: 1368px) {
 
     .hmpg-org-recent-stories__top-stories {
@@ -152,6 +153,27 @@ https://caniuse.com/#feat=css3-colors
           grid-row: 1;
         }
   }
+  */
+
+  @media screen and (min-width: 1368px) {
+
+    .hmpg-org-recent-stories__top-stories {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        "primary primary primary ad"
+        "2ndary  2ndary  2ndary  ad";
+    }
+
+        .hmpg-org-recent-stories__top-stories :first-child {
+        grid-area: primary;
+        }
+
+        .hmpg-org-recent-stories__top-stories .hmpg-ad-box--halfpage {
+          grid-area: ad;
+        }
+  }
+
+
 
 /* end of Recent Stories */
 
