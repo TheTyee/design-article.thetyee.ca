@@ -178,6 +178,7 @@ https://caniuse.com/#feat=css3-colors
 /* HMPG RECENT STORIES organism */
 
 .hmpg-org-recent-stories__list {
+      /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
   width: 100%;
   display: grid;
   grid-column-gap: var(--gutter-column);
@@ -203,6 +204,11 @@ https://caniuse.com/#feat=css3-colors
   }
 
 /* end of Recent Stories */
+
+
+/* TYEE INSIDER organism */
+
+/* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
 
 
 
