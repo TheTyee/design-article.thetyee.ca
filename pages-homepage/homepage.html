@@ -13,22 +13,67 @@ meta-url: "http://thetyee.ca/home"
 ---
 
 <main>
-  <section class="hmpg-org-recent-stories">
-    <ul class="hmpg-org-recent-stories__top-stories">
+
+  <!-- HMPG RECENT STORIES organism  -->
+  <section class="hmpg-org-recent-stories hmpg-org-wrapper">
+    <ul class="hmpg-org-recent-stories__list">
+      <!-- FEATURED STORY  -->
       <li>
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--primary" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
+      </li>
+      <!-- TOP THREE STORIES  -->
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--secondary" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
       </li>
       <li>
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--secondary" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." story-badge=nil %}
       </li>
       <li>
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." story-badge=nil %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--secondary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Grayu at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
       </li>
-      <li>
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Grayu at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
-      </li>
+      <!-- AD BOX  -->
       <li class="hmpg-ad-box hmpg-ad-box--halfpage">
         {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--no-label index-list-spacing" ad-slot="ad-300x600" ad-source="" %}
+      </li>
+      <!-- STORY RIVER  -->
+      <!-- row 1  -->
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Grayu at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
+      </li>
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
+      </li>
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
+      </li>
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." story-badge=nil %}
+      </li>
+      <!-- row 2  -->
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Grayu at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
+      </li>
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
+      </li>
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
+      </li>
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." story-badge=nil %}
+      </li>
+      <!-- row 3  -->
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Grayu at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
+      </li>
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
+      </li>
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
+      </li>
+      <li>
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--tertiary" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." story-badge=nil %}
       </li>
     </ul>
   </section>
