@@ -186,6 +186,7 @@ https://caniuse.com/#feat=css3-colors
 }
 
   /* Recent Stories list expander */
+  /* https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
   #hmpg-org-recent-stories__list-more {
       display: none;
   }
@@ -225,11 +226,11 @@ https://caniuse.com/#feat=css3-colors
         "2ndary  2ndary  2ndary  ad";
     }
 
-        .hmpg-org-recent-stories__list :first-child {
+        .hmpg-org-recent-stories__main :first-child {
         grid-area: primary;
         }
 
-        .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
+        .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
           grid-area: ad;
         }
   }
