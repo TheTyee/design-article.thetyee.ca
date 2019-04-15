@@ -146,9 +146,56 @@ https://caniuse.com/#feat=css3-colors
 
 /* STORY ITEM molecule */
 
+/* default story item grid -- single column  */
 .story-item--index-page {
     position: relative;
+    display: grid;
+    grid-column-gap: var(--gutter-column);
+    grid-row-gap: 0;
+    grid-template-areas:
+        "badge "
+        "image "
+        "category "
+        "headline "
+        "deck "
+        "author "
+        "date ";
 }
+
+    .story-item--index-page figure { grid-area: image; }
+    .story-item--index-page .badge--story-item-placement { grid-area: badge; }
+    .story-item--index-page .category-label { grid-area: category; }
+    .story-item--index-page .story-item__headline { grid-area: headline; }
+    .story-item--index-page .story-item__deck { grid-area: deck; }
+    .story-item--index-page .story-item__author { grid-area: author; }
+    .story-item--index-page .story-item__date { grid-area: date; }
+
+.story-item--primary {}
+
+    /* ---- STORY ITEM responsive enhancement ---- */
+
+    /*  Recent Stories breakpoint-width-m: 684px */
+    @media screen and (min-width: 684px) {
+
+      .story-item--primary {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, auto) 1fr;
+        grid-template-areas:
+          "badge image"
+          "category image"
+          "headline image"
+          "deck image"
+          "author image"
+          "date image";
+      }
+
+
+    }
+
+/* end of Story Item */
+
+
+
 
 
 /* HMPG AD BOX molecule */
@@ -204,50 +251,53 @@ https://caniuse.com/#feat=css3-colors
   #hmpg-org-recent-stories__list-more {
       display: none;
   }
-  #show--recent-stories:target #hmpg-org-recent-stories__list-more {
-      display: inline-block;
-  }
-  #show--recent-stories:target #show--recent-stories {
-      display: none;
-  }
+      #show--recent-stories:target #hmpg-org-recent-stories__list-more {
+          display: inline-block;
+      }
+      #show--recent-stories:target #show--recent-stories {
+          display: none;
+      }
 
-  /* Recent Stories responsive rules */
+      /* Recent Stories responsive rules */
 
-      /* old span version
+          /* old span version
+          @media screen and (min-width: 1368px) {
+
+            .hmpg-org-recent-stories__top-stories {
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+
+                .hmpg-org-recent-stories__top-stories :first-child {
+                grid-column: span 3;
+                }
+
+                .hmpg-org-recent-stories__top-stories .hmpg-ad-box--halfpage {
+                  grid-column: 4;
+                  grid-row: 1;
+                }
+          }
+          */
+
+      /* ---- RECENT STORIES responsive enhancement ---- */
+
+      /*  Recent Stories breakpoint-width-l: 1368px */
       @media screen and (min-width: 1368px) {
 
-        .hmpg-org-recent-stories__top-stories {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
+        .hmpg-org-recent-stories__list {
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-areas:
+            "primary primary primary ad"
+            "2ndary  2ndary  2ndary  ad";
         }
 
-            .hmpg-org-recent-stories__top-stories :first-child {
-            grid-column: span 3;
+            .hmpg-org-recent-stories__main > :first-child {
+            grid-area: primary;
             }
 
-            .hmpg-org-recent-stories__top-stories .hmpg-ad-box--halfpage {
-              grid-column: 4;
-              grid-row: 1;
+            .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
+              grid-area: ad;
             }
       }
-      */
-
-  @media screen and (min-width: 1368px) {
-
-    .hmpg-org-recent-stories__list {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-areas:
-        "primary primary primary ad"
-        "2ndary  2ndary  2ndary  ad";
-    }
-
-        .hmpg-org-recent-stories__main :first-child {
-        grid-area: primary;
-        }
-
-        .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
-          grid-area: ad;
-        }
-  }
 
 /* end of Recent Stories */
 

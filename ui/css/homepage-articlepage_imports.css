@@ -17,88 +17,9 @@ body {
 /* BADGE  ================================================================
     Use this to position a badge on an aside box or on the article headline  */
 
-.badge { }
-
-    .badge--aside-placement {
+/*    .badge--story-item-placement {
         display: block;
-        position:absolute;
-        left: calc(100% / 2 - 2.125em);
-        top: -2.7rem;
-        width: auto;
-        transform: scale(.8);
-    }
-
-        .badge--aside-placement--presents {
-            /* left: calc(100% / 2 - 2.5em);
-            top: -2.65rem;
-            transform: scale(.88); */
-        }
-
-    .badge--headline-placement {
-        display: block;
-        position:relative;
-        float:left;
-        margin-left: -.65em;
-        margin-top: .5em;
-        transform: scale(.8);
-    }
-
-            .badge--headline-placement--presents {  /* Moves presents badge to align with a stacked h6 category label. */
-                margin-top: 1.55em;
-            }
-
-            .badge--headline-placement--presents--partner {  /* Moves presents badge on presents-partner page to align with h6 category label (not stacked). */
-                margin-top: 1em;
-            }
-
-                /* BREAKPOINT: 593px // Moves presents badge to align with h6 when it no longer breaks across lines */
-                @media screen and (min-width: 593px) {
-                    .badge--headline-placement--presents {
-                        margin-top: 1.125em;
-                    }
-                }
-
-            .badge--headline-placement--barometer, .badge--headline-placement--partner {  /* Moves presents badge to align with a stacked h6 category label. */
-                margin-top: 1em;
-            }
-
-                /* BREAKPOINT: 500px // Moves presents badge to align with h6 */
-                @media screen and (min-width: 500px) {
-                    .badge--headline-placement--barometer, .badge--headline-placement--partner {
-                        margin-top: 1em;
-                    }
-
-                }
-
-         /* BREAKPOINT: 500px // Make headline series badge bigger */
-        @media screen and (min-width: 500px) {
-            .badge--headline-placement {
-                transform: scale(.95);
-                margin-right: .25em;
-            }
-        }
-
-         /* BREAKPOINT: 1024px // Move headline series badge into left page margin */
-        @media screen and (min-width: 1024px) {
-            .badge--headline-placement {
-                margin-top: 4em;
-                margin-left: -5.25em;
-                transform: scale(1.15);
-            }
-
-             .badge--headline-placement--presents { /* Aligns presents badge with first letter of headline. */
-                        margin-top: 4.4em;
-                    }
-
-             .badge--headline-placement--barometer, .badge--headline-placement--partner, .badge--headline-placement--presents--partner { /* Aligns Barometer badge with first letter of headline. */
-                        margin-top: 4.4em;
-                    }
-        }
-
-
-    .badge--story-item-placement {
-        display: block;
-        position: absolute;
+    half  position: absolute;
         width: auto;
         left: -1em;
         top: -1.5em;
@@ -107,7 +28,7 @@ body {
     }
 
         /* BREAKPOINT: 768px // Enlarge badges on featured-stories in wider layouts */
-        @media screen and (min-width: 768px) {
+/*        @media screen and (min-width: 768px) {
             .index-page__featured-story .badge--story-item-placement {
                 transform: scale(1.35);
                 left: -.75em;
