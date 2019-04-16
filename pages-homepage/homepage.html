@@ -14,7 +14,7 @@ meta-url: "http://thetyee.ca/home"
 
 <main>
 
-  <!-- HMPG RECENT STORIES organism  -->
+  <!-- HMPG RECENT STORIES organism ----------------------------------- -->
   <section class="hmpg-org-recent-stories hmpg-org-wrapper">
     <ul class="hmpg-org-recent-stories__list hmpg-org-recent-stories__main">
       <!-- FEATURED STORY  -->
@@ -90,7 +90,38 @@ meta-url: "http://thetyee.ca/home"
   </section>
   <!-- end of Hmpg Recent Stories organism -->
 
-  <!-- HMPG PINNED STORY organism  -->
+
+
+  <!-- HMPG TYEE INSIDER organism ----------------------------------- -->
+  <section class="hmpg-org-tyee-insider hmpg-org-wrapper">
+
+    <!-- Tyee Insider main  -->
+    <div class="tyee-insider__main">
+      <header>
+        <h2 class="tyee-insider__main-label">Tyee Insider</h2>
+        <p class="tyee-insider__main-label-blurb">A short one-sentence explainer blurb goes here</p>
+      </header>
+      {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page tyee-insider__story" story-item-category="analysis" story-item-headline="Canada needs more independent journalism. Join us for fact-driven reporting." story-item-dek="We're an independent, online news magazine from BC. We're devoted to fact-driven reporting and analysis that informs and enlivens our democratic conversation. Our reporting has garnered numerous awards and the respect of our peers and readers. While some journalism gives the last word to power, we try to give the last word to ordinary folks." story-badge=nil %}
+
+      <h2 class="tyee-insider__related-label">Related Stories</h2>
+
+      {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item—-minimum" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Grayu at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
+
+      {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item—-minimum" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
+
+      {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item—-minimum" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
+
+    </div>
+    <!-- End of Tyee Insider main  -->
+
+  </section>
+
+
+  <!-- end of Hmpg Tyee Insider organism -->
+
+
+
+  <!-- HMPG PINNED STORY organism ----------------------------------- -->
   <section class="hmpg-org-pinned-story hmpg-org-wrapper">
       {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--primary story-item--reverse" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
   </section>
