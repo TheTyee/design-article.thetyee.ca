@@ -95,15 +95,15 @@ meta-url: "http://thetyee.ca/home"
   <!-- HMPG TYEE INSIDER organism ----------------------------------- -->
   <section class="hmpg-org-tyee-insider hmpg-org-wrapper">
 
-    <!-- Tyee Insider main  -->
-    <div class="tyee-insider__main">
+    <!-- Tyee Insider main molecule ----- -->
+    <div class="m-tyee-insider__main">
       <header>
-        <h2 class="tyee-insider__main-label">Tyee Insider</h2>
-        <p class="tyee-insider__main-label-blurb">A short one-sentence explainer blurb goes here</p>
+        <h2 class="m-tyee-insider__main-label">Tyee Insider</h2>
+        <p class="m-tyee-insider__main-label-blurb">A short one-sentence explainer blurb goes here</p>
       </header>
       {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page tyee-insider__story" story-item-category="analysis" story-item-headline="Canada needs more independent journalism. Join us for fact-driven reporting." story-item-dek="We're an independent, online news magazine from BC. We're devoted to fact-driven reporting and analysis that informs and enlivens our democratic conversation. Our reporting has garnered numerous awards and the respect of our peers and readers. While some journalism gives the last word to power, we try to give the last word to ordinary folks." story-badge=nil %}
 
-      <h2 class="tyee-insider__related-label">Related Stories</h2>
+      <h2 class="m-tyee-insider__related-label">Related Stories</h2>
 
       {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item—-minimum" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Grayu at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
 
@@ -112,10 +112,12 @@ meta-url: "http://thetyee.ca/home"
       {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item—-minimum" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
     </div>
     <!-- End of Tyee Insider main  -->
-    <div class="comment-noted">
-      <h2 class="comment-noted__label">Comment Noted</h2>
-      <h3 class="comment-noted__title">Uh oh. I’m a Planner and Planning Makes Housing More Expensive</h3>
-      <div class="comment-noted__body">
+
+    <!-- Comment Noted molecule ----- -->
+    <div class="m-comment-noted">
+      <h2 class="m-comment-noted__label">Comment Noted</h2>
+      <h3 class="m-comment-noted__title">Uh oh. I’m a Planner and Planning Makes Housing More Expensive</h3>
+      <div class="m-comment-noted__body">
         <p>Condon is correct that the the city doesn't budget as if housing was truly a top priority. So it's time for a rethink. Housing is literally foundational to organizing ourselves. Without it, our lives fall apart.</p>
         <p>At the same time, money isn't all that City Hall has in their toolbox to increase supply. The zoning incentives Condon lists here seem highly affordable.</p>
         <p>If current approaches are driving up land prices, I'd like City Hall to plan community engagement to generate more practical ideas and initiatives for affordable housing. The more heads on this one, the better.</p>
@@ -123,10 +125,31 @@ meta-url: "http://thetyee.ca/home"
       <a href="author" rel="author" class="story-item__author">David Beers</a>
     	<div class="story-item__date">30 Sep 2018</div>
     </div>
+    <!-- End of Comment Noted molecule  -->
+
+    <!-- Barometer molecule ----- -->
+    <div class="m-barometer">
+      <h2 class="m-barometer__label">The Barometer</h2>
+      <h3 class="m-barometer__title">How are Trudeau’s Liberals going to try and survive the SNC- Lavalin scandal?</h3>
+      <ul>
+        <li>We did it for the jobs</<li>
+      	<li>Smear campaign of Wilson-Raybould</li>
+      	<li>New leader time!</li>
+      	<li>Wait it out and hope the country gets bored</li>
+      	<li>They can’t</li>
+      	<li>Too soon to say</li>
+      	<li>Other</li>
+      </ul>
+      <a class="button" href="#link-to-poll">Take this week’s poll</a>
+      <footer class="m-barometer__footer">
+        <p class="label--small">Last week:</p>
+        <a href="#">What you thought fully extending the subway to UBC</a>
+        <a href="#">Read the results of that poll here.</a>
+      </footer>
+    </div>
+    <!-- End of Barometer molecule -->
 
   </section>
-
-
   <!-- end of Hmpg Tyee Insider organism -->
 
 
