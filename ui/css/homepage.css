@@ -353,48 +353,65 @@ https://caniuse.com/#feat=css3-colors
       }
 
 
-    /* ---- RECENT STORIES responsive enhancement ---- */
+      /* ---- RECENT STORIES responsive enhancement ---- */
 
-        /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-        @media screen and (min-width: 684px) {
+          /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+          @media screen and (min-width: 684px) {
 
-          .hmpg-org-recent-stories__list {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-areas:
-              "primary primary primary"
-              "2ndary  2ndary  2ndary";
+            .hmpg-org-recent-stories__list {
+              grid-template-columns: repeat(6, 1fr);
+              grid-template-areas:
+                "primary primary primary primary primary primary"
+                "2ndary  2ndary  2ndary 2ndary  2ndary  2ndary";
+            }
+
+                .hmpg-org-recent-stories__main > :first-child {
+                grid-column: auto / span 6;
+                }
+
+                .hmpg-org-recent-stories__main > :nth-child(n+2) {
+                grid-column: auto / span 2;
+                }
+
+                .hmpg-org-recent-stories__main > :nth-child(n+5) {
+                grid-column: auto / span 3;
+                }
+
+                #hmpg-org-recent-stories__list-more .hmpg-org-recent-stories__list > * {
+                  grid-column: auto / span 3;
+                }
+
           }
 
-              .hmpg-org-recent-stories__main > :first-child {
-              grid-area: primary;
-              }
+          /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
+          @media screen and (min-width: 1368px) {
 
-              .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
-                grid-area: ad;
-              }
-        }
+            .hmpg-org-recent-stories__list {
+              grid-template-columns: repeat(4, 1fr);
+              grid-template-areas:
+                "primary primary primary ad"
+                "2ndary  2ndary  2ndary  ad";
+            }
 
-        /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
-        @media screen and (min-width: 1368px) {
+                .hmpg-org-recent-stories__main > :first-child {
+                grid-area: primary;
+                }
 
-          .hmpg-org-recent-stories__list {
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-areas:
-              "primary primary primary ad"
-              "2ndary  2ndary  2ndary  ad";
+                .hmpg-org-recent-stories__main > :nth-child(n+2) {
+                grid-column: auto / span 1;
+                }
+
+                #hmpg-org-recent-stories__list-more .hmpg-org-recent-stories__list > * {
+                grid-column: auto / span 1;
+                }
+
+                .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
+                  grid-area: ad;
+                }
           }
 
-              .hmpg-org-recent-stories__main > :first-child {
-              grid-area: primary;
-              }
-
-              .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
-                grid-area: ad;
-              }
-        }
-
-/* end of Recent Stories */
-
+  /* end of Recent Stories */
+  
 
 /* TYEE INSIDER organism ----------------- */
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
