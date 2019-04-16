@@ -355,6 +355,25 @@ https://caniuse.com/#feat=css3-colors
 
     /* ---- RECENT STORIES responsive enhancement ---- */
 
+        /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+        @media screen and (min-width: 684px) {
+
+          .hmpg-org-recent-stories__list {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+              "primary primary primary"
+              "2ndary  2ndary  2ndary";
+          }
+
+              .hmpg-org-recent-stories__main > :first-child {
+              grid-area: primary;
+              }
+
+              .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
+                grid-area: ad;
+              }
+        }
+
         /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
         @media screen and (min-width: 1368px) {
 
