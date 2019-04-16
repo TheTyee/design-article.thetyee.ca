@@ -411,10 +411,59 @@ https://caniuse.com/#feat=css3-colors
           }
 
   /* end of Recent Stories */
-  
+
 
 /* TYEE INSIDER organism ----------------- */
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
+.hmpg-org-tyee-insider {
+  display: grid;
+  width: 100%;
+  padding-top: var(--gutter-row);
+  grid-column-gap: var(--gutter-column);
+  grid-row-gap: var(--gutter-row);
+}
+
+  .m-tyee-insider__main .story-item--primary { }
+    .m-tyee-insider__main .story-item--primary .badge--story-item-placement
+      { display: none;}
+    .m-tyee-insider__main .story-item--primary .category-label
+      { display: none;}
+    .m-tyee-insider__main .story-item--primary .story-item__headline
+      { grid-area: headline; }
+    .m-tyee-insider__main .story-item--primary .story-item__deck
+      { grid-area: deck; }
+    .m-tyee-insider__main .story-item--primary .story-item__author
+      { display: none;}
+    .m-tyee-insider__main .story-item--primary .story-item__date
+      { display: none;}
+
+    /* ---- TYEE INSIDER responsive enhancement ---- */
+
+        /*  TYEE INSIDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+        @media screen and (min-width: 684px) {
+
+          .hmpg-org-tyee-insider {
+            grid-template-columns: repeat(6, 1fr);
+          }
+              .hmpg-org-tyee-insider > :first-child {
+              grid-column: auto / span 6;
+              }
+              .hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 3;}
+              .hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 3;}
+        }
+
+        /*  TYEE INSIDER LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
+        @media screen and (min-width: 1368px) {
+
+          .hmpg-org-tyee-insider {
+            grid-template-columns: repeat(5, 1fr);
+          }
+              .hmpg-org-tyee-insider > :first-child {
+              grid-column: auto / span 3;
+              }
+              .hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 1;}
+              .hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 1;}
+        }
 /* End of Tyee Insider organism */
 
 
