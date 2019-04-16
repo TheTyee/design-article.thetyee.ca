@@ -97,10 +97,15 @@ https://caniuse.com/#feat=css3-colors
 /* TYPOGRAPHY SYSTEM */
 /* Use the Modular Scale to derive a typescale. */
 
+/* Base Units */
+:root {
+  /* Scale down text for tertiary components (e.g. .story-item--tertiary) */
+  --small-text: 0.8rem;
+}
 
 
 /* GRID SYSTEM */
-/* Use the Modular Scale to derive a modular grid. */
+/* Uses the Modular Scale to derive a modular grid. */
 
 :root {
   /* standard column gutter width */
@@ -154,9 +159,11 @@ https://caniuse.com/#feat=css3-colors
 
 
 
+
 /*------------------------------------*\
   #MOLECULES
 \*------------------------------------*/
+
 
 /* STORY ITEM molecule */
 
@@ -167,7 +174,6 @@ https://caniuse.com/#feat=css3-colors
     grid-column-gap: var(--gutter-column);
     grid-row-gap: 0;
     grid-template-areas:
-        "badge"
         "image"
         "category"
         "headline"
@@ -176,6 +182,7 @@ https://caniuse.com/#feat=css3-colors
         "date";
 }
 
+    /* Story Item layout -- Assign story-item elements to grid areas */
     .story-item--index-page .story-item__image { grid-area: image; }
     .story-item--index-page .badge--story-item-placement { grid-area: image; z-index: 20;}
     .story-item--index-page .category-label { grid-area: category; }
@@ -184,28 +191,46 @@ https://caniuse.com/#feat=css3-colors
     .story-item--index-page .story-item__author { grid-area: author; }
     .story-item--index-page .story-item__date { grid-area: date; }
 
+    /* STORY ITEM extensions */
+    .story-item--primary { }
+    .story-item--secondary { }
+    .story-item--tertiary {
+      font-size: var(--small-text);
+    }
+      .story-item--tertiary .story-item__author { display: none; }
+      .story-item--tertiary .story-item__date { display: none; }
+    .story-item—minimum { }
 
-
-.story-item--primary {}
 
     /* ---- STORY ITEM responsive enhancement ---- */
 
-    /*  Recent Stories breakpoint-width-m: 684px */
-    @media screen and (min-width: 684px) {
+        /*  Recent Stories breakpoint-width-m: 684px */
+        @media screen and (min-width: 684px) {
 
-      .story-item--primary {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(4, auto) 1fr;
-        grid-template-areas:
-          "category image"
-          "headline image"
-          "deck image"
-          "author image"
-          "date image";
-      }
+          .story-item--primary {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, auto) 1fr;
+            grid-template-areas:
+              "category image"
+              "headline image"
+              "deck image"
+              "author image"
+              "date image";
+          }
+
+          .story-item--tertiary {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, auto) 1fr;
+            grid-template-areas:
+              "category image"
+              "headline image"
+              "deck image"
+              "author image"
+              "date image";
+          }
 
 
-    }
+        }
 
 /* end of Story Item */
 
