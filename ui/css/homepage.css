@@ -223,6 +223,7 @@ https://caniuse.com/#feat=css3-colors
         .story-item—-minimum .story-item__author { display: none; }
         .story-item—-minimum .story-item__date { display: none; }
 
+    .story-item--reverse { }
 
 
 
@@ -241,6 +242,17 @@ https://caniuse.com/#feat=css3-colors
               "author image"
               "date image";
           }
+
+              .story-item--primary.story-item--reverse {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(4, auto) 1fr;
+                grid-template-areas:
+                  "image category"
+                  "image headline"
+                  "image deck"
+                  "image author"
+                  "image date";
+              }
 
           .story-item--secondary {
             grid-template-columns: 1fr;
