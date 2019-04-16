@@ -137,6 +137,20 @@ https://caniuse.com/#feat=css3-colors
   appearance: button;
 }
 
+/* BADGE molecule */
+/* This styles the existing story-badge html molecule from the story page to work on the homepage. These styles replace the story page badge styles. */
+
+.badge { }
+
+  .badge--story-item-placement {
+    display: block;
+    position: absolute;
+    width: auto;
+    left: -1em;
+    top: -1.5em;
+    transform: scale(1);
+    padding-left: inherit; /* Adjusts badge position when there's padding on the parent (e.g. Bootstrap cols) */
+  }
 
 
 
@@ -153,22 +167,24 @@ https://caniuse.com/#feat=css3-colors
     grid-column-gap: var(--gutter-column);
     grid-row-gap: 0;
     grid-template-areas:
-        "badge "
-        "image "
-        "category "
-        "headline "
-        "deck "
-        "author "
-        "date ";
+        "badge"
+        "image"
+        "category"
+        "headline"
+        "deck"
+        "author"
+        "date";
 }
 
-    .story-item--index-page figure { grid-area: image; }
-    .story-item--index-page .badge--story-item-placement { grid-area: badge; }
+    .story-item--index-page .story-item__image { grid-area: image; }
+    .story-item--index-page .badge--story-item-placement { grid-area: image; z-index: 20;}
     .story-item--index-page .category-label { grid-area: category; }
     .story-item--index-page .story-item__headline { grid-area: headline; }
     .story-item--index-page .story-item__deck { grid-area: deck; }
     .story-item--index-page .story-item__author { grid-area: author; }
     .story-item--index-page .story-item__date { grid-area: date; }
+
+
 
 .story-item--primary {}
 
@@ -179,9 +195,8 @@ https://caniuse.com/#feat=css3-colors
 
       .story-item--primary {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(5, auto) 1fr;
+        grid-template-rows: repeat(4, auto) 1fr;
         grid-template-areas:
-          "badge image"
           "category image"
           "headline image"
           "deck image"
