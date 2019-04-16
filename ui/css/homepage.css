@@ -165,7 +165,7 @@ https://caniuse.com/#feat=css3-colors
 \*-----------------------------------------*/
 
 
-/* STORY ITEM MOLECULE */
+/* STORY ITEM MOLECULE ------------------- */
 
 /* default story item grid -- single column  */
 .story-item--index-page {
@@ -214,14 +214,15 @@ https://caniuse.com/#feat=css3-colors
         .story-item--tertiary .story-item__author { display: none; }
         .story-item--tertiary .story-item__date { display: none; }
 
-    .story--item—minimum { font-size: var(--small-text); }
-        .story--item—minimum .story-item__image { display: none; }
-        .story--item—minimum .badge--story-item-placement { display: none; }
-        .story--item—minimum .category-label { display: none; }
-        .story--item—minimum .story-item__headline { display: block; }
-        .story--item—minimum .story-item__deck { display: none; }
-        .story--item—minimum .story-item__author { display: none; }
-        .story--item—minimum .story-item__date { display: none; }
+    .story-item—-minimum { font-size: var(--small-text); }
+        .story-item—-minimum .story-item__image { display: none; }
+        .story-item—-minimum .badge--story-item-placement { display: none; }
+        .story-item—-minimum .category-label { display: none; }
+        .story-item—-minimum .story-item__headline { display: block; }
+        .story-item—-minimum .story-item__deck { display: none; }
+        .story-item—-minimum .story-item__author { display: none; }
+        .story-item—-minimum .story-item__date { display: none; }
+
 
 
 
@@ -274,11 +275,7 @@ https://caniuse.com/#feat=css3-colors
 /* end of Story Item */
 
 
-
-
-
-
-/* HMPG AD BOX molecule */
+/* HMPG AD BOX molecule ------------------- */
 
 .hmpg-ad-box {
   position: relative;
