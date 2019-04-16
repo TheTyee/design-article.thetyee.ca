@@ -226,7 +226,6 @@ https://caniuse.com/#feat=css3-colors
     .story-item--reverse { }
 
 
-
     /* ---- STORY ITEM responsive enhancement ---- */
 
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
@@ -287,13 +286,14 @@ https://caniuse.com/#feat=css3-colors
 /* end of Story Item */
 
 
-/* HMPG AD BOX molecule ------------------- */
+/* HMPG AD BOX MOLECULE ------------------- */
 
 .hmpg-ad-box {
   position: relative;
 }
 
   .hmpg-ad-box--halfpage {
+    display: none;
   }
 
   .hmpg-ad-box iframe {
@@ -310,6 +310,10 @@ https://caniuse.com/#feat=css3-colors
     */
   }
 
+    /*  HMPG AD BOX LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
+    @media screen and (min-width: 1368px) {
+      .hmpg-ad-box--halfpage { display: block;}
+    }
 
 
 
@@ -348,46 +352,27 @@ https://caniuse.com/#feat=css3-colors
           display: none;
       }
 
-      /* Recent Stories responsive rules */
 
-          /* old span version
-          @media screen and (min-width: 1368px) {
+    /* ---- RECENT STORIES responsive enhancement ---- */
 
-            .hmpg-org-recent-stories__top-stories {
-              grid-template-columns: 1fr 1fr 1fr 1fr;
-            }
+        /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
+        @media screen and (min-width: 1368px) {
 
-                .hmpg-org-recent-stories__top-stories :first-child {
-                grid-column: span 3;
-                }
-
-                .hmpg-org-recent-stories__top-stories .hmpg-ad-box--halfpage {
-                  grid-column: 4;
-                  grid-row: 1;
-                }
+          .hmpg-org-recent-stories__list {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas:
+              "primary primary primary ad"
+              "2ndary  2ndary  2ndary  ad";
           }
-          */
 
-      /* ---- RECENT STORIES responsive enhancement ---- */
+              .hmpg-org-recent-stories__main > :first-child {
+              grid-area: primary;
+              }
 
-      /*  Recent Stories breakpoint-width-l: 1368px */
-      @media screen and (min-width: 1368px) {
-
-        .hmpg-org-recent-stories__list {
-          grid-template-columns: repeat(4, 1fr);
-          grid-template-areas:
-            "primary primary primary ad"
-            "2ndary  2ndary  2ndary  ad";
+              .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
+                grid-area: ad;
+              }
         }
-
-            .hmpg-org-recent-stories__main > :first-child {
-            grid-area: primary;
-            }
-
-            .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
-              grid-area: ad;
-            }
-      }
 
 /* end of Recent Stories */
 
