@@ -137,7 +137,7 @@ function showShares() {
 function sharesFromFB() {
     console.log("adding / usng shares direct from fb");
      var encodedURL = encodeURIComponent(url);
-        var fbfetch = 'https://graph.facebook.com/?ids=' + encodedURL;
+        var fbfetch = 'https://graph.facebook.com/?ids=' + encodedURL + '&fields=engagement';
         var abc;
         var request = jQuery.ajax({
                 dataType: "jsonp",
@@ -195,8 +195,9 @@ function sharesFromFB() {
                   
                    jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(dttwo) {
                     datatwo = dttwo;
-                        combined = combined +  parseInt(datatwo.result.total);    
-                  if (combined < 1 ||  parseInt(datatwo.result.facebook.share.share_count) < 1 ) {
+                        combined = combined +  parseInt(datatwo.result.total); 
+console.log(datatwo.result);   
+                  if (combined < 1 ||  parseInt(datatwo.result.facebook.engagement.share_count) < 1 ) {
                     sharesFromFB();
                   } else {
                   console.log("using widget share count");
