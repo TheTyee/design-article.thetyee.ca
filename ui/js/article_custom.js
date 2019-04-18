@@ -66,8 +66,11 @@ function hideIfNoHash() {
     } else {
         var el = jQuery('.comments-section');
         el.css(
-            "height", "460px"
+            "height", "660px"
         );
+        
+    
+        
     }
 }
 
@@ -93,11 +96,13 @@ function enableEmailSubscription() {
             url : proxyAPI,
             data: theData,
             success: function (data, status, jqXHR) {
-                var successString = jqXHR.responseText;
-                jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'>" + successString + "</div></section>").fadeIn('slow');
+                var successJSON = jqXHR.responseJSON;
+                var successHtml = successJSON.html;
+                jQuery("#subscribesection").hide().html("<section id='subscribe-success'><div class='alert alert-success' role='alert'>" + successHtml + "</div></section>").fadeIn('slow');
             },
             error: function(jqXHR, string, errorThrown) {
-                var errorString = jqXHR.responseText;
+                var errorJSON = jqXHR.responseJSON;
+                var errorString = errorJSON.text;
                 jQuery("#subscribesection").hide().html('<div class="subscription-error alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>' + errorString + '</div>').fadeIn('slow');
             }
         });
@@ -111,6 +116,49 @@ jQuery(window).load(function() {
     hideIfNoHash();
     enableEmailSubscription();
 });
+window.data;
+window.url;
+window.encodedURL;
+window.combined;
+window.datatwo;
+
+function showShares() {
+    
+      if (combined > 10) {
+                         jQuery("#sharecount span.count").text(combined);
+                        jQuery("#sharecount").fadeIn();
+                     } else {
+                        jQuery(".tool-bar .count").hide();
+                        console.log("facebook sharecount not loading");
+                     }  
+    
+}
+
+function sharesFromFB() {
+    console.log("adding / usng shares direct from fb");
+     var encodedURL = encodeURIComponent(url);
+        var fbfetch = 'https://graph.facebook.com/?ids=' + encodedURL + '&fields=engagement';
+        var abc;
+        var request = jQuery.ajax({
+                dataType: "jsonp",
+                url:fbfetch,
+                data: abc,
+                success: function(dd ) {
+                    window.data = dd;
+                        combined = combined + parseInt(window.data[url].share.share_count);
+                   showShares();
+                    },
+                timeout: 4000
+            }).fail( function( xhr, status ) {
+                if( status == "timeout" ) {
+                    // do stuff in case of timeout
+                }
+            });
+    
+
+}
+
+
 
 // Wrap IIFE around your code
 (function($, viewport){
@@ -136,24 +184,36 @@ jQuery(window).load(function() {
             shareAPI = 'http://127.0.0.1:3000';
         }
         var meta = jQuery('meta[property="og:url"]');
-        var url = meta.attr("content");
+       url = meta.attr("content");
         url = url.replace(/http:/i, "https:");
         var httpurl = url.replace(/https:/i, "http:");
         url = url.replace(/preview.thetyee/i, "thetyee");
 
-        var combined = 0;
-              
-        jQuery.getJSON('https://graph.facebook.com/?ids=' + url, function(data) {
-            combined = combined + parseInt(data[Object.keys(data)[0]].share.share_count);
-            console.log(data);
-            jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(datatwo) {
-            combined = combined +  parseInt(datatwo.result.email.shares) + parseInt(datatwo.result.twitter.count);
-             jQuery("#sharecount span.count").text(combined);
-            jQuery("#sharecount").fadeIn();
-
-            });
-
-        });
+        combined = 0;
+      
+              function getShares() {
+                  
+                   jQuery.getJSON( shareAPI + '/shares/url/all.json?url=' + url, function(dttwo) {
+                    datatwo = dttwo;
+                        combined = combined +  parseInt(datatwo.result.total); 
+console.log(datatwo.result);   
+                  if (combined < 1 ||  parseInt(datatwo.result.facebook.engagement.share_count) < 1 ) {
+                    sharesFromFB();
+                  } else {
+                  console.log("using widget share count");
+                  showShares();
+                  
+                  }
+                  
+                  }).error(function() {  sharesFromFB();   });
+                
+       
+       }
+        getShares();
+       
+       
+       
+       
 
         // Shows asides that contain img child element, as per the draft :has css pseudo-class described here:
         // http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/
@@ -550,7 +610,7 @@ jQuery(window).load(function() {
 
             // fade out read-more
             jQuery('.read-more').fadeOut();
-            jQuery('#comment_agreement').fadeOut();
+	    jQuery('#comment_agreement').fadeOut();
         });
     });
 
