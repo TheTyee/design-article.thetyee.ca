@@ -206,7 +206,7 @@ console.log(datatwo.result);
                   
                   }
                   
-                  }).error(function() {  console.log('error fetching shares';   });
+                  }).error(function() {  console.log('error fetching shares');   });
                 
        
        }
