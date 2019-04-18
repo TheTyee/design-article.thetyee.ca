@@ -36,6 +36,8 @@ if (unit.byline) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement").remove();
             } else if ( unit.series.indexOf('Balance') >= 0 ) {
                 jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-election.svg");
+	    } else if ( unit.topics.indexOf('attleground') >= 0 ) {
+                jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-battleground.svg");
              } else if ( unit.series.indexOf('RafeMair') >= 0 ) {
                              jQuery(".index-page__featured-story.dummy .badge--story-item-placement  img").attr("src", "/ui/img/badge-rafemair.png");
             }
