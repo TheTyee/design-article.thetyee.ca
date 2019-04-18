@@ -198,14 +198,15 @@ function sharesFromFB() {
                         combined = combined +  parseInt(datatwo.result.total); 
 console.log(datatwo.result);   
                   if (combined < 1 ||  parseInt(datatwo.result.facebook.engagement.share_count) < 1 ) {
-                    sharesFromFB();
+                   // sharesFromFB();
+                   console.log("no shares found");
                   } else {
                   console.log("using widget share count");
                   showShares();
                   
                   }
                   
-                  }).error(function() {  sharesFromFB();   });
+                  }).error(function() {  console.log('error fetching shares';   });
                 
        
        }
