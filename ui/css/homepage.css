@@ -140,6 +140,7 @@ https://caniuse.com/#feat=css3-colors
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
+  cursor: pointer;
 }
 
 /* BADGE molecule */
@@ -342,15 +343,18 @@ https://caniuse.com/#feat=css3-colors
 
   /* Recent Stories list expander */
   /* https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
-  #hmpg-org-recent-stories__list-more {
-      display: none;
+  .button--expander-open ~ :not(script) {
+    display: none;
   }
-      #show--recent-stories:target #hmpg-org-recent-stories__list-more {
-          display: inline-block;
-      }
-      #show--recent-stories:target #show--recent-stories {
-          display: none;
-      }
+
+  #expander--recent-stories:checked ~ :not(script) {
+    display: block;
+  }
+
+  #expander--recent-stories:checked ~ .button--expander-open {
+    display: none;
+  }
+
 
 
       /* ---- RECENT STORIES responsive enhancement ---- */
