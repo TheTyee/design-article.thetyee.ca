@@ -399,15 +399,15 @@ https://caniuse.com/#feat=css3-colors
                 "2ndary  2ndary  2ndary  ad";
             }
 
-                .hmpg-org-recent-stories__main > :first-child {
+                .hmpg-org-recent-stories__list > .story-item--primary {
                 grid-area: primary;
                 }
 
-                .hmpg-org-recent-stories__main > :nth-child(n+2) {
+                .hmpg-org-recent-stories__list > .story-item--secondary {
                 grid-column: auto / span 1;
                 }
-
-                #hmpg-org-recent-stories__list-more .hmpg-org-recent-stories__list > * {
+                
+                .hmpg-org-recent-stories__list > .story-item--tertiary {
                 grid-column: auto / span 1;
                 }
 
