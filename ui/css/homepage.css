@@ -341,7 +341,7 @@ https://caniuse.com/#feat=css3-colors
   grid-row-gap: var(--gutter-row);
 }
 
-  /* Recent Stories list expander */
+  /* RECENT STORIES LIST EXPANDER */
   /* https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
   .button--expander-open ~ :not(script) {
     display: none;
