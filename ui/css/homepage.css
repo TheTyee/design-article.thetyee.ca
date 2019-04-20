@@ -342,7 +342,12 @@ https://caniuse.com/#feat=css3-colors
 }
 
   /* RECENT STORIES LIST EXPANDER */
-  /* https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
+  /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
+  This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
+  An alternative (although less robust) method is to use anchors links:
+  https://jsfiddle.net/Algreenwich/uym9s0bg/
+  https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
+  
   .button--expander-open ~ :not(script) {
     display: none;
   }
