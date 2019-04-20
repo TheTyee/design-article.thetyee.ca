@@ -354,6 +354,7 @@ https://caniuse.com/#feat=css3-colors
 
 
       /* ---- RECENT STORIES responsive enhancement ---- */
+      /* Story items are allocated grid space based on the order in which they appear -- i.e. :first-child spans entire row. But their grid areas could also be assigned based on the class of the story-item, e.g. .story-item--primary spans full row. */
 
           /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
           @media screen and (min-width: 684px) {
