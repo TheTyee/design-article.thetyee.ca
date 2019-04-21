@@ -45,7 +45,9 @@
 
     {% include footer_scripts_standard.html %}
 
-    {% include 02-organisms/sections/subscription-modal.html %}
+    {% if page.page-type != 'home' %}
+      {% include 02-organisms/sections/subscription-modal.html %}
+    {% endif %}
 
     </body>
 
