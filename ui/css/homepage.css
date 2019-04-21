@@ -112,7 +112,7 @@ https://caniuse.com/#feat=css3-colors
 /* TYPOGRAPHY SYSTEM */
 /* Use the Modular Scale to derive a typescale. */
 
-/* Base Units */
+/* Type Helpers */
 :root {
   /* Scale down text for tertiary components (e.g. .story-item--tertiary) */
   --small-text: 0.8rem;
