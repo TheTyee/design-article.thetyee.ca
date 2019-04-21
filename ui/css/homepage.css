@@ -136,12 +136,21 @@ https://caniuse.com/#feat=css3-colors
   #ATOMS
 \*-----------------------------------------*/
 
+/* BUTTON atom */
+
 .button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
   cursor: pointer;
 }
+
+  /* BUTTON EXPANDER is used to show and hide content */
+  .button--expander {
+    grid-column: 1 / -1; /* Make button span entire grid row */
+    justify-self: center;
+  }
+
 
 /* BADGE molecule */
 /* This styles the existing story-badge html molecule from the story page to work on the homepage. These styles replace the story page badge styles. */
@@ -406,7 +415,7 @@ https://caniuse.com/#feat=css3-colors
                 .hmpg-org-recent-stories__list > .story-item--secondary {
                 grid-column: auto / span 1;
                 }
-                
+
                 .hmpg-org-recent-stories__list > .story-item--tertiary {
                 grid-column: auto / span 1;
                 }
