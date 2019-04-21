@@ -53,8 +53,9 @@ summary" />
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- CSS -->
+    {% comment %} <!-- omit bootstrap CSS from homepage
     <link rel="stylesheet" href="{{ site.url }}bower_components/bootstrap/dist/css/bootstrap.min.css">
-
+    --> {% endcomment %}
     <link rel="stylesheet" href="{{ site.url }}ui/css/homepage.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
 
