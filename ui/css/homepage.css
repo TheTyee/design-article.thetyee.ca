@@ -36,11 +36,14 @@
 
 /* Base Colours */
 :root {
-  --brand-colour: hsla(49,100%,100%,1); /* Tyee Orange.                 */
-    --brand-colour__hue: 49;            /* HSLA values are broken into  */
-    --brand-colour__sat: 100%;          /* separate variables for       */
-    --brand-colour__lig: 100%;          /* computational manipulation   */
-    --brand-colour__alp: 1;             /* in Colour System below.      */
+  /* BRAND COLOUR -- Tyee Orange.                                    */
+  --brand-colour__hue: 49;           /* HSLA values are broken into  */
+  --brand-colour__sat: 100%;         /* separate variables for       */
+  --brand-colour__lig: 50%;          /* computational manipulation   */
+  --brand-colour__alp: 1;            /* in Colour System below.      */
+        /* Set --brand-colour variable based on HSLA variables */
+        --brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
+
   --link-colour: yellow;
 }
 
@@ -87,6 +90,18 @@ https://www.w3.org/TR/css-color-3/#hsl-color
 https://www.w3schools.com/cssref/func_hsla.asp
 https://caniuse.com/#feat=css3-colors
 */
+
+    /* BRAND BACKGROUND COLOUR */
+    /* Brand colour is lightened for use in module backgrounds */
+    :root {
+      --brand-colour--mod-bg:
+          hsla(
+            var(--brand-colour__hue),
+            var(--brand-colour__sat),
+            calc(var(--brand-colour__lig)*1.34), /* lightens brand colour */
+            var(--brand-colour__alp)
+          );
+    }
 
 
 /* MODULAR SCALE */
@@ -436,6 +451,8 @@ https://caniuse.com/#feat=css3-colors
   padding-top: var(--gutter-row);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
+
+  background-color: var(--brand-colour--mod-bg);
 }
 
   .m-tyee-insider__main .story-item--primary { }
