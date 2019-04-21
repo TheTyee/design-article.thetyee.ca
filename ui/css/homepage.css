@@ -361,13 +361,13 @@ https://caniuse.com/#feat=css3-colors
     display: none;
   }
 
-  #expander--recent-stories:checked ~ :not(script) {
-    display: block;
-  }
+      #expander--recent-stories:checked ~ :not(script) {
+        display: grid;   /* This must be "grid" if the revealed items are themselves using internal grid layouts */
+      }
 
-  #expander--recent-stories:checked ~ .button--expander-open {
-    display: none;
-  }
+      #expander--recent-stories:checked ~ .button--expander-open {
+        display: none;
+      }
 
 
 
