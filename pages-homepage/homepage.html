@@ -66,9 +66,9 @@ meta-url: "http://thetyee.ca/home"
 
     <!-- Tyee Insider main molecule ----- -->
     <div class="m-tyee-insider__main">
-      <header>
-        <h2 class="m-tyee-insider__main-label">Tyee Insider</h2>
-        <p class="m-tyee-insider__main-label-blurb">A short one-sentence explainer blurb goes here</p>
+      <header class="hmpg-module-header">
+        <h2 class="hmpg-module-header hmpg-module-header__main-label">Tyee Insider</h2>
+        <p class="hmpg-module-header__main-label-blurb">A short one-sentence explainer blurb goes here</p>
       </header>
       {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--primary tyee-insider__story" story-item-category="analysis" story-item-headline="Canada needs more independent journalism. Join us for fact-driven reporting." story-item-dek="We're an independent, online news magazine from BC. We're devoted to fact-driven reporting and analysis that informs and enlivens our democratic conversation. Our reporting has garnered numerous awards and the respect of our peers and readers. While some journalism gives the last word to power, we try to give the last word to ordinary folks." story-badge=nil %}
 
@@ -122,10 +122,24 @@ meta-url: "http://thetyee.ca/home"
   <!-- end of Hmpg Tyee Insider organism -->
 
 
-
   <!-- HMPG PINNED STORY organism ----------------------------------- -->
   <section class="hmpg-org-pinned-story hmpg-org-wrapper">
       {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--primary story-item--reverse" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
   </section>
+
+
+  <!-- HMPG DEEP DIVE organism ----------------------------------- -->
+  <section class="hmpg-org-deep-dive hmpg-org-wrapper">
+    <header class="hmpg-module-header">
+      <h2 class="hmpg-module-header hmpg-module-header__main-label">Deep Dive</h2>
+      <p class="hmpg-module-header__main-label-blurb">A short one-sentence explainer blurb might go here</p>
+    </header>
+    {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--primary" story-item-category="news" story-item-headline="Big headline for deep dive context" story-item-dek="This isn't just a normal deck. It's actually the entire content of a mini-story that privides the editorial context for the aritcles showcased in this module. It will never have a photo because the primary photo real estate in this module is dedicated to the main featured story. <br>Ideally it will be two or three short paragraphs -- just a pithy introduction to the topic that our dear reader is about to deep dive into, stressing the salience of the subject, the ground-breaking reporting and insightful analysis that has wrought these jewels of pure knowledge and brought them forth from the ancient platonic cave where they have languished in obscurity until a band of merry roving reporters recovered their wisdom and delivered it into the light of the good." story-badge=nil %}
+    {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--primary" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." story-badge=nil %}
+
+
+  </section>
+
+
 
 </main>
