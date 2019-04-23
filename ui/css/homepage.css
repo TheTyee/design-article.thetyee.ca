@@ -435,7 +435,7 @@ https://caniuse.com/#feat=css3-colors
                 grid-column: auto / span 1;
                 }
 
-                .hmpg-org-recent-stories__main .hmpg-ad-box--halfpage {
+                .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
                   grid-area: ad;
                 }
           }
