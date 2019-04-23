@@ -515,6 +515,8 @@ https://caniuse.com/#feat=css3-colors
   padding-top: var(--gutter-row);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
+
+  background-color: #f1f1f1; /* For testing purposes */
   }
 
   .hmpg-org-deep-dive > .story-item:first-of-type .story-item__image { display: none; }
@@ -562,16 +564,29 @@ https://caniuse.com/#feat=css3-colors
               grid-template-columns: repeat(6, 1fr);
             }
                 .hmpg-org-deep-dive > .story-item:first-of-type {
+                  /* Set the item's position */
                   grid-column: 1 / span 2;
-                  grid-row: auto / span 3; }
-                .hmpg-org-deep-dive > .story-item--secondary {
-                  grid-column: auto / span 2;
-                  grid-row: auto / span 3; }
-                .hmpg-org-deep-dive > .story-item--tertiary
-                  { grid-column: auto / span 2; }
+                  grid-row: auto / span 3;
 
+                  /* Set the item's internal grid */
+                  grid-template-rows: auto;
+                  align-content: start;
+                  }
+
+                .hmpg-org-deep-dive > .story-item--secondary {
+                  /* Set the item's position */
+                  grid-column: auto / span 2;
+                  grid-row: auto / span 3;
+
+                  /* Set the item's internal grid */
+                  align-content: start;
+                  }
 
                 .hmpg-org-deep-dive > .story-item--tertiary {
+                  /* Set the item's position */
+                  grid-column: auto / span 2;
+
+                  /* Set the item's internal grid */
                   grid-template-columns: 1fr 1fr;
                   grid-template-rows: repeat(4, auto) 1fr;
                   grid-template-areas:
@@ -581,11 +596,10 @@ https://caniuse.com/#feat=css3-colors
                     "author image"
                     "date image";
                   }
-
           }
 
 
-/* End of Pinned Story organism */
+/* End of Deep Dive organism */
 
 
 
