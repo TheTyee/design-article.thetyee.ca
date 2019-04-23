@@ -527,24 +527,33 @@ https://caniuse.com/#feat=css3-colors
       /* ---- DEEP DIVE responsive enhancement ---- */
       /*  */
 
-          /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-          @media screen and (min-width: 684px) {
+      /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+      @media screen and (min-width: 684px) {
 
-            .hmpg-org-deep-dive {
-              grid-template-columns: repeat(6, 1fr);
-            }
-                .hmpg-org-deep-dive > *
-                  {grid-column: auto / span 2;}
-                .hmpg-org-deep-dive > .hmpg-module-header
-                  {grid-column: 1 / -1;}
-                .hmpg-org-deep-dive > .story-item:first-of-type
-                  {grid-column: 1 / span 3;}
-                .hmpg-org-deep-dive > .story-item--secondary
-                  {grid-column: auto / span 3;}
-                .hmpg-org-recent-stories__list > .story-item--tertiary
-                  {grid-column: auto / span 3;}
+        .hmpg-org-deep-dive {
+          grid-template-columns: repeat(6, 1fr);
+        }
+            .hmpg-org-deep-dive > *
+              {grid-column: auto / span 2;}
+            .hmpg-org-deep-dive > .hmpg-module-header
+              {grid-column: 1 / -1;}
+            .hmpg-org-deep-dive > .story-item:first-of-type
+              {grid-column: 1 / span 3;}
+            .hmpg-org-deep-dive > .story-item--secondary
+              {grid-column: auto / span 3;}
+            .hmpg-org-deep-dive > .story-item--tertiary {
+              grid-column: auto / span 2;
+              grid-template-columns: 1fr;
+              grid-template-areas:
+                "image"
+                "category"
+                "headline"
+                "deck"
+                "author"
+                "date";
+              }
 
-          }
+      }
 
 
 /* End of Pinned Story organism */
