@@ -387,7 +387,7 @@ https://caniuse.com/#feat=css3-colors
 
 
       /* ---- RECENT STORIES responsive enhancement ---- */
-      /* Story items are allocated grid space based on the order in which they appear -- i.e. :first-child spans entire row. But their grid areas could also be assigned based on the class of the story-item, e.g. .story-item--primary spans full row. */
+      /* Story items are allocated grid space and location based on their story-item extension class, e.g. .story-item--primary spans full first row. */
 
           /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
           @media screen and (min-width: 684px) {
@@ -510,7 +510,12 @@ https://caniuse.com/#feat=css3-colors
 
 /* DEEP DIVE organism ----------------- */
 
-.hmpg-org-deep-dive { }
+.hmpg-org-deep-dive {
+  display: grid;
+  padding-top: var(--gutter-row);
+  grid-column-gap: var(--gutter-column);
+  grid-row-gap: var(--gutter-row);
+  }
 
   .hmpg-org-deep-dive > .story-item:first-of-type .story-item__image { display: none; }
   .hmpg-org-deep-dive > .story-item:first-of-type .badge--story-item-placement { display: none; }
@@ -518,8 +523,31 @@ https://caniuse.com/#feat=css3-colors
   .hmpg-org-deep-dive > .story-item:first-of-type .story-item__author { display: none; }
   .hmpg-org-deep-dive > .story-item:first-of-type .story-item__date { display: none; }
 
-/* End of Pinned Story organism */
 
+      /* ---- DEEP DIVE responsive enhancement ---- */
+      /*  */
+
+          /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+          @media screen and (min-width: 684px) {
+
+            .hmpg-org-deep-dive {
+              grid-template-columns: repeat(6, 1fr);
+            }
+                .hmpg-org-deep-dive > *
+                  {grid-column: auto / span 2;}
+                .hmpg-org-deep-dive > .hmpg-module-header
+                  {grid-column: 1 / -1;}
+                .hmpg-org-deep-dive > .story-item:first-of-type
+                  {grid-column: 1 / span 3;}
+                .hmpg-org-deep-dive > .story-item--secondary
+                  {grid-column: auto / span 3;}
+                .hmpg-org-recent-stories__list > .story-item--tertiary
+                  {grid-column: auto / span 3;}
+
+          }
+
+
+/* End of Pinned Story organism */
 
 
 
