@@ -534,13 +534,13 @@ https://caniuse.com/#feat=css3-colors
           grid-template-columns: repeat(6, 1fr);
         }
             .hmpg-org-deep-dive > *
-              {grid-column: auto / span 2;}
+              { grid-column: auto / span 2; }
             .hmpg-org-deep-dive > .hmpg-module-header
-              {grid-column: 1 / -1;}
+              { grid-column: 1 / -1; }
             .hmpg-org-deep-dive > .story-item:first-of-type
-              {grid-column: 1 / span 3;}
+              { grid-column: 1 / span 3; }
             .hmpg-org-deep-dive > .story-item--secondary
-              {grid-column: auto / span 3;}
+              { grid-column: auto / span 3; }
             .hmpg-org-deep-dive > .story-item--tertiary {
               grid-column: auto / span 2;
               grid-template-columns: 1fr;
@@ -554,6 +554,35 @@ https://caniuse.com/#feat=css3-colors
               }
 
       }
+
+      /*  DEEP DIVE LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
+          @media screen and (min-width: 1368px) {
+
+            .hmpg-org-deep-dive {
+              grid-template-columns: repeat(6, 1fr);
+            }
+                .hmpg-org-deep-dive > .story-item:first-of-type {
+                  grid-column: 1 / span 2;
+                  grid-row: auto / span 3; }
+                .hmpg-org-deep-dive > .story-item--secondary {
+                  grid-column: auto / span 2;
+                  grid-row: auto / span 3; }
+                .hmpg-org-deep-dive > .story-item--tertiary
+                  { grid-column: auto / span 2; }
+
+
+                .hmpg-org-deep-dive > .story-item--tertiary {
+                  grid-template-columns: 1fr 1fr;
+                  grid-template-rows: repeat(4, auto) 1fr;
+                  grid-template-areas:
+                    "category image"
+                    "headline image"
+                    "deck image"
+                    "author image"
+                    "date image";
+                  }
+
+          }
 
 
 /* End of Pinned Story organism */
