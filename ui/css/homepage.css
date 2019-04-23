@@ -512,7 +512,11 @@ https://caniuse.com/#feat=css3-colors
 
 .hmpg-org-deep-dive { }
 
-.hmpg-org-deep-dive
+  .hmpg-org-deep-dive > .story-item:first-of-type .story-item__image { display: none; }
+  .hmpg-org-deep-dive > .story-item:first-of-type .badge--story-item-placement { display: none; }
+  .hmpg-org-deep-dive > .story-item:first-of-type .category-label { display: none; }
+  .hmpg-org-deep-dive > .story-item:first-of-type .story-item__author { display: none; }
+  .hmpg-org-deep-dive > .story-item:first-of-type .story-item__date { display: none; }
 
 /* End of Pinned Story organism */
 
