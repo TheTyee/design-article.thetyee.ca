@@ -120,13 +120,11 @@ https://caniuse.com/#feat=css3-colors
 
 
     /* ELEMENT COLOURS */
-    /*  */
+    /* Typographic Elements */
     :root {
       --icon-search-svg-colour: var(--text-colour);
       --icon-arrow-toggle-down-svg-colour: var(--text-colour);
     }
-
-
 
 /* end of Colour System */
 
