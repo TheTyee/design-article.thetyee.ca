@@ -781,6 +781,38 @@ https://caniuse.com/#feat=css3-colors
 
 
 
+/* SITE FOOTER organism ----------------- */
+
+.site-footer--homepage {
+  display: grid;
+  margin-top: var(--gutter-row);
+  padding-top: var(--gutter-row-half);
+  padding-bottom: var(--gutter-row);
+  grid-column-gap: var(--gutter-column);
+  grid-row-gap: var(--gutter-row-half);
+  justify-items: center;
+  align-items: end;
+
+  background-color: #ddd;
+}
+
+
+      /* ---- SITE FOOTER responsive enhancement ---- */
+      /*  */
+
+      /*  Site Header NON-STANDARD BREAKPOINT -- 850px */
+      @media screen and (min-width: 850px) {
+
+        .site-footer--homepage {
+          grid-template-columns: repeat(7, 1fr);
+        }
+
+      }
+
+/* End of Site Header organism */
+
+
+
 
 
 /*------------------------------------*\
