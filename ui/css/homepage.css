@@ -669,7 +669,7 @@ https://caniuse.com/#feat=css3-colors
   padding-top: var(--gutter-row);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-  }
+}
 
 
 
@@ -696,7 +696,7 @@ https://caniuse.com/#feat=css3-colors
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 0;
   align-items: start;
-  }
+}
 
   .hmpg-org-reported-elsewhere > .hmpg-module-header {
     grid-column: 1 / -1;
@@ -715,6 +715,13 @@ https://caniuse.com/#feat=css3-colors
 
 /* End of Reported Elsewhere organism */
 
+
+
+/* SITE HEADER organism ----------------- */
+
+
+
+/* End of Site Header organism */
 
 
 
