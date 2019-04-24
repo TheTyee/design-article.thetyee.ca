@@ -702,8 +702,7 @@ https://caniuse.com/#feat=css3-colors
     grid-column: 1 / -1;
   }
 
-
-      /* ---- Reported Elsewhere responsive enhancement ---- */
+      /* ---- REPORTED ELSEWHERE responsive enhancement ---- */
       /*  */
 
       /*  Reported Elsewhere MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
@@ -714,7 +713,9 @@ https://caniuse.com/#feat=css3-colors
         }
       }
 
-/* End of Most organism */
+/* End of Reported Elsewhere organism */
+
+
 
 
 
