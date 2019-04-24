@@ -508,7 +508,8 @@ https://caniuse.com/#feat=css3-colors
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
 .hmpg-org-tyee-insider {
   display: grid;
-  padding-top: var(--gutter-row);
+  margin-top: var(--gutter-row);
+  padding-top: var(--gutter-row-half);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 
@@ -573,7 +574,8 @@ https://caniuse.com/#feat=css3-colors
 
 .hmpg-org-deep-dive {
   display: grid;
-  padding-top: var(--gutter-row);
+  margin-top: var(--gutter-row);
+  padding-top: var(--gutter-row-half);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 
