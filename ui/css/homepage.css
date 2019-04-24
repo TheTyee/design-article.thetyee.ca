@@ -304,10 +304,7 @@ https://caniuse.com/#feat=css3-colors
               .story-item--tertiary .badge--story-item-placement {display: block;}
               .story-item--tertiary .category-label {display: block;}
               .story-item--tertiary .story-item__deck {display: block;}
-
-
         }
-
 /* end of Story Item */
 
 
@@ -339,6 +336,42 @@ https://caniuse.com/#feat=css3-colors
     @media screen and (min-width: 1368px) {
       .hmpg-ad-box--halfpage { display: block;}
     }
+/* end of HMPG Ad Box molecule */
+
+
+/* COUNTER LIST molecule ----------------- */
+/* This formats a container of articles into a numbered list with custom numbers. It uses the styling method from https://www.w3schools.com/css/css_counters.asp Variants can be seen here: https://www.w3.org/Style/Examples/007/color-bullets.en.html */
+
+.counter-list--story-items {
+  counter-reset: story-item;
+}
+
+    .counter-list--story-items > .story-item {
+      counter-increment: story-item;
+    }
+
+    .counter-list--story-items > .story-item h2::before {
+              content: counter(story-item);
+              display: inline-block;
+              color: #fff;
+              background-color: #bbb;
+              border-radius: 0.7em;
+              text-align:center;
+              font-weight: 600;
+              width: 1.33em;
+              height: 1.33em;
+
+              -ms-transform: scale(0.85); /* IE 9 */
+              -webkit-transform: scale(0.85); /* Safari */
+              transform: scale(.85);
+
+              margin-left: 0;
+              margin-right: 0.25em;
+              /* text-align: right; */
+              direction: rtl;
+          }
+/* end of Counter List molecule */
+
 
 
 
@@ -612,34 +645,7 @@ https://caniuse.com/#feat=css3-colors
   grid-row-gap: var(--gutter-row);
   }
 
-  .counter-list--story-items {
-    counter-reset: story-item;
-  }
 
-      .counter-list--story-items > .story-item {
-        counter-increment: story-item;
-      }
-
-      .counter-list--story-items > .story-item h2::before {
-                content: counter(story-item);
-                display: inline-block;
-                color: #fff;
-                background-color: #bbb;
-                border-radius: 0.7em;
-                text-align:center;
-                font-weight: 600;
-                width: 1.33em;
-                height: 1.33em;
-
-                -ms-transform: scale(0.85); /* IE 9 */
-                -webkit-transform: scale(0.85); /* Safari */
-                transform: scale(.85);
-
-                margin-left: 0;
-                margin-right: 0.25em;
-                /* text-align: right; */
-                direction: rtl;
-            }
 
       /* ---- MOST responsive enhancement ---- */
       /*  */
