@@ -641,6 +641,16 @@ https://caniuse.com/#feat=css3-colors
                 direction: rtl;
             }
 
+      /* ---- MOST responsive enhancement ---- */
+      /*  */
+
+      /*  MOST MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+      @media screen and (min-width: 684px) {
+
+        .hmpg-org-most {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
 
 /* End of Most organism */
 
