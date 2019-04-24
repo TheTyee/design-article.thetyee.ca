@@ -597,9 +597,53 @@ https://caniuse.com/#feat=css3-colors
                     "date image";
                   }
           }
-
-
 /* End of Deep Dive organism */
+
+
+
+
+
+/* MOST organism ----------------- */
+
+.hmpg-org-most {
+  display: grid;
+  padding-top: var(--gutter-row);
+  grid-column-gap: var(--gutter-column);
+  grid-row-gap: var(--gutter-row);
+  }
+
+  .counter-list--story-items {
+    counter-reset: story-item;
+  }
+
+      .counter-list--story-items > .story-item {
+        counter-increment: story-item;
+      }
+
+      .counter-list--story-items > .story-item h2::before {
+                content: counter(story-item);
+                display: inline-block;
+                color: #fff;
+                background-color: #bbb;
+                border-radius: 0.7em;
+                text-align:center;
+                font-weight: 600;
+                width: 1.33em;
+                height: 1.33em;
+
+                -ms-transform: scale(0.85); /* IE 9 */
+                -webkit-transform: scale(0.85); /* Safari */
+                transform: scale(.85);
+
+                margin-left: 0;
+                margin-right: 0.25em;
+                /* text-align: right; */
+                direction: rtl;
+            }
+
+
+/* End of Most organism */
+
 
 
 
