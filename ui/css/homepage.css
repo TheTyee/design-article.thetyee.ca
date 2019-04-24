@@ -45,6 +45,8 @@
         --brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
 
   --link-colour: yellow;
+
+  --text-colour: #393939;
 }
 
 /* Responsive Settings */
@@ -91,6 +93,19 @@ https://www.w3schools.com/cssref/func_hsla.asp
 https://caniuse.com/#feat=css3-colors
 */
 
+    /* BRAND TEXT COLOUR */
+    /* Brand colour is darkened for use in text and icons */
+    :root {
+      --brand-colour--text:
+          hsla(
+            calc(var(--brand-colour__hue)*.9), /* makes brand colour more red */
+            var(--brand-colour__sat),
+            calc(var(--brand-colour__lig)*.98), /* darkens brand colour */
+            var(--brand-colour__alp)
+          );
+    }
+
+
     /* BRAND BACKGROUND COLOUR */
     /* Brand colour is lightened for use in module backgrounds */
     :root {
@@ -102,6 +117,19 @@ https://caniuse.com/#feat=css3-colors
             var(--brand-colour__alp)
           );
     }
+
+
+    /* ELEMENT COLOURS */
+    /*  */
+    :root {
+      --icon-search-svg-colour: var(--text-colour);
+      --icon-arrow-toggle-down-svg-colour: var(--text-colour);
+    }
+
+
+
+/* end of Colour System */
+
 
 
 /* MODULAR SCALE */
@@ -117,6 +145,7 @@ https://caniuse.com/#feat=css3-colors
   /* Scale down text for tertiary components (e.g. .story-item--tertiary) */
   --small-text: 0.8rem;
 }
+
 
 
 /* GRID SYSTEM */
