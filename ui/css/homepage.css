@@ -719,6 +719,37 @@ https://caniuse.com/#feat=css3-colors
 
 /* SITE HEADER organism ----------------- */
 
+.site-header__logo-block {
+  display: grid;
+  padding-top: var(--gutter-row);
+  grid-column-gap: var(--gutter-column);
+  grid-row-gap: 0;
+  align-items: start;
+}
+
+  .site-header__logo-block {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .site-header__tagline--a {
+    text-align: right;
+  }
+
+  .site-header__logo {
+    justify-self:center;
+  }
+
+.site-nav--wide {
+  display: grid;
+  padding-top: var(--gutter-row);
+  grid-column-gap: var(--gutter-column);
+  grid-row-gap: 0;
+  align-items: end;
+}
+
+  .site-nav--wide {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
 
 
 /* End of Site Header organism */
