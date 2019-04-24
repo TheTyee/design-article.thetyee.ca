@@ -728,11 +728,11 @@ https://caniuse.com/#feat=css3-colors
 }
 
   .site-header__logo-block {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
-  .site-header__tagline--a {
-    text-align: right;
+  .site-header__tagline--a, .site-header__tagline--b {
+    display: none;
   }
 
   .site-header__logo {
@@ -740,17 +740,42 @@ https://caniuse.com/#feat=css3-colors
   }
 
 .site-nav--wide {
-  display: grid;
-  padding-top: var(--gutter-row);
-  grid-column-gap: var(--gutter-column);
-  grid-row-gap: 0;
-  align-items: end;
-}
-
-  .site-nav--wide {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  display: none;
   }
 
+
+      /* ---- SITE HEADER responsive enhancement ---- */
+      /*  */
+
+      /*  Site Header NON-STANDARD BREAKPOINT -- 850px */
+      @media screen and (min-width: 850px) {
+
+        .site-header__logo-block {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .site-header__tagline--a {
+          display: block;
+          text-align: right;
+        }
+
+        .site-header__tagline--b {
+          display: block;
+        }
+
+        .site-nav--wide {
+          display: grid;
+          padding-top: var(--gutter-row);
+          grid-column-gap: var(--gutter-column);
+          grid-row-gap: 0;
+          align-items: end;
+        }
+
+          .site-nav--wide {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+          }
+
+      }
 
 /* End of Site Header organism */
 
