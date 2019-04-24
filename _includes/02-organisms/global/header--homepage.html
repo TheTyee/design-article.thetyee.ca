@@ -1,0 +1,39 @@
+<!-- organisms/global/HEADER--HOMEPAGE -->
+<header id="site-header site-header--homepage">
+
+  <!--Site Header Logo Block -->
+  <div class="site-header__logo-block">
+
+    <!--site tagline A -->
+    <div class="site-header__tagline site-header__tagline--a">
+      We value: Our readers.<br>
+      Our independence. Our region.<br>
+      The power of real journalism.
+    </div>
+
+    <!--logo -->
+    <a class="" href="/"><img src="{{ site.url }}ui/img/tyee_logo.png" class="narrow-menu__logo" id="site-logo" alt="Tyee logo" /></a>
+
+    <!--site tagline B -->
+    <div class="site-header__tagline site-header__tagline--b">
+      Please receive our <a class="" href="/">e-headlines</a> <br>
+      for free. Or consider becoming <br>
+      a <a class="" href="/">Tyee Builder</a>.
+    </div>
+
+  </div>
+
+  <nav id="site-navigation" class="nav">
+    <a class="nav__link nav__link--news"href="#">News</a>
+    <a class="nav__link nav__link--analysis"href="#">Analysis</a>
+    <a class="nav__link nav__link--culture"href="#">Culture</a>
+    <a class="nav__link nav__link--more nav__link--dropdown"href="#" aria-haspopup="true">More</a>
+
+    <a class="nav__link nav__link--join btn-join" href="#">{% include 00-atoms/images/dollar-heart-icon.html %}<span>Join</span></a>
+    <a class="nav__link"href="#">News</a>
+
+    <a class="nav__link nav__link--search nav__link--dropdown" href="#" role="button" aria-haspopup="true">{% include 00-atoms/images/dollar-heart-icon.html %}<span class="search-text">Search</span> </a>
+
+  </nav>
+
+</header>
