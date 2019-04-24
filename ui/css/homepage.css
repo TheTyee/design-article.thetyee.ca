@@ -387,6 +387,7 @@ https://caniuse.com/#feat=css3-colors
 }
 
 
+
 /* HMPG RECENT STORIES organism ---------- */
 
 .hmpg-org-recent-stories__list {
@@ -416,7 +417,6 @@ https://caniuse.com/#feat=css3-colors
       #expander--recent-stories:checked ~ .button--expander-open {
         display: none;
       }
-
 
 
       /* ---- RECENT STORIES responsive enhancement ---- */
@@ -476,6 +476,7 @@ https://caniuse.com/#feat=css3-colors
   /* end of Recent Stories */
 
 
+
 /* TYEE INSIDER organism ----------------- */
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
 .hmpg-org-tyee-insider {
@@ -531,13 +532,13 @@ https://caniuse.com/#feat=css3-colors
 /* End of Tyee Insider organism */
 
 
+
 /* PINNED STORY organism ----------------- */
 
 .hmpg-org-pinned-story {
   padding-top: var(--gutter-row); }
 
 /* End of Pinned Story organism */
-
 
 
 
@@ -634,8 +635,6 @@ https://caniuse.com/#feat=css3-colors
 
 
 
-
-
 /* MOST organism ----------------- */
 
 .hmpg-org-most {
@@ -654,6 +653,36 @@ https://caniuse.com/#feat=css3-colors
       @media screen and (min-width: 684px) {
 
         .hmpg-org-most {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
+/* End of Most organism */
+
+
+
+/* REPORTED ELSEWHERE organism ----------------- */
+
+.hmpg-org-reported-elsewhere {
+  display: grid;
+  padding-top: var(--gutter-row);
+  grid-column-gap: var(--gutter-column);
+  grid-row-gap: 0;
+  align-items: start;
+  }
+
+  .hmpg-org-reported-elsewhere > .hmpg-module-header {
+    grid-column: 1 / -1;
+  }
+
+
+      /* ---- Reported Elsewhere responsive enhancement ---- */
+      /*  */
+
+      /*  Reported Elsewhere MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+      @media screen and (min-width: 684px) {
+
+        .hmpg-org-reported-elsewhere {
           grid-template-columns: 1fr 1fr 1fr;
         }
       }
