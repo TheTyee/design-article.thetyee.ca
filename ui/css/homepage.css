@@ -712,7 +712,19 @@ https://caniuse.com/#feat=css3-colors
 
         .hmpg-org-reported-elsewhere {
           grid-template-columns: 1fr 1fr 1fr;
+          grid-template-areas:
+                    ". . ."
+                    "list list ad"
+                    "list list ad"
+                    "list list ad"
+                    "list list ad"
+                    "list list ad"
+                    "list list ad";
         }
+        .hmpg-org-reported-elsewhere > .hmpg-ad-box--bigbox{
+          grid-area: ad;
+        }
+
       }
 
 /* End of Reported Elsewhere organism */
