@@ -712,7 +712,9 @@ https://caniuse.com/#feat=css3-colors
           column-count: 3;
         }
         .hmpg-org-reported-elsewhere__list > .story-item{
+          -webkit-column-break-inside: avoid;
           break-inside: avoid;
+          page-break-inside: avoid;
         }
 
 
