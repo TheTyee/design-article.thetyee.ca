@@ -158,6 +158,18 @@ https://caniuse.com/#feat=css3-colors
 /* GRID SYSTEM */
 /* Uses the Modular Scale to derive a modular grid. */
 
+
+/* Spacing */
+
+:root {
+  --grid-unit-2: calc(var(--grid-unit)*2);
+  --grid-unit-3: calc(var(--grid-unit)*3);
+  --grid-unit-4: calc(var(--grid-unit)*4);
+}
+
+
+/* Column Spacing */
+
 :root {
   /* standard column gutter width */
   --gutter-column: calc(var(--grid-unit) * 5);
