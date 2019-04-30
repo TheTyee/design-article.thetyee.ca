@@ -7,13 +7,22 @@
 @import "html5doctor-reset.css";
 @import "homepage-articlepage_imports.css";
 
-:root {
-  box-sizing: border-box;
-}
 
 * {
   list-style-type: none;
 }
+
+
+/* Border-box reset. */
+html {
+  box-sizing: border-box;
+}
+  /* Sets inheritance so that compnents can easily override the border-box if required. */
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
 
 
 
@@ -233,6 +242,11 @@ https://caniuse.com/#feat=css3-colors
         "author"
         "date";
 }
+
+    .story-item__news-source{
+      padding-left: .5em;
+      font-weight: 200;
+    }
 
     /* Story Item element layout -- Assign story-item elements to grid areas */
     .story-item--index-page .story-item__image { grid-area: image; }
@@ -703,6 +717,12 @@ https://caniuse.com/#feat=css3-colors
 
   .hmpg-org-reported-elsewhere > .hmpg-module-header {
   }
+
+  .hmpg-org-reported-elsewhere .story-item {
+    padding-top: 1em;
+    padding-top: var(--grid-unit);
+  }
+
 
       /* ---- REPORTED ELSEWHERE responsive enhancement ---- */
       /*  */
