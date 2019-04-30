@@ -700,6 +700,7 @@ https://caniuse.com/#feat=css3-colors
   align-items: start;
 }
 
+
   .hmpg-org-reported-elsewhere > .hmpg-module-header {
   }
 
@@ -709,15 +710,29 @@ https://caniuse.com/#feat=css3-colors
       /*  Reported Elsewhere MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
       @media screen and (min-width: 684px) {
         .hmpg-org-reported-elsewhere__list {
-          column-count: 3;
+          column-count: 2;
+          column-gap: var(--gutter-column);
         }
         .hmpg-org-reported-elsewhere__list > .story-item{
           -webkit-column-break-inside: avoid;
           break-inside: avoid;
           page-break-inside: avoid;
         }
+      }
 
 
+      /*  Reported Elsewhere NONSTANDARD BREAKPOINT -- breakpoint: 1010px */
+      /*  The fixed width of the bigbox ad requires a specific breakpoint here. */
+      @media screen and (min-width: 1010px) {
+        .hmpg-org-reported-elsewhere__list {
+          column-count: 3;
+          column-gap: var(--gutter-column);
+        }
+        .hmpg-org-reported-elsewhere__list > .story-item{
+          -webkit-column-break-inside: avoid;
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
       }
 
 /* End of Reported Elsewhere organism */
