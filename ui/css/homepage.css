@@ -730,9 +730,8 @@ https://caniuse.com/#feat=css3-colors
   .hmpg-org-reported-elsewhere > .hmpg-module-header {
   }
 
-  .hmpg-org-reported-elsewhere .story-item {
-    padding-top: 1em;
-    padding-top: var(--grid-unit);
+  .hmpg-org-reported-elsewhere__list .story-item {
+    padding-top: var(--grid-unit-2);
   }
 
 
