@@ -794,7 +794,10 @@ https://caniuse.com/#feat=css3-colors
   }
 
   /* SITE NAV MOLECULE */
-  .site-nav--wide {
+
+  /* Default for narrow views:
+  Hide all nav item items except the hamburger */
+  .site-nav--wide > :not(.nav__burger) {
     display: none;
   }
 
@@ -809,15 +812,16 @@ https://caniuse.com/#feat=css3-colors
     https://jsfiddle.net/Algreenwich/uym9s0bg/
     https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
-    /* Default state: Menu is hidden */
+    /* Default state: Dropdown Menu is hidden */
     .site--wide-more-dropdown {
-      display: none;
+      display: none !important; /* !important to overide .site-nav--wide > :not(.nav__burger) */
       grid-column: 1 / -1;
     }
 
     /* Activated state: Menu is shown and toggle icon is inverted */
     #expander--nav-more:checked ~ .site--wide-more-dropdown {
-      display: grid;   /* This must be "grid" if the revealed items are themselves using internal grid layouts */
+      display: grid !important; /* !important to overide .site-nav--wide > :not(.nav__burger) */
+      /* This must be "grid" if the revealed items are themselves using internal grid layouts */
     }
     .site-nav #expander--nav-more:checked ~ .nav--expander-toggle .icon-arrow-toggle-down-svg {
       transform: rotate(180deg);
@@ -830,6 +834,7 @@ https://caniuse.com/#feat=css3-colors
       /*  Site Header NON-STANDARD BREAKPOINT -- 850px */
       @media screen and (min-width: 850px) {
 
+        /* Expand site-header grid and show taglines */
         .site-header__logo-block {
           grid-template-columns: 1fr 1fr 1fr;
         }
@@ -843,16 +848,29 @@ https://caniuse.com/#feat=css3-colors
           display: block;
         }
 
+
+        /* Create site-nav bar grid */
         .site-nav--wide {
+          /* Set element's position within its container (.site-header__logo-block) */
+          grid-column: 1 / -1;
+
+          /* Define Grid within element */
           display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
           padding-top: var(--gutter-row);
           grid-column-gap: var(--gutter-column);
           grid-row-gap: 0;
           align-items: end;
         }
 
-          .site-nav--wide {
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+          /* In wide views show all nav items except the hamburger */
+          .site-nav--wide > :not(.nav__burger) {
+            display: block;
+          }
+
+          /* In wide views hide the hamburger */
+          .site-nav--wide > .nav__burger {
+            display: none;
           }
 
       }
