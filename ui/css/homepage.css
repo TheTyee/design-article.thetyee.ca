@@ -805,6 +805,11 @@ https://caniuse.com/#feat=css3-colors
     cursor: pointer;
   }
 
+  .site-nav-main__expander-toggle::before {
+    content: url('/ui/img/icon-arrow-toggle-down.svg');
+    display: inline-block;
+  }
+
     /* NAV DROPDOWN EXPANDER */
     /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
     This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
@@ -820,13 +825,15 @@ https://caniuse.com/#feat=css3-colors
 
     /* Activated state: Menu is shown and toggle icon is inverted */
     #expander--nav-menu:checked ~ .site-nav__dropdown {
-      display: grid !important; /* !important to overide .site-nav-main > :not(.nav__burger) */
-      /* This must be "grid" if the revealed items are themselves using internal grid layouts */
+      display: grid !important; /* !important to overide .site-nav-main > :not(.nav__burger) */ /* This must be "grid" if the revealed items are themselves using internal grid layouts */
     }
     .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle .icon-arrow-toggle-down-svg {
       transform: rotate(180deg);
     }
 
+    .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before {
+      transform: rotate(180deg);
+    }
 
 
 
