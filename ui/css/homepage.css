@@ -813,13 +813,13 @@ https://caniuse.com/#feat=css3-colors
     https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
     /* Default state: Dropdown Menu is hidden */
-    .site--wide-more-dropdown {
+    .site-nav__dropdown {
       display: none !important; /* !important to overide .site-nav--main > :not(.nav__burger) */
       grid-column: 1 / -1;
     }
 
     /* Activated state: Menu is shown and toggle icon is inverted */
-    #expander--nav-menu:checked ~ .site--wide-more-dropdown {
+    #expander--nav-menu:checked ~ .site-nav__dropdown {
       display: grid !important; /* !important to overide .site-nav--main > :not(.nav__burger) */
       /* This must be "grid" if the revealed items are themselves using internal grid layouts */
     }
