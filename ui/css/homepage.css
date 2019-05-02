@@ -819,13 +819,16 @@ https://caniuse.com/#feat=css3-colors
     }
 
     /* Activated state: Menu is shown and toggle icon is inverted */
-    #expander--nav-more:checked ~ .site--wide-more-dropdown {
+    #expander--nav-menu:checked ~ .site--wide-more-dropdown {
       display: grid !important; /* !important to overide .site-nav--wide > :not(.nav__burger) */
       /* This must be "grid" if the revealed items are themselves using internal grid layouts */
     }
-    .site-nav #expander--nav-more:checked ~ .nav--expander-toggle .icon-arrow-toggle-down-svg {
+    .site-nav #expander--nav-menu:checked ~ .nav--expander-toggle .icon-arrow-toggle-down-svg {
       transform: rotate(180deg);
     }
+
+    /* HAMBURGER DROPDOWN EXPANDER */
+
 
 
       /* ---- SITE HEADER responsive enhancement ---- */
