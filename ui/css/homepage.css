@@ -805,7 +805,8 @@ https://caniuse.com/#feat=css3-colors
     cursor: pointer;
   }
 
-  .site-nav-main__expander-toggle::before {
+  .site-nav-main__expander-toggle.nav__burger::before,
+  .site-nav-main__expander-toggle.nav__link--more::after {
     content: url('/ui/img/icon-arrow-toggle-down.svg');
     display: inline-block;
   }
@@ -827,11 +828,9 @@ https://caniuse.com/#feat=css3-colors
     #expander--nav-menu:checked ~ .site-nav__dropdown {
       display: grid !important; /* !important to overide .site-nav-main > :not(.nav__burger) */ /* This must be "grid" if the revealed items are themselves using internal grid layouts */
     }
-    .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle .icon-arrow-toggle-down-svg {
-      transform: rotate(180deg);
-    }
 
-    .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before {
+    .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
+    .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
       transform: rotate(180deg);
     }
 
