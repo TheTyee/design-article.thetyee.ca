@@ -848,16 +848,16 @@ https://caniuse.com/#feat=css3-colors
     }
 
     /* SECTION SUBNAV DEFAULT state: Menu is hidden */
-    .nav__link--dropdown-item-section {
+    #expander--nav-menu-section-submenu ~ label ~ div {
       display: none ;
       grid-column: 1 / -1;
     }
 
     /* SECTION SUBNAV ACTIVATED state: Menu is shown and toggle icon is inverted */
-    #expander--nav-menu-section-submenu:checked ~ .nav__link--dropdown-item-section {
+    #expander--nav-menu-section-submenu:checked ~ label ~ div {
       display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
     }
-    .site-nav #expander--nav-menu-section-submenu:checked ~ .site-nav__dropdown-expander-toggle::after {
+    #expander--nav-menu-section-submenu:checked ~ .site-nav__dropdown-expander-toggle::after {
       transform: rotate(180deg);
     }
 
