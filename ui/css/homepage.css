@@ -796,7 +796,8 @@ https://caniuse.com/#feat=css3-colors
   /* SITE NAV MOLECULE */
 
   /* Default for narrow views:
-  Hide all nav item items except the hamburger */
+  Hide all nav item items except the hamburger and the dropdown menu.
+      (This rule leaves the dropdown menu unaffected so that its visibility will be controlled by the checkbox state of #expander--nav-menu as defined below in the NAV DROPDOWN EXPANDER rules) */
   .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown) {
     display: none;
   }
@@ -818,17 +819,16 @@ https://caniuse.com/#feat=css3-colors
     https://jsfiddle.net/Algreenwich/uym9s0bg/
     https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
-    /* Default state: Dropdown Menu is hidden */
+    /* DEFAULT state: Dropdown Menu is hidden */
     .site-nav__dropdown {
-      display: none ; /* !important to overide .site-nav-main > :not(.nav__burger) */
+      display: none ;
       grid-column: 1 / -1;
     }
 
-    /* Activated state: Menu is shown and toggle icon is inverted */
+    /* ACTIVATED state: Menu is shown and toggle icon is inverted */
     #expander--nav-menu:checked ~ .site-nav__dropdown {
-      display: grid ; /* !important to overide .site-nav-main > :not(.nav__burger) */ /* This must be "grid" if the revealed items are themselves using internal grid layouts */
+      display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
     }
-
     .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
     .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
       transform: rotate(180deg);
@@ -872,8 +872,8 @@ https://caniuse.com/#feat=css3-colors
         }
 
           /* In wide views show all nav item items except the nav-dropdown and except the hamburger.
-This rule leaves the dropdown menu unaffected so that its visibility will be controlled by the checkbox state of #expander--nav-menu as defined above in the NAV DROPDOWN EXPANDER rules */
-.site-nav-main > :not(.site-nav__dropdown):not(.nav__burger) {
+              (This rule leaves the dropdown menu unaffected so that its visibility will be controlled by the checkbox state of #expander--nav-menu as defined above in the NAV DROPDOWN EXPANDER rules) */
+          .site-nav-main > :not(.site-nav__dropdown):not(.nav__burger) {
             display: block;
           }
 
@@ -917,7 +917,7 @@ This rule leaves the dropdown menu unaffected so that its visibility will be con
 
       }
 
-/* End of Site Header organism */
+/* End of Site Footer organism */
 
 
 
