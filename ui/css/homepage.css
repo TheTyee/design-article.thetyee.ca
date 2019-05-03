@@ -807,7 +807,8 @@ https://caniuse.com/#feat=css3-colors
   }
 
   .site-nav-main__expander-toggle.nav__burger::before,
-  .site-nav-main__expander-toggle.nav__link--more::after {
+  .site-nav-main__expander-toggle.nav__link--more::after,
+  .site-nav-main__section-submenu-expander-toggle::after {
     content: url('/ui/img/icon-arrow-toggle-down.svg');
     display: inline-block;
   }
