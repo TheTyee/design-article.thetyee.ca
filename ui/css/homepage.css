@@ -842,7 +842,7 @@ https://caniuse.com/#feat=css3-colors
     https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
     /* Sub-nav has arrow toggle icon */
-    .site-nav-main__section-submenu-expander-toggle::after {
+    .site-nav__dropdown-expander-toggle::after {
       content: url('/ui/img/icon-arrow-toggle-down.svg');
       display: inline-block;
     }
@@ -857,7 +857,7 @@ https://caniuse.com/#feat=css3-colors
     #expander--nav-menu-section-submenu:checked ~ .nav__link--dropdown-item-section {
       display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
     }
-    .site-nav #expander--nav-menu-section-submenu:checked ~ .site-nav-main__section-submenu-expander-toggle::after {
+    .site-nav #expander--nav-menu-section-submenu:checked ~ .site-nav__dropdown-expander-toggle::after {
       transform: rotate(180deg);
     }
 
