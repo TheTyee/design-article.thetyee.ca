@@ -797,7 +797,7 @@ https://caniuse.com/#feat=css3-colors
 
   /* Default for narrow views:
   Hide all nav item items except the hamburger */
-  .site-nav-main > :not(.nav__burger) {
+  .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown) {
     display: none;
   }
 
@@ -820,13 +820,13 @@ https://caniuse.com/#feat=css3-colors
 
     /* Default state: Dropdown Menu is hidden */
     .site-nav__dropdown {
-      display: none !important; /* !important to overide .site-nav-main > :not(.nav__burger) */
+      display: none ; /* !important to overide .site-nav-main > :not(.nav__burger) */
       grid-column: 1 / -1;
     }
 
     /* Activated state: Menu is shown and toggle icon is inverted */
     #expander--nav-menu:checked ~ .site-nav__dropdown {
-      display: grid !important; /* !important to overide .site-nav-main > :not(.nav__burger) */ /* This must be "grid" if the revealed items are themselves using internal grid layouts */
+      display: grid ; /* !important to overide .site-nav-main > :not(.nav__burger) */ /* This must be "grid" if the revealed items are themselves using internal grid layouts */
     }
 
     .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
@@ -871,10 +871,12 @@ https://caniuse.com/#feat=css3-colors
           align-items: end;
         }
 
-          /* In wide views show all nav items except the hamburger */
-          .site-nav-main > :not(.nav__burger) {
+          /* In wide views show all nav item items except the nav-dropdown and except the hamburger.
+This rule leaves the dropdown menu unaffected so that its visibility will be controlled by the checkbox state of #expander--nav-menu as defined above in the NAV DROPDOWN EXPANDER rules */
+.site-nav-main > :not(.site-nav__dropdown):not(.nav__burger) {
             display: block;
           }
+
 
           /* In wide views hide the hamburger */
           .site-nav-main > .nav__burger {
