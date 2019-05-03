@@ -239,7 +239,8 @@ function renderRow(num){
 
 var segments = window.location.href.split("/");
 topic = segments[(segments.length - 2)]; 
-if (topic == "Zoe_Ducklow") { topic = "Zoë_Ducklow" };
+if (topic == "Zoe_Ducklow") { topic = "Zoë_Ducklow" 
+} else if (topic =="Geoff_D_Auria") { topic = "Geoff_D'Auria" };
         //make UnitObjects global, so I don't have to keep hitting the API
         UnitObjects = UnitObjects;
                 getUnitStories(18,0);
