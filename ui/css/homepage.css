@@ -807,8 +807,7 @@ https://caniuse.com/#feat=css3-colors
   }
 
   .site-nav-main__expander-toggle.nav__burger::before,
-  .site-nav-main__expander-toggle.nav__link--more::after,
-  .site-nav-main__section-submenu-expander-toggle::after {
+  .site-nav-main__expander-toggle.nav__link--more::after {
     content: url('/ui/img/icon-arrow-toggle-down.svg');
     display: inline-block;
   }
@@ -841,6 +840,12 @@ https://caniuse.com/#feat=css3-colors
     An alternative (although less robust) method is to use anchors links:
     https://jsfiddle.net/Algreenwich/uym9s0bg/
     https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
+
+    /* Sub-nav has arrow toggle icon */
+    .site-nav-main__section-submenu-expander-toggle::after {
+      content: url('/ui/img/icon-arrow-toggle-down.svg');
+      display: inline-block;
+    }
 
     /* SECTION SUBNAV DEFAULT state: Menu is hidden */
     .nav__link--dropdown-item-section {
