@@ -862,6 +862,15 @@ https://caniuse.com/#feat=css3-colors
     }
 
 
+    /* TEST for a simpler SUBNAV DROPDOWN. -- expands on focus but doesn't toggle */
+    a + div {
+         display: none ; /* DEFAULT state: Menu is hidden */
+       }
+    a:focus + div {
+     display:grid ; /* ACTIVATED state: Menu in adjacent sibling div is shown */
+    }
+
+
       /* ---- SITE HEADER responsive enhancement ---- */
       /*  */
 
