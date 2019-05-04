@@ -848,7 +848,7 @@ https://caniuse.com/#feat=css3-colors
     }
 
     /* SUBNAV DEFAULT state: Menu is hidden */
-    #expander--nav-menu-section-submenu ~ label ~ div {
+    #expander--nav-menu-section-submenu + label + div {
       display: none ;
       grid-column: 1 / -1;
     }
