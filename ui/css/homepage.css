@@ -848,17 +848,20 @@ https://caniuse.com/#feat=css3-colors
     }
 
     /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
-    #expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
+    #expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
+    #expander--nav-menu-topics-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
       display: none ;
       grid-column: 1 / -1;
     }
 
     /* subnav ACTIVATED STATE: Menu content is shown and adjacent sibling toggle icon is inverted */
-    #expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
-      display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+    #expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
+    #expander--nav-menu-topics-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
+      display: grid ; /* Menu content is shown */
     }
-    #expander--nav-menu-section-submenu:checked + .site-nav__dropdown-expander-toggle::after {
-      transform: rotate(180deg);
+    #expander--nav-menu-section-submenu:checked + .site-nav__dropdown-expander-toggle::after,
+    #expander--nav-menu-topics-submenu:checked + .site-nav__dropdown-expander-toggle::after {
+      transform: rotate(180deg); /* toggle icon is inverted */
     }
 
 
