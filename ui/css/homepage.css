@@ -847,27 +847,18 @@ https://caniuse.com/#feat=css3-colors
       display: inline-block;
     }
 
-    /* SUBNAV DEFAULT state: Menu is hidden */
-    #expander--nav-menu-section-submenu + label + div {
+    /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
+    #expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
       display: none ;
       grid-column: 1 / -1;
     }
 
-    /* SUBNAV ACTIVATED state: Menu in adjacent sibling div is shown and adjacent sibling toggle icon is inverted */
-    #expander--nav-menu-section-submenu:checked + label + div {
+    /* subnav ACTIVATED STATE: Menu content is shown and adjacent sibling toggle icon is inverted */
+    #expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
       display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
     }
     #expander--nav-menu-section-submenu:checked + .site-nav__dropdown-expander-toggle::after {
       transform: rotate(180deg);
-    }
-
-
-    /* TEST for a simpler SUBNAV DROPDOWN. -- expands on focus but doesn't toggle */
-    a + div {
-         display: none ; /* DEFAULT state: Menu is hidden */
-       }
-    a:focus + div {
-     display:grid ; /* ACTIVATED state: Menu in adjacent sibling div is shown */
     }
 
 
