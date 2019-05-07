@@ -812,6 +812,34 @@ https://caniuse.com/#feat=css3-colors
     display: inline-block;
   }
 
+  .nav__link--search::before {
+    content: url('/ui/img/icon-search.svg');
+    display: inline-block;
+  }
+
+    /* SEARCH DROPDOWN EXPANDER */
+    /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
+    This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
+    An alternative (although less robust) method is to use anchors links:
+    https://jsfiddle.net/Algreenwich/uym9s0bg/
+    https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
+
+    /* DEFAULT state: Search Dropdown is hidden */
+    .site-nav__search-dropdown {
+      display: none ;
+      grid-column: 1 / -1;
+    }
+    .site-nav__search-dropdown form {
+      display: grid ;
+      grid-template-columns: 4fr 1fr;
+    }
+
+    /* ACTIVATED state: Search Dropdown is shown */
+    #expander--search:checked ~ .site-nav__search-dropdown {
+      display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+    }
+
+
     /* NAV DROPDOWN EXPANDER */
     /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
     This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
