@@ -796,9 +796,9 @@ https://caniuse.com/#feat=css3-colors
   /* SITE NAV MOLECULE */
 
   /* Default for narrow views:
-  Hide all nav item items except the hamburger and the dropdown menu.
-      (This rule leaves the dropdown menu unaffected so that its visibility will be controlled by the checkbox state of #expander--nav-menu as defined below in the NAV DROPDOWN EXPANDER rules) */
-  .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown) {
+  Hide all nav item items except the hamburger, search button, and the dropdown menus.
+      (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+  .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
     display: none;
   }
 
@@ -903,12 +903,11 @@ https://caniuse.com/#feat=css3-colors
           align-items: end;
         }
 
-          /* In wide views show all nav item items except the nav-dropdown and except the hamburger.
-              (This rule leaves the dropdown menu unaffected so that its visibility will be controlled by the checkbox state of #expander--nav-menu as defined above in the NAV DROPDOWN EXPANDER rules) */
-          .site-nav-main > :not(.site-nav__dropdown):not(.nav__burger) {
+          /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
+              (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+          .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
             display: block;
           }
-
 
           /* In wide views hide the hamburger */
           .site-nav-main > .nav__burger {
