@@ -2,11 +2,16 @@
   #GENERIC
 \*-----------------------------------------*/
 
-/* Set defaults like Normalize.css and border-sizing. */
-
+/* Reset */
 @import "html5doctor-reset.css";
+
+/* Imported styles from article page */
 @import "homepage-articlepage_imports.css";
 
+/* Fonts */
+@import url("https://use.typekit.net/whf8gkh.css");
+
+/* Set defaults like Normalize.css and border-sizing. */
 
 * {
   list-style-type: none;
@@ -23,6 +28,8 @@ html {
   *:after {
     box-sizing: inherit;
   }
+
+
 
 
 
@@ -57,6 +64,13 @@ html {
 
   --text-colour: #393939;
 }
+
+/* Typefaces */
+:root {
+  --typeface-serif: miller-text, georgia, serif;
+  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+}
+
 
 /* Responsive Settings */
 /* CSS variables can't be used within media query selectors, so these responsive settings are for reference only. */
@@ -147,6 +161,16 @@ https://caniuse.com/#feat=css3-colors
 /* TYPOGRAPHY SYSTEM */
 /* Use the Modular Scale to derive a typescale. */
 
+/* Typefaces */
+:root {
+  font-family: var(--typeface-sans);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-colour);
+  line-height: calc(var(--grid-unit) * 3);
+}
+
+
 /* Type Helpers */
 :root {
   /* Scale down text for tertiary components (e.g. .story-item--tertiary) */
@@ -183,14 +207,6 @@ https://caniuse.com/#feat=css3-colors
 
     /* >> Use pseudo element :after to create the column borders */
 
-
-
-
-/*-----------------------------------------*\
-  #FONTS
-\*-----------------------------------------*/
-
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic,900,900italic,300,300italic);
 
 
 
