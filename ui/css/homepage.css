@@ -793,6 +793,11 @@ https://caniuse.com/#feat=css3-colors
     justify-self:center;
   }
 
+    .site-header__logo img{
+      max-width: 100%;
+      padding: 0 4vw;
+    }
+
   /* SITE NAV MOLECULE */
 
   /* Default for narrow views:
