@@ -2,15 +2,6 @@
   #GENERIC
 \*-----------------------------------------*/
 
-/* Reset */
-@import "html5doctor-reset.css";
-
-/* Imported styles from article page */
-@import "homepage-articlepage_imports.css";
-
-/* Fonts */
-@import url("https://use.typekit.net/whf8gkh.css");
-
 /* Set defaults like Normalize.css and border-sizing. */
 
 * {
