@@ -60,6 +60,12 @@ html {
 :root {
   --typeface-serif: miller-text, georgia, serif;
   --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+
+  --typeface-body: franklin-gothic-urw, helvetica, sans-serif;
+
+  --typeface-display-small: miller-text, georgia, serif;
+  --typeface-display-medium: miller-banner, georgia, serif;
+  --typeface-display-large: miller-banner, georgia, serif;
 }
 
 
@@ -153,7 +159,8 @@ https://caniuse.com/#feat=css3-colors
 /* Use the Modular Scale to derive a typescale. */
 
 /* Typefaces */
-:root {
+
+body {
   font-family: var(--typeface-sans);
   font-weight: 400;
   font-style: normal;
@@ -161,10 +168,28 @@ https://caniuse.com/#feat=css3-colors
   line-height: calc(var(--grid-unit) * 3);
 }
 
+/* USE VARIABLE TO SET ALL FONT PROPERTIES VIA SHORTHAND:
+font: font-style font-variant font-weight font-size/line-height font-family;
+
+--typestyle-display-small: normal capitalize 600 2em/2rem miller-text;
+
+h2 {font: var(--typestyle-display-small) }
+ */
+h2 {
+  font-family: var(--typeface-display-small);
+  font-weight: 600;
+  font-style: normal;
+  color: var(--text-colour);
+  line-height: 2rem;
+  font-size: 2em;
+  text-transform: capitalize;
+}
+
 
 /* Type Helpers */
 :root {
-  /* Scale down text for tertiary components (e.g. .story-item--tertiary) */
+  /* Scale down text for tertiary components
+  (e.g. .story-item--tertiary, .story-item—-minimum) */
   --small-text: 0.8rem;
 }
 
