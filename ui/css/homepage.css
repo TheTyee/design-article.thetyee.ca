@@ -1054,10 +1054,10 @@ h2 {
 
 
 /*------------------------------------*\
-  #BASELINE GRID
+  #GRID GUIDES
 \*------------------------------------*/
 
-/* This dras a column grid and baseline grid to tune the layout. */
+/* This draws guides for column grid and baseline grid to tune the layout. */
 
 body {
     /* Define grid structure: column width (inc gutter), baselines */
