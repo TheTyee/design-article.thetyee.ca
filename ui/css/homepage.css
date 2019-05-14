@@ -35,10 +35,19 @@ html {
 
 /* Base Units */
 :root {
-  /* set REM size */
-  font-size: 18px;
-  /* set base unit for modular grid */
-  --grid-unit: 6px;
+
+  /* Set REM size */
+  /* This sets the basic unit for the grid and typography systems */
+  font-size: 8px;
+
+  /* Set base unit for modular grid */
+  --grid-unit: 1rem; /* This should probably stay 1rem to match the grid units */
+
+  /* Set baseline grid increment */
+  --baseline-grid: 2rem; /* This should be a multiple of the rem grid unit. Probably 2rem. */
+
+  /* Set column number */
+  --column-number: 12; /* This is only used for drawing the test grid overlay. */
 }
 
 /* Base Colours */
@@ -192,7 +201,7 @@ h2 {
 /* Type Helpers */
 :root {
   /* Scale down text for tertiary components
-  (e.g. .story-item--tertiary, .story-item—-minimum) */
+  (e.g. .story-item--tertiary, .story-item--minimum) */
   --small-text: 0.8rem;
 }
 
@@ -200,12 +209,6 @@ h2 {
 
 /* GRID SYSTEM */
 /* Uses the Modular Scale to derive a modular grid. */
-
-/* Page margins */
-:root {
-  --page-margin-sides: var(--gutter-column-half);
-  --page-margin-top: var(--gutter-row);
-}
 
 /* Spacing */
 
@@ -220,14 +223,22 @@ h2 {
 
 :root {
   /* standard column gutter width */
-  --gutter-column: calc(var(--grid-unit) * 5);
+  --gutter-column: 4rem;
   /* use half of gutter width when column borders are required */
   --gutter-column-half: calc(var(--gutter-column) / 2);
   /* standard row gutter width */
-  --gutter-row: calc(var(--grid-unit) * 8);
+  --gutter-row: 6rem;
   /* use half of gutter width when row borders are required */
   --gutter-row-half: calc(var(--gutter-row) / 2);
 }
+
+
+/* Page margins */
+:root {
+  --page-margin-sides: var(--gutter-column-half);
+  --page-margin-top: var(--gutter-row);
+}
+
 
     /* >> Use pseudo element :after to create the column borders */
 
@@ -332,19 +343,19 @@ h2 {
         .story-item--tertiary .story-item__author { display: none; }
         .story-item--tertiary .story-item__date { display: none; }
 
-    .story-item—-minimum { font-size: var(--small-text); }
-        .story-item—-minimum .story-item__image { display: none; }
-        .story-item—-minimum .badge--story-item-placement { display: none; }
-        .story-item—-minimum .category-label { display: none; }
-        .story-item—-minimum .story-item__headline { display: block; }
-        .story-item—-minimum .story-item__deck { display: none; }
-        .story-item—-minimum .story-item__author { display: none; }
-        .story-item—-minimum .story-item__date { display: none; }
+    .story-item--minimum { font-size: var(--small-text); }
+        .story-item--minimum .story-item__image { display: none; }
+        .story-item--minimum .badge--story-item-placement { display: none; }
+        .story-item--minimum .category-label { display: none; }
+        .story-item--minimum .story-item__headline { display: block; }
+        .story-item--minimum .story-item__deck { display: none; }
+        .story-item--minimum .story-item__author { display: none; }
+        .story-item--minimum .story-item__date { display: none; }
 
     .story-item--reverse { }
 
 
-    /* ---- STORY ITEM responsive enhancement ---- */
+    /* ---- STORY ITEM responsive enhancement ----  */
 
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
@@ -815,7 +826,7 @@ h2 {
 
 .site-header__logo-block {
   display: grid;
-  padding-top: var(--gutter-row);
+  padding-top: var(--page-margin-top);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 0;
   align-items: start;
@@ -1049,11 +1060,14 @@ h2 {
 /* This dras a column grid and baseline grid to tune the layout. */
 
 body {
-    /* Define grid structure: */
-    /* col&gutter width = (width +    trailing gutter   -   the page margins    )        / #cols )   baselines*/
-    background-size: calc((100vw + var(--gutter-column) - 2 * var(--page-margin-sides))  / 12    )      16px;
+    /* Define grid structure: column width (inc gutter), baselines */
+    background-size:
+    calc((100vw + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )    var(--baseline-grid);
+    /*   (width +    trailing gutter   -   the page margins    )        / number of columns    )  | baseline increment */
+    /*   (----------------- total grid width ------------------)        / number of columns    )  | baseline increment */
+    /*   (------------------------------ column width inc gutter ------------------------------)  | baseline increment */
 
-    /* Adjust grid for page margin: */
+    /* Adjust grid for page margins: */
     background-position: var(--page-margin-sides) 0rem;
 
 
@@ -1062,10 +1076,10 @@ body {
       linear-gradient(to right, #6583c552 1px, transparent 1px),
 
       /* Fill in column widths: */
-      /* column content area      ==            (-------- col & gutter -----------) - ( gutter --------- )  , gutter color   */
-      linear-gradient(to right, #83aaff17 calc((100vw  + var(--gutter-column))/12 - var(--gutter-column) ), #ffd3d300 1px),
+      linear-gradient(to right, #83aaff17 calc((100vw  + var(--gutter-column))/var(--column-number) - var(--gutter-column) ), #ffd3d300 1px),
+      /* column content area      ==            (-------------- column width inc gutter ------------) - ( gutter --------- )  , gutter color   */
 
       /* Draw baselines: */
-      /*                      baseline thickness, colour btw baselines */
       linear-gradient(to bottom, #99b4ff47 8px, transparent 1px);
+      /*                      baseline thickness, colour btw baselines */
 }
