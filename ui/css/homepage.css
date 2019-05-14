@@ -63,8 +63,8 @@ html {
 
   --typeface-body: franklin-gothic-urw, helvetica, sans-serif;
 
-  --typeface-display-small: miller-text, georgia, serif;
-  --typeface-display-medium: miller-banner, georgia, serif;
+  --typeface-display-small: miller-banner, georgia, serif;
+  --typeface-display-medium: miller-headline, georgia, serif;
   --typeface-display-large: miller-banner, georgia, serif;
 }
 
