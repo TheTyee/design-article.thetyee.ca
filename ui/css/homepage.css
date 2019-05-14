@@ -158,7 +158,7 @@ https://caniuse.com/#feat=css3-colors
 /* TYPOGRAPHY SYSTEM */
 /* Use the Modular Scale to derive a typescale. */
 
-/* Typefaces */
+/* Type styles */
 
 body {
   font-family: var(--typeface-sans);
@@ -168,13 +168,16 @@ body {
   line-height: calc(var(--grid-unit) * 3);
 }
 
-/* USE VARIABLE TO SET ALL FONT PROPERTIES VIA SHORTHAND:
-font: font-style font-variant font-weight font-size/line-height font-family;
 
---typestyle-display-small: normal capitalize 600 2em/2rem miller-text;
+  /* NOTE: USE VARIABLE TO SET ALL FONT PROPERTIES VIA SHORTHAND:
+  font: font-style font-variant font-weight font-size/line-height font-family;
 
-h2 {font: var(--typestyle-display-small) }
- */
+  --typestyle-display-small: normal capitalize 600 2em/2rem miller-text;
+
+  h2 {font: var(--typestyle-display-small) }
+   */
+
+
 h2 {
   font-family: var(--typeface-display-small);
   font-weight: 600;
@@ -198,6 +201,11 @@ h2 {
 /* GRID SYSTEM */
 /* Uses the Modular Scale to derive a modular grid. */
 
+/* Page margins */
+:root {
+  --page-margin-sides: var(--gutter-column-half);
+  --page-margin-top: var(--gutter-row);
+}
 
 /* Spacing */
 
@@ -468,7 +476,7 @@ h2 {
 /* HMPG ORGANISM WRAPPER ----------------- */
 
 .hmpg-org-wrapper {
-  padding: 0 var(--gutter-column-half);
+  padding: 0 var(--page-margin-sides);
 }
 
 
@@ -1031,4 +1039,33 @@ h2 {
   width: 100%;
   height: auto;
   display: block;
+}
+
+
+/*------------------------------------*\
+  #BASELINE GRID
+\*------------------------------------*/
+
+/* This dras a column grid and baseline grid to tune the layout. */
+
+body {
+    /* Define grid structure: */
+    /* col&gutter width = (width +    trailing gutter   -   the page margins    )        / #cols )   baselines*/
+    background-size: calc((100vw + var(--gutter-column) - 2 * var(--page-margin-sides))  / 12    )      16px;
+
+    /* Adjust grid for page margin: */
+    background-position: var(--page-margin-sides) 0rem;
+
+
+    background-image:
+      /* Mark start of each column: */
+      linear-gradient(to right, #6583c552 1px, transparent 1px),
+
+      /* Fill in column widths: */
+      /* column content area      ==            (-------- col & gutter -----------) - ( gutter --------- )  , gutter color   */
+      linear-gradient(to right, #83aaff17 calc((100vw  + var(--gutter-column))/12 - var(--gutter-column) ), #ffd3d300 1px),
+
+      /* Draw baselines: */
+      /*                      baseline thickness, colour btw baselines */
+      linear-gradient(to bottom, #99b4ff47 8px, transparent 1px);
 }
