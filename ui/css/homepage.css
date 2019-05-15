@@ -236,7 +236,7 @@ h2 {
 /* Page margins */
 :root {
   --page-margin-sides: var(--gutter-column-half);
-  --page-margin-top: var(--gutter-row);
+  --page-margin-top: 4rem;
 }
 
 
@@ -846,7 +846,8 @@ h2 {
 
     .site-header__logo img{
       max-width: 100%;
-      padding: 0 4vw;
+      max-height: 96px;
+      padding: 0 2vw;
     }
 
   /* SITE NAV MOLECULE */
