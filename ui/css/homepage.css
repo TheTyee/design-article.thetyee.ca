@@ -1060,16 +1060,17 @@ h2 {
 
 /* This draws guides for column grid and baseline grid to tune the layout. */
 
-body, main {
+/* Apply the grid background to container elements: */
+.hmpg-org-wrapper {
     /* Define grid structure: column width (inc gutter), baselines */
     background-size:
-    calc((100vw + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )    var(--baseline-grid);
+    calc((100% + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )    var(--baseline-grid);
     /*   (width +    trailing gutter   -   the page margins    )        / number of columns    )  | baseline increment */
     /*   (----------------- total grid width ------------------)        / number of columns    )  | baseline increment */
     /*   (------------------------------ column width inc gutter ------------------------------)  | baseline increment */
 
     /* Adjust grid for page margins: */
-    background-position: var(--page-margin-sides) 0rem;
+    background-position: var(--page-margin-sides) 1rem;
 
 
     background-image:
@@ -1081,6 +1082,24 @@ body, main {
       /* column content area      ==            (-------------- column width inc gutter ------------) - ( gutter --------- )  , gutter color   */
 
       /* Draw baselines: */
-      linear-gradient(to bottom, #99b4ff47 8px, transparent 1px);
+      linear-gradient(to bottom, #99b4ff47 1rem, transparent 1px);
       /*                      baseline thickness, colour btw baselines */
+}
+
+
+/* Apply the baselines to the body element to test for grid consistency between container elements */
+body {
+    background-size:
+    4rem    1rem;
+    /* width of background, grid increment */
+
+    /* Adjust grid for page margins, set  */
+    background-position: var(--page-margin-sides) -1px;
+
+    background-image:
+      /* Draw baselines: */
+      linear-gradient(to bottom, #4848486b 1px, transparent 1px);
+      /*                      baseline thickness, colour btw baselines */
+
+    background-repeat: repeat-y;
 }
