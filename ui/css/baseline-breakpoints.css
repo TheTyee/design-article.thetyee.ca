@@ -19,7 +19,7 @@ This could be automated further if some calculations were done in css using css 
   {% assign breakpoint-value = i | times: page.interval | plus: first-breakpoint  %}
   @media screen and (min-width: {{ breakpoint-value }}px) {
     {{ page.css-selector }} {
-      max-width: {{ breakpoint-value }}px;
+      width: {{ breakpoint-value }}px;
     }
   }
 {% endfor %}
