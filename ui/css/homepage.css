@@ -484,6 +484,16 @@ h2 {
 \*-----------------------------------------*/
 
 
+/* POSITIONING ----------------- */
+/* This centers all page elements. */
+
+main, body {
+  display: grid;
+  justify-items: center;
+}
+
+
+
 /* HMPG ORGANISM WRAPPER ----------------- */
 
 .hmpg-org-wrapper {
