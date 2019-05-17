@@ -311,6 +311,8 @@ h2 {
       font-weight: 200;
     }
 
+    .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
+
     /* Story Item element layout -- Assign story-item elements to grid areas */
     .story-item--index-page .story-item__image { grid-area: image; }
     .story-item--index-page .badge--story-item-placement { grid-area: image; z-index: 20;}
@@ -404,7 +406,7 @@ h2 {
               "author image"
               "date image";
           }
-              .story-item--tertiary .story-item__image {display: block;}
+              .story-item--tertiary .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
               .story-item--tertiary .badge--story-item-placement {display: block;}
               .story-item--tertiary .category-label {display: block;}
               .story-item--tertiary .story-item__deck {display: block;}

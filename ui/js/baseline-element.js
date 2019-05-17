@@ -39,6 +39,9 @@
    * @param {Element} element
    * @param {int} baseline
    */
+   /**
+    * Hardcode aspectRatio: 1.5, if it solves issues
+    * or enhances performance. */
   function baselineElement (element, baseline) {
     if (!initialized) {
       initialize();
