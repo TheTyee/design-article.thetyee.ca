@@ -10,11 +10,11 @@
 
 /* Import baseline breakpoints */
 /* This ensures that elements with an aspect ratio of 1.5:1 will align with baselines. Note that this still requires images to conform to the correct aspect ratio. */
-@import "baseline-breakpoints.css";
+/* @import "baseline-breakpoints.css"; */
 
 /* Add the new CSS for the homepage */
 /* NOTE: For jekyll dev purposes the main css code should be @import'ed rather
-than <link>'ed in the header. <link>'ed CSS files are very slow to edit
+than directly <link>'ed in the header. <link>'ed CSS files are very slow to edit
 with Chrome's devtools due to some kind of resource mapping bug. @import'ing
 the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
 @import "homepage.css";
