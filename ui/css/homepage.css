@@ -525,6 +525,10 @@ a {
 
 /* HMPG RECENT STORIES organism ---------- */
 
+.hmpg-org-recent-stories {
+  padding-top: var(--gutter-row); /* switched from margin to padding for grid testing */
+}
+
 .hmpg-org-recent-stories__list {
       /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
   display: grid;
