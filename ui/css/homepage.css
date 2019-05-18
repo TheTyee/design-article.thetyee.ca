@@ -31,7 +31,7 @@ html {
   /* Global...............Globally-available variables and config. */
 
 
-  /* SET BASE PARAMETERS */
+  /* SET BASE PARAMETERS ------------------- */
 
   /* Base Units */
   :root {
@@ -50,17 +50,17 @@ html {
     --column-number: 12; /* This is only used for drawing the test grid overlay. */
   }
 
-  /* Set base type size */
+  /* Set base type size and color */
+  /*
   :root {
     --base-type-size: 2rem;
     --base-line-height: 3rem;
-  }
+  } These variables aren't in use. The values are set on <body> below: */
   body{
-    font-size: var(--base-type-size);
+    font-size: 2rem;
+    line-height: 2rem;
     color: var(--text-colour);
-
   }
-
 
 
   /* Base Colours */
@@ -74,9 +74,9 @@ html {
           --brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
 
     --link-colour: yellow;
-
     --text-colour: #393939;
   }
+
 
   /* Typefaces */
   :root {
@@ -91,27 +91,23 @@ html {
   }
 
 
-  /* Type Styles */
-  :root {
-  /* --Style-name      style    variant  weight  font-size------------/line-height              font-family          */
-  /*                                             var(--base-type-size)/var(--base-line-height)                       */
-     --text-item-body: normal   normal   400     var(--base-type-size)/var(--base-line-height)  var(--typeface-item-body);
 
-     --text-label:     normal   normal   600     0.85em/2rem  var(--typeface-sans);
-     --text-label--transform: uppercase;
-     --text-label--letter-spacing: 0.1em;
-     --text-label--color: var(--brand-colour--text);
-  }
+  /* TYPE STYLES ------------------- */
 
-
+  /* Default text styles */
   body {
-    font: var(--text-item-body);
+    font-family: var(--typeface-sans);
+    font-weight: 400;
+    font-style: normal;
   }
+
+  /* Label text styles */
   .category-label {
-    font: var(--text-label);
-    text-transform: var(--text-label--transform);
-    letter-spacing: var(--text-label--letter-spacing);
-    color: var(--text-label--color);
+    font-family: var(--typeface-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--brand-colour--text);
   }
 
   /* Old text styles ---
