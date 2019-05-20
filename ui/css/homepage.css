@@ -38,7 +38,7 @@ html {
 
   /* Set REM size */
   /* This sets the basic unit for the grid and typography systems */
-  font-size: 8px;
+  font-size: 9px;
 
   /* Set base unit for modular grid */
   --grid-unit: 1rem; /* This should probably stay 1rem to match the grid units */
@@ -57,9 +57,22 @@ html {
   --base-line-height: 3rem;
 } These variables aren't in use. The values are set on <body> below: */
 body{
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 2rem;
   color: var(--text-colour);
+
+  padding-top: .rem;
+}
+
+
+/* Grid Guides temporary overrides */
+
+.hmpg-org-wrapper {
+ background: none !important;
+}
+
+body {
+ background: none !importan;
 }
 
 
