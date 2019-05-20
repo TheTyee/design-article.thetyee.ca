@@ -869,7 +869,7 @@ a {
 }
 
 .site-header__tagline {
-  margin-top: 2rem;
+  margin-top: calc(2rem + 1vw);
 }
 
   .site-header__tagline--a, .site-header__tagline--b {
@@ -1074,6 +1074,8 @@ a {
           grid-column-gap: var(--gutter-column);
           grid-row-gap: 0;
           align-items: end;
+
+          padding-top: 4rem;
         }
 
           /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
