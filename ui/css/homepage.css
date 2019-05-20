@@ -533,7 +533,6 @@ a {
       /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
   display: grid;
   width: 100%;
-  margin-top: var(--gutter-row);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 }
