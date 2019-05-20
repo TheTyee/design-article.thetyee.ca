@@ -24,137 +24,137 @@ html {
 
 
 
-  /*-----------------------------------------*\
-    #SETTINGS
-  \*-----------------------------------------*/
+/*-----------------------------------------*\
+  #SETTINGS
+\*-----------------------------------------*/
 
-  /* Global...............Globally-available variables and config. */
-
-
-  /* SET BASE PARAMETERS ------------------- */
-
-  /* Base Units */
-  :root {
-
-    /* Set REM size */
-    /* This sets the basic unit for the grid and typography systems */
-    font-size: 8px;
-
-    /* Set base unit for modular grid */
-    --grid-unit: 1rem; /* This should probably stay 1rem to match the grid units */
-
-    /* Set baseline grid increment */
-    --baseline-grid: 2rem; /* This should be a multiple of the rem grid unit. Probably 2rem. */
-
-    /* Set column number */
-    --column-number: 12; /* This is only used for drawing the test grid overlay. */
-  }
-
-  /* Set base type size and color */
-  /*
-  :root {
-    --base-type-size: 2rem;
-    --base-line-height: 3rem;
-  } These variables aren't in use. The values are set on <body> below: */
-  body{
-    font-size: 2rem;
-    line-height: 2rem;
-    color: var(--text-colour);
-  }
+/* Global...............Globally-available variables and config. */
 
 
-  /* Base Colours */
-  :root {
-    /* BRAND COLOUR -- Tyee Orange.                                    */
-    --brand-colour__hue: 49;           /* HSLA values are broken into  */
-    --brand-colour__sat: 100%;         /* separate variables for       */
-    --brand-colour__lig: 50%;          /* computational manipulation   */
-    --brand-colour__alp: 1;            /* in Colour System below.      */
-          /* Set --brand-colour variable based on HSLA variables */
-          --brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
+/* SET BASE PARAMETERS ------------------- */
 
-    --link-colour: yellow;
-    --text-colour: #393939;
-  }
+/* Base Units */
+:root {
 
+  /* Set REM size */
+  /* This sets the basic unit for the grid and typography systems */
+  font-size: 8px;
 
-  /* Typefaces */
-  :root {
-    --typeface-serif: miller-text, georgia, serif;
-    --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+  /* Set base unit for modular grid */
+  --grid-unit: 1rem; /* This should probably stay 1rem to match the grid units */
 
-    --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
+  /* Set baseline grid increment */
+  --baseline-grid: 2rem; /* This should be a multiple of the rem grid unit. Probably 2rem. */
 
-    --typeface-display-small: miller-banner, georgia, serif;
-    --typeface-display-medium: miller-headline, georgia, serif;
-    --typeface-display-large: miller-banner, georgia, serif;
-  }
+  /* Set column number */
+  --column-number: 12; /* This is only used for drawing the test grid overlay. */
+}
 
-
-
-  /* TYPE STYLES ------------------- */
-
-  /* Default text styles */
-  body {
-    font-family: var(--typeface-sans);
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  /* Label text styles */
-  .category-label {
-    font-family: var(--typeface-sans);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--brand-colour--text);
-  }
-
-  /* Old text styles ---
-  body {
-    font-family: var(--typeface-sans);
-    font-weight: 400;
-    font-style: normal;
-    color: var(--text-colour);
-    line-height: calc(var(--grid-unit) * 3);
-    font: normal normal 400 var(--base-type-size)/var(--base-line-height)  var(--typeface-body);
-  }
-   h2 {
-     font-family: var(--typeface-display-small);
-     font-weight: 600;
-     font-style: normal;
-     color: var(--text-colour);
-     line-height: 3rem;
-     font-size: 3rem;
-     text-transform: capitalize;
-   } */
+/* Set base type size and color */
+/*
+:root {
+  --base-type-size: 2rem;
+  --base-line-height: 3rem;
+} These variables aren't in use. The values are set on <body> below: */
+body{
+  font-size: 2rem;
+  line-height: 2rem;
+  color: var(--text-colour);
+}
 
 
-  /* Responsive Settings */
-  /* CSS variables can't be used within media query selectors, so these responsive settings are for reference only. */
-  /* If we want to use CSS variables to create a layout grid that responds to viewport dimensions then we could set the grid properties via a variable and set that variable relative to the viewport dimension.
-  Simple examples:
-      --column-gutter: calc(5vw+10px);
+/* Base Colours */
+:root {
+  /* BRAND COLOUR -- Tyee Orange.                                    */
+  --brand-colour__hue: 49;           /* HSLA values are broken into  */
+  --brand-colour__sat: 100%;         /* separate variables for       */
+  --brand-colour__lig: 50%;          /* computational manipulation   */
+  --brand-colour__alp: 1;            /* in Colour System below.      */
+        /* Set --brand-colour variable based on HSLA variables */
+        --brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
 
-      .container {
-        grid-column-gap:var(--column-gutter);
+  --link-colour: yellow;
+  --text-colour: #393939;
+}
+
+
+/* Typefaces */
+:root {
+  --typeface-serif: miller-text, georgia, serif;
+  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+
+  --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
+
+  --typeface-display-small: miller-banner, georgia, serif;
+  --typeface-display-medium: miller-headline, georgia, serif;
+  --typeface-display-large: miller-banner, georgia, serif;
+}
+
+
+
+/* TYPE STYLES ------------------- */
+
+/* Default text styles */
+body {
+  font-family: var(--typeface-sans);
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Label text styles */
+.category-label {
+  font-family: var(--typeface-sans);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-colour--text);
+}
+
+/* Old text styles ---
+body {
+  font-family: var(--typeface-sans);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-colour);
+  line-height: calc(var(--grid-unit) * 3);
+  font: normal normal 400 var(--base-type-size)/var(--base-line-height)  var(--typeface-body);
+}
+ h2 {
+   font-family: var(--typeface-display-small);
+   font-weight: 600;
+   font-style: normal;
+   color: var(--text-colour);
+   line-height: 3rem;
+   font-size: 3rem;
+   text-transform: capitalize;
+ } */
+
+
+/* Responsive Settings */
+/* CSS variables can't be used within media query selectors, so these responsive settings are for reference only. */
+/* If we want to use CSS variables to create a layout grid that responds to viewport dimensions then we could set the grid properties via a variable and set that variable relative to the viewport dimension.
+Simple examples:
+    --column-gutter: calc(5vw+10px);
+
+    .container {
+      grid-column-gap:var(--column-gutter);
+    }
+
+    --col-grid-main: 1fr 1fr;
+    @media screen and (min-width: 1368px) { --col-grid-main: 2fr 1fr 1fr 1fr; }
+
+    .hmpg-org-recent-stories__top-stories {
+        grid-template-columns: var(--col-grid-main);
       }
-
-      --col-grid-main: 1fr 1fr;
-      @media screen and (min-width: 1368px) { --col-grid-main: 2fr 1fr 1fr 1fr; }
-
-      .hmpg-org-recent-stories__top-stories {
-          grid-template-columns: var(--col-grid-main);
-        }
-   */
-  /* :root {
-    breakpoint-width-xs: 0;
-    breakpoint-width-s: 0;
-    breakpoint-width-m: 684px;
-    breakpoint-width-l: 1368px;
-    breakpoint-width-xl: 1368px;
-  }
-  */
+ */
+/* :root {
+  breakpoint-width-xs: 0;
+  breakpoint-width-s: 0;
+  breakpoint-width-m: 684px;
+  breakpoint-width-l: 1368px;
+  breakpoint-width-xl: 1368px;
+}
+*/
 
 
 
