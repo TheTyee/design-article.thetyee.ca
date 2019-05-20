@@ -860,15 +860,17 @@ a {
 
 .site-header__logo-block {
   display: grid;
-  padding-top: var(--page-margin-top);
+  grid-template-columns: 1fr;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 0;
   align-items: start;
+
+  padding-top: var(--page-margin-top);
 }
 
-  .site-header__logo-block {
-    grid-template-columns: 1fr;
-  }
+.site-header__tagline {
+  margin-top: 2rem;
+}
 
   .site-header__tagline--a, .site-header__tagline--b {
     display: none;
@@ -876,7 +878,8 @@ a {
 
   .site-header__logo {
     justify-self:center;
-    line-height: 0;
+    line-height: 0; /* required to prevent additional height in element */
+    min-height: 12rem; /* Keeps height of logo block aligned with grid */
   }
 
     .site-header__logo img{
