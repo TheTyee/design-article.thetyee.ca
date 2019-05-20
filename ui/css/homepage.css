@@ -876,6 +876,7 @@ a {
 
   .site-header__logo {
     justify-self:center;
+    line-height: 0;
   }
 
     .site-header__logo img{
