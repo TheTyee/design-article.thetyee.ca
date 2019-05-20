@@ -900,14 +900,50 @@ a {
 
   .site-nav-main__expander-toggle.nav__burger::before,
   .site-nav-main__expander-toggle.nav__link--more::after {
-    content: url('/ui/img/icon-arrow-toggle-down.svg');
+    content: "arrow_drop_down";
     display: inline-block;
+    vertical-align: -.25em;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5em;
+    line-height: 1rem; /* required to prevent additional height in element */
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
   }
+
+  .nav__link--join {
+      position: relative;
+      left: 1.35em;
+  }
+
+    .nav__link--join::before {
+      content: url('/ui/img/icon-dollar-heart.svg');
+      display: inline-block;
+      position: absolute;
+      left: -1.35em;
+      transform: scale(.6) translate(-40%, -40%);
+    }
+
+.nav__link--search {
+  position: relative;
+  left: 1.35em;
+}
 
   .nav__link--search::before {
     content: url('/ui/img/icon-search.svg');
     display: inline-block;
+    position: absolute;
+    left: -1.35em;
+    transform: scale(.6) translate(-40%, -40%);
   }
+
 
     /* SEARCH DROPDOWN EXPANDER */
     /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
