@@ -999,8 +999,22 @@ a {
 
     /* Sub-nav has arrow toggle icon */
     .site-nav__dropdown-expander-toggle::after {
-      content: url('/ui/img/icon-arrow-toggle-down.svg');
+      content: "arrow_drop_down";
       display: inline-block;
+      vertical-align: -.25em;
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 1.5em;
+      line-height: 1rem; /* required to prevent additional height in element */
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
     }
 
     /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
