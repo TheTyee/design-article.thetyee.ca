@@ -108,11 +108,42 @@ body {
 /* TYPE STYLES ------------------- */
 
 /* Default text styles */
+
 body {
   font-family: var(--typeface-sans);
   font-weight: 400;
   font-style: normal;
 }
+
+/* Header Typography */
+
+.site-header__tagline  {
+  position: relative;
+  font-family: var(--typeface-serif);
+  font-size: .86em;
+  font-weight: 600;
+}
+
+    .site-header__tagline::before, .site-header__tagline::after  {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 4rem;
+      border-top: 1px solid var(--text-colour);
+    }
+
+    .site-header__tagline::before  {
+      top: -1rem;
+    }
+
+    .site-header__tagline::after  {
+      bottom: -1rem;
+    }
+
+    .site-header__tagline--a::before, .site-header__tagline--a::after {
+      right: 0;
+    }
+
 
 /* Label text styles */
 .category-label {
@@ -908,7 +939,7 @@ a {
 }
 
 .site-header__tagline {
-  margin-top: calc(2rem + 1vw);
+  margin-top: calc(.3rem + 2vw);
 }
 
   .site-header__tagline--a, .site-header__tagline--b {
