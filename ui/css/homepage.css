@@ -501,36 +501,47 @@ a {
 /* COUNTER LIST molecule ----------------- */
 /* This formats a container of articles into a numbered list with custom numbers. It uses the styling method from https://www.w3schools.com/css/css_counters.asp Variants can be seen here: https://www.w3.org/Style/Examples/007/color-bullets.en.html */
 
+/* COUNTER LIST molecule ----------------- */
+/* This formats a container of articles into a numbered list with custom numbers. It uses the styling method from https://www.w3schools.com/css/css_counters.asp Variants can be seen here: https://www.w3.org/Style/Examples/007/color-bullets.en.html */
+
 .counter-list--story-items {
   counter-reset: story-item;
 }
 
     .counter-list--story-items > .story-item {
       counter-increment: story-item;
+
+      padding-left: 1.75em;
+      position: relative;
+      margin-bottom: 1rem;
     }
+
+        /* Realign odd-numbered list with baseline grid.
+           This doesn't work if there's an even # of items in the list.
+           Using margins that vary between odd and even items could produce a universal solution. */
+        .counter-list--story-items > .story-item:last-of-type {
+          margin-bottom: 2rem;
+        }
 
     .counter-list--story-items > .story-item h2::before {
               content: counter(story-item);
               display: inline-block;
+              position: absolute;
+              left: 0em;
               color: #fff;
               background-color: #bbb;
-              border-radius: 0.7em;
+              border-radius: 0.65em;
               text-align:center;
               font-weight: 600;
               width: 1.33em;
               height: 1.33em;
-
               -ms-transform: scale(0.85); /* IE 9 */
               -webkit-transform: scale(0.85); /* Safari */
-              transform: scale(.85);
-
+              transform: scale(1);
               margin-left: 0;
               margin-right: 0.25em;
-              /* text-align: right; */
-              direction: rtl;
           }
 /* end of Counter List molecule */
-
 
 
 
