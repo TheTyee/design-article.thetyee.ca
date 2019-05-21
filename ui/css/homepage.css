@@ -961,8 +961,8 @@ a {
 
 
 
-
 /* SITE HEADER organism ----------------- */
+/* This thing is a beast ---------------- */
 
 .site-header__logo-block {
   display: grid;
@@ -994,120 +994,21 @@ a {
       padding: 0 2vw;
     }
 
-  /* SITE NAV MOLECULE */
+    /* SITE NAV MOLECULE */
 
-  /* Default for narrow views:
-  Hide all nav item items except the hamburger, search button, and the dropdown menus.
-      (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
-  .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
-    display: none;
-  }
-
-  .nav__link {
-    cursor: pointer;
-  }
-
-  .site-nav-main__expander-toggle.nav__burger::before,
-  .site-nav-main__expander-toggle.nav__link--more::after {
-    content: "arrow_drop_down";
-    display: inline-block;
-    vertical-align: -.25em;
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 1.5em;
-    line-height: 1rem; /* required to prevent additional height in element */
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .nav__link--join {
-      position: relative;
-      left: 1.35em;
-  }
-
-    .nav__link--join::before {
-      content: url('/ui/img/icon-dollar-heart.svg');
-      display: inline-block;
-      position: absolute;
-      left: -1.35em;
-      transform: scale(.6) translate(-40%, -30%);
+    /* Default for narrow views:
+    Hide all nav item items except the hamburger, search button, and the dropdown menus.
+        (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+    .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
+      display: none;
     }
 
-.nav__link--search {
-  position: relative;
-  left: 1.35em;
-}
-
-  .nav__link--search::before {
-    content: url('/ui/img/icon-search.svg');
-    display: inline-block;
-    position: absolute;
-    left: -1.35em;
-    transform: scale(.6) translate(-40%, -30%);
-  }
-
-
-    /* SEARCH DROPDOWN EXPANDER */
-    /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
-    This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
-    An alternative (although less robust) method is to use anchors links:
-    https://jsfiddle.net/Algreenwich/uym9s0bg/
-    https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
-
-    /* DEFAULT state: Search Dropdown is hidden */
-    .site-nav__search-dropdown {
-      display: none ;
-      grid-column: 1 / -1;
-    }
-    .site-nav__search-dropdown form {
-      display: grid ;
-      grid-template-columns: 4fr 1fr;
+    .nav__link {
+      cursor: pointer;
     }
 
-    /* ACTIVATED state: Search Dropdown is shown */
-    #expander--search:checked ~ .site-nav__search-dropdown {
-      display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
-    }
-
-
-    /* NAV DROPDOWN EXPANDER */
-    /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
-    This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
-    An alternative (although less robust) method is to use anchors links:
-    https://jsfiddle.net/Algreenwich/uym9s0bg/
-    https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
-
-    /* DEFAULT state: Dropdown Menu is hidden */
-    .site-nav__dropdown {
-      display: none ;
-      grid-column: 1 / -1;
-    }
-
-    /* ACTIVATED state: Menu is shown and toggle icon is inverted */
-    #expander--nav-menu:checked ~ .site-nav__dropdown {
-      display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
-    }
-    .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
-    .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
-      transform: rotate(180deg);
-    }
-
-    /* SUB-NAV DROPDOWN EXPANDERS */
-    /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
-    This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
-    An alternative (although less robust) method is to use anchors links:
-    https://jsfiddle.net/Algreenwich/uym9s0bg/
-    https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
-
-    /* Sub-nav has arrow toggle icon */
-    .site-nav__dropdown-expander-toggle::after {
+    .site-nav-main__expander-toggle.nav__burger::before,
+    .site-nav-main__expander-toggle.nav__link--more::after {
       content: "arrow_drop_down";
       display: inline-block;
       vertical-align: -.25em;
@@ -1126,78 +1027,201 @@ a {
       -webkit-font-smoothing: antialiased;
     }
 
-    /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
-    #expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-    #expander--nav-menu-topics-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-    #expander--nav-menu-more-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
-      display: none ;
-      grid-column: 1 / -1;
+    .nav__link--join {
+        position: relative;
+        left: 1.35em;
     }
 
-    /* subnav ACTIVATED STATE: Menu content is shown and adjacent sibling toggle icon is inverted */
-    #expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-    #expander--nav-menu-topics-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-    #expander--nav-menu-more-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
-      display: grid ; /* Menu content is shown */
+      .nav__link--join::before {
+        content: url('/ui/img/icon-dollar-heart.svg');
+        display: inline-block;
+        position: absolute;
+        left: -1.35em;
+        transform: scale(.6) translate(-40%, -30%);
+      }
+
+    .nav__link--search {
+      position: relative;
+      left: 1.35em;
     }
-    #expander--nav-menu-section-submenu:checked + .site-nav__dropdown-expander-toggle::after,
-    #expander--nav-menu-topics-submenu:checked + .site-nav__dropdown-expander-toggle::after,
-    #expander--nav-menu-more-submenu:checked + .site-nav__dropdown-expander-toggle::after {
-      transform: rotate(180deg); /* toggle icon is inverted */
-    }
+
+      .nav__link--search::before {
+        content: url('/ui/img/icon-search.svg');
+        display: inline-block;
+        position: absolute;
+        left: -1.35em;
+        transform: scale(.6) translate(-40%, -30%);
+      }
+
+
+      /* SEARCH DROPDOWN EXPANDER */
+      /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
+      This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
+      An alternative (although less robust) method is to use anchors links:
+      https://jsfiddle.net/Algreenwich/uym9s0bg/
+      https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
+
+          /* DEFAULT state: Search Dropdown is hidden */
+          .site-nav__search-dropdown {
+            display: none ;
+            grid-column: 1 / -1;
+          }
+          .site-nav__search-dropdown form {
+            display: grid ;
+            grid-template-columns: 4fr 1fr;
+          }
+
+          /* ACTIVATED state: Search Dropdown is shown */
+          #expander--search:checked ~ .site-nav__search-dropdown {
+            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+          }
+
+
+      /* NAV DROPDOWN EXPANDER */
+      /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
+      This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
+      An alternative (although less robust) method is to use anchors links:
+      https://jsfiddle.net/Algreenwich/uym9s0bg/
+      https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
+
+          /* DEFAULT state: Dropdown Menu is hidden */
+          .site-nav__dropdown {
+            display: none ;
+            grid-column: 1 / -1;
+          }
+
+          /* ACTIVATED state: Menu is shown and toggle icon is inverted */
+          #expander--nav-menu:checked ~ .site-nav__dropdown {
+            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+          }
+          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
+          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
+            transform: rotate(180deg);
+          }
+
+      /* SUB-NAV DROPDOWN EXPANDERS */
+      /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
+      This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
+      An alternative (although less robust) method is to use anchors links:
+      https://jsfiddle.net/Algreenwich/uym9s0bg/
+      https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
+
+          /* Sub-nav has arrow toggle icon */
+          .site-nav__dropdown-expander-toggle::after {
+            content: "arrow_drop_down";
+            display: inline-block;
+            vertical-align: -.25em;
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 1.5em;
+            line-height: 1rem; /* required to prevent additional height in element */
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+          }
+
+          /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
+          #expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
+          #expander--nav-menu-topics-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
+          #expander--nav-menu-more-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
+            display: none ;
+          }
+
+          /* subnav ACTIVATED STATE: Menu content is shown and adjacent sibling toggle icon is inverted */
+          #expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
+          #expander--nav-menu-topics-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
+          #expander--nav-menu-more-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
+            display: grid ; /* Menu content is shown */
+          }
+          #expander--nav-menu-section-submenu:checked + .site-nav__dropdown-expander-toggle::after,
+          #expander--nav-menu-topics-submenu:checked + .site-nav__dropdown-expander-toggle::after,
+          #expander--nav-menu-more-submenu:checked + .site-nav__dropdown-expander-toggle::after {
+            transform: rotate(180deg); /* toggle icon is inverted */
+          }
 
 
       /* ---- SITE HEADER responsive enhancement ---- */
-      /*  */
-
       /*  Site Header NON-STANDARD BREAKPOINT -- 850px */
       @media screen and (min-width: 850px) {
 
-        /* Expand site-header grid and show taglines */
-        .site-header__logo-block {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
+          /* Expand site-header grid and show taglines */
+          .site-header__logo-block {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
 
-        .site-header__tagline--a {
-          display: block;
-          text-align: right;
-        }
+          .site-header__tagline--a {
+            display: block;
+            text-align: right;
+          }
 
-        .site-header__tagline--b {
-          display: block;
-        }
-
-
-        /* Create site-nav bar grid */
-        .site-nav-main {
-          /* Set element's position within its container (.site-header__logo-block) */
-          grid-column: 1 / -1;
-
-          /* Define Grid within element */
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-          padding-top: var(--gutter-row);
-          grid-column-gap: var(--gutter-column);
-          grid-row-gap: 0;
-          align-items: end;
-
-          padding-top: 4rem;
-        }
-
-          /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
-              (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
-          .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
+          .site-header__tagline--b {
             display: block;
           }
 
-          /* In wide views hide the hamburger */
-          .site-nav-main > .nav__burger {
-            display: none;
+
+          /* Create site-nav bar grid */
+          .site-nav-main {
+            /* Set element's position within its container (.site-header__logo-block) */
+            grid-column: 1 / -1;
+
+            /* Define Grid within element */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            padding-top: var(--gutter-row);
+            grid-column-gap: var(--gutter-column);
+            grid-row-gap: 0;
+            align-items: end;
+
+            padding-top: 4rem;
           }
 
-      }
+            /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
+                (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+            .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
+              display: block;
+            }
 
-/* End of Site Header organism */
+            /* In wide views hide the hamburger */
+            .site-nav-main > .nav__burger {
+              display: none;
+            }
+
+            /* Nav Dropdown grid for wide views */
+            .site-nav__dropdown {
+              grid-column: 1 / -1;
+              grid-template-columns: [col-z] 1fr [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr ;
+              grid-template-rows: auto;
+              grid-column-gap: var(--gutter-column);
+              grid-auto-flow: row dense;
+              align-items: start;
+            }
+                .site-nav__dropdown-heading-sections,
+                .expander-content__section-submenu {grid-column: col-1;}
+
+                .site-nav__dropdown-heading-topics,
+                .expander-content__topics-submenu {grid-column: col-2;}
+
+                .site-nav__dropdown-heading-more,
+                .expander-content__more-submenu {grid-column: col-3;}
+
+                .site-nav__dropdown .nav__link--newsletter {grid-column: col-4; padding-top: 2rem;}
+
+                .site-nav__dropdown .nav__link--join {display: none}
+
+                .site-nav__dropdown .facebook,
+                .site-nav__dropdown .twitter {grid-column: col-5;}
+
+                .site-nav__dropdown .facebook { padding-top: 2rem;}
+
+              }
+
+  /* End of Site Header organism */
 
 
 
