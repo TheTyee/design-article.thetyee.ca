@@ -68,11 +68,11 @@ body{
 /* Grid Guides temporary overrides */
 
 .hmpg-org-wrapper {
- background: none !important;
+ background: none !importan;
 }
 
 body {
- background: none !important;
+ background: none !importan;
 }
 
 
@@ -644,7 +644,7 @@ a {
 .hmpg-org-tyee-insider {
   display: grid;
   margin-top: var(--gutter-row);
-  padding-top: var(--gutter-row-half);
+  padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 
@@ -710,7 +710,7 @@ a {
 .hmpg-org-deep-dive {
   display: grid;
   margin-top: var(--gutter-row);
-  padding-top: var(--gutter-row-half);
+  padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 
