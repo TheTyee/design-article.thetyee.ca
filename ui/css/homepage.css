@@ -944,7 +944,7 @@ a {
       display: inline-block;
       position: absolute;
       left: -1.35em;
-      transform: scale(.6) translate(-40%, -40%);
+      transform: scale(.6) translate(-40%, -30%);
     }
 
 .nav__link--search {
@@ -957,7 +957,7 @@ a {
     display: inline-block;
     position: absolute;
     left: -1.35em;
-    transform: scale(.6) translate(-40%, -40%);
+    transform: scale(.6) translate(-40%, -30%);
   }
 
 
