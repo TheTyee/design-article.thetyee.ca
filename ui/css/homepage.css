@@ -738,7 +738,7 @@ a {
       /* ---- DEEP DIVE responsive enhancement ---- */
       /*  */
 
-      /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+      /*  DEEP DIVE MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
       @media screen and (min-width: 684px) {
 
         .hmpg-org-deep-dive {
@@ -749,7 +749,12 @@ a {
             .hmpg-org-deep-dive > .hmpg-module-header
               { grid-column: 1 / -1; }
             .hmpg-org-deep-dive > .story-item:first-of-type
-              { grid-column: 1 / span 3; }
+              { grid-column: 1 / span 3;
+                grid-template-rows: auto 1fr;
+                grid-template-areas:
+                  "headline"
+                  "deck";
+              }
             .hmpg-org-deep-dive > .story-item--secondary
               { grid-column: auto / span 3; }
             .hmpg-org-deep-dive > .story-item--tertiary {
@@ -763,7 +768,6 @@ a {
                 "author"
                 "date";
               }
-
       }
 
       /*  DEEP DIVE LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
