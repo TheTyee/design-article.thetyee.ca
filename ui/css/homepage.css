@@ -240,7 +240,7 @@ https://caniuse.com/#feat=css3-colors
 :root {
   /* Scale down text for tertiary components
   (e.g. .story-item--tertiary, .story-item--minimum) */
-  --small-text: 0.8rem;
+  --small-text: 0.86em;
 }
 
 
@@ -320,7 +320,13 @@ a {
     left: -1em;
     top: -1.5em;
     transform: scale(1);
-    padding-left: inherit; /* Adjusts badge position when there's padding on the parent (e.g. Bootstrap cols) */
+    padding-left: inherit; /* Adjusts badge position when there's padding on the parent */
+  }
+
+  .hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement {
+    left: -2.5em;
+    top: -2em;
+    transform: scale(.7);
   }
 
 
@@ -378,7 +384,7 @@ a {
         "date image";
     }
 
-    .story-item--tertiary { font-size: var(--small-text); }
+    .story-item--tertiary { }
         .story-item--tertiary .story-item__image { display: none; }
         .story-item--tertiary .badge--story-item-placement { display: none; }
         .story-item--tertiary .category-label { display: none; }
@@ -386,6 +392,11 @@ a {
         .story-item--tertiary .story-item__deck { display: none; }
         .story-item--tertiary .story-item__author { display: none; }
         .story-item--tertiary .story-item__date { display: none; }
+
+        .hmpg-org-recent-stories__list .story-item--tertiary {
+          font-size: var(--small-text);
+          grid-column-gap: calc(var(--gutter-column) * 0.33);
+        }
 
     .story-item--minimum { font-size: var(--small-text); }
         .story-item--minimum .story-item__image { display: none; }
