@@ -115,7 +115,8 @@ body {
   font-style: normal;
 }
 
-/* Header Typography */
+
+/* Header Typography -- Logo block */
 
 .site-header__tagline  {
   position: relative;
@@ -140,9 +141,44 @@ body {
       bottom: -1rem;
     }
 
-    .site-header__tagline--a::before, .site-header__tagline--a::after {
+    .site-header__tagline--a::before,
+    .site-header__tagline--a::after {
       right: 0;
     }
+
+
+/* Header Typography -- Navigation */
+
+.site-nav-main {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+  .nav__link--join {
+    color: var(--brand-colour--text);
+  }
+
+  .site-nav__dropdown-heading,
+  .site-nav__dropdown .nav__link--join {
+    padding-top: 2rem
+  }
+
+  .nav__link--dropdown-item {
+    font-weight: 400
+  }
+
+  .expander-content__topics-submenu .nav__link--dropdown-item,
+  .expander-content__more-submenu .nav__link--dropdown-item {
+    text-transform: capitalize;
+    letter-spacing: 0
+  }
+
+  .site-nav__dropdown .nav__link--newsletter,
+  .site-nav__dropdown .facebook,
+  .site-nav__dropdown .twitter {
+    padding-top: 1rem;
+  }
 
 
 /* Label text styles */
