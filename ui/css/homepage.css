@@ -1146,80 +1146,94 @@ a {
           }
 
 
-      /* ---- SITE HEADER responsive enhancement ---- */
-      /*  Site Header NON-STANDARD BREAKPOINT -- 850px */
-      @media screen and (min-width: 850px) {
+          /* ---- SITE HEADER responsive enhancement ---- */
+          /*  Site Header NON-STANDARD BREAKPOINT -- 850px */
+          @media screen and (min-width: 850px) {
 
-          /* Expand site-header grid and show taglines */
-          .site-header__logo-block {
-            grid-template-columns: 1fr 1fr 1fr;
-          }
-
-          .site-header__tagline--a {
-            display: block;
-            text-align: right;
-          }
-
-          .site-header__tagline--b {
-            display: block;
-          }
-
-
-          /* Create site-nav bar grid */
-          .site-nav-main {
-            /* Set element's position within its container (.site-header__logo-block) */
-            grid-column: 1 / -1;
-
-            /* Define Grid within element */
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-            padding-top: var(--gutter-row);
-            grid-column-gap: var(--gutter-column);
-            grid-row-gap: 0;
-            align-items: end;
-
-            padding-top: 4rem;
-          }
-
-            /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
-                (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
-            .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
-              display: block;
-            }
-
-            /* In wide views hide the hamburger */
-            .site-nav-main > .nav__burger {
-              display: none;
-            }
-
-            /* Nav Dropdown grid for wide views */
-            .site-nav__dropdown {
-              grid-column: 1 / -1;
-              grid-template-columns: [col-z] 1fr [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr ;
-              grid-template-rows: auto;
-              grid-column-gap: var(--gutter-column);
-              grid-auto-flow: row dense;
-              align-items: start;
-            }
-                .site-nav__dropdown-heading-sections,
-                .expander-content__section-submenu {grid-column: col-1;}
-
-                .site-nav__dropdown-heading-topics,
-                .expander-content__topics-submenu {grid-column: col-2;}
-
-                .site-nav__dropdown-heading-more,
-                .expander-content__more-submenu {grid-column: col-3;}
-
-                .site-nav__dropdown .nav__link--newsletter {grid-column: col-4; padding-top: 2rem;}
-
-                .site-nav__dropdown .nav__link--join {display: none}
-
-                .site-nav__dropdown .facebook,
-                .site-nav__dropdown .twitter {grid-column: col-5;}
-
-                .site-nav__dropdown .facebook { padding-top: 2rem;}
-
+              /* Expand site-header grid and show taglines */
+              .site-header__logo-block {
+                grid-template-columns: 1fr 1fr 1fr;
               }
+
+              .site-header__tagline--a {
+                display: block;
+                text-align: right;
+              }
+
+              .site-header__tagline--b {
+                display: block;
+              }
+
+
+              /* Create site-nav bar grid */
+              .site-nav-main {
+                /* Set element's position within its container (.site-header__logo-block) */
+                grid-column: 1 / -1;
+
+                /* Define Grid within element */
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                padding-top: var(--gutter-row);
+                grid-column-gap: var(--gutter-column);
+                grid-row-gap: 0;
+                align-items: end;
+
+                padding-top: 4rem;
+              }
+
+                /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
+                    (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+                .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
+                  display: block;
+                }
+
+                /* In wide views hide the hamburger */
+                .site-nav-main > .nav__burger {
+                  display: none;
+                }
+
+                /* Nav Dropdown grid for wide views */
+                .site-nav__dropdown {
+                  grid-column: 1 / -1;
+                  grid-template-columns: [col-z] 1fr [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr ;
+                  grid-template-rows: auto [row-2] 1fr;
+                  grid-column-gap: var(--gutter-column);
+                  grid-auto-flow: row dense;
+                  align-items: start;
+                }
+
+                    .expander-content__section-submenu,
+                    .expander-content__topics-submenu,
+                    .expander-content__more-submenu { display: grid !important} /* show submenus by default */
+
+                    .site-nav__dropdown-expander-toggle::after {content: none;} /* Hides dropdown toggle arrows */
+
+                    .site-nav__dropdown-heading-more {display: none;} /* Hides redundant heading */
+
+                    .site-nav__dropdown-heading-sections,
+                    .expander-content__section-submenu {grid-column: col-1;}
+
+                    .site-nav__dropdown-heading-topics,
+                    .expander-content__topics-submenu {grid-column: col-2;}
+
+
+                    .expander-content__more-submenu {
+                      grid-column: col-3;
+                      grid-row: row-2; /* Prevents submenu from expanding first row of grid */
+                      position: relative;
+                      top: -2rem; /* Fills gap left by hidden submenu header */
+                    }
+
+                    .site-nav__dropdown .nav__link--newsletter {grid-column: col-4; padding-top: 2rem;}
+
+                    .site-nav__dropdown .nav__link--join {display: none} /* Hides redundant link */
+
+                    .site-nav__dropdown .facebook,
+                    .site-nav__dropdown .twitter {grid-column: col-5;}
+
+                    .site-nav__dropdown .facebook { padding-top: 2rem;}
+
+          } /* End of Site Header responsive breakpoint 850px*/
 
   /* End of Site Header organism */
 
