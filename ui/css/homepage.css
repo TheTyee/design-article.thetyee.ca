@@ -1139,7 +1139,7 @@ a {
 .site-footer--homepage {
   display: grid;
   margin-top: var(--gutter-row);
-  padding-top: var(--gutter-row-half);
+  padding-top: 4rem;
   padding-bottom: var(--gutter-row);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row-half);
