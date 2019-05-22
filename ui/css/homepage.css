@@ -1038,8 +1038,8 @@ a {
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 0;
   align-items: start;
-
-  padding-top: var(--page-margin-top);
+  padding-top: 3rem;
+  padding-bottom: 1rem; /* balances grid alignment */
 }
 
 .site-header__tagline {
@@ -1333,12 +1333,12 @@ a {
                 grid-row-gap: 0;
                 align-items: end;
 
-                margin-top: 3.5rem; /* desired offset from logo (4rem) - self padding-top (.5rem) */
+                margin-top: 2rem; /* desired offset from logo (4rem) - self padding-top (.5rem) */
                 border-top: 1px solid var(--border-colour-cols);
                 padding: calc(.5rem) 0 calc(0rem + 2px);
                 border-bottom: 1px solid var(--text-colour);
-                margin-bottom: calc(-1rem - 2px - 2px);
-                /*             height of dot-screen (1rem)
+                margin-bottom: calc(.5rem - 2px - 2px);
+                /*             increment to offset moargin-top for grid alignment
                              - self borders (2px)
                              - self padding-bottom (2px)      */
               }
