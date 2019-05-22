@@ -1133,7 +1133,12 @@ a {
           .site-nav__search-dropdown {
             display: none ;
             grid-column: 1 / -1;
-            margin-top: 2rem;
+            padding: 2rem 2rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin-top: .5rem;
+            margin-bottom: -.5rem;
+            background-color: #444;
           }
 
           .site-nav__search-dropdown .site-nav__search-form {
@@ -1400,7 +1405,16 @@ a {
                   grid-column-gap: var(--gutter-column);
                   grid-auto-flow: row dense;
                   align-items: start;
+
+                  margin-top: .5rem;
+                  padding-bottom: 3.5rem;
+                  background-color: #444;
+                  color: #eee;
                 }
+
+                  .site-nav__dropdown a {
+                    color: var(--brand-colour);
+                  }
 
                     .expander-content__section-submenu,
                     .expander-content__topics-submenu,
