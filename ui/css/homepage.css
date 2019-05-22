@@ -1086,10 +1086,21 @@ a {
           .site-nav__search-dropdown {
             display: none ;
             grid-column: 1 / -1;
+            margin-top: 2rem;
           }
-          .site-nav__search-dropdown form {
+
+          .site-nav__search-dropdown .site-nav__search-form {
             display: grid ;
             grid-template-columns: 4fr 1fr;
+            font-size: 2em;
+          }
+
+
+          .site-nav__search-dropdown .site-nav__search-form > * {
+            display: grid ;
+            grid-template-columns: 4fr 1fr;
+            font-size: .6em;
+            height: 4rem
           }
 
           /* ACTIVATED state: Search Dropdown is shown */
@@ -1193,25 +1204,25 @@ a {
               }
 
               .site-nav-main__expander-toggle.nav__burger::before {
-              content: "menu";
-              display: inline-block;
-              position: absolute;
-              top: -3rem;
-              left: -.5rem;
-              font-family: 'Material Icons';
-              font-weight: normal;
-              font-style: normal;
-              font-size: 5.5rem;
-              line-height: 1rem; /* required to prevent additional height in element */
-              letter-spacing: normal;
-              text-transform: none;
-              display: inline-block;
-              white-space: nowrap;
-              word-wrap: normal;
-              direction: ltr;
-              -webkit-font-feature-settings: 'liga';
-              -webkit-font-smoothing: antialiased;
-            }
+                content: "menu";
+                display: inline-block;
+                position: absolute;
+                top: -3rem;
+                left: -.5rem;
+                font-family: 'Material Icons';
+                font-weight: normal;
+                font-style: normal;
+                font-size: 5.5rem;
+                line-height: 1rem; /* required to prevent additional height in element */
+                letter-spacing: normal;
+                text-transform: none;
+                display: inline-block;
+                white-space: nowrap;
+                word-wrap: normal;
+                direction: ltr;
+                -webkit-font-feature-settings: 'liga';
+                -webkit-font-smoothing: antialiased;
+              }
 
 
               .nav__link--search {
@@ -1219,6 +1230,18 @@ a {
                 right: 0rem;
                 left: initial;
               }
+
+               .nav__link--search::before {
+                top: -4rem;
+                left: 1rem;
+                transform: scale(1);
+              }
+
+              .hmpg-org-recent-stories {
+                  padding-top: 4rem; /* Narrows gap between header and main content */
+              }
+
+
 
 
           } /*  end os narrow breakpoint styles -- max-wdith 849px */
