@@ -389,11 +389,43 @@ a {
   cursor: pointer;
 }
 
-  /* BUTTON EXPANDER is used to show and hide content */
-  .button--expander {
-    grid-column: 1 / -1; /* Make button span entire grid row */
-    justify-self: center;
-  }
+.button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: var(--brand-colour);
+  color: #ffffff;
+  font-family: var(--typeface-sans);
+  font-size: 2rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+    .button:hover,
+    .button:focus {
+        background: var(--brand-colour--text-darker);
+    }
+
+    .button:focus {
+        outline: 1px solid #fff;
+        outline-offset: -4px;
+    }
+
+    .button:active {
+        transform: scale(0.99);
+    }
+
+    /* BUTTON EXPANDER is used to show and hide content */
+    .button--expander {
+      grid-column: 1 / -1; /* Make button span entire grid row */
+      justify-self: center;
+    }
 
 
 /* BADGE molecule */
