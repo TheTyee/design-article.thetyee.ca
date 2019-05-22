@@ -88,6 +88,8 @@ body {
 
   --link-colour: yellow;
   --text-colour: #393939;
+
+  --border-colour-cols: hsl(0, 0%, 74%);
 }
 
 
@@ -1321,17 +1323,63 @@ a {
               .site-nav-main {
                 /* Set element's position within its container (.site-header__logo-block) */
                 grid-column: 1 / -1;
+                position: relative;
 
                 /* Define Grid within element */
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-columns:  [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr 1fr;
                 padding-top: var(--gutter-row);
                 grid-column-gap: var(--gutter-column);
                 grid-row-gap: 0;
                 align-items: end;
 
-                padding-top: 4rem;
+                margin-top: 3.5rem; /* desired offset from logo (4rem) - self padding-top (.5rem) */
+                border-top: 1px solid var(--border-colour-cols);
+                padding: calc(.5rem) 0 calc(0rem + 2px);
+                border-bottom: 1px solid var(--text-colour);
+                margin-bottom: calc(-1rem - 2px - 2px);
+                /*             height of dot-screen (1rem)
+                             - self borders (2px)
+                             - self padding-bottom (2px)      */
               }
+
+                  /* dot-screen shadow */
+                  .site-nav-main::after {
+                    content:"";
+                    display: grid;
+                    z-index: -10;
+                    grid-column: 1 / -1;
+                    position: relative;
+                    top: calc(1rem + 2px + 1px);
+                    /*   height of self (1rem)
+                       + .site-nav-main padding-bottom (2px)
+                       + .site-nav-main border-top (1px)      */
+                    left: 0;
+                    width: 100%;
+                    height: 1rem;
+                    background-color: lightgrey;
+                    border-bottom: px solid red;
+                  }
+
+                  /* heavy-border below */
+                  .site-nav-main > .nav__link--news::after {
+                    content:"";
+                    position: absolute;
+                    bottom: 3px; /* .site-nav-main padding-bottom(2px) + .site-nav-main border-top(1px) */
+                    left: 0;
+                    grid-column: 1 / -1;
+                    width: 100%;
+                    border-bottom: 4px solid var(--text-colour);
+                  }
+
+                  .site-nav-main > a:first-of-type {
+                    grid-column: main-items;
+                  }
+
+                  .site-nav-main .nav__link--join {
+                    grid-column: secondary-items;
+                  }
+
 
                 /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
                     (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
