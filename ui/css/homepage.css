@@ -391,14 +391,17 @@ a {
 
 .button {
   display: inline-block;
-  border: none;
-  padding: 1rem 2rem;
+  border: 2px solid var(--brand-colour--text);
+  padding: calc(1rem - 2px) 4rem;
   margin: 0;
+  height: 4rem;
   text-decoration: none;
-  background: var(--brand-colour);
-  color: #ffffff;
+  background: none;
+  color: var(--brand-colour--text);
   font-family: var(--typeface-sans);
-  font-size: 2rem;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: .08em;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out,
@@ -406,6 +409,14 @@ a {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
+        .site-nav__search-form .button {
+          display: inline-block;
+          border: none;
+          padding: 1rem 2rem;
+          background: var(--brand-colour);
+          color: #ffffff;
+        }
 
     .button:hover,
     .button:focus {
@@ -420,6 +431,7 @@ a {
     .button:active {
         transform: scale(0.99);
     }
+
 
     /* BUTTON EXPANDER is used to show and hide content */
     .button--expander {
@@ -1124,15 +1136,22 @@ a {
           .site-nav__search-dropdown .site-nav__search-form {
             display: grid ;
             grid-template-columns: 4fr 1fr;
-            font-size: 2em;
+            font-size: 2.7rem;
           }
 
+          .site-nav__search-dropdown .site-nav__search-form .button {
+            padding-top: .9rem;
+          }
 
           .site-nav__search-dropdown .site-nav__search-form > * {
             display: grid ;
             grid-template-columns: 4fr 1fr;
             font-size: .6em;
-            height: 4rem
+            height: 4rem;
+          }
+
+          form input {
+            padding-left: .65em;
           }
 
           /* ACTIVATED state: Search Dropdown is shown */
