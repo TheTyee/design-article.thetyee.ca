@@ -1298,12 +1298,24 @@ a {
                 transform: scale(1);
               }
 
+              /* Dropdown Menu appearance in narrow views */
+              .site-nav__dropdown {
+                position: absolute;
+                z-index: 100;
+                width: 100%;
+                padding-left: 1rem;
+                padding-bottom: 4rem;
+                background-color: #444;
+                color: #eee;
+              }
+
+                  .site-nav__dropdown a {
+                    color: var(--brand-colour);
+                  }
+
               .hmpg-org-recent-stories {
                   padding-top: 4rem; /* Narrows gap between header and main content */
               }
-
-
-
 
           } /*  end os narrow breakpoint styles -- max-wdith 849px */
 
