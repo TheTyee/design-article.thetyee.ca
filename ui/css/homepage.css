@@ -1339,7 +1339,7 @@ a {
               }
 
               .hmpg-org-recent-stories {
-                  padding-top: 4rem; /* Narrows gap between header and main content */
+                  padding-top: 2rem; /* Narrows gap between header and main content */
               }
 
           } /*  end os narrow breakpoint styles -- max-wdith 849px */
