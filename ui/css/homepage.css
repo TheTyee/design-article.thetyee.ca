@@ -1292,6 +1292,7 @@ a {
                 position: absolute;
                 right: 0rem;
                 left: initial;
+                margin-right: 0; /* Eliminates an offset required in wide views */
               }
 
                .nav__link--search::before {
