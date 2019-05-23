@@ -1306,22 +1306,33 @@ a {
                 z-index: 100;
                 width: 100vw;
                 padding-left: 2rem;
-                padding-bottom: 4rem;
+                padding-bottom: 75vh;
                 background-color: #444;
                 color: #eee;
               }
 
                   .site-nav__dropdown a {
                     color: var(--brand-colour);
+                    padding: .5rem 0;
+                  }
+
+                  .site-nav__dropdown-heading {
+                    padding-bottom: .5rem;
+                    border-bottom: 1px solid #888;
+                  }
+
+                  .expander-content__section-submenu a, .expander-content__topics-submenu a, .expander-content__more-submenu a {
+                    border-bottom: 1px solid #888;
                   }
 
               /* Search Dropdown appearance in narrow views */
               .site-nav__search-dropdown {
                 position: absolute;
                 left: -2rem;
-                top: 4rem;
+                top: 3.5rem;
                 z-index: 110;
                 width: 100vw;
+                padding-bottom: 90vh;
               }
 
               .hmpg-org-recent-stories {
