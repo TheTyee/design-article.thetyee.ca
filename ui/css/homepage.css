@@ -208,14 +208,20 @@ body {
       font-family: var(--typeface-display-large);
       line-height: 4rem; /* this is 2 x baseline */
       font-size: 2.33em;
-
     }
 
     .story-item--secondary .story-item__headline {
       font-family: var(--typeface-display-large);
     }
 
-/* Label text styles */
+.story-item__author, .story-item__date {
+  font-weight: 600;
+}
+
+.story-item__author {
+  margin-top: 1rem;
+}
+
 .category-label {
   font-family: var(--typeface-sans);
   font-weight: 600;
@@ -224,6 +230,7 @@ body {
   color: var(--brand-colour--text);
   margin: 1rem 0 ;
 }
+
 
 /* Old text styles ---
 body {
@@ -767,6 +774,7 @@ a {
 
                 .hmpg-org-recent-stories__list > .story-item--primary {
                 grid-column: auto / span 6;
+                text-align: center;
                 }
 
                 .hmpg-org-recent-stories__list > .story-item--secondary {
