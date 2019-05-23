@@ -100,8 +100,9 @@ body {
 
   --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
 
-  --typeface-display-small: miller-banner, georgia, serif;
-  --typeface-display-medium: miller-headline, georgia, serif;
+  --typeface-display: miller-text, georgia, serif;
+  --typeface-display-small: miller-text, georgia, serif;
+  --typeface-display-medium: miller-display, georgia, serif;
   --typeface-display-large: miller-banner, georgia, serif;
 }
 
@@ -190,6 +191,29 @@ body {
     padding-top: 1rem;
   }
 
+/* Content text styles */
+
+.story-item__headline {
+   font-family: var(--typeface-display);
+   font-weight: 600;
+   line-height: 3rem; /* this is 1.5 x baseline, so headlines that break over
+                         odd-numbered lines will throw off the grid */
+   font-size: 1.5em;
+   text-transform: capitalize;
+
+   margin: 1rem 0 3rem; /* 4rem total realigns with baseline grid */
+}
+
+    .story-item--primary .story-item__headline {
+      font-family: var(--typeface-display-large);
+      line-height: 4rem; /* this is 2 x baseline */
+      font-size: 2.33em;
+
+    }
+
+    .story-item--secondary .story-item__headline {
+      font-family: var(--typeface-display-large);
+    }
 
 /* Label text styles */
 .category-label {
@@ -198,6 +222,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--brand-colour--text);
+  margin: 1rem 0 ;
 }
 
 /* Old text styles ---
