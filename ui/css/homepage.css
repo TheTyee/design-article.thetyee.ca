@@ -1301,9 +1301,11 @@ a {
               /* Dropdown Menu appearance in narrow views */
               .site-nav__dropdown {
                 position: absolute;
+                left: -2rem;
+                top: 4rem;
                 z-index: 100;
-                width: 100%;
-                padding-left: 1rem;
+                width: 100vw;
+                padding-left: 2rem;
                 padding-bottom: 4rem;
                 background-color: #444;
                 color: #eee;
@@ -1313,6 +1315,15 @@ a {
                     color: var(--brand-colour);
                   }
 
+              /* Search Dropdown appearance in narrow views */
+              .site-nav__search-dropdown {
+                position: absolute;
+                left: -2rem;
+                top: 4rem;
+                z-index: 110;
+                width: 100vw;
+              }
+
               .hmpg-org-recent-stories {
                   padding-top: 4rem; /* Narrows gap between header and main content */
               }
@@ -1320,7 +1331,7 @@ a {
           } /*  end os narrow breakpoint styles -- max-wdith 849px */
 
 
-          /*  Site Header NON-STANDARD BREAKPOINT -- 850px */
+          /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px */
           @media screen and (min-width: 850px) {
 
               /* Expand site-header grid and show taglines */
