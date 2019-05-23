@@ -1112,6 +1112,7 @@ a {
     .nav__link--search {
       position: relative;
       left: 1.35em; /* Keeps icon placed ::before within the grid column */
+      margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
     }
 
       .nav__link--search::before {
@@ -1248,6 +1249,7 @@ a {
 
               .site-header__logo-block {
                   padding-top: 2rem;
+                  padding-bottom: 0; /* balances grid alignment */
               }
 
                .site-header__logo img{
