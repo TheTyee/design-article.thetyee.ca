@@ -1097,7 +1097,8 @@ a {
 
     .nav__link--join {
         position: relative;
-        left: 1.35em;
+        left: 1.35em; /* Keeps icon placed ::before within the grid column */
+        margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
     }
 
       .nav__link--join::before {
@@ -1110,7 +1111,7 @@ a {
 
     .nav__link--search {
       position: relative;
-      left: 1.35em;
+      left: 1.35em; /* Keeps icon placed ::before within the grid column */
     }
 
       .nav__link--search::before {
