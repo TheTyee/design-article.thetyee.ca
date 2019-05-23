@@ -1423,7 +1423,7 @@ a {
 
                     .site-nav__dropdown-expander-toggle::after {content: none;} /* Hides dropdown toggle arrows */
 
-                    .site-nav__dropdown-heading-more {display: none;} /* Hides redundant heading */
+                    .site-nav__dropdown-heading-more {grid-column: col-3;}
 
                     .site-nav__dropdown-heading-sections,
                     .expander-content__section-submenu {grid-column: col-1;}
@@ -1434,9 +1434,9 @@ a {
 
                     .expander-content__more-submenu {
                       grid-column: col-3;
-                      grid-row: row-2; /* Prevents submenu from expanding first row of grid */
+                      grid-row: row-2; /* Prevents submenu from expanding first row of grid.
+                                         (Only necessary if .site-nav__dropdown-heading-more is hidden) )*/
                       position: relative;
-                      top: -2rem; /* Fills gap left by hidden submenu header */
                     }
 
                     .site-nav__dropdown .nav__link--newsletter {grid-column: col-4; padding-top: 2rem;}
