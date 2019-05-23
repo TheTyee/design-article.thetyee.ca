@@ -171,7 +171,7 @@ body {
 
   .site-nav__dropdown-heading,
   .site-nav__dropdown .nav__link--join {
-    padding-top: 2rem
+    padding-top: 2rem;
   }
 
   .nav__link--dropdown-item {
@@ -1326,6 +1326,10 @@ a {
 
                   .expander-content__section-submenu a, .expander-content__topics-submenu a, .expander-content__more-submenu a {
                     border-bottom: 1px solid #888;
+                  }
+
+                  .site-nav__dropdown .nav__link--join  {
+                    padding-top: 3rem;
                   }
 
               /* Search Dropdown appearance in narrow views */
