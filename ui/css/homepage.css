@@ -1504,11 +1504,12 @@ a {
   padding-top: 4rem;
   padding-bottom: var(--gutter-row);
   grid-column-gap: var(--gutter-column);
-  grid-row-gap: var(--gutter-row-half);
+  grid-row-gap: 2rem;
   justify-items: center;
   align-items: end;
 
-  background-color: #ddd;
+  color: #eee;
+  background-color: #444;
 }
 
 
