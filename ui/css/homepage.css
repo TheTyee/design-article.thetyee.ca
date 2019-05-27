@@ -88,6 +88,7 @@ body {
 
   --link-colour: yellow;
   --text-colour: #393939;
+  --text-colour-light: #808080;
 
   --border-colour-cols: hsl(0, 0%, 74%);
 }
@@ -109,11 +110,12 @@ body {
 
 
 
+
 /*-----------------------------------------*\
   #TYPE STYLES
 \*-----------------------------------------*/
 
-/* Default text styles */
+/* Default text styles ----------------- */
 
 body {
   font-family: var(--typeface-sans);
@@ -122,7 +124,7 @@ body {
 }
 
 
-/* Header Typography -- Logo block */
+/* Header Typography -- Logo block ----------------- */
 
 .site-header__tagline  {
   position: relative;
@@ -191,7 +193,10 @@ body {
     padding-top: 1rem;
   }
 
-/* Content text styles */
+
+/* Content text styles ----------------- */
+
+/* Story Items */
 
 .story-item__headline {
    font-family: var(--typeface-display);
@@ -201,18 +206,22 @@ body {
    font-size: 1.5em;
    text-transform: capitalize;
 
-   margin: 1rem 0 3rem; /* 4rem total realigns with baseline grid */
+   margin: 0rem 0 4rem; /* 4rem total realigns with baseline grid */
 }
 
-    .story-item--primary .story-item__headline {
-      font-family: var(--typeface-display-large);
-      line-height: 4rem; /* this is 2 x baseline */
-      font-size: 2.33em;
-    }
+.category-label {
+  font-family: var(--typeface-sans);
+  font-size: .875em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-colour--text);
+  margin: 1rem 0 ;
+}
 
-    .story-item--secondary .story-item__headline {
-      font-family: var(--typeface-display-large);
-    }
+.story-item__deck {
+  color: var(--text-colour-light);
+}
 
 .story-item__author, .story-item__date {
   font-weight: 600;
@@ -222,34 +231,45 @@ body {
   margin-top: 1rem;
 }
 
-.category-label {
-  font-family: var(--typeface-sans);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--brand-colour--text);
-  margin: 1rem 0 ;
-}
+    /* primary story-items */
+
+    .story-item--primary .story-item__headline {
+      font-family: var(--typeface-display-large);
+      line-height: 4rem; /* this is 2 x baseline */
+      font-size: 2.33em;
+      margin: 1rem 0 3rem; /* 4rem total realigns with baseline grid */
+    }
+
+    .story-item--primary .category-label {
+      font-size: 1.11em;
+    }
+
+    .story-item--primary .story-item__deck {
+      text-transform: uppercase;
+    }
+
+    /* secondary story-items */
+
+    .story-item--secondary .story-item__headline {
+      font-family: var(--typeface-display-large);
+    }
+
+    /* tertiary story-items */
+
+    .story-item--tertiary .story-item__headline {
+      font-size: 1em;
+      line-height: 2rem;
+      margin: 0 0 1rem; /* matches with deck margin-bottom to realign with baseline grid */
+    }
+
+    .story-item--tertiary .story-item__deck {
+      font-size: .83em;
+      line-height: 2rem;
+      margin-bottom: 1rem; /* matches with headline margin-bottom to realign with baseline grid */
+    }
 
 
-/* Old text styles ---
-body {
-  font-family: var(--typeface-sans);
-  font-weight: 400;
-  font-style: normal;
-  color: var(--text-colour);
-  line-height: calc(var(--grid-unit) * 3);
-  font: normal normal 400 var(--base-type-size)/var(--base-line-height)  var(--typeface-body);
-}
- h2 {
-   font-family: var(--typeface-display-small);
-   font-weight: 600;
-   font-style: normal;
-   color: var(--text-colour);
-   line-height: 3rem;
-   font-size: 3rem;
-   text-transform: capitalize;
- } */
+
 
 
 /* Responsive Settings */
@@ -561,7 +581,7 @@ a {
         .story-item--tertiary .story-item__date { display: none; }
 
         .hmpg-org-recent-stories__list .story-item--tertiary {
-          font-size: var(--small-text);
+          /* font-size: var(--small-text); */
           grid-column-gap: calc(var(--gutter-column) * 0.33);
         }
 
