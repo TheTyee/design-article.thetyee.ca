@@ -945,11 +945,12 @@ a {
         @media screen and (min-width: 684px) {
 
           .hmpg-org-tyee-insider .story-item--primary {
+            grid-template-columns: 1fr 1fr 1fr;
             grid-template-areas:
-              "headline headline" /* put headline above image */
-              "deck image"
-              "author image"
-              "date image";
+              "headline headline headline" /* put headline above image */
+              "deck     image    image"
+              "author   image    image"
+              "date     image    image";
           }
 
           .hmpg-org-tyee-insider {
