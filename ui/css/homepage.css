@@ -210,6 +210,17 @@ body {
   color: var(--text-colour);
 }
 
+.m-tyee-insider__related-label {
+  font-size: .85em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--text-colour);
+  margin-bottom: 1.5rem;
+}
+
 
 /* Content text styles ----------------- */
 
@@ -289,6 +300,14 @@ body {
       margin-bottom: 1rem; /* matches with headline margin-bottom to realign with baseline grid */
     }
 
+    /* minimum story-items */
+
+    .story-item--minimum h2 {
+      font-size: 1.25em;
+      font-weight: 400;
+      line-height: 2rem;
+      margin-bottom: 0rem;
+    }
 
 
 
@@ -371,7 +390,7 @@ https://caniuse.com/#feat=css3-colors
             var(--brand-colour__hue),
             var(--brand-colour__sat),
             calc(var(--brand-colour__lig)*1.34), /* lightens brand colour */
-            /* var(--brand-colour__alp) */ 0.5   /* AG - temporary tansparency to show grid */
+            var(--brand-colour__alp) /* 0.5   /* AG - temporary tansparency to show grid */
           );
     }
 
@@ -863,10 +882,12 @@ a {
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
 .hmpg-org-tyee-insider {
   display: grid;
-  margin-top: var(--gutter-row);
-  padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
+
+  margin-top: var(--gutter-row);
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 
   background-color: var(--brand-colour--mod-bg);
 }
@@ -878,10 +899,6 @@ a {
 
 .hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
   margin-right: 3rem;
-}
-
-.hmpg-module-header__main-label-blurb {
-  display: inline-block;
 }
 
 .hmpg-module-header__main-label-blurb {
