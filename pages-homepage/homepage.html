@@ -67,20 +67,21 @@ meta-url: "http://thetyee.ca/home"
     <!-- Tyee Insider main molecule ----- -->
     <div class="m-tyee-insider__main">
       <header class="hmpg-module-header">
-        <h2 class="hmpg-module-header hmpg-module-header__main-label">Tyee Insider</h2>
+        <h2 class="hmpg-module-header__main-label">Tyee Insider</h2>
         <p class="hmpg-module-header__main-label-blurb">A short one-sentence explainer blurb goes here</p>
       </header>
       {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--primary tyee-insider__story" story-item-category="analysis" story-item-headline="Canada needs more independent journalism. Join&nbsp;us&nbsp;for fact-driven reporting." story-item-dek="We're an independent, online news magazine from BC. We're devoted to fact-driven reporting and analysis that informs and enlivens our democratic conversation. Our reporting has garnered numerous awards and the respect of our peers and readers. While some journalism gives the last word to power, we try to give the last word to ordinary folks." story-badge=nil %}
 
-      <h2 class="m-tyee-insider__related-label">Related Stories</h2>
+      <div class="m-tyee-insider__related-stories">
+        <h2 class="m-tyee-insider__related-label">Related Stories</h2>
 
-      {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--minimum" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Gray at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--minimum" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Gray at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
 
-      {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--minimum" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--minimum" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
 
-      {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--minimum" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
-    </div>
-    <!-- End of Tyee Insider main  -->
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/image-placeholder-1.5x1.png" story-item-class="story-item--index-page story-item--minimum" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
+      </div>
+    </div> <!-- End of Tyee Insider main  -->
 
     <!-- Comment Noted molecule ----- -->
     <div class="m-comment-noted">
