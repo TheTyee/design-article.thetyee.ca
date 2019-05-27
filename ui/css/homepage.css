@@ -194,6 +194,23 @@ body {
   }
 
 
+/* Module text styles ----------------- */
+
+.hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
+  font-size: 1.4em;
+  font-weight: 800;
+  text-transform:uppercase;
+  letter-spacing: 0.125em;
+  display: inline-block;
+}
+
+.tyee-insider__story .story-item__deck {
+  font-family: var(--typeface-serif);
+  font-size: 1.065em;
+  color: var(--text-colour);
+}
+
+
 /* Content text styles ----------------- */
 
 /* Story Items */
@@ -247,6 +264,10 @@ body {
     .story-item--primary .story-item__deck {
       text-transform: uppercase;
     }
+
+        .hmpg-org-tyee-insider .story-item--primary .story-item__deck {
+          text-transform: none ;
+        }
 
     /* secondary story-items */
 
@@ -850,6 +871,29 @@ a {
   background-color: var(--brand-colour--mod-bg);
 }
 
+.hmpg-module-header {
+  height: 2rem;
+  margin-bottom: 8rem;
+}
+
+.hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
+  margin-right: 3rem;
+}
+
+.hmpg-module-header__main-label-blurb {
+  display: inline-block;
+}
+
+.hmpg-module-header__main-label-blurb {
+  display: inline-block;
+}
+
+.m-comment-noted__title, .m-barometer__title {
+  padding: 1rem 0;
+  min-height: 12rem;
+}
+
+  /* Tyee Insider Story-items */
   .m-tyee-insider__main .story-item--primary { }
     .m-tyee-insider__main .story-item--primary .badge--story-item-placement
       { display: none;}
@@ -864,10 +908,32 @@ a {
     .m-tyee-insider__main .story-item--primary .story-item__date
       { display: none;}
 
+  .m-tyee-insider__main .story-item--index-page {
+    grid-template-areas:
+        "headline" /* put headline above image */
+        "image"
+        "deck"
+        "author"
+        "date";
+  }
+
+  .m-tyee-insider__main .story-item__image {
+    margin-bottom: 4rem
+  }
+
+
     /* ---- TYEE INSIDER responsive enhancement ---- */
 
         /*  TYEE INSIDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
+
+          .hmpg-org-tyee-insider .story-item--primary {
+            grid-template-areas:
+              "headline headline" /* put headline above image */
+              "deck image"
+              "author image"
+              "date image";
+          }
 
           .hmpg-org-tyee-insider {
             grid-template-columns: repeat(6, 1fr);
