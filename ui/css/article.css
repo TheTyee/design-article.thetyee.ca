@@ -1886,7 +1886,8 @@ margin: 0;
         /* Apply margin to author text only if an img is present.
            Otherwise, the text should align flush left.  */
         img ~ .author-info__text {
-          margin-left: 4.35em;
+/*          margin-left: 4.35em; disabled because breaks when there are 
+two headshots.. seems that the image itself pushes adequately anyways */
         }
 
 
