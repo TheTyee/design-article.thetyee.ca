@@ -580,8 +580,22 @@ a {
         "headline"
         "deck"
         "author"
-        "date";
+        "date"
+        "border";
 }
+
+    /* row border */
+    /* Uses a pseudo element to create a border in the "border" grid area.
+    Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
+    .story-item--index-page::after {
+      content:"";
+      position: absolute;
+      bottom: calc(var(--gutter-row-half) * -1);
+
+      grid-area: border;
+      width: 100%;
+      border-bottom: 1px solid var(--border-colour-cols);
+    }
 
     .story-item__news-source{
       padding-left: .5em;
