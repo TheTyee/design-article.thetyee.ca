@@ -544,7 +544,7 @@ a {
     display: block;
     position: absolute;
     width: auto;
-    left: -1em;
+    left: -1.25em;
     top: -1.5em;
     transform: scale(1);
     padding-left: inherit; /* Adjusts badge position when there's padding on the parent */
@@ -552,8 +552,8 @@ a {
 
   .hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement {
     left: -2.5em;
-    top: -2em;
-    transform: scale(.7);
+    top: -1.75em;
+    transform: scale(.8);
   }
 
 
