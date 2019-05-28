@@ -244,7 +244,7 @@ body {
 }
 
 .story-item__author {
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
     /* primary story-items */
@@ -253,20 +253,12 @@ body {
       font-family: var(--typeface-display-large);
       line-height: 4rem; /* this is 2 x baseline */
       font-size: 2.33em;
-      margin: 1rem 0 3rem; /* 4rem total realigns with baseline grid */
+      margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
     }
 
     .story-item--primary .category-label {
       font-size: 1.11em;
     }
-
-    .story-item--primary .story-item__deck {
-      text-transform: uppercase;
-    }
-
-        .hmpg-org-tyee-insider .story-item--primary .story-item__deck {
-          text-transform: none ;
-        }
 
     /* secondary story-items */
 
@@ -297,6 +289,22 @@ body {
       margin-bottom: 0rem;
     }
 
+
+    /* ---- STORY ITEMS TYPOGRAPHY responsive enhancement ----  */
+
+        /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+        @media screen and (min-width: 684px) {
+
+          .story-item--primary .story-item__deck {
+            text-transform: uppercase;
+          }
+
+              .hmpg-org-tyee-insider .story-item--primary .story-item__deck {
+                text-transform: none ;
+              }
+
+        }
+/* end of Story Items Typography */
 
 
 
