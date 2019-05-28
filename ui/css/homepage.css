@@ -234,7 +234,7 @@ body {
    font-size: 1.5em;
    text-transform: capitalize;
 
-   margin: 0rem 0 4rem; /* 4rem total realigns with baseline grid */
+   margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
 }
 
 .category-label {
@@ -289,7 +289,7 @@ body {
     /* tertiary story-items */
 
     .story-item--tertiary .story-item__headline {
-      font-size: 1em;
+      font-size: 1.04em;
       line-height: 2rem;
       margin: 0 0 1rem; /* matches with deck margin-bottom to realign with baseline grid */
     }
@@ -553,7 +553,7 @@ a {
   .hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement {
     left: -2.5em;
     top: -1.75em;
-    transform: scale(.8);
+    transform: scale(.7);
   }
 
 
@@ -626,7 +626,7 @@ a {
 
         .hmpg-org-recent-stories__list .story-item--tertiary {
           /* font-size: var(--small-text); */
-          grid-column-gap: calc(var(--gutter-column) * 0.33);
+          grid-column-gap: calc(var(--gutter-column) * 0.5);
         }
 
     .story-item--minimum { font-size: var(--small-text); }
@@ -670,7 +670,7 @@ a {
 
           .story-item--secondary {
             grid-template-columns: 1fr;
-            grid-template-rows: auto auto 1fr;
+            grid-template-rows: auto auto auto auto auto 1fr;
             grid-template-areas:
                 "image"
                 "category"
