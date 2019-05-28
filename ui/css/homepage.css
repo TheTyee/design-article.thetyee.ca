@@ -1712,56 +1712,50 @@ a {
 
 /* This draws guides for column grid and baseline grid to tune the layout. */
 
-/* Apply the grid background to container elements: */
-.hmpg-org-wrapper {
-    /* Define grid structure: column width (inc gutter), baselines */
-    background-size:
-    calc((100% + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )    var(--baseline-grid);
-    /*   (width +    trailing gutter   -   the page margins    )        / number of columns    )  | baseline increment */
-    /*   (----------------- total grid width ------------------)        / number of columns    )  | baseline increment */
-    /*   (------------------------------ column width inc gutter ------------------------------)  | baseline increment */
+@media (max-resolution: 100dpi) { /* Don't show guides on mobile */
 
-    /* Adjust grid for page margins: */
-    background-position: var(--page-margin-sides) 0rem;
+    /* Apply the grid background to container elements: */
+    body:not(:hover) .hmpg-org-wrapper {
+        /* Define grid structure: column width (inc gutter), baselines */
+        background-size:
+        calc((100% + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )    var(--baseline-grid);
+        /*   (width +    trailing gutter   -   the page margins    )        / number of columns    )  | baseline increment */
+        /*   (----------------- total grid width ------------------)        / number of columns    )  | baseline increment */
+        /*   (------------------------------ column width inc gutter ------------------------------)  | baseline increment */
 
-
-    background-image:
-      /* Mark start of each column: */
-      linear-gradient(to right, #6583c552 1px, transparent 1px),
-
-      /* Fill in column widths: */
-      linear-gradient(to right, #83aaff17 calc((100vw  + var(--gutter-column))/var(--column-number) - var(--gutter-column) ), #ffd3d300 1px),
-      /* column content area      ==            (-------------- column width inc gutter ------------) - ( gutter --------- )  , gutter color   */
-
-      /* Draw baselines: */
-      linear-gradient(to bottom, #99b4ff47 1px, transparent 1px);
-      /*                      baseline thickness, colour btw baselines */
-}
+        /* Adjust grid for page margins: */
+        background-position: var(--page-margin-sides) 0rem;
 
 
-/* Apply the baselines to the body element to test for grid consistency between container elements */
-body {
-    background-size:
-    4rem    2rem;
-    /* width of background, grid increment */
+        background-image:
+          /* Mark start of each column: */
+          linear-gradient(to right, #6583c552 1px, transparent 1px),
 
-    /* Adjust grid for page margins, set top offset */
-    background-position: var(--page-margin-sides) 0px;
+          /* Fill in column widths: */
+          linear-gradient(to right, #83aaff17 calc((100vw  + var(--gutter-column))/var(--column-number) - var(--gutter-column) ), #ffd3d300 1px),
+          /* column content area      ==            (-------------- column width inc gutter ------------) - ( gutter --------- )  , gutter color   */
 
-    background-image:
-      /* Draw baselines: */
-      linear-gradient(to bottom, #4848486b 1px, transparent 1px);
-      /*                      baseline thickness, colour btw baselines */
+          /* Draw baselines: */
+          linear-gradient(to bottom, #99b4ff47 1px, transparent 1px);
+          /*                      baseline thickness, colour btw baselines */
+    }
 
-    background-repeat: repeat;
-}
 
-/* Grid Guides temporary overrides */
+    /* Apply the baselines to the body element to test for grid consistency between container elements */
+    body:not(:hover) {
+        background-size:
+        4rem    2rem;
+        /* width of background, grid increment */
 
-.hmpg-org-wrapper {
- background: none !important;
-}
+        /* Adjust grid for page margins, set top offset */
+        background-position: var(--page-margin-sides) 0px;
 
-body {
- background: none !important;
-}
+        background-image:
+          /* Draw baselines: */
+          linear-gradient(to bottom, #4848486b 1px, transparent 1px);
+          /*                      baseline thickness, colour btw baselines */
+
+        background-repeat: repeat;
+    }
+
+} /* end of Grid Guides */
