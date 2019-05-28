@@ -68,11 +68,11 @@ body{
 /* Grid Guides temporary overrides */
 
 .hmpg-org-wrapper {
- background: none !importan;
+ background: none !important;
 }
 
 body {
- background: none !importan;
+ background: none !important;
 }
 
 
@@ -548,6 +548,12 @@ a {
     top: -1.5em;
     transform: scale(1);
     padding-left: inherit; /* Adjusts badge position when there's padding on the parent */
+  }
+
+  .story-item--secondary .badge--story-item-placement {
+    left: -2.5em;
+    top: -1.5em;
+    transform: scale(.8);
   }
 
   .hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement {
