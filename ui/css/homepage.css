@@ -244,8 +244,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--brand-colour--text);
-  margin: 0 0 1rem;  /* 0 top margin aligns label with figure in 2-col story-item layouts
-                        This may be offset by the 1rem padding above the author. */
+  margin: 1rem 0 1rem; /* Adds up to 2rem, aligning with baseline grid */
 }
 
 .story-item__deck {
@@ -589,7 +588,6 @@ a {
 
     .story-item__image {
         display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
-        padding-bottom: 1rem; /* Creates space between image and headline in stacked story-item layout */
     }
 
     /* Story Item element layout -- Assign story-item elements to grid areas */
@@ -614,6 +612,8 @@ a {
         "author image"
         "date image";
     }
+
+    .story-item--secondary .category-label { margin-top: 0} /* 0 top margin aligns label with figure in 2-col story-item layouts */
 
     .story-item--tertiary { }
         .story-item--tertiary .story-item__image { display: none; }
@@ -680,6 +680,9 @@ a {
                 "date";
           }
 
+          .story-item--secondary .category-label { margin-top: 1rem} /* Creates space
+                                between image and headline in stacked story-item layout */
+
           .story-item--tertiary {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: repeat(4, auto) 1fr;
@@ -692,7 +695,7 @@ a {
           }
               .story-item--tertiary .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
               .story-item--tertiary .badge--story-item-placement {display: block;}
-              .story-item--tertiary .category-label {display: block;}
+              .story-item--tertiary .category-label {display: block; margin-top: 0} /* 0 top margin aligns label with figure in 2-col story-item layouts */
               .story-item--tertiary .story-item__deck {display: block;}
         }
 /* end of Story Item */
