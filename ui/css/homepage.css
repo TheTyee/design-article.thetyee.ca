@@ -244,7 +244,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--brand-colour--text);
-  margin: 1rem 0 ;
+  margin: 0 0 1rem;  /* 0 top margin aligns label with figure in 2-col story-item layouts
+                        This may be offset by the 1rem padding above the author. */
 }
 
 .story-item__deck {
@@ -586,7 +587,10 @@ a {
       font-weight: 200;
     }
 
-    .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
+    .story-item__image {
+        display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
+        padding-bottom: 1rem; /* Creates space between image and headline in stacked story-item layout */
+    }
 
     /* Story Item element layout -- Assign story-item elements to grid areas */
     .story-item--index-page .story-item__image { grid-area: image; }
