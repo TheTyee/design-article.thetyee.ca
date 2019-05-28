@@ -64,18 +64,6 @@ body{
   padding-top: .rem;
 }
 
-
-/* Grid Guides temporary overrides */
-
-.hmpg-org-wrapper {
- background: none !important;
-}
-
-body {
- background: none !important;
-}
-
-
 /* Base Colours */
 :root {
   /* BRAND COLOUR -- Tyee Orange.                                    */
@@ -1744,4 +1732,14 @@ body {
       /*                      baseline thickness, colour btw baselines */
 
     background-repeat: repeat;
+}
+
+/* Grid Guides temporary overrides */
+
+.hmpg-org-wrapper {
+ background: none !important;
+}
+
+body {
+ background: none !important;
 }
