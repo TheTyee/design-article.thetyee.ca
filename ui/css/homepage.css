@@ -525,9 +525,9 @@ a {
 
     .button--barometer {
       display: block;
-      color: var(--brand-colour--text-darker);
-      background-color: hsla(0, 0%, 100%, 0.9);
-      border: 2px solid var(--brand-colour--text-darker);
+      color: var(--text-colour);
+      background-color: hsla(0, 0%, 100%, 0.3);
+      border: 2px solid white;
     }
 
         .site-nav__search-form .button {
@@ -1037,8 +1037,8 @@ a {
         height: 2rem;
         top: 0;
         left: -3rem;
-        background: #fff;
-        border: 1px solid var(--brand-colour--text-darker);
+        background: hsla(0, 0%, 100%, 0.3);
+        border: 2px solid white;
       }
 
        input[name="barometerpoll"]:checked + .barometer-form-label::after {
