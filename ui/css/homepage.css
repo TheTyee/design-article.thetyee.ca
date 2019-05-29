@@ -207,6 +207,14 @@ body {
   margin: 3rem 0 3rem; /* 6rem total realigns with 2rem-baseline grid */
 }
 
+.m-comment-noted__title, .m-barometer__title {
+  font-family: var(--typeface-display-large);
+  font-weight: 600;
+  line-height: 3rem;
+  font-size: 1.5em;
+  text-transform: none;
+}
+
 
 /* Content text styles ----------------- */
 
@@ -928,7 +936,7 @@ a {
 }
 
 .m-comment-noted__title, .m-barometer__title {
-  padding: 1rem 0;
+  /* padding: 1rem 0;  This should be contained in typographic styles not module layout */
   min-height: 12rem;
 }
 
