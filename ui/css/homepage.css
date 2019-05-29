@@ -284,6 +284,11 @@ body {
       font-size: 1.11em;
     }
 
+    .story-item--primary .story-item__author {
+      padding-top: 2rem; /* 2rem total aligns with baseline grid */
+    }
+
+
     /* secondary story-items */
 
     .story-item--secondary .story-item__headline {
@@ -961,7 +966,7 @@ strong {
   padding-bottom: 6rem;
   border-top: 1px solid var(--text-colour);
 
-  background-color: var(--brand-colour--mod-bg);
+  background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
 }
 
 .hmpg-module-header {
@@ -1124,7 +1129,9 @@ strong {
 /* PINNED STORY organism ----------------- */
 
 .hmpg-org-pinned-story {
-  padding-top: var(--gutter-row); }
+  padding-top: calc(var(--gutter-row) - 0px);
+  border-top: 0px solid var(--text-colour);
+}
 
 /* End of Pinned Story organism */
 
