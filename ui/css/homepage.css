@@ -271,13 +271,13 @@ body {
     .story-item--tertiary .story-item__headline {
       font-size: 1.04em;
       line-height: 2rem;
-      margin: 0 0 1rem; /* matches with deck margin-bottom to realign with baseline grid */
+      margin: 0; /* matches with deck margin-bottom to realign with baseline grid */
     }
 
     .story-item--tertiary .story-item__deck {
-      font-size: .83em;
+      font-size: 1em;
       line-height: 2rem;
-      margin-bottom: 1rem; /* matches with headline margin-bottom to realign with baseline grid */
+      margin: 1rem 0 1rem; /* 2rem total aligns with baseline grid */
     }
 
     /* minimum story-items */
@@ -636,7 +636,7 @@ a {
         .story-item--tertiary .badge--story-item-placement { display: none; }
         .story-item--tertiary .category-label { display: none; }
         .story-item--tertiary .story-item__headline { display: block; }
-        .story-item--tertiary .story-item__deck { display: none; }
+        .story-item--tertiary .story-item__deck { display: block; }
         .story-item--tertiary .story-item__author { display: none; }
         .story-item--tertiary .story-item__date { display: none; }
 
