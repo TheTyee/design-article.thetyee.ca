@@ -105,16 +105,32 @@ meta-url: "http://thetyee.ca/home"
         <h2 class="m-barometer__label">The Barometer</h2>
       </header>
       <h3 class="m-barometer__title">How are Trudeau’s Liberals going to try and survive the SNC- Lavalin scandal?</h3>
-      <ul>
-        <li>We did it for the jobs</<li>
-      	<li>Smear campaign of Wilson-Raybould</li>
-      	<li>New leader time!</li>
-      	<li>Wait it out and hope the country gets bored</li>
-      	<li>They can’t</li>
-      	<li>Too soon to say</li>
-      	<li>Other</li>
+
+      <ul class="barometer-form-list">
+          <li class="barometer-form-list__item">
+            <input type="radio" value="1" id="barometer-poll-item-1" name="barometerpoll" />
+            <label class="barometer-form-label" for="barometer-poll-item-1">We did it for the jobs</label>
+          </li>
+          <li class="barometer-form-list__item">
+            <input type="radio" value="2" id="barometer-poll-item-2" name="barometerpoll" />
+            <label class="barometer-form-label" for="barometer-poll-item-2">Smear campaign of Wilson-Raybould</label>
+          </li>
+          <li class="barometer-form-list__item">
+            <input type="radio" value="3" id="barometer-poll-item-3" name="barometerpoll" />
+            <label class="barometer-form-label" for="barometer-poll-item-3">New leader time!</label>
+          </li>
+          <li class="barometer-form-list__item">
+            <input type="radio" value="4" id="barometer-poll-item-4" name="barometerpoll" />
+            <label class="barometer-form-label" for="barometer-poll-item-4">Wait it out and hope the country gets bored</label>
+          </li>
+          <li class="barometer-form-list__item">
+            <input type="radio" value="5" id="barometer-poll-item-5" name="barometerpoll" />
+            <label class="barometer-form-label" for="barometer-poll-item-5">Other</label>
+          </li>
       </ul>
-      <a class="button" href="#link-to-poll">Take this week’s poll</a>
+
+      <input class="barometer-form-input button button--barometer button--dark-bg" type="submit" value="Take this week's poll">
+
       <footer class="m-barometer__footer">
         <p class="label--small">Last week:</p>
         <a href="#">What you thought fully extending the subway to UBC</a>
