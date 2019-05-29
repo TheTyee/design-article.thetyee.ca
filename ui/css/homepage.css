@@ -855,6 +855,7 @@ strong {
 /* HMPG ORGANISM WRAPPER ----------------- */
 
 .hmpg-org-wrapper {
+  position: relative;
   padding: 0 var(--page-margin-sides);
 }
 
@@ -1129,9 +1130,33 @@ strong {
 /* PINNED STORY organism ----------------- */
 
 .hmpg-org-pinned-story {
-  padding-top: calc(var(--gutter-row) - 0px);
-  border-top: 0px solid var(--text-colour);
+  margin-top: -4px; /* compensates for top border width */
+  border-top: 4px solid var(--text-colour);
+  padding-top: var(--gutter-row);
+  padding-bottom: var(--gutter-row);
+  border-bottom: 4px solid var(--text-colour);
+  margin-bottom: -4px; /* compensates for bottom border width */
 }
+     /* Set second top border */
+    .hmpg-org-pinned-story::before {
+      content:"";
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid var(--text-colour);
+    }
+
+     /* Set second bottom border */
+    .hmpg-org-pinned-story::after {
+      content:"";
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid var(--text-colour);
+    }
+
 
 /* End of Pinned Story organism */
 
