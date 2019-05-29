@@ -578,6 +578,13 @@ strong {
     }
 
 
+
+
+/*-----------------------------------------*\
+  #MOLECULES
+\*-----------------------------------------*/
+
+
 /* BADGE molecule */
 /* This styles the existing story-badge html molecule from the story page to work on the homepage. These styles replace the story page badge styles. */
 
@@ -604,13 +611,6 @@ strong {
     top: -1.75em;
     transform: scale(.7);
   }
-
-
-
-
-/*-----------------------------------------*\
-  #MOLECULES
-\*-----------------------------------------*/
 
 
 /* STORY ITEM MOLECULE ------------------- */
