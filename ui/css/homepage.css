@@ -184,6 +184,10 @@ body {
 
 /* Module text styles ----------------- */
 
+.label--small {
+  font-style: italic;
+}
+
 .hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
   font-size: 1.4em;
   font-weight: 800;
@@ -490,6 +494,19 @@ https://caniuse.com/#feat=css3-colors
 a {
   text-decoration: none;
 }
+
+strong {
+  font-weight: 600;
+}
+
+.text-link { }
+
+    .text-link--button {
+      display:table;
+      padding-top: 2rem;
+      font-style:italic;
+      border-bottom: 1px solid;
+    }
 
 /* BUTTON atom */
 
@@ -1011,7 +1028,13 @@ a {
     min-height: 10rem;
   }
 
+  .m-barometer__footer {
+    padding-top: 4rem;
+  }
+
       /* Barometer form */
+      /* Checkbox display method is adapted from here:
+         https://paulund.co.uk/how-to-style-a-checkbox-with-css */
 
       .barometer-form-list__item {
         display: block;
