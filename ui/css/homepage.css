@@ -587,7 +587,7 @@ a {
     /* row border */
     /* Uses a pseudo element to create a border in the "border" grid area.
     Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-    .story-item--index-page::after {
+    .hmpg-org-recent-stories .story-item--index-page::after {
       content:"";
       position: absolute;
       bottom: calc(var(--gutter-row-half) * -1);
