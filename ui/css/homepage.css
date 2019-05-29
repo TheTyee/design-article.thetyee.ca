@@ -204,7 +204,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
-  margin: 3rem 0 3rem; /* 6rem total realigns with 2rem-baseline grid */
+  margin: 3rem 0 1rem; /* 4rem total realigns with 2rem-baseline grid */
 }
 
 .m-comment-noted__title, .m-barometer__title {
@@ -289,9 +289,10 @@ body {
     /* minimum story-items */
 
     .story-item--minimum h2 {
-      font-size: 1.25em;
-      font-weight: 400;
+      font-size: 1.04em;
+      font-weight: 600;
       line-height: 2rem;
+      padding-top: 2rem;
       margin-bottom: 0rem;
     }
 
@@ -651,7 +652,7 @@ a {
           grid-column-gap: calc(var(--gutter-column) * 0.5);
         }
 
-    .story-item--minimum { font-size: var(--small-text); }
+    .story-item--minimum { }
         .story-item--minimum .story-item__image { display: none; }
         .story-item--minimum .badge--story-item-placement { display: none; }
         .story-item--minimum .category-label { display: none; }
