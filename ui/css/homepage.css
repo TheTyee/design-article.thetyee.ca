@@ -204,9 +204,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
-  padding-bottom: .5rem;
-  border-bottom: 1px solid var(--text-colour);
-  margin-bottom: 1.5rem;
+  margin: 3rem 0 3rem; /* 6rem total realigns with 2rem-baseline grid */
 }
 
 
@@ -909,8 +907,9 @@ a {
   grid-row-gap: var(--gutter-row);
 
   margin-top: var(--gutter-row);
-  padding-top: 2rem;
+  padding-top: calc(2rem - 1px);
   padding-bottom: 4rem;
+  border-top: 1px solid var(--text-colour);
 
   background-color: var(--brand-colour--mod-bg);
 }
@@ -959,6 +958,13 @@ a {
 
   .m-tyee-insider__main .story-item__image {
     margin-bottom: 4rem
+  }
+
+
+  /* Comment Noted and Barometer molecule styles */
+  .m-comment-noted, .m-barometer {
+    padding-top: calc(2rem - 1px);
+    border-top: 1px solid var(--text-colour);
   }
 
 
