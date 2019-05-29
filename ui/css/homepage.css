@@ -961,7 +961,7 @@ strong {
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 
-  margin-top: var(--gutter-row);
+  margin-top: calc(var(--gutter-row) - 1px);
   padding-top: calc(2rem - 1px);
   padding-bottom: 6rem;
   border-top: 1px solid var(--text-colour);
