@@ -253,6 +253,20 @@ body {
   margin-top: 0rem;
 }
 
+    .m-comment-noted .story-item__author {
+      display: block;
+      margin-top: 2rem;
+      text-align
+    }
+
+    .m-comment-noted .story-item__author::before {
+      content:"Submitted by";
+      display: block;
+      margin-top: 2rem;
+      font-weight: 400;
+      font-style: italic;
+    }
+
     /* primary story-items */
 
     .story-item--primary .story-item__headline {
