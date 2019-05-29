@@ -909,6 +909,7 @@ a {
 
 /* TYEE INSIDER organism ----------------- */
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
+
 .hmpg-org-tyee-insider {
   display: grid;
   grid-column-gap: var(--gutter-column);
@@ -916,7 +917,7 @@ a {
 
   margin-top: var(--gutter-row);
   padding-top: calc(2rem - 1px);
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
   border-top: 1px solid var(--text-colour);
 
   background-color: var(--brand-colour--mod-bg);
@@ -935,10 +936,10 @@ a {
   display: inline-block;
 }
 
-.m-comment-noted__title, .m-barometer__title {
-  /* padding: 1rem 0;  This should be contained in typographic styles not module layout */
-  min-height: 12rem;
-}
+.m-tyee-insider__main, .m-comment-noted, .m-barometer{
+    margin-bottom: 2rem;
+  }
+
 
   /* Tyee Insider Story-items */
   .m-tyee-insider__main .story-item--primary { }
@@ -970,10 +971,22 @@ a {
 
 
   /* Comment Noted and Barometer molecule styles */
+
   .m-comment-noted, .m-barometer {
     padding-top: calc(2rem - 1px);
     border-top: 1px solid var(--text-colour);
   }
+
+      .m-comment-noted .hmpg-module-header, .m-barometer .hmpg-module-header {
+        height: 2rem;
+        margin-bottom: 4rem;
+      }
+
+  .m-comment-noted__title, .m-barometer__title {
+    /* padding: 1rem 0;  This should be contained in typographic styles not module layout */
+    min-height: 10rem;
+  }
+
 
 
     /* ---- TYEE INSIDER responsive enhancement ---- */
