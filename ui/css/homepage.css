@@ -812,7 +812,7 @@ strong {
   }
 
   .hmpg-ad-box--bigbox {
-    margin-top: var(--gutter-row-half);
+    margin-top: var(--gutter-row);
     height: calc(2rem * 14); /* Set ad-box height to an even multiple of the baseline grid */
   }
 
