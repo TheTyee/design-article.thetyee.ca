@@ -755,6 +755,12 @@ strong {
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
 
+          /* row border */
+          /* removes row borders in medium views */
+          .hmpg-org-recent-stories .story-item--index-page::after, .hmpg-org-deep-dive .story-item--index-page::after  {
+            content:none;
+          }
+
           .story-item--primary {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: repeat(4, auto) 1fr;
