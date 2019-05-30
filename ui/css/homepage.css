@@ -777,11 +777,19 @@ strong {
               "date image";
           }
 
+          /* Vertically centre Primary story-item text block in wide views
+             (only for Recent Stories and Pinned Story modules)            */
+          .hmpg-org-recent-stories__list .story-item--primary,
+          .hmpg-org-pinned-story .story-item--primary {
+            grid-template-rows: 1fr auto auto auto 1fr;
+          }
+
               .hmpg-org-recent-stories__list .story-item--primary .story-item__image {
               }
 
               .story-item--primary .category-label {
                 margin: 0 0 1rem;
+                align-self: end;
               }
               .story-item--primary .story-item__date {
                 margin-bottom: 1rem; /* offsets the 1-rem margin of the category-label */
@@ -789,7 +797,6 @@ strong {
 
               .story-item--primary.story-item--reverse {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: repeat(4, auto) 1fr;
                 grid-template-areas:
                   "image category"
                   "image headline"
