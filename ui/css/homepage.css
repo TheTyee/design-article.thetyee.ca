@@ -651,7 +651,12 @@ strong {
             .story-item--primary .badge--story-item-placement {
               left: -2.25em;
               top: .5em;
-              transform: scale(.);
+            }
+
+            .story-item--reverse.story-item--primary .badge--story-item-placement {
+              left: unset;
+              right: -2.25em;
+              top: .5em;
             }
 
         }
@@ -791,6 +796,7 @@ strong {
                   "image deck"
                   "image author"
                   "image date";
+                text-align: center;
               }
 
           .story-item--secondary {
