@@ -1297,12 +1297,24 @@ strong {
 
 .hmpg-org-most {
   display: grid;
-  padding-top: var(--gutter-row);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
+  /* margin-top: -1px; /* offsets 1px border
+  border-top: 1px solid var(--text-colour); in narrow views put borders on each column */
+  padding-top: var(--gutter-row);
 }
 
+.hmpg-org-most--column {
+  display: grid;
+  grid-row-gap: var(--gutter-row-half);
+  margin-top: -1px; /* offsets 1px border */
+  border-top: 1px solid var(--text-colour);
+  padding-top: 2rem;
+}
 
+    .hmpg-org-most--column .story-item__headline {
+      margin-bottom: 0;
+    }
 
       /* ---- MOST responsive enhancement ---- */
       /*  */
