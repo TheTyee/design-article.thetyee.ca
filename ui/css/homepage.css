@@ -1201,6 +1201,19 @@ strong {
               }
               .hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 3;}
               .hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 3;}
+
+          .m-tyee-insider__related-stories {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-row-gap: 2rem;
+              grid-column-gap: var(--gutter-column);
+              margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
+          }
+
+          .m-tyee-insider__related-label {
+            grid-column: 1 / -1; /* Span all columns (required for medium views) */
+          }
+
         }
 
         /*  TYEE INSIDER LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
