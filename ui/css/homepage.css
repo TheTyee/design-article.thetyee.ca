@@ -903,6 +903,7 @@ strong {
   width: 100%;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
+  margin-bottom: -1rem; /* Realigns with baseline grid (content may still throw it off) */
 }
 
   /* RECENT STORIES LIST EXPANDER */
