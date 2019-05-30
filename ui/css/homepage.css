@@ -1418,6 +1418,10 @@ strong {
 /* SITE HEADER organism ----------------- */
 /* This thing is a beast ---------------- */
 
+.site-header {
+  padding-bottom: 2rem;
+}
+
 .site-header__logo-block {
   display: grid;
   grid-template-columns: 1fr;
@@ -1886,7 +1890,6 @@ strong {
 
 .site-footer--homepage {
   display: grid;
-  margin-top: var(--gutter-row);
   padding-top: 4rem;
   padding-bottom: var(--gutter-row);
   grid-column-gap: var(--gutter-column);
