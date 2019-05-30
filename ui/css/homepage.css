@@ -202,6 +202,12 @@ body {
   color: var(--text-colour);
 }
 
+.hmpg-org-deep-dive .story-item--primary .story-item__deck {
+  font-family: var(--typeface-serif);
+  font-size: 1.065em;
+  color: var(--text-colour);
+}
+
 .m-tyee-insider__related-label {
   font-size: .85em;
   font-weight: 800;
@@ -640,7 +646,7 @@ strong {
     /* row border */
     /* Uses a pseudo element to create a border in the "border" grid area.
     Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-    .hmpg-org-recent-stories .story-item--index-page::after {
+    .hmpg-org-recent-stories .story-item--index-page::after, .hmpg-org-deep-dive .story-item--index-page::after  {
       content:"";
       position: absolute;
       bottom: calc(var(--gutter-row-half) * -1);
@@ -648,6 +654,10 @@ strong {
       grid-area: border;
       width: 100%;
       border-bottom: 1px solid var(--border-colour-cols);
+    }
+
+    .hmpg-org-recent-stories .story-item--index-page:last-of-type::after, .hmpg-org-deep-dive .story-item--index-page:last-of-type::after  {
+      content:none;  /* Omit bottom row border on last item */
     }
 
     .story-item__news-source{
@@ -1190,6 +1200,19 @@ strong {
   .hmpg-org-deep-dive > .story-item:first-of-type .story-item__author { display: none; }
   .hmpg-org-deep-dive > .story-item:first-of-type .story-item__date { display: none; }
 
+/* Remove bottom row border from first story-item */
+.hmpg-org-deep-dive .story-item--index-page:first-of-type::after  {
+      content:none;
+    }
+
+  /* Tyee Insider Story-items */
+  .hmpg-org-deep-dive .story-item--primary {
+    grid-template-columns: 1fr;
+  }
+
+  .hmpg-org-deep-dive .story-item--primary .story-item__deck {
+    text-transform: none;
+  }
 
       /* ---- DEEP DIVE responsive enhancement ---- */
       /*  */
