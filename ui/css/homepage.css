@@ -1393,6 +1393,15 @@ strong {
 
         .hmpg-org-most {
           grid-template-columns: 1fr 1fr 1fr;
+
+          /* Set top border on outer container instead of on each column */
+          margin-top: -1px; /* offsets 1px border */
+          border-top: 1px solid var(--text-colour);
+        }
+        /* Remove top borders from each column */
+        .hmpg-org-most--column {
+          margin-top: 0; /* offsets 1px border */
+          border-top: 0;
         }
       }
 
