@@ -769,6 +769,13 @@ strong {
               .hmpg-org-recent-stories__list .story-item--primary .story-item__image {
               }
 
+              .story-item--primary .category-label {
+                margin: 0 0 1rem;
+              }
+              .story-item--primary .story-item__date {
+                margin-bottom: 1rem; /* offsets the 1-rem margin of the category-label */
+              }
+
               .story-item--primary.story-item--reverse {
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: repeat(4, auto) 1fr;
