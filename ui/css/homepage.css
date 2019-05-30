@@ -643,6 +643,21 @@ strong {
     transform: scale(.7);
   }
 
+    /* ---- BADGE responsive enhancement ----  */
+
+        /*  BADGE MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+        @media screen and (min-width: 684px) {
+
+            .story-item--primary .badge--story-item-placement {
+              left: -2.25em;
+              top: .5em;
+              transform: scale(.);
+            }
+
+        }
+/* end of Badge molecule */
+
+
 
 /* STORY ITEM MOLECULE ------------------- */
 
