@@ -1812,6 +1812,10 @@ strong {
           /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px */
           @media screen and (min-width: 850px) {
 
+              .site-header {
+                padding-bottom: 6rem;
+              }
+
               /* Expand site-header grid and show taglines */
               .site-header__logo-block {
                 grid-template-columns: 1fr 1fr 1fr;
