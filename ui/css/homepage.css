@@ -218,7 +218,7 @@ body {
 }
 
 .m-comment-noted__title, .m-barometer__title {
-  font-family: var(--typeface-display-large);
+  font-family: var(--typeface-display-medium);
   font-weight: 600;
   line-height: 3rem;
   font-size: 1.5em;
@@ -311,7 +311,7 @@ body {
     /* secondary story-items */
 
     .story-item--secondary .story-item__headline {
-      font-family: var(--typeface-display-large);
+      font-family: var(--typeface-display-medium);
     }
 
     /* tertiary story-items */
