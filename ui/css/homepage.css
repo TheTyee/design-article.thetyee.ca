@@ -696,11 +696,12 @@ strong {
 
     .story-item__image {
         display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
+        position: relative
     }
 
     /* Story Item element layout -- Assign story-item elements to grid areas */
     .story-item--index-page .story-item__image { grid-area: image; }
-    .story-item--index-page .badge--story-item-placement { grid-area: image; z-index: 20;}
+    .story-item--index-page .badge--story-item-placement {/* grid-area: image; */z-index: 20;}
     .story-item--index-page .category-label { grid-area: category; }
     .story-item--index-page .story-item__headline { grid-area: headline; }
     .story-item--index-page .story-item__deck { grid-area: deck; }
@@ -764,6 +765,9 @@ strong {
               "author image"
               "date image";
           }
+
+              .hmpg-org-recent-stories__list .story-item--primary .story-item__image {
+              }
 
               .story-item--primary.story-item--reverse {
                 grid-template-columns: 1fr 1fr;
