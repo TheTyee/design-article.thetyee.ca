@@ -972,8 +972,14 @@ strong {
 
 .hmpg-module-header {
   height: 2rem;
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
 }
+
+  .hmpg-org-tyee-insider .hmpg-module-header {
+    margin-bottom: 8rem;
+    /* Insider needs more space here because it doesn't use
+       Grid at top level and therefore has no row gap */
+  }
 
 .hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
   margin-right: 3rem;
@@ -1130,6 +1136,9 @@ strong {
 /* PINNED STORY organism ----------------- */
 
 .hmpg-org-pinned-story {
+  z-index: 10; /* So that bottom border doesn't fall underneath
+                  the BG of next module due to negative margin */
+
   margin-top: -4px; /* compensates for top border width */
   border-top: 4px solid var(--text-colour);
   padding-top: var(--gutter-row);
@@ -1165,12 +1174,12 @@ strong {
 /* DEEP DIVE organism ----------------- */
 
 .hmpg-org-deep-dive {
+
   display: grid;
-  margin-top: var(--gutter-row);
+  margin-top: 0;
   padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-
   background-color: #f1f1f1ad; /* For testing purposes */ /* AG - temporary tansparency to show grid */
   }
 
