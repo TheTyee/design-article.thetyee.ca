@@ -278,10 +278,17 @@ body {
     }
 
 .story-item__news-source {
-  padding-left: .5em;
   font-family: var(--typeface-sans);
   font-weight: 200;
-}
+} /* for Reported Elsewhere */
+
+    /* Separator between headline and news source */
+    .story-item__news-source::before {
+      content:"•";
+      padding-left: .25em;
+      padding-right: .25em;
+    }
+
 
     /* primary story-items */
 
