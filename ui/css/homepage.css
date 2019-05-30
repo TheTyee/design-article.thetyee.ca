@@ -803,6 +803,10 @@ strong {
     */
   }
 
+  .hmpg-ad-box--bigbox {
+    padding-top: 2rem;
+  }
+
     /*  HMPG AD BOX LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
     @media screen and (min-width: 1368px) {
       .hmpg-ad-box--halfpage { display: block;}
@@ -1339,10 +1343,13 @@ strong {
 
 .hmpg-org-reported-elsewhere {
   display: grid;
-  padding-top: var(--gutter-row);
+  padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 0;
   align-items: start;
+    margin-top: -1px; /* offsets 1px border */
+  border-top: 1px solid var(--text-colour);
+
 }
 
 
