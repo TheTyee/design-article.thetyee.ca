@@ -824,7 +824,7 @@ strong {
     .counter-list--story-items > .story-item {
       counter-increment: story-item;
 
-      padding-left: 1.75em;
+      padding-left: 2.2em;
       position: relative;
       margin-bottom: 1rem;
     }
@@ -840,14 +840,14 @@ strong {
               content: counter(story-item);
               display: inline-block;
               position: absolute;
-              left: 0em;
+              left: -.15em;
               color: #fff;
               background-color: #bbb;
               border-radius: 0.65em;
               text-align:center;
               font-weight: 600;
-              width: 1.33em;
-              height: 1.33em;
+              width: 1.3em;
+              height: 1.3em;
               -ms-transform: scale(0.85); /* IE 9 */
               -webkit-transform: scale(0.85); /* Safari */
               transform: scale(1);
