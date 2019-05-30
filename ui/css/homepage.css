@@ -321,7 +321,6 @@ body {
       font-family: var(--typeface-display-medium);
       font-weight: 600;
       line-height: 3rem;
-      padding-top: 2rem;
       margin-bottom: 0rem;
     }
 
@@ -826,14 +825,14 @@ strong {
 
       padding-left: 2.2em;
       position: relative;
-      margin-bottom: 1rem;
     }
 
         /* Realign odd-numbered list with baseline grid.
            This doesn't work if there's an even # of items in the list.
-           Using margins that vary between odd and even items could produce a universal solution. */
+           Using margins that vary between odd and even items could produce a universal solution.
+           E.g. select the last list item only if it's odd-numbered. */
         .counter-list--story-items > .story-item:last-of-type {
-          margin-bottom: 2rem;
+          margin-bottom: 0rem;
         }
 
     .counter-list--story-items > .story-item h2::before {
@@ -1314,6 +1313,7 @@ strong {
   margin-top: -1px; /* offsets 1px border */
   border-top: 1px solid var(--text-colour);
   padding-top: 2rem;
+  margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
 }
 
     .hmpg-org-most--column .story-item__headline {
