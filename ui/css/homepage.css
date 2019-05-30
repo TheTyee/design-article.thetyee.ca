@@ -317,8 +317,9 @@ body {
     /* tertiary story-items */
 
     .story-item--tertiary .story-item__headline {
-      font-size: 1.04em;
-      line-height: 2rem;
+      font-family: var(--typeface-display-medium);
+      font-size: 1.5em;
+      line-height: 3rem;
       margin: 0; /* matches with deck margin-bottom to realign with baseline grid */
     }
 
@@ -350,6 +351,12 @@ body {
               .hmpg-org-tyee-insider .story-item--primary .story-item__deck {
                 text-transform: none ;
               }
+
+          .story-item--tertiary .story-item__headline {
+            font-size: 1.04em;
+            line-height: 2rem;
+          }
+
 
         }
 /* end of Story Items Typography */
