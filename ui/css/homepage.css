@@ -1421,7 +1421,7 @@ strong {
 /* This thing is a beast ---------------- */
 
 .site-header {
-  padding-bottom: 2rem;
+  padding-bottom: 0rem;
 }
 
 .site-header__logo-block {
