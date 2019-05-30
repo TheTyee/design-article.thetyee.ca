@@ -1003,6 +1003,19 @@ strong {
        Grid at top level and therefore has no row gap */
   }
 
+  .hmpg-org-most--column .hmpg-module-header {
+    margin-bottom: 4rem;
+    /* Most module columns need more space here because they only use
+       a half-gutter row gap */
+  }
+
+  .hmpg-org-reported-elsewhere .hmpg-module-header {
+    margin-bottom: 4rem;
+    /* Reported Elsewhere module needs more space here because they only use
+       a half-gutter row gap */
+  }
+
+
 .hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
   margin-right: 3rem;
 }
@@ -1317,7 +1330,6 @@ strong {
   grid-row-gap: var(--gutter-row);
   /* margin-top: -1px; /* offsets 1px border
   border-top: 1px solid var(--text-colour); in narrow views put borders on each column */
-  padding-top: var(--gutter-row);
 }
 
 .hmpg-org-most--column {
@@ -1326,6 +1338,7 @@ strong {
   margin-top: -1px; /* offsets 1px border */
   border-top: 1px solid var(--text-colour);
   padding-top: 2rem;
+  padding-bottom: 2rem;
   margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
 }
 
