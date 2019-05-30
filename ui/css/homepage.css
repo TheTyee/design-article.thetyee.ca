@@ -511,6 +511,7 @@ strong {
       padding-top: 2rem;
       font-style:italic;
       border-bottom: 1px solid;
+      margin-bottom: -1px; /* Offsets 1px border */
     }
 
 /* BUTTON atom */
@@ -857,6 +858,7 @@ strong {
 .hmpg-org-wrapper {
   position: relative;
   padding: 0 var(--page-margin-sides);
+  padding-bottom: var(--gutter-row);
 }
 
 
@@ -864,7 +866,6 @@ strong {
 /* HMPG RECENT STORIES organism ---------- */
 
 .hmpg-org-recent-stories {
-  padding-top: var(--gutter-row); /* switched from margin to padding for grid testing */
 }
 
 .hmpg-org-recent-stories__list {
@@ -962,9 +963,8 @@ strong {
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 
-  margin-top: calc(var(--gutter-row) - 1px);
-  padding-top: calc(2rem - 1px);
-  padding-bottom: 6rem;
+  margin-top: -1px; /* Offsets 1px border and realigns to baseline grid */
+  padding-top: calc(2rem - 0px);
   border-top: 1px solid var(--text-colour);
 
   background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
@@ -990,7 +990,7 @@ strong {
 }
 
 .m-tyee-insider__main, .m-comment-noted, .m-barometer{
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 
 
@@ -1026,8 +1026,10 @@ strong {
   /* Comment Noted and Barometer molecule styles */
 
   .m-comment-noted, .m-barometer {
-    padding-top: calc(2rem - 1px);
+    padding-top: calc(2rem - 0px);
     border-top: 1px solid var(--text-colour);
+    margin-top: -1px; /* Offsets the 1px border */
+
   }
 
       .m-comment-noted .hmpg-module-header, .m-barometer .hmpg-module-header {
@@ -1142,7 +1144,6 @@ strong {
   margin-top: -4px; /* compensates for top border width */
   border-top: 4px solid var(--text-colour);
   padding-top: var(--gutter-row);
-  padding-bottom: var(--gutter-row);
   border-bottom: 4px solid var(--text-colour);
   margin-bottom: -4px; /* compensates for bottom border width */
 }
