@@ -1244,6 +1244,10 @@ strong {
           .m-comment-noted__title, .m-barometer__title {
                   min-height: 10rem;
                   margin-bottom: 2rem;
+          }
+
+          .m-tyee-insider__main .story-item--primary .story-item__headline {
+                  margin-bottom: 4rem;
               }
 
         }
