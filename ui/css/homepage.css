@@ -778,82 +778,76 @@ strong {
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
 
-          /* row border */
-          /* removes row borders in medium views */
-          .hmpg-org-recent-stories .story-item--index-page::after, .hmpg-org-deep-dive .story-item--index-page::after  {
-            content:none;
-          }
+            /* row border */
+            /* removes row borders in medium views */
+            .hmpg-org-recent-stories .story-item--index-page::after, .hmpg-org-deep-dive .story-item--index-page::after  {
+              content:none;
+            }
 
-          .story-item--primary {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(4, auto) 1fr;
-            grid-template-areas:
-              "category image"
-              "headline image"
-              "deck image"
-              "author image"
-              "date image";
-          }
+            .story-item--primary {
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: repeat(4, auto) 1fr;
+              grid-template-areas:
+                "category image"
+                "headline image"
+                "deck image"
+                "author image"
+                "date image";
+            }
 
-          /* Vertically centre Primary story-item text block in wide views
-             (only for Recent Stories and Pinned Story modules)            */
-          .hmpg-org-recent-stories__list .story-item--primary,
-          .hmpg-org-pinned-story .story-item--primary {
-            grid-template-rows: 1fr auto auto auto 1fr;
-          }
+            /* Vertically centre Primary story-item text block in wide views
+               (only for Recent Stories and Pinned Story modules)            */
+            .hmpg-org-recent-stories__list .story-item--primary,
+            .hmpg-org-pinned-story .story-item--primary {
+              grid-template-rows: 1fr auto auto auto 1fr;
+            }
 
-              .hmpg-org-recent-stories__list .story-item--primary .story-item__image {
-              }
+                .hmpg-org-recent-stories__list .story-item--primary .story-item__image {
+                }
 
-              .story-item--primary .category-label {
-                margin: 0 0 1rem;
-                align-self: end;
-              }
-              .story-item--primary .story-item__date {
-                margin-bottom: 1rem; /* offsets the 1-rem margin of the category-label */
-              }
+                .story-item--primary .category-label {
+                  margin: 0 0 1rem;
+                  align-self: end;
+                }
+                .story-item--primary .story-item__date {
+                  margin-bottom: 1rem; /* offsets the 1-rem margin of the category-label */
+                }
 
-              .story-item--primary.story-item--reverse {
-                grid-template-columns: 1fr 1fr;
-                grid-template-areas:
-                  "image category"
-                  "image headline"
-                  "image deck"
-                  "image author"
-                  "image date";
-                text-align: center;
-              }
+                .story-item--primary.story-item--reverse {
+                  grid-template-columns: 1fr 1fr;
+                  grid-template-areas:
+                    "image category"
+                    "image headline"
+                    "image deck"
+                    "image author"
+                    "image date";
+                  text-align: center;
+                }
 
-          .story-item--secondary {
-            grid-template-columns: 1fr;
-            grid-template-rows: auto auto auto auto auto 1fr;
-            grid-template-areas:
-                "image"
-                "category"
-                "headline"
-                "deck"
-                "author"
-                "date";
-          }
+            .story-item--secondary {
+              grid-template-columns: 1fr;
+              grid-template-rows: auto auto auto auto auto 1fr;
+              grid-template-areas:
+                  "image"
+                  "category"
+                  "headline"
+                  "deck"
+                  "author"
+                  "date";
+            }
 
-          .story-item--secondary .category-label { margin-top: 1rem} /* Creates space
-                                between image and headline in stacked story-item layout */
+            .story-item--secondary .category-label { margin-top: 1rem} /* Creates space
+                                  between image and headline in stacked story-item layout */
 
-          .story-item--tertiary {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(4, auto) 1fr;
-            grid-template-areas:
-              "category image"
-              "headline image"
-              "deck image"
-              "author image"
-              "date image";
-          }
-              .story-item--tertiary .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
-              .story-item--tertiary .badge--story-item-placement {display: block;}
-              .story-item--tertiary .category-label {display: block; margin-top: 0} /* 0 top margin aligns label with figure in 2-col story-item layouts */
-              .story-item--tertiary .story-item__deck {display: block;}
-        }
+            .story-item--tertiary {
+                grid-template-rows: auto auto auto 1fr;
+            }
+                .story-item--tertiary .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
+                .story-item--tertiary .badge--story-item-placement {display: block;}
+                .story-item--tertiary .category-label {display: block; margin-top: 0} /* 0 top margin aligns label with figure in 2-col story-item layouts */
+                .story-item--tertiary .story-item__deck {display: block;}
+        } /* end of Story Item medium breakpoint */
+
 /* end of Story Item */
 
 
@@ -996,25 +990,54 @@ strong {
           @media screen and (min-width: 684px) {
 
             .hmpg-org-recent-stories__list {
-              grid-template-columns: repeat(6, 1fr);
+              grid-template-columns: repeat(12, 1fr);
               grid-template-areas:
                 "primary primary primary primary primary primary"
                 "2ndary  2ndary  2ndary 2ndary  2ndary  2ndary";
             }
 
                 .hmpg-org-recent-stories__list > .story-item--primary {
-                grid-column: auto / span 6;
+                grid-column: auto / span 12;
                 text-align: center;
                 }
 
                 .hmpg-org-recent-stories__list > .story-item--secondary {
-                grid-column: auto / span 2;
+                grid-column: auto / span 4;
                 }
 
                 .hmpg-org-recent-stories__list > .story-item--tertiary {
                 grid-column: auto / span 3;
                 }
 
+                .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+                font-size: 1.25em;
+                line-height: 2.5rem;
+                }
+
+          }
+
+          /*  STORY ITEM NONSTANDARD BREAKPOINT -- breakpoint: 1000px */
+          @media screen and (min-width: 1000px) {
+
+            .hmpg-org-recent-stories__list > .story-item--tertiary {
+                grid-column: auto / span 6;
+            }
+
+            .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+                font-size: 1.5em;
+                line-height: 3rem;
+            }
+
+            .story-item--tertiary {
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: repeat(4, auto) 1fr;
+              grid-template-areas:
+                "category image"
+                "headline image"
+                "deck image"
+                "author image"
+                "date image";
+            }
           }
 
           /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
