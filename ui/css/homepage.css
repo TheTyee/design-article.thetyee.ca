@@ -363,8 +363,8 @@ body {
 
 
 
-/* Responsive Settings */
-/* CSS variables can't be used within media query selectors, so these responsive settings are for reference only. */
+/* RESPONSIVE SETTINGS */
+/* NOTE: CSS variables can't be used within media query selectors, so these responsive settings are for reference only. The varaibles defined below aren't functional. */
 /* If we want to use CSS variables to create a layout grid that responds to viewport dimensions then we could set the grid properties via a variable and set that variable relative to the viewport dimension.
 Simple examples:
     --column-gutter: calc(5vw+10px);
@@ -380,14 +380,15 @@ Simple examples:
         grid-template-columns: var(--col-grid-main);
       }
  */
-/* :root {
-  breakpoint-width-xs: 0;
-  breakpoint-width-s: 0;
-  breakpoint-width-m: 684px;
-  breakpoint-width-l: 1368px;
-  breakpoint-width-xl: 1368px;
+ :root {
+  --breakpoint-width-xs: 0;
+  --breakpoint-width-s: 0;
+  --breakpoint-width-m: 684px;
+  --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav */
+  --breakpoint-width-l: 1368px;
+  --breakpoint-width-xl: 1368px;
 }
-*/
+
 
 
 
