@@ -355,7 +355,17 @@ body {
           .story-item--tertiary .story-item__headline {
           }
 
+        }
 
+        /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-l: 1368px; */
+        @media screen and (min-width: 1368px) {
+
+            /* Reduce size of tertiary headlines in wide screens */
+            .story-item--tertiary .story-item__headline {
+                font-family: var(--typeface-display);
+                font-size: 1.04em;
+                line-height: 2rem;
+            }
         }
 /* end of Story Items Typography */
 
@@ -1022,7 +1032,7 @@ strong {
           }
 
           /*  STORY ITEM NONSTANDARD BREAKPOINT -- breakpoint: 1000px */
-          @media screen and (min-width: 1000px) {
+          @media screen and (min-width: 1000px)  {
 
             .hmpg-org-recent-stories__list > .story-item--tertiary {
                 grid-column: auto / span 6;
@@ -1074,6 +1084,14 @@ strong {
                 .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
                   grid-area: ad;
                 }
+
+                /* Reduce size of tertiary headlines in wide screens to accommodate extra column */
+                .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+                    font-family: var(--typeface-display);
+                    font-size: 1.04em;
+                    line-height: 2rem;
+                }
+
           }
 
   /* end of Recent Stories */
