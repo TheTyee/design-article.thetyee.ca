@@ -844,7 +844,7 @@ strong {
             }
                 .story-item--tertiary .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
                 .story-item--tertiary .badge--story-item-placement {display: block;}
-                .story-item--tertiary .category-label {display: block;margin-top: 0;} /* 0 top margin aligns label with figure in 2-col story-item layouts */
+                .story-item--tertiary .category-label {display: block;}
                 .story-item--tertiary .story-item__deck {display: block;}
         } /* end of Story Item medium breakpoint */
 
@@ -1463,7 +1463,12 @@ strong {
                     "author image"
                     "date image";
                   }
-          }
+
+                  .hmpg-org-deep-dive > .story-item--tertiary .category-label {
+                    margin-top: 0; /* 0 top margin aligns label with figure in 2-col story-item layouts */
+                  }
+          } /* End of Deep Dive large breakpoint */
+
 /* End of Deep Dive organism */
 
 
