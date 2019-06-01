@@ -644,25 +644,39 @@ strong {
     transform: scale(.7);
   }
 
-    /* ---- BADGE responsive enhancement ----  */
+  /* ---- BADGE responsive enhancement ----  */
 
-        /*  BADGE MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-        @media screen and (min-width: 684px) {
+      /*  BADGE MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+      @media screen and (min-width: 684px) {
 
-            .story-item--primary .badge--story-item-placement {
-              left: -2.25em;
-              top: .5em;
-            }
+          .story-item--primary .badge--story-item-placement,
+          .story-item--reverse.story-item--primary .badge--story-item-placement {
+            left: -2.25em;
+            top: 1em;
+          }
 
-            .story-item--reverse.story-item--primary .badge--story-item-placement {
-              left: unset;
-              right: -2.25em;
-              top: .5em;
-            }
+          .story-item--reverse.story-item--primary .badge--story-item-placement {
+            left: unset;
+            right: -2.25em;
+          }
+      }
 
-        }
+      /*  BADGE MEDIUM BREAKPOINT -- breakpoint-width-nav: 850px */
+      @media screen and (min-width: 850px) {
+
+          .story-item--primary .badge--story-item-placement,
+          .story-item--reverse.story-item--primary .badge--story-item-placement {
+            left: -2.25em;
+            top: calc(1em + 1.5vw);
+          }
+
+          .story-item--reverse.story-item--primary .badge--story-item-placement {
+            left: unset;
+            right: -2.25em;
+          }
+      }
+
 /* end of Badge molecule */
-
 
 
 /* STORY ITEM MOLECULE ------------------- */
