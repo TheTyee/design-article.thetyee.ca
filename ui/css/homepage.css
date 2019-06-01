@@ -632,10 +632,11 @@ strong {
     padding-left: inherit; /* Adjusts badge position when there's padding on the parent */
   }
 
-  .story-item--secondary .badge--story-item-placement {
+  .story-item--secondary .badge--story-item-placement,
+  .story-item--tertiary .badge--story-item-placement {
     left: -2.5em;
-    top: -1.5em;
-    transform: scale(.8);
+    top: -1em;
+    transform: scale(.85);
   }
 
   .hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement {
@@ -673,6 +674,10 @@ strong {
           .story-item--reverse.story-item--primary .badge--story-item-placement {
             left: unset;
             right: -2.25em;
+          }
+
+          .story-item--secondary .badge--story-item-placement, .story-item--tertiary .badge--story-item-placement {
+            transform: scale(1);
           }
       }
 
