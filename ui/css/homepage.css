@@ -2109,6 +2109,58 @@ strong {
 
 
 /*------------------------------------*\
+  #GLOBAL LAYOUT BREAKPOINTS
+\*------------------------------------*/
+
+/*  LAYOUT BREAKPOINT 1 -- 1100px */
+/*  Prevents columns from getting too wide at upper end of Medium width range */
+@media screen and (min-width: 1100px) and (max-width: 1368px) {
+
+  /* Keep content of organism containers at 1100px width but run lateral padding to
+     edge of screen so the borders and background colours don't show a gap */
+  .hmpg-org-wrapper {
+    padding-left: calc((100vw - 1100px) / 2);
+    padding-right: calc((100vw - 1100px) / 2);
+  }
+
+  /* Several containers and pseudo-elements must be targeted
+     to run nav borders to edge of screen                     */
+  .site-header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .site-nav-main {
+    padding-left: var(--page-margin-sides);
+    padding-right: var(--page-margin-sides);
+  }
+
+  .site-nav-main::after {
+    left: calc(var(--page-margin-sides) * -1);
+    width: calc(100% + var(--page-margin-sides) * 2);
+  }
+
+  .site-nav-main > .nav__link--news::after {
+    left: calc(var(--page-margin-sides) * -1);
+    width: calc(100% + var(--page-margin-sides) * 2);
+  }
+
+}
+
+/*  LAYOUT BREAKPOINT 2 -- 1100px */
+@media screen and (min-width: 1368px) {
+
+  .hmpg-org-wrapper {
+  }
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
   #HELPER CLASSES
 \*------------------------------------*/
 
@@ -2121,6 +2173,9 @@ strong {
   height: auto;
   display: block;
 }
+
+
+
 
 
 /*------------------------------------*\
