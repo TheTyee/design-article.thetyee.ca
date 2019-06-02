@@ -393,6 +393,7 @@ Simple examples:
   --breakpoint-width-s: 0;
   --breakpoint-width-m: 684px;
   --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav */
+  --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand  from stacked to 2 columns */
   --breakpoint-width-l: 1368px;
   --breakpoint-width-xl: 1368px;
 }
