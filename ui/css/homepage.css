@@ -394,7 +394,7 @@ Simple examples:
   --breakpoint-width-m: 684px;
   --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav */
   --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand  from stacked to 2 columns */
-  --breakpoint-width-l: 1368px;
+  --breakpoint-width-l: 1368px; /* >> This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
   --breakpoint-width-xl: 1368px;
 }
 
@@ -2116,6 +2116,10 @@ strong {
 /*  NAV BREAKPOINT -- breakpoint-width-nav: 850px */
 @media screen and (min-width: 850px) {
 
+  :root {
+    --page-margin-sides: var(--gutter-column);
+  }
+
   /* Run logo block and nav to edge of screen */
   .site-header {
     padding-left: 0;
@@ -2132,8 +2136,8 @@ strong {
   /* Keep content of organism containers at 1100px width but run lateral padding to
      edge of screen so the borders and background colours don't show a gap */
   .hmpg-org-wrapper {
-    padding-left: calc((100vw - 1100px) / 2);
-    padding-right: calc((100vw - 1100px) / 2);
+    padding-left: calc((100vw - 1100px) / 2 + var(--page-margin-sides));
+    padding-right: calc((100vw - 1100px) / 2 + var(--page-margin-sides));
   }
 
   /* Run logo block and nav to edge of screen */
@@ -2144,11 +2148,17 @@ strong {
 
 }
 
-/*  LAYOUT BREAKPOINT 2 -- 1100px */
-@media screen and (min-width: 1368px) {
+/*  LARGE BREAKPOINT -- breakpoint-width-l: 1380px */
+/*  This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
+@media screen and (min-width: 1380px) {
 
-  .hmpg-org-wrapper {
-  }
+  /* Progressively increase the page margins as viewport width expands beyond 1380px.
+     Increase the rate of change for larger page margins.                                 */
+  :root {
+    --page-margin-sides: calc( var(--gutter-column) + calc((100vw - 1380px) * 0.2     ));}
+    /*                          (base margin width) +     ((   view size  ) * rate of ) */
+    /*                                              +     ((  beyond 1380 )   change  ) */
+
 
 }
 
