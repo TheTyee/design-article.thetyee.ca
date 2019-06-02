@@ -2112,6 +2112,19 @@ strong {
   #GLOBAL LAYOUT BREAKPOINTS
 \*------------------------------------*/
 
+
+/*  NAV BREAKPOINT -- breakpoint-width-nav: 850px */
+@media screen and (min-width: 850px) {
+
+  /* Run logo block and nav to edge of screen */
+  .site-header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
+
 /*  LAYOUT BREAKPOINT 1 -- 1100px */
 /*  Prevents columns from getting too wide at upper end of Medium width range */
 @media screen and (min-width: 1100px) and (max-width: 1368px) {
@@ -2123,26 +2136,10 @@ strong {
     padding-right: calc((100vw - 1100px) / 2);
   }
 
-  /* Several containers and pseudo-elements must be targeted
-     to run nav borders to edge of screen                     */
+  /* Run logo block and nav to edge of screen */
   .site-header {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  .site-nav-main {
-    padding-left: var(--page-margin-sides);
-    padding-right: var(--page-margin-sides);
-  }
-
-  .site-nav-main::after {
-    left: calc(var(--page-margin-sides) * -1);
-    width: calc(100% + var(--page-margin-sides) * 2);
-  }
-
-  .site-nav-main > .nav__link--news::after {
-    left: calc(var(--page-margin-sides) * -1);
-    width: calc(100% + var(--page-margin-sides) * 2);
   }
 
 }
