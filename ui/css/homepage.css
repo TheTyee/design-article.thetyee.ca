@@ -2142,7 +2142,9 @@ strong {
   /* Keep content of organism containers at 1100px width but run lateral padding to
      edge of screen so the borders and background colours don't show a gap */
   :root {
-    --page-margin-sides: calc((100vw - 1100px) / 2 + var(--gutter-column));
+    --page-margin-sides: calc( var(--gutter-column)   +   (100vw - 1100px) * 0.5     ) ;
+    /*                          (base margin width)   +   (  view size   ) * rate of ) */
+    /*                                                +   ( beyond 1100  )   change  ) */
   }
 }
 
