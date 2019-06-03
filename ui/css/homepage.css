@@ -37,11 +37,8 @@ html {
 :root {
 
   /* Set REM size */
-  /* This sets the basic unit for the grid and typography systems */
+  /* This sets the basic unit for the modular grid and typography systems */
   font-size: 9px;
-
-  /* Set base unit for modular grid */
-  --grid-unit: 1rem; /* This should probably stay 1rem to match the grid units */
 
   /* Set baseline grid increment */
   --baseline-grid: 2rem; /* This should be a multiple of the rem grid unit. Probably 2rem. */
@@ -94,6 +91,184 @@ body{
   --typeface-display-medium: miller-display, georgia, serif;
   --typeface-display-large: miller-banner, georgia, serif;
 }
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE SETTINGS */
+/* NOTE: CSS variables can't be used within media query selectors, so these responsive settings are for reference only. The varaibles defined below aren't functional. */
+/* If we want to use CSS variables to create a layout grid that responds to viewport dimensions then we could set the grid properties via a variable and set that variable relative to the viewport dimension.
+Simple examples:
+    --column-gutter: calc(5vw+10px);
+
+    .container {
+      grid-column-gap:var(--column-gutter);
+    }
+
+    --col-grid-main: 1fr 1fr;
+    @media screen and (min-width: 1368px) { --col-grid-main: 2fr 1fr 1fr 1fr; }
+
+    .hmpg-org-recent-stories__top-stories {
+        grid-template-columns: var(--col-grid-main);
+      }
+ */
+ :root {
+  --breakpoint-width-xs: 0;
+  --breakpoint-width-s: 0;
+  --breakpoint-width-m: 684px;
+  --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav */
+  --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand  from stacked to 2 columns */
+  --breakpoint-width-l: 1368px; /* >> This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
+  --breakpoint-width-xl: 1368px;
+}
+
+
+
+
+
+/*-----------------------------------------*\
+  #SYSTEMS
+\*-----------------------------------------*/
+
+/* Design system styles are derived computationally from the base parameters. */
+
+
+/* COLOUR SYSTEM */
+/* Use the Base Colours to derive a colour system.
+Use the HSLA colorspec with each of the 4 values set by a separate variable. Then perform computations on those variables to change the colour.
+https://www.w3.org/TR/css-color-3/#hsl-color
+https://www.w3schools.com/cssref/func_hsla.asp
+https://caniuse.com/#feat=css3-colors
+*/
+
+    /* BRAND TEXT COLOUR */
+    /* Brand colour is darkened for use in text and icons */
+    :root {
+      --brand-colour--text:
+          hsla(
+            calc(var(--brand-colour__hue)*.9), /* makes brand colour more red */
+            var(--brand-colour__sat),
+            calc(var(--brand-colour__lig)*.98), /* darkens brand colour */
+            var(--brand-colour__alp)
+          );
+    }
+
+
+    /* BRAND TEXT COLOUR - darker */
+    /* Brand colour is darkened further for particularly small text and fine lines */
+    :root {
+      --brand-colour--text-darker:
+          hsla(
+            calc(var(--brand-colour__hue)*.82), /* makes brand colour more red */
+            var(--brand-colour__sat),
+            calc(var(--brand-colour__lig)*.96), /* darkens brand colour */
+            var(--brand-colour__alp)
+          );
+    }
+
+
+    /* BRAND BACKGROUND COLOUR */
+    /* Brand colour is lightened for use in module backgrounds */
+    :root {
+      --brand-colour--mod-bg:
+          hsla(
+            var(--brand-colour__hue),
+            var(--brand-colour__sat),
+            calc(var(--brand-colour__lig)*1.34), /* lightens brand colour */
+            var(--brand-colour__alp) /* 0.5   /* AG - temporary tansparency to show grid */
+          );
+    }
+
+
+    /* ELEMENT COLOURS */
+    /* Typographic Elements */
+    :root {
+      --icon-search-svg-colour: var(--text-colour);
+      --icon-arrow-toggle-down-svg-colour: var(--text-colour);
+    }
+
+/* end of Colour System */
+
+
+
+
+/* GRID SYSTEM */
+
+
+/* Column Spacing */
+
+:root {
+  /* standard column gutter width */
+  --gutter-column: 4rem;
+  /* use half of gutter width when column borders are required */
+  --gutter-column-half: calc(var(--gutter-column) / 2);
+  /* standard row gutter width */
+  --gutter-row: 6rem;
+  /* use half of gutter width when row borders are required */
+  --gutter-row-half: calc(var(--gutter-row) / 2);
+}
+
+/* >> Use pseudo element :after to create the column borders */
+
+
+
+
+/* PAGE MARGINS */
+
+/* Page margins should be set by applying rules to the --page-margin-sides variable.
+   Exceptions can be handled by writing rules for particular modules and classes.
+   This is much easier and also DRYer. */
+/* AG -- Having dynamic CSS variables like this might make it more difficult to
+   create fallbacks for older browsers that don't support CSS variables. */
+
+:root {
+  --page-margin-sides: var(--gutter-column-half);
+  --page-margin-top: 4rem;
+}
+
+
+    /*  PAGE MARGINS NAV BREAKPOINT -- breakpoint-width-nav: 850px */
+    @media screen and (min-width: 850px) {
+
+      /* Increase page margins */
+      :root {
+        --page-margin-sides: var(--gutter-column);
+      }
+    }
+
+
+    /*  PAGE MARGINS LAYOUT BREAKPOINT 1 -- 1100px */
+    /*  Prevents columns from getting too wide at upper end of Medium width range */
+    @media screen and (min-width: 1100px) and (max-width: 1368px) {
+
+      /* Keep content of organism containers at 1100px width but run lateral padding to
+         edge of screen so the borders and background colours don't show a gap */
+      :root {
+        --page-margin-sides: calc( var(--gutter-column)   +   (100vw - 1100px) * 0.5     ) ;
+        /*                          (base margin width)   +   (  view size   ) * rate of ) */
+        /*                                                +   ( beyond 1100  )   change  ) */
+      }
+    }
+
+
+    /*  PAGE MARGINS LARGE BREAKPOINT -- breakpoint-width-l: 1380px */
+    /*  This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
+    @media screen and (min-width: 1380px) {
+
+      /* Progressively increase the page margins as viewport width expands beyond 1380px.
+         Increase the rate of change for larger page margins.                                 */
+      :root {
+        --page-margin-sides: calc( var(--gutter-column) + calc((100vw - 1380px) * 0.2     ));}
+        /*                          (base margin width) +     ((   view size  ) * rate of ) */
+        /*                                              +     ((  beyond 1380 )   change  ) */
+    }
+
+/* end of Page Margins */
 
 
 
@@ -369,160 +544,6 @@ body {
             }
         }
 /* end of Story Items Typography */
-
-
-
-/* RESPONSIVE SETTINGS */
-/* NOTE: CSS variables can't be used within media query selectors, so these responsive settings are for reference only. The varaibles defined below aren't functional. */
-/* If we want to use CSS variables to create a layout grid that responds to viewport dimensions then we could set the grid properties via a variable and set that variable relative to the viewport dimension.
-Simple examples:
-    --column-gutter: calc(5vw+10px);
-
-    .container {
-      grid-column-gap:var(--column-gutter);
-    }
-
-    --col-grid-main: 1fr 1fr;
-    @media screen and (min-width: 1368px) { --col-grid-main: 2fr 1fr 1fr 1fr; }
-
-    .hmpg-org-recent-stories__top-stories {
-        grid-template-columns: var(--col-grid-main);
-      }
- */
- :root {
-  --breakpoint-width-xs: 0;
-  --breakpoint-width-s: 0;
-  --breakpoint-width-m: 684px;
-  --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav */
-  --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand  from stacked to 2 columns */
-  --breakpoint-width-l: 1368px; /* >> This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
-  --breakpoint-width-xl: 1368px;
-}
-
-
-
-
-
-/*-----------------------------------------*\
-  #SYSTEMS
-\*-----------------------------------------*/
-
-/* Design system styles are derived computationally from the base parameters. */
-
-
-/* COLOUR SYSTEM */
-/* Use the Base Colours to derive a colour system.
-Use the HSLA colorspec with each of the 4 values set by a separate variable. Then perform computations on those variables to change the colour.
-https://www.w3.org/TR/css-color-3/#hsl-color
-https://www.w3schools.com/cssref/func_hsla.asp
-https://caniuse.com/#feat=css3-colors
-*/
-
-    /* BRAND TEXT COLOUR */
-    /* Brand colour is darkened for use in text and icons */
-    :root {
-      --brand-colour--text:
-          hsla(
-            calc(var(--brand-colour__hue)*.9), /* makes brand colour more red */
-            var(--brand-colour__sat),
-            calc(var(--brand-colour__lig)*.98), /* darkens brand colour */
-            var(--brand-colour__alp)
-          );
-    }
-
-
-    /* BRAND TEXT COLOUR - darker */
-    /* Brand colour is darkened further for particularly small text and fine lines */
-    :root {
-      --brand-colour--text-darker:
-          hsla(
-            calc(var(--brand-colour__hue)*.82), /* makes brand colour more red */
-            var(--brand-colour__sat),
-            calc(var(--brand-colour__lig)*.96), /* darkens brand colour */
-            var(--brand-colour__alp)
-          );
-    }
-
-
-    /* BRAND BACKGROUND COLOUR */
-    /* Brand colour is lightened for use in module backgrounds */
-    :root {
-      --brand-colour--mod-bg:
-          hsla(
-            var(--brand-colour__hue),
-            var(--brand-colour__sat),
-            calc(var(--brand-colour__lig)*1.34), /* lightens brand colour */
-            var(--brand-colour__alp) /* 0.5   /* AG - temporary tansparency to show grid */
-          );
-    }
-
-
-    /* ELEMENT COLOURS */
-    /* Typographic Elements */
-    :root {
-      --icon-search-svg-colour: var(--text-colour);
-      --icon-arrow-toggle-down-svg-colour: var(--text-colour);
-    }
-
-/* end of Colour System */
-
-
-
-/* MODULAR SCALE */
-/* Use the Base Parameters to derive a modular scale. */
-
-
-
-/* TYPOGRAPHY SYSTEM */
-/* Use the Modular Scale to derive a typescale. */
-
-/* Type styles are currently above in Settings */
-
-
-
-/* Type Helpers */
-:root {
-  /* Scale down text for tertiary components
-  (e.g. .story-item--tertiary, .story-item--minimum) */
-  --small-text: 0.86em;
-}
-
-
-
-/* GRID SYSTEM */
-/* Uses the Modular Scale to derive a modular grid. */
-
-/* Spacing */
-
-:root {
-  --grid-unit-2: calc(var(--grid-unit)*2);
-  --grid-unit-3: calc(var(--grid-unit)*3);
-  --grid-unit-4: calc(var(--grid-unit)*4);
-}
-
-
-/* Column Spacing */
-
-:root {
-  /* standard column gutter width */
-  --gutter-column: 4rem;
-  /* use half of gutter width when column borders are required */
-  --gutter-column-half: calc(var(--gutter-column) / 2);
-  /* standard row gutter width */
-  --gutter-row: 6rem;
-  /* use half of gutter width when row borders are required */
-  --gutter-row-half: calc(var(--gutter-row) / 2);
-}
-
-
-/* Page margins */
-:root {
-  --page-margin-sides: var(--gutter-column-half);
-  --page-margin-top: 4rem;
-}
-
-
-    /* >> Use pseudo element :after to create the column borders */
 
 
 
@@ -1928,6 +1949,9 @@ strong {
 
               .site-header {
                 padding-bottom: 6rem;
+                /* Run logo block and nav to edge of screen */
+                padding-left: 0;
+                padding-right: 0;
               }
 
               /* Expand site-header grid and show taglines */
@@ -2182,60 +2206,6 @@ strong {
 
 
 
-/*---------------------------------------*\
-  #GLOBAL LAYOUT BREAKPOINTS: PAGE WIDTH
-\*---------------------------------------*/
-
-/* Page margins should be set by applying rules to the --page-margin-sides variable.
-   Exceptions can be handled by writing rules for particular modules and classes.
-   This is much easier and also DRYer. */
-/* AG -- Having dynamic CSS variables like this might make it more difficult to
-   create fallbacks for older browsers that don't support CSS variables. */
-
-/*  NAV BREAKPOINT -- breakpoint-width-nav: 850px */
-@media screen and (min-width: 850px) {
-
-  /* Increase page margins */
-  :root {
-    --page-margin-sides: var(--gutter-column);
-  }
-
-  /* Run logo block and nav to edge of screen */
-  .site-header {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-}
-
-
-/*  LAYOUT BREAKPOINT 1 -- 1100px */
-/*  Prevents columns from getting too wide at upper end of Medium width range */
-@media screen and (min-width: 1100px) and (max-width: 1368px) {
-
-  /* Keep content of organism containers at 1100px width but run lateral padding to
-     edge of screen so the borders and background colours don't show a gap */
-  :root {
-    --page-margin-sides: calc( var(--gutter-column)   +   (100vw - 1100px) * 0.5     ) ;
-    /*                          (base margin width)   +   (  view size   ) * rate of ) */
-    /*                                                +   ( beyond 1100  )   change  ) */
-  }
-}
-
-
-/*  LARGE BREAKPOINT -- breakpoint-width-l: 1380px */
-/*  This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
-@media screen and (min-width: 1380px) {
-
-  /* Progressively increase the page margins as viewport width expands beyond 1380px.
-     Increase the rate of change for larger page margins.                                 */
-  :root {
-    --page-margin-sides: calc( var(--gutter-column) + calc((100vw - 1380px) * 0.2     ));}
-    /*                          (base margin width) +     ((   view size  ) * rate of ) */
-    /*                                              +     ((  beyond 1380 )   change  ) */
-
-
-}
 
 
 
