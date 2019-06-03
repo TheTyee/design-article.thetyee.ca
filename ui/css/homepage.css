@@ -1839,7 +1839,7 @@ strong {
 
           /*  Site Header NON-STANDARD BREAKPOINT -- MAX 849px */
           /*  Style Nav only in narrow views */
-          @media screen and (max-width: 850px) {
+          @media screen and (max-width: 849px) {
 
               .site-header__logo-block {
                   padding-top: 2rem;
