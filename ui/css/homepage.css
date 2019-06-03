@@ -1955,7 +1955,7 @@ strong {
                 display: grid;
                 grid-template-columns:  calc(var(--page-margin-sides) - var(--gutter-column)) 1fr 1fr [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
                 padding-top: var(--gutter-row);
-                grid-column-gap: var(--gutter-column);
+                grid-column-gap: 0;
                 grid-row-gap: 0;
                 align-items: end;
 
@@ -1968,6 +1968,43 @@ strong {
                              - self borders (2px)
                              - self padding-bottom (2px)      */
               }
+
+                  /* Nav bar button spacing and positioning */
+
+                  .site-nav-main > a:first-of-type {
+                    grid-column: main-items;
+                  }
+
+                  .site-nav-main .nav__link--news,
+                  .site-nav-main .nav__link--analysis,
+                  .site-nav-main .nav__link--culture,
+                  .site-nav-main .nav__link--more {
+                    justify-self: center;
+                    width: 100%;
+                    border-right: 1px solid var(--border-colour-cols);
+                    text-align: center;
+                  }
+
+                  .site-nav-main .nav__link--more {
+                    border-right: none;
+                  }
+
+
+                  .site-nav-main .nav__link--join {
+                    grid-column: secondary-items;
+                    justify-self: center;
+                  }
+
+                  .site-nav-main .nav__link--news,
+                  .site-nav-main .nav__link--analysis,
+                  .site-nav-main .nav__link--culture,
+                  .site-nav-main .nav__link--more {
+                    padding-right: var(--gutter-column-half);
+                    padding-left: var(--gutter-column-half);
+                  }
+
+
+                  /* Nav bar borders */
 
                   /* dot-screen shadow */
                   .site-nav-main::after {
@@ -1997,23 +2034,7 @@ strong {
                     border-bottom: 4px solid var(--text-colour);
                   }
 
-                  .site-nav-main > a:first-of-type {
-                    grid-column: main-items;
-                  }
 
-                  .site-nav-main .nav__link--news,
-                  .site-nav-main .nav__link--analysis,
-                  .site-nav-main .nav__link--culture {
-                    justify-self: center;
-                    width: 100%;
-                    border-right: 1px solid var(--border-colour-cols);
-                  }
-
-
-                  .site-nav-main .nav__link--join {
-                    grid-column: secondary-items;
-                    justify-self: end;
-                  }
 
 
                 /* HAMBURGER SHOW/HIDE */
@@ -2079,6 +2100,24 @@ strong {
                     .site-nav__dropdown .twitter {grid-column: col-5; justify-self: end; padding-right: 2.25em}
 
           } /* End of Site Header responsive breakpoint 850px*/
+
+
+          /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
+          @media screen and (min-width: 850px) {
+
+            /* Increase page margins */
+            :root {
+              --page-margin-sides: var(--gutter-column);
+            }
+
+            /* Run logo block and nav to edge of screen */
+            .site-header {
+              padding-left: 0;
+              padding-right: 0;
+            }
+
+          }
+
 
   /* End of Site Header organism */
 
