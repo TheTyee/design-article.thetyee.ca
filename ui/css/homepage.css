@@ -1951,7 +1951,7 @@ strong {
 
                 /* Define Grid within element */
                 display: grid;
-                grid-template-columns:  [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr 1fr;
+                grid-template-columns:  calc(var(--page-margin-sides) - var(--gutter-column)) 1fr 1fr [main-items] auto auto auto auto  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
                 padding-top: var(--gutter-row);
                 grid-column-gap: var(--gutter-column);
                 grid-row-gap: 0;
@@ -1982,7 +1982,6 @@ strong {
                     width: 100%;
                     height: 1rem;
                     background-color: lightgrey;
-                    border-bottom: px solid red;
                   }
 
                   /* heavy-border below */
@@ -2000,8 +1999,16 @@ strong {
                     grid-column: main-items;
                   }
 
+                  .site-nav-main .nav__link--news,
+                  .site-nav-main .nav__link--analysis,
+                  .site-nav-main .nav__link--culture {
+                    padding-right: var(--gutter-column);
+                    border-right: 1px solid var(--border-colour-cols);
+                  }
+
                   .site-nav-main .nav__link--join {
                     grid-column: secondary-items;
+                    justify-self: end;
                   }
 
 
