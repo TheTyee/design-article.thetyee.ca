@@ -1951,7 +1951,7 @@ strong {
 
                 /* Define Grid within element */
                 display: grid;
-                grid-template-columns:  calc(var(--page-margin-sides) - var(--gutter-column)) 1fr 1fr [main-items] auto auto auto auto  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                grid-template-columns:  calc(var(--page-margin-sides) - var(--gutter-column)) 1fr 1fr [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
                 padding-top: var(--gutter-row);
                 grid-column-gap: var(--gutter-column);
                 grid-row-gap: 0;
@@ -2002,7 +2002,8 @@ strong {
                   .site-nav-main .nav__link--news,
                   .site-nav-main .nav__link--analysis,
                   .site-nav-main .nav__link--culture {
-                    padding-right: var(--gutter-column);
+                    justify-self: center;
+                    width: 100%;
                     border-right: 1px solid var(--border-colour-cols);
                   }
 
@@ -2026,17 +2027,16 @@ strong {
                 /* Nav Dropdown grid for wide views */
                 .site-nav__dropdown {
                   grid-column: 1 / -1;
-                  grid-template-columns: [col-z] 1fr [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr ;
+                  grid-template-columns: calc(var(--page-margin-sides) - var(--gutter-column)) [col-z] 1fr 1fr [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr 1fr calc(var(--page-margin-sides) - var(--gutter-column));
                   grid-template-rows: auto [row-2] 1fr;
                   grid-column-gap: var(--gutter-column);
                   grid-auto-flow: row dense;
                   align-items: start;
-
                   margin-top: .5rem;
                   padding-bottom: 3.5rem;
                   background-color: #444;
                   color: #eee;
-                }
+                } /* grid-template-columns:  calc(var(--page-margin-sides) - var(--gutter-column)) 1fr 1fr [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column)); */
 
                   .site-nav__dropdown a {
                     color: var(--brand-colour);
