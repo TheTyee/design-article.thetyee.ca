@@ -2108,14 +2108,18 @@ strong {
 
 
 
-/*------------------------------------*\
-  #GLOBAL LAYOUT BREAKPOINTS
-\*------------------------------------*/
+/*---------------------------------------*\
+  #GLOBAL LAYOUT BREAKPOINTS: PAGE WIDTH
+\*---------------------------------------*/
 
+/* Page margins should be set by applying rules to the --page-margin-sides variable.
+   Exceptions can be handled by writing rules for particular modules and classes.
+   This is much easier and also DRYer. */
 
 /*  NAV BREAKPOINT -- breakpoint-width-nav: 850px */
 @media screen and (min-width: 850px) {
 
+  /* Increase page margins */
   :root {
     --page-margin-sides: var(--gutter-column);
   }
@@ -2135,18 +2139,11 @@ strong {
 
   /* Keep content of organism containers at 1100px width but run lateral padding to
      edge of screen so the borders and background colours don't show a gap */
-  .hmpg-org-wrapper {
-    padding-left: calc((100vw - 1100px) / 2 + var(--page-margin-sides));
-    padding-right: calc((100vw - 1100px) / 2 + var(--page-margin-sides));
+  :root {
+    --page-margin-sides: calc((100vw - 1100px) / 2 + var(--gutter-column));
   }
-
-  /* Run logo block and nav to edge of screen */
-  .site-header {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
 }
+
 
 /*  LARGE BREAKPOINT -- breakpoint-width-l: 1380px */
 /*  This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
@@ -2161,7 +2158,6 @@ strong {
 
 
 }
-
 
 
 
