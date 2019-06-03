@@ -2193,14 +2193,27 @@ strong {
 
 @media (max-resolution: 100dpi) { /* Don't show guides on mobile */
 
+    :root {
+      /* Calculate column width including gutter: */
+      --column-increment:
+      calc((100vw + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )  ;
+      /*   (width +    trailing gutter   -   the page margins    )        / number of columns   )  */
+      /*   (----------------- total grid width ------------------)        / number of columns   )  */
+      /*   (------------------------------ column width inc gutter -----------------------------)  */
+      /*   var(--column-increment)                                                                 */
+
+      /* Calculate column content width (without gutter): */
+      --column-width:
+      calc( var(--column-increment) - var(--gutter-column));
+      /*   var(--column-width)                            */
+    }
+
     /* Apply the grid background to container elements: */
     body:not(:hover) .hmpg-org-wrapper {
         /* Define grid structure: column width (inc gutter), baselines */
         background-size:
-        calc((100% + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )    var(--baseline-grid);
-        /*   (width +    trailing gutter   -   the page margins    )        / number of columns    )  | baseline increment */
-        /*   (----------------- total grid width ------------------)        / number of columns    )  | baseline increment */
-        /*   (------------------------------ column width inc gutter ------------------------------)  | baseline increment */
+        var(--column-increment)    var(--baseline-grid);
+        /*    column-increment  |  baseline increment */
 
         /* Adjust grid for page margins: */
         background-position: var(--page-margin-sides) 0rem;
@@ -2211,8 +2224,9 @@ strong {
           linear-gradient(to right, #6583c552 1px, transparent 1px),
 
           /* Fill in column widths: */
-          linear-gradient(to right, #83aaff17 calc((100vw  + var(--gutter-column))/var(--column-number) - var(--gutter-column) ), #ffd3d300 1px),
-          /* column content area      ==            (-------------- column width inc gutter ------------) - ( gutter --------- )  , gutter color   */
+          linear-gradient(to right, #83aaff17 var(--column-width), #ffd3d300 1px),
+          /*                blend ,   column          column width ,   gutter       */
+          /*            direction     colour                           colour       */
 
           /* Draw baselines: */
           linear-gradient(to bottom, #99b4ff47 1px, transparent 1px);
@@ -2236,5 +2250,6 @@ strong {
 
         background-repeat: repeat;
     }
+
 
 } /* end of Grid Guides */
