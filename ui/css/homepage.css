@@ -2115,6 +2115,8 @@ strong {
 /* Page margins should be set by applying rules to the --page-margin-sides variable.
    Exceptions can be handled by writing rules for particular modules and classes.
    This is much easier and also DRYer. */
+/* AG -- Having dynamic CSS variables like this might make it more difficult to
+   create fallbacks for older browsers that don't support CSS variables. */
 
 /*  NAV BREAKPOINT -- breakpoint-width-nav: 850px */
 @media screen and (min-width: 850px) {
