@@ -1977,7 +1977,7 @@ strong {
 
                 /* Define Grid within element */
                 display: grid;
-                grid-template-columns:  calc(var(--page-margin-sides) - var(--gutter-column)) 1fr [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                grid-template-columns:  calc(var(--page-margin-sides))  [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
                 padding-top: var(--gutter-row);
                 grid-column-gap: 0;
                 grid-row-gap: 0;
@@ -2078,7 +2078,8 @@ strong {
                 /* Nav Dropdown grid for wide views */
                 .site-nav__dropdown {
                   grid-column: 1 / -1;
-                  grid-template-columns: calc(var(--page-margin-sides) - var(--gutter-column)) [col-z]  1fr [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                  grid-template-columns: calc(var(--page-margin-sides) + .5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                                                                    /* + offset to align with nav button */
                   grid-template-rows: auto [row-2] 1fr;
                   grid-column-gap: 0;
                   grid-auto-flow: row dense;
@@ -2091,12 +2092,12 @@ strong {
 
                   .site-nav__dropdown > * {
                     padding-right: 0;
-                    padding-left: 3.65vw;
+                    padding-left: 4.5vw; /* offset to align with nav button */
                   }
 
                   .site-nav__dropdown .site-nav__dropdown-heading-sections,
                   .site-nav__dropdown .expander-content__section-submenu {
-                    padding-left: 4.6vw;
+                    padding-left: 5.5vw; /* offset to align with nav button */
                   }
 
                   .site-nav__dropdown .facebook,
@@ -2147,21 +2148,45 @@ strong {
             /* Spacing for Nav buttons and dropdown */
 
             .site-nav-main {
-                grid-template-columns:  calc(var(--page-margin-sides) - var(--gutter-column)) 1fr 1fr [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                grid-template-columns:  calc(var(--page-margin-sides))   [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
               }
 
+            .site-nav-main .nav__link--join {
+                justify-self: end;
+            }
+
+            .site-nav-main .nav__link--search {
+                justify-self: center;
+            }
+
             .site-nav__dropdown {
-                  grid-template-columns: calc(var(--page-margin-sides) - var(--gutter-column)) [col-z] 1fr 1fr [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
-                }
+                  grid-template-columns: calc(var(--page-margin-sides) + 2.75em)[col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                }                                                   /* + offset to align with nav button */
 
                   .site-nav__dropdown > * {
-                    padding-left: 4vw;
+                    padding-left: 3.5vw; /* offset to align with nav button */
                   }
 
                   .site-nav__dropdown .site-nav__dropdown-heading-sections,
                   .site-nav__dropdown .expander-content__section-submenu {
-                    padding-left: 4.55vw;
+                    padding-left: 4vw; /* offset to align with nav button */
                   }
+
+                  .site-nav__dropdown .site-nav__dropdown-heading-more,
+                  .site-nav__dropdown .expander-content__more-submenu {
+                    padding-left: 4vw; /* offset to align with nav button */
+                  }
+
+                  .site-nav__dropdown .facebook {
+                      justify-self: end;
+                      padding-right: 3em; /* offset to align with nav button */
+                  }
+
+                  .site-nav__dropdown .twitter {
+                      justify-self: end;
+                      padding-right: 2.75em; /* offset to align with nav button */
+                  }
+
 
           }
 
