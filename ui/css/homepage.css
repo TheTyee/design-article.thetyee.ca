@@ -2141,6 +2141,19 @@ strong {
 
           } /* End of Site Header responsive breakpoint 850px*/
 
+          /*  Site Header MARGINS BREAKPOINT -- breakpoint-width-margins 1100px --------------- */
+          @media screen and (min-width: 1100px) {
+
+            .site-nav__dropdown > * {
+              padding-left: 5.75rem;  /* offset to align with nav button */
+            }
+
+            .site-nav__dropdown .site-nav__dropdown-heading-sections,
+            .site-nav__dropdown .expander-content__section-submenu {
+              padding-left: 6.9rem; /* offset to align with nav button */
+            }
+          }
+
 
           /*  Site Header LARGE BREAKPOINT -- breakpoint-width-l 1368px --------------- */
           @media screen and (min-width: 1368px) {
