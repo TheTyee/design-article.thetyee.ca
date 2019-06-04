@@ -371,16 +371,31 @@ body {
   letter-spacing: 0.125em;
   display: inline-block;
   position: relative;
+}
+
+.m-comment-noted__label {
   padding-left: 1.1em;
 }
 
-.m-comment-noted__label::before {
-    content: url(/ui/img/icon-comment-noted.svg);
-    display: inline-block;
-    position: absolute;
-    left: 0em;
-    transform: scale(.65) translate(-40%, -40%);
+    .m-comment-noted__label::before {
+      content: url(/ui/img/icon-comment-noted.svg);
+      display: inline-block;
+      position: absolute;
+      left: 0em;
+      transform: scale(.65) translate(-40%, -40%);
+    }
+
+.m-barometer__label {
+  padding-left: 1.2em;
 }
+
+    .m-barometer__label::before {
+      content: url(/ui/img/icon-barometer.svg);
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      transform: scale(.75) translate(-40%, -40%);
+    }
 
 .tyee-insider__story .story-item__deck,
 .hmpg-org-deep-dive .story-item--primary .story-item__deck {
