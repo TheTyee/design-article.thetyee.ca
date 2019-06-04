@@ -748,7 +748,7 @@ strong {
 
     .story-item__image {
         display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
-        position: relative
+        position: relative;
     }
 
     /* Story Item element layout -- Assign story-item elements to grid areas */
@@ -877,7 +877,22 @@ strong {
                 .story-item--tertiary .story-item__deck {display: block;}
         } /* end of Story Item medium breakpoint */
 
+        /*  STORY ITEM LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
+        @media screen and (min-width: 1368px) {
+
+          /* Teriary story-items in the recent stories list use float-based layout in wide viewports. */
+          /* This selects only the first 8 story items because the display of the subsequent items
+             needs to be controled by the expander--recent-stories. (There seems to be some kind of CSS
+             bug because nth-of-type is counting all story-items, not just .story-item--tertiary.
+             We really only want to select the first 4 .story-item--tertiary elements)  */
+          .hmpg-org-recent-stories__list .story-item--tertiary:nth-of-type(-n+8) {
+            display: block;
+          }
+        } /* end of Story Item large breakpoint */
+
+
 /* end of Story Item */
+
 
 
 /* HMPG AD BOX MOLECULE ------------------- */
@@ -1004,8 +1019,18 @@ strong {
   }
 
       #expander--recent-stories:checked ~ :not(script) {
-        display: grid;   /* This must be "grid" if the revealed items are themselves using internal grid layouts */
+        display: grid;   /* This must be "grid" because the revealed items are themselves using internal grid layouts */
       }
+
+            /*  LIST EXPANDER LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
+            @media screen and (min-width: 1368px) {
+
+              /* Tertiary story-items in the recent stories list use float-based layout in wide viewports,
+                 so at large screen sizes the expander must set the display to block instead of grid.     */
+              #expander--recent-stories:checked ~ :not(script) {
+                display: block;   /* This must be "block" because revealed items are using internal float layouts */
+              }
+            } /* end of List Expander large breakpoint */
 
       #expander--recent-stories:checked ~ .button--expander-open {
         display: none;
@@ -1109,6 +1134,15 @@ strong {
                     font-family: var(--typeface-display);
                     font-size: 1.04em;
                     line-height: 2rem;
+                }
+
+                /* Use float-based layout for Tertiary story-items in Recent Stories module */
+
+                .hmpg-org-recent-stories__list .story-item--tertiary .story-item__image {
+                  float: right;
+                  width: calc(50% - (var(--gutter-column-half) * 0.5));
+                  margin-left: var(--gutter-column-half);
+                  margin-bottom: 2rem;
                 }
 
           }
