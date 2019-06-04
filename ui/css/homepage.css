@@ -1287,6 +1287,28 @@ strong {
               "date     image";
           }
 
+          .hmpg-org-tyee-insider .story-item--primary {
+            display: block;
+          }
+
+              .hmpg-org-tyee-insider .story-item--primary .story-item__image {
+                display: block;
+                width: 40%;
+                float: right;
+              }
+
+              .hmpg-org-tyee-insider .story-item--primary img {
+                display: block;
+                min-height: 20rem; /* Floating the container seems to cause baselineElement
+                                      to collapse the img to minimum height */
+                width: 100%;
+              }
+
+              .hmpg-org-tyee-insider .story-item--primary .story-item__deck {
+                max-width: 32em;
+              }
+
+
           .hmpg-org-tyee-insider {
             grid-template-columns: repeat(6, 1fr);
           }
