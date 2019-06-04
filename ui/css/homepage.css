@@ -372,15 +372,11 @@ body {
   display: inline-block;
 }
 
-.tyee-insider__story .story-item__deck {
-  font-family: var(--typeface-serif);
-  font-size: 1.065em;
-  color: var(--text-colour);
-}
-
+.tyee-insider__story .story-item__deck,
 .hmpg-org-deep-dive .story-item--primary .story-item__deck {
   font-family: var(--typeface-serif);
-  font-size: 1.065em;
+  font-size: 1.33em;
+  line-height: 3rem;
   color: var(--text-colour);
 }
 
