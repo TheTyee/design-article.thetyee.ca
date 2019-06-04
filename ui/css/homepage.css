@@ -1195,6 +1195,10 @@ strong {
         "date";
   }
 
+  .m-tyee-insider__main .story-item--primary .story-item__headline {
+    margin-bottom: 4rem;
+  }
+
   .m-tyee-insider__main .story-item--primary img {
     width: 100%; /* required becasue this img must omit the .responsive-img class
                     so that it doesn't get targeted by baselineElement */
