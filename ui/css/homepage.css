@@ -370,6 +370,16 @@ body {
   text-transform:uppercase;
   letter-spacing: 0.125em;
   display: inline-block;
+  position: relative;
+  padding-left: 1.1em;
+}
+
+.m-comment-noted__label::before {
+    content: url(/ui/img/icon-comment-noted.svg);
+    display: inline-block;
+    position: absolute;
+    left: 0em;
+    transform: scale(.65) translate(-40%, -40%);
 }
 
 .tyee-insider__story .story-item__deck,
