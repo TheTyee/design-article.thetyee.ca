@@ -1341,7 +1341,7 @@ strong {
 
       .barometer-form-label::before {
         content:"";
-        cursor: pointer;
+        cursor: default;
         position: absolute;
         width: 2rem;
         height: 2rem;
@@ -1351,6 +1351,7 @@ strong {
         border: 2px solid white;
       }
 
+      /*
        input[name="barometerpoll"]:checked + .barometer-form-label::after {
         opacity: 1;
         content: '';
@@ -1366,6 +1367,7 @@ strong {
 
         transform: rotate(-50deg);
       }
+      */
 
 
     /* ---- TYEE INSIDER responsive enhancement ---- */
