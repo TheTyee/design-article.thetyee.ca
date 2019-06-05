@@ -829,6 +829,26 @@ strong {
 
     /* ---- STORY ITEM responsive enhancement ----  */
 
+        /*  STORY ITEM SUB-MEDIUM BREAKPOINT -- < breakpoint-width-m: < 683px */
+        @media screen and (max-width: 683px) {
+
+          /* Secondary story-items in the recent stories list use float-based layout in small viewports. */
+          /* Same as Tertiary items in large viewports. */
+          .hmpg-org-recent-stories__list .story-item--secondary {
+            display: block;
+          }
+
+          /* Use float-based layout for Secondary story-items in Recent Stories module */
+          /* Same as Tertiary items in large viewports. */
+                .hmpg-org-recent-stories__list .story-item--secondary .story-item__image {
+                  float: right;
+                  width: calc(50% - (var(--gutter-column-half) * 0.5));
+                  margin-left: var(--gutter-column-half);
+                  margin-bottom: 2rem;
+                }
+        } /* end of Story Item sub-Medium breakpoint */
+
+
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
 
