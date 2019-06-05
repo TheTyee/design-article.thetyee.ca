@@ -405,6 +405,11 @@ body {
   color: var(--text-colour);
 }
 
+.tyee-insider__story .story-item__deck p:nth-of-type(n+2),
+.hmpg-org-deep-dive .story-item--primary .story-item__deck p:nth-of-type(n+2) {
+  padding-top: 2rem;
+}
+
 .m-tyee-insider__related-label {
   font-size: .85em;
   font-weight: 800;
