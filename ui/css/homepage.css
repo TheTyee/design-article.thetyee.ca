@@ -481,7 +481,7 @@ body {
 
     /* Separator between headline and news source */
     .story-item__news-source::before {
-      content:"â€¢";
+      content:"•";
       padding-left: .25em;
       padding-right: .25em;
     }
