@@ -840,15 +840,19 @@ strong {
         /*  STORY ITEM SUB-MEDIUM BREAKPOINT -- < breakpoint-width-m: < 683px */
         @media screen and (max-width: 683px) {
 
-          /* Secondary story-items in the recent stories list use float-based layout in small viewports. */
+          /* Some story-items use float-based layout in small viewports:
+             -> Secondary story-items in the recent stories list
+             -> Tertiary story-items in the Insider Related Stories list  */
           /* Same as Tertiary items in large viewports. */
-          .hmpg-org-recent-stories__list .story-item--secondary {
+          .hmpg-org-recent-stories__list .story-item--secondary,
+          .m-tyee-insider__related-stories .story-item--tertiary {
             display: block;
           }
 
           /* Use float-based layout for Secondary story-items in Recent Stories module */
           /* Same as Tertiary items in large viewports. */
-                .hmpg-org-recent-stories__list .story-item--secondary .story-item__image {
+                .hmpg-org-recent-stories__list .story-item--secondary .story-item__image,
+                .m-tyee-insider__related-stories .story-item--tertiary .story-item__image {
                   float: right;
                   width: calc(50% - (var(--gutter-column-half) * 0.5));
                   margin-left: var(--gutter-column-half);
