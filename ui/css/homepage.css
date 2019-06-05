@@ -1277,7 +1277,7 @@ strong {
     .m-tyee-insider__main .story-item--primary .story-item__date
       { display: none;}
 
-  .m-tyee-insider__main .story-item--index-page {
+  .m-tyee-insider__main .story-item--primary {
     grid-template-areas:
         "headline" /* put headline above image */
         "image"
