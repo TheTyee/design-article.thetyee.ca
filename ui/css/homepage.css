@@ -1777,7 +1777,7 @@ strong {
         content: url('/ui/img/icon-dollar-heart.svg');
         display: inline-block;
         position: absolute;
-        left: -1.35em;
+        left: -1.5em;
         transform: scale(.6) translate(-40%, -30%);
       }
 
