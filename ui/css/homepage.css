@@ -554,14 +554,17 @@ body {
 
         }
 
-        /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-l: 1368px; */
+        /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
         @media screen and (min-width: 1368px) {
 
-            /* Reduce size of tertiary headlines in wide screens */
+            /* Slightly reduce size of tertiary headlines in wide screens
+               to accommodate a 2-col stiry-item layout.                  */
             .story-item--tertiary .story-item__headline {
                 font-family: var(--typeface-display);
-                font-size: 1.04em;
-                line-height: 2rem;
+                font-family: var(--typeface-display-medium);
+                    font-size: 1.25em;
+                    line-height: 2.5rem; /* decimal values here cause a browser rounding error
+                                            that throws throws off the baseline grid.          */
             }
         }
 /* end of Story Items Typography */
@@ -1049,7 +1052,10 @@ strong {
   width: 100%;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-  margin-bottom: -1rem; /* Realigns with baseline grid (content may still throw it off) */
+  margin-bottom: -1.5rem; /* Realigns with baseline grid (content may still throw it off)   */
+                          /* Decimal values in the .story-item--tertiary headline line-height
+                             (at some medium and large views)cause a browser rounding error
+                             that throws throws off the baseline grid.                      */
 }
 
   /* RECENT STORIES LIST EXPANDER */
@@ -1174,11 +1180,12 @@ strong {
                   grid-area: ad;
                 }
 
-                /* Reduce size of tertiary headlines in wide screens to accommodate extra column */
+                /* Slightly reduce size of tertiary headlines in wide screens to accommodate extra column */
                 .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                    font-family: var(--typeface-display);
-                    font-size: 1.04em;
-                    line-height: 2rem;
+                    font-family: var(--typeface-display-medium);
+                    font-size: 1.25em;
+                    line-height: 2.5rem; /* decimal values here cause a browser rounding error
+                                            that throws throws off the baseline grid.          */
                 }
 
                 /* Use float-based layout for Tertiary story-items in Recent Stories module */
