@@ -528,7 +528,7 @@ body {
     .story-item--tertiary .story-item__deck {
       font-size: 1em;
       line-height: 2rem;
-      margin: 1rem 0 1rem; /* 2rem total aligns with baseline grid */
+      margin: 1rem 0 0rem; /* No bottom padding to prevent gap above author byline */
     }
 
     /* minimum story-items */
@@ -815,7 +815,7 @@ strong {
         .story-item--tertiary .category-label { display: none; }
         .story-item--tertiary .story-item__headline { display: block; }
         .story-item--tertiary .story-item__deck { display: block; }
-        .story-item--tertiary .story-item__author { display: none; }
+        .story-item--tertiary .story-item__author { display: block; }
         .story-item--tertiary .story-item__date { display: none; }
 
         .hmpg-org-recent-stories__list .story-item--tertiary {
