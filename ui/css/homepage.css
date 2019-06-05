@@ -1514,7 +1514,7 @@ strong {
   padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-  background-color: #f1f1f1ad; /* For testing purposes */ /* AG - temporary tansparency to show grid */
+  background-color: hsla(0, 0%, 90%, 0.68); /* For testing purposes */ /* AG - temporary tansparency to show grid */
   }
 
   .hmpg-org-deep-dive > .story-item:first-of-type .story-item__image { display: none; }
