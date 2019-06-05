@@ -481,7 +481,7 @@ body {
 
     /* Separator between headline and news source */
     .story-item__news-source::before {
-      content:"•";
+      content:"â€¢";
       padding-left: .25em;
       padding-right: .25em;
     }
@@ -1188,7 +1188,7 @@ strong {
   padding-top: calc(2rem - 0px);
   border-top: 1px solid var(--text-colour);
 
-  background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
+  background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
 }
 
 .hmpg-module-header {
@@ -2340,76 +2340,3 @@ strong {
   height: auto;
   display: block;
 }
-
-
-
-
-
-/*------------------------------------*\
-  #GRID GUIDES
-\*------------------------------------*/
-
-/* This draws guides for column grid and baseline grid to tune the layout. */
-
-@media (max-resolution: 100dpi) { /* Don't show guides on mobile */
-
-    :root {
-      /* Calculate column width including gutter: */
-      --column-increment:
-      calc((100vw + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )  ;
-      /*   (width +    trailing gutter   -   the page margins    )        / number of columns   )  */
-      /*   (----------------- total grid width ------------------)        / number of columns   )  */
-      /*   (------------------------------ column width inc gutter -----------------------------)  */
-      /*   var(--column-increment)                                                                 */
-
-      /* Calculate column content width (without gutter): */
-      --column-width:
-      calc( var(--column-increment) - var(--gutter-column));
-      /*   var(--column-width)                            */
-    }
-
-    /* Apply the grid background to container elements: */
-    body:not(:hover) .hmpg-org-wrapper {
-        /* Define grid structure: column width (inc gutter), baselines */
-        background-size:
-        var(--column-increment)    var(--baseline-grid);
-        /*    column-increment  |  baseline increment */
-
-        /* Adjust grid for page margins: */
-        background-position: var(--page-margin-sides) 0rem;
-
-
-        background-image:
-          /* Mark start of each column: */
-          linear-gradient(to right, #6583c552 1px, transparent 1px),
-
-          /* Fill in column widths: */
-          linear-gradient(to right, #83aaff17 var(--column-width), #ffd3d300 1px),
-          /*                blend ,   column          column width ,   gutter       */
-          /*            direction     colour                           colour       */
-
-          /* Draw baselines: */
-          linear-gradient(to bottom, #99b4ff47 1px, transparent 1px);
-          /*                      baseline thickness, colour btw baselines */
-    }
-
-
-    /* Apply the baselines to the body element to test for grid consistency between container elements */
-    body:not(:hover) {
-        background-size:
-        4rem    2rem;
-        /* width of background, grid increment */
-
-        /* Adjust grid for page margins, set top offset */
-        background-position: var(--page-margin-sides) 0px;
-
-        background-image:
-          /* Draw baselines: */
-          linear-gradient(to bottom, #4848486b 1px, transparent 1px);
-          /*                      baseline thickness, colour btw baselines */
-
-        background-repeat: repeat;
-    }
-
-
-} /* end of Grid Guides */
