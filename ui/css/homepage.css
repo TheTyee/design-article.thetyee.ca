@@ -123,7 +123,7 @@ Simple examples:
   --breakpoint-width-m: 684px;
   --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav */
   --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand from stacked to 2 columns */
-  --breakpoint-width-adblock: 1200px; /* half-page ad appears at 1200px width */
+  --breakpoint-width-adblock: 1180px; /* half-page ad appears at 1180px width */
   --breakpoint-width-l: 1368px; /* >> This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
   --breakpoint-width-xl: 1368px;
 }
@@ -1014,8 +1014,8 @@ strong {
     height: calc(2rem * 14); /* Set ad-box height to an even multiple of the baseline grid */
   }
 
-    /*  HMPG AD BOX BREAKPOINT -- breakpoint-width-adblock: 1200px */
-    @media screen and (min-width: 1200px) {
+    /*  HMPG AD BOX BREAKPOINT -- breakpoint-width-adblock: 1180px */
+    @media screen and (min-width: 1180px) {
       .hmpg-ad-box--halfpage {display: block;}
     }
 /* end of HMPG Ad Box molecule */
@@ -1115,8 +1115,8 @@ strong {
         display: grid;   /* This must be "grid" because the revealed items are themselves using internal grid layouts */
       }
 
-            /*  LIST EXPANDER ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1200px */
-            @media screen and (min-width: 1200px) {
+            /*  LIST EXPANDER LARGE BREAKPOINT -- breakpoint-width-adblock: 1368px */
+            @media screen and (min-width: 1368px) {
 
               /* Tertiary story-items in the recent stories list use float-based layout in wide viewports,
                  so at large screen sizes the expander must set the display to block instead of grid.     */
@@ -1195,8 +1195,8 @@ strong {
             } /* 0 top margin aligns label with figure in 2-col story-item layouts */
           }
 
-          /*  RECENT STORIES ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1200px */
-          @media screen and (min-width: 1200px) {
+          /*  RECENT STORIES ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px */
+          @media screen and (min-width: 1180px) {
 
             .hmpg-org-recent-stories__list {
               grid-template-columns: repeat(4, 1fr);
