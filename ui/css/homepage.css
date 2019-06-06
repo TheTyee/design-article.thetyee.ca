@@ -121,8 +121,12 @@ Simple examples:
   --breakpoint-width-xs: 0;
   --breakpoint-width-s: 0;
   --breakpoint-width-m: 684px;
-  --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav */
+  --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav. Also increases lateral page margins */
   --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand from stacked to 2 columns */
+
+  --breakpoint-width-margins--min: 1100px /*  Page Margins breakpoint: 1100-1368px   */
+  --breakpoint-width-margins--max: 1368px /*  This breakpoint range prevents columns from getting too wide at upper end of Medium width range */
+
   --breakpoint-width-adblock: 1180px; /* half-page ad appears at 1180px width */
   --breakpoint-width-l: 1368px; /* >> This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
   --breakpoint-width-xl: 1368px;
@@ -1167,7 +1171,8 @@ strong {
                 }
           }
 
-          /*  STORY ITEM NONSTANDARD BREAKPOINT -- breakpoint: 1000px */
+          /*  STORY ITEM TERTIARY BREAKPOINT -- breakpoint: 1000px */
+          /* tertiary story-items expand from stacked to 2 columns */
           @media screen and (min-width: 1000px)  {
 
             .hmpg-org-recent-stories__list > .story-item--tertiary {
