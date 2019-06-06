@@ -896,7 +896,9 @@ strong {
 
             /* row border */
             /* removes row borders in medium views */
-            .hmpg-org-recent-stories .story-item--index-page::after, .hmpg-org-deep-dive .story-item--index-page::after  {
+            .hmpg-org-recent-stories .story-item--index-page:not(:last-of-type)::after,
+            .hmpg-org-deep-dive .story-item--index-page:not(:last-of-type)::after,
+            .m-tyee-insider__main .story-item--tertiary:not(:last-of-type)::after  {
               content:none;
             }
 
