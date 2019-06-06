@@ -862,6 +862,33 @@ strong {
                 .m-tyee-insider__related-stories .story-item--tertiary .story-item__headline {
                   padding-top: 0;
                 }
+
+          /* Secondary story item gets single-col stacked layout in Deep Dive on narrow viewports. */
+          .hmpg-org-deep-dive .story-item--secondary {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto 1fr;
+            grid-template-areas: "image" "category" "headline" "deck" "author" "date";
+          }
+
+              .hmpg-org-deep-dive .story-item--secondary .category-label {
+                font-family: var(--typeface-sans);
+                font-size: .875em;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--brand-colour--text);
+                margin: 1rem 0 1rem;
+              }
+
+              .hmpg-org-deep-dive .story-item--secondary .story-item__headline {
+                font-family: var(--typeface-display-medium);
+                font-weight: 600;
+                line-height: 3rem;
+                font-size: 1.5em;
+                text-transform: capitalize;
+                margin: 0rem 0 2rem;
+              }
+
         } /* end of Story Item sub-Medium breakpoint */
 
 
