@@ -1259,6 +1259,12 @@ strong {
                 transform-origin: 0% 0%;
               }
 
+                  /* Align Half-page Ad with right edge of its grid container */
+                  .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside div div {
+                    display: grid;
+                    justify-items: end;
+                  }
+
           } /* end of Recent Stories Large Breakpoint */
 
   /* end of Recent Stories */
