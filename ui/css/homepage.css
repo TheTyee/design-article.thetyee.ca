@@ -764,9 +764,11 @@ strong {
 }
 
     /* row border */
-    /* Uses a pseudo element to create a border in the "border" grid area.
+    /* Uses a pseudo element to create a border in the "border" grid area. Excludes the last item.
     Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-    .hmpg-org-recent-stories .story-item--index-page::after, .hmpg-org-deep-dive .story-item--index-page::after  {
+    .hmpg-org-recent-stories .story-item--index-page:not(:last-of-type)::after,
+    .hmpg-org-deep-dive .story-item--index-page:not(:last-of-type)::after,
+    .m-tyee-insider__main .story-item--tertiary:not(:last-of-type)::after  {
       content:"";
       position: absolute;
       bottom: calc(var(--gutter-row-half) * -1);
@@ -774,10 +776,6 @@ strong {
       grid-area: border;
       width: 100%;
       border-bottom: 1px solid var(--border-colour-cols);
-    }
-
-    .hmpg-org-recent-stories .story-item--index-page:last-of-type::after, .hmpg-org-deep-dive .story-item--index-page:last-of-type::after  {
-      content:none;  /* Omit bottom row border on last item */
     }
 
     .story-item__image {
@@ -1293,7 +1291,7 @@ strong {
 
 .m-tyee-insider__related-stories {
   display: grid;
-  grid-row-gap: 2rem;
+  grid-row-gap: var(--gutter-row);
   margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
 }
 
