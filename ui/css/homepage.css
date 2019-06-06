@@ -1233,11 +1233,19 @@ strong {
                       transform-origin: 0% 0%;
                     }
 
-                /* Force Secondary Recent Story images to display at correct layout size. */
-                .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
-                  height: 18rem !important;
-                }
           } /* end of Recent Stories Adblock Breakpoint */
+
+
+          /*  RECENT STORIES SECONDARY IMAGE BREAKPOINT RANGE -- breakpoint-width-adblock: 1180px-1367px */
+          @media screen and (min-width: 1180px) and (max-width: 1367px) {
+
+            /* Force Secondary Recent Story images to display at correct layout size. */
+            /* This only applies while the margins are keeping the module width constant and the half-page ad is showing. */
+            .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
+              height: 18rem !important;
+            }
+          }
+
 
           /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint: 1368px */
           @media screen and (min-width: 1368px)  {
