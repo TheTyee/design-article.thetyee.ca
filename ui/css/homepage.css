@@ -1232,6 +1232,11 @@ strong {
                       transform: scale(.76);
                       transform-origin: 0% 0%;
                     }
+
+                /* Force Secondary Recent Story images to display at correct layout size. */
+                .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
+                  height: 18rem !important;
+                }
           } /* end of Recent Stories Adblock Breakpoint */
 
           /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint: 1368px */
