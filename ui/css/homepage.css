@@ -122,7 +122,8 @@ Simple examples:
   --breakpoint-width-s: 0;
   --breakpoint-width-m: 684px;
   --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav */
-  --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand  from stacked to 2 columns */
+  --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand from stacked to 2 columns */
+  --breakpoint-width-adblock: 1200px; /* half-page ad appears at 1200px width */
   --breakpoint-width-l: 1368px; /* >> This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
   --breakpoint-width-xl: 1368px;
 }
@@ -1013,9 +1014,9 @@ strong {
     height: calc(2rem * 14); /* Set ad-box height to an even multiple of the baseline grid */
   }
 
-    /*  HMPG AD BOX LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
-    @media screen and (min-width: 1368px) {
-      .hmpg-ad-box--halfpage { display: block;}
+    /*  HMPG AD BOX BREAKPOINT -- breakpoint-width-adblock: 1200px */
+    @media screen and (min-width: 1200px) {
+      .hmpg-ad-box--halfpage {display: block;}
     }
 /* end of HMPG Ad Box molecule */
 
@@ -1114,15 +1115,15 @@ strong {
         display: grid;   /* This must be "grid" because the revealed items are themselves using internal grid layouts */
       }
 
-            /*  LIST EXPANDER LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
-            @media screen and (min-width: 1368px) {
+            /*  LIST EXPANDER ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1200px */
+            @media screen and (min-width: 1200px) {
 
               /* Tertiary story-items in the recent stories list use float-based layout in wide viewports,
                  so at large screen sizes the expander must set the display to block instead of grid.     */
               #expander--recent-stories:checked ~ :not(script) {
                 display: block;   /* This must be "block" because revealed items are using internal float layouts */
               }
-            } /* end of List Expander large breakpoint */
+            } /* end of List Expander adblock breakpoint */
 
       #expander--recent-stories:checked ~ .button--expander-open {
         display: none;
@@ -1164,7 +1165,6 @@ strong {
                 .hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
                 margin-top: 1rem;
                 }
-
           }
 
           /*  STORY ITEM NONSTANDARD BREAKPOINT -- breakpoint: 1000px */
@@ -1195,8 +1195,8 @@ strong {
             } /* 0 top margin aligns label with figure in 2-col story-item layouts */
           }
 
-          /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
-          @media screen and (min-width: 1368px) {
+          /*  RECENT STORIES ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1200px */
+          @media screen and (min-width: 1200px) {
 
             .hmpg-org-recent-stories__list {
               grid-template-columns: repeat(4, 1fr);
@@ -1214,31 +1214,52 @@ strong {
                 }
 
                 .hmpg-org-recent-stories__list > .story-item--tertiary {
-                grid-column: auto / span 1;
+                grid-column: auto / span 2;
                 }
 
+                 /* Scale Half-page Adblock so it doesn't break the grid */
                 .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
                   grid-area: ad;
+                  overflow: hidden;
                 }
 
-                /* Slightly reduce size of tertiary headlines in wide screens to accommodate extra column */
-                .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                    font-family: var(--typeface-display-medium);
-                    font-size: 1.25em;
-                    line-height: 2.5rem; /* decimal values here cause a browser rounding error
-                                            that throws throws off the baseline grid.          */
-                }
+                    .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
+                      transform: scale(.76);
+                      transform-origin: 0% 0%;
+                    }
+          } /* end of Recent Stories Adblock Breakpoint */
 
-                /* Use float-based layout for Tertiary story-items in Recent Stories module */
+          /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint: 1368px */
+          @media screen and (min-width: 1368px)  {
 
-                .hmpg-org-recent-stories__list .story-item--tertiary .story-item__image {
-                  float: right;
-                  width: calc(50% - (var(--gutter-column-half) * 0.5));
-                  margin-left: var(--gutter-column-half);
-                  margin-bottom: 2rem;
-                }
+              .hmpg-org-recent-stories__list > .story-item--tertiary {
+                grid-column: auto / span 1;
+              }
 
-          }
+              /* Slightly reduce size of tertiary headlines in wide screens to accommodate extra column */
+              .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+                  font-family: var(--typeface-display-medium);
+                  font-size: 1.25em;
+                  line-height: 2.5rem; /* decimal values here cause a browser rounding error
+                                          that throws throws off the baseline grid.          */
+              }
+
+              /* Use float-based layout for Tertiary story-items in Recent Stories module */
+
+              .hmpg-org-recent-stories__list .story-item--tertiary .story-item__image {
+                float: right;
+                width: calc(50% - (var(--gutter-column-half) * 0.5));
+                margin-left: var(--gutter-column-half);
+                margin-bottom: 2rem;
+              }
+
+              /* Disable scaling of Half-page Adblock so that it displays at full size */
+              .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
+                transform: none;
+                transform-origin: 0% 0%;
+              }
+
+          } /* end of Recent Stories Large Breakpoint */
 
   /* end of Recent Stories */
 
