@@ -1911,9 +1911,15 @@ strong {
         margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
     }
 
+    .site-footer .nav__link--join {
+        position: relative;
+        left: unset; /* Keeps link centered in narrow ipad view */
+        margin-right: -1.25em; /* Keeps link centered in narrow ipad view */
+    }
+
       .nav__link--join::before {
         content: url('/ui/img/icon-dollar-heart.svg');
-        display: inline-block;
+        display: block;
         position: absolute;
         left: -1.5em;
         transform: scale(.6) translate(-40%, -30%);
@@ -2438,6 +2444,7 @@ strong {
 /* SITE FOOTER organism ----------------- */
 
 .site-footer--homepage {
+  position: relative;
   display: grid;
   padding-top: 4rem;
   padding-bottom: var(--gutter-row);
