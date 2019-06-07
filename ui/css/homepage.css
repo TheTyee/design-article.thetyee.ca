@@ -2170,7 +2170,7 @@ strong {
           @media screen and (min-width: 850px) {
 
               .site-header {
-                padding-bottom: 6rem;
+                padding-bottom: 4rem;
                 /* Run logo block and nav to edge of screen */
                 padding-left: 0;
                 padding-right: 0;
