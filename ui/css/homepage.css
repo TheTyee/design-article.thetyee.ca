@@ -2130,6 +2130,17 @@ strong {
                 color: #eee;
               }
 
+                  /* Adds inside border to Dropdown Menu in narrow views */
+                  .site-nav__dropdown::after {
+                    content: '';
+                    position: absolute;
+                    left: 0rem;
+                    bottom: 1rem;
+                    z-index: 100;
+                    width: calc(100vw);
+                    border-bottom: 1px solid #bbb;
+                  }
+
                   .site-nav__dropdown a {
                     color: var(--brand-colour);
                     padding: .5rem 0;
