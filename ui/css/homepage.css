@@ -1038,7 +1038,7 @@ strong {
     .counter-list--story-items > .story-item {
       counter-increment: story-item;
 
-      padding-left: 1.4em;
+      padding-left: 2.2em;
       position: relative;
     }
 
@@ -1050,17 +1050,26 @@ strong {
           margin-bottom: 0rem;
         }
 
-        .counter-list--story-items > .story-item h2::before {
-          content: counter(story-item);
-          display: inline-block;
-          position: absolute;
-          left: -.1em;
-          color: var(--brand-colour--text);
-          background-color: none;
-          font-family: var(--typeface-display);
-          font-weight: 900;
-          font-size: 1.1em;
-        }
+    .counter-list--story-items > .story-item h2::before {
+              content: counter(story-item);
+              display: inline-block;
+              position: absolute;
+              left: -.15em;
+              color: #fff;
+              background-color: var(--brand-colour--text);
+              border-radius: 0.65em;
+              text-align:center;
+              font-family: var(--typeface-serif);
+              font-weight: 600;
+              width: 1.3em;
+              height: 1.3em;
+              -ms-transform: scale(0.85); /* IE 9 */
+              -webkit-transform: scale(0.85); /* Safari */
+              transform: scale(.85);
+              margin-left: 0;
+              margin-right: 0.25em;
+              padding-top: 1px
+          }
 /* end of Counter List molecule */
 
 
