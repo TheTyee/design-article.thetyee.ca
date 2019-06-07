@@ -1056,7 +1056,7 @@ strong {
               position: absolute;
               left: -.15em;
               color: #fff;
-              background-color: #bbb;
+              background-color: var(--brand-colour--text);
               border-radius: 0.65em;
               text-align:center;
               font-weight: 600;
