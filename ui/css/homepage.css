@@ -768,19 +768,6 @@ strong {
         "border";
 }
 
-    /* row border */
-    /* Uses a pseudo element to create borders within the grid-row-gap. Excludes the first item.
-    Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-    .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before,
-    .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
-    .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
-      content:"";
-      position: absolute;
-      top: calc(var(--gutter-row-half) * -1);
-      width: 100%;
-      border-bottom: 1px solid var(--border-colour-cols);
-    }
-
     .story-item__image {
         display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
         position: relative;
@@ -897,32 +884,6 @@ strong {
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
 
-            /* row border */
-            /* expands Recent Stories row borders in medium views */
-            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before  {
-              left: calc(var(--gutter-column-half) * -1);
-              width: calc(100% + var(--gutter-column));
-            }
-
-            /* removes row borders from Insider and Deep Dive in medium views */
-            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
-            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
-              content: none;
-            }
-
-            /* column border */
-            /* Uses a pseudo element to create column borders within the grid-column-gap. Excludes the first item.
-               Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::after  {
-              content:'';
-              position: absolute;
-              top: 0;
-              right: calc(var(--gutter-column-half) * -1);
-              height: 100%;
-              border-right: 1px solid var(--border-colour-cols);
-            }
-
-
             .story-item--primary {
               grid-template-columns: 1fr 1fr;
               grid-template-rows: repeat(4, auto) 1fr;
@@ -987,6 +948,7 @@ strong {
                 .story-item--tertiary .story-item__deck {display: block;}
         } /* end of Story Item medium breakpoint */
 
+
         /*  STORY ITEM LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
         @media screen and (min-width: 1368px) {
 
@@ -1000,8 +962,88 @@ strong {
           }
         } /* end of Story Item large breakpoint */
 
-
 /* end of Story Item */
+
+
+
+/* ROW & COLUMN BORDERS ------------------- */
+/* Set borders within grid-column-gaps and grid-row-gaps to separate story-items. */
+
+/* row border */
+    /* Uses a pseudo element to create borders within the grid-row-gap. Excludes the first item.
+    Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
+    .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before,
+    .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+    .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
+      content:"";
+      position: absolute;
+      top: calc(var(--gutter-row-half) * -1);
+      width: 100%;
+      border-bottom: 1px solid var(--border-colour-cols);
+    }
+
+    /* ---- ROW & COLUMN BORDERS responsive enhancement ----  */
+
+        /*  ROW & COLUMN BORDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+        @media screen and (min-width: 684px) {
+
+            /* row border */
+            /* expand Recent Stories row borders in medium views */
+            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before  {
+              left: calc(var(--gutter-column-half) * -1);
+              width: calc(100% + var(--gutter-column));
+            }
+
+            /* removes row borders from Insider and Deep Dive in medium views */
+            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
+              content: none;
+            }
+
+            /* column border */
+            /* Uses a pseudo element to create column borders within the grid-column-gap. Excludes the first item.
+               Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
+            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::after  {
+              content:'';
+              position: absolute;
+              top: 0;
+              right: calc(var(--gutter-column-half) * -1);
+              height: 100%;
+              border-right: 1px solid var(--border-colour-cols);
+            }
+        } /* end of borders medium breakpoint */
+
+
+        /* ROW & COLUMN BORDER ONLY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px - 999px */
+        @media screen and (min-width: 684px) and (max-width: 999px) {
+
+            /* remove column border on last item in each Recent Stories row */
+            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
+              content:none;
+            }
+        } /* end of borders medium breakpoint */
+
+
+        /*  ROW & COLUMN BORDER ONLY TERTIARY BREAKPOINT -- breakpoint-width-tertiary: 1000px - 1367px */
+        @media screen and (min-width: 1000px) and (max-width: 1367px) {
+
+            /* remove column border on last item in each Recent Stories row */
+            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+4):nth-of-type(2n)::after  {
+              content:none;
+            }
+        } /* end of borders tertiary breakpoint */
+
+
+        /*  ROW & COLUMN BORDER LARGE BREAKPOINT -- breakpoint-width-l: 1367px */
+        @media screen and (min-width: 1368px) {
+
+            /* remove column border on last item in each Recent Stories row */
+            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
+              content:none;
+            }
+        } /* end of borders large breakpoint */
+
+/* end of Row & Column Borders */
 
 
 
