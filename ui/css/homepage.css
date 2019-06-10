@@ -771,14 +771,12 @@ strong {
     /* row border */
     /* Uses a pseudo element to create a border in the "border" grid area. Excludes the last item.
     Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-    .hmpg-org-recent-stories .story-item--index-page:not(:last-of-type)::after,
-    .hmpg-org-deep-dive .story-item--index-page:not(:last-of-type)::after,
-    .m-tyee-insider__main .story-item--tertiary:not(:last-of-type)::after  {
+    .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before,
+    .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+    .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
       content:"";
       position: absolute;
-      bottom: calc(var(--gutter-row-half) * -1);
-
-      grid-area: border;
+      top: calc(var(--gutter-row-half) * -1);
       width: 100%;
       border-bottom: 1px solid var(--border-colour-cols);
     }
@@ -901,9 +899,9 @@ strong {
 
             /* row border */
             /* removes row borders in medium views */
-            .hmpg-org-recent-stories .story-item--index-page:not(:last-of-type)::after,
-            .hmpg-org-deep-dive .story-item--index-page:not(:last-of-type)::after,
-            .m-tyee-insider__main .story-item--tertiary:not(:last-of-type)::after  {
+            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before,
+    .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+    .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
               content:none;
             }
 
@@ -2540,7 +2538,7 @@ strong {
     /* Apply the grid background to container elements: */
     body:not(:hover) .hmpg-org-wrapper {
         /* Define grid structure: column width (inc gutter), baselines */
-        background-size:
+ /*       background-size:
         var(--column-increment)    var(--baseline-grid);
         /*    column-increment  |  baseline increment */
 
@@ -2564,7 +2562,7 @@ strong {
 
 
     /* Apply the baselines to the body element to test for grid consistency between container elements */
-    body:not(:hover) {
+/*    body:not(:hover) {
         background-size:
         4rem    2rem;
         /* width of background, grid increment */
