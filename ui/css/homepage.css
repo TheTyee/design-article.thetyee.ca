@@ -1042,6 +1042,7 @@ strong {
               content:none;
             }
 
+            /* add column borders around Insider molecules */
             .hmpg-org-tyee-insider > div:not(:last-of-type)::after {
               content:'';
               position: absolute;
@@ -1050,6 +1051,34 @@ strong {
               height: calc(100% - 10rem);
               border-right: 1px solid var(--text-colour);
             }
+
+            /* add row borders around Deep Dive tertiary story-items */
+            .hmpg-org-deep-dive > .story-item--tertiary:nth-of-type(n+4)::before {
+              content:'' !important; /* !important is required to overrule the earlier
+                                            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+                                            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
+                                                content: none;
+                                        but this could also achieved by making the breakpoint of this previous
+                                        rule more specific. */
+              position: absolute;
+              top: calc(var(--gutter-row-half) * -1);
+              left: calc(0);
+              width: calc(100% + var(--gutter-column-half));
+              border-bottom: 1px solid var(--border-colour-cols);
+
+            }
+
+            /* add column border around Deep Dive tertiary story-items */
+            .hmpg-org-deep-dive > .story-item--tertiary::after {
+              content:'';
+              position: absolute;
+              top: calc(var(--gutter-row-half) * -1);
+              left: calc(var(--gutter-column-half) * -1);
+              height: calc(100% + var(--gutter-row));
+              border-left: 1px solid var(--border-colour-cols);
+            }
+
+
         } /* end of borders large breakpoint */
 
 /* end of Row & Column Borders */
