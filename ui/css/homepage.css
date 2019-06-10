@@ -1063,9 +1063,8 @@ strong {
               position: absolute;
               top: calc(var(--gutter-row-half) * -1);
               left: calc(0);
-              width: calc(100% + var(--gutter-column-half));
+              width: calc(100%);
               border-bottom: 1px solid var(--border-colour-cols);
-
             }
 
             /* add column border around Deep Dive tertiary story-items */
