@@ -2123,15 +2123,19 @@ strong {
                 left: -2rem;
                 top: 4rem;
                 z-index: 100;
+
+                grid-template-rows: auto auto auto auto auto auto auto 1fr;
                 width: 100vw;
                 padding-left: 2rem;
-                padding-bottom: 75vh;
+                min-height: 100vh;
+                padding-bottom: 8rem;
                 background-color: #444;
                 color: #eee;
               }
 
                   /* Adds inside border to Dropdown Menu in narrow views */
-                  .site-nav__dropdown::after {
+                  .site-nav__dropdown::after,
+                  .site-nav__search-dropdown::after {
                     content: '';
                     position: absolute;
                     left: 0rem;
@@ -2166,7 +2170,7 @@ strong {
                 top: 3.5rem;
                 z-index: 110;
                 width: 100vw;
-                padding-bottom: 90vh;
+                min-height: 100vh;
               }
 
               .hmpg-org-recent-stories {
