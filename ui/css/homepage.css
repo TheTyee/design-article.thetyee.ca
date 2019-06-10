@@ -2224,7 +2224,7 @@ strong {
                 grid-row-gap: 0;
                 align-items: end;
 
-                margin-top: 2rem; /* desired offset from logo (4rem) - self padding-top (.5rem) */
+                margin-top: 1.5rem; /* desired offset from logo (3rem) - self padding-top (.5rem) - padding on nav__link (0.5rem)*/
                 border-top: 1px solid var(--border-colour-cols);
                 padding: calc(.5rem) 0 calc(0rem + 2px);
                 border-bottom: 1px solid var(--text-colour);
@@ -2235,6 +2235,11 @@ strong {
               }
 
                   /* Nav bar button spacing and positioning */
+
+                  .site-nav-main > .nav__link {
+                    padding-top: .25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                    padding-bottom: .25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                  }
 
                   .site-nav-main > a:first-of-type {
                     grid-column: main-items;
