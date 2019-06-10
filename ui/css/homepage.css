@@ -898,11 +898,16 @@ strong {
         @media screen and (min-width: 684px) {
 
             /* row border */
-            /* removes row borders in medium views */
-            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before,
-    .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
-    .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
-              content:none;
+            /* expands Recent Stories row borders in medium views */
+            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before  {
+              left: calc(var(--gutter-column-half) * -1);
+              width: calc(100% + var(--gutter-column));
+            }
+
+            /* removes row borders from Insider and Deep Dive in medium views */
+            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
+              content: none;
             }
 
             .story-item--primary {
