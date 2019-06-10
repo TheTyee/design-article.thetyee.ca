@@ -769,7 +769,7 @@ strong {
 }
 
     /* row border */
-    /* Uses a pseudo element to create a border in the "border" grid area. Excludes the last item.
+    /* Uses a pseudo element to create borders within the grid-row-gap. Excludes the first item.
     Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
     .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before,
     .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
@@ -909,6 +909,19 @@ strong {
             .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
               content: none;
             }
+
+            /* column border */
+            /* Uses a pseudo element to create column borders within the grid-column-gap. Excludes the first item.
+               Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
+            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::after  {
+              content:'';
+              position: absolute;
+              top: 0;
+              right: calc(var(--gutter-column-half) * -1);
+              height: 100%;
+              border-right: 1px solid var(--border-colour-cols);
+            }
+
 
             .story-item--primary {
               grid-template-columns: 1fr 1fr;
