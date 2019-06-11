@@ -121,8 +121,13 @@ Simple examples:
   --breakpoint-width-xs: 0;
   --breakpoint-width-s: 0;
   --breakpoint-width-m: 684px;
-  --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav */
-  --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand  from stacked to 2 columns */
+  --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav. Also increases lateral page margins */
+  --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand from stacked to 2 columns */
+
+  --breakpoint-width-margins--min: 1100px /*  Page Margins breakpoint: 1100-1368px   */
+  --breakpoint-width-margins--max: 1368px /*  This breakpoint range prevents columns from getting too wide at upper end of Medium width range */
+
+  --breakpoint-width-adblock: 1180px; /* half-page ad appears at 1180px width */
   --breakpoint-width-l: 1368px; /* >> This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
   --breakpoint-width-xl: 1368px;
 }
@@ -405,6 +410,11 @@ body {
   color: var(--text-colour);
 }
 
+.tyee-insider__story .story-item__deck p:nth-of-type(n+2),
+.hmpg-org-deep-dive .story-item--primary .story-item__deck p:nth-of-type(n+2) {
+  padding-top: 2rem;
+}
+
 .m-tyee-insider__related-label {
   font-size: .85em;
   font-weight: 800;
@@ -523,7 +533,7 @@ body {
     .story-item--tertiary .story-item__deck {
       font-size: 1em;
       line-height: 2rem;
-      margin: 1rem 0 1rem; /* 2rem total aligns with baseline grid */
+      margin: 1rem 0 0rem; /* No bottom padding to prevent gap above author byline */
     }
 
     /* minimum story-items */
@@ -554,14 +564,17 @@ body {
 
         }
 
-        /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-l: 1368px; */
+        /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
         @media screen and (min-width: 1368px) {
 
-            /* Reduce size of tertiary headlines in wide screens */
+            /* Slightly reduce size of tertiary headlines in wide screens
+               to accommodate a 2-col stiry-item layout.                  */
             .story-item--tertiary .story-item__headline {
                 font-family: var(--typeface-display);
-                font-size: 1.04em;
-                line-height: 2rem;
+                font-family: var(--typeface-display-medium);
+                    font-size: 1.25em;
+                    line-height: 2.5rem; /* decimal values here cause a browser rounding error
+                                            that throws throws off the baseline grid.          */
             }
         }
 /* end of Story Items Typography */
@@ -691,9 +704,10 @@ strong {
     transform: scale(.85);
   }
 
-  .hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement {
+  .hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement,
+  .hmpg-org-deep-dive .story-item--tertiary .badge--story-item-placement {
     left: -2.5em;
-    top: -1.75em;
+    top: -1.5em;
     transform: scale(.7);
   }
 
@@ -754,23 +768,6 @@ strong {
         "border";
 }
 
-    /* row border */
-    /* Uses a pseudo element to create a border in the "border" grid area.
-    Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-    .hmpg-org-recent-stories .story-item--index-page::after, .hmpg-org-deep-dive .story-item--index-page::after  {
-      content:"";
-      position: absolute;
-      bottom: calc(var(--gutter-row-half) * -1);
-
-      grid-area: border;
-      width: 100%;
-      border-bottom: 1px solid var(--border-colour-cols);
-    }
-
-    .hmpg-org-recent-stories .story-item--index-page:last-of-type::after, .hmpg-org-deep-dive .story-item--index-page:last-of-type::after  {
-      content:none;  /* Omit bottom row border on last item */
-    }
-
     .story-item__image {
         display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
         position: relative;
@@ -807,7 +804,7 @@ strong {
         .story-item--tertiary .category-label { display: none; }
         .story-item--tertiary .story-item__headline { display: block; }
         .story-item--tertiary .story-item__deck { display: block; }
-        .story-item--tertiary .story-item__author { display: none; }
+        .story-item--tertiary .story-item__author { display: block; }
         .story-item--tertiary .story-item__date { display: none; }
 
         .hmpg-org-recent-stories__list .story-item--tertiary {
@@ -829,14 +826,63 @@ strong {
 
     /* ---- STORY ITEM responsive enhancement ----  */
 
+        /*  STORY ITEM SUB-MEDIUM BREAKPOINT -- < breakpoint-width-m: < 683px */
+        @media screen and (max-width: 683px) {
+
+          /* Some story-items use float-based layout in small viewports:
+             -> Secondary story-items in the recent stories list
+             -> Tertiary story-items in the Insider Related Stories list  */
+          /* Same as Tertiary items in large viewports. */
+          .hmpg-org-recent-stories__list .story-item--secondary,
+          .m-tyee-insider__related-stories .story-item--tertiary {
+            display: block;
+          }
+
+          /* Use float-based layout for Secondary story-items in Recent Stories module */
+          /* Same as Tertiary items in large viewports. */
+                .hmpg-org-recent-stories__list .story-item--secondary .story-item__image,
+                .m-tyee-insider__related-stories .story-item--tertiary .story-item__image {
+                  float: right;
+                  width: calc(50% - (var(--gutter-column-half) * 0.5));
+                  margin-left: var(--gutter-column-half);
+                  margin-bottom: 2rem;
+                }
+
+                .m-tyee-insider__related-stories .story-item--tertiary .story-item__headline {
+                  padding-top: 0;
+                }
+
+          /* Secondary story item gets single-col stacked layout in Deep Dive on narrow viewports. */
+          .hmpg-org-deep-dive .story-item--secondary {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto 1fr;
+            grid-template-areas: "image" "category" "headline" "deck" "author" "date";
+          }
+
+              .hmpg-org-deep-dive .story-item--secondary .category-label {
+                font-family: var(--typeface-sans);
+                font-size: .875em;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--brand-colour--text);
+                margin: 1rem 0 1rem;
+              }
+
+              .hmpg-org-deep-dive .story-item--secondary .story-item__headline {
+                font-family: var(--typeface-display-medium);
+                font-weight: 600;
+                line-height: 3rem;
+                font-size: 1.5em;
+                text-transform: capitalize;
+                margin: 0rem 0 2rem;
+              }
+
+        } /* end of Story Item sub-Medium breakpoint */
+
+
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
-
-            /* row border */
-            /* removes row borders in medium views */
-            .hmpg-org-recent-stories .story-item--index-page::after, .hmpg-org-deep-dive .story-item--index-page::after  {
-              content:none;
-            }
 
             .story-item--primary {
               grid-template-columns: 1fr 1fr;
@@ -894,13 +940,14 @@ strong {
                                   between image and headline in stacked story-item layout */
 
             .story-item--tertiary {
-                grid-template-rows: auto auto auto 1fr;
+                grid-template-rows: auto auto auto auto 1fr;
             }
                 .story-item--tertiary .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
                 .story-item--tertiary .badge--story-item-placement {display: block;}
                 .story-item--tertiary .category-label {display: block;}
                 .story-item--tertiary .story-item__deck {display: block;}
         } /* end of Story Item medium breakpoint */
+
 
         /*  STORY ITEM LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
         @media screen and (min-width: 1368px) {
@@ -915,8 +962,147 @@ strong {
           }
         } /* end of Story Item large breakpoint */
 
-
 /* end of Story Item */
+
+
+
+/* ROW & COLUMN BORDERS ------------------- */
+/* Set borders within grid-column-gaps and grid-row-gaps to separate story-items. */
+
+/* row border */
+    /* Uses a pseudo element to create borders within the grid-row-gap. Excludes the first item.
+    Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
+    .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before,
+    .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+    .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
+      content:"";
+      position: absolute;
+      top: calc(var(--gutter-row-half) * -1);
+      width: 100%;
+      border-bottom: 1px solid var(--border-colour-cols);
+      mix-blend-mode: multiply;
+    }
+
+    /* ---- ROW & COLUMN BORDERS responsive enhancement ----  */
+
+        /*  ROW & COLUMN BORDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+        @media screen and (min-width: 684px) {
+
+            /* row border */
+            /* expand Recent Stories row borders in medium views */
+            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before  {
+              left: calc(var(--gutter-column-half) * -1);
+              width: calc(100% + var(--gutter-column));
+            }
+
+            /* removes row borders from Insider and Deep Dive in medium views */
+            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
+              content: none;
+            }
+
+            /* column border */
+            /* Uses a pseudo element to create column borders within the grid-column-gap. Excludes the first item.
+               Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
+            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::after  {
+              content:'';
+              position: absolute;
+              top: 0;
+              right: calc(var(--gutter-column-half) * -1);
+              height: 100%;
+              border-right: 1px solid var(--border-colour-cols);
+            }
+        } /* end of borders medium breakpoint */
+
+
+        /* ROW & COLUMN BORDER ONLY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px - 999px */
+        @media screen and (min-width: 684px) and (max-width: 999px) {
+
+            /* remove column border on last item in each Recent Stories row */
+            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
+              content:none;
+            }
+
+            /* remove column border on all tertiary story-items in Recent Stories */
+            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
+              content:none;
+            }
+        } /* end of borders medium breakpoint */
+
+
+        /*  ROW & COLUMN BORDER ONLY TERTIARY BREAKPOINT -- breakpoint-width-tertiary: 1000px - 1367px */
+        @media screen and (min-width: 1000px) and (max-width: 1367px) {
+
+            /* remove column border on last item in each Recent Stories row */
+            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+4):nth-of-type(2n)::after  {
+              content:none;
+            }
+
+            /* remove column border on all tertiary story-items in Recent Stories */
+            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
+              content:none;
+            }
+
+        } /* end of borders tertiary breakpoint */
+
+
+        /*  ROW & COLUMN BORDER LARGE BREAKPOINT -- breakpoint-width-l: 1367px */
+        @media screen and (min-width: 1368px) {
+
+            /* remove column border on last item in each Recent Stories row */
+            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
+              content:none;
+            }
+
+            /* remove column border on all tertiary story-items in Recent Stories */
+            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
+              content:none;
+            }
+
+            /* This would remove row borders on tertiary story-items in Recent Stories
+            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+9)::before  {
+              content: none;
+            } */
+
+            /* add column borders around Insider molecules */
+            .hmpg-org-tyee-insider > div:not(:last-of-type)::after {
+              content:'';
+              position: absolute;
+              bottom: 0;
+              right: calc(var(--gutter-column-half) * -1);
+              height: calc(100% - 10rem);
+              border-right: 1px solid var(--text-colour);
+            }
+
+            /* add row borders around Deep Dive tertiary story-items */
+            .hmpg-org-deep-dive > .story-item--tertiary:nth-of-type(n+4)::before {
+              content:'' !important; /* !important is required to overrule the earlier
+                                            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+                                            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
+                                                content: none;
+                                        but this could also achieved by making the breakpoint of this previous
+                                        rule more specific. */
+              position: absolute;
+              top: calc(var(--gutter-row-half) * -1);
+              left: calc(0);
+              width: calc(100%);
+              border-bottom: 1px solid var(--border-colour-cols);
+            }
+
+            /* add column border around Deep Dive tertiary story-items */
+            .hmpg-org-deep-dive > .story-item--tertiary::after {
+              content:'';
+              position: absolute;
+              top: calc(var(--gutter-row-half) * -1);
+              left: calc(var(--gutter-column-half) * -1);
+              height: calc(100% + var(--gutter-row));
+              border-left: 1px solid var(--border-colour-cols);
+            }
+
+
+        } /* end of borders large breakpoint */
+
+/* end of Row & Column Borders */
 
 
 
@@ -949,9 +1135,9 @@ strong {
     height: calc(2rem * 14); /* Set ad-box height to an even multiple of the baseline grid */
   }
 
-    /*  HMPG AD BOX LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
-    @media screen and (min-width: 1368px) {
-      .hmpg-ad-box--halfpage { display: block;}
+    /*  HMPG AD BOX BREAKPOINT -- breakpoint-width-adblock: 1180px */
+    @media screen and (min-width: 1180px) {
+      .hmpg-ad-box--halfpage {display: block;}
     }
 /* end of HMPG Ad Box molecule */
 
@@ -969,7 +1155,7 @@ strong {
     .counter-list--story-items > .story-item {
       counter-increment: story-item;
 
-      padding-left: 2.2em;
+      padding-left: 1.4em;
       position: relative;
     }
 
@@ -981,24 +1167,17 @@ strong {
           margin-bottom: 0rem;
         }
 
-    .counter-list--story-items > .story-item h2::before {
-              content: counter(story-item);
-              display: inline-block;
-              position: absolute;
-              left: -.15em;
-              color: #fff;
-              background-color: #bbb;
-              border-radius: 0.65em;
-              text-align:center;
-              font-weight: 600;
-              width: 1.3em;
-              height: 1.3em;
-              -ms-transform: scale(0.85); /* IE 9 */
-              -webkit-transform: scale(0.85); /* Safari */
-              transform: scale(1);
-              margin-left: 0;
-              margin-right: 0.25em;
-          }
+        .counter-list--story-items > .story-item h2::before {
+          content: counter(story-item);
+          display: inline-block;
+          position: absolute;
+          left: -.1em;
+          color: var(--brand-colour--text);
+          background-color: none;
+          font-family: var(--typeface-display);
+          font-weight: 900;
+          font-size: 1.1em;
+        }
 /* end of Counter List molecule */
 
 
@@ -1029,7 +1208,10 @@ strong {
   width: 100%;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-  margin-bottom: -1rem; /* Realigns with baseline grid (content may still throw it off) */
+  margin-bottom: -1.5rem; /* Realigns with baseline grid (content may still throw it off)   */
+                          /* Decimal values in the .story-item--tertiary headline line-height
+                             (at some medium and large views)cause a browser rounding error
+                             that throws throws off the baseline grid.                      */
 }
 
   /* RECENT STORIES LIST EXPANDER */
@@ -1047,7 +1229,7 @@ strong {
         display: grid;   /* This must be "grid" because the revealed items are themselves using internal grid layouts */
       }
 
-            /*  LIST EXPANDER LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
+            /*  LIST EXPANDER LARGE BREAKPOINT -- breakpoint-width-adblock: 1368px */
             @media screen and (min-width: 1368px) {
 
               /* Tertiary story-items in the recent stories list use float-based layout in wide viewports,
@@ -1055,7 +1237,7 @@ strong {
               #expander--recent-stories:checked ~ :not(script) {
                 display: block;   /* This must be "block" because revealed items are using internal float layouts */
               }
-            } /* end of List Expander large breakpoint */
+            } /* end of List Expander adblock breakpoint */
 
       #expander--recent-stories:checked ~ .button--expander-open {
         display: none;
@@ -1097,10 +1279,10 @@ strong {
                 .hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
                 margin-top: 1rem;
                 }
-
           }
 
-          /*  STORY ITEM NONSTANDARD BREAKPOINT -- breakpoint: 1000px */
+          /*  STORY ITEM TERTIARY BREAKPOINT -- breakpoint: 1000px */
+          /* tertiary story-items expand from stacked to 2 columns */
           @media screen and (min-width: 1000px)  {
 
             .hmpg-org-recent-stories__list > .story-item--tertiary {
@@ -1112,7 +1294,7 @@ strong {
                 line-height: 3rem;
             }
 
-            .story-item--tertiary {
+            .hmpg-org-recent-stories__list .story-item--tertiary {
               grid-template-columns: 1fr 1fr;
               grid-template-rows: repeat(4, auto) 1fr;
               grid-template-areas:
@@ -1128,8 +1310,8 @@ strong {
             } /* 0 top margin aligns label with figure in 2-col story-item layouts */
           }
 
-          /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
-          @media screen and (min-width: 1368px) {
+          /*  RECENT STORIES ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px */
+          @media screen and (min-width: 1180px) {
 
             .hmpg-org-recent-stories__list {
               grid-template-columns: repeat(4, 1fr);
@@ -1147,30 +1329,71 @@ strong {
                 }
 
                 .hmpg-org-recent-stories__list > .story-item--tertiary {
-                grid-column: auto / span 1;
+                grid-column: auto / span 2;
                 }
 
+                 /* Scale Half-page Adblock so it doesn't break the grid */
                 .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
                   grid-area: ad;
+                  overflow: hidden;
                 }
 
-                /* Reduce size of tertiary headlines in wide screens to accommodate extra column */
-                .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                    font-family: var(--typeface-display);
-                    font-size: 1.04em;
-                    line-height: 2rem;
-                }
+                    .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
+                      transform: scale(.76);
+                      transform-origin: 0% 0%;
+                    }
 
-                /* Use float-based layout for Tertiary story-items in Recent Stories module */
+          } /* end of Recent Stories Adblock Breakpoint */
 
-                .hmpg-org-recent-stories__list .story-item--tertiary .story-item__image {
-                  float: right;
-                  width: calc(50% - (var(--gutter-column-half) * 0.5));
-                  margin-left: var(--gutter-column-half);
-                  margin-bottom: 2rem;
-                }
 
+          /*  RECENT STORIES SECONDARY IMAGE BREAKPOINT RANGE -- breakpoint-width-adblock: 1180px-1367px */
+          @media screen and (min-width: 1180px) and (max-width: 1367px) {
+
+            /* Force Secondary Recent Story images to display at correct layout size. */
+            /* This only applies while the margins are keeping the module width constant and the half-page ad is showing. */
+            .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
+              height: 18rem !important;
+            }
           }
+
+
+          /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint: 1368px */
+          @media screen and (min-width: 1368px)  {
+
+              .hmpg-org-recent-stories__list > .story-item--tertiary {
+                grid-column: auto / span 1;
+              }
+
+              /* Slightly reduce size of tertiary headlines in wide screens to accommodate extra column */
+              .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+                  font-family: var(--typeface-display-medium);
+                  font-size: 1.25em;
+                  line-height: 2.5rem; /* decimal values here cause a browser rounding error
+                                          that throws throws off the baseline grid.          */
+              }
+
+              /* Use float-based layout for Tertiary story-items in Recent Stories module */
+
+              .hmpg-org-recent-stories__list .story-item--tertiary .story-item__image {
+                float: right;
+                width: calc(50% - (var(--gutter-column-half) * 0.5));
+                margin-left: var(--gutter-column-half);
+                margin-bottom: 2rem;
+              }
+
+              /* Disable scaling of Half-page Adblock so that it displays at full size */
+              .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
+                transform: none;
+                transform-origin: 0% 0%;
+              }
+
+                  /* Align Half-page Ad with right edge of its grid container */
+                  .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside div div {
+                    display: grid;
+                    justify-items: end;
+                  }
+
+          } /* end of Recent Stories Large Breakpoint */
 
   /* end of Recent Stories */
 
@@ -1180,6 +1403,7 @@ strong {
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
 
 .hmpg-org-tyee-insider {
+  position: relative;
   display: grid;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
@@ -1225,12 +1449,17 @@ strong {
 
 .m-tyee-insider__related-stories {
   display: grid;
-  grid-row-gap: 2rem;
+  grid-row-gap: var(--gutter-row);
   margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
 }
 
+.m-tyee-insider__main,
+.m-comment-noted {
+  position: relative
+}
 
-  /* Tyee Insider Story-items */
+
+  /* Tyee Insider Primary Story-item */
   .m-tyee-insider__main .story-item--primary { }
     .m-tyee-insider__main .story-item--primary .badge--story-item-placement
       { display: none;}
@@ -1245,7 +1474,7 @@ strong {
     .m-tyee-insider__main .story-item--primary .story-item__date
       { display: none;}
 
-  .m-tyee-insider__main .story-item--index-page {
+  .m-tyee-insider__main .story-item--primary {
     grid-template-areas:
         "headline" /* put headline above image */
         "image"
@@ -1263,9 +1492,19 @@ strong {
                     so that it doesn't get targeted by baselineElement */
   }
 
-  .m-tyee-insider__main .story-item__image {
+  .m-tyee-insider__main .story-item--primary .story-item__image {
     margin-bottom: 4rem
   }
+
+  /* Tyee Insider Tertiary Story-item */
+  .m-tyee-insider__main .story-item--tertiary {
+      grid-template-rows: auto auto auto auto 1fr;
+  }
+      .m-tyee-insider__main .story-item--tertiary .story-item__image {display: grid; margin-bottom: 2rem;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
+      .m-tyee-insider__main .story-item--tertiary .badge--story-item-placement {display: none;}
+      .m-tyee-insider__main .story-item--tertiary .category-label {display: none;}
+      .m-tyee-insider__main .story-item--tertiary .story-item__headline {display: block; padding: 0rem 0 1rem}
+      .m-tyee-insider__main .story-item--tertiary .story-item__deck {display: none;}
 
 
   /* Comment Noted and Barometer molecule styles */
@@ -1314,7 +1553,7 @@ strong {
 
       .barometer-form-label::before {
         content:"";
-        cursor: pointer;
+        cursor: default;
         position: absolute;
         width: 2rem;
         height: 2rem;
@@ -1324,6 +1563,7 @@ strong {
         border: 2px solid white;
       }
 
+      /*
        input[name="barometerpoll"]:checked + .barometer-form-label::after {
         opacity: 1;
         content: '';
@@ -1339,6 +1579,7 @@ strong {
 
         transform: rotate(-50deg);
       }
+      */
 
 
     /* ---- TYEE INSIDER responsive enhancement ---- */
@@ -1348,6 +1589,7 @@ strong {
 
 
           .hmpg-org-tyee-insider {
+            position: relative;
             grid-template-columns: repeat(6, 1fr);
           }
               .hmpg-org-tyee-insider > :first-child {
@@ -1401,6 +1643,7 @@ strong {
             margin-bottom: 2rem;
           }
         } /* End of Tyee Insider medium breakpoint */
+
 
         /*  TYEE INSIDER LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
         @media screen and (min-width: 1368px) {
@@ -1485,7 +1728,7 @@ strong {
   padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-  background-color: #f1f1f1ad; /* For testing purposes */ /* AG - temporary tansparency to show grid */
+  background-color: hsla(0, 0%, 90%, 0.68); /* For testing purposes */ /* AG - temporary tansparency to show grid */
   }
 
   .hmpg-org-deep-dive > .story-item:first-of-type .story-item__image { display: none; }
@@ -1722,7 +1965,19 @@ strong {
     display: none;
   }
 
+  .site-header__tagline--mobile {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+
+      .site-header__tagline--mobile::before,
+      .site-header__tagline--mobile::after {
+        display: none;
+      }
+
   .site-header__logo {
+    position: relative;
     justify-self:center;
     line-height: 0; /* required to prevent additional height in element */
     min-height: 12rem; /* Keeps height of logo block aligned with grid */
@@ -1773,11 +2028,17 @@ strong {
         margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
     }
 
+    .site-footer .nav__link--join {
+        position: relative;
+        left: unset; /* Keeps link centered in narrow ipad view */
+        margin-right: -1.25em; /* Keeps link centered in narrow ipad view */
+    }
+
       .nav__link--join::before {
         content: url('/ui/img/icon-dollar-heart.svg');
-        display: inline-block;
+        display: block;
         position: absolute;
-        left: -1.35em;
+        left: -1.5em;
         transform: scale(.6) translate(-40%, -30%);
       }
 
@@ -1796,20 +2057,37 @@ strong {
       }
 
 
-      /* SEARCH DROPDOWN EXPANDER */
+
+      /* NAV DROPDOWN EXPANDER */
       /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
       This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
       An alternative (although less robust) method is to use anchors links:
       https://jsfiddle.net/Algreenwich/uym9s0bg/
       https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
-          /* DEFAULT state: Search Dropdown is hidden */
-          .site-nav__search-dropdown {
+          /* DEFAULT state: Dropdown Menu is hidden */
+          .site-nav__dropdown {
             display: none ;
             grid-column: 1 / -1;
-            padding: 2rem 2rem;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+          }
+
+          /* ACTIVATED state: Menu is shown and toggle icon is inverted */
+          #expander--nav-menu:checked ~ .site-nav__dropdown {
+            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+          }
+          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
+          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
+            transform: rotate(180deg);
+          }
+
+      /* SEARCH DROPDOWN EXPANDER */
+      /* Search Dropdown is now integrated into the Nav Dropdown and the Search button is
+         just another label for the input#expander--nav-menu checkbox */
+
+          .site-nav__search-dropdown {
+            grid-column: 1 / -1;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
             margin-top: .5rem;
             margin-bottom: -.5rem;
             background-color: #444;
@@ -1835,34 +2113,6 @@ strong {
 
           form input {
             padding-left: .65em;
-          }
-
-          /* ACTIVATED state: Search Dropdown is shown */
-          #expander--search:checked ~ .site-nav__search-dropdown {
-            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
-          }
-
-
-      /* NAV DROPDOWN EXPANDER */
-      /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
-      This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
-      An alternative (although less robust) method is to use anchors links:
-      https://jsfiddle.net/Algreenwich/uym9s0bg/
-      https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
-
-          /* DEFAULT state: Dropdown Menu is hidden */
-          .site-nav__dropdown {
-            display: none ;
-            grid-column: 1 / -1;
-          }
-
-          /* ACTIVATED state: Menu is shown and toggle icon is inverted */
-          #expander--nav-menu:checked ~ .site-nav__dropdown {
-            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
-          }
-          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
-          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
-            transform: rotate(180deg);
           }
 
       /* SUB-NAV DROPDOWN EXPANDERS */
@@ -1914,6 +2164,13 @@ strong {
 
           /* ---- SITE HEADER responsive enhancement ---- */
           /* -------------------------------------------- */
+
+          /*  Reported Elsewhere MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+          @media screen and (min-width: 684px) {
+            .site-header {
+              padding-bottom: 2rem;
+            }
+          }
 
           /*  Site Header NON-STANDARD BREAKPOINT -- MAX 849px */
           /*  Style Nav only in narrow views */
@@ -1979,12 +2236,27 @@ strong {
                 left: -2rem;
                 top: 4rem;
                 z-index: 100;
+
+                grid-template-rows: auto auto auto auto auto auto auto 1fr;
                 width: 100vw;
                 padding-left: 2rem;
-                padding-bottom: 75vh;
+                padding-right: 2rem;
+                min-height: 100vh;
+                padding-bottom: 8rem;
                 background-color: #444;
                 color: #eee;
               }
+
+                  /* Adds inside border to Dropdown Menu in narrow views */
+                  .site-nav__dropdown::after {
+                    content: '';
+                    position: absolute;
+                    left: 0rem;
+                    bottom: 1rem;
+                    z-index: 100;
+                    width: calc(100vw);
+                    border-bottom: 1px solid #bbb;
+                  }
 
                   .site-nav__dropdown a {
                     color: var(--brand-colour);
@@ -2006,12 +2278,10 @@ strong {
 
               /* Search Dropdown appearance in narrow views */
               .site-nav__search-dropdown {
-                position: absolute;
-                left: -2rem;
-                top: 3.5rem;
-                z-index: 110;
-                width: 100vw;
-                padding-bottom: 90vh;
+                position: relative;
+                /* left: -2rem; */
+                /* width: 100vw; */
+                /* min-height: 100vh; */
               }
 
               .hmpg-org-recent-stories {
@@ -2026,7 +2296,7 @@ strong {
           @media screen and (min-width: 850px) {
 
               .site-header {
-                padding-bottom: 6rem;
+                padding-bottom: 4rem;
                 /* Run logo block and nav to edge of screen */
                 padding-left: 0;
                 padding-right: 0;
@@ -2046,6 +2316,10 @@ strong {
                 display: block;
               }
 
+              .site-header__tagline--mobile {
+                display: none;
+              }
+
 
               /* Create SITE-NAV BAR GRID */
               .site-nav-main {
@@ -2061,7 +2335,7 @@ strong {
                 grid-row-gap: 0;
                 align-items: end;
 
-                margin-top: 2rem; /* desired offset from logo (4rem) - self padding-top (.5rem) */
+                margin-top: 1.5rem; /* desired offset from logo (3rem) - self padding-top (.5rem) - padding on nav__link (0.5rem)*/
                 border-top: 1px solid var(--border-colour-cols);
                 padding: calc(.5rem) 0 calc(0rem + 2px);
                 border-bottom: 1px solid var(--text-colour);
@@ -2072,6 +2346,11 @@ strong {
               }
 
                   /* Nav bar button spacing and positioning */
+
+                  .site-nav-main > .nav__link {
+                    padding-top: .25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                    padding-bottom: .25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                  }
 
                   .site-nav-main > a:first-of-type {
                     grid-column: main-items;
@@ -2122,7 +2401,7 @@ strong {
                     left: 0;
                     width: 100%;
                     height: 1rem;
-                    background-color: lightgrey;
+                    background-image: url(/ui/img/texture-dotscreen-1.2x.svg);
                   }
 
                   /* heavy-border below */
@@ -2158,19 +2437,28 @@ strong {
                   grid-column: 1 / -1;
                   grid-template-columns: calc(var(--page-margin-sides) + .5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
                                                                     /* + offset to align with nav button */
-                  grid-template-rows: auto [row-2] 1fr;
+                  grid-template-rows: auto auto [row-2] 1fr;
                   grid-column-gap: 0;
                   grid-auto-flow: row dense;
                   align-items: start;
                   margin-top: .5rem;
-                  padding-bottom: 3.5rem;
+                  padding-bottom: 7.5rem;
                   background-color: #444;
                   color: #eee;
+                }
+
+                .site-nav__search-dropdown {
+                  grid-column: 2 / -2;
                 }
 
                   .site-nav__dropdown > * {
                     padding-right: 0;
                     padding-left: 4.5vw; /* offset to align with nav button */
+                  }
+
+                  .site-nav__search-dropdown {
+                      padding-left: ;
+                      padding-right: 8rem;
                   }
 
                   .site-nav__dropdown .site-nav__dropdown-heading-sections,
@@ -2268,17 +2556,6 @@ strong {
                     padding-left: 4vw; /* offset to align with nav button */
                   }
 
-                  .site-nav__dropdown .facebook {
-                      justify-self: end;
-                      padding-right: 3em; /* offset to align with nav button */
-                  }
-
-                  .site-nav__dropdown .twitter {
-                      justify-self: end;
-                      padding-right: 2.75em; /* offset to align with nav button */
-                  }
-
-
           }
 
 
@@ -2289,6 +2566,7 @@ strong {
 /* SITE FOOTER organism ----------------- */
 
 .site-footer--homepage {
+  position: relative;
   display: grid;
   padding-top: 4rem;
   padding-bottom: var(--gutter-row);

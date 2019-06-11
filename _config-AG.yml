@@ -68,5 +68,5 @@ incremental: true
 limit_posts: 1
 
 # server settings
-host: 192.168.1.67
+host: 192.168.43.112
 port: 4000
