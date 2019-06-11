@@ -2066,9 +2066,9 @@ strong {
 
           /* DEFAULT state: Search Dropdown is hidden */
           .site-nav__search-dropdown {
-            display: none ;
+            /* display: none; */
             grid-column: 1 / -1;
-            padding: 2rem 2rem;
+            padding-right: 2rem;
             padding-top: 2rem;
             padding-bottom: 2rem;
             margin-top: .5rem;
@@ -2258,8 +2258,7 @@ strong {
               }
 
                   /* Adds inside border to Dropdown Menu in narrow views */
-                  .site-nav__dropdown::after,
-                  .site-nav__search-dropdown::after {
+                  .site-nav__dropdown::after {
                     content: '';
                     position: absolute;
                     left: 0rem;
@@ -2289,12 +2288,10 @@ strong {
 
               /* Search Dropdown appearance in narrow views */
               .site-nav__search-dropdown {
-                position: absolute;
-                left: -2rem;
-                top: 3.5rem;
-                z-index: 110;
-                width: 100vw;
-                min-height: 100vh;
+                position: relative;
+                /* left: -2rem; */
+                /* width: 100vw; */
+                /* min-height: 100vh; */
               }
 
               .hmpg-org-recent-stories {
