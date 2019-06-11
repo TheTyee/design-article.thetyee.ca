@@ -576,6 +576,34 @@ body {
                     line-height: 2.5rem; /* decimal values here cause a browser rounding error
                                             that throws throws off the baseline grid.          */
             }
+
+            /* Pinned Story enhancement */
+
+            .hmpg-org-pinned-story .story-item--primary .category-label {
+                  margin-bottom: 1.5rem;
+                }
+
+            .hmpg-org-pinned-story .story-item--primary .story-item__headline {
+              line-height: 6rem; /* this is 3 x baseline */
+              font-size: 3.35em;
+              margin-bottom: 4rem
+            }
+
+            .hmpg-org-pinned-story .story-item--primary > :not(.story-item__image) {
+              margin-left: 4rem;
+              margin-right: 4rem;
+            }
+
+            .hmpg-org-pinned-story .story-item--primary .story-item__deck {
+              margin-left: 11.5rem;
+              margin-right: 11.5rem;
+            }
+
+            .hmpg-org-pinned-story .story-item--primary.story-item--reverse .badge--story-item-placement {
+              transform: scale(1.2);
+              right: -3em;
+            }
+
         }
 /* end of Story Items Typography */
 
