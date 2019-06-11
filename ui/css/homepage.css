@@ -2437,19 +2437,28 @@ strong {
                   grid-column: 1 / -1;
                   grid-template-columns: calc(var(--page-margin-sides) + .5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
                                                                     /* + offset to align with nav button */
-                  grid-template-rows: auto [row-2] 1fr;
+                  grid-template-rows: auto auto [row-2] 1fr;
                   grid-column-gap: 0;
                   grid-auto-flow: row dense;
                   align-items: start;
                   margin-top: .5rem;
-                  padding-bottom: 3.5rem;
+                  padding-bottom: 5.5rem;
                   background-color: #444;
                   color: #eee;
+                }
+
+                .site-nav__search-dropdown {
+                  grid-column: 2 / -2;
                 }
 
                   .site-nav__dropdown > * {
                     padding-right: 0;
                     padding-left: 4.5vw; /* offset to align with nav button */
+                  }
+
+                  .site-nav__search-dropdown {
+                      padding-left: ;
+                      padding-right: 8rem;
                   }
 
                   .site-nav__dropdown .site-nav__dropdown-heading-sections,
@@ -2547,17 +2556,6 @@ strong {
                     padding-left: 4vw; /* offset to align with nav button */
                   }
 
-                  .site-nav__dropdown .facebook {
-                      justify-self: end;
-                      padding-right: 3em; /* offset to align with nav button */
-                  }
-
-                  .site-nav__dropdown .twitter {
-                      justify-self: end;
-                      padding-right: 2.75em; /* offset to align with nav button */
-                  }
-
-
           }
 
 
@@ -2651,7 +2649,7 @@ strong {
     /* Apply the grid background to container elements: */
     body:not(:hover) .hmpg-org-wrapper {
         /* Define grid structure: column width (inc gutter), baselines */
- /*       background-size:
+        background-size:
         var(--column-increment)    var(--baseline-grid);
         /*    column-increment  |  baseline increment */
 
@@ -2675,7 +2673,7 @@ strong {
 
 
     /* Apply the baselines to the body element to test for grid consistency between container elements */
-/*    body:not(:hover) {
+    body:not(:hover) {
         background-size:
         4rem    2rem;
         /* width of background, grid increment */
