@@ -980,6 +980,7 @@ strong {
       top: calc(var(--gutter-row-half) * -1);
       width: 100%;
       border-bottom: 1px solid var(--border-colour-cols);
+      mix-blend-mode: multiply;
     }
 
     /* ---- ROW & COLUMN BORDERS responsive enhancement ----  */
