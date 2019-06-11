@@ -1021,6 +1021,11 @@ strong {
             .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
               content:none;
             }
+
+            /* remove column border on all tertiary story-items in Recent Stories */
+            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
+              content:none;
+            }
         } /* end of borders medium breakpoint */
 
 
@@ -1031,6 +1036,12 @@ strong {
             .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+4):nth-of-type(2n)::after  {
               content:none;
             }
+
+            /* remove column border on all tertiary story-items in Recent Stories */
+            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
+              content:none;
+            }
+
         } /* end of borders tertiary breakpoint */
 
 
@@ -1041,6 +1052,16 @@ strong {
             .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
               content:none;
             }
+
+            /* remove column border on all tertiary story-items in Recent Stories */
+            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
+              content:none;
+            }
+
+            /* This would remove row borders on tertiary story-items in Recent Stories
+            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+9)::before  {
+              content: none;
+            } */
 
             /* add column borders around Insider molecules */
             .hmpg-org-tyee-insider > div:not(:last-of-type)::after {
