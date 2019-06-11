@@ -2068,7 +2068,6 @@ strong {
           .site-nav__search-dropdown {
             /* display: none; */
             grid-column: 1 / -1;
-            padding-right: 2rem;
             padding-top: 2rem;
             padding-bottom: 2rem;
             margin-top: .5rem;
@@ -2251,6 +2250,7 @@ strong {
                 grid-template-rows: auto auto auto auto auto auto auto 1fr;
                 width: 100vw;
                 padding-left: 2rem;
+                padding-right: 2rem;
                 min-height: 100vh;
                 padding-bottom: 8rem;
                 background-color: #444;
