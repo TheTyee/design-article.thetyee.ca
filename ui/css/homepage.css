@@ -2057,16 +2057,34 @@ strong {
       }
 
 
-      /* SEARCH DROPDOWN EXPANDER */
+
+      /* NAV DROPDOWN EXPANDER */
       /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
       This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
       An alternative (although less robust) method is to use anchors links:
       https://jsfiddle.net/Algreenwich/uym9s0bg/
       https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
-          /* DEFAULT state: Search Dropdown is hidden */
+          /* DEFAULT state: Dropdown Menu is hidden */
+          .site-nav__dropdown {
+            display: none ;
+            grid-column: 1 / -1;
+          }
+
+          /* ACTIVATED state: Menu is shown and toggle icon is inverted */
+          #expander--nav-menu:checked ~ .site-nav__dropdown {
+            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+          }
+          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
+          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
+            transform: rotate(180deg);
+          }
+
+      /* SEARCH DROPDOWN EXPANDER */
+      /* Search Dropdown is now integrated into the Nav Dropdown and the Search button is
+         just another label for the input#expander--nav-menu checkbox */
+
           .site-nav__search-dropdown {
-            /* display: none; */
             grid-column: 1 / -1;
             padding-top: 2rem;
             padding-bottom: 2rem;
@@ -2095,34 +2113,6 @@ strong {
 
           form input {
             padding-left: .65em;
-          }
-
-          /* ACTIVATED state: Search Dropdown is shown */
-          #expander--search:checked ~ .site-nav__search-dropdown {
-            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
-          }
-
-
-      /* NAV DROPDOWN EXPANDER */
-      /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
-      This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
-      An alternative (although less robust) method is to use anchors links:
-      https://jsfiddle.net/Algreenwich/uym9s0bg/
-      https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
-
-          /* DEFAULT state: Dropdown Menu is hidden */
-          .site-nav__dropdown {
-            display: none ;
-            grid-column: 1 / -1;
-          }
-
-          /* ACTIVATED state: Menu is shown and toggle icon is inverted */
-          #expander--nav-menu:checked ~ .site-nav__dropdown {
-            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
-          }
-          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
-          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
-            transform: rotate(180deg);
           }
 
       /* SUB-NAV DROPDOWN EXPANDERS */
