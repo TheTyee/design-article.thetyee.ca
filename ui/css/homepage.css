@@ -599,6 +599,11 @@ body {
               margin-right: 11.5rem;
             }
 
+            .hmpg-org-pinned-story .story-item--primary.story-item--reverse .badge--story-item-placement {
+              transform: scale(1.2);
+              right: -3em;
+            }
+
         }
 /* end of Story Items Typography */
 
