@@ -1203,7 +1203,7 @@ strong {
           color: var(--brand-colour--text);
           background-color: none;
           font-family: var(--typeface-display);
-          font-weight: 900;
+          font-weight: 800;
           font-size: 1.1em;
         }
 /* end of Counter List molecule */
