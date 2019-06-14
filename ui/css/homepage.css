@@ -92,7 +92,7 @@ body{
   --typeface-display-large: miller-banner, georgia, serif;
 }
 
-.homepage--harriet {
+.homepage--harriet, .homepage--harriet_b {
   --typeface-serif: Harriet-Texttest, georgia, serif;
   --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
 
@@ -454,6 +454,10 @@ body {
    text-transform: capitalize;
 
    margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
+}
+
+.homepage--harriet_b .story-item__headline {
+  font-weight: 700;
 }
 
 .category-label {
