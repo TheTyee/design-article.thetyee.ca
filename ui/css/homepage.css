@@ -548,7 +548,7 @@ body {
 
     .story-item--minimum .story-item__headline {
       font-family: var(--typeface-display-medium);
-      font-weight: 600;
+      /* font-weight: 600; */
       line-height: 3rem;
       margin-bottom: 0rem;
     }
