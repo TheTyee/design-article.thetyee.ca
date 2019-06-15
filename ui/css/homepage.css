@@ -403,7 +403,7 @@ body {
 }
 
     .m-comment-noted__label::before {
-      content: url(/ui/img/icon-comment-noted.svg);
+      content: url(../img/icon-comment-noted.svg);
       display: inline-block;
       position: absolute;
       left: 0em;
@@ -415,7 +415,7 @@ body {
 }
 
     .m-barometer__label::before {
-      content: url(/ui/img/icon-barometer.svg);
+      content: url(../img/icon-barometer.svg);
       display: inline-block;
       position: absolute;
       left: 0.2em;
@@ -2087,7 +2087,7 @@ strong {
     }
 
       .nav__link--join::before {
-        content: url('/ui/img/icon-dollar-heart.svg');
+        content: url('../img/icon-dollar-heart.svg');
         display: block;
         position: absolute;
         left: -1.5em;
@@ -2101,7 +2101,7 @@ strong {
     }
 
       .nav__link--search::before {
-        content: url('/ui/img/icon-search.svg');
+        content: url('../img/icon-search.svg');
         display: inline-block;
         position: absolute;
         left: -1.35em;
@@ -2453,7 +2453,7 @@ strong {
                     left: 0;
                     width: 100%;
                     height: 1rem;
-                    background-image: url(/ui/img/texture-dotscreen-1.2x.svg);
+                    background-image: url(../img/texture-dotscreen-1.2x.svg);
                   }
 
                   /* heavy-border below */
