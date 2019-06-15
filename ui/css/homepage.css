@@ -92,10 +92,41 @@ body{
   --typeface-display-large: miller-banner, georgia, serif;
 }
 
+.homepage--harriet, .homepage--harriet_b {
+  --typeface-serif: Harriet-Texttest, georgia, serif;
+  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
 
+  --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
 
+  --typeface-display: Harriet-Texttest, georgia, serif;
+  --typeface-display-small: Harriet-Texttest, georgia, serif;
+  --typeface-display-medium: Harriet-DisplayTest, georgia, serif;
+  --typeface-display-large: Harriet-DisplayTest, georgia, serif;
+}
 
+.homepage--harriet_c {
+  --typeface-serif: Harriet-Texttest, georgia, serif;
+  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
 
+  --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
+
+  --typeface-display: Harriet-Texttest, georgia, serif;
+  --typeface-display-small: Harriet-Texttest, georgia, serif;
+  --typeface-display-medium: Harriet-Texttest, georgia, serif;
+  --typeface-display-large: Harriet-Texttest, georgia, serif;
+}
+
+.homepage--harriet-some {
+  --typeface-serif: miller-text, georgia, serif;
+  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+
+  --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
+
+  --typeface-display: miller-text, georgia, serif;
+  --typeface-display-small: Harriet-Texttest, georgia, serif;
+  --typeface-display-medium: Harriet-Texttest, georgia, serif;
+  --typeface-display-large: Harriet-DisplayTest, georgia, serif;
+}
 
 
 
@@ -383,7 +414,7 @@ body {
 }
 
     .m-comment-noted__label::before {
-      content: url(/ui/img/icon-comment-noted.svg);
+      content: url(../img/icon-comment-noted.svg);
       display: inline-block;
       position: absolute;
       left: 0em;
@@ -395,7 +426,7 @@ body {
 }
 
     .m-barometer__label::before {
-      content: url(/ui/img/icon-barometer.svg);
+      content: url(../img/icon-barometer.svg);
       display: inline-block;
       position: absolute;
       left: 0.2em;
@@ -446,6 +477,10 @@ body {
    text-transform: capitalize;
 
    margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
+}
+
+.homepage--harriet_b .story-item__headline {
+  font-weight: 700;
 }
 
 .category-label {
@@ -540,7 +575,7 @@ body {
 
     .story-item--minimum .story-item__headline {
       font-family: var(--typeface-display-medium);
-      font-weight: 600;
+      /* font-weight: 600; */
       line-height: 3rem;
       margin-bottom: 0rem;
     }
@@ -1203,7 +1238,7 @@ strong {
           color: var(--brand-colour--text);
           background-color: none;
           font-family: var(--typeface-display);
-          font-weight: 900;
+          font-weight: 800;
           font-size: 1.1em;
         }
 /* end of Counter List molecule */
@@ -2063,7 +2098,7 @@ strong {
     }
 
       .nav__link--join::before {
-        content: url('/ui/img/icon-dollar-heart.svg');
+        content: url('../img/icon-dollar-heart.svg');
         display: block;
         position: absolute;
         left: -1.5em;
@@ -2077,7 +2112,7 @@ strong {
     }
 
       .nav__link--search::before {
-        content: url('/ui/img/icon-search.svg');
+        content: url('../img/icon-search.svg');
         display: inline-block;
         position: absolute;
         left: -1.35em;
@@ -2429,7 +2464,7 @@ strong {
                     left: 0;
                     width: 100%;
                     height: 1rem;
-                    background-image: url(/ui/img/texture-dotscreen-1.2x.svg);
+                    background-image: url(../img/texture-dotscreen-1.2x.svg);
                   }
 
                   /* heavy-border below */

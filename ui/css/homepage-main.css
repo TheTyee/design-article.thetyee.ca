@@ -7,6 +7,8 @@
 /* Fonts */
 /* Miller and Franklin Gothic */
 @import url("https://use.typekit.net/whf8gkh.css");
+/* Harriet test fonts */
+@import "fonts-harriet.css";
 
 /* Add the new CSS for the homepage */
 /* NOTE: For jekyll dev purposes the main css code should be @import'ed rather
