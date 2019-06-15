@@ -116,6 +116,17 @@ body{
   --typeface-display-large: Harriet-Texttest, georgia, serif;
 }
 
+.homepage--harriet-some {
+  --typeface-serif: miller-text, georgia, serif;
+  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+
+  --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
+
+  --typeface-display: miller-text, georgia, serif;
+  --typeface-display-small: Harriet-Texttest, georgia, serif;
+  --typeface-display-medium: Harriet-Texttest, georgia, serif;
+  --typeface-display-large: Harriet-DisplayTest, georgia, serif;
+}
 
 
 
