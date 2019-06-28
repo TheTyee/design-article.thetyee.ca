@@ -2629,31 +2629,60 @@ strong {
 
 /* SITE FOOTER organism ----------------- */
 
-.site-footer--homepage {
+.site-footer {
   position: relative;
   display: grid;
   padding-top: 4rem;
   padding-bottom: var(--gutter-row);
+  grid-template-columns: repeat(auto-fit, 140px);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 2rem;
-  justify-items: center;
-  align-items: end;
-
+  align-items: start;
+  justify-content: center;
   color: #eee;
   background-color: #444;
 
-  text-align: center;
 }
+
+    .site-footer div {
+      padding-bottom: 2rem;
+      text-align: center
+    }
+
+    .site-footer .facebook {
+      padding-right: 2rem;
+    }
+
+.links-group {
+  display:grid;
+  grid-template-rows: auto;
+}
+
+    .links-group h2 {
+      min-height: 4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .links-group a {
+      color: var(--brand-colour);
+    }
 
 
       /* ---- SITE FOOTER responsive enhancement ---- */
       /*  */
 
-      /*  Site Header NON-STANDARD BREAKPOINT -- 850px */
-      @media screen and (min-width: 850px) {
+      /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
+      @media screen and (min-width: 704px) {
 
-        .site-footer--homepage {
-          grid-template-columns: repeat(7, 1fr);
+        .site-footer {
+          justify-content: left;
+        }
+
+        .site-footer div {
+          padding-bottom: 2rem;
+          text-align: left
         }
 
       }
