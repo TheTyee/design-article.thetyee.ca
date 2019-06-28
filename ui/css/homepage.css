@@ -2632,13 +2632,13 @@ strong {
 .site-footer {
   position: relative;
   display: grid;
-  padding-top: 4rem;
-  padding-bottom: var(--gutter-row);
   grid-template-columns: repeat(auto-fit, 140px);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 2rem;
   align-items: start;
   justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: var(--gutter-row);
   color: #eee;
   background-color: #444;
 
@@ -2677,14 +2677,23 @@ strong {
       @media screen and (min-width: 704px) {
 
         .site-footer {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
           justify-content: left;
         }
 
         .site-footer div {
           padding-bottom: 2rem;
-          text-align: left
+          text-align: left;
         }
+      }
 
+
+      /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
+      @media screen and (min-width: 950px) {
+
+        .site-footer {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
       }
 
 /* End of Site Footer organism */
