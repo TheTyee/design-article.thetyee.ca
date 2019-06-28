@@ -1397,13 +1397,14 @@ strong {
 
                  /* Scale Half-page Adblock so it doesn't break the grid */
                 .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
+                  position: relative;
                   grid-area: ad;
-                  overflow: hidden;
                 }
 
                     .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
-                      transform: scale(.76);
-                      transform-origin: 0% 0%;
+                      position: absolute;
+                      /* transform: scale(.76);
+                      transform-origin: 0% 0%; This would scale the add to stay with the grid column width */
                     }
 
           } /* end of Recent Stories Adblock Breakpoint */
