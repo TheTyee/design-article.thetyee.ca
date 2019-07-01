@@ -700,11 +700,14 @@ strong {
   -moz-appearance: none;
 }
 
-    .button--barometer {
-      display: block;
+    .button--dark-bg {
       color: var(--text-colour);
       background-color: hsla(0, 0%, 100%, 0.3);
       border: 2px solid white;
+    }
+
+    .button--barometer {
+      display: block;
     }
 
         .site-nav__search-form .button {
