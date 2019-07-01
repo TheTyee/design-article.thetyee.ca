@@ -2010,9 +2010,50 @@ strong {
 /* BUILDER organism ----------------- */
 
 .hmpg-org-builder {
+  margin-top: -1px; /* offsets 1px border */
+  border-top: 1px solid var(--text-colour);
   padding-top: 4rem;
   background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
 }
+
+.builder__content {
+    position: relative;
+    display: grid;
+    grid-column-gap: var(--gutter-column);
+    grid-row-gap: 0;
+    grid-template-areas:
+        "image"
+        "headline"
+        "deck"
+        "cta";
+}
+
+    .builder__image {
+        display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
+        position: relative;
+    }
+
+    .builder__image { grid-area: image; }
+    .builder__headline { grid-area: headline; }
+    .builder__deck { grid-area: deck; }
+    .builder__cta { grid-area: cta; }
+
+    /* Builder text styles */
+
+    .builder__headline {
+      font-family: var(--typeface-display-large);
+      line-height: 4rem;
+      font-size: 2.33em;
+      margin: 2rem 0 2rem;
+    }
+
+    .builder__deck {
+      font-family: var(--typeface-serif);
+      font-size: 1.33em;
+      line-height: 3rem;
+      color: var(--text-colour);
+      margin: 0 0 3rem;
+    }
 
 /* end of Builder organism */
 
