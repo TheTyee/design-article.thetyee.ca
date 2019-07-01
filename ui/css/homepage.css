@@ -2654,6 +2654,14 @@ strong {
       padding-right: 2rem;
     }
 
+    .site-footer .site-footer__logo-container {
+      display: none;
+    }
+
+    .site-footer .site-footer__logo {
+      width: 80%;
+    }
+
 .links-group {
   display:grid;
   grid-template-rows: auto;
@@ -2695,6 +2703,15 @@ strong {
 
         .site-footer {
           grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+
+
+      /*  Site Header LARGE BREAKPOINT -- 1369px */
+      @media screen and (min-width: 1369px) {
+
+        .site-footer .site-footer__logo-container {
+          display: block;
         }
       }
 
