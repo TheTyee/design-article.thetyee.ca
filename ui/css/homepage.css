@@ -2650,10 +2650,6 @@ strong {
       text-align: center
     }
 
-    .site-footer .facebook {
-      padding-right: 2rem;
-    }
-
     .site-footer .site-footer__logo-container {
       display: none;
     }
@@ -2695,6 +2691,11 @@ strong {
           padding-bottom: 2rem;
           text-align: left;
         }
+
+        .site-footer .facebook {
+          padding-right: 2rem;
+        }
+
       }
 
 
