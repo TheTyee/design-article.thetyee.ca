@@ -2537,6 +2537,7 @@ strong {
 
                   .site-nav__dropdown a {
                     color: var(--brand-colour);
+                    line-height: 2.5rem
                   }
 
                     .expander-content__section-submenu,
@@ -2667,6 +2668,7 @@ strong {
 
     .links-group a {
       color: var(--brand-colour);
+      line-height: 2.5rem;
     }
 
 
