@@ -2058,6 +2058,10 @@ strong {
       max-width: 280px
     }
 
+    .button--builder span {
+      color: var(--brand-colour);
+    }
+
     /* Builder text styles */
 
     .builder__headline {
