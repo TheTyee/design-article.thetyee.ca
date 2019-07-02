@@ -594,9 +594,43 @@ body {
                 text-transform: none ;
               }
 
-          .story-item--tertiary .story-item__headline {
+          /* Reduce size of Primary headlines so that they don't take up too much
+             vertical space in a 2-col layout */
+          .story-item--primary .story-item__headline {
+            line-height: 3rem; /* this is 2 x baseline */
+            font-size: 1.65em;
+            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
           }
 
+          /* Keep large size of Primary headlines in module that have more space for them */
+          .m-tyee-insider__main .story-item--primary .story-item__headline,
+          .hmpg-org-deep-dive .story-item--primary .story-item__headline {
+            font-family: var(--typeface-display-large);
+            line-height: 4rem; /* this is 2 x baseline */
+            font-size: 2.33em;
+            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+          }
+        }
+
+        /*  STORY ITEMS TYPOGRAPHY TERTIARY BREAKPOINT -- breakpoint-width-tertiary: 1000px */
+        @media screen and (min-width: 1000px) {
+
+          .story-item--primary .story-item__headline {
+            font-family: var(--typeface-display-large);
+            line-height: 4rem; /* this is 2 x baseline */
+            font-size: 2.33em;
+            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+          }
+        }
+
+        /*  STORY ITEMS TYPOGRAPHY ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px - 1367px */
+        @media screen and (min-width: 1180px) and (max-width: 1367px) {
+          /* Reduce size of Primary headlines in Recent Stories module because halfpage adblock
+             is reducing the column width. */
+          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
+            line-height: 3rem; /* this is 2 x baseline */
+            font-size: 1.65em;
+          }
         }
 
         /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
@@ -700,11 +734,19 @@ strong {
   -moz-appearance: none;
 }
 
-    .button--barometer {
-      display: block;
+    .button--dark-bg {
       color: var(--text-colour);
       background-color: hsla(0, 0%, 100%, 0.3);
       border: 2px solid white;
+    }
+
+    .button--dark {
+      color: white;
+      background-color: var(--text-colour);
+    }
+
+    .button--barometer {
+      display: block;
     }
 
         .site-nav__search-form .button {
@@ -1258,6 +1300,13 @@ strong {
   padding-bottom: calc(var(--gutter-row) + 2rem);
 }
 
+/* Omit top border and padding from first modules
+   (This will maintain correct borders when the order of modules changes) */
+.hmpg-org-wrapper:not(:first-of-type) {
+  margin-top: -1px; /* Offsets 1px border and realigns to baseline grid */
+  padding-top: calc(2rem - 0px);
+  border-top: 1px solid var(--text-colour);
+}
 
 
 /* HMPG RECENT STORIES organism ---------- */
@@ -1267,11 +1316,11 @@ strong {
 
 .hmpg-org-recent-stories__list {
       /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
-  display: grid;
-  width: 100%;
-  grid-column-gap: var(--gutter-column);
-  grid-row-gap: var(--gutter-row);
-  margin-bottom: -1.5rem; /* Realigns with baseline grid (content may still throw it off)   */
+      display: grid;
+      width: 100%;
+      grid-column-gap: var(--gutter-column);
+      grid-row-gap: var(--gutter-row);
+      margin-bottom: 0rem;/* Aligns with baseline grid (content may still throw it off)   */
                           /* Decimal values in the .story-item--tertiary headline line-height
                              (at some medium and large views)cause a browser rounding error
                              that throws throws off the baseline grid.                      */
@@ -1397,12 +1446,13 @@ strong {
 
                  /* Scale Half-page Adblock so it doesn't break the grid */
                 .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
+                  position: relative;
                   grid-area: ad;
-                  overflow: hidden;
                 }
 
                     .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
-                      transform: scale(.76);
+                      position: absolute;
+                      transform: scale(.9);
                       transform-origin: 0% 0%;
                     }
 
@@ -1470,10 +1520,6 @@ strong {
   display: grid;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-
-  margin-top: -1px; /* Offsets 1px border and realigns to baseline grid */
-  padding-top: calc(2rem - 0px);
-  border-top: 1px solid var(--text-colour);
 
   background-color: var(--brand-colour--mod-bg);
 }
@@ -1750,32 +1796,32 @@ strong {
 .hmpg-org-pinned-story {
   z-index: 10; /* So that bottom border doesn't fall underneath
                   the BG of next module due to negative margin */
-
-  margin-top: -4px; /* compensates for top border width */
-  border-top: 4px solid var(--text-colour);
   padding-top: var(--gutter-row);
-  border-bottom: 4px solid var(--text-colour);
-  margin-bottom: -4px; /* compensates for bottom border width */
 }
-     /* Set second top border */
-    .hmpg-org-pinned-story::before {
+
+    .hmpg-org-pinned-story .story-item {
+      padding-top: calc(var(--gutter-row) - 2rem);
+    }
+
+    /* Set second top border */
+    /* .hmpg-org-pinned-story::before {
       content:"";
       position: absolute;
       top: 3px;
       left: 0;
       width: 100%;
       border-top: 1px solid var(--text-colour);
-    }
+    } */
 
      /* Set second bottom border */
-    .hmpg-org-pinned-story::after {
+    /* .hmpg-org-pinned-story::after {
       content:"";
       position: absolute;
       bottom: 3px;
       left: 0;
       width: 100%;
       border-top: 1px solid var(--text-colour);
-    }
+    } */
 
 
 /* End of Pinned Story organism */
@@ -1787,8 +1833,6 @@ strong {
 .hmpg-org-deep-dive {
 
   display: grid;
-  margin-top: 0;
-  padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
   background-color: hsla(0, 0%, 90%, 0.68); /* For testing purposes */ /* AG - temporary tansparency to show grid */
@@ -1906,6 +1950,10 @@ strong {
   grid-row-gap: var(--gutter-row);
   /* margin-top: -1px; /* offsets 1px border
   border-top: 1px solid var(--text-colour); in narrow views put borders on each column */
+
+  /* In narrow views override universal top border (border is on each column)  */
+  border-top: none !important;
+  margin-top: 0 !important;
 }
 
 .hmpg-org-most--column {
@@ -1932,9 +1980,10 @@ strong {
           grid-template-columns: 1fr 1fr 1fr;
 
           /* Set top border on outer container instead of on each column */
-          margin-top: -1px; /* offsets 1px border */
-          border-top: 1px solid var(--text-colour);
+          margin-top: -1px !important; /* offsets 1px border */
+          border-top: 1px solid var(--text-colour) !important;
         }
+
         /* Remove top borders from each column */
         .hmpg-org-most--column {
           margin-top: 0; /* offsets 1px border */
@@ -1954,9 +2003,6 @@ strong {
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 0;
   align-items: start;
-    margin-top: -1px; /* offsets 1px border */
-  border-top: 1px solid var(--text-colour);
-
 }
 
 
@@ -2000,6 +2046,112 @@ strong {
       }
 
 /* End of Reported Elsewhere organism */
+
+
+
+/* BUILDER organism ----------------- */
+
+.hmpg-org-builder {
+  display: grid;
+  justify-content: center;
+  padding-top: 3rem !important;
+  background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing: hsla(51, 100%, 50%, 0.3); should be var(--brand-colour--mod-bg) */
+}
+
+.builder__content {
+    position: relative;
+    max-width: 1000px;
+    display: grid;
+    justify-items: center;
+    grid-column-gap: var(--gutter-column-half);
+    grid-row-gap: 0;
+    grid-template-areas:
+        "image"
+        "headline"
+        "deck"
+        "cta";
+    text-align: center;
+}
+
+    .builder__image { grid-area: image; }
+    .builder__headline { grid-area: headline; }
+    .builder__deck { grid-area: deck; }
+    .builder__cta { grid-area: cta; }
+
+
+    .builder__image {
+        display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
+        position: relative;
+    }
+
+    .builder__image img {
+        width: 100%;
+        max-height: 14rem;
+    }
+
+    .button--builder {
+      max-width: 280px
+    }
+
+    .button--builder span {
+      color: var(--brand-colour);
+    }
+
+    /* Builder text styles */
+
+    .builder__headline {
+      font-family: var(--typeface-display-large);
+      line-height: 4rem;
+      font-size: 2.33em;
+      margin: 2rem 0 2rem;
+    }
+
+    .builder__deck {
+      font-family: var(--typeface-serif);
+      font-size: 1.33em;
+      line-height: 3rem;
+      color: var(--text-colour);
+      margin: 0 0 3rem;
+    }
+
+        /*  BUILDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+        @media screen and (min-width: 684px) {
+
+            .hmpg-org-builder {
+              padding-top: 4rem;
+            }
+
+            .builder__content {
+              justify-items: stretch;
+              grid-template-columns: 1fr 3fr;
+              grid-template-rows: auto auto 1fr;
+              align-content: center;
+              grid-template-areas:
+                "image headline"
+                "image deck"
+                "image cta";
+              text-align: left;
+            }
+
+            .builder__image {
+              justify-self:end;
+            }
+
+            .builder__image img {
+              width: 100%;
+              max-width: 20rem;
+              max-height: none;
+            }
+
+            .builder__headline {
+              margin-top: 3rem;
+              align-self: end;
+            }
+
+        } /* end of Builder medium breakpoint */
+
+
+/* end of Builder organism */
 
 
 
@@ -2536,6 +2688,7 @@ strong {
 
                   .site-nav__dropdown a {
                     color: var(--brand-colour);
+                    line-height: 2.5rem
                   }
 
                     .expander-content__section-submenu,
@@ -2628,33 +2781,89 @@ strong {
 
 /* SITE FOOTER organism ----------------- */
 
-.site-footer--homepage {
+.site-footer {
   position: relative;
   display: grid;
-  padding-top: 4rem;
-  padding-bottom: var(--gutter-row);
+  grid-template-columns: repeat(auto-fit, 140px);
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 2rem;
-  justify-items: center;
-  align-items: end;
-
+  align-items: start;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: var(--gutter-row);
   color: #eee;
   background-color: #444;
 
-  text-align: center;
 }
+
+    .site-footer div {
+      padding-bottom: 2rem;
+      text-align: center
+    }
+
+    .site-footer .facebook {
+      padding-bottom: 2rem;
+    }
+
+    .site-footer .site-footer__logo-container {
+      display: none;
+    }
+
+    .site-footer .site-footer__logo {
+      width: 80%;
+    }
+
+.links-group {
+  display:grid;
+  grid-template-rows: auto;
+}
+
+    .links-group h2 {
+      min-height: 4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .links-group a {
+      color: var(--brand-colour);
+      line-height: 2.5rem;
+    }
 
 
       /* ---- SITE FOOTER responsive enhancement ---- */
       /*  */
 
-      /*  Site Header NON-STANDARD BREAKPOINT -- 850px */
-      @media screen and (min-width: 850px) {
+      /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
+      @media screen and (min-width: 704px) {
 
-        .site-footer--homepage {
-          grid-template-columns: repeat(7, 1fr);
+        .site-footer {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          justify-content: left;
         }
 
+        .site-footer div {
+          padding-bottom: 2rem;
+          text-align: left;
+        }
+      }
+
+
+      /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
+      @media screen and (min-width: 950px) {
+
+        .site-footer {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+
+
+      /*  Site Header LARGE BREAKPOINT -- 1369px */
+      @media screen and (min-width: 1369px) {
+
+        .site-footer .site-footer__logo-container {
+          display: block;
+        }
       }
 
 /* End of Site Footer organism */
