@@ -1300,7 +1300,7 @@ strong {
   padding-bottom: calc(var(--gutter-row) + 2rem);
 }
 
-.hmpg-org-wrapper:not(.site-header):not(.hmpg-org-recent-stories) {
+.hmpg-org-wrapper:not(.site-header):not(.hmpg-org-recent-stories):not(.site-footer) {
   margin-top: -1px; /* Offsets 1px border and realigns to baseline grid */
   padding-top: calc(2rem - 0px);
   border-top: 1px solid var(--text-colour);
@@ -1831,8 +1831,6 @@ strong {
 .hmpg-org-deep-dive {
 
   display: grid;
-  margin-top: 0;
-  padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
   background-color: hsla(0, 0%, 90%, 0.68); /* For testing purposes */ /* AG - temporary tansparency to show grid */
@@ -1950,6 +1948,10 @@ strong {
   grid-row-gap: var(--gutter-row);
   /* margin-top: -1px; /* offsets 1px border
   border-top: 1px solid var(--text-colour); in narrow views put borders on each column */
+
+  /* In narrow views override universal top border (border is on each column)  */
+  border-top: none !important;
+  margin-top: 0 !important;
 }
 
 .hmpg-org-most--column {
@@ -1976,9 +1978,10 @@ strong {
           grid-template-columns: 1fr 1fr 1fr;
 
           /* Set top border on outer container instead of on each column */
-          margin-top: -1px; /* offsets 1px border */
-          border-top: 1px solid var(--text-colour);
+          margin-top: -1px !important; /* offsets 1px border */
+          border-top: 1px solid var(--text-colour) !important;
         }
+
         /* Remove top borders from each column */
         .hmpg-org-most--column {
           margin-top: 0; /* offsets 1px border */
@@ -1998,9 +2001,6 @@ strong {
   grid-column-gap: var(--gutter-column);
   grid-row-gap: 0;
   align-items: start;
-    margin-top: -1px; /* offsets 1px border */
-  border-top: 1px solid var(--text-colour);
-
 }
 
 
@@ -2052,9 +2052,7 @@ strong {
 .hmpg-org-builder {
   display: grid;
   justify-content: center;
-  margin-top: -1px; /* offsets 1px border */
-  border-top: 1px solid var(--text-colour);
-  padding-top: 3rem;
+  padding-top: 3rem !important;
   background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing: hsla(51, 100%, 50%, 0.3); should be var(--brand-colour--mod-bg) */
 }
 
