@@ -1309,11 +1309,11 @@ strong {
 
 .hmpg-org-recent-stories__list {
       /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
-  display: grid;
-  width: 100%;
-  grid-column-gap: var(--gutter-column);
-  grid-row-gap: var(--gutter-row);
-  margin-bottom: -1.5rem; /* Realigns with baseline grid (content may still throw it off)   */
+      display: grid;
+      width: 100%;
+      grid-column-gap: var(--gutter-column);
+      grid-row-gap: var(--gutter-row);
+      margin-bottom: 0rem;/* Aligns with baseline grid (content may still throw it off)   */
                           /* Decimal values in the .story-item--tertiary headline line-height
                              (at some medium and large views)cause a browser rounding error
                              that throws throws off the baseline grid.                      */
