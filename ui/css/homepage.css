@@ -706,6 +706,11 @@ strong {
       border: 2px solid white;
     }
 
+    .button--dark {
+      color: white;
+      background-color: var(--text-colour);
+    }
+
     .button--barometer {
       display: block;
     }
@@ -2047,6 +2052,10 @@ strong {
     .builder__image img {
         width: 100%;
         max-height: 14rem;
+    }
+
+    .button--builder {
+      max-width: 280px
     }
 
     /* Builder text styles */
