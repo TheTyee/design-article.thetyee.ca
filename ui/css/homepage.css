@@ -594,9 +594,22 @@ body {
                 text-transform: none ;
               }
 
-          .story-item--tertiary .story-item__headline {
+          .story-item--primary .story-item__headline {
+            line-height: 3rem; /* this is 2 x baseline */
+            font-size: 1.65em;
+            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
           }
+        }
 
+        /*  STORY ITEMS TYPOGRAPHY TERTIARY BREAKPOINT -- breakpoint-width-tertiary: 1000px */
+        @media screen and (min-width: 1000px) {
+
+          .story-item--primary .story-item__headline {
+            font-family: var(--typeface-display-large);
+            line-height: 4rem; /* this is 2 x baseline */
+            font-size: 2.33em;
+            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+          }
         }
 
         /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
