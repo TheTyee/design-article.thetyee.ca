@@ -594,9 +594,20 @@ body {
                 text-transform: none ;
               }
 
+          /* Reduce size of Primary headlines so that they don't take up too much
+             vertical space in a 2-col layout */
           .story-item--primary .story-item__headline {
             line-height: 3rem; /* this is 2 x baseline */
             font-size: 1.65em;
+            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+          }
+
+          /* Keep large size of Primary headlines in module that have more space for them */
+          .m-tyee-insider__main .story-item--primary .story-item__headline,
+          .hmpg-org-deep-dive .story-item--primary .story-item__headline {
+            font-family: var(--typeface-display-large);
+            line-height: 4rem; /* this is 2 x baseline */
+            font-size: 2.33em;
             margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
           }
         }
