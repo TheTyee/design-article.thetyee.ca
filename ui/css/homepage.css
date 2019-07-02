@@ -1988,6 +1988,7 @@ strong {
         .hmpg-org-most--column {
           margin-top: 0; /* offsets 1px border */
           border-top: 0;
+          padding-top: 0;
         }
       }
 
