@@ -2014,8 +2014,8 @@ strong {
   justify-content: center;
   margin-top: -1px; /* offsets 1px border */
   border-top: 1px solid var(--text-colour);
-  padding-top: 4rem;
-  background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
+  padding-top: 2rem;
+  background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing: hsla(51, 100%, 50%, 0.3); should be var(--brand-colour--mod-bg) */
 }
 
 .builder__content {
@@ -2023,7 +2023,7 @@ strong {
     max-width: 1000px;
     display: grid;
     justify-items: center;
-    grid-column-gap: var(--gutter-column);
+    grid-column-gap: var(--gutter-column-half);
     grid-row-gap: 0;
     grid-template-areas:
         "image"
@@ -2033,21 +2033,21 @@ strong {
     text-align: center;
 }
 
+    .builder__image { grid-area: image; }
+    .builder__headline { grid-area: headline; }
+    .builder__deck { grid-area: deck; }
+    .builder__cta { grid-area: cta; }
+
+
     .builder__image {
         display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
         position: relative;
     }
 
-        .builder__image img {
+    .builder__image img {
         width: 100%;
-        max-height: 16rem;
+        max-height: 14rem;
     }
-
-
-    .builder__image { grid-area: image; }
-    .builder__headline { grid-area: headline; }
-    .builder__deck { grid-area: deck; }
-    .builder__cta { grid-area: cta; }
 
     /* Builder text styles */
 
@@ -2067,11 +2067,15 @@ strong {
     }
 
         /*  BUILDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-        @media screen and (min-width: 425px) {
+        @media screen and (min-width: 684px) {
+
+            .hmpg-org-builder {
+              padding-bottom: 2rem;
+            }
 
             .builder__content {
               justify-items: stretch;
-              grid-template-columns: auto 2.5fr;
+              grid-template-columns: 1fr 3fr;
               grid-template-rows: 1fr auto 1fr;
               align-content: center;
               grid-template-areas:
@@ -2081,7 +2085,18 @@ strong {
               text-align: left;
             }
 
+            .builder__image {
+              justify-self:end;
+            }
+
+            .builder__image img {
+              width: 100%;
+              max-width: 20rem;
+              max-height: none
+            }
+
             .builder__headline {
+              margin-top: 3rem;
               align-self: end;
             }
 
