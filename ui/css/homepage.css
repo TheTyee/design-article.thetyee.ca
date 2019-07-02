@@ -623,6 +623,16 @@ body {
           }
         }
 
+        /*  STORY ITEMS TYPOGRAPHY ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px - 1367px */
+        @media screen and (min-width: 1180px) and (max-width: 1367px) {
+          /* Reduce size of Primary headlines in Recent Stories module because halfpage adblock
+             is reducing the column width. */
+          .story-item--primary .story-item__headline {
+            line-height: 3rem; /* this is 2 x baseline */
+            font-size: 1.65em;
+          }
+        }
+
         /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
         @media screen and (min-width: 1368px) {
 
