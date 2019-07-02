@@ -2010,6 +2010,8 @@ strong {
 /* BUILDER organism ----------------- */
 
 .hmpg-org-builder {
+  display: grid;
+  justify-content: center;
   margin-top: -1px; /* offsets 1px border */
   border-top: 1px solid var(--text-colour);
   padding-top: 4rem;
@@ -2018,7 +2020,9 @@ strong {
 
 .builder__content {
     position: relative;
+    max-width: 1000px;
     display: grid;
+    justify-items: center;
     grid-column-gap: var(--gutter-column);
     grid-row-gap: 0;
     grid-template-areas:
@@ -2026,6 +2030,7 @@ strong {
         "headline"
         "deck"
         "cta";
+    text-align: center;
 }
 
     .builder__image {
@@ -2035,7 +2040,7 @@ strong {
 
         .builder__image img {
         width: 100%;
-        max-width: 30rem;
+        max-height: 16rem;
     }
 
 
@@ -2062,9 +2067,10 @@ strong {
     }
 
         /*  BUILDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-        @media screen and (min-width: 684px) {
+        @media screen and (min-width: 425px) {
 
             .builder__content {
+              justify-items: stretch;
               grid-template-columns: auto 2.5fr;
               grid-template-rows: 1fr auto 1fr;
               align-content: center;
@@ -2072,6 +2078,7 @@ strong {
                 "image headline"
                 "image deck"
                 "image cta";
+              text-align: left;
             }
 
             .builder__headline {
