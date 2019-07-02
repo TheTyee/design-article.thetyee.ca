@@ -1300,6 +1300,11 @@ strong {
   padding-bottom: calc(var(--gutter-row) + 2rem);
 }
 
+.hmpg-org-wrapper:not(.site-header):not(.hmpg-org-recent-stories) {
+  margin-top: -1px; /* Offsets 1px border and realigns to baseline grid */
+  padding-top: calc(2rem - 0px);
+  border-top: 1px solid var(--text-colour);
+}
 
 
 /* HMPG RECENT STORIES organism ---------- */
@@ -1513,10 +1518,6 @@ strong {
   display: grid;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-
-  margin-top: -1px; /* Offsets 1px border and realigns to baseline grid */
-  padding-top: calc(2rem - 0px);
-  border-top: 1px solid var(--text-colour);
 
   background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
 }
@@ -1793,13 +1794,14 @@ strong {
 .hmpg-org-pinned-story {
   z-index: 10; /* So that bottom border doesn't fall underneath
                   the BG of next module due to negative margin */
-  margin-top: -4px; /* compensates for top border width */
-  border-top: 4px solid var(--text-colour);
   padding-top: var(--gutter-row);
-  border-bottom: 4px solid var(--text-colour);
-  margin-bottom: -4px; /* compensates for bottom border width */
 }
-     /* Set second top border */
+
+    .hmpg-org-pinned-story .story-item {
+      padding-top: calc(var(--gutter-row) - 2rem);
+    }
+
+    /* Set second top border */
     /* .hmpg-org-pinned-story::before {
       content:"";
       position: absolute;
