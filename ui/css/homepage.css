@@ -2014,7 +2014,7 @@ strong {
   justify-content: center;
   margin-top: -1px; /* offsets 1px border */
   border-top: 1px solid var(--text-colour);
-  padding-top: 2rem;
+  padding-top: 3rem;
   background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing: hsla(51, 100%, 50%, 0.3); should be var(--brand-colour--mod-bg) */
 }
 
@@ -2070,7 +2070,8 @@ strong {
         @media screen and (min-width: 684px) {
 
             .hmpg-org-builder {
-              padding-bottom: 2rem;
+              padding-top: 4rem;
+              padding-bottom: 4rem;
             }
 
             .builder__content {
