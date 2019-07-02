@@ -1300,7 +1300,9 @@ strong {
   padding-bottom: calc(var(--gutter-row) + 2rem);
 }
 
-.hmpg-org-wrapper:not(.site-header):not(.hmpg-org-recent-stories):not(.site-footer) {
+/* Omit top border and padding from first modules
+   (This will maintain correct borders when the order of modules changes) */
+.hmpg-org-wrapper:not(:first-of-type) {
   margin-top: -1px; /* Offsets 1px border and realigns to baseline grid */
   padding-top: calc(2rem - 0px);
   border-top: 1px solid var(--text-colour);
