@@ -2071,13 +2071,12 @@ strong {
 
             .hmpg-org-builder {
               padding-top: 4rem;
-              padding-bottom: 4rem;
             }
 
             .builder__content {
               justify-items: stretch;
               grid-template-columns: 1fr 3fr;
-              grid-template-rows: 1fr auto 1fr;
+              grid-template-rows: auto auto 1fr;
               align-content: center;
               grid-template-areas:
                 "image headline"
@@ -2093,7 +2092,7 @@ strong {
             .builder__image img {
               width: 100%;
               max-width: 20rem;
-              max-height: none
+              max-height: none;
             }
 
             .builder__headline {
