@@ -1793,7 +1793,6 @@ strong {
 .hmpg-org-pinned-story {
   z-index: 10; /* So that bottom border doesn't fall underneath
                   the BG of next module due to negative margin */
-
   margin-top: -4px; /* compensates for top border width */
   border-top: 4px solid var(--text-colour);
   padding-top: var(--gutter-row);
@@ -1801,24 +1800,24 @@ strong {
   margin-bottom: -4px; /* compensates for bottom border width */
 }
      /* Set second top border */
-    .hmpg-org-pinned-story::before {
+    /* .hmpg-org-pinned-story::before {
       content:"";
       position: absolute;
       top: 3px;
       left: 0;
       width: 100%;
       border-top: 1px solid var(--text-colour);
-    }
+    } */
 
      /* Set second bottom border */
-    .hmpg-org-pinned-story::after {
+    /* .hmpg-org-pinned-story::after {
       content:"";
       position: absolute;
       bottom: 3px;
       left: 0;
       width: 100%;
       border-top: 1px solid var(--text-colour);
-    }
+    } */
 
 
 /* End of Pinned Story organism */
