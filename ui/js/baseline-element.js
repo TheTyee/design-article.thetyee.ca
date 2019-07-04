@@ -41,7 +41,9 @@
    */
    /**
     * Hardcode aspectRatio: 1.5, if it solves issues
-    * or enhances performance. */
+    * or enhances performance.
+    * Or keep at aspectRatio: (element.offsetWidth / element.offsetHeight)
+    * to allow more flexibility in aspect ratio. */
   function baselineElement (element, baseline) {
     if (!initialized) {
       initialize();
@@ -50,7 +52,7 @@
     element.style.objectFit = 'cover';
     element.style.width = '100%';
     var item = {
-      aspectRatio: (element.offsetWidth / element.offsetHeight),
+      aspectRatio: 1.5,
       element: element,
       baseline: baseline
     };
