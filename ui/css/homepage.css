@@ -1300,21 +1300,32 @@ strong {
   padding-bottom: calc(var(--gutter-row) + 2rem);
 }
 
-/* Omit top border and padding from first modules
-   (This will maintain correct borders when the order of modules changes) */
-.hmpg-org-wrapper:not(:first-of-type) {
-  padding-top: calc(2rem - 0px);
-}
+    main .hmpg-org-wrapper {
+      padding-top: calc(2rem - 0px);
+    }
 
-.hmpg-org-wrapper:not(:first-of-type)::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0;
-    grid-column: 1 / -1;
-    width: 100%;
-    border-bottom: 4px solid var(--text-colour);
-}
+        /* Omit top padding from first modules
+           (This will maintain correct padding when the order of modules changes) */
+        main .hmpg-org-wrapper:first-of-type {
+          padding-top: 0;
+        }
+
+    /* Create thick top border on modules that doesn't extend into page magins */
+    main .hmpg-org-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0;
+        grid-column: 1 / -1;
+        width: 100%;
+        border-bottom: 4px solid var(--text-colour);
+    }
+
+        /* Omit top border from first modules
+           (This will maintain correct borders when the order of modules changes) */
+        main .hmpg-org-wrapper:first-of-type::before {
+          content: none;
+        }
 
 
 /* HMPG RECENT STORIES organism ---------- */
