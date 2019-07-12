@@ -1303,9 +1303,17 @@ strong {
 /* Omit top border and padding from first modules
    (This will maintain correct borders when the order of modules changes) */
 .hmpg-org-wrapper:not(:first-of-type) {
-  margin-top: -1px; /* Offsets 1px border and realigns to baseline grid */
   padding-top: calc(2rem - 0px);
-  border-top: 1px solid var(--text-colour);
+}
+
+.hmpg-org-wrapper:not(:first-of-type)::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    grid-column: 1 / -1;
+    width: 100%;
+    border-bottom: 4px solid var(--text-colour);
 }
 
 
@@ -1794,6 +1802,7 @@ strong {
 /* PINNED STORY organism ----------------- */
 
 .hmpg-org-pinned-story {
+  display: grid;
   z-index: 10; /* So that bottom border doesn't fall underneath
                   the BG of next module due to negative margin */
   padding-top: var(--gutter-row);
