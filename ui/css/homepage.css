@@ -1968,23 +1968,31 @@ strong {
   display: grid;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-  /* margin-top: -1px; /* offsets 1px border
-  border-top: 1px solid var(--text-colour); in narrow views put borders on each column */
-
-  /* In narrow views override universal top border (border is on each column)  */
-  border-top: none !important;
-  margin-top: 0 !important;
 }
 
+    /* In narrow views override universal top border (border is on each column)  */
+    main .hmpg-org-most::before {
+      content: none;
+    }
+
 .hmpg-org-most--column {
+  position: relative;
   display: grid;
   grid-row-gap: var(--gutter-row-half);
-  margin-top: -1px; /* offsets 1px border */
-  border-top: 1px solid var(--text-colour);
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
 }
+
+.hmpg-org-most--column::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0;
+        grid-column: 1 / -1;
+        width: 100%;
+        border-bottom: 4px solid var(--text-colour);
+    }
 
     .hmpg-org-most--column .story-item__headline {
       margin-bottom: 0;
@@ -1998,17 +2006,20 @@ strong {
 
         .hmpg-org-most {
           grid-template-columns: 1fr 1fr 1fr;
+        }
 
-          /* Set top border on outer container instead of on each column */
-          margin-top: -1px !important; /* offsets 1px border */
-          border-top: 1px solid var(--text-colour) !important;
+        /* Set top border on outer container instead of on each column */
+        main .hmpg-org-most::before {
+          content: "";
         }
 
         /* Remove top borders from each column */
         .hmpg-org-most--column {
-          margin-top: 0; /* offsets 1px border */
-          border-top: 0;
           padding-top: 0;
+        }
+
+        .hmpg-org-most--column::before {
+          content: none;
         }
       }
 
