@@ -2090,6 +2090,11 @@ strong {
   background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing: hsla(51, 100%, 50%, 0.3); should be var(--brand-colour--mod-bg) */
 }
 
+  /* Override unversal module top border */
+  main .hmpg-org-builder::before {
+    content:none;
+  }
+
 .builder__content {
     position: relative;
     max-width: 1000px;
