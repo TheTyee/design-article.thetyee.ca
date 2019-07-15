@@ -1297,11 +1297,11 @@ strong {
 .hmpg-org-wrapper {
   position: relative;
   padding: 0 var(--page-margin-sides);
-  padding-bottom: calc(var(--gutter-row) + 2rem);
+  padding-bottom: calc(var(--gutter-row) + 0rem);
 }
 
     main .hmpg-org-wrapper {
-      padding-top: calc(2rem - 0px);
+      padding-top: calc(5rem - 0px);
     }
 
         /* Omit top padding from first modules
@@ -1314,7 +1314,7 @@ strong {
     main .hmpg-org-wrapper::before {
         content: "";
         position: absolute;
-        top: 0px;
+        top: 3rem;
         left: 0;
         grid-column: 1 / -1;
         width: 100%;
