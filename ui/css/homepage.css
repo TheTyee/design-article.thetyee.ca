@@ -1975,6 +1975,11 @@ strong {
       content: none;
     }
 
+    /* In narrow views adjust first column top border position to match other module top borders  */
+    .hmpg-org-most--column:first-child {
+      margin-top: -2rem;
+    }
+
 .hmpg-org-most--column {
   position: relative;
   display: grid;
@@ -2006,6 +2011,11 @@ strong {
 
         .hmpg-org-most {
           grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        /* In wider eliminate first column position adjustment  */
+        .hmpg-org-most--column:first-child {
+          margin-top: 0rem;
         }
 
         /* Set top border on outer container instead of on each column */
