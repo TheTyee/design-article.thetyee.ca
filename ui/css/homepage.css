@@ -2436,7 +2436,7 @@ strong {
           /* ---- SITE HEADER responsive enhancement ---- */
           /* -------------------------------------------- */
 
-          /*  Reported Elsewhere MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+          /*  Site Header MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
           @media screen and (min-width: 684px) {
             .site-header {
               padding-bottom: 2rem;
