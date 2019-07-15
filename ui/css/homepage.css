@@ -79,6 +79,17 @@ body{
 }
 
 
+/* Scroll-bounce Colours */
+
+html {
+  background-color: #444;
+}
+
+body {
+  background-color: white;
+}
+
+
 /* Typefaces */
 :root {
   --typeface-serif: miller-text, georgia, serif;
