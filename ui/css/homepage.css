@@ -1640,8 +1640,8 @@ strong {
   .m-comment-noted, .m-barometer {
 
     padding-top: 2rem;
-    border-top: 1px solid var(--text-colour);
-    margin-top: calc(2rem - 1px); /* Offsets the 1px border */
+    border-top: 4px solid var(--text-colour);
+    margin-top: calc(2rem - 4px); /* Offsets the 1px border */
 
   }
 
