@@ -2436,6 +2436,15 @@ strong {
           /* ---- SITE HEADER responsive enhancement ---- */
           /* -------------------------------------------- */
 
+
+          /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 600px */
+          @media screen and (min-width: 600px) {
+            .site-header {
+              padding-bottom: 1rem;
+            }
+          }
+
+
           /*  Site Header MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
           @media screen and (min-width: 684px) {
             .site-header {
@@ -2561,6 +2570,15 @@ strong {
 
           } /*  end os narrow breakpoint styles -- max-wdith 849px */
 
+
+          /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 425px */
+          @media screen and (min-width: 0px) and (max-width: 425px) {
+            /* Raise Nav to be parallel with logo in narrowest views */
+              .site-nav-main {
+                position: relative;
+                top: -5rem;
+              }
+          }
 
 
           /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
