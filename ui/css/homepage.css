@@ -76,13 +76,15 @@ body{
   --text-colour-light: #808080;
 
   --border-colour-cols: hsl(0, 0%, 74%);
+
+  --utility-background-color: #444; /* used for utility components like drop-down, footer, scroll-bounce */
 }
 
 
 /* Scroll-bounce Colours */
 
 html {
-  background-color: #444;
+  background-color: var(--utility-background-color);
 }
 
 body {
@@ -2359,7 +2361,7 @@ strong {
             padding-bottom: 3rem;
             margin-top: .5rem;
             margin-bottom: -.5rem;
-            background-color: #444;
+            background-color: var(--utility-background-color);
           }
 
           .site-nav__search-dropdown .site-nav__search-form {
@@ -2377,7 +2379,7 @@ strong {
             grid-template-columns: 4fr 1fr;
             font-size: .6em;
             height: 4rem;
-            border: 1px solid #444;
+            border: 1px solid var(--utility-background-color);
           }
 
           form input {
@@ -2512,7 +2514,7 @@ strong {
                 padding-right: 2rem;
                 min-height: 100vh;
                 padding-bottom: 8rem;
-                background-color: #444;
+                background-color: var(--utility-background-color);
                 color: #eee;
               }
 
@@ -2712,7 +2714,7 @@ strong {
                   align-items: start;
                   margin-top: .5rem;
                   padding-bottom: 7.5rem;
-                  background-color: #444;
+                  background-color: var(--utility-background-color);
                   color: #eee;
                 }
 
@@ -2846,7 +2848,7 @@ strong {
   padding-top: 4rem;
   padding-bottom: var(--gutter-row);
   color: #eee;
-  background-color: #444;
+  background-color: var(--utility-background-color);
 
 }
 
