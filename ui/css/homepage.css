@@ -2164,10 +2164,6 @@ strong {
         /*  BUILDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
 
-            .hmpg-org-builder {
-              padding-top: 4rem;
-            }
-
             .builder__content {
               justify-items: stretch;
               grid-template-columns: 1fr 3fr;
