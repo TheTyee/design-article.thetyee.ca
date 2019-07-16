@@ -142,6 +142,15 @@ body {
 }
 
 
+/* Typefaces for retina and high-dpi screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 195dpi) {
+  :root {
+    --typeface-display: miller-text, georgia, serif;
+    --typeface-display-small: miller-text, georgia, serif;
+    --typeface-display-medium: miller-text, georgia, serif;
+    --typeface-display-large: miller-display, georgia, serif;
+  }
+}
 
 
 /* RESPONSIVE SETTINGS */
