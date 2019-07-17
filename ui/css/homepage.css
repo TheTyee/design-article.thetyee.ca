@@ -3046,3 +3046,35 @@ strong {
 
 
 } /* end of Grid Guides */
+
+
+
+
+
+/*------------------------------------*\
+  #PATCHES
+\*------------------------------------*/
+
+/*  SET DEFAULT IMG HEIGHT FOR TERTIARY RECENT STORIES ITEMS */
+/*  Sets a default min-height for Tertiary Recent Stories items so that baseline-element.js doesn't set their height to zero.
+Some of the tertiary recent stories items are hidden and only revealed when the reader clicks "more recent stories" button. Baseline-element.js will set the height of imgs within display:none to zero unless a default height is set in advance. */
+/* Calculation:
+img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
+           =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 1          ) / img-aspect )
+*/
+.hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
+  min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 1 ) / 1.5 )
+}
+
+  /* RECENT STORIES DEFAULT IMG HEIGHT LARGE BREAKPOINT -- breakpoint: 1368px */
+  /* This is the same as above except that img-col-size is set to 0.5 because the img only occupies half the column width (minus a margin)*/
+  /* Calculation:
+  img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
+           =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 0.5          ) / img-aspect )
+  */
+  @media screen and (min-width: 1368px) {
+
+    .hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
+      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .45 ) / 1.5 )
+    }
+  }
