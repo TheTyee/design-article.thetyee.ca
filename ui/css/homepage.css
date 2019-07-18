@@ -76,6 +76,19 @@ body{
   --text-colour-light: #808080;
 
   --border-colour-cols: hsl(0, 0%, 74%);
+
+  --utility-background-color: #444; /* used for utility components like drop-down, footer, scroll-bounce */
+}
+
+
+/* Scroll-bounce Colours */
+
+html {
+  background-color: var(--utility-background-color);
+}
+
+body {
+  background-color: white;
 }
 
 
@@ -128,6 +141,46 @@ body{
   --typeface-display-large: Harriet-DisplayTest, georgia, serif;
 }
 
+
+/* Typefaces for retina and high-dpi screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 195dpi) {
+  :root {
+    --typeface-display: miller-text, georgia, serif;
+    --typeface-display-small: miller-text, georgia, serif;
+    --typeface-display-medium: miller-text, georgia, serif;
+    --typeface-display-large: miller-display, georgia, serif;
+  }
+}
+
+        /*  HIGH-DPI TYPOGRAPHY MEDIUM BRKPNT TO TERTIARY BREAKPOINT: 684px to 999px */
+        @media
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 684px) and (max-width: 999px),
+        (min-resolution: 195dpi) and (min-width: 684px) and (max-width: 999px) {
+
+          /* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
+             to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
+          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
+            font-weight: 700;
+          }
+
+          /* Increase weight of Pinned Stories headline (set in Miller Display)
+             to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
+          .hmpg-org-pinned-story .story-item--primary .story-item__headline {
+            font-weight: 700;
+          }
+        }
+
+        /*  HIGH-DPI TYPOGRAPHY TERTIARY BRKPNT TO LARGE BREAKPOINT: 1180px to 1367px */
+        @media
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 1180px) and (max-width: 1367px),
+        (min-resolution: 195dpi) and (min-width: 1180px) and (max-width: 1367px) {
+
+          /* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
+             to match weight of Secondary Story headlines (set in Miller Text) */
+          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
+            font-weight: 700;
+          }
+        }
 
 
 
@@ -687,6 +740,19 @@ body {
 a {
   text-decoration: none;
 }
+
+    /* link styles for body text of Insider and Deep Dive */
+    p a {
+      color: var(--brand-colour--text-darker);
+      border-bottom: 1px dotted var(--brand-colour--text-darker);
+    }
+
+        /* link styles for body text of Insider */
+        .hmpg-org-tyee-insider p a {
+          color: var(--text-colour);  /* can't be brand color because Deep Dive has an orange background */
+          border-color: var(--text-colour); /* ditto */
+          font-style: italic;
+        }
 
 strong {
   font-weight: 600;
@@ -1297,16 +1363,35 @@ strong {
 .hmpg-org-wrapper {
   position: relative;
   padding: 0 var(--page-margin-sides);
-  padding-bottom: calc(var(--gutter-row) + 2rem);
+  padding-bottom: calc(var(--gutter-row) + 0rem);
 }
 
-/* Omit top border and padding from first modules
-   (This will maintain correct borders when the order of modules changes) */
-.hmpg-org-wrapper:not(:first-of-type) {
-  margin-top: -1px; /* Offsets 1px border and realigns to baseline grid */
-  padding-top: calc(2rem - 0px);
-  border-top: 1px solid var(--text-colour);
-}
+    main .hmpg-org-wrapper {
+      padding-top: calc(5rem - 0px);
+    }
+
+        /* Omit top padding from first modules
+           (This will maintain correct padding when the order of modules changes) */
+        main .hmpg-org-wrapper:first-of-type {
+          padding-top: 0;
+        }
+
+    /* Create thick top border on modules that doesn't extend into page magins */
+    main .hmpg-org-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        grid-column: 1 / -1;
+        width: 100%;
+        border-bottom: 4px solid var(--text-colour);
+    }
+
+        /* Omit top border from first modules
+           (This will maintain correct borders when the order of modules changes) */
+        main .hmpg-org-wrapper:first-of-type::before {
+          content: none;
+        }
 
 
 /* HMPG RECENT STORIES organism ---------- */
@@ -1621,8 +1706,8 @@ strong {
   .m-comment-noted, .m-barometer {
 
     padding-top: 2rem;
-    border-top: 1px solid var(--text-colour);
-    margin-top: calc(2rem - 1px); /* Offsets the 1px border */
+    border-top: 4px solid var(--text-colour);
+    margin-top: calc(2rem - 4px); /* Offsets the 1px border */
 
   }
 
@@ -1794,6 +1879,7 @@ strong {
 /* PINNED STORY organism ----------------- */
 
 .hmpg-org-pinned-story {
+  display: grid;
   z-index: 10; /* So that bottom border doesn't fall underneath
                   the BG of next module due to negative margin */
   padding-top: var(--gutter-row);
@@ -1948,23 +2034,36 @@ strong {
   display: grid;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
-  /* margin-top: -1px; /* offsets 1px border
-  border-top: 1px solid var(--text-colour); in narrow views put borders on each column */
-
-  /* In narrow views override universal top border (border is on each column)  */
-  border-top: none !important;
-  margin-top: 0 !important;
 }
 
+    /* In narrow views override universal top border (border is on each column)  */
+    main .hmpg-org-most::before {
+      content: none;
+    }
+
+    /* In narrow views adjust first column top border position to match other module top borders  */
+    .hmpg-org-most--column:first-child {
+      margin-top: -2rem;
+    }
+
 .hmpg-org-most--column {
+  position: relative;
   display: grid;
   grid-row-gap: var(--gutter-row-half);
-  margin-top: -1px; /* offsets 1px border */
-  border-top: 1px solid var(--text-colour);
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
 }
+
+.hmpg-org-most--column::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0;
+        grid-column: 1 / -1;
+        width: 100%;
+        border-bottom: 4px solid var(--text-colour);
+    }
 
     .hmpg-org-most--column .story-item__headline {
       margin-bottom: 0;
@@ -1978,17 +2077,25 @@ strong {
 
         .hmpg-org-most {
           grid-template-columns: 1fr 1fr 1fr;
+        }
 
-          /* Set top border on outer container instead of on each column */
-          margin-top: -1px !important; /* offsets 1px border */
-          border-top: 1px solid var(--text-colour) !important;
+        /* In wider eliminate first column position adjustment  */
+        .hmpg-org-most--column:first-child {
+          margin-top: 0rem;
+        }
+
+        /* Set top border on outer container instead of on each column */
+        main .hmpg-org-most::before {
+          content: "";
         }
 
         /* Remove top borders from each column */
         .hmpg-org-most--column {
-          margin-top: 0; /* offsets 1px border */
-          border-top: 0;
           padding-top: 0;
+        }
+
+        .hmpg-org-most--column::before {
+          content: none;
         }
       }
 
@@ -2059,6 +2166,11 @@ strong {
   background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing: hsla(51, 100%, 50%, 0.3); should be var(--brand-colour--mod-bg) */
 }
 
+  /* Override unversal module top border */
+  main .hmpg-org-builder::before {
+    content:none;
+  }
+
 .builder__content {
     position: relative;
     max-width: 1000px;
@@ -2117,10 +2229,6 @@ strong {
 
         /*  BUILDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
-
-            .hmpg-org-builder {
-              padding-top: 4rem;
-            }
 
             .builder__content {
               justify-items: stretch;
@@ -2306,7 +2414,7 @@ strong {
             padding-bottom: 3rem;
             margin-top: .5rem;
             margin-bottom: -.5rem;
-            background-color: #444;
+            background-color: var(--utility-background-color);
           }
 
           .site-nav__search-dropdown .site-nav__search-form {
@@ -2324,7 +2432,7 @@ strong {
             grid-template-columns: 4fr 1fr;
             font-size: .6em;
             height: 4rem;
-            border: 1px solid #444;
+            border: 1px solid var(--utility-background-color);
           }
 
           form input {
@@ -2381,7 +2489,16 @@ strong {
           /* ---- SITE HEADER responsive enhancement ---- */
           /* -------------------------------------------- */
 
-          /*  Reported Elsewhere MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+
+          /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 600px */
+          @media screen and (min-width: 600px) {
+            .site-header {
+              padding-bottom: 1rem;
+            }
+          }
+
+
+          /*  Site Header MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
           @media screen and (min-width: 684px) {
             .site-header {
               padding-bottom: 2rem;
@@ -2459,7 +2576,7 @@ strong {
                 padding-right: 2rem;
                 min-height: 100vh;
                 padding-bottom: 8rem;
-                background-color: #444;
+                background-color: var(--utility-background-color);
                 color: #eee;
               }
 
@@ -2506,6 +2623,15 @@ strong {
 
           } /*  end os narrow breakpoint styles -- max-wdith 849px */
 
+
+          /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 425px */
+          @media screen and (min-width: 0px) and (max-width: 425px) {
+            /* Raise Nav to be parallel with logo in narrowest views */
+              .site-nav-main {
+                position: relative;
+                top: -5rem;
+              }
+          }
 
 
           /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
@@ -2554,10 +2680,10 @@ strong {
                 margin-top: 1.5rem; /* desired offset from logo (3rem) - self padding-top (.5rem) - padding on nav__link (0.5rem)*/
                 border-top: 1px solid var(--border-colour-cols);
                 padding: calc(.5rem) 0 calc(0rem + 2px);
-                border-bottom: 1px solid var(--text-colour);
-                margin-bottom: calc(.5rem - 2px - 2px);
-                /*             increment to offset moargin-top for grid alignment
-                             - self borders (2px)
+                /* border-bottom: 1px solid var(--text-colour); */
+                margin-bottom: calc(.5rem - 1px - 2px);
+                /*             increment to offset margin-top for grid alignment
+                             - self top border (1px)
                              - self padding-bottom (2px)      */
               }
 
@@ -2607,10 +2733,11 @@ strong {
                   .site-nav-main::after {
                     content:"";
                     display: grid;
-                    z-index: -10;
+                    z-index: 0;
                     grid-column: 1 / -1;
                     position: relative;
-                    top: calc(1rem + 2px + 1px);
+                    top: calc(1rem - 1px);
+                    /* top: calc(1rem + 2px + 1px); -- for nav version with double bottom border */
                     /*   height of self (1rem)
                        + .site-nav-main padding-bottom (2px)
                        + .site-nav-main border-top (1px)      */
@@ -2659,7 +2786,7 @@ strong {
                   align-items: start;
                   margin-top: .5rem;
                   padding-bottom: 7.5rem;
-                  background-color: #444;
+                  background-color: var(--utility-background-color);
                   color: #eee;
                 }
 
@@ -2793,7 +2920,7 @@ strong {
   padding-top: 4rem;
   padding-bottom: var(--gutter-row);
   color: #eee;
-  background-color: #444;
+  background-color: var(--utility-background-color);
 
 }
 
@@ -2891,3 +3018,32 @@ strong {
   height: auto;
   display: block;
 }
+
+
+/*------------------------------------*\
+  #PATCHES
+\*------------------------------------*/
+
+/*  SET DEFAULT IMG HEIGHT FOR TERTIARY RECENT STORIES ITEMS */
+/*  Sets a default min-height for Tertiary Recent Stories items so that baseline-element.js doesn't set their height to zero.
+Some of the tertiary recent stories items are hidden and only revealed when the reader clicks "more recent stories" button. Baseline-element.js will set the height of imgs within display:none to zero unless a default height is set in advance. */
+/* Calculation:
+img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
+           =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 1          ) / img-aspect )
+*/
+.hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
+  min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 1 ) / 1.5 )
+}
+
+  /* RECENT STORIES DEFAULT IMG HEIGHT LARGE BREAKPOINT -- breakpoint: 1368px */
+  /* This is the same as above except that img-col-size is set to 0.5 because the img only occupies half the column width (minus a margin)*/
+  /* Calculation:
+  img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
+           =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 0.5          ) / img-aspect )
+  */
+  @media screen and (min-width: 1368px) {
+
+    .hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
+      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .45 ) / 1.5 )
+    }
+  }
