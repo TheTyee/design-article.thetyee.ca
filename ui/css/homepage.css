@@ -741,6 +741,19 @@ a {
   text-decoration: none;
 }
 
+    /* link styles for body text of Insider and Deep Dive */
+    p a {
+      color: var(--brand-colour--text-darker);
+      border-bottom: 1px dotted var(--brand-colour--text-darker);
+    }
+
+        /* link styles for body text of Insider */
+        .hmpg-org-tyee-insider p a {
+          color: var(--text-colour);  /* can't be brand color because Deep Dive has an orange background */
+          border-color: var(--text-colour); /* ditto */
+          font-style: italic;
+        }
+
 strong {
   font-weight: 600;
 }
