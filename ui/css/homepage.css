@@ -152,6 +152,37 @@ body {
   }
 }
 
+        /*  HIGH-DPI TYPOGRAPHY MEDIUM BRKPNT TO TERTIARY BREAKPOINT: 684px to 999px */
+        @media
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 684px) and (max-width: 999px),
+        (min-resolution: 195dpi) and (min-width: 684px) and (max-width: 999px) {
+
+          /* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
+             to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
+          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
+            font-weight: 700;
+          }
+
+          /* Increase weight of Pinned Stories headline (set in Miller Display)
+             to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
+          .hmpg-org-pinned-story .story-item--primary .story-item__headline {
+            font-weight: 700;
+          }
+        }
+
+        /*  HIGH-DPI TYPOGRAPHY TERTIARY BRKPNT TO LARGE BREAKPOINT: 1180px to 1367px */
+        @media
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 1180px) and (max-width: 1367px),
+        (min-resolution: 195dpi) and (min-width: 1180px) and (max-width: 1367px) {
+
+          /* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
+             to match weight of Secondary Story headlines (set in Miller Text) */
+          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
+            font-weight: 700;
+          }
+        }
+
+
 
 /* RESPONSIVE SETTINGS */
 /* NOTE: CSS variables can't be used within media query selectors, so these responsive settings are for reference only. The varaibles defined below aren't functional. */
