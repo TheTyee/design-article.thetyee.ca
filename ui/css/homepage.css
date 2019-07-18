@@ -2680,10 +2680,10 @@ strong {
                 margin-top: 1.5rem; /* desired offset from logo (3rem) - self padding-top (.5rem) - padding on nav__link (0.5rem)*/
                 border-top: 1px solid var(--border-colour-cols);
                 padding: calc(.5rem) 0 calc(0rem + 2px);
-                border-bottom: 1px solid var(--text-colour);
-                margin-bottom: calc(.5rem - 2px - 2px);
-                /*             increment to offset moargin-top for grid alignment
-                             - self borders (2px)
+                /* border-bottom: 1px solid var(--text-colour); */
+                margin-bottom: calc(.5rem - 1px - 2px);
+                /*             increment to offset margin-top for grid alignment
+                             - self top border (1px)
                              - self padding-bottom (2px)      */
               }
 
@@ -2736,7 +2736,8 @@ strong {
                     z-index: 0;
                     grid-column: 1 / -1;
                     position: relative;
-                    top: calc(1rem + 2px + 1px);
+                    top: calc(1rem - 1px);
+                    /* top: calc(1rem + 2px + 1px); -- for nav version with double bottom border */
                     /*   height of self (1rem)
                        + .site-nav-main padding-bottom (2px)
                        + .site-nav-main border-top (1px)      */
