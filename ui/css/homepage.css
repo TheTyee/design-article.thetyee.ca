@@ -1596,7 +1596,7 @@ strong {
                 float: right;
                 width: calc(50% - (var(--gutter-column-half) * 0.5));
                 margin-left: var(--gutter-column-half);
-                margin-bottom: 2rem;
+                /* margin-bottom: 2rem; <-- This makes the row-gaps appear too wide */
               }
 
               /* Disable scaling of Half-page Adblock so that it displays at full size */
@@ -3137,9 +3137,9 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
   img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
            =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 0.5          ) / img-aspect )
   */
-  @media screen and (min-width: 1368px) {
+  /* THIS RULE PRODUCES A LAYOUT BUG --> @media screen and (min-width: 1368px) {
 
     .hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
-      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .45 ) / 1.5 )
-    }
+      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .45 ) / 1.5 );
+    } */
   }
