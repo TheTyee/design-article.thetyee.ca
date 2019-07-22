@@ -1508,24 +1508,26 @@ strong {
           }
 
           /*  RECENT STORIES ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px */
+          /*  This breakpoint adds the half-page ad into the layout so it is only relevant
+              for hmpg-org-recent-stories--general */
           @media screen and (min-width: 1180px) {
 
-            .hmpg-org-recent-stories__list {
+            .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list {
               grid-template-columns: repeat(4, 1fr);
               grid-template-areas:
                 "primary primary primary ad"
                 "2ndary  2ndary  2ndary  ad";
             }
 
-                .hmpg-org-recent-stories__list > .story-item--primary {
+                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--primary {
                 grid-area: primary;
                 }
 
-                .hmpg-org-recent-stories__list > .story-item--secondary {
+                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary {
                 grid-column: auto / span 1;
                 }
 
-                .hmpg-org-recent-stories__list > .story-item--tertiary {
+                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--tertiary {
                 grid-column: auto / span 2;
                 }
 
@@ -1549,7 +1551,7 @@ strong {
 
             /* Force Secondary Recent Story images to display at correct layout size. */
             /* This only applies while the margins are keeping the module width constant and the half-page ad is showing. */
-            .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
+            .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
               height: 18rem !important;
             }
           }
