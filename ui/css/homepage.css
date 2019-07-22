@@ -680,7 +680,7 @@ body {
         @media screen and (min-width: 1180px) and (max-width: 1367px) {
           /* Reduce size of Primary headlines in Recent Stories module because halfpage adblock
              is reducing the column width. */
-          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
+          .hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
             line-height: 3rem; /* this is 2 x baseline */
             font-size: 1.65em;
           }
@@ -698,6 +698,19 @@ body {
                     line-height: 2.5rem; /* decimal values here cause a browser rounding error
                                             that throws throws off the baseline grid.          */
             }
+
+            /* Enlarge Topic module primary story headline in wide views (like pinned story headline)  */
+            .hmpg-org-recent-stories--topic .story-item--primary .story-item__headline {
+              line-height: 6rem; /* this is 3 x baseline */
+              font-size: 3.35em;
+              margin-bottom: 4rem
+            }
+
+                .hmpg-org-recent-stories--topic .story-item--primary > :not(.story-item__image):not(.story-item__headline) {
+                  margin-left: 8rem;
+                  margin-right: 8rem;
+                }
+
 
             /* Pinned Story enhancement */
 
