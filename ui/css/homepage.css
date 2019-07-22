@@ -1397,7 +1397,12 @@ strong {
 /* HMPG RECENT STORIES organism ---------- */
 
 .hmpg-org-recent-stories {
+  display: grid;
 }
+
+    .hmpg-org-recent-stories--topic .hmpg-module-header {
+        margin-bottom: 4rem;
+    }
 
 .hmpg-org-recent-stories__list {
       /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
