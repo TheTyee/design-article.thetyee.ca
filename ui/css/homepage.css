@@ -468,7 +468,7 @@ body {
       /* Center the module label when the module appears directly below page header
          (and therefore with no top border)   */
       .hmpg-org-wrapper:first-of-type .hmpg-module-header {
-        text-align: center
+        text-align: center;
       }
     }
 
@@ -1423,7 +1423,7 @@ strong {
   display: grid;
 }
 
-    .hmpg-org-recent-stories--topic .hmpg-module-header {
+    .hmpg-org-recent-stories .hmpg-module-header {
         margin-bottom: 4rem;
     }
 
