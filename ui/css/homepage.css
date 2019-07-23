@@ -462,6 +462,16 @@ body {
   position: relative;
 }
 
+    /* HOMEPAGE MODULE HEADER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+    @media screen and (min-width: 684px) {
+
+      /* Center the module label when the module appears directly below page header
+         (and therefore with no top border)   */
+      .hmpg-org-wrapper:first-of-type .hmpg-module-header {
+        text-align: center
+      }
+    }
+
 .m-comment-noted__label {
   padding-left: 1.1em;
 }
@@ -1652,10 +1662,11 @@ strong {
        a half-gutter row gap */
   }
 
-
-.hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
-  margin-right: 3rem;
-}
+  /* Modules that have a tagline/blurb following their label need a margin */
+  .m-tyee-insider__main .hmpg-module-header__main-label,
+  .hmpg-org-deep-dive .hmpg-module-header__main-label {
+    margin-right: 3rem;
+  }
 
 .hmpg-module-header__main-label-blurb {
   display: inline-block;
