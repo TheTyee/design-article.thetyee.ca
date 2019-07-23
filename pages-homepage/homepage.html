@@ -13,7 +13,24 @@ meta-url: "http://thetyee.ca/home"
 ---
 
 <main>
+  <!-- HMPG TOPIC organism ----------------------------------- -->
+  <section class="hmpg-org-recent-stories hmpg-org-recent-stories--topic hmpg-org-wrapper">
+    <header class="hmpg-module-header">
+      <h2 class="hmpg-module-header__main-label">Election 2019</h2>
+    </header>
 
+    <div class="hmpg-org-recent-stories__list">
+      <!-- FEATURED STORY  -->
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/TrudeauSinghMay.jpg" story-item-class="story-item--index-page story-item--primary" story-item-category="opinion" story-item-headline="Why Not an NDP-Green-Liberal Coalition to Battle the&nbsp;Climate Crisis?" story-item-dek="Polls suggest a minority government, but we need a full coalition. Imagine the possibilities." story-badge=nil %}
+      <!-- TOP THREE STORIES  -->
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/JagmeetSinghParksvilleBeach.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="opinion" story-item-headline="The ‘Moderate’ NDP Hasn’t Worked. Let’s Resurrect the Regina Manifesto" story-item-dek="The CCF-NDP has buried its radical roots, and in the process become irrelevant." story-badge=nil %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/JanePhilpottIndependentAnnouncement.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="news" story-item-headline="The Forging of Jane Philpott’s Moral Will" story-item-dek="Her path to principled outcast is a five-act story suffused with religion, tragedy and Trudeau. A Tyee interview." story-badge=nil %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/COVER.Trudeau-Two.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="opinion" story-item-headline="Eight Hard Questions for the PM of Pipelines and Climate Emergency" story-item-dek="He says Canadians can have it both ways. The facts say otherwise." story-badge=nil %}
+    </div> <!-- end of hmpg-org-recent-stories__list -->
+
+  </section>
+  <!-- end of Hmpg Topic organism -->
+  
   <!-- HMPG RECENT STORIES organism ----------------------------------- -->
   <section class="hmpg-org-recent-stories hmpg-org-recent-stories--general hmpg-org-wrapper">
     <div class="hmpg-org-recent-stories__list">
