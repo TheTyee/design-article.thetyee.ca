@@ -1423,9 +1423,16 @@ strong {
   display: grid;
 }
 
+    /* Add space between Recent Stories module header and content */
     .hmpg-org-recent-stories .hmpg-module-header {
-        margin-bottom: 4rem;
+        margin-bottom: 6rem;
     }
+
+      /* Reduce space between Recent Stories module header and content when module
+         appears at top of page */
+      .hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories .hmpg-module-header {
+          margin-bottom: 4rem;
+      }
 
 .hmpg-org-recent-stories__list {
       /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
