@@ -1,0 +1,66 @@
+/* Harriet Display Medium, weight: 600 */
+@font-face {
+  font-family: "Harriet-DisplayTest";
+  src: url(fonts/Harriet-v2-Display-Test-Medium-latin1.woff2) format("woff2"),
+       url(fonts/Harriet-v2-Display-Test-Medium-latin1.woff) format("woff");
+  font-weight: 600;
+}
+
+/* Harriet Display Bold, weight: 700 */
+@font-face {
+  font-family: "Harriet-DisplayTest";
+  src: url(fonts/Harriet-v2-Display-Test-Bold-latin1.woff2) format("woff2"),
+       url(fonts/Harriet-v2-Display-Test-Bold-latin1.woff) format("woff");
+  font-weight: 700;
+}
+
+/* Harriet Display Black, weight: 800  */
+@font-face {
+  font-family: "Harriet-DisplayTest";
+  src: url(fonts/Harriet-v2-Display-Test-Black-latin1.woff2) format("woff2"),
+       url(fonts/Harriet-v2-Display-Test-Black-latin1.woff) format("woff");
+  font-weight: 800;
+}
+
+
+/* Harriet Text Regular, weight: 400 */
+@font-face {
+  font-family: "Harriet-Texttest";
+  src: url(fonts/Harriet-v2-Text-Test-Regular-latin1.woff2) format("woff2"),
+       url(fonts/Harriet-v2-Text-Test-Regular-latin1.woff) format("woff");
+  font-weight: 400;
+}
+
+/* Harriet Text Regular Italic, weight: 400 */
+@font-face {
+  font-family: "Harriet-Texttest";
+  src: url(fonts/Harriet-v2-Text-Test-Regular-Italic-latin1.woff2) format("woff2"),
+       url(fonts/Harriet-v2-Text-Test-Regular-Italic-latin1.woff) format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Harriet Text Medium, weight: 600 */
+@font-face {
+  font-family: "Harriet-Texttest";
+  src: url(fonts/Harriet-v2-Text-Test-Medium-latin1.woff2) format("woff2"),
+       url(fonts/Harriet-v2-Text-Test-Medium-latin1.woff) format("woff");
+  font-weight: 600;
+}
+
+/* Harriet Text Bold, weight: 700 */
+@font-face {
+  font-family: "Harriet-Texttest";
+  src: url(fonts/Harriet-v2-Text-Test-Bold-latin1.woff2) format("woff2"),
+       url(fonts/Harriet-v2-Text-Test-Bold-latin1.woff) format("woff");
+  font-weight: 700;
+}
+
+/* Harriet Text Bold Italic, weight: 700 */
+@font-face {
+  font-family: "Harriet-Texttest";
+  src: url(fonts/Harriet-v2-Text-Test-Bold-Italic-latin1.woff2) format("woff2"),
+       url(fonts/Harriet-v2-Text-Test-Bold-Italic-latin1.woff) format("woff");
+  font-weight: 700;
+  font-style: italic;
+}

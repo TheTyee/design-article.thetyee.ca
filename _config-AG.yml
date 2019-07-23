@@ -62,8 +62,11 @@ exclude:
   - bower_components/isotope/_posts/
   - bower_components/isotope/_includes/
   - bower_components/isotope/_layouts/
-
+# desperately hoping this speeds up jekyll
+minify_html: false
+incremental: true
+limit_posts: 1
 
 # server settings
-host: 192.168.1.64
+host: 192.168.1.66
 port: 4000
