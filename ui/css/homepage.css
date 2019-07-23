@@ -1668,6 +1668,12 @@ strong {
     margin-right: 3rem;
   }
 
+  /* When Recent Stories module appears at top of page
+     its module header and label are hidden          */
+  .hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories--general .hmpg-module-header {
+    display: none;
+  }
+
 .hmpg-module-header__main-label-blurb {
   display: inline-block;
 }
