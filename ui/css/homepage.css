@@ -1382,6 +1382,8 @@ strong {
 
 
 /* HMPG ORGANISM WRAPPER ----------------- */
+/* There's also styles for this wrapper mixed in with other organisms. */
+/* Should be considolidated at some point. */
 
 .hmpg-org-wrapper {
   position: relative;
@@ -1415,6 +1417,33 @@ strong {
         main .hmpg-org-wrapper:first-of-type::before {
           content: none;
         }
+
+    /*  Increase separation between Page Header and first content module. */
+    /*  Applying padding-top to the content module (rather than padding-bottom
+        to the Header) allows for modules with coloured backgorunds.     */
+    main .hmpg-org-wrapper:first-of-type {
+        padding-top: 1rem;
+    }
+
+    /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 600px */
+    @media screen and (min-width: 600px) {
+      /*  Progressively increase separation between Page Header and first content module. */
+      main .hmpg-org-wrapper:first-of-type {
+          padding-top: 1rem;
+      }
+    }
+
+    /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
+    @media screen and (min-width: 850px) {
+        /*  Progressively increase separation between Page Header and first content module. */
+        main .hmpg-org-wrapper:first-of-type {
+          padding-top: 4rem;
+        }
+    }
+/* end of HMPG Organism Wrapper */
+
+
+
 
 
 /* HMPG RECENT STORIES organism ---------- */
@@ -2534,18 +2563,10 @@ strong {
           /* -------------------------------------------- */
 
 
-          /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 600px */
-          @media screen and (min-width: 600px) {
-            .site-header {
-              padding-bottom: 1rem;
-            }
-          }
-
-
           /*  Site Header MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
           @media screen and (min-width: 684px) {
             .site-header {
-              padding-bottom: 2rem;
+              padding-bottom: 1rem;
             }
           }
 
@@ -2682,7 +2703,7 @@ strong {
           @media screen and (min-width: 850px) {
 
               .site-header {
-                padding-bottom: 4rem;
+                padding-bottom: 0rem;
                 /* Run logo block and nav to edge of screen */
                 padding-left: 0;
                 padding-right: 0;
