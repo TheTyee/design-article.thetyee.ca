@@ -462,6 +462,16 @@ body {
   position: relative;
 }
 
+    /* HOMEPAGE MODULE HEADER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+    @media screen and (min-width: 684px) {
+
+      /* Center the module label when the module appears directly below page header
+         (and therefore with no top border)   */
+      .hmpg-org-wrapper:first-of-type .hmpg-module-header {
+        text-align: center;
+      }
+    }
+
 .m-comment-noted__label {
   padding-left: 1.1em;
 }
@@ -680,7 +690,7 @@ body {
         @media screen and (min-width: 1180px) and (max-width: 1367px) {
           /* Reduce size of Primary headlines in Recent Stories module because halfpage adblock
              is reducing the column width. */
-          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
+          .hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
             line-height: 3rem; /* this is 2 x baseline */
             font-size: 1.65em;
           }
@@ -698,6 +708,19 @@ body {
                     line-height: 2.5rem; /* decimal values here cause a browser rounding error
                                             that throws throws off the baseline grid.          */
             }
+
+            /* Enlarge Topic module primary story headline in wide views (like pinned story headline)  */
+            .hmpg-org-recent-stories--topic .story-item--primary .story-item__headline {
+              line-height: 6rem; /* this is 3 x baseline */
+              font-size: 3.35em;
+              margin-bottom: 4rem
+            }
+
+                .hmpg-org-recent-stories--topic .story-item--primary > :not(.story-item__image):not(.story-item__headline) {
+                  margin-left: 8rem;
+                  margin-right: 8rem;
+                }
+
 
             /* Pinned Story enhancement */
 
@@ -1359,6 +1382,8 @@ strong {
 
 
 /* HMPG ORGANISM WRAPPER ----------------- */
+/* There's also styles for this wrapper mixed in with other organisms. */
+/* Should be considolidated at some point. */
 
 .hmpg-org-wrapper {
   position: relative;
@@ -1393,11 +1418,50 @@ strong {
           content: none;
         }
 
+    /*  Increase separation between Page Header and first content module. */
+    /*  Applying padding-top to the content module (rather than padding-bottom
+        to the Header) allows for modules with coloured backgorunds.     */
+    main .hmpg-org-wrapper:first-of-type {
+        padding-top: 1rem;
+    }
+
+    /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 600px */
+    @media screen and (min-width: 600px) {
+      /*  Progressively increase separation between Page Header and first content module. */
+      main .hmpg-org-wrapper:first-of-type {
+          padding-top: 1rem;
+      }
+    }
+
+    /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
+    @media screen and (min-width: 850px) {
+        /*  Progressively increase separation between Page Header and first content module. */
+        main .hmpg-org-wrapper:first-of-type {
+          padding-top: 4rem;
+        }
+    }
+/* end of HMPG Organism Wrapper */
+
+
+
+
 
 /* HMPG RECENT STORIES organism ---------- */
 
 .hmpg-org-recent-stories {
+  display: grid;
 }
+
+    /* Add space between Recent Stories module header and content */
+    .hmpg-org-recent-stories .hmpg-module-header {
+        margin-bottom: 6rem;
+    }
+
+      /* Reduce space between Recent Stories module header and content when module
+         appears at top of page */
+      .hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories .hmpg-module-header {
+          margin-bottom: 4rem;
+      }
 
 .hmpg-org-recent-stories__list {
       /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
@@ -1508,24 +1572,26 @@ strong {
           }
 
           /*  RECENT STORIES ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px */
+          /*  This breakpoint adds the half-page ad into the layout so it is only relevant
+              for hmpg-org-recent-stories--general */
           @media screen and (min-width: 1180px) {
 
-            .hmpg-org-recent-stories__list {
+            .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list {
               grid-template-columns: repeat(4, 1fr);
               grid-template-areas:
                 "primary primary primary ad"
                 "2ndary  2ndary  2ndary  ad";
             }
 
-                .hmpg-org-recent-stories__list > .story-item--primary {
+                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--primary {
                 grid-area: primary;
                 }
 
-                .hmpg-org-recent-stories__list > .story-item--secondary {
+                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary {
                 grid-column: auto / span 1;
                 }
 
-                .hmpg-org-recent-stories__list > .story-item--tertiary {
+                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--tertiary {
                 grid-column: auto / span 2;
                 }
 
@@ -1549,7 +1615,7 @@ strong {
 
             /* Force Secondary Recent Story images to display at correct layout size. */
             /* This only applies while the margins are keeping the module width constant and the half-page ad is showing. */
-            .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
+            .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
               height: 18rem !important;
             }
           }
@@ -1576,7 +1642,7 @@ strong {
                 float: right;
                 width: calc(50% - (var(--gutter-column-half) * 0.5));
                 margin-left: var(--gutter-column-half);
-                margin-bottom: 2rem;
+                /* margin-bottom: 2rem; <-- This makes the row-gaps appear too wide */
               }
 
               /* Disable scaling of Half-page Adblock so that it displays at full size */
@@ -1632,10 +1698,17 @@ strong {
        a half-gutter row gap */
   }
 
+  /* Modules that have a tagline/blurb following their label need a margin */
+  .m-tyee-insider__main .hmpg-module-header__main-label,
+  .hmpg-org-deep-dive .hmpg-module-header__main-label {
+    margin-right: 3rem;
+  }
 
-.hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
-  margin-right: 3rem;
-}
+  /* When Recent Stories module appears at top of page
+     its module header and label are hidden          */
+  .hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories--general .hmpg-module-header {
+    display: none;
+  }
 
 .hmpg-module-header__main-label-blurb {
   display: inline-block;
@@ -2490,18 +2563,10 @@ strong {
           /* -------------------------------------------- */
 
 
-          /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 600px */
-          @media screen and (min-width: 600px) {
-            .site-header {
-              padding-bottom: 1rem;
-            }
-          }
-
-
           /*  Site Header MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
           @media screen and (min-width: 684px) {
             .site-header {
-              padding-bottom: 2rem;
+              padding-bottom: 1rem;
             }
           }
 
@@ -2638,7 +2703,7 @@ strong {
           @media screen and (min-width: 850px) {
 
               .site-header {
-                padding-bottom: 4rem;
+                padding-bottom: 0rem;
                 /* Run logo block and nav to edge of screen */
                 padding-left: 0;
                 padding-right: 0;
@@ -3041,9 +3106,9 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
   img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
            =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 0.5          ) / img-aspect )
   */
-  @media screen and (min-width: 1368px) {
+  /* THIS RULE PRODUCES A LAYOUT BUG --> @media screen and (min-width: 1368px) {
 
     .hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
-      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .45 ) / 1.5 )
-    }
+      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .45 ) / 1.5 );
+    } */
   }
