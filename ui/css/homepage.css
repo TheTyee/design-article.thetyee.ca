@@ -785,10 +785,6 @@ a {
       border-bottom: 2px solid var(--link-colour);
     }
 
-    p a:hover, p a:focus,
-    .site-header__tagline a:hover, .site-header__tagline a:focus  {
-      color: var(--link-colour);
-    }
 
         /* link styles for body text of Insider */
         .hmpg-org-tyee-insider p a {
@@ -798,6 +794,17 @@ a {
         .hmpg-org-tyee-insider p a:hover, .hmpg-org-tyee-insider p a:focus  {
           color: white;
         }
+
+    .story-item a:hover, .story-item a:focus,
+    .site-header__tagline a:hover, .site-header__tagline a:focus  {
+      display: inline-block;
+      color: var(--link-colour);
+      transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+    }
+
+    .story-item p a:hover, .story-item p a:focus  {
+      margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
+    }
 
     .text-link--button {
       display:table;
