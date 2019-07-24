@@ -879,6 +879,8 @@ a {
         color: white;
         background: var(--brand-colour--text-darker);
         border-color: transparent;
+        outline: 2px solid #fff;
+        transform: scale(1.05)
     }
 
     .button:focus {
