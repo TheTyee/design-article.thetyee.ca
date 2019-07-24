@@ -779,16 +779,24 @@ a {
 
     /* link styles for body text of Insider and Deep Dive */
     p a {
+      /* color: var(--brand-colour--text-darker); */
+      border-bottom: 2px solid var(--brand-colour--text-darker);
+    }
+
+    p a:hover, p a:focus  {
       color: var(--brand-colour--text-darker);
-      border-bottom: 1px dotted var(--brand-colour--text-darker);
+      border-bottom: 2px solid var(--brand-colour--text-darker);
     }
 
         /* link styles for body text of Insider */
         .hmpg-org-tyee-insider p a {
-          color: var(--text-colour);  /* can't be brand color because Deep Dive has an orange background */
-          border-color: var(--text-colour); /* ditto */
-          font-style: italic;
+          border-color: white;  /* can't be brand color because Deep Dive has an orange background */
         }
+
+        .hmpg-org-tyee-insider p a:hover, .hmpg-org-tyee-insider p a:focus  {
+          color: white;
+        }
+
 
 strong {
   font-weight: 600;
