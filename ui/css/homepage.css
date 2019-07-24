@@ -398,11 +398,6 @@ body {
   font-weight: 600;
 }
 
-    .site-header__tagline a {
-      color: var(--link-colour);
-      border-bottom: 1px dotted var(--link-colour);
-    }
-
     .site-header__tagline::before, .site-header__tagline::after  {
       content: "";
       display: block;
@@ -773,17 +768,25 @@ body {
   #ATOMS
 \*-----------------------------------------*/
 
+strong {
+  font-weight: 600;
+}
+
+
+/* LINK atom */
+
 a {
   text-decoration: none;
 }
 
     /* link styles for body text of Insider and Deep Dive */
-    p a {
-      /* color: var(--brand-colour--text-darker); */
+    p a,
+    .site-header__tagline a {
       border-bottom: 2px solid var(--link-colour);
     }
 
-    p a:hover, p a:focus  {
+    p a:hover, p a:focus,
+    .site-header__tagline a:hover, .site-header__tagline a:focus  {
       color: var(--link-colour);
     }
 
@@ -795,13 +798,6 @@ a {
         .hmpg-org-tyee-insider p a:hover, .hmpg-org-tyee-insider p a:focus  {
           color: white;
         }
-
-
-strong {
-  font-weight: 600;
-}
-
-.text-link { }
 
     .text-link--button {
       display:table;
