@@ -274,6 +274,19 @@ https://caniuse.com/#feat=css3-colors
     }
 
 
+    /* BRAND COLOUR PALE */
+    /* Brand colour is lightened a lot */
+    :root {
+      --brand-colour--pale:
+          hsla(
+            var(--brand-colour__hue),
+            var(--brand-colour__sat),
+            calc(var(--brand-colour__lig)*1.99), /* lightens brand colour */
+            var(--brand-colour__alp) /* 0.5   /* AG - temporary tansparency to show grid */
+          );
+    }
+
+
     /* ELEMENT COLOURS */
     /* Typographic Elements */
     :root {
@@ -809,7 +822,7 @@ strong {
   height: 4rem;
   text-decoration: none;
   background: none;
-  color: var(--brand-colour--text);
+  color: var(--text-colour);
   font-family: var(--typeface-sans);
   font-size: 1em;
   font-weight: 500;
@@ -853,8 +866,9 @@ strong {
 
     .button:hover,
     .button:focus {
-        color: hsla(0, 0%, 100%, .8);
+        color: white;
         background: var(--brand-colour--text-darker);
+        border-color: transparent;
     }
 
     .button:focus {
