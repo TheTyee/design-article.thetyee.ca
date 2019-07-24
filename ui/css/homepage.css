@@ -71,7 +71,7 @@ body{
         /* Set --brand-colour variable based on HSLA variables */
         --brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
 
-  --link-colour: yellow;
+  --link-colour: var(--brand-colour--text-darker);
   --text-colour: #393939;
   --text-colour-light: #808080;
 
@@ -399,8 +399,8 @@ body {
 }
 
     .site-header__tagline a {
-      color: var(--brand-colour--text-darker);
-      border-bottom: 1px dotted var(--brand-colour--text-darker);
+      color: var(--link-colour);
+      border-bottom: 1px dotted var(--link-colour);
     }
 
     .site-header__tagline::before, .site-header__tagline::after  {
@@ -780,12 +780,11 @@ a {
     /* link styles for body text of Insider and Deep Dive */
     p a {
       /* color: var(--brand-colour--text-darker); */
-      border-bottom: 2px solid var(--brand-colour--text-darker);
+      border-bottom: 2px solid var(--link-colour);
     }
 
     p a:hover, p a:focus  {
-      color: var(--brand-colour--text-darker);
-      border-bottom: 2px solid var(--brand-colour--text-darker);
+      color: var(--link-colour);
     }
 
         /* link styles for body text of Insider */
