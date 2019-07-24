@@ -823,7 +823,7 @@ strong {
   -moz-appearance: none;
 }
 
-    .button--gridrow {
+    .button--spanrow {
       grid-column: 1 / -1;  /* Make button span entire grid row */
       justify-self: center; /* Collapses button width to its content + padding */
     }
@@ -868,10 +868,7 @@ strong {
 
 
     /* BUTTON EXPANDER is used to show and hide content */
-    .button--expander {
-      grid-column: 1 / -1; /* Make button span entire grid row */
-      justify-self: center;
-    }
+    .button--expander { }
 
 
 
