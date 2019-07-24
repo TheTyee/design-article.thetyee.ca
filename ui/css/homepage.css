@@ -823,6 +823,11 @@ strong {
   -moz-appearance: none;
 }
 
+    .button--gridrow {
+      grid-column: 1 / -1;  /* Make button span entire grid row */
+      justify-self: center; /* Collapses button width to its content + padding */
+    }
+
     .button--dark-bg {
       color: var(--text-colour);
       background-color: hsla(0, 0%, 100%, 0.3);
