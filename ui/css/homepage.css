@@ -788,11 +788,7 @@ a {
 
         /* link styles for body text of Insider */
         .hmpg-org-tyee-insider p a {
-          border-color: white;  /* can't be brand color because Deep Dive has an orange background */
-        }
-
-        .hmpg-org-tyee-insider p a:hover, .hmpg-org-tyee-insider p a:focus  {
-          color: white;
+          border-color: white;  /* can't be brand color because Insider has an orange background */
         }
 
     .story-item a:hover, .story-item a:focus,
@@ -801,6 +797,10 @@ a {
       color: var(--link-colour);
       transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
     }
+
+        .hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus  {
+          color: white; /* can't be brand color because Insider has an orange background */
+        }
 
     .story-item p a:hover, .story-item p a:focus  {
       margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
@@ -1002,6 +1002,7 @@ a {
     .story-item--index-page .story-item__author { grid-area: author; }
     .story-item--index-page .story-item__date { grid-area: date; }
 
+
     /* STORY ITEM EXTENSIONS */
     .story-item--primary { }
 
@@ -1018,6 +1019,10 @@ a {
 
     .story-item--secondary .category-label { margin-top: 0} /* 0 top margin aligns label with figure in 2-col story-item layouts */
 
+    .story-item--secondary .story-item__author {
+      justify-self: start;
+    }
+
     .story-item--tertiary { }
         .story-item--tertiary .story-item__image { display: none; }
         .story-item--tertiary .badge--story-item-placement { display: none; }
@@ -1030,6 +1035,10 @@ a {
         .hmpg-org-recent-stories__list .story-item--tertiary {
           /* font-size: var(--small-text); */
           grid-column-gap: calc(var(--gutter-column) * 0.5);
+        }
+
+        .story-item--tertiary .story-item__author {
+          justify-self: start;
         }
 
     .story-item--minimum { }
