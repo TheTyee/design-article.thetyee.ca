@@ -794,7 +794,8 @@ a {
     /* Hover states for text links, buttons and nav-bar */
     .story-item a:hover, .story-item a:focus,
     .site-header__tagline a:hover, .site-header__tagline a:focus,
-    .nav__link:hover  {
+    .nav__link:hover,
+    .site-footer a:hover  {
       display: inline-block;
       color: var(--link-colour);
       transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
