@@ -5,7 +5,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-{% include meta/head.html %}
+{% include meta/head-homepage.html %}
   <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
 
     <!-- =============================== -->
@@ -13,10 +13,9 @@
 
     {% include 01-molecules/messaging/alerts--browser-support.html %}
 
-    {% include 02-organisms/sections/httpswarning.html %}
+    {% comment %} include 02-organisms/sections/httpswarning.html --> temporarily removed for grid design purposes {% endcomment} %}
 
-    {% include 02-organisms/global/header.html %}
-
+    {% include 02-organisms/global/header--homepage.html %}
 
     <!-- =============================== -->
 
@@ -38,11 +37,13 @@
     <!-- =============================== -->
     <!-- ===== Footer ===== -->
 
-    {% include footer.html %}                 <!-- NEEDS WORK -->
+    {% include 02-organisms/global/footer-homepage.html %}
 
     {% include footer_scripts_standard.html %}
 
-    {% include 02-organisms/sections/subscription-modal.html %}
+    {% if page.page-type != 'home' %}
+      {% include 02-organisms/sections/subscription-modal.html %}
+    {% endif %}
 
     </body>
 
