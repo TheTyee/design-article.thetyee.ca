@@ -791,8 +791,10 @@ a {
           border-color: white;  /* can't be brand color because Insider has an orange background */
         }
 
+    /* Hover states for text links, buttons and nav-bar */
     .story-item a:hover, .story-item a:focus,
-    .site-header__tagline a:hover, .site-header__tagline a:focus  {
+    .site-header__tagline a:hover, .site-header__tagline a:focus,
+    .nav__link:hover  {
       display: inline-block;
       color: var(--link-colour);
       transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
@@ -802,9 +804,9 @@ a {
           color: white; /* can't be brand color because Insider has an orange background */
         }
 
-    .story-item p a:hover, .story-item p a:focus  {
-      margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
-    }
+        .story-item p a:hover, .story-item p a:focus  {
+          margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
+        }
 
     .text-link--button {
       display:table;
@@ -2850,7 +2852,7 @@ a {
                   }
 
                   /* heavy-border below */
-                  .site-nav-main > .nav__link--news::after {
+                  .site-nav-main::before {
                     content:"";
                     position: absolute;
                     bottom: 3px; /* .site-nav-main padding-bottom(2px) + .site-nav-main border-top(1px) */
