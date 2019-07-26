@@ -2586,16 +2586,16 @@ a.new-site-header--homepage {
           }
 
           /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
-          #new-expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #new-expander--nav-menu-topics-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #new-expander--nav-menu-more-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
+          #new-expander--nav-menu-section-submenu + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content,
+          #new-expander--nav-menu-topics-submenu + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content,
+          #new-expander--nav-menu-more-submenu + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content {
             display: none ;
           }
 
           /* subnav ACTIVATED STATE: Menu content is shown and adjacent sibling toggle icon is inverted */
-          #new-expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #new-expander--nav-menu-topics-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #new-expander--nav-menu-more-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
+          #new-expander--nav-menu-section-submenu:checked + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content,
+          #new-expander--nav-menu-topics-submenu:checked + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content,
+          #new-expander--nav-menu-more-submenu:checked + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content {
             display: grid ; /* Menu content is shown */
           }
           #new-expander--nav-menu-section-submenu:checked + .new-site-nav__dropdown-expander-toggle::after,
