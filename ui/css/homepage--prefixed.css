@@ -28,7 +28,10 @@ homepage can be used on other pages without creating css collisions */
     box-sizing: inherit;
   }
 
-
+/* Override Bootstrap rules. */
+.new-site-header label {
+    margin-bottom: 0;
+}
 
 
 
