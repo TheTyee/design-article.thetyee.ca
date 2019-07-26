@@ -1532,7 +1532,7 @@ a {
     display: none;
   }
 
-      #expander--recent-stories:checked ~ :not(script) {
+      #new-expander--recent-stories:checked ~ :not(script) {
         display: grid;   /* This must be "grid" because the revealed items are themselves using internal grid layouts */
       }
 
@@ -1541,12 +1541,12 @@ a {
 
               /* Tertiary story-items in the recent stories list use float-based layout in wide viewports,
                  so at large screen sizes the expander must set the display to block instead of grid.     */
-              #expander--recent-stories:checked ~ :not(script) {
+              #new-expander--recent-stories:checked ~ :not(script) {
                 display: block;   /* This must be "block" because revealed items are using internal float layouts */
               }
             } /* end of List Expander adblock breakpoint */
 
-      #expander--recent-stories:checked ~ .new-button--expander-open {
+      #new-expander--recent-stories:checked ~ .new-button--expander-open {
         display: none;
       }
 
@@ -2436,7 +2436,7 @@ a {
 
     /* Default for narrow views:
     Hide all nav item items except the hamburger, search button, and the dropdown menus.
-        (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+        (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #new-expander--nav-menu (and #new-expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
     .new-site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
       display: none;
     }
@@ -2515,17 +2515,17 @@ a {
           }
 
           /* ACTIVATED state: Menu is shown and toggle icon is inverted */
-          #expander--nav-menu:checked ~ .new-site-nav__dropdown {
+          #new-expander--nav-menu:checked ~ .new-site-nav__dropdown {
             display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
           }
-          .new-site-nav #expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::before,
-          .new-site-nav #expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::after {
+          .new-site-nav #new-expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::before,
+          .new-site-nav #new-expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::after {
             transform: rotate(180deg);
           }
 
       /* SEARCH DROPDOWN EXPANDER */
       /* Search Dropdown is now integrated into the Nav Dropdown and the Search button is
-         just another label for the input#expander--nav-menu checkbox */
+         just another label for the input#new-expander--nav-menu checkbox */
 
           .new-site-nav__search-dropdown {
             grid-column: 1 / -1;
@@ -2586,21 +2586,21 @@ a {
           }
 
           /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
-          #expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-topics-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-more-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
+          #new-expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
+          #new-expander--nav-menu-topics-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
+          #new-expander--nav-menu-more-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
             display: none ;
           }
 
           /* subnav ACTIVATED STATE: Menu content is shown and adjacent sibling toggle icon is inverted */
-          #expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-topics-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-more-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
+          #new-expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
+          #new-expander--nav-menu-topics-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
+          #new-expander--nav-menu-more-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
             display: grid ; /* Menu content is shown */
           }
-          #expander--nav-menu-section-submenu:checked + .new-site-nav__dropdown-expander-toggle::after,
-          #expander--nav-menu-topics-submenu:checked + .new-site-nav__dropdown-expander-toggle::after,
-          #expander--nav-menu-more-submenu:checked + .new-site-nav__dropdown-expander-toggle::after {
+          #new-expander--nav-menu-section-submenu:checked + .new-site-nav__dropdown-expander-toggle::after,
+          #new-expander--nav-menu-topics-submenu:checked + .new-site-nav__dropdown-expander-toggle::after,
+          #new-expander--nav-menu-more-submenu:checked + .new-site-nav__dropdown-expander-toggle::after {
             transform: rotate(180deg); /* toggle icon is inverted */
           }
 
@@ -2874,7 +2874,7 @@ a {
 
                 /* HAMBURGER SHOW/HIDE */
                 /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
-                    (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+                    (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #new-expander--nav-menu (and #new-expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
                 .new-site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
                   display: block;
                 }
