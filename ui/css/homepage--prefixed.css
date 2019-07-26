@@ -524,7 +524,7 @@ body {
 }
 
 .m-tyee-insider__related-label {
-  font-size: .85em;
+  font-size: 0.85em;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -562,7 +562,7 @@ body {
 
 .category-label {
   font-family: var(--typeface-sans);
-  font-size: .875em;
+  font-size: 0.875em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1101,7 +1101,7 @@ a {
 
               .hmpg-org-deep-dive .story-item--secondary .category-label {
                 font-family: var(--typeface-sans);
-                font-size: .875em;
+                font-size: 0.875em;
                 font-weight: 600;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
@@ -1411,7 +1411,7 @@ a {
           content: counter(story-item);
           display: inline-block;
           position: absolute;
-          left: -.1em;
+          left: -0.1em;
           color: var(--brand-colour--text);
           background-color: none;
           font-family: var(--typeface-display);
@@ -2449,7 +2449,7 @@ a {
     .site-nav-main__expander-toggle.nav__link--more::after {
       content: "arrow_drop_down";
       display: inline-block;
-      vertical-align: -.25em;
+      vertical-align: -0.25em;
       font-family: 'Material Icons';
       font-weight: normal;
       font-style: normal;
@@ -2531,8 +2531,8 @@ a {
             grid-column: 1 / -1;
             padding-top: 3rem;
             padding-bottom: 3rem;
-            margin-top: .5rem;
-            margin-bottom: -.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: -0.5rem;
             background-color: var(--utility-background-color);
           }
 
@@ -2549,13 +2549,13 @@ a {
           .site-nav__search-dropdown .site-nav__search-form > * {
             display: grid ;
             grid-template-columns: 4fr 1fr;
-            font-size: .6em;
+            font-size: 0.6em;
             height: 4rem;
             border: 1px solid var(--utility-background-color);
           }
 
           form input {
-            padding-left: .65em;
+            padding-left: 0.65em;
           }
 
       /* SUB-NAV DROPDOWN EXPANDERS */
@@ -2569,7 +2569,7 @@ a {
           .site-nav__dropdown-expander-toggle::after {
             content: "arrow_drop_down";
             display: inline-block;
-            vertical-align: -.25em;
+            vertical-align: -0.25em;
             font-family: 'Material Icons';
             font-weight: normal;
             font-style: normal;
@@ -2644,7 +2644,7 @@ a {
                 display: inline-block;
                 position: absolute;
                 top: -3rem;
-                left: -.5rem;
+                left: -0.5rem;
                 font-family: 'Material Icons';
                 font-weight: normal;
                 font-style: normal;
@@ -2889,13 +2889,13 @@ a {
                 /* Nav Dropdown grid for wide views */
                 .site-nav__dropdown {
                   grid-column: 1 / -1;
-                  grid-template-columns: calc(var(--page-margin-sides) + .5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                  grid-template-columns: calc(var(--page-margin-sides) + 0.5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
                                                                     /* + offset to align with nav button */
                   grid-template-rows: auto auto [row-2] 1fr;
                   grid-column-gap: 0;
                   grid-auto-flow: row dense;
                   align-items: start;
-                  margin-top: .5rem;
+                  margin-top: 0.5rem;
                   padding-bottom: 7.5rem;
                   background-color: var(--utility-background-color);
                   color: #eee;
