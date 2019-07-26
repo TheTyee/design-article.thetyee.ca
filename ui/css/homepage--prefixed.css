@@ -111,7 +111,7 @@ body {
   --typeface-display-large: miller-banner, georgia, serif;
 }
 
-.homepage--harriet, .new-homepage--harriet_b {
+.new-homepage--harriet, .new-homepage--harriet_b {
   --typeface-serif: Harriet-Texttest, georgia, serif;
   --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
 
@@ -123,7 +123,7 @@ body {
   --typeface-display-large: Harriet-DisplayTest, georgia, serif;
 }
 
-.homepage--harriet_c {
+.new-homepage--harriet_c {
   --typeface-serif: Harriet-Texttest, georgia, serif;
   --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
 
@@ -135,7 +135,7 @@ body {
   --typeface-display-large: Harriet-Texttest, georgia, serif;
 }
 
-.homepage--harriet-some {
+.new-homepage--harriet-some {
   --typeface-serif: miller-text, georgia, serif;
   --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
 
@@ -397,7 +397,7 @@ body {
 
 /* Header Typography -- Logo block ----------------- */
 
-.site-header__tagline  {
+.new-site-header__tagline  {
   position: relative;
   font-family: var(--typeface-serif);
   font-size: 0.86em;
@@ -428,7 +428,7 @@ body {
 
 /* Header Typography -- Navigation */
 
-.site-nav-main {
+.new-site-nav-main {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -463,11 +463,11 @@ body {
 
 /* Module text styles ----------------- */
 
-.label--small {
+.new-label--small {
   font-style: italic;
 }
 
-.hmpg-module-header__main-label, .new-m-comment-noted__label, .new-m-barometer__label {
+.new-hmpg-module-header__main-label, .new-m-comment-noted__label, .new-m-barometer__label {
   font-size: 1.4em;
   font-weight: 800;
   text-transform:uppercase;
@@ -486,7 +486,7 @@ body {
       }
     }
 
-.m-comment-noted__label {
+.new-m-comment-noted__label {
   padding-left: 1.1em;
 }
 
@@ -498,7 +498,7 @@ body {
       transform: scale(.65) translate(-40%, -40%);
     }
 
-.m-barometer__label {
+.new-m-barometer__label {
   padding-left: 1.4em;
 }
 
@@ -510,20 +510,20 @@ body {
       transform: scale(.75) translate(-40%, -40%);
     }
 
-.tyee-insider__story .new-story-item__deck,
-.hmpg-org-deep-dive .new-story-item--primary .new-story-item__deck {
+.new-tyee-insider__story .new-story-item__deck,
+.new-hmpg-org-deep-dive .new-story-item--primary .new-story-item__deck {
   font-family: var(--typeface-serif);
   font-size: 1.33em;
   line-height: 3rem;
   color: var(--text-colour);
 }
 
-.tyee-insider__story .new-story-item__deck p:nth-of-type(n+2),
-.hmpg-org-deep-dive .new-story-item--primary .new-story-item__deck p:nth-of-type(n+2) {
+.new-tyee-insider__story .new-story-item__deck p:nth-of-type(n+2),
+.new-hmpg-org-deep-dive .new-story-item--primary .new-story-item__deck p:nth-of-type(n+2) {
   padding-top: 2rem;
 }
 
-.m-tyee-insider__related-label {
+.new-m-tyee-insider__related-label {
   font-size: 0.85em;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -532,7 +532,7 @@ body {
   margin: 3rem 0 1rem; /* 4rem total realigns with 2rem-baseline grid */
 }
 
-.m-comment-noted__title, .new-m-barometer__title {
+.new-m-comment-noted__title, .new-m-barometer__title {
   font-family: var(--typeface-display-medium);
   font-weight: 600;
   line-height: 3rem;
@@ -545,7 +545,7 @@ body {
 
 /* Story Items */
 
-.story-item__headline {
+.new-story-item__headline {
    font-family: var(--typeface-display);
    font-weight: 600;
    line-height: 3rem; /* this is 1.5 x baseline, so headlines that break over
@@ -556,11 +556,11 @@ body {
    margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
 }
 
-.homepage--harriet_b .new-story-item__headline {
+.new-homepage--harriet_b .new-story-item__headline {
   font-weight: 700;
 }
 
-.category-label {
+.new-category-label {
   font-family: var(--typeface-sans);
   font-size: 0.875em;
   font-weight: 600;
@@ -570,15 +570,15 @@ body {
   margin: 1rem 0 1rem; /* Adds up to 2rem, aligning with baseline grid */
 }
 
-.story-item__deck {
+.new-story-item__deck {
   color: var(--text-colour-light);
 }
 
-.story-item__author, .new-story-item__date {
+.new-story-item__author, .new-story-item__date {
   font-weight: 600;
 }
 
-.story-item__author {
+.new-story-item__author {
   margin-top: 0rem;
 }
 
@@ -596,7 +596,7 @@ body {
       font-style: italic;
     }
 
-.story-item__news-source {
+.new-story-item__news-source {
   font-family: var(--typeface-sans);
   font-weight: 200;
 } /* for Reported Elsewhere */
@@ -825,14 +825,14 @@ a {
 
 /* BUTTON atom */
 
-.button {
+.new-button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
   cursor: pointer;
 }
 
-.button {
+.new-button {
   display: inline-block;
   border: 2px solid var(--brand-colour--text);
   border-radius: 0rem;
@@ -916,7 +916,7 @@ a {
 /* BADGE molecule */
 /* This styles the existing story-badge html molecule from the story page to work on the homepage. These styles replace the story page badge styles. */
 
-.badge { }
+.new-badge { }
 
   .new-badge--story-item-placement {
     display: block;
@@ -984,7 +984,7 @@ a {
 /* STORY ITEM MOLECULE ------------------- */
 
 /* default story item grid -- single column  */
-.story-item--index-page {
+.new-story-item--index-page {
     position: relative;
     display: grid;
     grid-column-gap: var(--gutter-column);
@@ -1348,7 +1348,7 @@ a {
 
 /* HMPG AD BOX MOLECULE ------------------- */
 
-.hmpg-ad-box {
+.new-hmpg-ad-box {
   position: relative;
 }
 
@@ -1388,7 +1388,7 @@ a {
 /* COUNTER LIST molecule ----------------- */
 /* This formats a container of articles into a numbered list with custom numbers. It uses the styling method from https://www.w3schools.com/css/css_counters.asp Variants can be seen here: https://www.w3.org/Style/Examples/007/color-bullets.en.html */
 
-.counter-list--story-items {
+.new-counter-list--story-items {
   counter-reset: story-item;
 }
 
@@ -1431,7 +1431,7 @@ a {
 /* There's also styles for this wrapper mixed in with other organisms. */
 /* Should be considolidated at some point. */
 
-.hmpg-org-wrapper {
+.new-hmpg-org-wrapper {
   position: relative;
   padding: 0 var(--page-margin-sides);
   padding-bottom: calc(var(--gutter-row) + 0rem);
@@ -1494,7 +1494,7 @@ a {
 
 /* HMPG RECENT STORIES organism ---------- */
 
-.hmpg-org-recent-stories {
+.new-hmpg-org-recent-stories {
   display: grid;
 }
 
@@ -1509,7 +1509,7 @@ a {
           margin-bottom: 4rem;
       }
 
-.hmpg-org-recent-stories__list {
+.new-hmpg-org-recent-stories__list {
       /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
       display: grid;
       width: 100%;
@@ -1712,7 +1712,7 @@ a {
 /* TYEE INSIDER organism ----------------- */
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
 
-.hmpg-org-tyee-insider {
+.new-hmpg-org-tyee-insider {
   position: relative;
   display: grid;
   grid-column-gap: var(--gutter-column);
@@ -1721,7 +1721,7 @@ a {
   background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
 }
 
-.hmpg-module-header {
+.new-hmpg-module-header {
   height: 2rem;
   margin-bottom: 2rem;
 }
@@ -1756,18 +1756,18 @@ a {
     display: none;
   }
 
-.hmpg-module-header__main-label-blurb {
+.new-hmpg-module-header__main-label-blurb {
   display: inline-block;
 }
 
-.m-tyee-insider__related-stories {
+.new-m-tyee-insider__related-stories {
   display: grid;
   grid-row-gap: var(--gutter-row);
   margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
 }
 
-.m-tyee-insider__main,
-.m-comment-noted {
+.new-m-tyee-insider__main,
+.new-m-comment-noted {
   position: relative
 }
 
@@ -1997,7 +1997,7 @@ a {
 
 /* PINNED STORY organism ----------------- */
 
-.hmpg-org-pinned-story {
+.new-hmpg-org-pinned-story {
   display: grid;
   z-index: 10; /* So that bottom border doesn't fall underneath
                   the BG of next module due to negative margin */
@@ -2035,7 +2035,7 @@ a {
 
 /* DEEP DIVE organism ----------------- */
 
-.hmpg-org-deep-dive {
+.new-hmpg-org-deep-dive {
 
   display: grid;
   grid-column-gap: var(--gutter-column);
@@ -2050,7 +2050,7 @@ a {
   .new-hmpg-org-deep-dive > .new-story-item:first-of-type .new-story-item__date { display: none; }
 
 /* Remove bottom row border from first story-item */
-.hmpg-org-deep-dive .new-story-item--index-page:first-of-type::after  {
+.new-hmpg-org-deep-dive .new-story-item--index-page:first-of-type::after  {
       content:none;
     }
 
@@ -2149,7 +2149,7 @@ a {
 
 /* MOST organism ----------------- */
 
-.hmpg-org-most {
+.new-hmpg-org-most {
   display: grid;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
@@ -2165,7 +2165,7 @@ a {
       margin-top: -2rem;
     }
 
-.hmpg-org-most--column {
+.new-hmpg-org-most--column {
   position: relative;
   display: grid;
   grid-row-gap: var(--gutter-row-half);
@@ -2174,7 +2174,7 @@ a {
   margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
 }
 
-.hmpg-org-most--column::before {
+.new-hmpg-org-most--column::before {
         content: "";
         position: absolute;
         top: 0px;
@@ -2224,7 +2224,7 @@ a {
 
 /* REPORTED ELSEWHERE organism ----------------- */
 
-.hmpg-org-reported-elsewhere {
+.new-hmpg-org-reported-elsewhere {
   display: grid;
   padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
@@ -2278,7 +2278,7 @@ a {
 
 /* BUILDER organism ----------------- */
 
-.hmpg-org-builder {
+.new-hmpg-org-builder {
   display: grid;
   justify-content: center;
   padding-top: 3rem !important;
@@ -2290,7 +2290,7 @@ a {
     content:none;
   }
 
-.builder__content {
+.new-builder__content {
     position: relative;
     max-width: 1000px;
     display: grid;
@@ -2386,11 +2386,11 @@ a {
 /* SITE HEADER organism ----------------- */
 /* This thing is a beast ---------------- */
 
-.site-header {
+.new-site-header {
   padding-bottom: 0rem;
 }
 
-.site-header__logo-block {
+.new-site-header__logo-block {
   display: grid;
   grid-template-columns: 1fr;
   grid-column-gap: var(--gutter-column);
@@ -2400,7 +2400,7 @@ a {
   padding-bottom: 1rem; /* balances grid alignment */
 }
 
-.site-header__tagline {
+.new-site-header__tagline {
   margin-top: calc(.3rem + 2vw);
 }
 
@@ -3020,7 +3020,7 @@ a {
 
 /* SITE FOOTER organism ----------------- */
 
-.site-footer {
+.new-site-footer {
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, 140px);
@@ -3052,7 +3052,7 @@ a {
       width: 80%;
     }
 
-.links-group {
+.new-links-group {
   display:grid;
   grid-template-rows: auto;
 }
@@ -3124,7 +3124,7 @@ a {
 /*  RESPONSIVE IMAGES -- forces the image to be the same width as its parent
     element. Confusingly similar in name to Bootstrap's .new-img-responsive but this
     will actually stretch an image rather than merely shrink it. */
-.responsive-img {
+.new-responsive-img {
   width: 100%;
   height: auto;
   display: block;
@@ -3218,7 +3218,7 @@ Some of the tertiary recent stories items are hidden and only revealed when the 
 img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
            =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 1          ) / img-aspect )
 */
-.hmpg-org-recent-stories .new-story-item--tertiary .new-story-item__image .new-responsive-img {
+.new-hmpg-org-recent-stories .new-story-item--tertiary .new-story-item__image .new-responsive-img {
   min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 1 ) / 1.5 )
 }
 
