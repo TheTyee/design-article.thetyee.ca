@@ -12,7 +12,7 @@ homepage can be used on other pages without creating css collisions */
 
 /* Set defaults like Normalize.css and border-sizing. */
 
-* {
+.site-header--homepage * {
   list-style-type: none;
 }
 
@@ -22,9 +22,9 @@ html {
   box-sizing: border-box;
 }
   /* Sets inheritance so that compnents can easily override the border-box if required. */
-  *,
-  *:before,
-  *:after {
+  .site-header--homepage *,
+  .site-header--homepage *:before,
+  .site-header--homepage *:after {
     box-sizing: inherit;
   }
 
