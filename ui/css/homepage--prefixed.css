@@ -12,19 +12,19 @@ homepage can be used on other pages without creating css collisions */
 
 /* Set defaults like Normalize.css and border-sizing. */
 
-.site-header--homepage * {
+.new-site-header--homepage * {
   list-style-type: none;
 }
 
 
 /* Border-box reset. */
-html {
+.new-site-header--homepage {
   box-sizing: border-box;
 }
   /* Sets inheritance so that compnents can easily override the border-box if required. */
-  .site-header--homepage *,
-  .site-header--homepage *:before,
-  .site-header--homepage *:after {
+  .new-site-header--homepage *,
+  .new-site-header--homepage *:before,
+  .new-site-header--homepage *:after {
     box-sizing: inherit;
   }
 
@@ -61,7 +61,7 @@ html {
   --base-type-size: 2rem;
   --base-line-height: 3rem;
 } These variables aren't in use. The values are set on <body> below: */
-body{
+.new-site-header--homepage {
   font-size: 1.6rem;
   line-height: 2rem;
   color: var(--text-colour);
@@ -93,7 +93,7 @@ html {
   background-color: var(--utility-background-color);
 }
 
-body {
+.new-site-header--homepage {
   background-color: white;
 }
 
@@ -388,7 +388,7 @@ https://caniuse.com/#feat=css3-colors
 
 /* Default text styles ----------------- */
 
-body {
+.new-site-header--homepage {
   font-family: var(--typeface-sans);
   font-weight: 400;
   font-style: normal;
@@ -774,19 +774,19 @@ body {
   #ATOMS
 \*-----------------------------------------*/
 
-strong {
+strong.new-site-header--homepage {
   font-weight: 600;
 }
 
 
 /* LINK atom */
 
-a {
+a.new-site-header--homepage {
   text-decoration: none;
 }
 
     /* link styles for body text of Insider and Deep Dive */
-    p a,
+    .new-site-header--homepage p a,
     .new-site-header__tagline a {
       border-bottom: 2px solid var(--link-colour);
     }
