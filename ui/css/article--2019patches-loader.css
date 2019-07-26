@@ -10,4 +10,11 @@ the CSS file seems to avoid the bug (or maybe prevent resource mapping).
 Another thing to note is that the @import'ed stylesheet shouldn't itself contain
 any @import declarations, otherwise you end up with yet another devtools bug
 shitstorm and a headache the size of mother russia. */
-@import "article--2019patches.css";
+
+/* This stylesheet resets styles within the new header to prevent the
+application of styles from the old article page. */
+@import "article--newheader-reset.css";
+
+/* This file adds prefixes to all the CSS classes so that components from the new
+homepage can be used on other pages without creating css collisions */
+@import "homepage--prefixed.css";
