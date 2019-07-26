@@ -6,6 +6,7 @@
 homepage can be used on other pages without creating css collisions */
 
 
+
 /*-----------------------------------------*\
   #GENERIC
 \*-----------------------------------------*/
@@ -28,9 +29,20 @@ homepage can be used on other pages without creating css collisions */
     box-sizing: inherit;
   }
 
+
+
+/*-----------------------------------------*\
+  #OVERRIDES
+\*-----------------------------------------*/
+
 /* Override Bootstrap rules. */
 .new-site-header label {
     margin-bottom: 0;
+}
+
+/* Override Article page rules. */
+.new-site-header .fa:before, .btn-social-icon .glyphicon:before {
+    font-size: 1em;
 }
 
 
