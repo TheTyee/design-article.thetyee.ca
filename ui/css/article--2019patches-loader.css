@@ -1,7 +1,13 @@
+/* Fonts */
+/* Miller and Franklin Gothic */
+@import url("https://use.typekit.net/whf8gkh.css");
+
 /* Add CSS patches for the storypage based on the new home page */
 /* NOTE: For jekyll dev purposes the main css code should be @import'ed rather
 than directly <link>'ed in the header. <link>'ed CSS files are very slow to edit
 with Chrome's devtools due to some kind of resource mapping bug. @import'ing
-the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
-
+the CSS file seems to avoid the bug (or maybe prevent resource mapping).
+Another thing to note is that the @import'ed stylesheet shouldn't itself contain
+any @import declarations, otherwise you end up with yet another devtools bug
+shitstorm and a headache the size of mother russia. */
 @import "article--2019patches.css";
