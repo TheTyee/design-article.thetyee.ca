@@ -2437,7 +2437,7 @@ a {
     /* Default for narrow views:
     Hide all nav item items except the hamburger, search button, and the dropdown menus.
         (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #new-expander--nav-menu (and #new-expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
-    .new-site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
+    .new-site-nav-main > :not(.new-nav__burger):not(.site-nav__dropdown):not(.new-nav__link--search):not(.new-site-nav__search-dropdown) {
       display: none;
     }
 
@@ -2445,8 +2445,8 @@ a {
       cursor: pointer;
     }
 
-    .new-site-nav-main__expander-toggle.nav__burger::before,
-    .new-site-nav-main__expander-toggle.nav__link--more::after {
+    .new-site-nav-main__expander-toggle.new-nav__burger::before,
+    .new-site-nav-main__expander-toggle.new-nav__link--more::after {
       content: "arrow_drop_down";
       display: inline-block;
       vertical-align: -0.25em;
@@ -2516,7 +2516,7 @@ a {
 
           /* ACTIVATED state: Menu is shown and toggle icon is inverted */
           #new-expander--nav-menu:checked ~ .new-site-nav__dropdown {
-            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+            display: grid; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
           }
           .new-site-nav #new-expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::before,
           .new-site-nav #new-expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::after {
@@ -2635,11 +2635,11 @@ a {
                 top: -4rem;
               }
 
-              .new-site-nav-main__expander-toggle.nav__burger {
+              .new-site-nav-main__expander-toggle.new-nav__burger {
                 position: relative;
               }
 
-              .new-site-nav-main__expander-toggle.nav__burger::before {
+              .new-site-nav-main__expander-toggle.new-nav__burger::before {
                 content: "menu";
                 display: inline-block;
                 position: absolute;
@@ -2875,7 +2875,7 @@ a {
                 /* HAMBURGER SHOW/HIDE */
                 /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
                     (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #new-expander--nav-menu (and #new-expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
-                .new-site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
+                .new-site-nav-main > :not(.new-nav__burger):not(.new-site-nav__dropdown):not(.new-nav__link--search):not(.new-site-nav__search-dropdown) {
                   display: block;
                 }
 
