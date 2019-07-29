@@ -116,6 +116,7 @@ h6 {
   margin-top: 2.4em;
   margin-bottom: 0;
   border-bottom: 2px solid #90AD00;
+  border-bottom-color: var(--link-colour);
   padding-bottom: 0.15em;
   font-size: 1em;
   font-weight: 700;
@@ -397,6 +398,10 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
 
 .new-site-header a, .new-site-header a:link, .new-site-header a:visited {color: #404040; color: var(--text-colour)}
 .new-site-header a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
+
+.category-label a {
+  color: var(--brand-colour--text);
+}
 
 
 
@@ -4753,16 +4758,16 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
     typically by synonymous with the lnk color. */
 
 .accent-color {
-    color: #82AD00;
-    fill: #82AD00;
+    color: #82AD00; color: var(--link-colour);
+    fill: #82AD00; fill: var(--link-colour);
 }
 
     .accent-color--background {
-      background-color: #82AD00;
+      background-color: #82AD00; background-color: var(--link-colour);
     }
 
     .accent-color--border {
-      border-color: #90AD00 !important;
+      border-color: #90AD00 !important; border-color: var(--link-colour) !important;
     }
 
 
