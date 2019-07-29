@@ -26,8 +26,17 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.39em;
-  color: #404040;
+  /* color: #404040; */
+  color: var(--text-colour);
   overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
+}
+
+.article__body p {
+  font-family: miller-text, serif;
+}
+
+.article__body .editors-note {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /* Reset to prevent some articles form displaying in italics */
@@ -36,10 +45,11 @@ h1, h2, h3, h4, h5, h6, p, a, blockquote, .ad-box {
 }
 
 h1 {
-  font-family: Georgia, Serif;
+  font-family: miller-display, Georgia, Serif;
   font-weight: 800;
   font-size: 1.625em;
   line-height: 1.21em;
+  letter-spacing: 0.01em;
   margin-bottom: 0.25em;
 }
 
@@ -94,7 +104,7 @@ h4 {
 
 h5 {
   margin-top: 1em;
-  font-family: Georgia, Serif;
+  font-family: miller-text, Georgia, Serif;
   font-size: 1.2em;
   font-weight: 600;
   line-height: 1.18518519em;
@@ -402,7 +412,7 @@ p a:hover {color: #6F9400;}
   padding-bottom: 1em;
   /* padding-left: 2.125em; */
   /* padding-right: 1.75em; */
-  font-family: Georgia, Serif;
+  font-family: miller-text, Georgia, Serif;
   font-weight: 800;
   font-size: 1.15em;
   line-height: 1.333em;
@@ -463,9 +473,9 @@ p a:hover {color: #6F9400;}
     float: left;
     padding-right: 0.06em;
     padding-bottom:0;
-    margin-top: -0.07em;
+    margin-top: -0.09em;
     margin-bottom: -0.1em;
-    font-family: Georgia, Serif;
+    font-family: miller-display, Georgia, Serif;
     font-style: normal;
     font-weight: 800;
     font-size: 5em;
@@ -2817,7 +2827,7 @@ label.valid {
     }
 
     .text-block-container ul {
-          line-height: 5rem;
+          line-height: 2.5rem;
           list-style: none outside;
           padding-left: 0em;
     }
@@ -2828,7 +2838,7 @@ label.valid {
     }
 
     .text-block-container ul li {
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
     }
 
 
@@ -3111,6 +3121,7 @@ label.valid {
 
     .fact-box p, .fact-box ul {
       font-size: .8em !important;
+      font-family: 'Source Sans Pro', sans-serif;
     }
 
     .fact-box ul {
