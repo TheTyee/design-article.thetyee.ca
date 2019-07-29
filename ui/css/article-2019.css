@@ -378,6 +378,7 @@ ul { }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
   color: white;
   background-color:darkgreen;
+  background-color: var(--brand-colour--text-darker);
 }
 
 
@@ -2592,6 +2593,7 @@ div.embedded-poll {
 .btn--subscribe {
   color: white;
   background-color: #82AD00;
+  background-color: var(--brand-colour--text);
 }
 
 
@@ -4065,7 +4067,7 @@ text-overflow: ellipsis;
   margin-top: 0px;
   padding-top: 5px;
   border-bottom: solid 1px #A8A8A8;
-  color: #82AD00;
+  color: #82AD00; color: var(--brand-colour--text-darker);
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
@@ -4084,7 +4086,7 @@ text-overflow: ellipsis;
 }
 
 .messaging-block--barometer p a{
-  background-color: #82AD00;
+  background-color: #82AD00; background-color: var(--brand-colour--text);
   padding: 4px 10px;
   width: 100%;
   font-size: 0.85em;
@@ -4758,16 +4760,18 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
     typically by synonymous with the lnk color. */
 
 .accent-color {
-    color: #82AD00; color: var(--link-colour);
-    fill: #82AD00; fill: var(--link-colour);
+    color: #82AD00;
+    color: var(--link-colour);
+    fill: #82AD00;
+    color: var(--link-colour);
 }
 
     .accent-color--background {
-      background-color: #82AD00; background-color: var(--link-colour);
+      background-color: #82AD00; color: var(--link-colour);
     }
 
     .accent-color--border {
-      border-color: #90AD00 !important; border-color: var(--link-colour) !important;
+      border-color: #90AD00 !important;
     }
 
 
