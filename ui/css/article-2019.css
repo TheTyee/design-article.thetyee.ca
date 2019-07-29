@@ -44,9 +44,9 @@ h1 {
 }
 
     .h1--border-bottom {
-        padding-bottom: .85rem;
+        padding-bottom: 1.7rem;
         border-bottom: 1px solid;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     /* BREAKPOINT: 600px // Increase article headline size */
@@ -353,7 +353,7 @@ ul { }
   background-color: #82AD00;
   padding: 4px 10px;
   width: 100%;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: normal;
   display: block;
   color: #fff !important;
@@ -493,7 +493,7 @@ p a:hover {color: #6F9400;}
 
 .caption {
     padding-top: .65em;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid;
     border-color: inherit;
     font-size: 0.777em;
@@ -1476,15 +1476,15 @@ ul.book_profile {
 }
 
     blockquote {
-        margin: 0 0 1rem 0;
-        padding: 0rem 1.25rem;
-        border-left: .3rem solid #eee;
+        margin: 0 0 2rem 0;
+        padding: 0rem 2.5rem;
+        border-left: .6rem solid #eee;
         font-size: .9em;
         font-weight: 300;
     }
 
     .blockquote figcaption {
-        padding: 0rem 1.55rem;
+        padding: 0rem 3.1rem;
         font-size: .9em;
         font-weight: 300;
         font-style: italic;
@@ -1624,7 +1624,7 @@ figure {
             /* ... compensate for the centering of the article__body to keep figure--XL width within
                    the viewport.
                    [prior offset ??] - (([article__header margin??]) / 2 )        */
-            max-width: 47.25rem;
+            max-width: 94.5rem;
             left: 0;
         }
     }
@@ -2663,7 +2663,7 @@ label.valid {
         display: inline-block;
         width: 100%;
         margin: 0;
-        padding: 0.5rem;
+        padding: 1rem;
         border-bottom: 1px solid;
         border-top: 1px solid;
         font-size: 0.9em;
@@ -2680,7 +2680,7 @@ label.valid {
 .story-item { }
 
     .story-item__description {
-      margin: 0.75em 0.5rem 0 0.5rem;
+      margin: 0.75em 1rem 0 1rem;
       font-size: 0.8em;
       line-height: 1.4em;
       font-weight: 300
@@ -2817,7 +2817,7 @@ label.valid {
     }
 
     .text-block-container ul {
-          line-height: 1.25rem;
+          line-height: 5rem;
           list-style: none outside;
           padding-left: 0em;
     }
@@ -2828,7 +2828,7 @@ label.valid {
     }
 
     .text-block-container ul li {
-          margin-bottom: .5rem;
+          margin-bottom: 2rem;
     }
 
 
@@ -2970,14 +2970,14 @@ label.valid {
         display: block;
         position:absolute;
         left: calc(100% / 2 - 2.125em);
-        top: -2.7rem;
+        top: -5.4rem;
         width: auto;
         transform: scale(.8);
     }
 
         .badge--aside-placement--presents {
             /* left: calc(100% / 2 - 2.5em);
-            top: -2.65rem;
+            top: -5.3rem;
             transform: scale(.88); */
         }
 
@@ -3072,7 +3072,7 @@ label.valid {
         display: block;
         position:absolute;
         left: calc(100% / 2 - .75em);
-        top: -1.65rem;
+        top: -3.3rem;
         width: 2px;
         transform: scale(.8);
     }
