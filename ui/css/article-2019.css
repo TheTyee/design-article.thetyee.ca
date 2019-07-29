@@ -4763,7 +4763,7 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
     color: #82AD00;
     color: var(--link-colour);
     fill: #82AD00;
-    color: var(--link-colour);
+    fill: var(--link-colour);
 }
 
     .accent-color--background {
