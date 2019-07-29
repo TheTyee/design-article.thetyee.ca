@@ -449,7 +449,7 @@ https://caniuse.com/#feat=css3-colors
   letter-spacing: 0.06em;
 }
 
-  .new-nav__link--join {
+  .new-site-nav-main a.new-nav__link--join {
     color: var(--brand-colour--text);
   }
 
