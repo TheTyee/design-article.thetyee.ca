@@ -404,6 +404,32 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
   color: var(--brand-colour--text);
 }
 
+/* Hover states for text links, buttons and nav-bar */
+    a:hover, a:focus,
+    .site-footer a:hover  {
+      display: inline-block;
+      color: var(--link-colour);
+      transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+    }
+
+        p a:hover, p a:focus  {
+          margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
+        }
+
+        .presents-box a:hover, .presents-box a:focus {
+          display: inline;
+          color: var(--link-colour);
+          transform: scale(1.05)!important;
+        }
+
+        a.link-wrap:hover {
+          display: block;
+        }
+
+        .related-story:hover {
+          transform: scale(1.05)!important;
+        }
+
 
 
 /* PULLQUOTES  ========================================================================== */
@@ -3653,7 +3679,9 @@ footer .footer__menu {
 .latest-stories__media-wrapper li:hover{
   /* background-color: hsla(66, 100%, 33%, .1); */
   background-color: hsla(45, 100%, 51%, 0.1);
-
+}
+.latest-stories__media-wrapper li:hover a{
+  display: block;
 }
 .latest-stories__media-wrapper li:last-child{
   border-bottom: none;
