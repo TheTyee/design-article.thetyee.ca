@@ -382,14 +382,21 @@ ul { }
 
 
 /* LINKS  ========================================================================== */
+/* Leaves fallbacks to green for IE and browsers that don't support CSS variables. */
 
-a, a:link, a:visited {color: #82AD00;}
-a:hover {color: #6F9400;}
-a:active {color: #82AD00;}
+a, a:link, a:visited {color: #404040; color: var(--link-colour)}
+a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
+a:active {color: #404040; color: var(--text-colour)}
 
 /* Text links within paragraphs get a dotted underscores */
-p a, p a:link, p a:visited {color: #82AD00;font-weight:400;border-bottom: 1.5px solid #82AD00;}
-p a:hover {color: #6F9400;}
+p a, p a:link, p a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
+p a, p a:link, p a:visited {
+      border-bottom: 2px solid var(--link-colour);
+    }
+p a:hover {color: #6F9400; color: var(--link-colour)}
+
+.new-site-header a, .new-site-header a:link, .new-site-header a:visited {color: #404040; color: var(--text-colour)}
+.new-site-header a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
 
 
 
