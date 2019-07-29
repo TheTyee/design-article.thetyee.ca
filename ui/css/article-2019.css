@@ -2680,7 +2680,8 @@ label.valid {
 }
 
 .related-story:hover {
-    background-color: #eaeaea;
+    /* background-color: #eaeaea; */
+    background-color: #ffda3733;
 }
 
     .related-story h6 {
@@ -3650,7 +3651,8 @@ footer .footer__menu {
   line-height: 1.75em;
 }
 .latest-stories__media-wrapper li:hover{
-  background-color: hsla(66, 100%, 33%, .1);
+  /* background-color: hsla(66, 100%, 33%, .1); */
+  background-color: hsla(45, 100%, 51%, 0.1);
 
 }
 .latest-stories__media-wrapper li:last-child{
@@ -3671,7 +3673,7 @@ footer .footer__menu {
   height: auto;
 }
 .latest-stories__hed {
-  color: #82AD00;
+  color: #82AD00; color: var(--link-colour);
   font-size: em;
   font-weight: 600;
 }
