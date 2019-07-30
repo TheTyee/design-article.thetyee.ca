@@ -125,7 +125,7 @@ h6 {
       margin-top: 2.4em;
       margin-bottom: 0;
       border-bottom: 2px solid #90AD00;
-      border-bottom-color: var(--link-colour);
+      border-bottom-color: var(--brand-colour--text);
       padding-bottom: 0.15em;
       font-size: 1em;
       font-weight: 700;
@@ -138,6 +138,11 @@ h6 {
       font-size: .8em;
       font-weight: 600;
       margin-right: .15rem;
+    }
+
+    /* Darken Tag Labels for better legibility */
+    h6:nth-of-type(n+2) a {
+      color: var(--link-colour);
     }
 
     /* Separators between tag labels */
