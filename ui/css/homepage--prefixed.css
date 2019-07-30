@@ -1,26 +1,49 @@
 /*-----------------------------------------*\
+  HOMEPAGE CSS PREFIXED
+\*-----------------------------------------*/
+
+/* This file adds prefixes to all the CSS classes so that components from the new
+homepage can be used on other pages without creating css collisions */
+
+
+
+/*-----------------------------------------*\
   #GENERIC
 \*-----------------------------------------*/
 
 /* Set defaults like Normalize.css and border-sizing. */
 
-* {
+.new-site-header--homepage * {
   list-style-type: none;
 }
 
 
 /* Border-box reset. */
-html {
+.new-site-header--homepage {
   box-sizing: border-box;
 }
   /* Sets inheritance so that compnents can easily override the border-box if required. */
-  *,
-  *:before,
-  *:after {
+  .new-site-header--homepage *,
+  .new-site-header--homepage *:before,
+  .new-site-header--homepage *:after {
     box-sizing: inherit;
   }
 
 
+
+/*-----------------------------------------*\
+  #OVERRIDES
+\*-----------------------------------------*/
+
+/* Override Bootstrap rules. */
+.new-site-header label {
+    margin-bottom: 0;
+}
+
+/* Override Article page rules. */
+.new-site-header .fa:before, .btn-social-icon .glyphicon:before {
+    font-size: 1em;
+}
 
 
 
@@ -53,12 +76,10 @@ html {
   --base-type-size: 2rem;
   --base-line-height: 3rem;
 } These variables aren't in use. The values are set on <body> below: */
-body{
+.new-site-header--homepage {
   font-size: 1.6rem;
   line-height: 2rem;
   color: var(--text-colour);
-
-  padding-top: .rem;
 }
 
 /* Base Colours */
@@ -87,7 +108,7 @@ html {
   background-color: var(--utility-background-color);
 }
 
-body {
+.new-site-header--homepage {
   background-color: white;
 }
 
@@ -105,7 +126,7 @@ body {
   --typeface-display-large: miller-banner, georgia, serif;
 }
 
-.homepage--harriet, .homepage--harriet_b {
+.new-homepage--harriet, .new-homepage--harriet_b {
   --typeface-serif: Harriet-Texttest, georgia, serif;
   --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
 
@@ -117,7 +138,7 @@ body {
   --typeface-display-large: Harriet-DisplayTest, georgia, serif;
 }
 
-.homepage--harriet_c {
+.new-homepage--harriet_c {
   --typeface-serif: Harriet-Texttest, georgia, serif;
   --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
 
@@ -129,7 +150,7 @@ body {
   --typeface-display-large: Harriet-Texttest, georgia, serif;
 }
 
-.homepage--harriet-some {
+.new-homepage--harriet-some {
   --typeface-serif: miller-text, georgia, serif;
   --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
 
@@ -159,13 +180,13 @@ body {
 
           /* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
              to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
-          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
+          .new-hmpg-org-recent-stories .new-story-item--primary .new-story-item__headline {
             font-weight: 700;
           }
 
           /* Increase weight of Pinned Stories headline (set in Miller Display)
              to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
-          .hmpg-org-pinned-story .story-item--primary .story-item__headline {
+          .new-hmpg-org-pinned-story .new-story-item--primary .new-story-item__headline {
             font-weight: 700;
           }
         }
@@ -177,7 +198,7 @@ body {
 
           /* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
              to match weight of Secondary Story headlines (set in Miller Text) */
-          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
+          .new-hmpg-org-recent-stories .new-story-item--primary .new-story-item__headline {
             font-weight: 700;
           }
         }
@@ -190,14 +211,14 @@ body {
 Simple examples:
     --column-gutter: calc(5vw+10px);
 
-    .container {
+    .new-container {
       grid-column-gap:var(--column-gutter);
     }
 
     --col-grid-main: 1fr 1fr;
     @media screen and (min-width: 1368px) { --col-grid-main: 2fr 1fr 1fr 1fr; }
 
-    .hmpg-org-recent-stories__top-stories {
+    .new-hmpg-org-recent-stories__top-stories {
         grid-template-columns: var(--col-grid-main);
       }
  */
@@ -382,7 +403,7 @@ https://caniuse.com/#feat=css3-colors
 
 /* Default text styles ----------------- */
 
-body {
+.new-site-header--homepage {
   font-family: var(--typeface-sans);
   font-weight: 400;
   font-style: normal;
@@ -391,14 +412,14 @@ body {
 
 /* Header Typography -- Logo block ----------------- */
 
-.site-header__tagline  {
+.new-site-header__tagline  {
   position: relative;
   font-family: var(--typeface-serif);
-  font-size: .86em;
+  font-size: 0.86em;
   font-weight: 600;
 }
 
-    .site-header__tagline::before, .site-header__tagline::after  {
+    .new-site-header__tagline::before, .new-site-header__tagline::after  {
       content: "";
       display: block;
       position: absolute;
@@ -406,62 +427,66 @@ body {
       border-top: 1px solid var(--text-colour);
     }
 
-    .site-header__tagline::before  {
+    .new-site-header__tagline::before  {
       top: -1rem;
     }
 
-    .site-header__tagline::after  {
+    .new-site-header__tagline::after  {
       bottom: -1rem;
     }
 
-    .site-header__tagline--a::before,
-    .site-header__tagline--a::after {
+    .new-site-header__tagline--a::before,
+    .new-site-header__tagline--a::after {
       right: 0;
     }
 
 
 /* Header Typography -- Navigation */
 
-.site-nav-main {
+.new-site-nav-main {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
-  .nav__link--join {
+  .new-site-nav-main a.new-nav__link--join {
     color: var(--brand-colour--text);
   }
 
-  .site-nav__dropdown-heading,
-  .site-nav__dropdown .nav__link--join,
-  .site-nav__dropdown .twitter {
+  .new-site-nav__dropdown a.new-nav__link--join {
+    color: var(--brand-colour);
+  }
+
+  .new-site-nav__dropdown-heading,
+  .new-site-nav__dropdown .new-nav__link--join,
+  .new-site-nav__dropdown .new-twitter {
     padding-top: 2rem;
   }
 
-  .nav__link--dropdown-item {
+  .new-nav__link--dropdown-item {
     font-weight: 400
   }
 
-  .expander-content__topics-submenu .nav__link--dropdown-item,
-  .expander-content__more-submenu .nav__link--dropdown-item {
+  .new-expander-content__topics-submenu .new-nav__link--dropdown-item,
+  .new-expander-content__more-submenu .new-nav__link--dropdown-item {
     text-transform: capitalize;
     letter-spacing: 0
   }
 
-  .site-nav__dropdown .nav__link--newsletter,
-  .site-nav__dropdown .facebook,
-  .site-nav__dropdown .twitter {
+  .new-site-nav__dropdown .new-nav__link--newsletter,
+  .new-site-nav__dropdown .new-facebook,
+  .new-site-nav__dropdown .new-twitter {
     padding-top: 1rem;
   }
 
 
 /* Module text styles ----------------- */
 
-.label--small {
+.new-label--small {
   font-style: italic;
 }
 
-.hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
+.new-hmpg-module-header__main-label, .new-m-comment-noted__label, .new-m-barometer__label {
   font-size: 1.4em;
   font-weight: 800;
   text-transform:uppercase;
@@ -475,16 +500,16 @@ body {
 
       /* Center the module label when the module appears directly below page header
          (and therefore with no top border)   */
-      .hmpg-org-wrapper:first-of-type .hmpg-module-header {
+      .new-hmpg-org-wrapper:first-of-type .new-hmpg-module-header {
         text-align: center;
       }
     }
 
-.m-comment-noted__label {
+.new-m-comment-noted__label {
   padding-left: 1.1em;
 }
 
-    .m-comment-noted__label::before {
+    .new-m-comment-noted__label::before {
       content: url(../img/icon-comment-noted.svg);
       display: inline-block;
       position: absolute;
@@ -492,11 +517,11 @@ body {
       transform: scale(.65) translate(-40%, -40%);
     }
 
-.m-barometer__label {
+.new-m-barometer__label {
   padding-left: 1.4em;
 }
 
-    .m-barometer__label::before {
+    .new-m-barometer__label::before {
       content: url(../img/icon-barometer.svg);
       display: inline-block;
       position: absolute;
@@ -504,21 +529,21 @@ body {
       transform: scale(.75) translate(-40%, -40%);
     }
 
-.tyee-insider__story .story-item__deck,
-.hmpg-org-deep-dive .story-item--primary .story-item__deck {
+.new-tyee-insider__story .new-story-item__deck,
+.new-hmpg-org-deep-dive .new-story-item--primary .new-story-item__deck {
   font-family: var(--typeface-serif);
   font-size: 1.33em;
   line-height: 3rem;
   color: var(--text-colour);
 }
 
-.tyee-insider__story .story-item__deck p:nth-of-type(n+2),
-.hmpg-org-deep-dive .story-item--primary .story-item__deck p:nth-of-type(n+2) {
+.new-tyee-insider__story .new-story-item__deck p:nth-of-type(n+2),
+.new-hmpg-org-deep-dive .new-story-item--primary .new-story-item__deck p:nth-of-type(n+2) {
   padding-top: 2rem;
 }
 
-.m-tyee-insider__related-label {
-  font-size: .85em;
+.new-m-tyee-insider__related-label {
+  font-size: 0.85em;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -526,7 +551,7 @@ body {
   margin: 3rem 0 1rem; /* 4rem total realigns with 2rem-baseline grid */
 }
 
-.m-comment-noted__title, .m-barometer__title {
+.new-m-comment-noted__title, .new-m-barometer__title {
   font-family: var(--typeface-display-medium);
   font-weight: 600;
   line-height: 3rem;
@@ -539,7 +564,7 @@ body {
 
 /* Story Items */
 
-.story-item__headline {
+.new-story-item__headline {
    font-family: var(--typeface-display);
    font-weight: 600;
    line-height: 3rem; /* this is 1.5 x baseline, so headlines that break over
@@ -550,13 +575,13 @@ body {
    margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
 }
 
-.homepage--harriet_b .story-item__headline {
+.new-homepage--harriet_b .new-story-item__headline {
   font-weight: 700;
 }
 
-.category-label {
+.new-category-label {
   font-family: var(--typeface-sans);
-  font-size: .875em;
+  font-size: 0.875em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -564,25 +589,25 @@ body {
   margin: 1rem 0 1rem; /* Adds up to 2rem, aligning with baseline grid */
 }
 
-.story-item__deck {
+.new-story-item__deck {
   color: var(--text-colour-light);
 }
 
-.story-item__author, .story-item__date {
+.new-story-item__author, .new-story-item__date {
   font-weight: 600;
 }
 
-.story-item__author {
+.new-story-item__author {
   margin-top: 0rem;
 }
 
-    .m-comment-noted .story-item__author {
+    .new-m-comment-noted .new-story-item__author {
       display: block;
       margin-top: 2rem;
       text-align
     }
 
-    .m-comment-noted .story-item__author::before {
+    .new-m-comment-noted .new-story-item__author::before {
       content:"Submitted by";
       display: block;
       margin-top: 2rem;
@@ -590,53 +615,53 @@ body {
       font-style: italic;
     }
 
-.story-item__news-source {
+.new-story-item__news-source {
   font-family: var(--typeface-sans);
   font-weight: 200;
 } /* for Reported Elsewhere */
 
     /* Separator between headline and news source */
-    .story-item__news-source::before {
+    .new-story-item__news-source::before {
       content:"•";
-      padding-left: .25em;
-      padding-right: .25em;
+      padding-left: 0.25em;
+      padding-right: 0.25em;
     }
 
 
     /* primary story-items */
 
-    .story-item--primary .story-item__headline {
+    .new-story-item--primary .new-story-item__headline {
       font-family: var(--typeface-display-large);
       line-height: 4rem; /* this is 2 x baseline */
       font-size: 2.33em;
       margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
     }
 
-    .story-item--primary .category-label {
+    .new-story-item--primary .new-category-label {
       font-size: 1.11em;
     }
 
-    .story-item--primary .story-item__author {
+    .new-story-item--primary .new-story-item__author {
       padding-top: 2rem; /* 2rem total aligns with baseline grid */
     }
 
 
     /* secondary story-items */
 
-    .story-item--secondary .story-item__headline {
+    .new-story-item--secondary .new-story-item__headline {
       font-family: var(--typeface-display-medium);
     }
 
     /* tertiary story-items */
 
-    .story-item--tertiary .story-item__headline {
+    .new-story-item--tertiary .new-story-item__headline {
       font-family: var(--typeface-display-medium);
       font-size: 1.5em;
       line-height: 3rem;
       margin: 0; /* matches with deck margin-bottom to realign with baseline grid */
     }
 
-    .story-item--tertiary .story-item__deck {
+    .new-story-item--tertiary .new-story-item__deck {
       font-size: 1em;
       line-height: 2rem;
       margin: 1rem 0 0rem; /* No bottom padding to prevent gap above author byline */
@@ -644,7 +669,7 @@ body {
 
     /* minimum story-items */
 
-    .story-item--minimum .story-item__headline {
+    .new-story-item--minimum .new-story-item__headline {
       font-family: var(--typeface-display-medium);
       /* font-weight: 600; */
       line-height: 3rem;
@@ -657,25 +682,25 @@ body {
         /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
 
-          .story-item--primary .story-item__deck {
+          .new-story-item--primary .new-story-item__deck {
             text-transform: uppercase;
           }
 
-              .hmpg-org-tyee-insider .story-item--primary .story-item__deck {
+              .new-hmpg-org-tyee-insider .new-story-item--primary .new-story-item__deck {
                 text-transform: none ;
               }
 
           /* Reduce size of Primary headlines so that they don't take up too much
              vertical space in a 2-col layout */
-          .story-item--primary .story-item__headline {
+          .new-story-item--primary .new-story-item__headline {
             line-height: 3rem; /* this is 2 x baseline */
             font-size: 1.65em;
             margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
           }
 
           /* Keep large size of Primary headlines in module that have more space for them */
-          .m-tyee-insider__main .story-item--primary .story-item__headline,
-          .hmpg-org-deep-dive .story-item--primary .story-item__headline {
+          .new-m-tyee-insider__main .new-story-item--primary .new-story-item__headline,
+          .new-hmpg-org-deep-dive .new-story-item--primary .new-story-item__headline {
             font-family: var(--typeface-display-large);
             line-height: 4rem; /* this is 2 x baseline */
             font-size: 2.33em;
@@ -686,7 +711,7 @@ body {
         /*  STORY ITEMS TYPOGRAPHY TERTIARY BREAKPOINT -- breakpoint-width-tertiary: 1000px */
         @media screen and (min-width: 1000px) {
 
-          .story-item--primary .story-item__headline {
+          .new-story-item--primary .new-story-item__headline {
             font-family: var(--typeface-display-large);
             line-height: 4rem; /* this is 2 x baseline */
             font-size: 2.33em;
@@ -698,7 +723,7 @@ body {
         @media screen and (min-width: 1180px) and (max-width: 1367px) {
           /* Reduce size of Primary headlines in Recent Stories module because halfpage adblock
              is reducing the column width. */
-          .hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
+          .new-hmpg-org-recent-stories--general .new-story-item--primary .new-story-item__headline {
             line-height: 3rem; /* this is 2 x baseline */
             font-size: 1.65em;
           }
@@ -709,7 +734,7 @@ body {
 
             /* Slightly reduce size of tertiary headlines in wide screens
                to accommodate a 2-col stiry-item layout.                  */
-            .story-item--tertiary .story-item__headline {
+            .new-story-item--tertiary .new-story-item__headline {
                 font-family: var(--typeface-display);
                 font-family: var(--typeface-display-medium);
                     font-size: 1.25em;
@@ -718,13 +743,13 @@ body {
             }
 
             /* Enlarge Topic module primary story headline in wide views (like pinned story headline)  */
-            .hmpg-org-recent-stories--topic .story-item--primary .story-item__headline {
+            .new-hmpg-org-recent-stories--topic .new-story-item--primary .new-story-item__headline {
               line-height: 6rem; /* this is 3 x baseline */
               font-size: 3.35em;
               margin-bottom: 4rem
             }
 
-                .hmpg-org-recent-stories--topic .story-item--primary > :not(.story-item__image):not(.story-item__headline) {
+                .new-hmpg-org-recent-stories--topic .new-story-item--primary > :not(.story-item__image):not(.story-item__headline) {
                   margin-left: 8rem;
                   margin-right: 8rem;
                 }
@@ -732,27 +757,27 @@ body {
 
             /* Pinned Story enhancement */
 
-            .hmpg-org-pinned-story .story-item--primary .category-label {
+            .new-hmpg-org-pinned-story .new-story-item--primary .new-category-label {
                   margin-bottom: 1.5rem;
                 }
 
-            .hmpg-org-pinned-story .story-item--primary .story-item__headline {
+            .new-hmpg-org-pinned-story .new-story-item--primary .new-story-item__headline {
               line-height: 6rem; /* this is 3 x baseline */
               font-size: 3.35em;
               margin-bottom: 4rem
             }
 
-            .hmpg-org-pinned-story .story-item--primary > :not(.story-item__image) {
+            .new-hmpg-org-pinned-story .new-story-item--primary > :not(.story-item__image) {
               margin-left: 4rem;
               margin-right: 4rem;
             }
 
-            .hmpg-org-pinned-story .story-item--primary .story-item__deck {
+            .new-hmpg-org-pinned-story .new-story-item--primary .new-story-item__deck {
               margin-left: 11.5rem;
               margin-right: 11.5rem;
             }
 
-            .hmpg-org-pinned-story .story-item--primary.story-item--reverse .badge--story-item-placement {
+            .new-hmpg-org-pinned-story .new-story-item--primary.story-item--reverse .new-badge--story-item-placement {
               transform: scale(1.2);
               right: -3em;
             }
@@ -768,33 +793,33 @@ body {
   #ATOMS
 \*-----------------------------------------*/
 
-strong {
+strong.new-site-header--homepage {
   font-weight: 600;
 }
 
 
 /* LINK atom */
 
-a {
+a.new-site-header--homepage {
   text-decoration: none;
 }
 
     /* link styles for body text of Insider and Deep Dive */
-    p a,
-    .site-header__tagline a {
+    .new-site-header--homepage p a,
+    .new-site-header__tagline a {
       border-bottom: 2px solid var(--link-colour);
     }
 
 
         /* link styles for body text of Insider */
-        .hmpg-org-tyee-insider p a {
+        .new-hmpg-org-tyee-insider p a {
           border-color: white;  /* can't be brand color because Insider has an orange background */
         }
 
         /* Hovers states for nav-bar items -- only on devices with hover capability, exclude mobile */
         @media (hover: hover) and (pointer: fine) {
-          .nav__link:hover,
-          .site-footer a:hover  {
+          .new-nav__link:hover,
+          .new-site-footer a:hover  {
             display: inline-block;
             color: var(--link-colour);
             transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
@@ -802,22 +827,22 @@ a {
         }
 
         /* Hover states for text links and buttons */
-        .story-item a:hover, .story-item a:focus,
-        .site-header__tagline a:hover, .site-header__tagline a:focus {
+        .new-story-item a:hover, .new-story-item a:focus,
+        .new-site-header__tagline a:hover, .new-site-header__tagline a:focus {
           display: inline-block;
           color: var(--link-colour);
           transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
         }
 
-        .hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus  {
+        .new-hmpg-org-tyee-insider a:hover, .new-hmpg-org-tyee-insider a:focus  {
           color: white; /* can't be brand color because Insider has an orange background */
         }
 
-        .story-item p a:hover, .story-item p a:focus  {
+        .new-story-item p a:hover, .new-story-item p a:focus  {
           margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
         }
 
-    .text-link--button {
+    .new-text-link--button {
       display:table;
       padding-top: 2rem;
       font-style:italic;
@@ -827,14 +852,14 @@ a {
 
 /* BUTTON atom */
 
-.button {
+.new-button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
   cursor: pointer;
 }
 
-.button {
+.new-button {
   display: inline-block;
   border: 2px solid var(--brand-colour--text);
   border-radius: 0rem;
@@ -848,7 +873,7 @@ a {
   font-size: 1em;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: .08em;
+  letter-spacing: .new-08em;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out,
@@ -857,55 +882,56 @@ a {
   -moz-appearance: none;
 }
 
-    .button--spanrow {
+    .new-button--spanrow {
       grid-column: 1 / -1;  /* Make button span entire grid row */
       justify-self: center; /* Collapses button width to its content + padding */
     }
 
-    .button--dark-bg {
+    .new-button--dark-bg {
       color: var(--text-colour);
       background-color: hsla(0, 0%, 100%, 0.3);
       border: 2px solid white;
     }
 
-    .button--dark {
+    .new-button--dark {
       color: white;
       background-color: var(--text-colour);
     }
 
-    .button--barometer {
+    .new-button--barometer {
       display: block;
     }
 
-        .site-nav__search-form .button {
+        .new-site-nav__search-form .new-button {
           display: inline-block;
           border: none;
           padding: 1rem 2rem;
           background: var(--brand-colour);
           color: #ffffff;
+          color: var(--text-colour);
         }
 
-    .button:hover,
-    .button:focus {
-        color: white;
+    .new-button:hover,
+    .new-button:focus {
+        color: white; color: var(--text-colour);
         background: var(--brand-colour--text-darker);
         border-color: transparent;
         outline: 2px solid #fff;
         transform: scale(1.05)
     }
 
-    .button:focus {
+    .new-button:focus {
         outline: 1px solid #fff;
         outline-offset: -4px;
     }
 
-    .button:active {
+    .new-button:active {
         transform: scale(0.99);
     }
 
 
     /* BUTTON EXPANDER is used to show and hide content */
-    .button--expander { }
+    .new-button--expander { }
 
 
 
@@ -918,9 +944,9 @@ a {
 /* BADGE molecule */
 /* This styles the existing story-badge html molecule from the story page to work on the homepage. These styles replace the story page badge styles. */
 
-.badge { }
+.new-badge { }
 
-  .badge--story-item-placement {
+  .new-badge--story-item-placement {
     display: block;
     position: absolute;
     width: auto;
@@ -930,15 +956,15 @@ a {
     padding-left: inherit; /* Adjusts badge position when there's padding on the parent */
   }
 
-  .story-item--secondary .badge--story-item-placement,
-  .story-item--tertiary .badge--story-item-placement {
+  .new-story-item--secondary .new-badge--story-item-placement,
+  .new-story-item--tertiary .new-badge--story-item-placement {
     left: -2.5em;
     top: -1em;
     transform: scale(.85);
   }
 
-  .hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement,
-  .hmpg-org-deep-dive .story-item--tertiary .badge--story-item-placement {
+  .new-hmpg-org-recent-stories__list .new-story-item--tertiary .new-badge--story-item-placement,
+  .new-hmpg-org-deep-dive .new-story-item--tertiary .new-badge--story-item-placement {
     left: -2.5em;
     top: -1.5em;
     transform: scale(.7);
@@ -949,13 +975,13 @@ a {
       /*  BADGE MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
       @media screen and (min-width: 684px) {
 
-          .story-item--primary .badge--story-item-placement,
-          .story-item--reverse.story-item--primary .badge--story-item-placement {
+          .new-story-item--primary .new-badge--story-item-placement,
+          .new-story-item--reverse.story-item--primary .new-badge--story-item-placement {
             left: -2.25em;
             top: 1em;
           }
 
-          .story-item--reverse.story-item--primary .badge--story-item-placement {
+          .new-story-item--reverse.story-item--primary .new-badge--story-item-placement {
             left: unset;
             right: -2.25em;
           }
@@ -964,18 +990,18 @@ a {
       /*  BADGE MEDIUM BREAKPOINT -- breakpoint-width-nav: 850px */
       @media screen and (min-width: 850px) {
 
-          .story-item--primary .badge--story-item-placement,
-          .story-item--reverse.story-item--primary .badge--story-item-placement {
+          .new-story-item--primary .new-badge--story-item-placement,
+          .new-story-item--reverse.story-item--primary .new-badge--story-item-placement {
             left: -2.25em;
             top: calc(1em + 1.5vw);
           }
 
-          .story-item--reverse.story-item--primary .badge--story-item-placement {
+          .new-story-item--reverse.story-item--primary .new-badge--story-item-placement {
             left: unset;
             right: -2.25em;
           }
 
-          .story-item--secondary .badge--story-item-placement, .story-item--tertiary .badge--story-item-placement {
+          .new-story-item--secondary .new-badge--story-item-placement, .new-story-item--tertiary .new-badge--story-item-placement {
             transform: scale(1);
           }
       }
@@ -986,7 +1012,7 @@ a {
 /* STORY ITEM MOLECULE ------------------- */
 
 /* default story item grid -- single column  */
-.story-item--index-page {
+.new-story-item--index-page {
     position: relative;
     display: grid;
     grid-column-gap: var(--gutter-column);
@@ -1001,25 +1027,25 @@ a {
         "border";
 }
 
-    .story-item__image {
+    .new-story-item__image {
         display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
         position: relative;
     }
 
     /* Story Item element layout -- Assign story-item elements to grid areas */
-    .story-item--index-page .story-item__image { grid-area: image; }
-    .story-item--index-page .badge--story-item-placement {/* grid-area: image; */z-index: 20;}
-    .story-item--index-page .category-label { grid-area: category; }
-    .story-item--index-page .story-item__headline { grid-area: headline; }
-    .story-item--index-page .story-item__deck { grid-area: deck; }
-    .story-item--index-page .story-item__author { grid-area: author; }
-    .story-item--index-page .story-item__date { grid-area: date; }
+    .new-story-item--index-page .new-story-item__image { grid-area: image; }
+    .new-story-item--index-page .new-badge--story-item-placement {/* grid-area: image; */z-index: 20;}
+    .new-story-item--index-page .new-category-label { grid-area: category; }
+    .new-story-item--index-page .new-story-item__headline { grid-area: headline; }
+    .new-story-item--index-page .new-story-item__deck { grid-area: deck; }
+    .new-story-item--index-page .new-story-item__author { grid-area: author; }
+    .new-story-item--index-page .new-story-item__date { grid-area: date; }
 
 
     /* STORY ITEM EXTENSIONS */
-    .story-item--primary { }
+    .new-story-item--primary { }
 
-    .story-item--secondary {
+    .new-story-item--secondary {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(4, auto) 1fr;
       grid-template-areas:
@@ -1030,40 +1056,40 @@ a {
         "date image";
     }
 
-    .story-item--secondary .category-label { margin-top: 0} /* 0 top margin aligns label with figure in 2-col story-item layouts */
+    .new-story-item--secondary .new-category-label { margin-top: 0} /* 0 top margin aligns label with figure in 2-col story-item layouts */
 
-    .story-item--secondary .story-item__author {
+    .new-story-item--secondary .new-story-item__author {
       justify-self: start;
     }
 
-    .story-item--tertiary { }
-        .story-item--tertiary .story-item__image { display: none; }
-        .story-item--tertiary .badge--story-item-placement { display: none; }
-        .story-item--tertiary .category-label { display: none; }
-        .story-item--tertiary .story-item__headline { display: block; }
-        .story-item--tertiary .story-item__deck { display: block; }
-        .story-item--tertiary .story-item__author { display: block; }
-        .story-item--tertiary .story-item__date { display: none; }
+    .new-story-item--tertiary { }
+        .new-story-item--tertiary .new-story-item__image { display: none; }
+        .new-story-item--tertiary .new-badge--story-item-placement { display: none; }
+        .new-story-item--tertiary .new-category-label { display: none; }
+        .new-story-item--tertiary .new-story-item__headline { display: block; }
+        .new-story-item--tertiary .new-story-item__deck { display: block; }
+        .new-story-item--tertiary .new-story-item__author { display: block; }
+        .new-story-item--tertiary .new-story-item__date { display: none; }
 
-        .hmpg-org-recent-stories__list .story-item--tertiary {
+        .new-hmpg-org-recent-stories__list .new-story-item--tertiary {
           /* font-size: var(--small-text); */
           grid-column-gap: calc(var(--gutter-column) * 0.5);
         }
 
-        .story-item--tertiary .story-item__author {
+        .new-story-item--tertiary .new-story-item__author {
           justify-self: start;
         }
 
-    .story-item--minimum { }
-        .story-item--minimum .story-item__image { display: none; }
-        .story-item--minimum .badge--story-item-placement { display: none; }
-        .story-item--minimum .category-label { display: none; }
-        .story-item--minimum .story-item__headline { display: block; }
-        .story-item--minimum .story-item__deck { display: none; }
-        .story-item--minimum .story-item__author { display: none; }
-        .story-item--minimum .story-item__date { display: none; }
+    .new-story-item--minimum { }
+        .new-story-item--minimum .new-story-item__image { display: none; }
+        .new-story-item--minimum .new-badge--story-item-placement { display: none; }
+        .new-story-item--minimum .new-category-label { display: none; }
+        .new-story-item--minimum .new-story-item__headline { display: block; }
+        .new-story-item--minimum .new-story-item__deck { display: none; }
+        .new-story-item--minimum .new-story-item__author { display: none; }
+        .new-story-item--minimum .new-story-item__date { display: none; }
 
-    .story-item--reverse { }
+    .new-story-item--reverse { }
 
 
     /* ---- STORY ITEM responsive enhancement ----  */
@@ -1075,35 +1101,35 @@ a {
              -> Secondary story-items in the recent stories list
              -> Tertiary story-items in the Insider Related Stories list  */
           /* Same as Tertiary items in large viewports. */
-          .hmpg-org-recent-stories__list .story-item--secondary,
-          .m-tyee-insider__related-stories .story-item--tertiary {
+          .new-hmpg-org-recent-stories__list .new-story-item--secondary,
+          .new-m-tyee-insider__related-stories .new-story-item--tertiary {
             display: block;
           }
 
           /* Use float-based layout for Secondary story-items in Recent Stories module */
           /* Same as Tertiary items in large viewports. */
-                .hmpg-org-recent-stories__list .story-item--secondary .story-item__image,
-                .m-tyee-insider__related-stories .story-item--tertiary .story-item__image {
+                .new-hmpg-org-recent-stories__list .new-story-item--secondary .new-story-item__image,
+                .new-m-tyee-insider__related-stories .new-story-item--tertiary .new-story-item__image {
                   float: right;
                   width: calc(50% - (var(--gutter-column-half) * 0.5));
                   margin-left: var(--gutter-column-half);
                   margin-bottom: 2rem;
                 }
 
-                .m-tyee-insider__related-stories .story-item--tertiary .story-item__headline {
+                .new-m-tyee-insider__related-stories .new-story-item--tertiary .new-story-item__headline {
                   padding-top: 0;
                 }
 
           /* Secondary story item gets single-col stacked layout in Deep Dive on narrow viewports. */
-          .hmpg-org-deep-dive .story-item--secondary {
+          .new-hmpg-org-deep-dive .new-story-item--secondary {
             grid-template-columns: 1fr;
             grid-template-rows: auto auto auto auto auto 1fr;
             grid-template-areas: "image" "category" "headline" "deck" "author" "date";
           }
 
-              .hmpg-org-deep-dive .story-item--secondary .category-label {
+              .new-hmpg-org-deep-dive .new-story-item--secondary .new-category-label {
                 font-family: var(--typeface-sans);
-                font-size: .875em;
+                font-size: 0.875em;
                 font-weight: 600;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
@@ -1111,7 +1137,7 @@ a {
                 margin: 1rem 0 1rem;
               }
 
-              .hmpg-org-deep-dive .story-item--secondary .story-item__headline {
+              .new-hmpg-org-deep-dive .new-story-item--secondary .new-story-item__headline {
                 font-family: var(--typeface-display-medium);
                 font-weight: 600;
                 line-height: 3rem;
@@ -1126,7 +1152,7 @@ a {
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
 
-            .story-item--primary {
+            .new-story-item--primary {
               grid-template-columns: 1fr 1fr;
               grid-template-rows: repeat(4, auto) 1fr;
               grid-template-areas:
@@ -1139,23 +1165,23 @@ a {
 
             /* Vertically centre Primary story-item text block in wide views
                (only for Recent Stories and Pinned Story modules)            */
-            .hmpg-org-recent-stories__list .story-item--primary,
-            .hmpg-org-pinned-story .story-item--primary {
+            .new-hmpg-org-recent-stories__list .new-story-item--primary,
+            .new-hmpg-org-pinned-story .new-story-item--primary {
               grid-template-rows: 1fr auto auto auto 1fr;
             }
 
-                .hmpg-org-recent-stories__list .story-item--primary .story-item__image {
+                .new-hmpg-org-recent-stories__list .new-story-item--primary .new-story-item__image {
                 }
 
-                .story-item--primary .category-label {
+                .new-story-item--primary .new-category-label {
                   margin: 0 0 1rem;
                   align-self: end;
                 }
-                .story-item--primary .story-item__date {
+                .new-story-item--primary .new-story-item__date {
                   margin-bottom: 1rem; /* offsets the 1-rem margin of the category-label */
                 }
 
-                .story-item--primary.story-item--reverse {
+                .new-story-item--primary.story-item--reverse {
                   grid-template-columns: 1fr 1fr;
                   grid-template-areas:
                     "image category"
@@ -1166,7 +1192,7 @@ a {
                   text-align: center;
                 }
 
-            .story-item--secondary {
+            .new-story-item--secondary {
               grid-template-columns: 1fr;
               grid-template-rows: auto auto auto auto auto 1fr;
               grid-template-areas:
@@ -1178,16 +1204,16 @@ a {
                   "date";
             }
 
-            .story-item--secondary .category-label { margin-top: 1rem} /* Creates space
+            .new-story-item--secondary .new-category-label { margin-top: 1rem} /* Creates space
                                   between image and headline in stacked story-item layout */
 
-            .story-item--tertiary {
+            .new-story-item--tertiary {
                 grid-template-rows: auto auto auto auto 1fr;
             }
-                .story-item--tertiary .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
-                .story-item--tertiary .badge--story-item-placement {display: block;}
-                .story-item--tertiary .category-label {display: block;}
-                .story-item--tertiary .story-item__deck {display: block;}
+                .new-story-item--tertiary .new-story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
+                .new-story-item--tertiary .new-badge--story-item-placement {display: block;}
+                .new-story-item--tertiary .new-category-label {display: block;}
+                .new-story-item--tertiary .new-story-item__deck {display: block;}
         } /* end of Story Item medium breakpoint */
 
 
@@ -1197,9 +1223,9 @@ a {
           /* Teriary story-items in the recent stories list use float-based layout in wide viewports. */
           /* This selects only the first 8 story items because the display of the subsequent items
              needs to be controled by the expander--recent-stories. (There seems to be some kind of CSS
-             bug because nth-of-type is counting all story-items, not just .story-item--tertiary.
-             We really only want to select the first 4 .story-item--tertiary elements)  */
-          .hmpg-org-recent-stories__list .story-item--tertiary:nth-of-type(-n+8) {
+             bug because nth-of-type is counting all story-items, not just .new-story-item--tertiary.
+             We really only want to select the first 4 .new-story-item--tertiary elements)  */
+          .new-hmpg-org-recent-stories__list .new-story-item--tertiary:nth-of-type(-n+8) {
             display: block;
           }
         } /* end of Story Item large breakpoint */
@@ -1214,9 +1240,9 @@ a {
 /* row border */
     /* Uses a pseudo element to create borders within the grid-row-gap. Excludes the first item.
     Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-    .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before,
-    .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
-    .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
+    .new-hmpg-org-recent-stories .new-story-item--index-page:not(:first-of-type)::before,
+    .new-hmpg-org-deep-dive .new-story-item--index-page:nth-of-type(n+3)::before,
+    .new-m-tyee-insider__main .new-story-item--tertiary:not(:first-of-type)::before  {
       content:"";
       position: absolute;
       top: calc(var(--gutter-row-half) * -1);
@@ -1232,21 +1258,21 @@ a {
 
             /* row border */
             /* expand Recent Stories row borders in medium views */
-            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before  {
+            .new-hmpg-org-recent-stories .new-story-item--index-page:not(:first-of-type)::before  {
               left: calc(var(--gutter-column-half) * -1);
               width: calc(100% + var(--gutter-column));
             }
 
             /* removes row borders from Insider and Deep Dive in medium views */
-            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
-            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
+            .new-hmpg-org-deep-dive .new-story-item--index-page:nth-of-type(n+3)::before,
+            .new-m-tyee-insider__main .new-story-item--tertiary:not(:first-of-type)::before  {
               content: none;
             }
 
             /* column border */
             /* Uses a pseudo element to create column borders within the grid-column-gap. Excludes the first item.
                Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::after  {
+            .new-hmpg-org-recent-stories .new-story-item--index-page:not(:first-of-type)::after  {
               content:'';
               position: absolute;
               top: 0;
@@ -1261,12 +1287,12 @@ a {
         @media screen and (min-width: 684px) and (max-width: 999px) {
 
             /* remove column border on last item in each Recent Stories row */
-            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
+            .new-hmpg-org-recent-stories .new-story-item--index-page:nth-of-type(4n)::after  {
               content:none;
             }
 
             /* remove column border on all tertiary story-items in Recent Stories */
-            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
+            .new-hmpg-org-recent-stories .new-story-item--index-page.story-item--tertiary::after  {
               content:none;
             }
         } /* end of borders medium breakpoint */
@@ -1276,12 +1302,12 @@ a {
         @media screen and (min-width: 1000px) and (max-width: 1367px) {
 
             /* remove column border on last item in each Recent Stories row */
-            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+4):nth-of-type(2n)::after  {
+            .new-hmpg-org-recent-stories .new-story-item--index-page:nth-of-type(n+4):nth-of-type(2n)::after  {
               content:none;
             }
 
             /* remove column border on all tertiary story-items in Recent Stories */
-            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
+            .new-hmpg-org-recent-stories .new-story-item--index-page.story-item--tertiary::after  {
               content:none;
             }
 
@@ -1292,22 +1318,22 @@ a {
         @media screen and (min-width: 1368px) {
 
             /* remove column border on last item in each Recent Stories row */
-            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
+            .new-hmpg-org-recent-stories .new-story-item--index-page:nth-of-type(4n)::after  {
               content:none;
             }
 
             /* remove column border on all tertiary story-items in Recent Stories */
-            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
+            .new-hmpg-org-recent-stories .new-story-item--index-page.story-item--tertiary::after  {
               content:none;
             }
 
             /* This would remove row borders on tertiary story-items in Recent Stories
-            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+9)::before  {
+            .new-hmpg-org-recent-stories .new-story-item--index-page:nth-of-type(n+9)::before  {
               content: none;
             } */
 
             /* add column borders around Insider molecules */
-            .hmpg-org-tyee-insider > div:not(:last-of-type)::after {
+            .new-hmpg-org-tyee-insider > div:not(:last-of-type)::after {
               content:'';
               position: absolute;
               bottom: 0;
@@ -1317,10 +1343,10 @@ a {
             }
 
             /* add row borders around Deep Dive tertiary story-items */
-            .hmpg-org-deep-dive > .story-item--tertiary:nth-of-type(n+4)::before {
+            .new-hmpg-org-deep-dive > .new-story-item--tertiary:nth-of-type(n+4)::before {
               content:'' !important; /* !important is required to overrule the earlier
-                                            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
-                                            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
+                                            .new-hmpg-org-deep-dive .new-story-item--index-page:nth-of-type(n+3)::before,
+                                            .new-m-tyee-insider__main .new-story-item--tertiary:not(:first-of-type)::before {
                                                 content: none;
                                         but this could also achieved by making the breakpoint of this previous
                                         rule more specific. */
@@ -1332,7 +1358,7 @@ a {
             }
 
             /* add column border around Deep Dive tertiary story-items */
-            .hmpg-org-deep-dive > .story-item--tertiary::after {
+            .new-hmpg-org-deep-dive > .new-story-item--tertiary::after {
               content:'';
               position: absolute;
               top: calc(var(--gutter-row-half) * -1);
@@ -1350,20 +1376,20 @@ a {
 
 /* HMPG AD BOX MOLECULE ------------------- */
 
-.hmpg-ad-box {
+.new-hmpg-ad-box {
   position: relative;
 }
 
-  .hmpg-ad-box--halfpage {
+  .new-hmpg-ad-box--halfpage {
     display: none;
   }
 
-  .hmpg-ad-box iframe {
+  .new-hmpg-ad-box iframe {
     /* width:100%; This prevents the ad from breaking the col but it will get crops the graphic */
   }
 
   /* Towards a scaling ad solution: */
-  .hmpg-ad-box--halfpage iframe {
+  .new-hmpg-ad-box--halfpage iframe {
     /*
     position: absolute;   --> This pulls ad out of flow and lets grid col size properly
     top:0;
@@ -1372,14 +1398,14 @@ a {
     */
   }
 
-  .hmpg-ad-box--bigbox {
+  .new-hmpg-ad-box--bigbox {
     margin-top: var(--gutter-row);
     height: calc(2rem * 14); /* Set ad-box height to an even multiple of the baseline grid */
   }
 
     /*  HMPG AD BOX BREAKPOINT -- breakpoint-width-adblock: 1180px */
     @media screen and (min-width: 1180px) {
-      .hmpg-ad-box--halfpage {display: block;}
+      .new-hmpg-ad-box--halfpage {display: block;}
     }
 /* end of HMPG Ad Box molecule */
 
@@ -1390,11 +1416,11 @@ a {
 /* COUNTER LIST molecule ----------------- */
 /* This formats a container of articles into a numbered list with custom numbers. It uses the styling method from https://www.w3schools.com/css/css_counters.asp Variants can be seen here: https://www.w3.org/Style/Examples/007/color-bullets.en.html */
 
-.counter-list--story-items {
+.new-counter-list--story-items {
   counter-reset: story-item;
 }
 
-    .counter-list--story-items > .story-item {
+    .new-counter-list--story-items > .new-story-item {
       counter-increment: story-item;
 
       padding-left: 1.4em;
@@ -1405,15 +1431,15 @@ a {
            This doesn't work if there's an even # of items in the list.
            Using margins that vary between odd and even items could produce a universal solution.
            E.g. select the last list item only if it's odd-numbered. */
-        .counter-list--story-items > .story-item:last-of-type {
+        .new-counter-list--story-items > .new-story-item:last-of-type {
           margin-bottom: 0rem;
         }
 
-        .counter-list--story-items > .story-item h2::before {
+        .new-counter-list--story-items > .new-story-item h2::before {
           content: counter(story-item);
           display: inline-block;
           position: absolute;
-          left: -.1em;
+          left: -0.1em;
           color: var(--brand-colour--text);
           background-color: none;
           font-family: var(--typeface-display);
@@ -1433,24 +1459,24 @@ a {
 /* There's also styles for this wrapper mixed in with other organisms. */
 /* Should be considolidated at some point. */
 
-.hmpg-org-wrapper {
+.new-hmpg-org-wrapper {
   position: relative;
   padding: 0 var(--page-margin-sides);
   padding-bottom: calc(var(--gutter-row) + 0rem);
 }
 
-    main .hmpg-org-wrapper {
+    main .new-hmpg-org-wrapper {
       padding-top: calc(5rem - 0px);
     }
 
         /* Omit top padding from first modules
            (This will maintain correct padding when the order of modules changes) */
-        main .hmpg-org-wrapper:first-of-type {
+        main .new-hmpg-org-wrapper:first-of-type {
           padding-top: 0;
         }
 
     /* Create thick top border on modules that doesn't extend into page magins */
-    main .hmpg-org-wrapper::before {
+    main .new-hmpg-org-wrapper::before {
         content: "";
         position: absolute;
         top: 3rem;
@@ -1462,21 +1488,21 @@ a {
 
         /* Omit top border from first modules
            (This will maintain correct borders when the order of modules changes) */
-        main .hmpg-org-wrapper:first-of-type::before {
+        main .new-hmpg-org-wrapper:first-of-type::before {
           content: none;
         }
 
     /*  Increase separation between Page Header and first content module. */
     /*  Applying padding-top to the content module (rather than padding-bottom
         to the Header) allows for modules with coloured backgorunds.     */
-    main .hmpg-org-wrapper:first-of-type {
+    main .new-hmpg-org-wrapper:first-of-type {
         padding-top: 1rem;
     }
 
     /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 600px */
     @media screen and (min-width: 600px) {
       /*  Progressively increase separation between Page Header and first content module. */
-      main .hmpg-org-wrapper:first-of-type {
+      main .new-hmpg-org-wrapper:first-of-type {
           padding-top: 1rem;
       }
     }
@@ -1484,7 +1510,7 @@ a {
     /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
     @media screen and (min-width: 850px) {
         /*  Progressively increase separation between Page Header and first content module. */
-        main .hmpg-org-wrapper:first-of-type {
+        main .new-hmpg-org-wrapper:first-of-type {
           padding-top: 4rem;
         }
     }
@@ -1496,29 +1522,29 @@ a {
 
 /* HMPG RECENT STORIES organism ---------- */
 
-.hmpg-org-recent-stories {
+.new-hmpg-org-recent-stories {
   display: grid;
 }
 
     /* Add space between Recent Stories module header and content */
-    .hmpg-org-recent-stories .hmpg-module-header {
+    .new-hmpg-org-recent-stories .new-hmpg-module-header {
         margin-bottom: 6rem;
     }
 
       /* Reduce space between Recent Stories module header and content when module
          appears at top of page */
-      .hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories .hmpg-module-header {
+      .new-hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories .new-hmpg-module-header {
           margin-bottom: 4rem;
       }
 
-.hmpg-org-recent-stories__list {
+.new-hmpg-org-recent-stories__list {
       /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
       display: grid;
       width: 100%;
       grid-column-gap: var(--gutter-column);
       grid-row-gap: var(--gutter-row);
       margin-bottom: 0rem;/* Aligns with baseline grid (content may still throw it off)   */
-                          /* Decimal values in the .story-item--tertiary headline line-height
+                          /* Decimal values in the .new-story-item--tertiary headline line-height
                              (at some medium and large views)cause a browser rounding error
                              that throws throws off the baseline grid.                      */
 }
@@ -1530,11 +1556,11 @@ a {
   https://jsfiddle.net/Algreenwich/uym9s0bg/
   https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
-  .button--expander-open ~ :not(script) {
+  .new-button--expander-open ~ :not(script) {
     display: none;
   }
 
-      #expander--recent-stories:checked ~ :not(script) {
+      #new-expander--recent-stories:checked ~ :not(script) {
         display: grid;   /* This must be "grid" because the revealed items are themselves using internal grid layouts */
       }
 
@@ -1543,49 +1569,49 @@ a {
 
               /* Tertiary story-items in the recent stories list use float-based layout in wide viewports,
                  so at large screen sizes the expander must set the display to block instead of grid.     */
-              #expander--recent-stories:checked ~ :not(script) {
+              #new-expander--recent-stories:checked ~ :not(script) {
                 display: block;   /* This must be "block" because revealed items are using internal float layouts */
               }
             } /* end of List Expander adblock breakpoint */
 
-      #expander--recent-stories:checked ~ .button--expander-open {
+      #new-expander--recent-stories:checked ~ .new-button--expander-open {
         display: none;
       }
 
 
       /* ---- RECENT STORIES responsive enhancement ---- */
-      /* Story items are allocated grid space and location based on their story-item extension class, e.g. .story-item--primary spans full first row. */
+      /* Story items are allocated grid space and location based on their story-item extension class, e.g. .new-story-item--primary spans full first row. */
 
           /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
           @media screen and (min-width: 684px) {
 
-            .hmpg-org-recent-stories__list {
+            .new-hmpg-org-recent-stories__list {
               grid-template-columns: repeat(12, 1fr);
               grid-template-areas:
                 "primary primary primary primary primary primary"
                 "2ndary  2ndary  2ndary 2ndary  2ndary  2ndary";
             }
 
-                .hmpg-org-recent-stories__list > .story-item--primary {
+                .new-hmpg-org-recent-stories__list > .new-story-item--primary {
                 grid-column: auto / span 12;
                 text-align: center;
                 }
 
-                .hmpg-org-recent-stories__list > .story-item--secondary {
+                .new-hmpg-org-recent-stories__list > .new-story-item--secondary {
                 grid-column: auto / span 4;
                 }
 
-                .hmpg-org-recent-stories__list > .story-item--tertiary {
+                .new-hmpg-org-recent-stories__list > .new-story-item--tertiary {
                 grid-column: auto / span 3;
                 }
 
-                .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+                .new-hmpg-org-recent-stories__list > .new-story-item--tertiary .new-story-item__headline {
                 font-size: 1.25em;
                 line-height: 2.5rem; /* decimal values here cause a browser rounding error
                                         that throws throws off the baseline grid.          */
                 }
 
-                .hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
+                .new-hmpg-org-recent-stories__list > .new-story-item--tertiary .new-category-label {
                 margin-top: 1rem;
                 }
           }
@@ -1594,16 +1620,16 @@ a {
           /* tertiary story-items expand from stacked to 2 columns */
           @media screen and (min-width: 1000px)  {
 
-            .hmpg-org-recent-stories__list > .story-item--tertiary {
+            .new-hmpg-org-recent-stories__list > .new-story-item--tertiary {
                 grid-column: auto / span 6;
             }
 
-            .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+            .new-hmpg-org-recent-stories__list > .new-story-item--tertiary .new-story-item__headline {
                 font-size: 1.5em;
                 line-height: 3rem;
             }
 
-            .hmpg-org-recent-stories__list .story-item--tertiary {
+            .new-hmpg-org-recent-stories__list .new-story-item--tertiary {
               grid-template-columns: 1fr 1fr;
               grid-template-rows: repeat(4, auto) 1fr;
               grid-template-areas:
@@ -1614,7 +1640,7 @@ a {
                 "date image";
             }
 
-            .hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
+            .new-hmpg-org-recent-stories__list > .new-story-item--tertiary .new-category-label {
               display: block;margin-top: 0;
             } /* 0 top margin aligns label with figure in 2-col story-item layouts */
           }
@@ -1624,32 +1650,32 @@ a {
               for hmpg-org-recent-stories--general */
           @media screen and (min-width: 1180px) {
 
-            .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list {
+            .new-hmpg-org-recent-stories--general .new-hmpg-org-recent-stories__list {
               grid-template-columns: repeat(4, 1fr);
               grid-template-areas:
                 "primary primary primary ad"
                 "2ndary  2ndary  2ndary  ad";
             }
 
-                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--primary {
+                .new-hmpg-org-recent-stories--general .new-hmpg-org-recent-stories__list > .new-story-item--primary {
                 grid-area: primary;
                 }
 
-                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary {
+                .new-hmpg-org-recent-stories--general .new-hmpg-org-recent-stories__list > .new-story-item--secondary {
                 grid-column: auto / span 1;
                 }
 
-                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--tertiary {
+                .new-hmpg-org-recent-stories--general .new-hmpg-org-recent-stories__list > .new-story-item--tertiary {
                 grid-column: auto / span 2;
                 }
 
                  /* Scale Half-page Adblock so it doesn't break the grid */
-                .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
+                .new-hmpg-org-recent-stories__list .new-hmpg-ad-box--halfpage {
                   position: relative;
                   grid-area: ad;
                 }
 
-                    .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
+                    .new-hmpg-org-recent-stories__list .new-hmpg-ad-box--halfpage aside {
                       position: absolute;
                       transform: scale(.9);
                       transform-origin: 0% 0%;
@@ -1663,7 +1689,7 @@ a {
 
             /* Force Secondary Recent Story images to display at correct layout size. */
             /* This only applies while the margins are keeping the module width constant and the half-page ad is showing. */
-            .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
+            .new-hmpg-org-recent-stories--general .new-hmpg-org-recent-stories__list > .new-story-item--secondary .new-story-item__image .new-responsive-img {
               height: 18rem !important;
             }
           }
@@ -1672,12 +1698,12 @@ a {
           /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint: 1368px */
           @media screen and (min-width: 1368px)  {
 
-              .hmpg-org-recent-stories__list > .story-item--tertiary {
+              .new-hmpg-org-recent-stories__list > .new-story-item--tertiary {
                 grid-column: auto / span 1;
               }
 
               /* Slightly reduce size of tertiary headlines in wide screens to accommodate extra column */
-              .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+              .new-hmpg-org-recent-stories__list > .new-story-item--tertiary .new-story-item__headline {
                   font-family: var(--typeface-display-medium);
                   font-size: 1.25em;
                   line-height: 2.5rem; /* decimal values here cause a browser rounding error
@@ -1686,7 +1712,7 @@ a {
 
               /* Use float-based layout for Tertiary story-items in Recent Stories module */
 
-              .hmpg-org-recent-stories__list .story-item--tertiary .story-item__image {
+              .new-hmpg-org-recent-stories__list .new-story-item--tertiary .new-story-item__image {
                 float: right;
                 width: calc(50% - (var(--gutter-column-half) * 0.5));
                 margin-left: var(--gutter-column-half);
@@ -1694,13 +1720,13 @@ a {
               }
 
               /* Disable scaling of Half-page Adblock so that it displays at full size */
-              .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
+              .new-hmpg-org-recent-stories__list .new-hmpg-ad-box--halfpage aside {
                 transform: none;
                 transform-origin: 0% 0%;
               }
 
                   /* Align Half-page Ad with right edge of its grid container */
-                  .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside div div {
+                  .new-hmpg-org-recent-stories__list .new-hmpg-ad-box--halfpage aside div div {
                     display: grid;
                     justify-items: end;
                   }
@@ -1714,82 +1740,82 @@ a {
 /* TYEE INSIDER organism ----------------- */
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
 
-.hmpg-org-tyee-insider {
+.new-hmpg-org-tyee-insider {
   position: relative;
   display: grid;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 
-  background-color: var(--brand-colour--mod-bg);
+  background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
 }
 
-.hmpg-module-header {
+.new-hmpg-module-header {
   height: 2rem;
   margin-bottom: 2rem;
 }
 
-  .hmpg-org-tyee-insider .hmpg-module-header {
+  .new-hmpg-org-tyee-insider .new-hmpg-module-header {
     margin-bottom: 8rem;
     /* Insider needs more space here because it doesn't use
        Grid at top level and therefore has no row gap */
   }
 
-  .hmpg-org-most--column .hmpg-module-header {
+  .new-hmpg-org-most--column .new-hmpg-module-header {
     margin-bottom: 4rem;
     /* Most module columns need more space here because they only use
        a half-gutter row gap */
   }
 
-  .hmpg-org-reported-elsewhere .hmpg-module-header {
+  .new-hmpg-org-reported-elsewhere .new-hmpg-module-header {
     margin-bottom: 4rem;
     /* Reported Elsewhere module needs more space here because they only use
        a half-gutter row gap */
   }
 
   /* Modules that have a tagline/blurb following their label need a margin */
-  .m-tyee-insider__main .hmpg-module-header__main-label,
-  .hmpg-org-deep-dive .hmpg-module-header__main-label {
+  .new-m-tyee-insider__main .new-hmpg-module-header__main-label,
+  .new-hmpg-org-deep-dive .new-hmpg-module-header__main-label {
     margin-right: 3rem;
   }
 
   /* When Recent Stories module appears at top of page
      its module header and label are hidden          */
-  .hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories--general .hmpg-module-header {
+  .new-hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories--general .new-hmpg-module-header {
     display: none;
   }
 
-.hmpg-module-header__main-label-blurb {
+.new-hmpg-module-header__main-label-blurb {
   display: inline-block;
 }
 
-.m-tyee-insider__related-stories {
+.new-m-tyee-insider__related-stories {
   display: grid;
   grid-row-gap: var(--gutter-row);
   margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
 }
 
-.m-tyee-insider__main,
-.m-comment-noted {
+.new-m-tyee-insider__main,
+.new-m-comment-noted {
   position: relative
 }
 
 
   /* Tyee Insider Primary Story-item */
-  .m-tyee-insider__main .story-item--primary { }
-    .m-tyee-insider__main .story-item--primary .badge--story-item-placement
+  .new-m-tyee-insider__main .new-story-item--primary { }
+    .new-m-tyee-insider__main .new-story-item--primary .new-badge--story-item-placement
       { display: none;}
-    .m-tyee-insider__main .story-item--primary .category-label
+    .new-m-tyee-insider__main .new-story-item--primary .new-category-label
       { display: none;}
-    .m-tyee-insider__main .story-item--primary .story-item__headline
+    .new-m-tyee-insider__main .new-story-item--primary .new-story-item__headline
       { grid-area: headline; }
-    .m-tyee-insider__main .story-item--primary .story-item__deck
+    .new-m-tyee-insider__main .new-story-item--primary .new-story-item__deck
       { grid-area: deck; }
-    .m-tyee-insider__main .story-item--primary .story-item__author
+    .new-m-tyee-insider__main .new-story-item--primary .new-story-item__author
       { display: none;}
-    .m-tyee-insider__main .story-item--primary .story-item__date
+    .new-m-tyee-insider__main .new-story-item--primary .new-story-item__date
       { display: none;}
 
-  .m-tyee-insider__main .story-item--primary {
+  .new-m-tyee-insider__main .new-story-item--primary {
     grid-template-areas:
         "headline" /* put headline above image */
         "image"
@@ -1798,33 +1824,33 @@ a {
         "date";
   }
 
-  .m-tyee-insider__main .story-item--primary .story-item__headline {
+  .new-m-tyee-insider__main .new-story-item--primary .new-story-item__headline {
     margin-bottom: 4rem;
   }
 
-  .m-tyee-insider__main .story-item--primary img {
-    width: 100%; /* required becasue this img must omit the .responsive-img class
+  .new-m-tyee-insider__main .new-story-item--primary img {
+    width: 100%; /* required becasue this img must omit the .new-responsive-img class
                     so that it doesn't get targeted by baselineElement */
   }
 
-  .m-tyee-insider__main .story-item--primary .story-item__image {
+  .new-m-tyee-insider__main .new-story-item--primary .new-story-item__image {
     margin-bottom: 4rem
   }
 
   /* Tyee Insider Tertiary Story-item */
-  .m-tyee-insider__main .story-item--tertiary {
+  .new-m-tyee-insider__main .new-story-item--tertiary {
       grid-template-rows: auto auto auto auto 1fr;
   }
-      .m-tyee-insider__main .story-item--tertiary .story-item__image {display: grid; margin-bottom: 2rem;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
-      .m-tyee-insider__main .story-item--tertiary .badge--story-item-placement {display: none;}
-      .m-tyee-insider__main .story-item--tertiary .category-label {display: none;}
-      .m-tyee-insider__main .story-item--tertiary .story-item__headline {display: block; padding: 0rem 0 1rem}
-      .m-tyee-insider__main .story-item--tertiary .story-item__deck {display: none;}
+      .new-m-tyee-insider__main .new-story-item--tertiary .new-story-item__image {display: grid; margin-bottom: 2rem;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
+      .new-m-tyee-insider__main .new-story-item--tertiary .new-badge--story-item-placement {display: none;}
+      .new-m-tyee-insider__main .new-story-item--tertiary .new-category-label {display: none;}
+      .new-m-tyee-insider__main .new-story-item--tertiary .new-story-item__headline {display: block; padding: 0rem 0 1rem}
+      .new-m-tyee-insider__main .new-story-item--tertiary .new-story-item__deck {display: none;}
 
 
   /* Comment Noted and Barometer molecule styles */
 
-  .m-comment-noted, .m-barometer {
+  .new-m-comment-noted, .new-m-barometer {
 
     padding-top: 2rem;
     border-top: 4px solid var(--text-colour);
@@ -1832,17 +1858,17 @@ a {
 
   }
 
-      .m-comment-noted .hmpg-module-header, .m-barometer .hmpg-module-header {
+      .new-m-comment-noted .new-hmpg-module-header, .new-m-barometer .new-hmpg-module-header {
         height: 2rem;
         margin-bottom: 4rem;
       }
 
-  .m-comment-noted__title, .m-barometer__title {
+  .new-m-comment-noted__title, .new-m-barometer__title {
     /* padding: 1rem 0;  This should be contained in typographic styles not module layout */
     min-height: 10rem;
   }
 
-  .m-barometer__footer {
+  .new-m-barometer__footer {
     padding-top: 4rem;
   }
 
@@ -1850,7 +1876,7 @@ a {
       /* Checkbox display method is adapted from here:
          https://paulund.co.uk/how-to-style-a-checkbox-with-css */
 
-      .barometer-form-list__item {
+      .new-barometer-form-list__item {
         display: block;
         padding-bottom: 2rem;
       }
@@ -1860,13 +1886,13 @@ a {
         display: none;
       }
 
-      .barometer-form-label {
+      .new-barometer-form-label {
         position: relative;
         left: 3rem;
         display: inline-block;
       }
 
-      .barometer-form-label::before {
+      .new-barometer-form-label::before {
         content:"";
         cursor: default;
         position: absolute;
@@ -1879,7 +1905,7 @@ a {
       }
 
       /*
-       input[name="barometerpoll"]:checked + .barometer-form-label::after {
+       input[name="barometerpoll"]:checked + .new-barometer-form-label::after {
         opacity: 1;
         content: '';
         position: absolute;
@@ -1903,23 +1929,23 @@ a {
         @media screen and (min-width: 684px) {
 
 
-          .hmpg-org-tyee-insider {
+          .new-hmpg-org-tyee-insider {
             position: relative;
             grid-template-columns: repeat(6, 1fr);
           }
-              .hmpg-org-tyee-insider > :first-child {
+              .new-hmpg-org-tyee-insider > :first-child {
               grid-column: auto / span 6;
               }
-              .hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 3;}
-              .hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 3;}
+              .new-hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 3;}
+              .new-hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 3;}
 
            /*  Insider Primary Story uses a float-based layout so that text can wrap the image */
 
-          .hmpg-org-tyee-insider .story-item--primary {
+          .new-hmpg-org-tyee-insider .new-story-item--primary {
             display: block;
           }
 
-                .hmpg-org-tyee-insider .story-item--primary .story-item__image {
+                .new-hmpg-org-tyee-insider .new-story-item--primary .new-story-item__image {
                   float: right;
                   display: block;
                   width: Calc(50% - var(--gutter-column-half));
@@ -1927,21 +1953,21 @@ a {
                   margin-bottom: 3rem;
                 }
 
-                .m-tyee-insider__main .story-item--primary img {
+                .new-m-tyee-insider__main .new-story-item--primary img {
                   display: block;
-                  width: 100%; /* required becasue this img must omit the .responsive-img class
+                  width: 100%; /* required becasue this img must omit the .new-responsive-img class
                                   so that it doesn't get targeted by baselineElement */
                 }
 
-                .m-tyee-insider__main .story-item--primary .story-item__deck {
+                .new-m-tyee-insider__main .new-story-item--primary .new-story-item__deck {
                   max-width: 34em;
                 }
 
-                .m-tyee-insider__main .story-item--primary .story-item__headline {
+                .new-m-tyee-insider__main .new-story-item--primary .new-story-item__headline {
                     margin-bottom: 4rem;
                 }
 
-          .m-tyee-insider__related-stories {
+          .new-m-tyee-insider__related-stories {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-row-gap: 2rem;
@@ -1949,11 +1975,11 @@ a {
             margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
           }
 
-          .m-tyee-insider__related-label {
+          .new-m-tyee-insider__related-label {
             grid-column: 1 / -1; /* Span all columns (required for medium views) */
           }
 
-          .m-comment-noted__title, .m-barometer__title {
+          .new-m-comment-noted__title, .new-m-barometer__title {
             min-height: 10rem;
             margin-bottom: 2rem;
           }
@@ -1963,32 +1989,32 @@ a {
         /*  TYEE INSIDER LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
         @media screen and (min-width: 1368px) {
 
-          .hmpg-org-tyee-insider {
+          .new-hmpg-org-tyee-insider {
             grid-template-columns: repeat(5, 1fr);
           }
-              .hmpg-org-tyee-insider > :first-child {
+              .new-hmpg-org-tyee-insider > :first-child {
               grid-column: auto / span 3;
               }
-              .hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 1;}
-              .hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 1;}
+              .new-hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 1;}
+              .new-hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 1;}
 
-              .m-tyee-insider__main .story-item--primary .story-item__headline {
+              .new-m-tyee-insider__main .new-story-item--primary .new-story-item__headline {
                   min-height: 12rem;
                   margin-bottom: 2rem;
               }
 
-          .m-comment-noted, .m-barometer {
+          .new-m-comment-noted, .new-m-barometer {
               padding-top: 0rem;
               border-top: none;
               margin-top: 0;
           }
 
-              .m-comment-noted .hmpg-module-header, .m-barometer .hmpg-module-header {
+              .new-m-comment-noted .new-hmpg-module-header, .new-m-barometer .new-hmpg-module-header {
                   height: 2rem;
                   margin-bottom: 8rem;
               }
 
-              .m-comment-noted__title, .m-barometer__title {
+              .new-m-comment-noted__title, .new-m-barometer__title {
                   min-height: 12rem;
                   margin-bottom: 2rem;
               }
@@ -1999,19 +2025,19 @@ a {
 
 /* PINNED STORY organism ----------------- */
 
-.hmpg-org-pinned-story {
+.new-hmpg-org-pinned-story {
   display: grid;
   z-index: 10; /* So that bottom border doesn't fall underneath
                   the BG of next module due to negative margin */
   padding-top: var(--gutter-row);
 }
 
-    .hmpg-org-pinned-story .story-item {
+    .new-hmpg-org-pinned-story .new-story-item {
       padding-top: calc(var(--gutter-row) - 2rem);
     }
 
     /* Set second top border */
-    /* .hmpg-org-pinned-story::before {
+    /* .new-hmpg-org-pinned-story::before {
       content:"";
       position: absolute;
       top: 3px;
@@ -2021,7 +2047,7 @@ a {
     } */
 
      /* Set second bottom border */
-    /* .hmpg-org-pinned-story::after {
+    /* .new-hmpg-org-pinned-story::after {
       content:"";
       position: absolute;
       bottom: 3px;
@@ -2037,7 +2063,7 @@ a {
 
 /* DEEP DIVE organism ----------------- */
 
-.hmpg-org-deep-dive {
+.new-hmpg-org-deep-dive {
 
   display: grid;
   grid-column-gap: var(--gutter-column);
@@ -2045,23 +2071,23 @@ a {
   background-color: hsla(0, 0%, 90%, 0.68); /* For testing purposes */ /* AG - temporary tansparency to show grid */
   }
 
-  .hmpg-org-deep-dive > .story-item:first-of-type .story-item__image { display: none; }
-  .hmpg-org-deep-dive > .story-item:first-of-type .badge--story-item-placement { display: none; }
-  .hmpg-org-deep-dive > .story-item:first-of-type .category-label { display: none; }
-  .hmpg-org-deep-dive > .story-item:first-of-type .story-item__author { display: none; }
-  .hmpg-org-deep-dive > .story-item:first-of-type .story-item__date { display: none; }
+  .new-hmpg-org-deep-dive > .new-story-item:first-of-type .new-story-item__image { display: none; }
+  .new-hmpg-org-deep-dive > .new-story-item:first-of-type .new-badge--story-item-placement { display: none; }
+  .new-hmpg-org-deep-dive > .new-story-item:first-of-type .new-category-label { display: none; }
+  .new-hmpg-org-deep-dive > .new-story-item:first-of-type .new-story-item__author { display: none; }
+  .new-hmpg-org-deep-dive > .new-story-item:first-of-type .new-story-item__date { display: none; }
 
 /* Remove bottom row border from first story-item */
-.hmpg-org-deep-dive .story-item--index-page:first-of-type::after  {
+.new-hmpg-org-deep-dive .new-story-item--index-page:first-of-type::after  {
       content:none;
     }
 
   /* Tyee Insider Story-items */
-  .hmpg-org-deep-dive .story-item--primary {
+  .new-hmpg-org-deep-dive .new-story-item--primary {
     grid-template-columns: 1fr;
   }
 
-  .hmpg-org-deep-dive .story-item--primary .story-item__deck {
+  .new-hmpg-org-deep-dive .new-story-item--primary .new-story-item__deck {
     text-transform: none;
   }
 
@@ -2071,23 +2097,23 @@ a {
       /*  DEEP DIVE MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
       @media screen and (min-width: 684px) {
 
-        .hmpg-org-deep-dive {
+        .new-hmpg-org-deep-dive {
           grid-template-columns: repeat(6, 1fr);
         }
-            .hmpg-org-deep-dive > *
+            .new-hmpg-org-deep-dive > *
               { grid-column: auto / span 2; }
-            .hmpg-org-deep-dive > .hmpg-module-header
+            .new-hmpg-org-deep-dive > .new-hmpg-module-header
               { grid-column: 1 / -1; }
-            .hmpg-org-deep-dive > .story-item:first-of-type
+            .new-hmpg-org-deep-dive > .new-story-item:first-of-type
               { grid-column: 1 / span 3;
                 grid-template-rows: auto 1fr;
                 grid-template-areas:
                   "headline"
                   "deck";
               }
-            .hmpg-org-deep-dive > .story-item--secondary
+            .new-hmpg-org-deep-dive > .new-story-item--secondary
               { grid-column: auto / span 3; }
-            .hmpg-org-deep-dive > .story-item--tertiary {
+            .new-hmpg-org-deep-dive > .new-story-item--tertiary {
               grid-column: auto / span 2;
               grid-template-columns: 1fr;
               grid-template-areas:
@@ -2103,10 +2129,10 @@ a {
       /*  DEEP DIVE LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
           @media screen and (min-width: 1368px) {
 
-            .hmpg-org-deep-dive {
+            .new-hmpg-org-deep-dive {
               grid-template-columns: repeat(6, 1fr);
             }
-                .hmpg-org-deep-dive > .story-item:first-of-type {
+                .new-hmpg-org-deep-dive > .new-story-item:first-of-type {
                   /* Set the item's position */
                   grid-column: 1 / span 2;
                   grid-row: auto / span 3;
@@ -2116,7 +2142,7 @@ a {
                   align-content: start;
                   }
 
-                .hmpg-org-deep-dive > .story-item--secondary {
+                .new-hmpg-org-deep-dive > .new-story-item--secondary {
                   /* Set the item's position */
                   grid-column: auto / span 2;
                   grid-row: auto / span 3;
@@ -2125,7 +2151,7 @@ a {
                   align-content: start;
                   }
 
-                .hmpg-org-deep-dive > .story-item--tertiary {
+                .new-hmpg-org-deep-dive > .new-story-item--tertiary {
                   /* Set the item's position */
                   grid-column: auto / span 2;
 
@@ -2140,7 +2166,7 @@ a {
                     "date image";
                   }
 
-                  .hmpg-org-deep-dive > .story-item--tertiary .category-label {
+                  .new-hmpg-org-deep-dive > .new-story-item--tertiary .new-category-label {
                     margin-top: 0; /* 0 top margin aligns label with figure in 2-col story-item layouts */
                   }
           } /* End of Deep Dive large breakpoint */
@@ -2151,23 +2177,23 @@ a {
 
 /* MOST organism ----------------- */
 
-.hmpg-org-most {
+.new-hmpg-org-most {
   display: grid;
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 }
 
     /* In narrow views override universal top border (border is on each column)  */
-    main .hmpg-org-most::before {
+    main .new-hmpg-org-most::before {
       content: none;
     }
 
     /* In narrow views adjust first column top border position to match other module top borders  */
-    .hmpg-org-most--column:first-child {
+    .new-hmpg-org-most--column:first-child {
       margin-top: -2rem;
     }
 
-.hmpg-org-most--column {
+.new-hmpg-org-most--column {
   position: relative;
   display: grid;
   grid-row-gap: var(--gutter-row-half);
@@ -2176,7 +2202,7 @@ a {
   margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
 }
 
-.hmpg-org-most--column::before {
+.new-hmpg-org-most--column::before {
         content: "";
         position: absolute;
         top: 0px;
@@ -2186,7 +2212,7 @@ a {
         border-bottom: 4px solid var(--text-colour);
     }
 
-    .hmpg-org-most--column .story-item__headline {
+    .new-hmpg-org-most--column .new-story-item__headline {
       margin-bottom: 0;
     }
 
@@ -2196,26 +2222,26 @@ a {
       /*  MOST MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
       @media screen and (min-width: 684px) {
 
-        .hmpg-org-most {
+        .new-hmpg-org-most {
           grid-template-columns: 1fr 1fr 1fr;
         }
 
         /* In wider eliminate first column position adjustment  */
-        .hmpg-org-most--column:first-child {
+        .new-hmpg-org-most--column:first-child {
           margin-top: 0rem;
         }
 
         /* Set top border on outer container instead of on each column */
-        main .hmpg-org-most::before {
+        main .new-hmpg-org-most::before {
           content: "";
         }
 
         /* Remove top borders from each column */
-        .hmpg-org-most--column {
+        .new-hmpg-org-most--column {
           padding-top: 0;
         }
 
-        .hmpg-org-most--column::before {
+        .new-hmpg-org-most--column::before {
           content: none;
         }
       }
@@ -2226,7 +2252,7 @@ a {
 
 /* REPORTED ELSEWHERE organism ----------------- */
 
-.hmpg-org-reported-elsewhere {
+.new-hmpg-org-reported-elsewhere {
   display: grid;
   padding-top: 2rem;
   grid-column-gap: var(--gutter-column);
@@ -2235,10 +2261,10 @@ a {
 }
 
 
-  .hmpg-org-reported-elsewhere > .hmpg-module-header {
+  .new-hmpg-org-reported-elsewhere > .new-hmpg-module-header {
   }
 
-  .hmpg-org-reported-elsewhere__list .story-item {
+  .new-hmpg-org-reported-elsewhere__list .new-story-item {
     padding-top: var(--gutter-row-half);
   }
 
@@ -2248,11 +2274,11 @@ a {
 
       /*  Reported Elsewhere MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
       @media screen and (min-width: 684px) {
-        .hmpg-org-reported-elsewhere__list {
+        .new-hmpg-org-reported-elsewhere__list {
           column-count: 2;
           column-gap: var(--gutter-column);
         }
-        .hmpg-org-reported-elsewhere__list > .story-item{
+        .new-hmpg-org-reported-elsewhere__list > .new-story-item{
           -webkit-column-break-inside: avoid;
           break-inside: avoid;
           page-break-inside: avoid;
@@ -2263,11 +2289,11 @@ a {
       /*  Reported Elsewhere NONSTANDARD BREAKPOINT -- breakpoint: 1010px */
       /*  The fixed width of the bigbox ad requires a specific breakpoint here. */
       @media screen and (min-width: 1010px) {
-        .hmpg-org-reported-elsewhere__list {
+        .new-hmpg-org-reported-elsewhere__list {
           column-count: 3;
           column-gap: var(--gutter-column);
         }
-        .hmpg-org-reported-elsewhere__list > .story-item{
+        .new-hmpg-org-reported-elsewhere__list > .new-story-item{
           -webkit-column-break-inside: avoid;
           break-inside: avoid;
           page-break-inside: avoid;
@@ -2280,7 +2306,7 @@ a {
 
 /* BUILDER organism ----------------- */
 
-.hmpg-org-builder {
+.new-hmpg-org-builder {
   display: grid;
   justify-content: center;
   padding-top: 3rem !important;
@@ -2288,11 +2314,11 @@ a {
 }
 
   /* Override unversal module top border */
-  main .hmpg-org-builder::before {
+  main .new-hmpg-org-builder::before {
     content:none;
   }
 
-.builder__content {
+.new-builder__content {
     position: relative;
     max-width: 1000px;
     display: grid;
@@ -2307,40 +2333,40 @@ a {
     text-align: center;
 }
 
-    .builder__image { grid-area: image; }
-    .builder__headline { grid-area: headline; }
-    .builder__deck { grid-area: deck; }
-    .builder__cta { grid-area: cta; }
+    .new-builder__image { grid-area: image; }
+    .new-builder__headline { grid-area: headline; }
+    .new-builder__deck { grid-area: deck; }
+    .new-builder__cta { grid-area: cta; }
 
 
-    .builder__image {
+    .new-builder__image {
         display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
         position: relative;
     }
 
-    .builder__image img {
+    .new-builder__image img {
         width: 100%;
         max-height: 14rem;
     }
 
-    .button--builder {
+    .new-button--builder {
       max-width: 280px
     }
 
-    .button--builder span {
+    .new-button--builder span {
       color: var(--brand-colour);
     }
 
     /* Builder text styles */
 
-    .builder__headline {
+    .new-builder__headline {
       font-family: var(--typeface-display-large);
       line-height: 4rem;
       font-size: 2.33em;
       margin: 2rem 0 2rem;
     }
 
-    .builder__deck {
+    .new-builder__deck {
       font-family: var(--typeface-serif);
       font-size: 1.33em;
       line-height: 3rem;
@@ -2351,7 +2377,7 @@ a {
         /*  BUILDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
 
-            .builder__content {
+            .new-builder__content {
               justify-items: stretch;
               grid-template-columns: 1fr 3fr;
               grid-template-rows: auto auto 1fr;
@@ -2363,17 +2389,17 @@ a {
               text-align: left;
             }
 
-            .builder__image {
+            .new-builder__image {
               justify-self:end;
             }
 
-            .builder__image img {
+            .new-builder__image img {
               width: 100%;
               max-width: 20rem;
               max-height: none;
             }
 
-            .builder__headline {
+            .new-builder__headline {
               margin-top: 3rem;
               align-self: end;
             }
@@ -2388,11 +2414,11 @@ a {
 /* SITE HEADER organism ----------------- */
 /* This thing is a beast ---------------- */
 
-.site-header {
+.new-site-header {
   padding-bottom: 0rem;
 }
 
-.site-header__logo-block {
+.new-site-header__logo-block {
   display: grid;
   grid-template-columns: 1fr;
   grid-column-gap: var(--gutter-column);
@@ -2402,33 +2428,33 @@ a {
   padding-bottom: 1rem; /* balances grid alignment */
 }
 
-.site-header__tagline {
+.new-site-header__tagline {
   margin-top: calc(.3rem + 2vw);
 }
 
-  .site-header__tagline--a, .site-header__tagline--b {
+  .new-site-header__tagline--a, .new-site-header__tagline--b {
     display: none;
   }
 
-  .site-header__tagline--mobile {
+  .new-site-header__tagline--mobile {
     position: absolute;
     width: 100%;
     text-align: center;
   }
 
-      .site-header__tagline--mobile::before,
-      .site-header__tagline--mobile::after {
+      .new-site-header__tagline--mobile::before,
+      .new-site-header__tagline--mobile::after {
         display: none;
       }
 
-  .site-header__logo {
+  .new-site-header__logo {
     position: relative;
     justify-self:center;
     line-height: 0; /* required to prevent additional height in element */
     min-height: 12rem; /* Keeps height of logo block aligned with grid */
   }
 
-    .site-header__logo img{
+    .new-site-header__logo img{
       max-width: 100%;
       max-height: 96px;
       padding: 0 2vw;
@@ -2438,20 +2464,20 @@ a {
 
     /* Default for narrow views:
     Hide all nav item items except the hamburger, search button, and the dropdown menus.
-        (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
-    .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
+        (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #new-expander--nav-menu (and #new-expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+    .new-site-nav-main > :not(.new-nav__burger):not(.site-nav__dropdown):not(.new-nav__link--search):not(.new-site-nav__search-dropdown) {
       display: none;
     }
 
-    .nav__link {
+    .new-nav__link {
       cursor: pointer;
     }
 
-    .site-nav-main__expander-toggle.nav__burger::before,
-    .site-nav-main__expander-toggle.nav__link--more::after {
+    .new-site-nav-main__expander-toggle.new-nav__burger::before,
+    .new-site-nav-main__expander-toggle.new-nav__link--more::after {
       content: "arrow_drop_down";
       display: inline-block;
-      vertical-align: -.25em;
+      vertical-align: -0.25em;
       font-family: 'Material Icons';
       font-weight: normal;
       font-style: normal;
@@ -2467,19 +2493,19 @@ a {
       -webkit-font-smoothing: antialiased;
     }
 
-    .nav__link--join {
+    .new-nav__link--join {
         position: relative;
         left: 1.35em; /* Keeps icon placed ::before within the grid column */
         margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
     }
 
-    .site-footer .nav__link--join {
+    .new-site-footer .new-nav__link--join {
         position: relative;
         left: unset; /* Keeps link centered in narrow ipad view */
         margin-right: -1.25em; /* Keeps link centered in narrow ipad view */
     }
 
-      .nav__link--join::before {
+      .new-nav__link--join::before {
         content: url('../img/icon-dollar-heart.svg');
         display: block;
         position: absolute;
@@ -2487,13 +2513,13 @@ a {
         transform: scale(.6) translate(-40%, -30%);
       }
 
-    .nav__link--search {
+    .new-nav__link--search {
       position: relative;
       left: 1.35em; /* Keeps icon placed ::before within the grid column */
       margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
     }
 
-      .nav__link--search::before {
+      .new-nav__link--search::before {
         content: url('../img/icon-search.svg');
         display: inline-block;
         position: absolute;
@@ -2511,53 +2537,53 @@ a {
       https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
           /* DEFAULT state: Dropdown Menu is hidden */
-          .site-nav__dropdown {
+          .new-site-nav__dropdown {
             display: none ;
             grid-column: 1 / -1;
           }
 
           /* ACTIVATED state: Menu is shown and toggle icon is inverted */
-          #expander--nav-menu:checked ~ .site-nav__dropdown {
-            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+          #new-expander--nav-menu:checked ~ .new-site-nav__dropdown {
+            display: grid; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
           }
-          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
-          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
+          .new-site-nav #new-expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::before,
+          .new-site-nav #new-expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::after {
             transform: rotate(180deg);
           }
 
       /* SEARCH DROPDOWN EXPANDER */
       /* Search Dropdown is now integrated into the Nav Dropdown and the Search button is
-         just another label for the input#expander--nav-menu checkbox */
+         just another label for the input#new-expander--nav-menu checkbox */
 
-          .site-nav__search-dropdown {
+          .new-site-nav__search-dropdown {
             grid-column: 1 / -1;
             padding-top: 3rem;
             padding-bottom: 3rem;
-            margin-top: .5rem;
-            margin-bottom: -.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: -0.5rem;
             background-color: var(--utility-background-color);
           }
 
-          .site-nav__search-dropdown .site-nav__search-form {
+          .new-site-nav__search-dropdown .new-site-nav__search-form {
             display: grid ;
             grid-template-columns: 4fr 1fr;
             font-size: 2.7rem;
           }
 
-          .site-nav__search-dropdown .site-nav__search-form .button {
+          .new-site-nav__search-dropdown .new-site-nav__search-form .new-button {
             padding-top: 1rem;
           }
 
-          .site-nav__search-dropdown .site-nav__search-form > * {
+          .new-site-nav__search-dropdown .new-site-nav__search-form > * {
             display: grid ;
             grid-template-columns: 4fr 1fr;
-            font-size: .6em;
+            font-size: 0.6em;
             height: 4rem;
             border: 1px solid var(--utility-background-color);
           }
 
           form input {
-            padding-left: .65em;
+            padding-left: 0.65em;
           }
 
       /* SUB-NAV DROPDOWN EXPANDERS */
@@ -2568,10 +2594,10 @@ a {
       https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
           /* Sub-nav has arrow toggle icon */
-          .site-nav__dropdown-expander-toggle::after {
+          .new-site-nav__dropdown-expander-toggle::after {
             content: "arrow_drop_down";
             display: inline-block;
-            vertical-align: -.25em;
+            vertical-align: -0.25em;
             font-family: 'Material Icons';
             font-weight: normal;
             font-style: normal;
@@ -2588,21 +2614,21 @@ a {
           }
 
           /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
-          #expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-topics-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-more-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
+          #new-expander--nav-menu-section-submenu + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content,
+          #new-expander--nav-menu-topics-submenu + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content,
+          #new-expander--nav-menu-more-submenu + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content {
             display: none ;
           }
 
           /* subnav ACTIVATED STATE: Menu content is shown and adjacent sibling toggle icon is inverted */
-          #expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-topics-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-more-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
+          #new-expander--nav-menu-section-submenu:checked + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content,
+          #new-expander--nav-menu-topics-submenu:checked + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content,
+          #new-expander--nav-menu-more-submenu:checked + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content {
             display: grid ; /* Menu content is shown */
           }
-          #expander--nav-menu-section-submenu:checked + .site-nav__dropdown-expander-toggle::after,
-          #expander--nav-menu-topics-submenu:checked + .site-nav__dropdown-expander-toggle::after,
-          #expander--nav-menu-more-submenu:checked + .site-nav__dropdown-expander-toggle::after {
+          #new-expander--nav-menu-section-submenu:checked + .new-site-nav__dropdown-expander-toggle::after,
+          #new-expander--nav-menu-topics-submenu:checked + .new-site-nav__dropdown-expander-toggle::after,
+          #new-expander--nav-menu-more-submenu:checked + .new-site-nav__dropdown-expander-toggle::after {
             transform: rotate(180deg); /* toggle icon is inverted */
           }
 
@@ -2613,7 +2639,7 @@ a {
 
           /*  Site Header MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
           @media screen and (min-width: 684px) {
-            .site-header {
+            .new-site-header {
               padding-bottom: 1rem;
             }
           }
@@ -2622,31 +2648,36 @@ a {
           /*  Style Nav only in narrow views */
           @media screen and (max-width: 849px) {
 
-              .site-header__logo-block {
+              /* Reduce space below page header on Story-pages in narrow views */
+              .story-page .new-site-header {
+                  margin-bottom: -4rem;
+              }
+
+              .new-site-header__logo-block {
                   padding-top: 2rem;
                   padding-bottom: 0; /* balances grid alignment */
               }
 
-               .site-header__logo img{
+               .new-site-header__logo img{
                 max-width: 50vw; /*  Makes room for burger and search icons beside logo */
                }
 
               /* Raise Nav to be parallel with logo in narrow views */
-              .site-nav-main {
+              .new-site-nav-main {
                 position: relative;
                 top: -4rem;
               }
 
-              .site-nav-main__expander-toggle.nav__burger {
+              .new-site-nav-main__expander-toggle.new-nav__burger {
                 position: relative;
               }
 
-              .site-nav-main__expander-toggle.nav__burger::before {
+              .new-site-nav-main__expander-toggle.new-nav__burger::before {
                 content: "menu";
                 display: inline-block;
                 position: absolute;
                 top: -3rem;
-                left: -.5rem;
+                left: -0.5rem;
                 font-family: 'Material Icons';
                 font-weight: normal;
                 font-style: normal;
@@ -2663,21 +2694,21 @@ a {
               }
 
 
-              .nav__link--search {
+              .new-nav__link--search {
                 position: absolute;
                 right: 0rem;
                 left: initial;
                 margin-right: 0; /* Eliminates an offset required in wide views */
               }
 
-               .nav__link--search::before {
+               .new-nav__link--search::before {
                 top: -4rem;
                 left: 1rem;
                 transform: scale(1);
               }
 
               /* Dropdown Menu appearance in narrow views */
-              .site-nav__dropdown {
+              .new-site-nav__dropdown {
                 position: absolute;
                 left: -2rem;
                 top: 4rem;
@@ -2694,7 +2725,7 @@ a {
               }
 
                   /* Adds inside border to Dropdown Menu in narrow views */
-                  .site-nav__dropdown::after {
+                  .new-site-nav__dropdown::after {
                     content: '';
                     position: absolute;
                     left: 0rem;
@@ -2704,33 +2735,33 @@ a {
                     border-bottom: 1px solid #bbb;
                   }
 
-                  .site-nav__dropdown a {
+                  .new-site-nav__dropdown a {
                     color: var(--brand-colour);
-                    padding: .5rem 0;
+                    padding: 0.5rem 0;
                   }
 
-                  .site-nav__dropdown-heading {
-                    padding-bottom: .5rem;
+                  .new-site-nav__dropdown-heading {
+                    padding-bottom: 0.5rem;
                     border-bottom: 1px solid #888;
                   }
 
-                  .expander-content__section-submenu a, .expander-content__topics-submenu a, .expander-content__more-submenu a {
+                  .new-expander-content__section-submenu a, .new-expander-content__topics-submenu a, .new-expander-content__more-submenu a {
                     border-bottom: 1px solid #888;
                   }
 
-                  .site-nav__dropdown .nav__link--join  {
+                  .new-site-nav__dropdown .new-nav__link--join  {
                     padding-top: 3rem;
                   }
 
               /* Search Dropdown appearance in narrow views */
-              .site-nav__search-dropdown {
+              .new-site-nav__search-dropdown {
                 position: relative;
                 /* left: -2rem; */
                 /* width: 100vw; */
                 /* min-height: 100vh; */
               }
 
-              .hmpg-org-recent-stories {
+              .new-hmpg-org-recent-stories {
                   padding-top: 2rem; /* Narrows gap between header and main content */
               }
 
@@ -2740,7 +2771,7 @@ a {
           /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 425px */
           @media screen and (min-width: 0px) and (max-width: 425px) {
             /* Raise Nav to be parallel with logo in narrowest views */
-              .site-nav-main {
+              .new-site-nav-main {
                 position: relative;
                 top: -5rem;
               }
@@ -2750,7 +2781,7 @@ a {
           /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
           @media screen and (min-width: 850px) {
 
-              .site-header {
+              .new-site-header {
                 padding-bottom: 0rem;
                 /* Run logo block and nav to edge of screen */
                 padding-left: 0;
@@ -2758,26 +2789,26 @@ a {
               }
 
               /* Expand site-header grid and show taglines */
-              .site-header__logo-block {
+              .new-site-header__logo-block {
                 grid-template-columns: 1fr 1fr 1fr;
               }
 
-              .site-header__tagline--a {
+              .new-site-header__tagline--a {
                 display: block;
                 text-align: right;
               }
 
-              .site-header__tagline--b {
+              .new-site-header__tagline--b {
                 display: block;
               }
 
-              .site-header__tagline--mobile {
+              .new-site-header__tagline--mobile {
                 display: none;
               }
 
 
               /* Create SITE-NAV BAR GRID */
-              .site-nav-main {
+              .new-site-nav-main {
                 /* Set element's position within its container (.site-header__logo-block) */
                 grid-column: 1 / -1;
                 position: relative;
@@ -2802,39 +2833,39 @@ a {
 
                   /* Nav bar button spacing and positioning */
 
-                  .site-nav-main > .nav__link {
-                    padding-top: .25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
-                    padding-bottom: .25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                  .new-site-nav-main > .new-nav__link {
+                    padding-top: 0.25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                    padding-bottom: 0.25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
                   }
 
-                  .site-nav-main > a:first-of-type {
+                  .new-site-nav-main > a:first-of-type {
                     grid-column: main-items;
                   }
 
-                  .site-nav-main .nav__link--news,
-                  .site-nav-main .nav__link--analysis,
-                  .site-nav-main .nav__link--culture,
-                  .site-nav-main .nav__link--more {
+                  .new-site-nav-main .new-nav__link--news,
+                  .new-site-nav-main .new-nav__link--analysis,
+                  .new-site-nav-main .new-nav__link--culture,
+                  .new-site-nav-main .new-nav__link--more {
                     justify-self: center;
                     width: 100%;
                     border-right: 1px solid var(--border-colour-cols);
                     text-align: center;
                   }
 
-                  .site-nav-main .nav__link--more {
+                  .new-site-nav-main .new-nav__link--more {
                     border-right: none;
                   }
 
 
-                  .site-nav-main .nav__link--join {
+                  .new-site-nav-main .new-nav__link--join {
                     grid-column: secondary-items;
                     justify-self: center;
                   }
 
-                  .site-nav-main .nav__link--news,
-                  .site-nav-main .nav__link--analysis,
-                  .site-nav-main .nav__link--culture,
-                  .site-nav-main .nav__link--more {
+                  .new-site-nav-main .new-nav__link--news,
+                  .new-site-nav-main .new-nav__link--analysis,
+                  .new-site-nav-main .new-nav__link--culture,
+                  .new-site-nav-main .new-nav__link--more {
                     padding-right: var(--gutter-column-half);
                     padding-left: var(--gutter-column-half);
                   }
@@ -2843,7 +2874,7 @@ a {
                   /* Nav bar borders */
 
                   /* dot-screen shadow */
-                  .site-nav-main::after {
+                  .new-site-nav-main::after {
                     content:"";
                     display: grid;
                     z-index: 0;
@@ -2852,8 +2883,8 @@ a {
                     top: calc(1rem - 1px);
                     /* top: calc(1rem + 2px + 1px); -- for nav version with double bottom border */
                     /*   height of self (1rem)
-                       + .site-nav-main padding-bottom (2px)
-                       + .site-nav-main border-top (1px)      */
+                       + .new-site-nav-main padding-bottom (2px)
+                       + .new-site-nav-main border-top (1px)      */
                     left: 0;
                     width: 100%;
                     height: 1rem;
@@ -2861,10 +2892,10 @@ a {
                   }
 
                   /* heavy-border below */
-                  .site-nav-main::before {
+                  .new-site-nav-main::before {
                     content:"";
                     position: absolute;
-                    bottom: 3px; /* .site-nav-main padding-bottom(2px) + .site-nav-main border-top(1px) */
+                    bottom: 3px; /* .new-site-nav-main padding-bottom(2px) + .new-site-nav-main border-top(1px) */
                     left: 0;
                     grid-column: 1 / -1;
                     width: 100%;
@@ -2876,103 +2907,103 @@ a {
 
                 /* HAMBURGER SHOW/HIDE */
                 /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
-                    (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
-                .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
+                    (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #new-expander--nav-menu (and #new-expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+                .new-site-nav-main > :not(.new-nav__burger):not(.new-site-nav__dropdown):not(.new-nav__link--search):not(.new-site-nav__search-dropdown) {
                   display: block;
                 }
 
                 /* In wide views hide the hamburger */
-                .site-nav-main > .nav__burger {
+                .new-site-nav-main > .new-nav__burger {
                   display: none;
                 }
 
 
                 /* DROPDOWN NAV MENU */
                 /* Nav Dropdown grid for wide views */
-                .site-nav__dropdown {
+                .new-site-nav__dropdown {
                   grid-column: 1 / -1;
-                  grid-template-columns: calc(var(--page-margin-sides) + .5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                  grid-template-columns: calc(var(--page-margin-sides) + 0.5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
                                                                     /* + offset to align with nav button */
                   grid-template-rows: auto auto [row-2] 1fr;
                   grid-column-gap: 0;
                   grid-auto-flow: row dense;
                   align-items: start;
-                  margin-top: .5rem;
+                  margin-top: 0.5rem;
                   padding-bottom: 7.5rem;
                   background-color: var(--utility-background-color);
                   color: #eee;
                 }
 
-                .site-nav__search-dropdown {
+                .new-site-nav__search-dropdown {
                   grid-column: 2 / -2;
                 }
 
-                  .site-nav__dropdown > * {
+                  .new-site-nav__dropdown > * {
                     padding-right: 0;
                     padding-left: 4.5vw; /* offset to align with nav button */
                   }
 
-                  .site-nav__search-dropdown {
+                  .new-site-nav__search-dropdown {
                       padding-left: ;
                       padding-right: 8rem;
                   }
 
-                  .site-nav__dropdown .site-nav__dropdown-heading-sections,
-                  .site-nav__dropdown .expander-content__section-submenu {
+                  .new-site-nav__dropdown .new-site-nav__dropdown-heading-sections,
+                  .new-site-nav__dropdown .new-expander-content__section-submenu {
                     padding-left: 5.5vw; /* offset to align with nav button */
                   }
 
-                  .site-nav__dropdown .facebook,
-                  .site-nav__dropdown .twitter {
+                  .new-site-nav__dropdown .new-facebook,
+                  .new-site-nav__dropdown .new-twitter {
                     padding-left: 0;
                   }
 
-                  .site-nav__dropdown a {
+                  .new-site-nav__dropdown a {
                     color: var(--brand-colour);
                     line-height: 2.5rem
                   }
 
-                    .expander-content__section-submenu,
-                    .expander-content__topics-submenu,
-                    .expander-content__more-submenu { display: grid !important} /* show submenus by default */
+                    .new-expander-content__section-submenu,
+                    .new-expander-content__topics-submenu,
+                    .new-expander-content__more-submenu { display: grid !important} /* show submenus by default */
 
-                    .site-nav__dropdown-expander-toggle::after {content: none;} /* Hides dropdown toggle arrows */
+                    .new-site-nav__dropdown-expander-toggle::after {content: none;} /* Hides dropdown toggle arrows */
 
-                    .site-nav__dropdown-heading-more {grid-column: col-3;}
+                    .new-site-nav__dropdown-heading-more {grid-column: col-3;}
 
-                    .site-nav__dropdown-heading-sections,
-                    .expander-content__section-submenu {grid-column: col-1;}
+                    .new-site-nav__dropdown-heading-sections,
+                    .new-expander-content__section-submenu {grid-column: col-1;}
 
-                    .site-nav__dropdown-heading-topics,
-                    .expander-content__topics-submenu {grid-column: col-2;}
+                    .new-site-nav__dropdown-heading-topics,
+                    .new-expander-content__topics-submenu {grid-column: col-2;}
 
 
-                    .expander-content__more-submenu {
+                    .new-expander-content__more-submenu {
                       grid-column: col-3;
                       grid-row: row-2; /* Prevents submenu from expanding first row of grid.
-                                         (Only necessary if .site-nav__dropdown-heading-more is hidden) )*/
+                                         (Only necessary if .new-site-nav__dropdown-heading-more is hidden) )*/
                       position: relative;
                     }
 
-                    .site-nav__dropdown .nav__link--newsletter {grid-column: col-4; padding-top: 2rem;}
+                    .new-site-nav__dropdown .new-nav__link--newsletter {grid-column: col-4; padding-top: 2rem;}
 
-                    .site-nav__dropdown .nav__link--join {display: none} /* Hides redundant link */
+                    .new-site-nav__dropdown .new-nav__link--join {display: none} /* Hides redundant link */
 
-                    .site-nav__dropdown .facebook {grid-column: col-5; justify-self: center; padding-top: 2rem;}
+                    .new-site-nav__dropdown .new-facebook {grid-column: col-5; justify-self: center; padding-top: 2rem;}
 
-                    .site-nav__dropdown .twitter {grid-column: col-5; justify-self: center; }
+                    .new-site-nav__dropdown .new-twitter {grid-column: col-5; justify-self: center; }
 
           } /* End of Site Header responsive breakpoint 850px*/
 
           /*  Site Header MARGINS BREAKPOINT -- breakpoint-width-margins 1100px --------------- */
           @media screen and (min-width: 1100px) {
 
-            .site-nav__dropdown > * {
+            .new-site-nav__dropdown > * {
               padding-left: 5.75rem;  /* offset to align with nav button */
             }
 
-            .site-nav__dropdown .site-nav__dropdown-heading-sections,
-            .site-nav__dropdown .expander-content__section-submenu {
+            .new-site-nav__dropdown .new-site-nav__dropdown-heading-sections,
+            .new-site-nav__dropdown .new-expander-content__section-submenu {
               padding-left: 6.9rem; /* offset to align with nav button */
             }
           }
@@ -2983,33 +3014,33 @@ a {
 
             /* Spacing for Nav buttons and dropdown */
 
-            .site-nav-main {
+            .new-site-nav-main {
                 grid-template-columns:  calc(var(--page-margin-sides))   [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
               }
 
-            .site-nav-main .nav__link--join {
+            .new-site-nav-main .new-nav__link--join {
                 justify-self: end;
             }
 
-            .site-nav-main .nav__link--search {
+            .new-site-nav-main .new-nav__link--search {
                 justify-self: center;
             }
 
-            .site-nav__dropdown {
+            .new-site-nav__dropdown {
                   grid-template-columns: calc(var(--page-margin-sides) + 2.75em)[col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
                 }                                                   /* + offset to align with nav button */
 
-                  .site-nav__dropdown > * {
+                  .new-site-nav__dropdown > * {
                     padding-left: 3.5vw; /* offset to align with nav button */
                   }
 
-                  .site-nav__dropdown .site-nav__dropdown-heading-sections,
-                  .site-nav__dropdown .expander-content__section-submenu {
+                  .new-site-nav__dropdown .new-site-nav__dropdown-heading-sections,
+                  .new-site-nav__dropdown .new-expander-content__section-submenu {
                     padding-left: 4vw; /* offset to align with nav button */
                   }
 
-                  .site-nav__dropdown .site-nav__dropdown-heading-more,
-                  .site-nav__dropdown .expander-content__more-submenu {
+                  .new-site-nav__dropdown .new-site-nav__dropdown-heading-more,
+                  .new-site-nav__dropdown .new-expander-content__more-submenu {
                     padding-left: 4vw; /* offset to align with nav button */
                   }
 
@@ -3022,7 +3053,7 @@ a {
 
 /* SITE FOOTER organism ----------------- */
 
-.site-footer {
+.new-site-footer {
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, 140px);
@@ -3037,36 +3068,36 @@ a {
 
 }
 
-    .site-footer div {
+    .new-site-footer div {
       padding-bottom: 2rem;
       text-align: center
     }
 
-    .site-footer .facebook {
+    .new-site-footer .new-facebook {
       padding-bottom: 2rem;
     }
 
-    .site-footer .site-footer__logo-container {
+    .new-site-footer .new-site-footer__logo-container {
       display: none;
     }
 
-    .site-footer .site-footer__logo {
+    .new-site-footer .new-site-footer__logo {
       width: 80%;
     }
 
-.links-group {
+.new-links-group {
   display:grid;
   grid-template-rows: auto;
 }
 
-    .links-group h2 {
+    .new-links-group h2 {
       min-height: 4rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
 
-    .links-group a {
+    .new-links-group a {
       color: var(--brand-colour);
       line-height: 2.5rem;
     }
@@ -3078,12 +3109,12 @@ a {
       /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
       @media screen and (min-width: 704px) {
 
-        .site-footer {
+        .new-site-footer {
           grid-template-columns: 1fr 1fr 1fr 1fr;
           justify-content: left;
         }
 
-        .site-footer div {
+        .new-site-footer div {
           padding-bottom: 2rem;
           text-align: left;
         }
@@ -3093,7 +3124,7 @@ a {
       /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
       @media screen and (min-width: 950px) {
 
-        .site-footer {
+        .new-site-footer {
           grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         }
       }
@@ -3102,7 +3133,7 @@ a {
       /*  Site Header LARGE BREAKPOINT -- 1369px */
       @media screen and (min-width: 1369px) {
 
-        .site-footer .site-footer__logo-container {
+        .new-site-footer .new-site-footer__logo-container {
           display: block;
         }
       }
@@ -3124,13 +3155,89 @@ a {
 
 
 /*  RESPONSIVE IMAGES -- forces the image to be the same width as its parent
-    element. Confusingly similar in name to Bootstrap's .img-responsive but this
+    element. Confusingly similar in name to Bootstrap's .new-img-responsive but this
     will actually stretch an image rather than merely shrink it. */
-.responsive-img {
+.new-responsive-img {
   width: 100%;
   height: auto;
   display: block;
 }
+
+
+
+
+
+/*------------------------------------*\
+  #GRID GUIDES
+\*------------------------------------*/
+
+/* This draws guides for column grid and baseline grid to tune the layout. */
+
+@media (max-resolution: 100dpi) { /* Don't show guides on mobile */
+
+    :root {
+      /* Calculate column width including gutter: */
+      --column-increment:
+      calc((100vw + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )  ;
+      /*   (width +    trailing gutter   -   the page margins    )        / number of columns   )  */
+      /*   (----------------- total grid width ------------------)        / number of columns   )  */
+      /*   (------------------------------ column width inc gutter -----------------------------)  */
+      /*   var(--column-increment)                                                                 */
+
+      /* Calculate column content width (without gutter): */
+      --column-width:
+      calc( var(--column-increment) - var(--gutter-column));
+      /*   var(--column-width)                            */
+    }
+
+    /* Apply the grid background to container elements: */
+    body:not(:hover) .new-hmpg-org-wrapper {
+        /* Define grid structure: column width (inc gutter), baselines */
+        background-size:
+        var(--column-increment)    var(--baseline-grid);
+        /*    column-increment  |  baseline increment */
+
+        /* Adjust grid for page margins: */
+        background-position: var(--page-margin-sides) 0rem;
+
+
+        background-image:
+          /* Mark start of each column: */
+          linear-gradient(to right, #6583c552 1px, transparent 1px),
+
+          /* Fill in column widths: */
+          linear-gradient(to right, #83aaff17 var(--column-width), #ffd3d300 1px),
+          /*                blend ,   column          column width ,   gutter       */
+          /*            direction     colour                           colour       */
+
+          /* Draw baselines: */
+          linear-gradient(to bottom, #99b4ff47 1px, transparent 1px);
+          /*                      baseline thickness, colour btw baselines */
+    }
+
+
+    /* Apply the baselines to the body element to test for grid consistency between container elements */
+    body:not(:hover) {
+        background-size:
+        4rem    2rem;
+        /* width of background, grid increment */
+
+        /* Adjust grid for page margins, set top offset */
+        background-position: var(--page-margin-sides) 0px;
+
+        background-image:
+          /* Draw baselines: */
+          linear-gradient(to bottom, #4848486b 1px, transparent 1px);
+          /*                      baseline thickness, colour btw baselines */
+
+        background-repeat: repeat;
+    }
+
+
+} /* end of Grid Guides */
+
+
+
 
 
 /*------------------------------------*\
@@ -3144,7 +3251,7 @@ Some of the tertiary recent stories items are hidden and only revealed when the 
 img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
            =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 1          ) / img-aspect )
 */
-.hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
+.new-hmpg-org-recent-stories .new-story-item--tertiary .new-story-item__image .new-responsive-img {
   min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 1 ) / 1.5 )
 }
 
@@ -3156,7 +3263,7 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
   */
   /* THIS RULE PRODUCES A LAYOUT BUG --> @media screen and (min-width: 1368px) {
 
-    .hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
-      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .45 ) / 1.5 );
+    .new-hmpg-org-recent-stories .new-story-item--tertiary .new-story-item__image .new-responsive-img {
+      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 0.45 ) / 1.5 );
     } */
   }

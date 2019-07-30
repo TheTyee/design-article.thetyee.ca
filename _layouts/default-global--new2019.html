@@ -1,0 +1,62 @@
+---
+---
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+{% include meta/head.html %}
+  <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+
+    <!-- =============================== -->
+    <!-- ===== Header ===== -->
+
+    {% include 01-molecules/messaging/alerts--browser-support.html %}
+
+    {% include 01-molecules/blocks/ad-banner.html ad-source="UBCMUD-leaderboard.jpg" %}
+
+    {% include 02-organisms/sections/httpswarning.html %}
+
+    {% include 02-organisms/global/header--homepage-prefixed.html %}
+
+
+    <!-- =============================== -->
+
+    {{ content }}
+
+    <!-- =============================== -->
+    <!-- ===== Tertiary components ===== -->
+
+    {% if page.page-type == 'article' and page.messaging-zone != 'no' %}
+
+        {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+
+        {% include 02-organisms/sections/messaging-zone.html %}
+
+    {% endif %}
+
+    {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
+
+
+    {% include 02-organisms/sections/comments.html %}          <!-- NEEDS WORK -->
+
+    {% assign barometer = 'true' %}
+
+    {% include 02-organisms/sections/messaging-zone.html %}
+
+    <div class="presents-col-container main-col-container container-fluid">{% include 01-molecules/blocks/presents-box.html %}</div>
+
+
+
+    <!-- =============================== -->
+    <!-- ===== Footer ===== -->
+
+    {% include footer.html %}                 <!-- NEEDS WORK -->
+
+    {% include footer_scripts_standard.html %}
+
+    {% include 02-organisms/sections/subscription-modal.html %}
+
+    </body>
+
+</html>

@@ -1,4 +1,12 @@
 /*-----------------------------------------*\
+  HOMEPAGE CSS PREFIXED
+\*-----------------------------------------*/
+
+/* This file adds prefixes to all the CSS classes so that components from the new
+homepage can be used on other pages without creating css collisions */
+
+
+/*-----------------------------------------*\
   #GENERIC
 \*-----------------------------------------*/
 
@@ -57,8 +65,6 @@ body{
   font-size: 1.6rem;
   line-height: 2rem;
   color: var(--text-colour);
-
-  padding-top: .rem;
 }
 
 /* Base Colours */
@@ -394,7 +400,7 @@ body {
 .site-header__tagline  {
   position: relative;
   font-family: var(--typeface-serif);
-  font-size: .86em;
+  font-size: 0.86em;
   font-weight: 600;
 }
 
@@ -518,7 +524,7 @@ body {
 }
 
 .m-tyee-insider__related-label {
-  font-size: .85em;
+  font-size: 0.85em;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -556,7 +562,7 @@ body {
 
 .category-label {
   font-family: var(--typeface-sans);
-  font-size: .875em;
+  font-size: 0.875em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -598,8 +604,8 @@ body {
     /* Separator between headline and news source */
     .story-item__news-source::before {
       content:"•";
-      padding-left: .25em;
-      padding-right: .25em;
+      padding-left: 0.25em;
+      padding-right: 0.25em;
     }
 
 
@@ -791,23 +797,15 @@ a {
           border-color: white;  /* can't be brand color because Insider has an orange background */
         }
 
-        /* Hovers states for nav-bar items -- only on devices with hover capability, exclude mobile */
-        @media (hover: hover) and (pointer: fine) {
-          .nav__link:hover,
-          .site-footer a:hover  {
-            display: inline-block;
-            color: var(--link-colour);
-            transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
-          }
-        }
-
-        /* Hover states for text links and buttons */
-        .story-item a:hover, .story-item a:focus,
-        .site-header__tagline a:hover, .site-header__tagline a:focus {
-          display: inline-block;
-          color: var(--link-colour);
-          transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
-        }
+    /* Hover states for text links, buttons and nav-bar */
+    .story-item a:hover, .story-item a:focus,
+    .site-header__tagline a:hover, .site-header__tagline a:focus,
+    .nav__link:hover,
+    .site-footer a:hover  {
+      display: inline-block;
+      color: var(--link-colour);
+      transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+    }
 
         .hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus  {
           color: white; /* can't be brand color because Insider has an orange background */
@@ -1103,7 +1101,7 @@ a {
 
               .hmpg-org-deep-dive .story-item--secondary .category-label {
                 font-family: var(--typeface-sans);
-                font-size: .875em;
+                font-size: 0.875em;
                 font-weight: 600;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
@@ -1413,7 +1411,7 @@ a {
           content: counter(story-item);
           display: inline-block;
           position: absolute;
-          left: -.1em;
+          left: -0.1em;
           color: var(--brand-colour--text);
           background-color: none;
           font-family: var(--typeface-display);
@@ -1720,7 +1718,7 @@ a {
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 
-  background-color: var(--brand-colour--mod-bg);
+  background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
 }
 
 .hmpg-module-header {
@@ -2451,7 +2449,7 @@ a {
     .site-nav-main__expander-toggle.nav__link--more::after {
       content: "arrow_drop_down";
       display: inline-block;
-      vertical-align: -.25em;
+      vertical-align: -0.25em;
       font-family: 'Material Icons';
       font-weight: normal;
       font-style: normal;
@@ -2533,8 +2531,8 @@ a {
             grid-column: 1 / -1;
             padding-top: 3rem;
             padding-bottom: 3rem;
-            margin-top: .5rem;
-            margin-bottom: -.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: -0.5rem;
             background-color: var(--utility-background-color);
           }
 
@@ -2551,13 +2549,13 @@ a {
           .site-nav__search-dropdown .site-nav__search-form > * {
             display: grid ;
             grid-template-columns: 4fr 1fr;
-            font-size: .6em;
+            font-size: 0.6em;
             height: 4rem;
             border: 1px solid var(--utility-background-color);
           }
 
           form input {
-            padding-left: .65em;
+            padding-left: 0.65em;
           }
 
       /* SUB-NAV DROPDOWN EXPANDERS */
@@ -2571,7 +2569,7 @@ a {
           .site-nav__dropdown-expander-toggle::after {
             content: "arrow_drop_down";
             display: inline-block;
-            vertical-align: -.25em;
+            vertical-align: -0.25em;
             font-family: 'Material Icons';
             font-weight: normal;
             font-style: normal;
@@ -2646,7 +2644,7 @@ a {
                 display: inline-block;
                 position: absolute;
                 top: -3rem;
-                left: -.5rem;
+                left: -0.5rem;
                 font-family: 'Material Icons';
                 font-weight: normal;
                 font-style: normal;
@@ -2706,11 +2704,11 @@ a {
 
                   .site-nav__dropdown a {
                     color: var(--brand-colour);
-                    padding: .5rem 0;
+                    padding: 0.5rem 0;
                   }
 
                   .site-nav__dropdown-heading {
-                    padding-bottom: .5rem;
+                    padding-bottom: 0.5rem;
                     border-bottom: 1px solid #888;
                   }
 
@@ -2803,8 +2801,8 @@ a {
                   /* Nav bar button spacing and positioning */
 
                   .site-nav-main > .nav__link {
-                    padding-top: .25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
-                    padding-bottom: .25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                    padding-top: 0.25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                    padding-bottom: 0.25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
                   }
 
                   .site-nav-main > a:first-of-type {
@@ -2891,13 +2889,13 @@ a {
                 /* Nav Dropdown grid for wide views */
                 .site-nav__dropdown {
                   grid-column: 1 / -1;
-                  grid-template-columns: calc(var(--page-margin-sides) + .5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                  grid-template-columns: calc(var(--page-margin-sides) + 0.5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
                                                                     /* + offset to align with nav button */
                   grid-template-rows: auto auto [row-2] 1fr;
                   grid-column-gap: 0;
                   grid-auto-flow: row dense;
                   align-items: start;
-                  margin-top: .5rem;
+                  margin-top: 0.5rem;
                   padding-bottom: 7.5rem;
                   background-color: var(--utility-background-color);
                   color: #eee;
@@ -3133,6 +3131,82 @@ a {
 }
 
 
+
+
+
+/*------------------------------------*\
+  #GRID GUIDES
+\*------------------------------------*/
+
+/* This draws guides for column grid and baseline grid to tune the layout. */
+
+@media (max-resolution: 100dpi) { /* Don't show guides on mobile */
+
+    :root {
+      /* Calculate column width including gutter: */
+      --column-increment:
+      calc((100vw + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )  ;
+      /*   (width +    trailing gutter   -   the page margins    )        / number of columns   )  */
+      /*   (----------------- total grid width ------------------)        / number of columns   )  */
+      /*   (------------------------------ column width inc gutter -----------------------------)  */
+      /*   var(--column-increment)                                                                 */
+
+      /* Calculate column content width (without gutter): */
+      --column-width:
+      calc( var(--column-increment) - var(--gutter-column));
+      /*   var(--column-width)                            */
+    }
+
+    /* Apply the grid background to container elements: */
+    body:not(:hover) .hmpg-org-wrapper {
+        /* Define grid structure: column width (inc gutter), baselines */
+        background-size:
+        var(--column-increment)    var(--baseline-grid);
+        /*    column-increment  |  baseline increment */
+
+        /* Adjust grid for page margins: */
+        background-position: var(--page-margin-sides) 0rem;
+
+
+        background-image:
+          /* Mark start of each column: */
+          linear-gradient(to right, #6583c552 1px, transparent 1px),
+
+          /* Fill in column widths: */
+          linear-gradient(to right, #83aaff17 var(--column-width), #ffd3d300 1px),
+          /*                blend ,   column          column width ,   gutter       */
+          /*            direction     colour                           colour       */
+
+          /* Draw baselines: */
+          linear-gradient(to bottom, #99b4ff47 1px, transparent 1px);
+          /*                      baseline thickness, colour btw baselines */
+    }
+
+
+    /* Apply the baselines to the body element to test for grid consistency between container elements */
+    body:not(:hover) {
+        background-size:
+        4rem    2rem;
+        /* width of background, grid increment */
+
+        /* Adjust grid for page margins, set top offset */
+        background-position: var(--page-margin-sides) 0px;
+
+        background-image:
+          /* Draw baselines: */
+          linear-gradient(to bottom, #4848486b 1px, transparent 1px);
+          /*                      baseline thickness, colour btw baselines */
+
+        background-repeat: repeat;
+    }
+
+
+} /* end of Grid Guides */
+
+
+
+
+
 /*------------------------------------*\
   #PATCHES
 \*------------------------------------*/
@@ -3157,6 +3231,6 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
   /* THIS RULE PRODUCES A LAYOUT BUG --> @media screen and (min-width: 1368px) {
 
     .hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
-      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .45 ) / 1.5 );
+      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 0.45 ) / 1.5 );
     } */
   }
