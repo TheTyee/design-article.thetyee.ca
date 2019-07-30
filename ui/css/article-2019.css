@@ -394,6 +394,7 @@ a:active {color: #404040; color: var(--text-colour)}
 p a, p a:link, p a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
 p a, p a:link, p a:visited {
       border-bottom: 2px solid var(--link-colour);
+      margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
     }
 p a:hover {color: #6F9400; color: var(--link-colour)}
 
@@ -407,13 +408,15 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
 /* Hover states for text links, buttons and nav-bar */
     a:hover, a:focus,
     .site-footer a:hover  {
-      display: inline-block;
+      display: inline-block; /* inline elements need to be converted into
+                                inline-blocks so they can be transformed */
       color: var(--link-colour);
       transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
     }
 
-        p a:hover, p a:focus  {
-          margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
+        a[display=block]:hover, a[display=block]:focus,
+        .site-footer a[display:block]:hover  {
+          display: block; /* Prevents the conversion of block elements into inline-blocks */
         }
 
         .presents-box a:hover, .presents-box a:focus {
@@ -4116,7 +4119,8 @@ text-overflow: ellipsis;
 }
 
 .messaging-block--barometer p a{
-  background-color: #82AD00; background-color: var(--brand-colour--text);
+  background-color: #82AD00;
+  background-color: var(--brand-colour--text);
   padding: 4px 10px;
   width: 100%;
   font-size: 0.85em;
