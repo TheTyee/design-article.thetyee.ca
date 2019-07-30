@@ -793,8 +793,6 @@ a {
 
         /* Hovers states for nav-bar items -- only on devices with hover capability, exclude mobile */
         @media (hover: hover) and (pointer: fine) {
-          .story-item a:hover, .story-item a:focus,
-          .site-header__tagline a:hover, .site-header__tagline a:focus,
           .nav__link:hover,
           .site-footer a:hover  {
             display: inline-block;
