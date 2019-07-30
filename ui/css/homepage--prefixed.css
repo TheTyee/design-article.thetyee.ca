@@ -2640,6 +2640,11 @@ a.new-site-header--homepage {
           /*  Style Nav only in narrow views */
           @media screen and (max-width: 849px) {
 
+              /* Reduce space below page header on Story-pages in narrow views */
+              .story-page .new-site-header {
+                  margin-bottom: -4rem;
+              }
+
               .new-site-header__logo-block {
                   padding-top: 2rem;
                   padding-bottom: 0; /* balances grid alignment */
