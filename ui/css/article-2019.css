@@ -2117,7 +2117,8 @@ margin: 0;
 
 
             .btn-join:hover .accent-color {
-                fill: #6F9400;
+                fill: #6F9400; /* legacy fallback */
+                fill: var(--link-colour);
                 cursor: pointer;
             }
 

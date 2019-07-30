@@ -453,6 +453,10 @@ https://caniuse.com/#feat=css3-colors
     color: var(--brand-colour--text);
   }
 
+  .new-site-nav__dropdown a.new-nav__link--join {
+    color: var(--brand-colour);
+  }
+
   .new-site-nav__dropdown-heading,
   .new-site-nav__dropdown .new-nav__link--join,
   .new-site-nav__dropdown .new-twitter {
