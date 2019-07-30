@@ -1773,6 +1773,11 @@ aside { }
         z-index: 200;
     }
 
+        /* Set content of asides in sans font */
+        .aside p, .aside ul {
+          font-family: 'Source Sans Pro', sans-serif;
+        }
+
         .aside:has(> img) { /* Shows asides that contain img child element.
         (Requires jquery, polyfill.js and this: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/ )
         The polyfill is not currently so this display functionality has been implemented directly via js in ui/js/article_custom.js:
