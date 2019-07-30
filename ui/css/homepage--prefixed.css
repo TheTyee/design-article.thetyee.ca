@@ -816,15 +816,23 @@ a.new-site-header--homepage {
           border-color: white;  /* can't be brand color because Insider has an orange background */
         }
 
-    /* Hover states for text links, buttons and nav-bar */
-    .new-story-item a:hover, .new-story-item a:focus,
-    .new-site-header__tagline a:hover, .new-site-header__tagline a:focus,
-    .new-nav__link:hover,
-    .new-site-footer a:hover  {
-      display: inline-block;
-      color: var(--link-colour);
-      transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
-    }
+        /* Hovers states for nav-bar items -- only on devices with hover capability, exclude mobile */
+        @media (hover: hover) and (pointer: fine) {
+          .new-nav__link:hover,
+          .new-site-footer a:hover  {
+            display: inline-block;
+            color: var(--link-colour);
+            transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+          }
+        }
+
+        /* Hover states for text links and buttons */
+        .new-story-item a:hover, .new-story-item a:focus,
+        .new-site-header__tagline a:hover, .new-site-header__tagline a:focus {
+          display: inline-block;
+          color: var(--link-colour);
+          transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+        }
 
         .new-hmpg-org-tyee-insider a:hover, .new-hmpg-org-tyee-insider a:focus  {
           color: white; /* can't be brand color because Insider has an orange background */
