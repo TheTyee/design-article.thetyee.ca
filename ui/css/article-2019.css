@@ -111,17 +111,42 @@ h5 {
   color: #424242 ;
 }
 
+/* Story Labels */
 h6 {
   display: inline-block;
-  margin-top: 2.4em;
   margin-bottom: 0;
-  border-bottom: 2px solid #90AD00;
-  border-bottom-color: var(--link-colour);
-  padding-bottom: 0.15em;
-  font-size: 1em;
-  font-weight: 700;
-  letter-spacing: .04em;
+  margin-right: 1.85rem;
+
 }
+
+    /* Category Label gets prominent styling */
+    h6:first-of-type {
+      display: inline-block;
+      margin-top: 2.4em;
+      margin-bottom: 0;
+      border-bottom: 2px solid #90AD00;
+      border-bottom-color: var(--link-colour);
+      padding-bottom: 0.15em;
+      font-size: 1em;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    /* Tag Labels get subordinate styling */
+    h6:nth-of-type(n+2) {
+      text-transform:capitalize;
+      font-size: .8em;
+      font-weight: 600;
+      margin-right: .15rem;
+    }
+
+    /* Separators between tag labels */
+    h6:nth-of-type(n+3):before {
+      content:"|";
+      color: var(--text-colour-light) ;
+      font-weight: 400;
+      margin-right: .35rem;
+    }
 
 p {
   margin-bottom: 1em;
