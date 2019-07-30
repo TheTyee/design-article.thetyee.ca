@@ -896,11 +896,12 @@ a.new-site-header--homepage {
           padding: 1rem 2rem;
           background: var(--brand-colour);
           color: #ffffff;
+          color: var(--text-colour);
         }
 
     .new-button:hover,
     .new-button:focus {
-        color: white;
+        color: white; color: var(--text-colour);
         background: var(--brand-colour--text-darker);
         border-color: transparent;
         outline: 2px solid #fff;
