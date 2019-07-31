@@ -809,13 +809,20 @@ a {
           transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
         }
 
-        .hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus  {
-          color: white; /* can't be brand color because Insider has an orange background */
-        }
+            /* Patch hover states that cause layout reflow */
+            .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:hover,
+            .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:focus {
+              display: inline;
+              font-size: 1.05em;
+            }
 
-        .story-item p a:hover, .story-item p a:focus  {
-          margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
-        }
+            .hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus  {
+              color: white; /* can't be brand color because Insider has an orange background */
+            }
+
+            .story-item p a:hover, .story-item p a:focus  {
+              margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
+            }
 
     .text-link--button {
       display:table;
