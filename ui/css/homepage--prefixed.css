@@ -3130,8 +3130,8 @@ a.new-site-header--homepage {
       }
 
 
-      /*  Site Header LARGE BREAKPOINT -- 1369px */
-      @media screen and (min-width: 1369px) {
+      /*  Site Header LARGE BREAKPOINT -- 1368px */
+      @media screen and (min-width: 1368px) {
 
         .new-site-footer .new-site-footer__logo-container {
           display: block;
