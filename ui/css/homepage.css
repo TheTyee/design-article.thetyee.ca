@@ -1098,12 +1098,12 @@ a {
             display: block;
           }
 
-          /* Use float-based layout for Secondary story-items in Recent Stories module */
+          /* Use float-based layout for Secondary story-items in Recent Stories and Insider modules */
           /* Same as Tertiary items in large viewports. */
                 .hmpg-org-recent-stories__list .story-item--secondary .story-item__image,
                 .m-tyee-insider__related-stories .story-item--tertiary .story-item__image {
                   float: right;
-                  width: calc(50% - (var(--gutter-column-half) * 0.5));
+                  width: calc(35% - (var(--gutter-column-half) * 0.5));
                   margin-left: var(--gutter-column-half);
                   margin-bottom: 2rem;
                 }
