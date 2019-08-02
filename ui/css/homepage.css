@@ -625,6 +625,7 @@ body {
 
     .story-item--secondary .story-item__headline {
       font-family: var(--typeface-display-medium);
+      font-size: 1.35em; /* Reduces font-size to increase the line measure */
     }
 
     /* tertiary story-items */
@@ -692,6 +693,11 @@ body {
             font-size: 2.33em;
             margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
           }
+
+          .story-item--secondary .story-item__headline {
+            font-family: var(--typeface-display-medium);
+            font-size: 1.5em; /* Restores font-size as column gets wider */
+          }
         }
 
         /*  STORY ITEMS TYPOGRAPHY ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px - 1367px */
@@ -701,6 +707,11 @@ body {
           .hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
             line-height: 3rem; /* this is 2 x baseline */
             font-size: 1.65em;
+          }
+
+          .hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
+            font-family: var(--typeface-display-medium);
+            font-size: 1.35em; /* Reduces font-size because Ad-block makes column narrow */
           }
         }
 
