@@ -811,7 +811,9 @@ a {
 
             /* Patch hover states that cause layout reflow */
             .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:hover,
-            .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:focus {
+            .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:focus,
+            .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:hover,
+            .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:focus {
               display: inline;
               font-size: 1.05em;
             }
@@ -823,6 +825,15 @@ a {
             .story-item p a:hover, .story-item p a:focus  {
               margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
             }
+
+            /*  Patch hover states that cause layout reflow */
+            @media screen and (max-width: 683px) {
+              .story-item--secondary .story-item__headline a:hover, .story-item--secondary .story-item__headline a:focus {
+                display: inline;
+                font-size: 1.05em;
+              }
+            }
+
 
     .text-link--button {
       display:table;
