@@ -626,6 +626,9 @@ body {
     .story-item--secondary .story-item__headline {
       font-family: var(--typeface-display-medium);
       font-size: 1.35em; /* Reduces font-size to increase the line measure */
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto; /* Adds hyphenation in narrowest views */
     }
 
     /* tertiary story-items */
@@ -673,6 +676,13 @@ body {
             line-height: 3rem; /* this is 2 x baseline */
             font-size: 1.65em;
             margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+          }
+
+          /* Turn off auto-hyphenation in views where it might be excessive */
+          .story-item--secondary .story-item__headline {
+            -webkit-hyphens: manual;
+            -ms-hyphens: manual;
+            hyphens: manual;
           }
 
           /* Keep large size of Primary headlines in module that have more space for them */
