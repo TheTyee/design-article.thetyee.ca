@@ -1130,6 +1130,11 @@ a {
                   margin-bottom: 2rem;
                 }
 
+                /* Align photo vertically with adjacent headline. */
+                .hmpg-org-recent-stories__list .story-item--secondary .story-item__image {
+                  padding-top: 3.5rem;
+                }
+
                 .m-tyee-insider__related-stories .story-item--tertiary .story-item__headline {
                   padding-top: 0;
                 }
@@ -1242,6 +1247,7 @@ a {
           .hmpg-org-recent-stories__list .story-item--tertiary:nth-of-type(-n+8) {
             display: block;
           }
+
         } /* end of Story Item large breakpoint */
 
 /* end of Story Item */
