@@ -632,7 +632,7 @@ body {
 
     .story-item--tertiary .story-item__headline {
       font-family: var(--typeface-display-medium);
-      font-size: 1.5em;
+      font-size: 1.35em;
       line-height: 3rem;
       margin: 0; /* matches with deck margin-bottom to realign with baseline grid */
     }
@@ -1628,7 +1628,7 @@ a {
             }
 
             .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                font-size: 1.5em;
+                font-size: 1.35em;
                 line-height: 3rem;
             }
 
