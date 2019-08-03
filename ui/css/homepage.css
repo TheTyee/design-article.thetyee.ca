@@ -581,14 +581,14 @@ body {
     }
 
     /* Multiple authors -- add separators between authors */
-    .story-item__author a:nth-of-type(n+2):before {
+    .story-item__author a:after {
       content:", ";
       font-weight: 400;
     }
 
-    /* Multiple authors -- hide any author links that are empty */
-    .story-item__author a:empty {
-      display: none;
+    /* Multiple authors -- remove separator after last author */
+    .story-item__author a:last-of-type:after {
+      content: none;
     }
 
     .m-comment-noted .story-item__author {
