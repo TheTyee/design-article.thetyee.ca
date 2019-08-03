@@ -868,8 +868,7 @@ a {
         }
 
         /* Hover states for text links and buttons */
-        .story-item a:hover, .story-item a:focus,
-        .site-header__tagline a:hover, .site-header__tagline a:focus {
+        a:hover, a:focus {
           display: inline-block;
           color: var(--link-colour);
           transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
@@ -880,6 +879,13 @@ a {
             .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:focus,
             .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:hover,
             .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:focus {
+              display: inline;
+              font-size: 1.05em;
+            }
+
+            /* Patch hover states that cause layout reflow */
+            p a:hover,
+            p a:focus {
               display: inline;
               font-size: 1.05em;
             }
