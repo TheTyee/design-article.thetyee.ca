@@ -680,9 +680,6 @@ body {
 
           /* Turn off auto-hyphenation in views where it might be excessive */
           .story-item--secondary .story-item__headline {
-            -webkit-hyphens: manual;
-            -ms-hyphens: manual;
-            hyphens: manual;
           }
 
           /* Keep large size of Primary headlines in module that have more space for them */
@@ -728,6 +725,13 @@ body {
 
         /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
         @media screen and (min-width: 1368px) {
+
+            /* No auto hyphenation for Secondary headlines in widest views */
+            .story-item--secondary .story-item__headline {
+                -webkit-hyphens: manual;
+                -ms-hyphens: manual;
+                hyphens: manual;
+            }
 
             /* Slightly reduce size of tertiary headlines in wide screens
                to accommodate a 2-col stiry-item layout.                  */
@@ -1626,9 +1630,12 @@ a {
                 }
 
                 .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                font-size: 1.25em;
-                line-height: 2.5rem; /* decimal values here cause a browser rounding error
-                                        that throws throws off the baseline grid.          */
+                  font-size: 1.15em;
+                  line-height: 2.5rem; /* decimal values here cause a browser rounding error
+                                          that throws throws off the baseline grid.          */
+                  -webkit-hyphens: auto;
+                  -ms-hyphens: auto;
+                  hyphens: auto; /* Adds hyphenation in medium views where column is narrow */
                 }
 
                 .hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
@@ -1644,9 +1651,10 @@ a {
                 grid-column: auto / span 6;
             }
 
+            /* Slightly increases Recent-stories tertiary headline size */
             .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                font-size: 1.35em;
-                line-height: 3rem;
+                font-size: 1.2em;
+                line-height: 2.5rem;
             }
 
             .hmpg-org-recent-stories__list .story-item--tertiary {
@@ -1725,7 +1733,7 @@ a {
               /* Slightly reduce size of tertiary headlines in wide screens to accommodate extra column */
               .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
                   font-family: var(--typeface-display-medium);
-                  font-size: 1.25em;
+                  font-size: 1.15em;
                   line-height: 2.5rem; /* decimal values here cause a browser rounding error
                                           that throws throws off the baseline grid.          */
               }
