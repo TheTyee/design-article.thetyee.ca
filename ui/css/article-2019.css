@@ -459,8 +459,7 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
 
         .presents-box a:hover, .presents-box a:focus {
           display: inline;
-          color: var(--link-colour);
-          transform: scale(1.05)!important;
+          font-size: 0.85em;
         }
 
         a.link-wrap:hover {
@@ -469,6 +468,10 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
 
         .related-story:hover {
           transform: scale(1.05)!important;
+        }
+
+        a.badge--headline-placement:hover {
+          transform: scale(1.2)!important;
         }
 
 
