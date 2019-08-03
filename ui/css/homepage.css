@@ -674,6 +674,21 @@ body {
 
     /* ---- STORY ITEMS TYPOGRAPHY responsive enhancement ----  */
 
+
+        /*  STORY ITEMS TYPOGRAPHY SMALL BREAKPOINT -- max: 683px */
+        @media screen and (max-width: 683px) {
+
+          /* Reduce size of Primary Headlines in narrowest views */
+
+          .story-item--primary .story-item__headline {
+            line-height: 3.5rem; /* this is 2 x baseline */
+            font-size: 1.8em;
+            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+          }
+        }
+
+
+
         /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
 
