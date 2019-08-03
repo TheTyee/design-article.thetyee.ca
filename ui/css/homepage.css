@@ -636,7 +636,7 @@ body {
     .story-item--tertiary .story-item__headline {
       font-family: var(--typeface-display-medium);
       font-size: 1.35em;
-      line-height: 3rem;
+      line-height: 2.75rem;
       margin: 0; /* matches with deck margin-bottom to realign with baseline grid */
     }
 
