@@ -680,6 +680,7 @@ body {
 
           /* Turn off auto-hyphenation in views where it might be excessive */
           .story-item--secondary .story-item__headline {
+            line-height: 2.75rem;
           }
 
           /* Keep large size of Primary headlines in module that have more space for them */
@@ -704,7 +705,7 @@ body {
 
           .story-item--secondary .story-item__headline {
             font-family: var(--typeface-display-medium);
-            font-size: 1.5em; /* Restores font-size as column gets wider */
+            /* font-size: 1.5em; Restores font-size as column gets wider */
           }
         }
 
@@ -726,11 +727,20 @@ body {
         /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
         @media screen and (min-width: 1368px) {
 
+            /* Increase size for Secondary headlines in widest views */
             /* No auto hyphenation for Secondary headlines in widest views */
             .story-item--secondary .story-item__headline {
+                font-size: 1.5em;
+                line-height: 3rem;
                 -webkit-hyphens: manual;
                 -ms-hyphens: manual;
                 hyphens: manual;
+            }
+
+            /* Keep Recent-stories Secondary headlines smaller because ad-block constrains width */
+            .hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
+                font-size: 1.35em;
+                line-height: 2.75rem;
             }
 
             /* Slightly reduce size of tertiary headlines in wide screens
