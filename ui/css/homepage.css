@@ -1755,6 +1755,7 @@ a {
                 width: calc(40% - (var(--gutter-column-half) * 0.5));
                 margin-left: var(--gutter-column-half);
                 margin-bottom: 1rem;
+                padding-top: 3.15rem;
               }
 
               /* Disable scaling of Half-page Adblock so that it displays at full size */
