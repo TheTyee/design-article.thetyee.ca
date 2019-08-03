@@ -576,6 +576,21 @@ body {
   margin-top: 0rem;
 }
 
+    .story-item__author a {
+      display: inline-block;
+    }
+
+    /* Multiple authors -- add separators between authors */
+    .story-item__author a:nth-of-type(n+2):before {
+      content:", ";
+      font-weight: 400;
+    }
+
+    /* Multiple authors -- hide any author links that are empty */
+    .story-item__author a:empty {
+      display: none;
+    }
+
     .m-comment-noted .story-item__author {
       display: block;
       margin-top: 2rem;
