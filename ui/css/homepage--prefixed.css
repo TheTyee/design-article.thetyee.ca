@@ -3268,5 +3268,15 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
 
     .new-hmpg-org-recent-stories .new-story-item--tertiary .new-story-item__image .new-responsive-img {
       min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 0.45 ) / 1.5 );
-    } */
+    }
+  } */
+
+
+  /*  IE PATCHES */
+  /* Hide old header from all non-IE browsers */
+  .site__header-IE {display:none;}
+  /* Show old header to IE 10 and IE 11. Hide new header. */
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+     .site__header-IE {display:block;}
+     .new-site-header {display: none;}
   }
