@@ -2491,6 +2491,7 @@ a.new-site-header--homepage {
       direction: ltr;
       -webkit-font-feature-settings: 'liga';
       -webkit-font-smoothing: antialiased;
+      font-feature-settings: 'liga'; /* required for Edge browser */
     }
 
     .new-nav__link--join {
@@ -2611,6 +2612,7 @@ a.new-site-header--homepage {
             direction: ltr;
             -webkit-font-feature-settings: 'liga';
             -webkit-font-smoothing: antialiased;
+            font-feature-settings: 'liga'; /* required for Edge browser */
           }
 
           /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
@@ -2691,6 +2693,7 @@ a.new-site-header--homepage {
                 direction: ltr;
                 -webkit-font-feature-settings: 'liga';
                 -webkit-font-smoothing: antialiased;
+                font-feature-settings: 'liga'; /* required for Edge browser */
               }
 
 
