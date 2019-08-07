@@ -3301,3 +3301,15 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
      .site__header-IE {display:block;}
      .new-site-header {display: none;}
   }
+
+  /* Hide old footer from all non-IE browsers */
+  .site-footer-IE {display:none;}
+  /* Show old footer to IE 10 and IE 11. Hide new header. */
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+     .site-footer-IE {display:block;}
+     .new-site-footer {display: none;}
+  }
+  /* Set footer links in green on IE 10 and 11 */
+  .site-footer-IE .footer__menu a, .site-footer-IE .footer__menu a:link, .site-footer-IE .footer__menu a:visited {
+      color: #82AD00;
+  }
