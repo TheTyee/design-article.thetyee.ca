@@ -3069,6 +3069,13 @@ a.new-site-header--homepage {
   color: #eee;
   background-color: var(--utility-background-color);
 
+  /* Patches CSS for new footer on storypages */
+  font-family: var(--typeface-sans);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 2rem;
+
 }
 
     .new-site-footer div {
@@ -3078,6 +3085,13 @@ a.new-site-header--homepage {
 
     .new-site-footer .new-facebook {
       padding-bottom: 2rem;
+      /* Patches CSS for new footer on storypages */
+      font-size: 100%;
+    }
+
+    /* Patches CSS for new footer on storypages */
+    .new-site-footer .fa {
+      font-size: 100%;
     }
 
     .new-site-footer .new-site-footer__logo-container {
@@ -3098,6 +3112,13 @@ a.new-site-header--homepage {
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+
+      /* Patches CSS for new footer on storypages */
+      font-family: var(--typeface-sans);
+      color: #eee;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      margin: 0;
     }
 
     .new-links-group a {
