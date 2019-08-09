@@ -420,16 +420,16 @@ ul { }
 /* LINKS  ========================================================================== */
 /* Leaves fallbacks to green for IE and browsers that don't support CSS variables. */
 
-/* Text links within paragraphs get a solid underscore */
-p a, p a:link, p a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
-p a, p a:link, p a:visited {
-      border-bottom: 2px solid var(--link-colour);
-      margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
-}
-
 a, a:link, a:visited {color: #404040; color: var(--link-colour)}
 a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
 a:active {color: #404040; color: var(--text-colour)}
+
+/* Text links within paragraphs get a solid underscore */
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
+      border-bottom: 2px solid var(--link-colour);
+      margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
+}
 
 /* Scaling hover states for text links, buttons and nav-bar */
     a:hover, a:focus,
@@ -462,10 +462,10 @@ a:active {color: #404040; color: var(--text-colour)}
           transform: scale(1.2)!important;
         }
 
-    p a:hover {display: inline; font-size: 1.1em;} /* Prevents reflow that can occur when text within a paragraph
-                                                      becomes an inline-block.  */
+    /* Prevent reflow that can occur when text within a paragraph becomes an inline-block.  */
+    p a:hover, figcaption a:hover {display: inline; font-size: 1.1em;}
 
-    p a:hover {color: #6F9400; color: var(--link-colour)}
+    p a:hover, figcaption a:hover {color: #6F9400; color: var(--link-colour)}
 
 .new-site-header a, .new-site-header a:link, .new-site-header a:visited {color: #404040; color: var(--text-colour)}
 .new-site-header a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
@@ -1577,13 +1577,12 @@ ul.book_profile {
         padding: 0rem 2.5rem;
         border-left: .6rem solid #eee;
         font-size: .9em;
-        font-weight: 300;
+        /* font-weight: 300; too pale */
     }
 
     .blockquote figcaption {
         padding: 0rem 3.1rem;
         font-size: .9em;
-        font-weight: 300;
         font-style: italic;
     }
 
