@@ -3215,7 +3215,7 @@ a.new-site-header--homepage {
     }
 
     /* Apply the grid background to container elements: */
-    body:not(:hover) .new-hmpg-org-wrapper {
+    /* body:not(:hover) .new-hmpg-org-wrapper  DISABLES GRID GUIDES */ {
         /* Define grid structure: column width (inc gutter), baselines */
         background-size:
         var(--column-increment)    var(--baseline-grid);
@@ -3241,7 +3241,7 @@ a.new-site-header--homepage {
 
 
     /* Apply the baselines to the body element to test for grid consistency between container elements */
-    body:not(:hover) {
+    /* body:not(:hover) DISABLES GRID GUIDES */ {
         background-size:
         4rem    2rem;
         /* width of background, grid increment */
