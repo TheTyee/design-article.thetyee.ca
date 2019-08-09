@@ -1,13 +1,13 @@
 ---
-layout: default-global
+layout: default-global--new2019
 page-type: section  # article, section, topic or home
 series: no
 permalink: /bio.html
 meta-category: Bio
-title: News Articles & commentary by David Beers | The Tyee 
-section-name: 
-sponsored: 
-sponsor-blurb: 
+title: News Articles & commentary by David Beers | The Tyee
+section-name:
+sponsored:
+sponsor-blurb:
 index-page-fact-box: false # true or false (if editors want to display info about this index page a fact-box will appear in the first row of the index list replacing the subscribe block)
 meta-url: "http://thetyee.ca/events"
 ---
@@ -18,22 +18,22 @@ meta-url: "http://thetyee.ca/events"
 <header class="text-center">
 
     <div class="container">
-        <div class="row">        
+        <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                     <h6 class="category-label"><a href="/category-link-here/">Contributors</a></h6>
-            </div>    
-        </div>    
-        <div class="row">        
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                     <img class="headshot-bio" src="ui/img/dbeersbio.jpg">
-            </div>    
-        </div>    
-        <div class="row">        
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                    <h1 class="" data-bind="title">David Beers</h1>            
+                    <h1 class="" data-bind="title">David Beers</h1>
                     {% comment %} {% include 01-molecules/blocks/tool-bar.html %} {% endcomment %}
-            </div>    
-        </div>    
+            </div>
+        </div>
     </div> <!--END .container-fluid-->
 
 </header>
@@ -55,8 +55,8 @@ meta-url: "http://thetyee.ca/events"
                     <p>He is an adjunct professor at the University of British Columbia Graduate School of Journalism.</p>
 
                     <p>Previous to The Tyee, Beers was Chief Features Editor creating new projects and sections at the Vancouver Sun, and before that was senior editor at Mother Jones magazine and the San Francisco Examiner before the Hearst Corporation merged it with the San Francisco Chronicle. He has written for numerous publications including Harper's, National Geographic and the Globe and Mail, and authored a highly praised memoir of growing up in Silicon Valley, Blue Sky Dream.</p>
-            </div>    
-        </div>    
+            </div>
+        </div>
 
     </div> <!--END .container-fluid-->
 
@@ -64,7 +64,7 @@ meta-url: "http://thetyee.ca/events"
 
     <div class="container index-page__container">
 
-        {% comment %} 
+        {% comment %}
         ARTICLE LIST INDEX LOOP
         {% endcomment %}
 
@@ -77,21 +77,21 @@ meta-url: "http://thetyee.ca/events"
 
                     {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                         {% include 02-organisms/sections/index-page__bio-list-loop.html story-badge=nil messaging-block="" %}
-                    
-                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                        {% include 02-organisms/sections/index-page__bio-list-loop.html story-badge=nil messaging-block="" %}
-                    
+
                     {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                         {% include 02-organisms/sections/index-page__bio-list-loop.html story-badge=nil messaging-block="" %}
 
                     {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                         {% include 02-organisms/sections/index-page__bio-list-loop.html story-badge=nil messaging-block="" %}
-                                            
+
+                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                        {% include 02-organisms/sections/index-page__bio-list-loop.html story-badge=nil messaging-block="" %}
+
                     {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                         {% include 02-organisms/sections/index-page__bio-list-loop.html story-badge=nil messaging-block="" %}
 
                     <!-- Add an event to test an odd-numbered list: -->
-                    <div class="col-xs-12 col-sm-6 col-md-4"> 
+                    <div class="col-xs-12 col-sm-6 col-md-4">
                         {% include 01-molecules/blocks/story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home." story-badge=nil %}
                     </div>
                     <div class="clear"></div> <!-- custom bootstrap float reset required for column list -->
