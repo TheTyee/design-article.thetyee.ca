@@ -1,4 +1,12 @@
 /*-----------------------------------------*\
+  HOMEPAGE CSS PREFIXED
+\*-----------------------------------------*/
+
+/* This file adds prefixes to all the CSS classes so that components from the new
+homepage can be used on other pages without creating css collisions */
+
+
+/*-----------------------------------------*\
   #GENERIC
 \*-----------------------------------------*/
 
@@ -57,8 +65,6 @@ body{
   font-size: 1.6rem;
   line-height: 2rem;
   color: var(--text-colour);
-
-  padding-top: .rem;
 }
 
 /* Base Colours */
@@ -346,7 +352,7 @@ https://caniuse.com/#feat=css3-colors
 
     /*  PAGE MARGINS LAYOUT BREAKPOINT 1 -- 1100px */
     /*  Prevents columns from getting too wide at upper end of Medium width range */
-    @media screen and (min-width: 1100px) and (max-width: 1367px) {
+    @media screen and (min-width: 1100px) and (max-width: 1368px) {
 
       /* Keep content of organism containers at 1100px width but run lateral padding to
          edge of screen so the borders and background colours don't show a gap */
@@ -394,7 +400,7 @@ body {
 .site-header__tagline  {
   position: relative;
   font-family: var(--typeface-serif);
-  font-size: .86em;
+  font-size: 0.86em;
   font-weight: 600;
 }
 
@@ -518,7 +524,7 @@ body {
 }
 
 .m-tyee-insider__related-label {
-  font-size: .85em;
+  font-size: 0.85em;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -556,7 +562,7 @@ body {
 
 .category-label {
   font-family: var(--typeface-sans);
-  font-size: .875em;
+  font-size: 0.875em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -575,21 +581,6 @@ body {
 .story-item__author {
   margin-top: 0rem;
 }
-
-    .story-item__author a {
-      display: inline-block;
-    }
-
-    /* Multiple authors -- add separators between authors */
-    .story-item__author a:after {
-      content:", ";
-      font-weight: 400;
-    }
-
-    /* Multiple authors -- remove separator after last author */
-    .story-item__author a:last-of-type:after {
-      content: none;
-    }
 
     .m-comment-noted .story-item__author {
       display: block;
@@ -613,8 +604,8 @@ body {
     /* Separator between headline and news source */
     .story-item__news-source::before {
       content:"•";
-      padding-left: .25em;
-      padding-right: .25em;
+      padding-left: 0.25em;
+      padding-right: 0.25em;
     }
 
 
@@ -640,18 +631,14 @@ body {
 
     .story-item--secondary .story-item__headline {
       font-family: var(--typeface-display-medium);
-      font-size: 1.35em; /* Reduces font-size to increase the line measure */
-      -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-      hyphens: auto; /* Adds hyphenation in narrowest views */
     }
 
     /* tertiary story-items */
 
     .story-item--tertiary .story-item__headline {
       font-family: var(--typeface-display-medium);
-      font-size: 1.35em;
-      line-height: 2.75rem;
+      font-size: 1.5em;
+      line-height: 3rem;
       margin: 0; /* matches with deck margin-bottom to realign with baseline grid */
     }
 
@@ -666,28 +653,12 @@ body {
     .story-item--minimum .story-item__headline {
       font-family: var(--typeface-display-medium);
       /* font-weight: 600; */
-      font-size: 1.35em;
       line-height: 3rem;
       margin-bottom: 0rem;
     }
 
 
     /* ---- STORY ITEMS TYPOGRAPHY responsive enhancement ----  */
-
-
-        /*  STORY ITEMS TYPOGRAPHY SMALL BREAKPOINT -- max: 683px */
-        @media screen and (max-width: 683px) {
-
-          /* Reduce size of Primary Headlines in narrowest views */
-
-          .story-item--primary .story-item__headline {
-            line-height: 3.5rem; /* this is 2 x baseline */
-            font-size: 1.8em;
-            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
-          }
-        }
-
-
 
         /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
         @media screen and (min-width: 684px) {
@@ -706,11 +677,6 @@ body {
             line-height: 3rem; /* this is 2 x baseline */
             font-size: 1.65em;
             margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
-          }
-
-          /* Turn off auto-hyphenation in views where it might be excessive */
-          .story-item--secondary .story-item__headline {
-            line-height: 2.75rem;
           }
 
           /* Keep large size of Primary headlines in module that have more space for them */
@@ -732,11 +698,6 @@ body {
             font-size: 2.33em;
             margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
           }
-
-          .story-item--secondary .story-item__headline {
-            font-family: var(--typeface-display-medium);
-            /* font-size: 1.5em; Restores font-size as column gets wider */
-          }
         }
 
         /*  STORY ITEMS TYPOGRAPHY ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px - 1367px */
@@ -747,31 +708,10 @@ body {
             line-height: 3rem; /* this is 2 x baseline */
             font-size: 1.65em;
           }
-
-          .hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
-            font-family: var(--typeface-display-medium);
-            font-size: 1.35em; /* Reduces font-size because Ad-block makes column narrow */
-          }
         }
 
         /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
         @media screen and (min-width: 1368px) {
-
-            /* Increase size for Secondary headlines in widest views */
-            /* No auto hyphenation for Secondary headlines in widest views */
-            .story-item--secondary .story-item__headline {
-                font-size: 1.5em;
-                line-height: 3rem;
-                -webkit-hyphens: manual;
-                -ms-hyphens: manual;
-                hyphens: manual;
-            }
-
-            /* Keep Recent-stories Secondary headlines smaller because ad-block constrains width */
-            .hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
-                font-size: 1.35em;
-                line-height: 2.75rem;
-            }
 
             /* Slightly reduce size of tertiary headlines in wide screens
                to accommodate a 2-col stiry-item layout.                  */
@@ -857,55 +797,23 @@ a {
           border-color: white;  /* can't be brand color because Insider has an orange background */
         }
 
-        /* Hovers states for nav-bar items -- only on devices with hover capability, exclude mobile */
-        @media (hover: hover) and (pointer: fine) {
-          .nav__link:hover,
-          .site-footer a:hover  {
-            display: inline-block;
-            color: var(--link-colour);
-            transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
-          }
+    /* Hover states for text links, buttons and nav-bar */
+    .story-item a:hover, .story-item a:focus,
+    .site-header__tagline a:hover, .site-header__tagline a:focus,
+    .nav__link:hover,
+    .site-footer a:hover  {
+      display: inline-block;
+      color: var(--link-colour);
+      transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+    }
+
+        .hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus  {
+          color: white; /* can't be brand color because Insider has an orange background */
         }
 
-        /* Hover states for text links and buttons */
-        a:hover, a:focus {
-          display: inline-block;
-          color: var(--link-colour);
-          transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+        .story-item p a:hover, .story-item p a:focus  {
+          margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
         }
-
-            /* Patch hover states that cause layout reflow */
-            .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:hover,
-            .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:focus,
-            .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:hover,
-            .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:focus {
-              display: inline;
-              font-size: 1.05em;
-            }
-
-            /* Patch hover states that cause layout reflow */
-            p a:hover,
-            p a:focus {
-              display: inline;
-              font-size: 1.05em;
-            }
-
-            .hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus  {
-              color: white; /* can't be brand color because Insider has an orange background */
-            }
-
-            .story-item p a:hover, .story-item p a:focus  {
-              margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
-            }
-
-            /*  Patch hover states that cause layout reflow */
-            @media screen and (max-width: 683px) {
-              .story-item--secondary .story-item__headline a:hover, .story-item--secondary .story-item__headline a:focus {
-                display: inline;
-                font-size: 1.05em;
-              }
-            }
-
 
     .text-link--button {
       display:table;
@@ -1170,19 +1078,14 @@ a {
             display: block;
           }
 
-          /* Use float-based layout for Secondary story-items in Recent Stories and Insider modules */
+          /* Use float-based layout for Secondary story-items in Recent Stories module */
           /* Same as Tertiary items in large viewports. */
                 .hmpg-org-recent-stories__list .story-item--secondary .story-item__image,
                 .m-tyee-insider__related-stories .story-item--tertiary .story-item__image {
                   float: right;
-                  width: calc(35% - (var(--gutter-column-half) * 0.5));
+                  width: calc(50% - (var(--gutter-column-half) * 0.5));
                   margin-left: var(--gutter-column-half);
                   margin-bottom: 2rem;
-                }
-
-                /* Align photo vertically with adjacent headline. */
-                .hmpg-org-recent-stories__list .story-item--secondary .story-item__image {
-                  padding-top: 3.5rem;
                 }
 
                 .m-tyee-insider__related-stories .story-item--tertiary .story-item__headline {
@@ -1198,7 +1101,7 @@ a {
 
               .hmpg-org-deep-dive .story-item--secondary .category-label {
                 font-family: var(--typeface-sans);
-                font-size: .875em;
+                font-size: 0.875em;
                 font-weight: 600;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
@@ -1297,7 +1200,6 @@ a {
           .hmpg-org-recent-stories__list .story-item--tertiary:nth-of-type(-n+8) {
             display: block;
           }
-
         } /* end of Story Item large breakpoint */
 
 /* end of Story Item */
@@ -1509,7 +1411,7 @@ a {
           content: counter(story-item);
           display: inline-block;
           position: absolute;
-          left: -.1em;
+          left: -0.1em;
           color: var(--brand-colour--text);
           background-color: none;
           font-family: var(--typeface-display);
@@ -1676,12 +1578,9 @@ a {
                 }
 
                 .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                  font-size: 1.15em;
-                  line-height: 2.5rem; /* decimal values here cause a browser rounding error
-                                          that throws throws off the baseline grid.          */
-                  -webkit-hyphens: auto;
-                  -ms-hyphens: auto;
-                  hyphens: auto; /* Adds hyphenation in medium views where column is narrow */
+                font-size: 1.25em;
+                line-height: 2.5rem; /* decimal values here cause a browser rounding error
+                                        that throws throws off the baseline grid.          */
                 }
 
                 .hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
@@ -1697,10 +1596,9 @@ a {
                 grid-column: auto / span 6;
             }
 
-            /* Slightly increases Recent-stories tertiary headline size */
             .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                font-size: 1.2em;
-                line-height: 2.5rem;
+                font-size: 1.5em;
+                line-height: 3rem;
             }
 
             .hmpg-org-recent-stories__list .story-item--tertiary {
@@ -1772,14 +1670,14 @@ a {
           /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint: 1368px */
           @media screen and (min-width: 1368px)  {
 
-              .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--tertiary {
+              .hmpg-org-recent-stories__list > .story-item--tertiary {
                 grid-column: auto / span 1;
               }
 
               /* Slightly reduce size of tertiary headlines in wide screens to accommodate extra column */
               .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
                   font-family: var(--typeface-display-medium);
-                  font-size: 1.15em;
+                  font-size: 1.25em;
                   line-height: 2.5rem; /* decimal values here cause a browser rounding error
                                           that throws throws off the baseline grid.          */
               }
@@ -1788,10 +1686,9 @@ a {
 
               .hmpg-org-recent-stories__list .story-item--tertiary .story-item__image {
                 float: right;
-                width: calc(40% - (var(--gutter-column-half) * 0.5));
+                width: calc(50% - (var(--gutter-column-half) * 0.5));
                 margin-left: var(--gutter-column-half);
-                margin-bottom: 1rem;
-                padding-top: 3.15rem;
+                /* margin-bottom: 2rem; <-- This makes the row-gaps appear too wide */
               }
 
               /* Disable scaling of Half-page Adblock so that it displays at full size */
@@ -1821,7 +1718,7 @@ a {
   grid-column-gap: var(--gutter-column);
   grid-row-gap: var(--gutter-row);
 
-  background-color: var(--brand-colour--mod-bg);
+  background-color: hsla(51, 100%, 50%, 0.3); /* temporary alpha for testing, should be var(--brand-colour--mod-bg) */
 }
 
 .hmpg-module-header {
@@ -2552,7 +2449,7 @@ a {
     .site-nav-main__expander-toggle.nav__link--more::after {
       content: "arrow_drop_down";
       display: inline-block;
-      vertical-align: -.25em;
+      vertical-align: -0.25em;
       font-family: 'Material Icons';
       font-weight: normal;
       font-style: normal;
@@ -2634,8 +2531,8 @@ a {
             grid-column: 1 / -1;
             padding-top: 3rem;
             padding-bottom: 3rem;
-            margin-top: .5rem;
-            margin-bottom: -.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: -0.5rem;
             background-color: var(--utility-background-color);
           }
 
@@ -2652,13 +2549,13 @@ a {
           .site-nav__search-dropdown .site-nav__search-form > * {
             display: grid ;
             grid-template-columns: 4fr 1fr;
-            font-size: .6em;
+            font-size: 0.6em;
             height: 4rem;
             border: 1px solid var(--utility-background-color);
           }
 
           form input {
-            padding-left: .65em;
+            padding-left: 0.65em;
           }
 
       /* SUB-NAV DROPDOWN EXPANDERS */
@@ -2672,7 +2569,7 @@ a {
           .site-nav__dropdown-expander-toggle::after {
             content: "arrow_drop_down";
             display: inline-block;
-            vertical-align: -.25em;
+            vertical-align: -0.25em;
             font-family: 'Material Icons';
             font-weight: normal;
             font-style: normal;
@@ -2747,7 +2644,7 @@ a {
                 display: inline-block;
                 position: absolute;
                 top: -3rem;
-                left: -.5rem;
+                left: -0.5rem;
                 font-family: 'Material Icons';
                 font-weight: normal;
                 font-style: normal;
@@ -2807,11 +2704,11 @@ a {
 
                   .site-nav__dropdown a {
                     color: var(--brand-colour);
-                    padding: .5rem 0;
+                    padding: 0.5rem 0;
                   }
 
                   .site-nav__dropdown-heading {
-                    padding-bottom: .5rem;
+                    padding-bottom: 0.5rem;
                     border-bottom: 1px solid #888;
                   }
 
@@ -2904,8 +2801,8 @@ a {
                   /* Nav bar button spacing and positioning */
 
                   .site-nav-main > .nav__link {
-                    padding-top: .25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
-                    padding-bottom: .25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                    padding-top: 0.25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+                    padding-bottom: 0.25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
                   }
 
                   .site-nav-main > a:first-of-type {
@@ -2992,13 +2889,13 @@ a {
                 /* Nav Dropdown grid for wide views */
                 .site-nav__dropdown {
                   grid-column: 1 / -1;
-                  grid-template-columns: calc(var(--page-margin-sides) + .5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                  grid-template-columns: calc(var(--page-margin-sides) + 0.5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
                                                                     /* + offset to align with nav button */
                   grid-template-rows: auto auto [row-2] 1fr;
                   grid-column-gap: 0;
                   grid-auto-flow: row dense;
                   align-items: start;
-                  margin-top: .5rem;
+                  margin-top: 0.5rem;
                   padding-bottom: 7.5rem;
                   background-color: var(--utility-background-color);
                   color: #eee;
@@ -3200,8 +3097,8 @@ a {
       }
 
 
-      /*  Site Header LARGE BREAKPOINT -- 1368px */
-      @media screen and (min-width: 1368px) {
+      /*  Site Header LARGE BREAKPOINT -- 1369px */
+      @media screen and (min-width: 1369px) {
 
         .site-footer .site-footer__logo-container {
           display: block;
@@ -3234,6 +3131,82 @@ a {
 }
 
 
+
+
+
+/*------------------------------------*\
+  #GRID GUIDES
+\*------------------------------------*/
+
+/* This draws guides for column grid and baseline grid to tune the layout. */
+
+@media (max-resolution: 100dpi) { /* Don't show guides on mobile */
+
+    :root {
+      /* Calculate column width including gutter: */
+      --column-increment:
+      calc((100vw + var(--gutter-column) - 2 * var(--page-margin-sides))  / var(--column-number) )  ;
+      /*   (width +    trailing gutter   -   the page margins    )        / number of columns   )  */
+      /*   (----------------- total grid width ------------------)        / number of columns   )  */
+      /*   (------------------------------ column width inc gutter -----------------------------)  */
+      /*   var(--column-increment)                                                                 */
+
+      /* Calculate column content width (without gutter): */
+      --column-width:
+      calc( var(--column-increment) - var(--gutter-column));
+      /*   var(--column-width)                            */
+    }
+
+    /* Apply the grid background to container elements: */
+    body:not(:hover) .hmpg-org-wrapper {
+        /* Define grid structure: column width (inc gutter), baselines */
+        background-size:
+        var(--column-increment)    var(--baseline-grid);
+        /*    column-increment  |  baseline increment */
+
+        /* Adjust grid for page margins: */
+        background-position: var(--page-margin-sides) 0rem;
+
+
+        background-image:
+          /* Mark start of each column: */
+          linear-gradient(to right, #6583c552 1px, transparent 1px),
+
+          /* Fill in column widths: */
+          linear-gradient(to right, #83aaff17 var(--column-width), #ffd3d300 1px),
+          /*                blend ,   column          column width ,   gutter       */
+          /*            direction     colour                           colour       */
+
+          /* Draw baselines: */
+          linear-gradient(to bottom, #99b4ff47 1px, transparent 1px);
+          /*                      baseline thickness, colour btw baselines */
+    }
+
+
+    /* Apply the baselines to the body element to test for grid consistency between container elements */
+    body:not(:hover) {
+        background-size:
+        4rem    2rem;
+        /* width of background, grid increment */
+
+        /* Adjust grid for page margins, set top offset */
+        background-position: var(--page-margin-sides) 0px;
+
+        background-image:
+          /* Draw baselines: */
+          linear-gradient(to bottom, #4848486b 1px, transparent 1px);
+          /*                      baseline thickness, colour btw baselines */
+
+        background-repeat: repeat;
+    }
+
+
+} /* end of Grid Guides */
+
+
+
+
+
 /*------------------------------------*\
   #PATCHES
 \*------------------------------------*/
@@ -3255,9 +3228,9 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
   img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
            =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 0.5          ) / img-aspect )
   */
-  @media screen and (min-width: 1368px) {
+  /* THIS RULE PRODUCES A LAYOUT BUG --> @media screen and (min-width: 1368px) {
 
     .hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
-      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .4 ) / 1.5 );
-    }
+      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 0.45 ) / 1.5 );
+    } */
   }
