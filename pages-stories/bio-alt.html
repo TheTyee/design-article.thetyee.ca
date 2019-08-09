@@ -1,18 +1,18 @@
 ---
-layout: default-global
+layout: default-global--new2019
 page-type: section  # article, section, topic or home
 series: no
 permalink: /bio-alt.html
 meta-category: Bio
-title: News Articles & commentary by David Beers | The Tyee 
-section-name: 
-sponsored: 
-sponsor-blurb: 
+title: News Articles & commentary by David Beers | The Tyee
+section-name:
+sponsored:
+sponsor-blurb:
 index-page-fact-box: false # true or false (if editors want to display info about this index page a fact-box will appear in the first row of the index list replacing the subscribe block)
 meta-url: "http://thetyee.ca/----"
 ---
 
-{% comment %} 
+{% comment %}
 This version of the bio page uses the non-bootstrap article__body main-col-container layout for the heading and bio text.
 {% endcomment %}
 
@@ -22,7 +22,7 @@ This version of the bio page uses the non-bootstrap article__body main-col-conta
     <header class="article__header" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">
 
         <div class="container-fluid">
-            
+
             {% include 00-atoms/images/story-badge.html badge-position="badge--headline-placement badge--headline-placement--partner" story-badge="partner" %}
             <h6 class="advertpg-label">Contributors</h6>
 
@@ -59,12 +59,12 @@ This version of the bio page uses the non-bootstrap article__body main-col-conta
 
     <div class="container index-page__container">
 
-        {% comment %} 
+        {% comment %}
         ARTICLE LIST INDEX LOOP
         {% endcomment %}
 
         <section class="index-page__story-list index-page__story-list--archived-events">
-                        
+
                 <div class="row event-list-grid">
 
                     {% comment %} STORY LIST - FIRST ROW has Subscribe block {% endcomment %}
@@ -72,21 +72,21 @@ This version of the bio page uses the non-bootstrap article__body main-col-conta
 
                     {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                         {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
-                    
-                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
-                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
-                    
+
                     {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                         {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
 
                     {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                         {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
-                                            
+
+                    {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
+                        {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
+
                     {% comment %} STORY LIST - NORMAL ROW {% endcomment %}
                         {% include 02-organisms/sections/index-page__event-list-loop.html story-badge=nil messaging-block="" %}
 
                     <!-- Add an event to test an odd-numbered list: -->
-                    <div class="col-xs-12 col-sm-6 col-md-4"> 
+                    <div class="col-xs-12 col-sm-6 col-md-4">
                         {% include 01-molecules/blocks/story-item--event.html content-source="ui/img/HomeForGood-presentsbanner-960x600.png" story-item-class="story-item--index-page index-list-spacing" story-item-headline="Home For Good" story-item-dek="A Tyee event on bold solutions for secure, affordable rental housing." story-badge=include.story-badge %}
                     </div>
                     <div class="clear"></div> <!-- custom bootstrap float reset required for column list -->
