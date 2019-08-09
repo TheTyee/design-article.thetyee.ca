@@ -605,6 +605,14 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
         font-weight: 300;
     }
 
+    /* Eliminate double-border on slideshow carousel captions.
+       Problem: the figure which contains the carousel has a caption and captions have a bottom border,
+       but each slide in the carousel also has a caption.
+       Solution: remove the border from carousel captions, leaving the border on the empty figcaption. */
+    .carousel-caption {
+      border: none;
+      margin-bottom: -0.8em;
+    }
 
 
 .help-block {
