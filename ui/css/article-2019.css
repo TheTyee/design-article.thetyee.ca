@@ -22,7 +22,8 @@ Html {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif; /* IE fallback */
+  font-family: var(--typeface-sans);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.39em;
@@ -108,7 +109,8 @@ h5 {
   font-size: 1.2em;
   font-weight: 600;
   line-height: 1.18518519em;
-  color: #424242 ;
+  color: #424242; /* IE fallback */
+  color: var(--text-colour);
 }
 
 /* Story Labels */
@@ -657,7 +659,8 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
         color: #333;
         text-transform: uppercase;
         letter-spacing: .04em;
-        border-bottom: 5px solid #90AD00;
+        border-bottom: 5px solid #90AD00; /* IE color fallback */
+        border-bottom-color: var(--brand-colour--text);
     }
 
     .section-sponsor-blurb {
@@ -673,14 +676,16 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
       updated to maintain proper alignment of the ad graphic. */
 
 .btn--load-more {
-    color: #74A600;
+    color: #74A600; /* IE fallback */
+    color: var(--text-colour);
     background-color: white;
     font-size: .9em;
     font-weight: 700;
     line-height: 1.33;
     letter-spacing: .075em;
     border-radius: 0px;
-    border-color: #74A600;
+    border-color: #74A600; /* IE fallback */
+    border: 2px solid var(--brand-colour--text);
     width: 100%;
     padding-top: 1.5em;
     padding-bottom: .75em;
@@ -690,8 +695,9 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
 
 .btn--load-more:hover {
     color: #fff;
-    background-color: #74A600;
-    border-color: #74A600;
+    background-color: #74A600;  /* IE fallback */
+    background-color: var(--brand-colour--text);
+    border-color: var(--brand-colour--text);
 }
 
     .btn--load-more span {
@@ -2816,11 +2822,12 @@ label.valid {
         .story-item__date, .story-item__author, .story-item__date--event {
           font-weight: 600;
           font-size: .85em;
-          text-transform: uppercase;
+          /* text-transform: uppercase; */
         }
 
         .story-item__author {
-          color: #90AD00;
+          color: #90AD00;  /* IE fallback */
+          color: var(--text-colour);
         }
 
 
@@ -2850,7 +2857,8 @@ label.valid {
             }
 
             .story-item__description h5 a:hover {
-                color: #6F9400;
+                color: #6F9400; /* IE fallback */
+                color: var(--brand-colour--text);
             }
 
             .story-item--event { }
