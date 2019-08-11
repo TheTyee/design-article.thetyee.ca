@@ -223,7 +223,8 @@ h6.advertpg-label {
         }
         h6.advertpg-label:after {
             font-weight: 400;
-            color: #82AD00;
+            color: #82AD00;  /* IE fallback */
+            color: var(--brand-colour--text-darker);
             font-size: 1.025em;
             text-transform: lowercase;
             letter-spacing: 0.02em;
@@ -3325,7 +3326,8 @@ label.valid {
         .fact-box--CTA h4 {
             border-bottom: none;
             font-size: 1.33em;
-            color: #82AD00;
+            color: #82AD00; /* IE fallback */
+            color: var(--brand-colour--text-darker);
         }
 
         img.fact-box--headshot {
