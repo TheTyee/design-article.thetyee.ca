@@ -442,6 +442,11 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
       transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
     }
 
+    .index-page__container a:hover, .index-page__container a:focus {
+      display: block;
+      ; /* !important is required to override badges that are scaled by default */
+    }
+
         a[display=block]:hover, a[display=block]:focus,
         .site-footer a[display:block]:hover  {
           display: block; /* Prevents the conversion of block elements into inline-blocks */
@@ -3165,6 +3170,7 @@ label.valid {
 
     .badge--story-item-placement {
         display: block;
+        z-index: 10; /* Keeps badge on top during photo hover */
         position: absolute;
         width: auto;
         left: -1em;
@@ -3179,6 +3185,10 @@ label.valid {
                 transform: scale(1.35);
                 left: -.75em;
                 top: -1em;
+            }
+
+            .index-page__featured-story .badge--story-item-placement:hover {
+                transform: scale(1.45)!important;
             }
         }
 
