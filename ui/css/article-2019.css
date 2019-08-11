@@ -749,16 +749,21 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
     margin-top: 3.75em;
     margin-bottom: 3em;
     padding: .66em 0 1.5em;
-    border-top: 7px solid #ccc;
+    border-top: 4px solid #ccc;
+    border-color: var(--text-colour);
     /* border-bottom: 1px solid #9D9D9C; */
 }
 
     h2.index-list-header, .index-list h2 {
         color: #ccc;
+        color: var(--text-colour);
         font-family: Georgia, Serif;
-        font-weight: 700;
-        font-size: 1.75em;
+        font-family: var(--typeface-sans);
+        font-weight: 800;
+        font-size: 1.15em;
         line-height: 1.333em;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         margin-top: .25em;
         margin-bottom: 1em;
     }
@@ -809,10 +814,12 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
         .index-list li::before {
             content: counter(li);
             display: inline-block;
-            color: #fff;
-            background-color: #bbb;
+            color: #bbb;  /* IE fallback */
+            color: var(--brand-colour--text);
             border-radius: 0.7em;
             text-align:center;
+            font-family: var(--typeface-display);
+            font-size: 1.35em;
             font-weight: 600;
             width: 1.33em;
             height: 1.33em;
@@ -830,6 +837,15 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
         .index-list li a {
             color: #404040;
             padding-right: .75em;
+            font-family: var(--typeface-display-medium);
+            font-size: 1.1em
+        }
+
+        /* Hover patch */
+        .index-list li a:hover {
+          color: #6F9400;  /* fallback */
+          color: var(--link-colour);
+          text-decoration: none;
         }
 
         span.list-metric, .index-list span {
