@@ -443,8 +443,12 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
     }
 
     .index-page__container a:hover, .index-page__container a:focus {
-      display: block;
-      ; /* !important is required to override badges that are scaled by default */
+      display: block;  /* patch to prevent story-item images on Section Page from being converted to inline-block */
+    }
+
+    .index-page__container li a:hover, .index-page__container li a:focus {
+      display: inline;  /* patch to prevent headlines in Most module on Section Page
+                           from being converted to inline-block */
     }
 
         a[display=block]:hover, a[display=block]:focus,
