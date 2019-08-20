@@ -1,8 +1,8 @@
 <!-- Begin organisms/article/article__body -->
-            
+
     <article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
         <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
-        
+
         <div class="container-fluid clearfix">
 
                 <!--An ASIDE containing a SERIES BOX. -->
@@ -21,8 +21,12 @@
                 {% include 00-atoms/text/paragraph.html inline-atom="00-atoms/text/fact-box-anchor-link" %} <!--P with anchor text-link to fact-box -->
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html %}
-                {% include 00-atoms/text/paragraph.html custom-parag-content="Ad-box folows." %}
 
+                <p><strong>This a bold text faux-subhead commonly used in Tyee articles</strong></p>
+
+                {% include 00-atoms/text/paragraph.html custom-parag-content="" %}
+
+                <p>And here's a normal paragraph that also happens to have some <strong>bold text</strong> in it.</p>
 
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Pull-quote follows." %}
 
@@ -66,8 +70,8 @@
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Figure with image follows." %}
 
-                
-                <!--Here's a FIGURE containing an IMAGE. 
+
+                <!--Here's a FIGURE containing an IMAGE.
                     All media within an article body should be called from within a figure object or an aside. -->
                 {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside a figure. Much kawaii!" media-credit="Photo by Pussy Galore" content-source="/ui/img/Kitten-200x138.jpg" %}
 
@@ -111,7 +115,7 @@
                 {% include 00-atoms/text/paragraph.html custom-parag-content="Figure with slideshow follows." %}
 
 
-                <!--Here's a FIGURE containing a SLIDESHOW. 
+                <!--Here's a FIGURE containing a SLIDESHOW.
                     All media within an article body should be called from within a figure object or an aside. -->
                 {% include 01-molecules/blocks/figure.html figure-contents="01-molecules/media/slideshow" %}
 
@@ -120,7 +124,7 @@
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="XL Figure with slideshow follows." %}
 
-                <!--Here's an XL FIGURE containing a SLIDESHOW. 
+                <!--Here's an XL FIGURE containing a SLIDESHOW.
                     All media within an article body should be called from within a figure object or an aside. -->
                 {% include 01-molecules/blocks/figure.html figure-class="figure--xl" figure-contents="01-molecules/media/slideshow" %}
 
@@ -128,7 +132,7 @@
                 {% include 00-atoms/text/paragraph.html %}
                 {% include 00-atoms/text/paragraph.html custom-parag-content="XXL Figure with slideshow follows." %}
 
-                <!--Here's an XXL FIGURE containing a SLIDESHOW. 
+                <!--Here's an XXL FIGURE containing a SLIDESHOW.
                     All media within an article body should be called from within a figure object or an aside. -->
                 {% include 01-molecules/blocks/figure.html figure-class="figure--xxl" figure-contents="01-molecules/media/slideshow" %}
 
@@ -155,7 +159,7 @@
                 {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--bigbox" ad-source="" ad-slot="ad-bigbox" %}
 
 
-                <!--Here's an XTRA LARGE FIGURE containing an IMAGE. 
+                <!--Here's an XTRA LARGE FIGURE containing an IMAGE.
                     All media within an article body should be called from within a figure object or an aside. -->
                 {% include 01-molecules/blocks/figure.html figure-class="figure--xl" figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside an Extra-Large figure. Coldwater Indian Band Chief Lee Spahan." media-credit="Photo by Porco Rosso" content-source="/ui/img/ColdwaterBandChiefLeeSpahan_610px.jpg" %}
 
@@ -168,7 +172,7 @@
                 {% include 00-atoms/text/paragraph.html custom-parag-content="XXL Figure with image follows." %}
 
 
-                <!--Here's an XXL LARGE FIGURE containing an IMAGE. 
+                <!--Here's an XXL LARGE FIGURE containing an IMAGE.
                     All media within an article body should be called from within a figure object or an aside. -->
                 {% include 01-molecules/blocks/figure.html figure-class="figure--xxl" figure-contents="00-atoms/images/image" figure-caption="This is a caption describing an image inside an XXL figure. Coldwater Indian Band Chief Lee Spahan." media-credit="Photo by Porco Rosso" content-source="/ui/img/ColdwaterBandChiefLeeSpahan_610px.jpg" %}
 
@@ -187,5 +191,5 @@
         </div> <!--END .container-fluid-->
 
     </article>
-        
+
 <!-- END organisms/article/article__body -->

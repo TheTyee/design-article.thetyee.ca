@@ -1,0 +1,9 @@
+/*  CSS PATCHES FOR IE 7,8,9 */
+
+/* Show old header. Hide new header. */
+.site__header-IE {display:block;}
+.new-site-header {display: none;}
+
+/* Show old footer. Hide new header. */
+.site-footer-IE {display:block;}
+.new-site-footer {display: none;}

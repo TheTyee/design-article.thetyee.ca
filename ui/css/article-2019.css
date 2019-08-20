@@ -22,7 +22,8 @@ Html {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif; /* IE fallback */
+  font-family: var(--typeface-sans);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.39em;
@@ -70,9 +71,9 @@ h1 {
 
 h2 {
   color: #424242;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: franklin-gothic-urw, helvetica, sans-serif;;
   font-weight: 700;
-  font-size: 1.33em; /* ~24px */
+  font-size: 1.1em;
   line-height: 1.333em; /* 36px */
   margin-top: 1.555em; /* 42px */
   margin-bottom: .666em; /* 18px */
@@ -108,7 +109,8 @@ h5 {
   font-size: 1.2em;
   font-weight: 600;
   line-height: 1.18518519em;
-  color: #424242 ;
+  color: #424242; /* IE fallback */
+  color: var(--text-colour);
 }
 
 /* Story Labels */
@@ -221,7 +223,8 @@ h6.advertpg-label {
         }
         h6.advertpg-label:after {
             font-weight: 400;
-            color: #82AD00;
+            color: #82AD00;  /* IE fallback */
+            color: var(--brand-colour--text-darker);
             font-size: 1.025em;
             text-transform: lowercase;
             letter-spacing: 0.02em;
@@ -424,32 +427,29 @@ a, a:link, a:visited {color: #404040; color: var(--link-colour)}
 a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
 a:active {color: #404040; color: var(--text-colour)}
 
-/* Text links within paragraphs get a dotted underscores */
-p a, p a:link, p a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
-p a, p a:link, p a:visited {
+/* Text links within paragraphs get a solid underscore */
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
       border-bottom: 2px solid var(--link-colour);
       margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
-    }
-p a:hover {color: #6F9400; color: var(--link-colour)}
-
-.new-site-header a, .new-site-header a:link, .new-site-header a:visited {color: #404040; color: var(--text-colour)}
-.new-site-header a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
-
-.new-site-nav__dropdown a, .new-site-nav__dropdown a:link, .new-site-nav__dropdown a:visited {
-  color: var(--brand-colour);
 }
 
-.category-label a {
-  color: var(--brand-colour--text);
-}
-
-/* Hover states for text links, buttons and nav-bar */
+/* Scaling hover states for text links, buttons and nav-bar */
     a:hover, a:focus,
     .site-footer a:hover  {
       display: inline-block; /* inline elements need to be converted into
                                 inline-blocks so they can be transformed */
       color: var(--link-colour);
       transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+    }
+
+    .index-page__container a:hover, .index-page__container a:focus {
+      display: block;  /* patch to prevent story-item images on Section Page from being converted to inline-block */
+    }
+
+    .index-page__container li a:hover, .index-page__container li a:focus {
+      display: inline;  /* patch to prevent headlines in Most module on Section Page
+                           from being converted to inline-block */
     }
 
         a[display=block]:hover, a[display=block]:focus,
@@ -473,6 +473,22 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
         a.badge--headline-placement:hover {
           transform: scale(1.2)!important;
         }
+
+    /* Prevent reflow that can occur when text within a paragraph becomes an inline-block.  */
+    p a:hover, figcaption a:hover {display: inline; font-size: 1.1em;}
+
+    p a:hover, figcaption a:hover {color: #6F9400; color: var(--link-colour)}
+
+.new-site-header a, .new-site-header a:link, .new-site-header a:visited {color: #404040; color: var(--text-colour)}
+.new-site-header a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
+
+.new-site-nav__dropdown a, .new-site-nav__dropdown a:link, .new-site-nav__dropdown a:visited {
+  color: var(--brand-colour);
+}
+
+.category-label a {
+  color: var(--brand-colour--text);
+}
 
 
 
@@ -601,6 +617,14 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
         font-weight: 300;
     }
 
+    /* Eliminate double-border on slideshow carousel captions.
+       Problem: the figure which contains the carousel has a caption and captions have a bottom border,
+       but each slide in the carousel also has a caption.
+       Solution: remove the border from carousel captions, leaving the border on the empty figcaption. */
+    .carousel-caption {
+      border: none;
+      margin-bottom: -0.8em;
+    }
 
 
 .help-block {
@@ -645,7 +669,8 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
         color: #333;
         text-transform: uppercase;
         letter-spacing: .04em;
-        border-bottom: 5px solid #90AD00;
+        border-bottom: 5px solid #90AD00; /* IE color fallback */
+        border-bottom-color: var(--brand-colour--text);
     }
 
     .section-sponsor-blurb {
@@ -661,14 +686,16 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
       updated to maintain proper alignment of the ad graphic. */
 
 .btn--load-more {
-    color: #74A600;
+    color: #74A600; /* IE fallback */
+    color: var(--text-colour);
     background-color: white;
     font-size: .9em;
     font-weight: 700;
     line-height: 1.33;
     letter-spacing: .075em;
     border-radius: 0px;
-    border-color: #74A600;
+    border-color: #74A600; /* IE fallback */
+    border: 2px solid var(--brand-colour--text);
     width: 100%;
     padding-top: 1.5em;
     padding-bottom: .75em;
@@ -678,8 +705,9 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
 
 .btn--load-more:hover {
     color: #fff;
-    background-color: #74A600;
-    border-color: #74A600;
+    background-color: #74A600;  /* IE fallback */
+    background-color: var(--brand-colour--text);
+    border-color: var(--brand-colour--text);
 }
 
     .btn--load-more span {
@@ -721,16 +749,21 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
     margin-top: 3.75em;
     margin-bottom: 3em;
     padding: .66em 0 1.5em;
-    border-top: 7px solid #ccc;
+    border-top: 4px solid #ccc;
+    border-color: var(--text-colour);
     /* border-bottom: 1px solid #9D9D9C; */
 }
 
     h2.index-list-header, .index-list h2 {
         color: #ccc;
+        color: var(--text-colour);
         font-family: Georgia, Serif;
-        font-weight: 700;
-        font-size: 1.75em;
+        font-family: var(--typeface-sans);
+        font-weight: 800;
+        font-size: 1.15em;
         line-height: 1.333em;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         margin-top: .25em;
         margin-bottom: 1em;
     }
@@ -781,10 +814,12 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
         .index-list li::before {
             content: counter(li);
             display: inline-block;
-            color: #fff;
-            background-color: #bbb;
+            color: #bbb;  /* IE fallback */
+            color: var(--brand-colour--text);
             border-radius: 0.7em;
             text-align:center;
+            font-family: var(--typeface-display);
+            font-size: 1.35em;
             font-weight: 600;
             width: 1.33em;
             height: 1.33em;
@@ -802,6 +837,15 @@ p a:hover {color: #6F9400; color: var(--link-colour)}
         .index-list li a {
             color: #404040;
             padding-right: .75em;
+            font-family: var(--typeface-display-medium);
+            font-size: 1.1em
+        }
+
+        /* Hover patch */
+        .index-list li a:hover {
+          color: #6F9400;  /* fallback */
+          color: var(--link-colour);
+          text-decoration: none;
         }
 
         span.list-metric, .index-list span {
@@ -1573,13 +1617,12 @@ ul.book_profile {
         padding: 0rem 2.5rem;
         border-left: .6rem solid #eee;
         font-size: .9em;
-        font-weight: 300;
+        /* font-weight: 300; too pale */
     }
 
     .blockquote figcaption {
         padding: 0rem 3.1rem;
         font-size: .9em;
-        font-weight: 300;
         font-style: italic;
     }
 
@@ -2805,11 +2848,12 @@ label.valid {
         .story-item__date, .story-item__author, .story-item__date--event {
           font-weight: 600;
           font-size: .85em;
-          text-transform: uppercase;
+          /* text-transform: uppercase; */
         }
 
         .story-item__author {
-          color: #90AD00;
+          color: #90AD00;  /* IE fallback */
+          color: var(--text-colour);
         }
 
 
@@ -2839,7 +2883,8 @@ label.valid {
             }
 
             .story-item__description h5 a:hover {
-                color: #6F9400;
+                color: #6F9400; /* IE fallback */
+                color: var(--brand-colour--text);
             }
 
             .story-item--event { }
@@ -3146,6 +3191,7 @@ label.valid {
 
     .badge--story-item-placement {
         display: block;
+        z-index: 10; /* Keeps badge on top during photo hover */
         position: absolute;
         width: auto;
         left: -1em;
@@ -3160,6 +3206,10 @@ label.valid {
                 transform: scale(1.35);
                 left: -.75em;
                 top: -1em;
+            }
+
+            .index-page__featured-story .badge--story-item-placement:hover {
+                transform: scale(1.45)!important;
             }
         }
 
@@ -3292,7 +3342,8 @@ label.valid {
         .fact-box--CTA h4 {
             border-bottom: none;
             font-size: 1.33em;
-            color: #82AD00;
+            color: #82AD00; /* IE fallback */
+            color: var(--brand-colour--text-darker);
         }
 
         img.fact-box--headshot {
