@@ -147,13 +147,15 @@ h6 {
       color: var(--link-colour);
     }
 
-    /* Separators between tag labels */
+    /* Separators between tag labels --disabled for now
     h6:nth-of-type(n+3):before {
       content:"|";
       color: var(--text-colour-light) ;
       font-weight: 400;
       margin-right: .35rem;
     }
+
+*/
 
 p {
   margin-bottom: 1em;
