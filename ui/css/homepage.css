@@ -608,7 +608,19 @@ body {
 .story-item__news-source {
   font-family: var(--typeface-sans);
   font-weight: 200;
+ 
 } /* for Reported Elsewhere */
+
+.default-global-homepage .story-item__headline div {
+  display:inline;
+  color: black !important;
+  font-style: normal !important;
+  font-family: var(--typeface-sans);
+  font-weight: 200;
+  margin-left: 5px;
+  
+}
+
 
     /* Separator between headline and news source */
     .story-item__news-source::before {
@@ -616,6 +628,10 @@ body {
       padding-left: .25em;
       padding-right: .25em;
     }
+
+.default-global-homepage .story-item__headline br {
+ display: none;
+}
 
 
     /* primary story-items */
@@ -1947,11 +1963,21 @@ a {
     padding-top: 4rem;
   }
 
+
+.barometer-form-list p:first-child  {
+ font-family: var(--typeface-display-medium);
+    font-weight: 600;
+    line-height: 3rem;
+    font-size: 1.5em;
+    text-transform: none;
+    min-height:10rem;
+    margin-bottom:2rem;
+}
       /* Barometer form */
       /* Checkbox display method is adapted from here:
          https://paulund.co.uk/how-to-style-a-checkbox-with-css */
 
-      .barometer-form-list__item {
+      .barometer-form-list__item, .barometer-form-list li {
         display: block;
         padding-bottom: 2rem;
       }
@@ -1961,13 +1987,18 @@ a {
         display: none;
       }
 
-      .barometer-form-label {
+      .barometer-form-label, .barometer-form-list li {
         position: relative;
         left: 3rem;
         display: inline-block;
+        max-width: 85%;
+      }
+      
+      .barometer-form-list li {
+       display:block;
       }
 
-      .barometer-form-label::before {
+      .barometer-form-label::before, .barometer-form-list li::before{
         content:"";
         cursor: default;
         position: absolute;
@@ -2566,7 +2597,6 @@ a {
       direction: ltr;
       -webkit-font-feature-settings: 'liga';
       -webkit-font-smoothing: antialiased;
-      font-feature-settings: 'liga'; /* required for Edge browser */
     }
 
     .nav__link--join {
@@ -2687,7 +2717,6 @@ a {
             direction: ltr;
             -webkit-font-feature-settings: 'liga';
             -webkit-font-smoothing: antialiased;
-            font-feature-settings: 'liga'; /* required for Edge browser */
           }
 
           /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
@@ -2763,7 +2792,6 @@ a {
                 direction: ltr;
                 -webkit-font-feature-settings: 'liga';
                 -webkit-font-smoothing: antialiased;
-                font-feature-settings: 'liga'; /* required for Edge browser */
               }
 
 
