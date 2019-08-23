@@ -423,9 +423,10 @@ ul { }
 /* LINKS  ========================================================================== */
 /* Leaves fallbacks to green for IE and browsers that don't support CSS variables. */
 
-a, a:link, a:visited {color: #404040; color: var(--link-colour)}
+a, a:link, a:visited {color: #404040;color: var(--link-colour);}
 a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
 a:active {color: #404040; color: var(--text-colour)}
+  a.button , a.button :link, a.button :visited {color: #404040;color: var(--text-colour);}
 
 /* Text links within paragraphs get a solid underscore */
 p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
@@ -2710,7 +2711,7 @@ div.embedded-poll {
     }
 
 .btn--subscribe {
-  color: white;
+  color: white; color: var(--text-colour);
   background-color: #82AD00;
   background-color: var(--brand-colour--text);
 }
@@ -4224,7 +4225,7 @@ text-overflow: ellipsis;
   font-size: 0.85em;
   font-weight: normal;
   display: block;
-  color: #fff;
+  color: #fff; color: var(--text-colour);
   text-align: center;
   border-radius: 2px;
   -webkit-border-radius: 2px;
