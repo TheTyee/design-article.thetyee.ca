@@ -1,0 +1,5186 @@
+/* ==========================================================================
+   #BASE (Global) (This mostly applies to the Atoms)
+   ========================================================================== */
+
+
+/* Default Border Color - set border-color:inherit on elements to inherit the default */
+* {
+  border-color: #888;
+}
+
+
+/* Default Background Color */
+body {
+  background-color: #fff;
+}
+
+
+/* Type */
+
+Html {
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif; /* IE fallback */
+  font-family: var(--typeface-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.39em;
+  /* color: #404040; */
+  color: var(--text-colour);
+  overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
+}
+
+.article__body p {
+  font-family: miller-text, serif;
+}
+
+.article__body .editors-note {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* Reset to prevent some articles form displaying in italics */
+h1, h2, h3, h4, h5, h6, p, a, blockquote, .ad-box {
+  font-style: normal
+}
+
+h1 {
+  font-family: miller-display, Georgia, Serif;
+  font-weight: 800;
+  font-size: 1.625em;
+  line-height: 1.21em;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.25em;
+}
+
+    .h1--border-bottom {
+        padding-bottom: 1.7rem;
+        border-bottom: 1px solid;
+        margin-bottom: 2rem;
+    }
+
+    /* BREAKPOINT: 600px // Increase article headline size */
+    @media screen and (min-width: 600px) {
+
+        h1 {
+            font-size: 2.4em;
+            line-height: 1.136em;
+        }
+    }
+
+h2 {
+  color: #424242;
+  font-family: franklin-gothic-urw, helvetica, sans-serif;;
+  font-weight: 700;
+  font-size: 1.1em;
+  line-height: 1.333em; /* 36px */
+  margin-top: 1.555em; /* 42px */
+  margin-bottom: .666em; /* 18px */
+}
+
+h3 {
+  margin-top: 0.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #444;
+}
+
+h4 {
+  font-size: 1.42em;
+  font-weight: 300;
+  line-height: 1.4em;
+}
+    .article__header h4 {
+      margin-top: 0px;
+    }
+
+    /* BREAKPOINT: 600px // Increase article title size */
+    @media screen and (min-width: 600px) {
+
+        .article__header h4 {
+            margin-top: 10px;
+        }
+    }
+
+h5 {
+  margin-top: 1em;
+  font-family: miller-text, Georgia, Serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1.18518519em;
+  color: #424242; /* IE fallback */
+  color: var(--text-colour);
+}
+
+/* Story Labels */
+h6 {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 1.85rem;
+
+}
+
+    /* Category Label gets prominent styling */
+    h6:first-of-type {
+      display: inline-block;
+      margin-top: 2.4em;
+      margin-bottom: 0;
+      border-bottom: 2px solid #90AD00;
+      border-bottom-color: var(--brand-colour--text);
+      padding-bottom: 0.15em;
+      font-size: 1em;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    /* Tag Labels get subordinate styling */
+    h6:nth-of-type(n+2) {
+      text-transform:capitalize;
+      font-size: .8em;
+      font-weight: 600;
+      margin-right: .15rem;
+    }
+
+    /* Darken Tag Labels for better legibility */
+    h6:nth-of-type(n+2) a {
+      color: var(--link-colour);
+    }
+
+    /* Separators between tag labels --disabled for now
+    h6:nth-of-type(n+3):before {
+      content:"|";
+      color: var(--text-colour-light) ;
+      font-weight: 400;
+      margin-right: .35rem;
+    }
+
+*/
+
+p {
+  margin-bottom: 1em;
+  font-style: normal;
+}
+
+/* Special category labels */
+h6.tyee-presents-label, h6.poll-label, h6.advertpg-label {
+    display: block;
+    position: relative;
+    float: none;
+    overflow: hidden;
+    border-top: 1px solid #90AD00;
+    border-bottom: 1px solid #90AD00;
+    padding-top: .375em;
+    padding-bottom: 0.33em;
+    margin-top: 2.66em;
+    margin-bottom: 1.125em;
+    color: black;
+    font-size: .9em;
+    font-weight: 400;
+    letter-spacing: .02em;
+}
+
+h6.poll-label, h6.advertpg-label {
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+    color: black !i;
+}
+
+h6.advertpg-label {
+    margin-bottom: 1.5em;
+    font-size: .85em;
+    line-height: 1.25em;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: #555;
+    text-transform:uppercase;
+}
+
+/* h6.tyee-presents-label a{
+    color: black;
+} */
+
+    h6.poll-label a {
+        float: left;
+        margin-right: 0.5em;
+        color: #6BA100,
+    }
+
+    .poll-label__background {
+        display: none;
+    }
+
+    /* BREAKPOINT: 500px // Adds background image to poll-label */
+    @media screen and (min-width: 500px) {
+        .poll-label__background {
+            display: block;
+            overflow: auto;
+            opacity: 0.95;
+            height: .9em;
+            margin-top: .025em;
+            background-color: none;
+            background-image: url("barometer-label__background.svg");
+            background-repeat: repeat-x;
+            background-size: auto 100%;
+        }
+        h6.advertpg-label:after {
+            font-weight: 400;
+            color: #82AD00;  /* IE fallback */
+            color: var(--brand-colour--text-darker);
+            font-size: 1.025em;
+            text-transform: lowercase;
+            letter-spacing: 0.02em;
+            content: " and help independent media thrive."
+        }
+    }
+
+
+    /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
+    @media screen and (min-width: 593px)
+        {
+        h6.tyee-presents-label, h6.poll-label, h6.advertpg-label {
+              margin-bottom: 1.5em;
+        }
+    }
+
+    /* BREAKPOINT: 1024px // Set presents-label to full width and add prefix text */
+    @media screen and (min-width: 1024px)
+        {
+        h6.tyee-presents-label, h6.poll-label, h6.advertpg-label {
+               display: block;
+               width: 100%;
+               margin-bottom: 1em;
+        }
+        h6.tyee-presents-label a:before{
+            font-size: .9em;
+            font-weight: 700;
+            letter-spacing: .06em;
+            content:"TYEE PRESENTS: "
+       }
+       h6.poll-label a:before{
+            font-size: .9em;
+            font-weight: 700;
+            letter-spacing: .06em;
+            color: #555;
+            content:"THE BAROMETER: "
+       }
+    }
+
+
+ul { }
+
+    .main-col-container ul {
+        margin-bottom: 1em;
+    }
+
+
+.site__header{
+  background-color: #fff;
+  width: 100%;
+}
+
+#https {
+    background: rgba(154,189,49,1);
+}
+
+    @media screen and (max-width: 650px) {
+      #https span {
+        display:block;
+        clear:right;
+      }
+       #https span:last-child {
+        position: relative;
+        left: 18px;
+       }
+    }
+
+    #https a, #https a:link, #https a:visited {
+      border-bottom: 1.5px solid white;
+      cursor: pointer;
+      color: white;
+    }
+
+    #https a:hover {
+        cursor: pointer;
+
+
+    }
+
+    #https div {
+      max-width: 54em;
+      color: white;
+      font-weight: normal;
+      font-size: .75em;
+      line-height:1.6em;
+      height: auto;
+      padding: 5px 0;
+    }
+
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.category-label {
+  text-transform: uppercase;
+}
+
+
+/* Modals */
+.modal-content {
+    background-color: white !important;
+}
+
+
+
+/* READ-MORE atom */
+
+.read-more {
+  font-weight: 600;
+  letter-spacing: .0125em;
+  text-transform: uppercase;
+
+}
+
+
+
+/* EDITOR'S NOTE */
+
+.editors-note {
+    font-style: italic;
+    font-weight: 300;
+    color: #000;
+}
+
+.editors-note p {
+    font-style: italic;
+} /* overrides regular p styling when p's are nested in ed note */
+
+
+
+/* ARROW ICON atom */
+
+.arrow-svg {
+  vertical-align: text-top;
+}
+
+
+/* DOLLAR HEART ICON atom */
+
+.dollar-heart-svg {
+   height: 1.25em;
+   vertical-align: bottom;
+   margin-right: -.2em;
+}
+
+
+/* END MARK ICON atom */
+
+.end-mark-svg {
+  position: relative;
+  vertical-align: bottom;
+  margin-left: .25em;
+  top: 0px;
+  transform: scale(1.1);
+}
+
+  .end-mark-svg path {
+      fill:  #6F9400;
+  }
+
+
+/* BUTTON styles */
+
+.button {
+  background-color: #82AD00; /* legacy fallback */
+  background: var(--brand-colour);
+  padding: 4px 10px;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: .08em;
+  display: block;
+  color: #fff; /* legacy fallback */
+  color: var(--text-colour);
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+
+.button:hover, .button:focus, .button:active,
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+  color: white;
+  background-color:darkgreen;
+  background-color: var(--brand-colour--text-darker);
+}
+
+
+
+/* LINKS  ========================================================================== */
+/* Leaves fallbacks to green for IE and browsers that don't support CSS variables. */
+
+a, a:link, a:visited {color: #404040;color: var(--link-colour);}
+a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
+a:active {color: #404040; color: var(--text-colour)}
+  a.button , a.button :link, a.button :visited {color: #404040;color: var(--text-colour);}
+
+/* Text links within paragraphs get a solid underscore */
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
+      border-bottom: 2px solid var(--link-colour);
+      margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
+}
+
+/* Scaling hover states for text links, buttons and nav-bar */
+    a:hover, a:focus,
+    .site-footer a:hover  {
+      display: inline-block; /* inline elements need to be converted into
+                                inline-blocks so they can be transformed */
+      color: var(--link-colour);
+      transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+    }
+
+    .index-page__container a:hover, .index-page__container a:focus {
+      display: block;  /* patch to prevent story-item images on Section Page from being converted to inline-block */
+    }
+
+    .index-page__container li a:hover, .index-page__container li a:focus {
+      display: inline;  /* patch to prevent headlines in Most module on Section Page
+                           from being converted to inline-block */
+    }
+
+        a[display=block]:hover, a[display=block]:focus,
+        .site-footer a[display:block]:hover  {
+          display: block; /* Prevents the conversion of block elements into inline-blocks */
+        }
+
+        .presents-box a:hover, .presents-box a:focus {
+          display: inline;
+          font-size: 0.85em;
+        }
+
+        a.link-wrap:hover {
+          display: block;
+        }
+
+        .related-story:hover {
+          transform: scale(1.05)!important;
+        }
+
+        a.badge--headline-placement:hover {
+          transform: scale(1.2)!important;
+        }
+
+    /* Prevent reflow that can occur when text within a paragraph becomes an inline-block.  */
+    p a:hover, figcaption a:hover {display: inline; }
+
+    p a:hover, figcaption a:hover {color: #6F9400; color: var(--link-colour)}
+
+.new-site-header a, .new-site-header a:link, .new-site-header a:visited {color: #404040; color: var(--text-colour)}
+.new-site-header a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
+
+.new-site-nav__dropdown a, .new-site-nav__dropdown a:link, .new-site-nav__dropdown a:visited {
+  color: var(--brand-colour);
+}
+
+.category-label a {
+  color: var(--brand-colour--text);
+}
+
+
+
+/* PULLQUOTES  ========================================================================== */
+/* Pullquotes are floated left so that they don't collide with any nearby asides. Asides are
+   floated right, so when asides and pullquotes come into proximity the latter element will
+   get pushed further down within the content flow but without causing any gaps in the text
+   column. However, this means that pullquotes and asides will not always appear exactly where
+   they're marked up relative to the text content. */
+
+.pullquote {
+  position: relative;
+  float: left; /* prevents collisions with asides */
+  /* width: 95%; */
+  margin: 0.4em 0em 1.33em 0em;
+  border-top: 8px solid;
+  border-bottom: 1px solid;
+  border-color: #444;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  /* padding-left: 2.125em; */
+  /* padding-right: 1.75em; */
+  font-family: miller-text, Georgia, Serif;
+  font-weight: 800;
+  font-size: 1.15em;
+  line-height: 1.333em;
+}
+
+    /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
+    @media screen and (min-width: 500px)
+       {
+        .pullquote {
+            margin-left: 2.125em;
+            margin-right: 2.125em;
+        }
+    }
+
+    /* .pullquote:before {
+        content: "quote";
+        display: block;
+        position:absolute;
+        left: 0em;
+        top: -.15em;
+        color: #bbb;
+        font-size: 3.5em;
+        font-weight: bold;
+        line-height: 1em;
+
+    } */
+
+
+    /* .pullquote:after {
+        content: "quotemark";
+
+        position:absolute;
+        padding-left: 0.075em;
+        top:;
+        right: ;
+        font-size: 3.5em;
+        font-weight: bold;
+        line-height: 1.04em;
+    } */
+
+
+
+/* LEAD-IN WITH DROPCAP  ============================================================= */
+
+.lead-in {
+   overflow: hidden;
+}
+
+ @media screen and (max-width: 401px) {
+    .lead-in {
+      overflow: visible !important;
+    }
+}
+
+.lead-in:first-letter {
+    display: block;
+    overflow: hidden;
+    float: left;
+    padding-right: 0.06em;
+    padding-bottom:0;
+    margin-top: -0.09em;
+    margin-bottom: -0.1em;
+    font-family: miller-display, Georgia, Serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 5em;
+    line-height: 1em;
+    text-transform: capitalize;
+    color: #424242;
+}
+
+/* To prevent collision with the dropcap add extra space if the lead-in starts with
+  text set in italics. (This actually will also target an <em> first-child that occurs
+  later in the lead-in paragraph, but the space added is so tiny that it shouldn't be
+  very noticeable.) */
+/* Removed because a better solution is to format the dropcap without italics.
+.lead-in > em:first-child {
+    padding-left: 0.3em;
+}
+*/
+ @-moz-document url-prefix() {
+   .lead-in:first-letter {
+     padding-top: 0.15em;
+   }
+ }
+
+/* CAPTIONS  ========================================================================== */
+
+.caption {
+    padding-top: .65em;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid;
+    border-color: inherit;
+    font-size: 0.777em;
+    font-weight: 700;
+    line-height: 1.5em;
+    color: #404040;
+    text-align: left;
+    text-shadow: none;
+}
+
+    .caption__media--credit {
+        font-weight: 300;
+    }
+
+    /* Eliminate double-border on slideshow carousel captions.
+       Problem: the figure which contains the carousel has a caption and captions have a bottom border,
+       but each slide in the carousel also has a caption.
+       Solution: remove the border from carousel captions, leaving the border on the empty figcaption. */
+    .carousel-caption {
+      border: none;
+      margin-bottom: -0.8em;
+    }
+
+
+.help-block {
+    margin-bottom: 0px;
+    font-size: .75em;
+    line-height: 1.33em;
+}
+
+
+
+/* ==========================================================================
+   #LAYOUT
+   (Layout rules divide the page into sections. Layouts hold one or more modules
+    together. These apply largely to the Organism and Template levels.
+    https://smacss.com/book/type-layout )
+   ========================================================================== */
+
+
+
+/* SECTION PAGE LAYOUT ========================================================================== */
+
+
+.index-page__story-list {
+    margin-bottom: 0em;
+}
+
+.index-page__container {
+    max-width: 1000px; /* Sets a limit on the width of the bootstrap layout */
+}
+
+.section__header {
+    margin-top: .66em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+    .section__header h1 {
+        display: inline-block;
+        font-size: 2.2em;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 800;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        border-bottom: 5px solid #90AD00; /* IE color fallback */
+        border-bottom-color: var(--brand-colour--text);
+    }
+
+    .section-sponsor-blurb {
+        font-weight: 200;
+    }
+
+.index-list-spacing {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}  /* Use this class to set universal vertical spacing between objects within the index list
+      e.g. story-items, messaging-zones, ad-box--bigbox.
+      Note: If these margin values are changed then the .ad-box:before margin-bottom must be
+      updated to maintain proper alignment of the ad graphic. */
+
+.btn--load-more {
+    color: #74A600; /* IE fallback */
+    color: var(--text-colour);
+    background-color: white;
+    font-size: .9em;
+    font-weight: 700;
+    line-height: 1.33;
+    letter-spacing: .075em;
+    border-radius: 0px;
+    border-color: #74A600; /* IE fallback */
+    border: 2px solid var(--brand-colour--text);
+    width: 100%;
+    padding-top: 1.5em;
+    padding-bottom: .75em;
+    margin-top: 2em;
+    margin-bottom: 0em;
+}
+
+.btn--load-more:hover {
+    color: #fff;
+    background-color: #74A600;  /* IE fallback */
+    background-color: var(--brand-colour--text);
+    border-color: var(--brand-colour--text);
+}
+
+    .btn--load-more span {
+        font-size: 1.25em;
+    }
+
+
+
+/* EVENTS PAGE LAYOUT ========================================================================== */
+
+/* custom bootstrap float reset required for column list https://stackoverflow.com/a/24590544/8305003 */
+
+/* >> THIS HAS BEEN ABSTRACTED INTO AN index-list-grid HELPER CLASS << */
+
+/* In Small views clear every 4th element with .clear class that is a direct child of .event-list-grid */
+/* This clear floats after every 2nd list item. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .event-list-grid>.clear:nth-child(4n)::before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+/* In Medium views and wider, clear every 6th element with .clear class that is a direct child of .event-list-grid */
+/* This clear floats after every 3rd list item. */
+@media (min-width: 992px) {
+    .event-list-grid>.clear:nth-child(6n)::before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+
+
+
+/*--- 3-COL-BLOCK (most sotires block) ---*/
+
+.col-3-block {
+    margin-top: 3.75em;
+    margin-bottom: 3em;
+    padding: .66em 0 1.5em;
+    border-top: 4px solid #ccc;
+    border-color: var(--text-colour);
+    /* border-bottom: 1px solid #9D9D9C; */
+}
+
+    h2.index-list-header, .index-list h2 {
+        color: #ccc;
+        color: var(--text-colour);
+        font-family: Georgia, Serif;
+        font-family: var(--typeface-sans);
+        font-weight: 800;
+        font-size: 1.15em;
+        line-height: 1.333em;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-top: .25em;
+        margin-bottom: 1em;
+    }
+
+    /* BREAKPOINT: in xs views remove top-border from block and apply it to each list,
+       also, adjust vertial spacing */
+    @media (max-width: 767px) {
+        .col-3-block {
+            margin-top: 1em;
+            margin-bottom: 2.66em;
+            padding: 0em 0 0em;
+            border-top: 0;
+        }
+
+        h2.index-list-header {
+            margin-top: 1.66em;
+            border-top: 7px solid #ccc;
+            padding-top: .66em;
+            margin-bottom: .75em;
+        }
+
+	/* this is to make category labels manageable in narrow views - hides all except first label */
+	.article__header .category-label, .article__header strong {
+	 display:none;
+
+	}
+	 .article__header .category-label:first-of-type {
+	  display:inline-block;
+	}
+    }
+
+
+    /*--- BLOCK LIST STYLING  ---*/
+    /* This uses the stylikng method from https://www.w3.org/Style/Examples/007/color-bullets.en.html */
+
+    .index-list ol {
+        padding-left: 1.83em;
+        list-style: none;
+        counter-reset: li;
+    }
+
+        .index-list li {
+            margin-bottom: 1.5em;
+            counter-increment: li;
+            font-weight: 600;
+        }
+
+        .index-list li::before {
+            content: counter(li);
+            display: inline-block;
+            color: #bbb;  /* IE fallback */
+            color: var(--brand-colour--text);
+            border-radius: 0.7em;
+            text-align:center;
+            font-family: var(--typeface-display);
+            font-size: 1.35em;
+            font-weight: 600;
+            width: 1.33em;
+            height: 1.33em;
+
+            -ms-transform: scale(0.85); /* IE 9 */
+            -webkit-transform: scale(0.85); /* Safari */
+            transform: scale(.85);
+
+            margin-left: -1.83em;
+            margin-right: 0.25em;
+            /* text-align: right; */
+            direction: rtl;
+        }
+
+        .index-list li a {
+            color: #404040;
+            padding-right: .75em;
+            font-family: var(--typeface-display-medium);
+            font-size: 1.1em
+        }
+
+        /* Hover patch */
+        .index-list li a:hover {
+          color: #6F9400;  /* fallback */
+          color: var(--link-colour);
+          text-decoration: none;
+        }
+
+        span.list-metric, .index-list span {
+            font-weight: 100;
+            color: #aaa;
+        }
+
+
+
+/* ARTICLE LAYOUT - HEADER ========================================================================== */
+
+.article__header { /* article__header is always centered on the page */
+  position: relative;
+  max-width: 45em;
+  margin: 0 auto 0 auto;
+}
+
+    /* BREAKPOINT: 640px // Increase page margin */
+    @media screen and (min-width: 640px) {
+
+        .article__header {
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+
+    }
+
+
+/* ARTICLE LAYOUT - FEATURED MEDIA ========================================================================== */
+
+.featured-media { /* featured-media organism is centered on the page and occupies full page column
+                     width at medium and small view widths */
+  max-width: 57em;
+  margin: 0 auto 0 auto;
+  padding-top: 1em;
+}
+
+    /* BREAKPOINT: 640px // Increase page margin */
+    @media screen and (min-width: 640px) {
+
+        .featured-media {
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+    }
+
+
+	/* BREAKPOINT: 1200px // Adds additional breakpoint to show half-page ad at narrower views (feature-media organism shrinks
+       and sits left-aligned to make room for the adjacent bigbox--1st-position) -- Bryan */
+	@media screen and (min-width: 1200px) {
+        .featured-media {
+             position: relative;
+             left: -9.7em;
+             max-width: 48em;
+             margin: 0 auto 0 auto;
+             padding-left: 1em;
+             padding-right: 1em;
+        }
+
+       .featured-media .figure img {
+            display: block;
+            min-height: 600px;          /* This sets image height equal to the height of the adjacent halfpage ad. */
+            object-fit: cover;      /* This maintains the image's proper aspect ratio and CLIPS any overflow width. */
+        }
+    }
+
+	/* BREAKPOINT: 1200px // IE10+ FALLBACK.
+	There's no fallback for IE9 and lower (so they may end up with a stretched or squeezed image.) */
+	@media screen and (min-width: 1200px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+       .featured-media .responsive-img {
+            width: 100%;
+            height: auto;
+        }
+
+    }
+
+
+
+    /* BREAKPOINT: 1400px // At views wider than 1400px the feature-media organism shrinks
+       and sits left-aligned to make room for the adjacent bigbox--1st-position */
+    @media screen and (min-width: 1400px) {
+        .featured-media {
+             position: relative;
+             left: -12.7em;
+             max-width: 53.75em;
+             margin: 0 auto 0 auto;
+             padding-left: 1em;
+             padding-right: 1em;
+
+        }
+
+    }
+
+
+
+/* ARTICLE BODY ========================================================================== */
+
+.article__body {
+     padding-bottom: 2em;
+}
+
+
+
+/* MAIN-COLUMN-CONTAINER ==================================================================
+The .main-col-container styling is really the scaffold of the layout and most other things hang off of it or are contained by it, so any changes to it are likely to cause problems. The best thing is if objects just sit inside it and are positioned relative to it (like figures and asides).
+*/
+
+.main-col-container {/* the text column remains centred after hitting its max width. */
+     position: relative;
+     max-width: 34em;
+     margin: 0;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+    /* Set a top margin on article__body for LEGACY ARTICLES and POLLS that don't have a featured-media section */
+    .article-legacy-image .article__body.main-col-container, .article-poll .article__body.main-col-container, .advertpage .article__body.main-col-container {
+        margin-top: 20px;
+    }
+
+
+    /* BREAKPOINT: 880px // aligns text column flush left with the article__header */
+    @media screen and (min-width: 880px) {
+        /* When viewport exceeds the max-width of the article__header ...  */
+        .main-col-container {
+          margin-left: auto;
+          margin-right: auto;
+          left: -4.5em; /* = ( [article__header max-width] - [article__body max-width] - [padding&margins] ) / 2 */
+          /* ... centers article__body and offsets towards left to align with article__header.
+             It keeps the article__body aligned flush left with the article__header. */
+        }
+    }
+
+
+/* The following rules cause irregularities in the positioning of the main column asides --AG
+
+              more attempts at cross browser / os alignment issues w/ small image in play  BC
+               @media screen and (min-width: 700px) and (max-width: 880px) {
+                .main-col-container {
+                   margin-left: auto;
+                        margin-right: auto;
+                  left: -7%;
+                 left: calc( -1 * ( ((100vw - 33em) / 2) - (3em) ) );
+
+               }
+               }
+
+               @media screen and (min-width: 640px) and (max-width: 755px){
+                  .main-col-container {
+                    max-width: 90%;
+                  }
+               }
+                @media screen and (min-width: 740px) and (max-width: 880px) {
+                  .ad-box--halfpage.smaller {
+                  margin-right: -25%;
+                  }
+               }
+ */
+
+
+
+/* ==========================================================================
+   #MODULES
+   (Modules are the reusable, modular parts of our design. They are the
+   callouts, the sidebar sections, the product lists and so on. These apply
+   largely to the Molecule and Organism levels)
+   ========================================================================== */
+
+/**
+ * PRIMARY-NAV molecule
+ */
+
+    .site-nav {
+      margin-bottom: 0px;
+      padding-top: 18px;
+      padding-bottom: 0px;
+      border: none;
+      background-color: inherit;
+
+    }
+
+    .navbar-header {
+      padding-bottom: 15px;
+    }
+
+    .navbar-brand {
+      height: 100%;
+      margin-top: -5px;
+      padding-top: 0;
+      padding-left: 0;
+      padding-bottom: 0;
+
+    }
+
+    #site-logo {
+      width: 170px;
+      /* display:block;
+      float: left;
+      margin-top: 0px;
+      padding-top: 0px;
+      background: none; */
+
+    }
+
+
+    .site-nav .navbar-toggle {
+      margin-right: 0px;
+      border: none;
+
+    }
+
+    .navbar-default .navbar-toggle:focus {
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle:hover {
+      background-color: #ddd;
+    }
+
+    .site-nav .navbar-toggle .icon-bar {
+      height: 4px;
+    }
+
+    .navbar-nav {
+    }
+
+
+
+#content {
+  background: transparent;
+  padding-bottom: 40px;
+}
+
+
+.ad-box--halfpage.smaller {
+    margin-left: 1em;
+    }
+
+
+.modal-content {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-clip: padding-box;
+  outline: none;
+}
+.site-nav {
+  padding-top: 0px;
+   border-color: #949594;
+   border-top: 1px solid;
+   /*margin-top:5px !important;*/
+
+}
+.site-nav .navbar-collapse {
+ box-shadow: none;
+ max-width:none;
+ margin-left:auto;
+ margin-right:auto;
+ /* border-top: #949594 solid 1px; */
+}
+.menu__left-nav .open > a, .menu__left-nav .open > a:hover, .menu__left-nav .open > a:focus,
+.menu__left-nav > li > a:hover, .menu__left-nav > li > a:focus,
+.menu__right-nav .open > a, .menu__right-nav .open > a:hover, .menu__right-nav .open > a:focus,
+.menu__right-nav > li > a:hover, .menu__right-nav > li > a:focus  {
+  background-color: transparent;
+}
+.navbar-collapse.in {
+  overflow-y: visible;
+}
+/* == turns off default handling for .open ===== */
+.menu__left-nav .open a, .block--site-header .menu__right-nav .open a, .menu__left-nav .open, .menu__right-nav .open{
+  /* color: #333; This rule seems badly scoped so I'm commenting out this part of it. --AG */
+  background-color: transparent;
+}
+/* == Overrides the hover and active states from Bootstrap === */
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+  color: #859c01 !important;
+}
+
+ul.book_profile {
+  padding-left: 0;
+}
+
+.book_profile li {
+    list-style-type: none;
+    font-weight: 300;
+    /* border-bottom: 1px dotted; */
+    /* width: 90%; */
+    display: block;
+    line-height: 0.9em;
+    padding: 0.2em;
+}
+
+/* fix figure at as first element in gallery issue */
+
+  .gallery_output figure:first-child {
+    float:none;
+  }
+
+.open > .dropdown-menu {
+    display: block;
+    }
+
+
+@media (min-width: 992px) {
+    /* BOOTSTRAP OVERRIDES */
+    /* == Overrides rounded corners, padding and default Bootstrap borders on nav == */
+
+
+    .navbar {
+      border-radius: 0px;
+      background-color: #fff;
+    }
+    .dropdown-menu {
+      border-radius: 0px;
+      border-top: none;
+      margin: -40px 0px 0px 0px;
+      padding: 0px;
+      left: 0;
+      opacity:0;
+      transition: all 0.3s ease;
+      z-index: -10;
+    }
+    .open > .dropdown-menu {
+      opacity: 1;
+      margin: 0px;
+        transition: all 0.3s ease;
+        z-index: 9999;
+    }
+    .navbar-collapse {
+      padding: 0px;
+    }
+    /* == Turns off relative positioning so the dropdowns will align on the left === */
+    .nav >li {
+      position: static;
+    }
+    .menu__left-nav, .menu__right-nav {
+      position: static;
+      padding-left: 20px;
+    }
+    .menu__left-nav li, .menu__right-nav li{
+      padding: 0px;
+    }
+    /* == Floats primary list items for horizontal wide nav ===== */
+    .menu ul > li {
+      display: inline-block;
+      vertical-align: bottom;
+      padding-bottom: 10px;
+    }
+
+    /* == Turns off defaults fonts and layout on the nav buttons ===== */
+    .site-nav {
+      font-size: 16px;
+      margin-top: 0px;
+      padding-top: 0px;
+      text-align: center;
+
+    }
+}
+
+
+/* NARROW NAV, TOP ONLY ========================================================================== */
+
+.narrow-menu{
+  min-height: 52px;
+  position: relative;
+  color: #929292;
+  border-bottom-style:double;
+}
+.hamburger-container {
+  padding-right: 0; /* remove bootstrap col padding so button doesn't break on iphone5s' */
+}
+
+.menu__hamburger{
+  border: none;
+  display: block;
+  min-height: 50px;
+  min-width: 77px;
+  float: left;
+  padding-left: 0; /* remove bootstrap col padding so button doesn't break on iphone5s' */
+  background-color: transparent;
+}
+
+    @media (max-width: 350px) { /* Shrinks button so it doesn't break the bootstrap col on iphone5s' */
+      .menu__hamburger{
+          min-width: 60px;
+          padding-right: 0;
+    }
+
+}
+
+.menu__hamburger:focus {
+  outline:0;
+}
+.menu__hamburger span {
+  font-size: 0.7em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #555;
+  padding-left: 2px;
+  vertical-align: baseline;
+}
+.menu__hamburger i {
+    float: left;
+    color: #555;
+    font-size: 0.8em;
+    margin-top: 4px;
+}
+.narrow-menu__logo{
+  max-width: 100%;
+  background: white;
+  position: relative;
+  top: 7px;
+  margin: 0 auto;
+  display: block;
+}
+.menu {
+  padding: 0px;
+  margin: 0px;
+  border-top: none;
+}
+.menu__content-wrapper {
+  padding: 0px;
+  background-color: #f8f9ed;
+  position: relative;
+  z-index: 9999;
+}
+.menu_left-nav-wrap, .menu_right-nav-wrap {
+  padding: 0px;
+  margin: 0px;
+}
+.menu__left-nav, .menu__right-nav, .menu__left-nav li, .menu__right-nav li{
+  font-size: 0.95em;
+  margin-bottom: 0px;
+}
+.menu__left-nav li, .menu__right-nav li{
+  border-bottom: solid 1px #A8A8A8;
+  list-style-type: none;
+}
+.menu__left-nav > li > a, .menu__right-nav > li > a{
+  color: #555;
+  padding: 10px 5px;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.menu__left-nav li a i, .menu__right-nav li a i {
+  font-size: 0.75em;
+  padding-right: 2px;
+}
+.menu__left-nav > .open a, .menu__right-nav > .open a, .menu__left-nav > .open , .menu__right-nav > .open
+{
+  color: #555 !important;
+  border-bottom: none;
+}
+.menu__join .btn-join span{
+  color: #82AD00;
+}
+.narrow__search {
+  position: static;
+  display: block;
+  margin: 0px 0px 10px 0px;
+  padding: 0px;
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+.menu__search--button{
+  background-color: #859c01;
+  color: #fff;
+}
+.menu__search--wrapper {
+  width: 100vw;
+  max-width: 1200px;
+}
+.search-block .dropdown-toggle {
+  text-transform: uppercase;
+  float: left;
+  font-weight: bold;
+  color: #555;
+}
+
+.search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form {
+  width: 100vw;
+  margin: 0px;
+  border: none;
+  border-radius: 0px;
+}
+
+.search-block {
+  overflow: hidden;
+  padding: 12px 10px 12px 0px;
+}
+.search-block .glyphicon {
+  font-size: 1.6em;
+  margin-right: 3px;
+  margin-top: -2px;
+}
+.search-block .search-text{
+  line-height: 0.7em;
+}
+.search-block .dropdown-toggle span {
+  vertical-align: middle;
+  display: inline-block;
+}
+.menu__search--wrapper .form-control{
+    width: 100%!important;
+}
+
+@media (min-width: 768px) {
+  .menu__left-nav li, .menu__right-nav li {
+  }
+  .menu__left-nav li ul li, .menu__right-nav li ul li {
+    border-bottom: none;
+  }
+
+}
+
+@media(max-width:768px) {
+#latest_bottom_wrap {
+	border-bottom: none !important;
+    max-width: 34em;
+    margin: auto !important;
+}
+
+
+#latest_bottom_wrap div section:first-child{
+  border-bottom: 1px #929292 solid;
+}
+
+}
+
+@media (min-width: 992px) {
+   .menu__join {
+    padding-bottom: 12px!important;
+  }
+}
+
+/* WIDE NAV ========================================================================== */
+@media (min-width: 992px) {
+
+      .menu {
+        border-top: 1px solid  #949594;
+        margin-top: 2px;
+      }
+
+       .primary-nav {
+
+       }
+      #fakeborderleft {
+        border-bottom-style: double;
+        border-bottom-color: #949594;
+        position: absolute;
+        /* right: -5px; --AG. seems unecessary and creates a gap */
+        bottom: -80px;
+        width: 100%;
+        z-index: 200;
+      }
+
+        #fakeborderright {
+             border-bottom-style: double;
+        border-bottom-color: #949594;
+        position: absolute;
+        /* left: -5px; --AG. seems unecessary and creates a gap */
+        bottom: -80px;
+        width: 100%;
+        z-index:200;
+      }
+
+      #fakeborderrightwrap {
+      }
+
+      .wraptwo {
+        position:relative;
+      }
+
+      .menu_left-nav-wrap, .menu_right-nav-wrap {
+        padding: 0px;
+        position: static;
+        width: 37.5%;
+        /* width: calc(50% - 150px); */
+        float: left;
+      }
+      .menu__left-nav, .menu__right-nav{
+        margin-bottom: 0px;
+      }
+      .menu__left-nav{
+        text-align: right;
+      }
+      .menu__right-nav {
+        text-align: left;
+      }
+      .menu__left-nav >li{
+        padding-left: 0px;
+        padding-top: 40px;
+        margin-right: 6%;
+      }
+      .menu__right-nav >li {
+        margin-right: 3.2%;
+        padding-top: 37px;
+      }
+      .menu__right-nav >li:last-child {
+        margin-right: 0;
+      }
+
+      .menu__left-nav > li > a, .menu__right-nav > li > a, .dropdown-toggle {
+        padding: 0px;
+      }
+      .menu__left-nav li, .menu__right-nav li {
+        border-bottom: none;
+        position: static;
+      }
+      .menu_center-nav-wrap{
+        position: relative;
+        float: left;
+        width: 25%;
+        max-width: 300px;
+      }
+      .menu__logo {
+        padding: 0px;
+        position: static;
+      }
+      .menu__logo li {
+        width: 100%;
+        display: inline-block!important;
+
+      }
+      .menu__logo img{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        top: 26px;
+        text-align: center;
+        clear:both;
+        float: none;
+        max-width: 90%;
+        min-width: 90%;
+      }
+      .menu__more ul li{
+        display: block;
+        text-align: left;
+      }
+      .menu__facebook{
+        margin: 0px 20px 0px 0px;
+      }
+      .menu__twitter {
+        margin: 0px 20px 0px 0px;
+      }
+      /* == Makes the carets in wide nav bigger ==*/
+      .open .caret {
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+        transition: all 0.5s ease;
+      }
+      .caret{
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 2px;
+        vertical-align: middle;
+        border-top: 6px solid;
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+        transition: all 0.5s ease;
+      }
+      .menu__search ul{
+        padding: 10px 0px;
+      }
+      .search-block {
+        padding: 0px;
+      }
+      .search-block .dropdown-toggle {
+        padding-right: 15px;
+        position: relative;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding-top: 0px;
+      }
+      .search-block .dropdown-toggle .glyphicon {
+        margin-right: 4px;
+        font-size: 1.2em;
+      }
+      .search-block .dropdown-toggle span {
+        vertical-align: middle;
+        display: inline-block;
+      }
+}
+
+@media (min-width: 1020px) {
+
+  .menu__logo img{
+
+    top: 25px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .menu__logo img{
+    top: 26px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .menu__logo img{
+    top: 24px;
+  }
+}
+
+@media (min-width: 1085px) {
+  .menu__logo img{
+    top: 21px;
+  }
+}
+
+@media (min-width: 1120px) {
+   .menu__logo img{
+
+    top: 20px;
+  }
+}
+
+
+@media (min-width: 1148px) {
+   .menu__logo img{
+    top: 16px;
+  }
+}
+
+
+@media (max-width: 990px ){
+    .search-block .dropdown-menu, .search-block .dropdown-menu .navbar-form { margin: 18px 0 0 0;
+	}
+}
+
+@media (min-width: 1200px) {
+
+    .primary-nav {
+      max-width: none;
+      margin: 0 auto;
+    }
+    .menu__logo img{
+
+      top: 15px;
+    }
+
+    .menu_left-nav-wrap, .menu_right-nav-wrap {
+      width: 37.5%; /* Fallback for older browsers */
+      width: calc(50% - 150px);
+    }
+}
+
+
+
+/* BLOCKQUOTE  ========================================================================== */
+
+.blockquote {
+    margin: 1em 0 2em 0;
+}
+
+    blockquote {
+        margin: 0 0 2rem 0;
+        padding: 0rem 2.5rem;
+        border-left: .6rem solid #eee;
+        font-size: .9em;
+        /* font-weight: 300; too pale */
+    }
+
+    .blockquote figcaption {
+        padding: 0rem 3.1rem;
+        font-size: .9em;
+        font-style: italic;
+    }
+
+
+/* FIGURES  ========================================================================== */
+/* Figures are always nested inside the .main-col-container. Therefore all positioning
+   and sizing of figures is relative to the positioning of the .main-col-container.    */
+/* Figures are floated left so that they don't collide with any nearby asides. Asides are
+   floated right, so when asides and figures come into proximity the latter element will
+   get pushed further down within the content flow but without causing any gaps in the text
+   column. However, this means that figures and asides will not always appear exactly where
+   they're marked up relative to the text content. */
+
+
+figure {
+  clear: right; /* This prevents the figure from colliding with any asides. */
+  clear:left; /* This MAY prevent the figure from breaking paragraphs. */
+  float:left; /* This prevents the figure from colliding with any asides. */
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+    /* Remove float when view is wide enough */
+    @media screen and (min-width: 976px) {
+    /* This removes the float from figures so that they don't get pushed out of position by asides. */
+    /* At this width there's no risk of collision between main column elements and asides so the float no longer necessary. */
+
+      figure {
+          float: none;
+          clear: none;
+          padding-top: 1em;
+      }
+
+      .figure--xl, .figure--xl { /* Larger figures extend beyond the main column area so they still require the float. */
+          clear: right;
+          float:left;
+          padding-top: 0;
+      }
+
+    }
+
+    .featured-media figure {
+        clear: none;
+        margin-top: 0.25em;
+        padding: 0;
+    }
+
+
+    /* FIGURE SMALL and MEDIUM --------------------------------------------------------------------
+    bryan's temp small and medium feature image hack for old stories */
+
+    figure.figure.small {
+        width: 37%;
+        max-width: 20vw;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+         margin-left: 1em;
+       clear:none;
+    }
+
+     figure.figure.medium {
+        width: 50%;
+        margin-top: .25em;
+        float:right;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        clear:none;
+    }
+
+        /* Removes padding when a medium figure appears at top of article (instead of featured-media). */
+        .ad-box--halfpage  + figure.figure.medium {
+            padding-top: 0;
+        }
+
+    .margintop {
+      margin-top: 20px;
+    }
+
+    @media (min-width: 700px) and (max-width:760px) {
+      figure.figure.medium,figure.figure.small {
+        margin-right: -3em;
+      }
+    }
+
+  @media (max-width: 1100px) and (min-width:760px) {
+     figure.figure.medium,figure.figure.small {
+      max-width: 20vw;
+     }
+
+  }
+
+  @media (max-width: 400px) {
+     figure.figure.medium,figure.figure.small {
+     max-width:none;
+     width: 100%;
+     }
+     p {
+      /* float:left; - seems unnecessary and causes layout problems */
+     }
+
+  }
+
+  /* end bryan small/med hack */
+
+
+    /* FIGURE XL -------------------------------------------------------------------- */
+
+
+    /* BREAKPOINT: 608px // Keep figure--xl at full width but maintain correct margins */
+    @media screen and (min-width: 608px)
+    /*  When viewport exceeds the max-width of the article__body ...
+        [article__body max width] + [bootstrap margins]
+        =        34em           +            4em       = 38em x 16px = 608px  */
+        {
+        .figure--xl {
+          position: relative;
+          left:  calc((34em - 100vw + 0px) / 2);
+          /* Set figure flush-left with viewport.
+             [[.main-col-container width] - [view width]] / 2           */
+          width: calc(100vw - 30px);
+          /* Keep figure at full width but maintain correct margins
+             [full viewport width] - [total bootstrap padding of 30px]  */
+        }
+    }
+
+    /* BREAKPOINT: 880px (article__body left-aligned) // set figure--xl left-align with article__body */
+    @media screen and (min-width: 880px)
+    /*  When viewport exceeds the max-width of the article__header ... */
+    {
+        .figure--xl {
+            position: relative;
+            width: calc(100vw - 37px - ((100vw - 42em) / 2));
+            /* ... compensate for the centering of the article__body to keep figure--XL width within
+                   the viewport.
+                   [prior offset ??] - (([article__header margin??]) / 2 )        */
+            max-width: 94.5rem;
+            left: 0;
+        }
+    }
+
+    /* FIGURE XXL --------------------------------------------------------------------
+    Media size 4: figure--xxl. This class extends the figure object to be full viewport
+    width. In narrow and medium viewports it's almost identical to the figure--xl, but
+    in large viewports it gets gigantic. */
+
+        .figure--xxl {
+          position: relative;
+          width: calc(100vw);
+          /* Set figure to full width with no margins  */
+          left:  -15px;
+          /* Set figure flush-left with viewport.
+             Compensate for bootstrap padding.
+             -[bootstrap padding]                      */
+        }
+
+        .figure--xxl .caption {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+
+    /* BREAKPOINT: 608px // Keep figure--xl at full width but maintain correct margins */
+    @media screen and (min-width: 608px)
+    /*  When viewport exceeds the max-width of the article__body ...
+        [article__body max width] + [bootstrap margins]
+        =        34em           +            4em       = 38em x 16px = 608px  */
+        {
+        .figure--xxl {
+          position: relative;
+          width: calc(100vw);
+          /* Set figure to full width with no margins  */
+          left:  calc((34em - 100vw - 30px) / 2);
+          /* Set figure flush-left with viewport.
+             [ offset between text colunm and left viewport edge]
+             [ [.main-col-container width] - [view width] - [bootstrap padding] ] / 2           */
+        }
+    }
+
+
+    /* BREAKPOINT: 880px (article__body left-aligned) // set figure--xl left-align with article__body */
+    @media screen and (min-width: 880px)
+    /*  When viewport exceeds the max-width of the article__header ... */
+    {
+        .figure--xxl {
+            position: relative;
+            width: calc(100vw);
+            /* Set figure to full width with no margins   */
+            left:  calc(((34em - 100vw - 30px) / 2) + 4.5em);
+            /* Set figure flush-left with viewport.
+               Calc as above but compensate for the -4.5em left offset of the .main-col-container.
+               [calc as above] + 4.53em
+               [ [ [view width] - [txt col width] - [bootstrap padding] ] / 2 ] + 4.5em           */
+        }
+    }
+
+
+
+/* ASIDES  ========================================================================== */
+/* Asides are floated right. Content blocks that sit within the main text column (pullquotes,
+   figures, and ad boxes) are left. So when asides and these main column blocks come into
+   proximity whichever is the latter element will get pushed further down within the content
+   flow but without causing any gaps in the text column. However, this means that asides
+   will not always appear exactly where they're marked up relative to the text content.
+   Also, if a great number of asides and figures appear close together within the html this
+   could push them below the text and create a gap at the bottom of the article.
+   By default asides are not displayed in views narrower than 500px. */
+
+
+
+aside { }
+
+    .aside {
+        display: none; /* HIDE ASIDES AT SMALLEST VIEWPORTS & NARROW PHONES
+        !Use :has pseudo-class to display asides that contain essential story content! */
+        clear: right;
+        position: relative;
+        width: 42%;
+        float: right;
+        padding: 0.6em 0 0em 2em; /* Aligns asides flush right inside article__body */
+        margin-top: 1em;
+        margin-bottom: 2em;
+        z-index: 200;
+    }
+
+        /* Set content of asides in sans font */
+        .aside p, .aside ul {
+          font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .aside:has(> img) { /* Shows asides that contain img child element.
+        (Requires jquery, polyfill.js and this: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/ )
+        The polyfill is not currently so this display functionality has been implemented directly via js in ui/js/article_custom.js:
+        $(".aside:has(> img)").css("display", "block");
+        Issue thread: https://github.com/TheTyee/design-article.thetyee.ca/issues/236#issuecomment-232096002; */
+            display: block;
+        }
+
+            /* BREAKPOINT: < 500px // Style asides that contain img child element for mobile */
+            @media screen and (max-width: 499px)
+               {
+                .aside {
+                     width: 100%;
+                     float: none;
+                     padding: 0; /* ... show related-story block */
+                     margin-top: 2em;
+                }
+            }
+
+        aside#placehold {
+            display:none;
+        }
+
+        /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
+        @media screen and (min-width: 500px)
+           {
+            .aside {
+                display: block; /* ... show related-story block */
+            }
+        }
+
+        /* BREAKPOINT: 696px // gradually moves aside outward to align flush right w/ viewport */
+        @media screen and (min-width: 696px) {
+            /* When viewport exceeds width of article__body ...
+               [article__body max-width] - [article__body left margin]
+               =          34em           -          -5.5em
+               >> if this value is set in px then the 5.5em should be omitted. (612px) <<  */
+            .aside {
+                margin-right: calc(38.5em - 100vw);
+                /* ... aligns asides flush right with viewport. */
+
+            }
+        }
+
+        /* BREAKPOINT: 742px // keep aside flush right w/ viewport */
+        @media screen and (min-width: 742px) {
+        /* When viewport exceeds  ... 742px
+         */
+            .aside {
+                margin-right: calc( -1 * (((100vw - 34em) / 2) - (1em)));
+                /*         ( [make neg] [right textcol margin] - [right articleheader margin] )
+                           ( [make neg] [view - textcol] / 2)  - [right articleheader margin] )
+
+                ... compensate for the centering of the article__body to keep asides flush
+                    right with viewport.  */
+            }
+        }
+
+        /* BREAKPOINT: 880px //  */
+        @media screen and (min-width: 880px)
+        /* When viewport exceeds the max-width of the article__header and article__body shifts to
+           to left-align with article__header ... */
+
+           {
+            .aside {
+                margin-right: calc( -1 * ( ((100vw - 34em) / 2) - (1em) ) - 4.5em );
+                /*         (                      [prior breakpoint calc] - 4.5em )
+
+                ... compensate for the left-align shift of the article__body to keep asides flush
+                    right with viewport.  */
+            }
+        }
+
+        /* BREAKPOINT: 1025px //  */
+        @media screen and (min-width: 1025px)
+        /* When viewport exceeds the max desired width of the page ... */
+
+           {
+            .aside {
+                margin-right: -15em;/* ... keep the aside at a constant offset from the text column (article__body) */
+            }
+        }
+
+        .aside--1stposition {
+            margin-top: 0;
+        }
+
+        .aside--pullquote { }
+
+
+
+/* AUTHOR INFO  ========================================================================== */
+
+.author-info {
+  margin-top: 0.75em;
+  margin-bottom: 1em;
+  padding: 0.45em 0  0.5em 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: inherit;
+  font-weight: 600;
+}
+
+    .author-info img{
+      float: left;
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+      margin-right: 0.75em;
+      height: 2.3em;
+      width: auto;
+      background-color: none;
+      border-radius: 50%;
+    }
+
+.author-info__bio img {
+display:inline-block;
+width: auto !important;
+height: auto !important;
+float: none;
+margin: 0;
+}
+
+    .author-info__date {
+      display: block;
+      font-weight: 300;
+    }
+
+	 .author-more {
+      display:none;
+    }
+
+
+/* fix date spacing on bric
+ @media screen and (min-width: 600px) {
+   .author-info__date {
+  margin-left:-4px;
+   }
+ }
+ end fix */ /* This was causing a gap at the bottom of author-info__text --AG */
+
+    .author-info__bio {
+      display: none;
+      padding-top: 0.15em;
+      font-size: 0.8em;
+      font-weight: 300;
+    }
+
+    .author-info div {
+      position: relative;
+    }
+
+    .author-info p {
+      margin-bottom: 0;
+    }
+
+    /* BREAKPOINT: 600px // Display author bio teaser, enlarge author photo, set date inline */
+    @media screen and (min-width: 600px) {
+
+        /* Apply margin to author text only if an img is present.
+           Otherwise, the text should align flush left.  */
+        img ~ .author-info__text {
+          margin-left: 4.35em;
+        }
+
+
+        .author-info img{
+          height: 3.6em;
+        }
+
+        .author-info__date {
+          display: inline;
+          font-weight: 600;
+        }
+
+        .author-info__date:before {
+          content:", ";
+          margin-left: -3px
+        }
+
+        .author-info__bio {
+          display: block;
+        }
+
+    }
+
+
+
+
+/* BIO PAGE =========================================================================== */
+
+.headshot-bio {
+    float: none;
+    object-fit: cover;
+    -o-object-fit: cover;
+    margin-top: 1.95em;
+    height: 6em;
+    width: 6em;
+    background-color: none;
+    border-radius: 50%;
+}
+
+ /* BREAKPOINT: 1200px // Add padding to make text col narrower */
+    @media screen and (min-width: 1200px) {
+        .biopage__text {
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+    }
+
+
+
+
+
+/* TOOL-BAR  ========================================================================== */
+/* This object is a mess!
+   Might be best to start again from scratch using the basic bootstrap button markup, like I already
+   started in the messaging-zone buttons.
+   For some reason the bootstrap default button html & css wasn't working. -- AG */
+
+
+.tool-bar {
+  margin: .85em 0 .3em 0;
+}
+      /* Add top border if article is a poll (has no author-info block) */
+      .article-poll .article__header .tool-bar {
+          padding-top: 1em;
+          border-top: 1px solid;
+          border-color: inherit;
+      }
+
+    .tool-bar ul {
+          display: block;
+          margin: 0;
+          padding: 0;
+          font-size: em;
+          list-style: none;
+    }
+
+    .tool-bar li {
+        position: relative;
+        float: left;
+        margin-right: .7em;
+    }
+
+    .tool-bar .count {
+      width: 35px;
+      height: 40px;
+
+    }
+
+  .tool-bar .count img {
+    position: absolute;
+    top: 10px;
+    width: auto;
+    height: 15px !important;
+    left: -15px;
+  }
+
+    #sharecount .count {
+      position: absolute;
+      top:0px;
+    }
+
+    .tool-bar .count .text {
+      font-size: 10px;
+      position: absolute;
+      bottom:0px;
+    }
+    @media screen and (max-width: 400px) {
+
+      .tool-bar a .text, .tool-bar li.count img {
+
+        display:none;
+      }
+    }
+
+        /* TOOL-BAR BUTTONS */
+
+        .btn-social-icon { /* This is adapted from bootstrap */
+            position:relative;
+            padding-left:44px;
+            text-align:left;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            height:32px;
+            width:32px;
+            padding:0;
+        }
+
+            .btn-social-icon>:first-child {/* This is adapted from bootstrap */
+                position:absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 30px;
+                line-height: 32px;
+                text-align: center;
+                border-right: none;
+            }
+
+        .fa:before, .btn-social-icon .glyphicon:before {
+          display: inline-block;
+          height: 100%;
+          font-size: 1.5em;
+        }
+
+        .btn-twitter {
+              color: #fff;
+              background-color: #55acee;
+        }
+
+        .btn-facebook {
+              color: #fff;
+              background-color: #3B5998;
+        }
+
+        .btn-email {
+              color: #fff;
+              background-color: grey;
+        }
+
+        .btn-join {
+              position: relative;
+              top: .15em;
+              padding-left: 0em;
+              padding-right: 0em;
+              background-color: transparent;
+              text-transform: uppercase;
+        }
+
+            .btn-join span {
+                display: inline-block;
+                vertical-align: top;
+                padding-top: .1em;
+                font-weight: 700
+            }
+
+            .btn-join .dollar-heart-svg {
+                height: 1.75em;
+            }
+
+
+            .btn-join:hover .accent-color {
+                fill: #6F9400; /* legacy fallback */
+                fill: var(--link-colour);
+                cursor: pointer;
+            }
+
+        .btn-print, .btn-comment {
+              position: relative;
+              top: .25em;
+              padding-left: 0em;
+              padding-right: 0em;
+              background-color: transparent;
+              font-size: 1.2em;
+        }
+
+            @media screen and (max-width: 400px) {
+                .btn-print {
+                  display:none;
+                }
+
+            }
+
+        /* HIDE BUTTONS ON POLL STORIES */
+        .article-poll .btn-join, .article-poll .btn-comment, .article-poll .str-comment {
+            display: none;
+        }
+
+        .btn-join:hover, .btn-print:hover, .btn-comment:hover {
+              cursor: pointer;
+        }
+
+        .messaging-block--share .btn {
+            width: 45px;
+        }
+
+        /* BREAKPOINT: small screens // collapse messaging block button labels */
+        .messaging-block--share-button--label {
+              display: none;
+        }
+
+        /* BREAKPOINT: 540px // show messaging block button labels */
+        @media screen and (min-width: 540px) {
+
+            .messaging-block--share-button--label {
+              display: inline;
+            }
+            .messaging-block--share .btn {
+                width: auto;
+            }
+        }
+
+
+
+
+/* AD BANNER  ========================================================================== */
+
+.ad-banner {
+  background-color: #606060;
+  padding: 0.5em 0 0.5em 0;
+}
+
+    .ad-banner img {
+        display: block;
+        margin: 0em auto 0em auto;
+        width: 728px;
+        height: 90px;
+    }
+
+
+
+/* AD BOXES  ========================================================================== */
+/* Ad boxes are floated left so that they don't collide with any nearby asides. Asides are
+   floated right, so when ad boxes and asides come into proximity the latter element will
+   get pushed further down within the content flow but without causing any gaps in the text
+   column. However, this means that ad boxes and asides will not always appear exactly where
+   they're marked up relative to the text content.  */
+
+.ad-box {
+  float: left; /* This prevents the ad-block from colliding with any asides -AG. Disabled because causes ads to 'clump' sometimes and to break up paragraphs. Watching for the collision issue couln't reproduce -BC
+  I've re-enabled this because of all the reports about ads colliding with asides' */
+  margin: 1em 0 1.75em 0;
+  border-color: inherit;
+  border-top: 1px solid #ddd; /* Ad block borders are paler than default border */
+  border-bottom: 1px solid #ddd; /* Ad block borders are paler than default border */
+  padding-bottom: 1.333em;
+  width: 100%;
+}
+
+    .ad-box img {
+        display: block;
+        margin: 0em auto 0em auto;
+        width: 300px;
+        max-width: 100%;
+        height: auto;
+    }
+
+     .ad-box:before {
+       display: block;
+       margin: 0.8em auto 2em auto;
+       margin-bottom: 1.5em; /* Aligns the ad graphic with the story-items in the index list.
+                                Should be 0.5em less than .index-list-spacing's' margin-top. */
+       text-align: center;
+       content: "ADVERTISEMENT";
+       color: #ACACAC;
+       font-size: .6em;
+       line-height:1em;
+       font-weight: 400;
+       letter-spacing: 0.15em;
+    }
+
+    .ad-box--no-label {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .ad-box--no-label:before {
+      display: none;
+    }
+
+    /* Hide bigbox ads when ad blocker is active */
+    .ad-blocker .ad-box--bigbox {
+        background-color: #e9e9e9;
+        display: none;
+    }
+
+    /* BREAKPOINT */
+    @media screen and (min-width: 976px) {
+
+      .ad-box--bigbox {
+          float: none; /* Float can be removed if overflow is set to auto. Prevents buggy wrapping of body text in
+          Firefox and also allows for more accurate ad positioning by editors. */
+          clear: none;
+          margin-top: 1.5em;
+          overflow: auto; /* Prevents collision with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
+	min-height:315px;
+      }
+
+    }
+
+
+    .index-page__story-list .ad-box--bigbox { }
+
+        /* BREAKPOINT */
+        @media screen and (min-width: 992px){
+
+            .index-page__story-list .ad-box--bigbox {
+                overflow: visible; /* Prevents bigbox ads from getting clipped on index-pages in md views. */
+                margin-top: 0em; /* Aligns the ad graphic with the story-items in the index list. */
+                border: 0; /* removes border when ad is in sidebar */
+                padding-top: 1px; /* Compensates for removal of border(maintains alignment) */
+            }
+        }
+
+
+
+    /* HALFPAGE AD  ---------------------------------------------- */
+    /* Halfpage ads are marked up within the featured-media section and they
+    are only visible on the widest screens. */
+
+    .ad-box--halfpage {
+        display: none;
+        height: 600px;
+        margin-bottom: 3em;
+    }
+
+        .ad-blocker .ad-box--halfpage {
+            background-color: #e9e9e9;
+        }
+
+        .ad-box--halfpage img {
+            height: 600px;
+        }
+
+        /* BREAKPOINT: 1400px */
+        @media screen and (min-width: 1400px) {
+
+
+            .ad-box--halfpage {
+                display: block;
+                position: relative;
+                float:right;
+                margin-top: 0.24em;
+                margin-right: -19em;
+                width: 300px;
+                height: 600px;
+                background-color: none;
+                border: none;
+            }
+
+            .ad-box--halfpage:before {
+               display: none;
+               margin-top: 0;
+            }
+        }
+
+/*
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+      .featured-media .figure, .featured-media figcaption {
+        width:calc(100vw - ( 325px + 1em) );
+      }
+
+      section.featured-media {
+        margin:0;
+        padding:0;
+        width: 100%;
+        max-width:100%;
+      }
+
+      .featured-media .figure img {
+        height: auto;
+      }
+        .ad-box--halfpage {
+            display: block;
+            position: relative;
+            float:right;
+            margin-top: 0.24em;
+            margin-right: 0;
+            width: 300px;
+            height: 600px;
+            background-color: none;
+            border: none;
+        }
+
+        .ad-box--halfpage:before {
+           display: none;
+           margin-top: 0;
+        }
+
+      .main-col-container .container-fluid p:nth-child(-n+3) {
+
+      }
+
+
+    }
+
+    */
+
+
+    @media screen and (min-width: 1200px) {
+
+
+        .ad-box--halfpage {
+            display: block;
+            position: relative;
+            float:right;
+            margin-top: 0.24em;
+            margin-right: -19em;
+            width: 300px;
+            height: 600px;
+            background-color: none;
+            border: none;
+        }
+
+        .ad-box--halfpage:before {
+           display: none;
+           margin-top: 0;
+        }
+    }
+
+    /* bryan small-med feature image hack for old stories */
+    @media screen and (min-width: 760px) {
+        .ad-box--halfpage.smaller {
+            display: block;
+            position: relative;
+            float:right;
+            margin-top: 0.24em;
+            margin-right: calc( -1 * ( ((100vw - 22em) / 2) - (4em) ) );
+            width: 300px;
+            height: 600px;
+            background-color: none;
+            border: none;
+        }
+
+        .ad-box--halfpage.smaller:before {
+           display: none;
+           margin-top: 0;
+        }
+    }
+
+
+    @media screen and (min-width: 880px) {
+        .ad-box--halfpage.smaller {
+          margin-right: calc( -1 * ( ((100vw - 22em) / 2) - (1em) ) );
+        }
+    }
+
+    @media screen and (min-width: 1100px) {
+        .ad-box--halfpage.smaller {
+        margin-right: -18em;
+        }
+
+    }
+    /* end bryan hack */
+
+    /* Show ad label ONLY when ad blocker is active */
+    .ad-blocker .ad-box--halfpage:before {
+       display: block;
+       margin-top: 2em;
+    }
+
+
+
+    /* POLL SPONSOR AD  ---------------------------------------------- */
+    /* linked client image would only be 300x250. Graphic still delivered as it was
+    in the past: hard-coded into page, not trafficked through DFP.
+    Use this markup to place the ad:
+    {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--poll-sponsor"
+    ad-slot="ad-300x250" ad-source="/ui/img/client_image-placeholder-300x250.png" %}
+    The ad needs to get marked up twice (similar to fact-boxes): Once at the beginning of article__body and
+    again at the end (before the final fact-box).
+    By default CSS will display only the 2nd one, but at viewports wider than 1200px
+    it will display only the 1st one and put it in the margin. */
+
+    .ad-box--poll-sponsor {
+            float:none;
+            border: none;
+            margin-top: 2em;
+            margin-bottom: 0;
+        }
+
+    /* Hide first poll-sponsor ad */
+    .ad-box--poll-sponsor:first-of-type {
+        display: none;
+    }
+
+    .ad-box--poll-sponsor:before {
+           display: block;
+           margin: .8em auto 2em auto;
+           text-align: center;
+           content: "this poll sponsored by";
+           text-transform: uppercase;
+           color: #ACACAC;
+           font-size: .6em;
+           line-height:1em;
+           font-weight: 400;
+           letter-spacing: 0.15em;
+        }
+
+      #sidebar {
+        height: auto;
+      }
+
+
+    @media screen and (min-width: 1200px) {
+
+        /* Hide poll-sponsor ad */
+        .ad-box--poll-sponsor {
+            display: none;
+        }
+
+        /* Show only first poll-sponsor ad */
+        .ad-box--poll-sponsor:first-of-type {
+            display: block;
+            overflow:hidden;
+            position: relative;
+            float: right;
+            margin-top: 0.24em;
+            margin-right: -19em;
+            margin-bottom: 1.75em;
+            width: 300px;
+            height: 300px;
+            background-color: none;
+            border: none;
+        }
+
+        .ad-box--poll-sponsor:before {
+           margin-top: 0;
+        }
+    }
+
+
+
+/* WUFOO POLL STYLING  ==========================================================================
+ */
+
+/* Prevents the widgets from clearing and creating huge gaps in page. */
+div.fc {
+    clear: none;
+}
+
+div.embedded-poll {
+    background-color: #f1f8ec;
+    padding: 20px;
+}
+
+/* Style headings in poll report widgets. */
+.fc caption h4 {
+    font-size:24px !important;
+    font-family: 'Source Sans Pro', arial, sans-serif;
+    font-weight: 600 !important;
+    color: #444;
+}
+
+
+
+/* SLIDESHOW  ========================================================================== */
+
+.slideshow {
+  /* clear:right; */
+  float:left;
+  width: 100%;
+}
+
+
+
+/* SERIES LINK  ========================================================================== */
+
+.series-link {
+  margin-bottom: 0em;
+  border: none;
+  font-style:italic;
+}
+
+.series-link a {
+  border: none !important;
+}
+
+
+  .series-link .arrow-svg {
+      position: relative;
+      top: .125em;
+      left: .125em;
+  }
+
+
+/* MESSAGING BLOCK  ========================================================================== */
+
+.messaging-zone {
+    padding-bottom: 2em;
+}
+
+    .index-page__story-list .messaging-zone {
+        padding-bottom: 0em; /* Required because .index-list-spacing sets spacing with margin
+                                but messaging-zone sets spacing with padding. :( */
+    }
+
+.messaging-block {
+    padding-bottom: 1.5em;
+    /* border-top: 1px solid #A8A8A8;
+       border-bottom: 1px solid #A8A8A8; */
+}
+
+    .messaging-block h3 {
+      max-width: 325px; /* prevents bad line breaks */
+      margin-top: 0;
+      margin-bottom: 0px;
+      padding-top: 0.5em;
+      font-size: 1.1em;
+      line-height: 1.33em;
+      font-weight: 700;
+    }
+
+        aside .messaging-block h3 {
+            font-size: 1em;
+        }
+
+    .messaging-block--ask span{
+      display: inline-block;
+      max-width: 325px; /* prevents bad line breaks */
+      padding-top: 0em;
+      font-size: 1.1em;
+      line-height: 1.33em;
+      font-weight: 600;
+      /* -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto; */
+      hyphens: none;
+    }
+
+        aside .messaging-block--ask span {
+            font-size: 1em;
+        }
+
+        aside .messaging-block--ask .dollar-heart-svg {
+            margin-right: -.35em;
+            margin-left: -.25em;
+        }
+
+    .messaging-zone .messaging-block {
+      border-top: none;
+      border-bottom: 1px solid #A8A8A8;
+      padding-top: .75em;
+      border-color: inherit;
+    }
+
+    .messaging-block .tool-bar {
+      margin-top: 0.5em;
+    }
+
+    .messaging-zone .messaging-block:first-child {
+      border-top: 1px solid;
+      border-color: inherit;
+    }
+
+    .messaging-block .help-block {
+        margin-bottom: -.5em;
+    }
+
+    /* BREAKPOINT: 400px // Allow longer text lines. Line breaks aren't a problem beyond this width. */
+    @media screen and (min-width: 400px) {
+
+        .messaging-block h3 {
+          max-width: 100%;
+        }
+
+        .messaging-block--ask span{
+          max-width: 100%;
+        }
+    }
+
+.btn--subscribe {
+  color: white; color: var(--text-colour);
+  background-color: #82AD00;
+  background-color: var(--brand-colour--text);
+}
+
+
+
+/* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
+
+    .messaging-block--subscribe form, .messaging-block--subscribe--events form {
+      margin-top: .5em;
+      margin-bottom: 0;
+    }
+
+    .messaging-block--subscribe select.subscribe-frequency, .messaging-block--subscribe--events select.subscribe-frequency {
+        margin-top: .35em;
+        margin-bottom: .35em;
+    }
+
+    .messaging-block--subscribe .input-group select, .messaging-block--subscribe--events .input-group select {
+        background-color: transparent;
+        border: none;
+        height: 18px;
+    }
+
+    /* On INDEX PAGES reverse the display of horizontal vs stacked form layouts.
+       The subscribe-block will be in the sidebar at medium and large views so it
+       should show the stacked layout in those views as well as in xs views. But in
+       sm views the horizontal layout should be shown.
+       This is a bit nuts as it subverts the bootstrap layout classes. */
+
+    .index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+      display: block !important; /* Show the stacked layout in all views. */
+    }
+
+        /* BREAKPOINT: 768px-991px // Hide stacked form layout in small views. */
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+
+            .index-page__story-list .messaging-block--subscribe form.hidden-sm.hidden-md.hidden-lg {
+                display: none !important;
+            }
+        }
+
+        /* BREAKPOINT: 992px // Hide horizontal form layout in medium medium and larger.
+                                Horizontal layout is already hidden in xs views. */
+        @media screen and (min-width: 992px) {
+
+            .index-page__story-list .messaging-block--subscribe form.hidden-xs {
+                display: none !important;
+            }
+        }
+
+/* MESSAGING-BLOCK-SHARE  ========================================================================== */
+
+/* TODO this might be too general and should probably be limited to this block, or moved to a more
+ * general location in the CSS
+*/
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    float: none;
+    margin-left: 0;
+}
+label.error {
+    font-weight: bold;
+    font-style: italic;
+    color: #b94a48;
+}
+label.valid {
+    font-weight: bold;
+    font-style: italic;
+    color: #468847;
+}
+
+.modal form#share input[type="text"], .modal form#share input[type="email"], .modal form#share textarea {
+    width: 90%;
+}
+
+
+/* RELATED STORY  ========================================================================== */
+
+.related-story {
+    position: relative;
+    background-color: #F4F4F4;
+    border-top: 0px solid;
+    border-bottom: 0px solid;
+    padding-bottom: .75em;
+}
+
+.related-story:hover {
+    /* background-color: #eaeaea; */
+    background-color: #ffda3733;
+}
+
+    .related-story h6 {
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+        border-bottom: 1px solid;
+        border-top: 1px solid;
+        font-size: 0.9em;
+        color: #839800;
+        text-transform: uppercase;
+    }
+
+
+
+/* STORY-ITEM  ==========================================================================
+   This object is nested inside related-story blocks.
+   It's also used on index pages and the CSS is partly used in the latest-stories block. */
+
+.story-item { }
+
+    .story-item__description {
+      margin: 0.75em 1rem 0 1rem;
+      font-size: 0.8em;
+      line-height: 1.4em;
+      font-weight: 300
+    }
+
+        .story-item__description:first-child {
+          padding-top: .25em;
+        }
+
+        .story-item__description h5 {
+          margin: .66em 0 .33em;
+          padding: 0;
+          font-size: 1.33em;
+          line-height: 1.35em;
+        }
+
+        .story-item--deck {
+            margin-bottom: .66em;
+        }
+
+        .story-item__date, .story-item__author, .story-item__date--event {
+          font-weight: 600;
+          font-size: .85em;
+          /* text-transform: uppercase; */
+        }
+
+        .story-item__author {
+          color: #90AD00;  /* IE fallback */
+          color: var(--text-colour);
+        }
+
+
+        .story-item--index-page {
+            position: relative;
+        }
+
+            .story-item--index-page .story-item__description {
+              margin-right: 0;
+              margin-left: 0;
+              font-size: 1em;
+            }
+
+            .index-page__featured-story .story-item--index-page {
+              margin-top: 0em;
+            }
+
+                /* BREAKPOINT: 768px // Sets bigger headline for featured-story in larger views (sm and wider) */
+                @media (min-width: 768px) {
+                    .index-page__featured-story .story-item--index-page .story-item__description h5, .index-page__featured-story.story-item--index-page .story-item__description h5 {
+                      font-size: 1.75em;
+                    }
+                }
+
+             .story-item__description h5 a {
+              color: #424242;
+            }
+
+            .story-item__description h5 a:hover {
+                color: #6F9400; /* IE fallback */
+                color: var(--brand-colour--text);
+            }
+
+            .story-item--event { }
+
+                .index-page__featured-story .story-item--event__details {
+                    margin-bottom: -.5em; */
+                }
+
+                .story-item__date--event {
+                    display: block;
+                }
+
+                .index-page__story-list--archived-events .button.button--get-tickets {
+                    display:none;
+                }
+
+
+
+
+/* TEXT-BLOCK-CONTAINER  ================================================================
+    This css abstracts the styling of text container that occur within asides.
+    (E.g. related-event block) (Also fact-box, although fact-box currently has its own css
+    rules due to its dual presence within asides and within the main text column)
+    NOTE: this class is also used for presents-box--index-page which appears within the main
+    column. */
+
+.text-block-container {
+    position: relative; /* required for the absolute positioning of the badge. */
+    margin-top: 1em;
+    border-top: 8px solid;
+    border-bottom: 1px solid;
+    border-color: #444;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0.5em;
+    background-color: white;
+}
+
+    .text-block-container h3 {
+          display:table;
+          margin-top: 0;
+          margin-bottom: .75em;
+          padding-bottom: 0em;
+          font-family: Georgia, Serif;
+          font-size: .85em;
+          line-height: 1.25em;
+          font-weight:700;
+          text-align: center;
+          text-transform: capitalize;
+    }
+
+    .text-block-container h4 {
+          display:table;
+          margin-top: 1em;
+          margin-bottom: 1em;
+          padding-bottom: 0em;
+          font-size: 1em;
+          font-weight:700;
+          text-transform: uppercase;
+    }
+
+    .text-block-container h5 {
+          margin-top: 1.6em;
+          margin-bottom: 0.25em;
+          padding-bottom: 0em;
+          font-family: 'Source Sans Pro', sans-serif;
+          font-size: .75em;
+          font-weight:400;
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: 0.07em;
+    }
+
+    .text-block-container p{
+      font-size: 0.8em;
+    }
+
+    .text-block-container ul {
+          line-height: 2.5rem;
+          list-style: none outside;
+          padding-left: 0em;
+    }
+
+    .text-block-container ul a {
+          font-size: .8em;
+          font-weight: 600;
+    }
+
+    .text-block-container ul li {
+          margin-bottom: 1rem;
+    }
+
+
+
+/* SERIES-BOX  ================================================================
+    This object mostly just employs the default text-block-container style. An
+    identifying badge gets positioned via the .badge abstraction. The badge also gets
+    added to the article headline. */
+
+.series-box {
+    margin-top: -1em; /* aligns the box's top-border with the first line the
+                         article's body text. */
+}
+
+
+
+/* RELATED-EVENT-BOX  ================================================================
+    This object mostly just employs the default text-block-container style. An
+    identifying badge gets positioned via the .badge abstraction. The badge also gets
+    added to the article headline. */
+
+.related-event-box { }
+
+
+
+/* PRESENTS-BOX  ================================================================
+    This object mostly just employs the default text-block-container style. An
+    identifying badge gets positioned via the .badge abstraction.
+    Similar to the fact, the presents-box appears at the bottom of the article by
+    default, but appears in the sidebar in wider viewports. This is done by changing
+    the .presents-box display property based on location/context and viewport width.
+    The additional .hide-on-narrow-vp class gets applied to the containing
+    <aside> because it needs to get hidden earlier than other asides do. (This ugly
+    class could probably be eliminated if asides were simply a class rather than a
+    container, or if an aside's margins were applied to it's contents instead of the
+    container itself.)
+     */
+
+.presents-box {
+    padding-bottom: 0;
+}
+
+    .presents-box h5 {
+        margin-bottom: 1em;
+    }
+
+    .presents-box li a {
+        text-transform: capitalize;
+        font-weight: 700;
+    }
+
+    .presents-box .arrow-svg {
+        height: .95em;
+        margin-top: .125em;
+    }
+
+    .presents-box ul {
+        margin-bottom: 0;
+    } /* overrides bootstrap ul margin */
+
+    .presents-box li {
+        padding-top: .66em;
+        border-top: 1px solid;
+    }
+
+        .presents-box--index-page li {
+            min-height: 5.5em;
+        }
+
+
+    .presents-box p {
+        /* display: inline; */
+    }
+
+    .presents-box li img {
+        float: left;
+        margin-top: 0.3em;
+        margin-bottom: 0em;
+        padding-right: .75em;
+        height: auto;
+        max-width: 5.5em;
+        background-color: none;
+    }
+
+.presents-col-container {
+    margin-top: -1.5em;
+    margin-bottom: 3em;
+}
+
+    .presents-col-container .presents-box h5 {
+        margin-top: 1.75em;
+    }
+
+    .presents-col-container .presents-box li {
+        min-height: 4.75em;
+    }
+
+
+    /*  IN WIDER VIEWPORTS:
+        - don't show the fact-box at the bottom of the article-body
+        - show the aside containing the fact-bax (.hide-on-narrow-vp)
+        - show the factbox within an aside */
+    @media screen and (min-width: 939px) {
+
+        .presents-box {
+            display: none;
+        }
+
+        .aside .presents-box {
+            display: block;
+        }
+    }
+
+
+    /* PRESENTS-BOX ON INDEX PAGES (e.g. section pages) */
+    .index-page__story-list .presents-box { }
+
+        .index-page__story-list .presents-box {
+            display: block;  /* Show presents-box at all views on index-pages. */
+        }
+
+        .presents-box.index-list-spacing {
+            margin-top: 2em;
+        }  /* Matches margin to the common index-list-spacing margin */
+
+        .presents-box--index-page li img {
+            max-width: 7em;
+        }   /* Makes thumbnail bigger on index pages (e.g. section pages) */
+
+
+
+
+/* BADGE  ================================================================
+    Use this to position a badge on an aside box or on the article headline  */
+
+.badge { }
+
+    .badge--aside-placement {
+        display: block;
+        position:absolute;
+        left: calc(100% / 2 - 2.125em);
+        top: -5.4rem;
+        width: auto;
+        transform: scale(.8);
+    }
+
+        .badge--aside-placement--presents {
+            /* left: calc(100% / 2 - 2.5em);
+            top: -5.3rem;
+            transform: scale(.88); */
+        }
+
+    .badge--headline-placement {
+        display: block;
+        position:relative;
+        float:left;
+        margin-left: -.65em;
+        margin-top: .5em;
+        transform: scale(.8);
+    }
+
+            .badge--headline-placement--presents {  /* Moves presents badge to align with a stacked h6 category label. */
+                margin-top: 1.55em;
+            }
+
+            .badge--headline-placement--presents--partner {  /* Moves presents badge on presents-partner page to align with h6 category label (not stacked). */
+                margin-top: 1em;
+            }
+
+                /* BREAKPOINT: 593px // Moves presents badge to align with h6 when it no longer breaks across lines */
+                @media screen and (min-width: 593px) {
+                    .badge--headline-placement--presents {
+                        margin-top: 1.125em;
+                    }
+                }
+
+            .badge--headline-placement--barometer, .badge--headline-placement--partner {  /* Moves presents badge to align with a stacked h6 category label. */
+                margin-top: 1em;
+            }
+
+                /* BREAKPOINT: 500px // Moves presents badge to align with h6 */
+                @media screen and (min-width: 500px) {
+                    .badge--headline-placement--barometer, .badge--headline-placement--partner {
+                        margin-top: 1em;
+                    }
+
+                }
+
+         /* BREAKPOINT: 500px // Make headline series badge bigger */
+        @media screen and (min-width: 500px) {
+            .badge--headline-placement {
+                transform: scale(.95);
+                margin-right: .25em;
+            }
+        }
+
+         /* BREAKPOINT: 1024px // Move headline series badge into left page margin */
+        @media screen and (min-width: 1024px) {
+            .badge--headline-placement {
+                margin-top: 4em;
+                margin-left: -5.25em;
+                transform: scale(1.15);
+            }
+
+             .badge--headline-placement--presents { /* Aligns presents badge with first letter of headline. */
+                        margin-top: 4.4em;
+                    }
+
+             .badge--headline-placement--barometer, .badge--headline-placement--partner, .badge--headline-placement--presents--partner { /* Aligns Barometer badge with first letter of headline. */
+                        margin-top: 4.4em;
+                    }
+        }
+
+
+    .badge--story-item-placement {
+        display: block;
+        z-index: 10; /* Keeps badge on top during photo hover */
+        position: absolute;
+        width: auto;
+        left: -1em;
+        top: -1.5em;
+        transform: scale(1);
+        padding-left: inherit; /* Adjusts badge position when there's padding on the parent (e.g. Bootstrap cols) */
+    }
+
+        /* BREAKPOINT: 768px // Enlarge badges on featured-stories in wider layouts */
+        @media screen and (min-width: 768px) {
+            .index-page__featured-story .badge--story-item-placement {
+                transform: scale(1.35);
+                left: -.75em;
+                top: -1em;
+            }
+
+            .index-page__featured-story .badge--story-item-placement:hover {
+                transform: scale(1.45)!important;
+            }
+        }
+
+
+     /*  These 2 rules are deprecated because pseudo content doesn't
+         allow weblinks. */
+
+     /*
+    .series-badge--box:before {
+        content: url(/ui/img/badge-series.svg);
+        display: block;
+        position:absolute;
+        left: calc(100% / 2 - .75em);
+        top: -3.3rem;
+        width: 2px;
+        transform: scale(.8);
+    }
+
+    .series-badge--headline:before {
+        content: url(/ui/img/badge-series.svg);
+        display: block;
+        position:absolute;
+    }
+    */
+
+
+
+/* FACT-BOX  ==========================================================================
+    The fact appears at the bottom of the article by default, but appears
+    in the sidebar in wider viewports. This is done by changing the .fact-box
+    display property based on location/context and viewport width.
+    The additional .hide-on-narrow-vp class gets applied to the containing
+    <aside> because it needs to get hidden earlier than other asides do. (This ugly
+    class could probably be eliminated if asides were simply a class rather than a
+    container, or if an aside's margins were applied to it's contents instead of the
+    container itself.) */
+
+
+.fact-box {
+    clear: both;
+    background-color: #F4F4F4;
+    border-top: none;
+    padding: .33em 1em 1em 1em;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    overflow: auto;
+}
+
+    #fact-box-1 {}
+
+    .fact-box p, .fact-box ul {
+      font-size: .8em !important;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .fact-box ul {
+     padding-left: 17px;
+    }
+
+    .fact-box h4 {
+      display:table;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-bottom: 0em;
+      font-size: 1em;
+      font-weight:600;
+      border-bottom: 1px solid #A8A8A8;
+    }
+
+    /*  In default narrow views don't show the fact-box within an aside. */
+    .aside .fact-box {
+        display: none;
+    }
+
+
+    /*  FACT-BOX--EXPLAINER
+        Explainers provide secondary infomation about a story. E.g.: sponsorship credit.
+        */
+    .fact-box--explainer {
+        padding-top: 1em;
+        font-style: italic;
+    }
+
+    .fact-box--explainer h4 {
+        display: none; /* explainers never have headers */
+    }
+
+        /*  Bring explainers into closer proximity with the preceding series-box */
+        .aside .fact-box--explainer {
+            margin-top: -2em !important;
+            border: none !important;
+        }
+
+
+        /*  Adjust explainer position to align with first line of text col when not preceded by a series-box */
+        .aside .fact-box--explainer:first-child {
+            margin-top: -1.5em !important;
+        }
+
+    /*  In default narrow views show the fact-box anchor link text (the html for this should
+        be placed inside article body text. */
+    .fact-box__anchor-link {
+      display: inline;
+    }
+
+    .fact-box--CTA {
+        background-color: transparent;
+        padding: 0;
+        margin-top: 0em;
+        margin-bottom: 0em;
+    }
+
+        .fact-box--CTA p {
+            font-size: 1em
+        }
+
+
+        /* .fact-box--CTA:before {
+            display: block;
+            border-radius: 50%;
+            height: 6em;
+            width: 6em;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            content:"";
+            background: url(/ui/img/mychaylo-prystupa.jpg) no-repeat;
+            background-size: 100%;
+        } */
+
+        .fact-box--CTA h4 {
+            border-bottom: none;
+            font-size: 1.33em;
+            color: #82AD00; /* IE fallback */
+            color: var(--brand-colour--text-darker);
+        }
+
+        img.fact-box--headshot {
+            float: left;
+            margin-top: 0em;
+            margin-bottom: 0em;
+            margin-right: 1.25em;
+            height: 6em;
+            width: auto;
+            background-color: none;
+            border-radius: 50%;
+        }
+
+        .fact-box--CTA.fact-box--headshot h4 {
+            margin-bottom:0;
+        } /* Narrows gap between CTA and contact info */
+
+
+    .hide-on-narrow-vp {
+      display: none;
+    } /* .hide-on-narrow-vp class gets applied to the containing
+    <aside> so that its margin doesn't cut into the the text column when
+    the contained fact box is hidden. (This ugly class could probably be eliminated if
+    asides were simply a class rather than a container, or if an aside's
+    margins were applied to it's contents instead of the container itself.) */
+
+    /*  IN WIDER VIEWPORTS:
+        - don't show the fact-box at the bottom of the article-body
+        - show the aside containing the fact-bax (.hide-on-narrow-vp)
+        - show the factbox within an aside
+        - hide fact-box text anchor link */
+    @media screen and (min-width: 939px) {
+
+        .fact-box {
+            display: none;
+        }
+
+            .index-page__story-list .fact-box {
+                display:block;
+                background-color: transparent;
+                margin-top:2em;
+                margin-bottom: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .index-page__story-list .fact-box h4 {
+                margin-top:0;
+            }
+
+        .hide-on-narrow-vp {
+          display: block;
+        }
+
+        .aside .fact-box {
+            display: block;
+            margin-top: -1em;
+            margin-bottom: 2em;
+            padding-top: 0;
+            padding-left: 0;
+            padding-right: 0;
+            border-top: 8px solid;
+            border-bottom: 1px solid;
+            border-color: #444;
+            background-color: white;
+        }
+
+            .fact-box h4 {
+              border: none;
+            }
+
+        .fact-box__anchor-link {
+          display: none;
+        }
+
+        .aside .fact-box--no_border {
+            margin-top: -1.6em;
+            border: none;
+        }
+
+        .fact-box--no_border h4 {
+            margin-top: 0em;
+        }
+
+        img.fact-box--headshot {
+            float: none;
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+            margin-right: 0.75em;
+            height: 6em;
+            width: auto;
+            background-color: none;
+            border-radius: 50%;
+        }
+    }
+
+
+
+/* TWITTER WIDGET  ==========================================================================
+   Reduces space created by aside margins between this widget and the preceding fact-box. */
+
+.poll-sponsor-twitter {
+    margin-top: -5em;
+}
+
+
+/* SLIDE CAROUSEL  ==========================================================================
+    We use the standard bootstrap slide carousel. Here's some custom styling. */
+
+.carousel { }
+
+    .carousel img {
+        width: 100%;
+    }
+
+    .carousel-control {
+        font-size: 2.5em;
+        color: #fff !important; /* overides the global link hover colours */
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    }
+
+
+    .carousel-indicators {
+        bottom: 0px;
+        margin-bottom: 0;
+    }
+
+    .carousel-control.right, .carousel-control.left {
+        background-image: none;
+    }
+
+    .carousel-control .glyphicon-chevron-right {
+        right: 20%;
+        top: 45%;
+        font-size: 1em;
+    }
+
+    .carousel-control .glyphicon-chevron-left {
+        left: 20%;
+        top: 45%;
+        font-size: 1em;
+    }
+
+    .carousel-caption {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: 0px;
+        width: inherit;
+        background: none;
+    }
+
+
+.carousel-caption:after {
+		visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+	}
+
+/* OBJECT GRID ================================================================================= */
+/* Used on Presents Partner page */
+
+.grid-container {
+    display: -webkit-flex;
+    display: flex;
+    webkit-justify-content: space-between;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin: -45px 0 0 -72px;
+}
+
+.grid__cell {
+    width: 33.33%;
+    padding: 45px 0 0 72px;
+}
+
+/*    @media (min-width: 550px) {
+        .grid__cell {
+            width: 25%;
+        }
+    }
+*./
+
+
+
+
+
+/* COMMENTS-SECTION  ========================================================================== */
+
+.comments-section {
+    background-color: #F4F4F4;
+    margin-top: 1.75em;
+    margin-bottom: 1.75em;
+    height:auto;
+    overflow: hidden;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    position: relative;
+}
+
+.comments-section .read-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 60px 0;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+}
+
+.comments-section .read-more .btn {
+    color: #FFF;
+    background-color: #555;
+    border-color: #333;
+}
+
+/* SITE-FOOTER  ========================================================================== */
+
+footer.site-footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #424242;
+}
+
+footer {
+  clear: both;
+  /* line-height: 2em; -AG */
+  font-size: 0.9em;
+}
+
+footer div:first-child{
+  margin-top: 20px;
+  padding: 20px 0px;
+}
+
+footer ul {
+  padding: 0px;
+  list-style-type: none;
+  margin: 0px;
+}
+
+footer .footer__menu {
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+
+.footer__menu li{
+  display: block;
+  clear: both;
+  text-align: center;
+  border-top: solid 1px #696868;
+  padding: 8px 0px;
+}
+
+.footer__menu li:last-child{
+  border-bottom: solid 1px #696868;
+}
+.footer__menu li .btn-join {
+  text-transform: capitalize;
+}
+
+.footer__menu li .btn-join span {
+  padding-bottom: 10px;
+  vertical-align: middle;
+  font-weight: normal;
+  margin-left: 1px;
+}
+
+.footer__social-links {
+  margin-top: 20px;
+}
+
+.footer__social-links li {
+  text-align: center;
+  display: inline;
+}
+
+.footer__social-links li a {
+  color: #fff;
+  display: block;
+}
+
+.footer__social-links li a:hover{
+  background-color: #aaa;
+}
+
+.footer__social-links li a i {
+  vertical-align: middle;
+}
+
+.footer__social-links .facebook {
+  background-color: #3b5998;
+  padding: 8px;
+}
+
+.footer__social-links .facebook i {
+  margin-top: 2px;
+}
+
+.footer__social-links .twitter {
+  background-color: #00aced;
+  padding: 8px 4px;
+}
+
+.footer__social-links .twitter i {
+  margin-top: 2px;
+}
+
+.footer__social-links .envelope {
+  background-color: #666;
+  padding: 4px;
+}
+
+@media (min-width: 768px) {
+    footer {
+      clear: both;
+    }
+    footer div:first-child{
+      border-top: solid 1px #696868;
+      margin-top: 20px;
+      padding: 20px 0px;
+    }
+    footer ul {
+      padding: 0px;
+      list-style-type: none;
+      margin: 0px;
+    }
+    footer .footer__menu {
+      overflow: hidden;
+      padding: 0px;
+      margin: 0px;
+    }
+    .footer__menu li{
+      display: inline-block;
+      margin-left: 20px;
+      border-top: 0px;
+    }
+    .footer__menu li:last-child{
+      border-bottom: 0px;
+    }
+    .footer__menu li .btn-join {
+      text-transform: capitalize;
+    }
+    .footer__menu li .btn-join span {
+      padding-bottom: 10px;
+      vertical-align: middle;
+      font-weight: normal;
+      margin-left: 1px;
+    }
+    .footer__social-links li {
+      float: right;
+      text-align: center;
+    }
+    .footer__social-links li a {
+      color: #fff;
+      display: block;
+    }
+    .footer__social-links li a:hover{
+      background-color: #aaa;
+    }
+    .footer__social-links li a i {
+      vertical-align: middle;
+    }
+    .footer__social-links .facebook {
+      background-color: #3b5998;
+      padding: 8px;
+    }
+    .footer__social-links .facebook i {
+      margin-top: 2px;
+    }
+    .footer__social-links .twitter {
+      background-color: #00aced;
+      padding: 8px 4px;
+    }
+    .footer__social-links .twitter i {
+      margin-top: 2px;
+    }
+    .footer__social-links .envelope {
+      background-color: #666;
+      padding: 4px;
+    }
+}
+
+@media (min-width: 992px) {
+}
+
+
+/* ==========================================================================
+   #MODULES
+   (Modules are the reusable, modular parts of our design. They are the
+   callouts, the sidebar sections, the product lists and so on. These apply
+   largely to the Molecule and Organism levels)
+   ========================================================================== */
+
+
+/* LATEST STORIES ========================================================================== */
+
+#latest_bottom_wrap {
+ 	border-bottom: 1px #929292 solid;
+    padding: 10px 0;
+    margin: 40px 0;
+}
+.latest-stories {
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.latest-stories h4 {
+  font-size: 1.125em;
+}
+
+.latest-stories a {
+  color: #82AD00;
+}
+
+.latest-stories__media-wrapper{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.latest-stories__media-wrapper li:first-child{
+  border-top: solid 1px #A8A8A8;
+}
+.latest-stories__media-wrapper li{
+  /* color: #555; */
+  border-bottom: solid 1px #A8A8A8;
+  line-height: 1.75em;
+}
+.latest-stories__media-wrapper li:hover{
+  /* background-color: hsla(66, 100%, 33%, .1); */
+  background-color: hsla(45, 100%, 51%, 0.1);
+}
+.latest-stories__media-wrapper li:hover a{
+  display: block;
+}
+.latest-stories__media-wrapper li:last-child{
+  border-bottom: none;
+}
+.latest-stories__media-wrapper .media {
+  margin-top: 0px;
+  text-align: left;
+}
+.latest-stories__media-wrapper .media .media-image {
+  padding: 15px 0px;
+  height: auto;
+  overflow: hidden;
+}
+
+.latest-stories__media-wrapper .media .media-image .media-object{
+  max-width: 100%;
+  height: auto;
+}
+.latest-stories__hed {
+  color: #82AD00; color: var(--link-colour);
+  font-size: em;
+  font-weight: 600;
+}
+
+.hed_preload_placeholder{
+  background: #ccc;
+  min-height: 16px;
+  min-width: 100px;
+}
+
+.dek_preload_placeholder{
+  background: #ccc;
+  min-height: 100px;
+  min-width: 100px;
+}
+.latest-stories__dek {
+  /* font-size: 0.8em; */
+  line-height: 1.25em;
+  /* color: #888; */
+}
+.latest-stories .latest-stories__media-wrapper .media .latest-stories__date,  .latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
+  text-transform: capitalize;
+  font-size: 1em;
+}
+
+.latest-stories .latest-stories__media-wrapper .media .latest-stories__authour {
+  white-space: nowrap;
+}
+
+.latest-stories .latest-stories__media-wrapper .media .latest-stories__date:after {
+  content: "";
+  padding-right: .5em;
+}
+
+.latest-stories .media .media-meta {
+    padding-top: 1em;
+    overflow: visible;
+    clear: left;
+text-overflow: ellipsis;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+
+@media (min-width: 768px) {
+
+	.latest-stories {
+		border-top: 1px #929292 solid;
+	}
+
+  .latest-stories .latest-stories__media-wrapper{
+    padding: 10px;
+  }
+
+  .latest-stories .latest-stories__media-wrapper li:first-child{
+    border-left: solid 1px #A8A8A8;
+    border-bottom: none;
+    border-top: none;
+  }
+  .latest-stories .latest-stories__media-wrapper li {
+    height: 100%;
+    border-right: solid 1px #A8A8A8;
+    padding: 0px 10px 10px 10px;
+    position: relative;
+    float: left;
+    border-bottom: none;
+    border-top: none;
+    min-height: 265px;
+  }
+
+  .latest-stories .latest-stories__media-wrapper li.sponsored {
+    background: #ededed;
+  }
+
+  .latest-stories .latest-stories__media-wrapper li.sponsored strong {
+    display: inline-block;
+    border-bottom: 1px solid #5b6470;
+    color: #5b6470;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .latest-stories .latest-stories__media-wrapper li.sponsored h4 {
+    margin-top: 0;
+  }
+
+  .latest-stories .latest-stories__media-wrapper li:last-child {
+    border-right: none;
+  }
+  .latest-stories .media {
+    display: inline-block;
+    text-align: left;
+  }
+  .latest-stories__hed {
+    /* line-height: 1.55em; */
+    margin-bottom: 5px;
+  }
+  .latest-stories__dek {
+    line-height: 1.5em;
+  }
+  .latest-stories .media .media-image{
+    padding: 0px 5px;
+  }
+  .latest-stories .media .media-image img{
+    min-width: 100%;
+  }
+  .latest-stories .media .media-body {
+    height: 100%;
+    position: relative;
+    padding: 0px 5px;
+  }
+
+
+  .latest-stories .media .media-meta {
+    /* bottom: 0px; */
+    /* position: absolute; */
+  }
+}
+
+@media (min-width: 992px) {
+
+
+
+  .latest-stories {
+    position: relative;
+  }
+  .latest-stories .latest-stories__media-wrapper{
+    border-bottom: none;
+    padding: 10px;
+    overflow: hidden;
+  }
+  .latest-stories .latest-stories__media-wrapper .chevron{
+    background: #e5e5e5;
+    height: 100px;
+    border-radius: 100px;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    top: 90px;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+  }
+  .chevron::before {
+    border-style: solid;
+    border-width: 0.5em 0.5em 0 0;
+    content: '';
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    left: 18px;
+    position: absolute;
+    top: 25px;
+    color: #fff;
+    transform: rotate(-45deg);
+    vertical-align: top;
+  }
+  .chevron.right:before {
+    right: 0;
+    transform: rotate(45deg);
+  }
+  .chevron.left {
+    opacity: 1;
+    z-index: 200;
+    left: 0px;
+    transform: rotate(-90deg);
+  }
+  .latest-stories .latest-stories__media-wrapper:hover .chevron{
+    opacity: 0.8;
+    -webkit-transition: opacity 0.4s;
+  }
+  .latest-stories .latest-stories__media-wrapper li:first-child{
+    border-left: solid 1px #859c01;
+    border-bottom: none;
+    border-top: none;
+  }
+  .latest-stories .latest-stories__media-wrapper li {
+    /* border-right: solid 1px #A8A8A8; */
+    /* padding: 0px 10px 10px 10px; */
+    /* position: relative; */
+    /* float: left; */
+    /* border-bottom: none; */
+    /* border-top: none; */
+    min-height: 255px;
+  }
+  .latest-stories .latest-stories__media-wrapper li:last-child {
+    border-right: none;
+  }
+  .latest-stories .media {
+    display: inline-block;
+    text-align: left;
+  }
+  .latest-stories__hed {
+    /* line-height: 1.55em; */
+    margin-bottom: 5px;
+  }
+  .latest-stories__dek {
+    line-height: 1.5em;
+  }
+  .latest-stories .media .media-image{
+    padding: 0px 5px;
+  }
+  .latest-stories .media .media-image img{
+    min-width: 100%;
+  }
+  .latest-stories .media .media-body {
+    height: 100%;
+    position: relative;
+    padding: 0px 5px;
+    color: #555;
+  }
+  .latest-stories .media .media-meta {
+     bottom: 0px;
+     position: absolute;
+  }
+}
+
+/* SECTIONS NAVIGATION ========================================================================== */
+
+.sections, .sections ul, .sections__categories, .sections__list-one, .sections__list-two, .sections__list-three, .sections__list-four, .sections__list-five {
+  padding: 0px;
+}
+
+.sections__topics-header {
+  display: inline-block;
+  background: white;
+  padding-top: 8px;
+  font-weight: bold;
+  font-size: .9em;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 0px;
+  border-bottom-style: solid;
+  border-width: 1px;
+  width: 100%;
+  padding-left: 0px;
+}
+.sections__topics-wrap {
+  padding: 0px;
+  font-size: 1.1em;
+}
+.sections ul {
+  list-style-type: none;
+}
+.sections__categories ul li, .sections__categories ul li a {
+  color: #859c01;
+  font-weight: bold;
+}
+.sections__topics-wrap div:last-child ul li:last-child{
+  border-bottom: none;
+}
+.more:first-child{
+  padding: 0px;
+}
+.more__categories {
+  padding: 0px;
+}
+.more__categories ul{
+  padding: 0px;
+}
+.more__categories:last-child li:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+  .sections {
+    padding: 8px 20px;
+  }
+  .sections__list-one {
+    padding-left: 40px;
+  }
+  .sections__categories ul {
+    text-align: left;
+    border-right: none;
+  }
+  .sections__categories ul li {
+    width: 100%;
+    float: none;
+    clear: both;
+    padding: 10px;
+  }
+  /* MORE =====*/
+  .menu__more .dropdown-menu {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .sections ul {
+    overflow: hidden;
+    text-align: left
+  }
+  .sections ul li {
+  }
+  .sections ul li a {
+      text-transform: capitalize;
+  }
+  .sections__categories ul li{
+    padding: 0px 10px 20px 8px;
+  }
+  .sections__topics-header {
+    padding-bottom: 8px;
+    padding-left: 10px;
+    border-color: #A8A8A8;
+    padding-top: 0px;
+  }
+  .sections__topics-wrap ul {
+    margin-top: 10px!important;
+  }
+  .sections__topics-wrap ul li {
+    clear:both;
+    float: none;
+    width: 100%;
+  }
+  .sections__topics-wrap > div {
+    padding-left: 8px;
+  }
+   .sections__categories ul li, .sections__list-one ul li, .sections__list-two ul li, .sections__list-three ul li, .sections__list-four ul li, .sections__lis ul li{
+    display: inline-block!important;
+    text-align: left;
+  }
+  .sections__categories ul li a{
+    text-transform: uppercase;
+  }
+  .more:first-child {
+    padding:8px 20px;
+  }
+}
+
+ /* SLIDESHOW ========================================================================== */
+
+.slideshow img {
+  min-width: 100%;
+}
+.slideshow a {
+  background: #90AD00;
+  color: #fff;
+}
+.slideshow .slidesjs-previous:before {
+  content: '< ';
+}
+.slideshow .slidesjs-previous{
+  padding: 7px;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 5px 5px 5px 0px;
+}
+.slideshow .slidesjs-next{
+  padding: 7px;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 5px 5px 5px 0px;
+}
+.slideshow .slidesjs-next:after {
+  content: ' >';
+}
+.slideshow ul {
+  display: inline-block;
+  margin-top: 10px;
+  float: right;
+}
+.slideshow ul li{
+  display: inline;
+  margin: 0px 3px;
+}
+.slideshow ul li a {
+  padding: 4px 10px;
+  border-radius: 100%;
+}
+
+@media (min-width: 992px) {
+
+}
+
+/* BAROMETER ========================================================================== */
+
+
+.messaging-block--barometer {
+  border-top: solid 1px #A8A8A8;
+  border-bottom: solid 1px #A8A8A8;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.messaging-block--barometer h3 {
+  margin-top: 0px;
+  padding-top: 5px;
+  border-bottom: solid 1px #A8A8A8;
+  color: #82AD00; color: var(--brand-colour--text-darker);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  padding-bottom: 5px;
+}
+
+.messaging-block--barometer h3 i {
+  font-size: 0.7em;
+}
+
+.messaging-block--barometer p {
+  font-weight: bold;
+  font-size: 1.25em;
+  padding: 0px 10px;
+  margin-top: 1em;
+}
+
+.messaging-block--barometer p a{
+  background-color: #82AD00;
+  background-color: var(--brand-colour--text);
+  padding: 4px 10px;
+  width: 100%;
+  font-size: 0.85em;
+  font-weight: normal;
+  display: block;
+  color: #fff; color: var(--text-colour);
+  text-align: center;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+
+section.messaging-block.messaging-block--barometer ul, section.messaging-block.messaging-block--barometer li {
+    width: 100%;
+    clear: both;
+}
+
+
+
+/* ===== Logo Grid ======= */
+/* Used on advert page */
+
+.logo-grid {
+    float: left
+}
+
+.logo-grid div {
+    padding: 1.25em 1.9em;
+}
+
+
+
+/* ===== Popup =======*/
+
+div.ntnl-sgnup-modal {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #555;
+}
+
+    @media screen and (max-width: 400px) {
+
+      div.ntnl-sgnup-modal {
+        width: 100%;
+        margin: 0;
+      }
+
+      .subscription-popup {
+        padding: 0px !important;
+      }
+
+      .modal-dialog {
+        margin: 0;
+      }
+
+    }
+    .ntnl-sgnup-modal h2 {
+        font-style: normal;
+    }
+    .ntnl-sgnup-modal p, .ntnl-sgnup-modal h2 {
+      margin-bottom: 24px;
+    }
+    .modal-header h2 {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 38px;
+      color: #424242;
+      overflow:hidden;
+    }
+
+    .modal-national-logo {
+        position: relative;
+        top: 8px;
+        margin-right: 16px;
+    }
+    .modal-national-logo {
+        float: left !important;
+    }
+
+    .ntnl-sgnup-modal small {
+      font-size: 72%;
+      line-height: 85%;
+    }
+    .ntnl-sgnup-modal .text-center {
+        text-align: center;
+    }
+    /* unvisited link */
+    .ntnl-sgnup-modal a:link {
+      color: #8A9900;
+    }
+    /* visited link */
+    .ntnl-sgnup-modal a:visited {
+      color: #8A9900;
+    }
+    /* mouse over link */
+    .ntnl-sgnup-modal a:hover {
+      color: #8A9900;
+    }
+    /* selected link */
+    .ntnl-sgnup-modal a:active {
+      color: #8A9900;
+    }
+    .ntnl-sgnup-modal .fsize18 {
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .bg-pale-green{
+      background-color: #EEF0D9;
+    }
+
+    .modal-header {
+      border-color: transparent;
+    }
+    .form-checkbox {
+      background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.png');
+      background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.svg'), none;
+      height: 29px;
+      width: 35px;
+      background-repeat: no-repeat;
+      background-position: 0 -23px;
+      display: inline-block;
+    }
+    .modal-footer {
+      text-align: center;
+    }
+
+/*! == National modal transition, positioning and chrome */
+/*! Center the modal (except on mobile) and eliminate motion from fade-in transition */
+
+
+  /* NEWSLETTER========================================================================== */
+@media screen and (min-width:768px) {
+    .ntnl-sgnup-modal.modal {
+      text-align: center;
+    }
+    .ntnl-sgnup-modal.modal:before {
+      display: inline-block;
+      vertical-align: middle;
+      content: " ";
+      height: 100%;
+    }
+    .ntnl-sgnup-modal .modal-dialog {
+      display: inline-block;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .ntnl-sgnup-modal.modal.fade .modal-dialog {
+    -webkit-transition: -webkit-transform .3s ease-out;
+         -o-transition:      -o-transform .3s ease-out;
+            transition:         transform .3s ease-out;
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+         -o-transform: translate(0, 0);
+            transform: translate(0, 0);
+      }
+    }
+    .modal-backdrop.in {
+    filter: alpha(opacity=70);
+    opacity: .7;
+    }
+    .ntnl-sgnup-modal .close {
+      float: right;
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1;
+      text-shadow: 0px 1px 0px #FFF;
+      opacity: 0.5;
+      color: #000;
+    }
+    .ntnl-sgnup-modal .close:hover,
+    .ntnl-sgnup-modal .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      filter: alpha(opacity=50);
+      opacity: .9;
+    }
+    .ntnl-sgnup-modal .no-border-top {
+    border-top: none;
+    }
+    /*! == National modal content layout */
+    .ntnl-sgnup-modal .modal-header {
+      min-height: 20px;
+      padding: 19px 24px 0px 24px;
+      border-bottom: none;
+      margin-bottom: 40px;
+    }
+    .ntnl-sgnup-modal .modal-body {
+      position: relative;
+      padding: 0px 24px 15px 24px;
+    }
+    .ntnl-sgnup-modal .modal-footer{
+    padding: 4px 24px 24px 24px;
+    }
+    .modal-national-logo{
+    position: relative;
+    top: 8px;
+    margin-right: 16px;
+    }
+    .btn-green {
+    color: #fff;
+    background-color: #9AAB00;
+    border-color: #9AAB00;
+    }
+    .ntnl-sgnup-modal {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+    }
+    .ntnl-sgnup-modal .modal-backdrop {
+    background-color: #000;
+    }
+    .modal-national-logo {
+      float: left !important;
+    }
+    .ntnl-sgnup-modal .form-control {
+      max-width: 95.5%;
+      padding: 0px;
+    }
+    .ntnl-sgnup-modal .modal-header h2 { margin-top: 40px; }
+    .ntnl-sgnup-modal .modal-header { margin-bottom: 0px; }
+    .ntnl-sgnup-modal .modal-footer { margin-top: 0px; }
+    .ntnl-sgnup-modal small a { font-family: "Source Sans Pro",sans-serif; font-style: normal; }
+
+    .ntnl-sgnup-modal .form-checkbox {
+      background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.png');
+      background-image: url('/ui/img/ntnl-sub-model-checkbox-ui.svg'), none;
+      height: 29px;
+      width: 35px;
+      background-repeat: no-repeat;
+      background-position: 0 -23px;
+      display: inline-block;
+    }
+    .ntnl-sgnup-modal .form-checkbox.checked {
+      height: 29px;
+      width: 35px;
+      background-repeat: no-repeat;
+      background-position: 0 3px;
+    }
+    .radio-buttons {
+      opacity: 0.01;
+      height: 1px;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+
+/*! End of modal customization for Tyee National subscription popup */
+/*! ---------------------------------------------------------------------------- */
+
+
+
+/* BUILDER MODAL STYLES ======================================================= */
+/*! ---------------------------------------------------------------------------- */
+/*! Customization of bootstrap modal styles for 2016 Tyee support/builder campaign popup ad
+/*! It's based on an 2015 Tyee support/builder campaign pop-up, but I've used the .modal--builder class (instead of .support-modal) to (hopefully) prevent any styling conflicts
+/*! Where possible I've narrowed the selector scope to target only elements within .modal--builder so that other modals can still adhere to the standard bootstrap style. But we'll probably want to standardize the styling for all modals at some point.
+/*! Alexg */
+
+div.modal--builder {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 28px;
+	color: #FFF;
+}
+    .modal--builder h2 {
+    	margin-bottom: 0px;
+    }
+    .modal--builder p {
+    	margin-bottom: 6px;
+    }
+    .modal--builder h2 {
+    	font-family: 'Source Sans Pro', sans-serif;
+    	font-weight: 700;
+    	font-size: 28px;
+    	line-height: 36px;
+    	color: #FFF;
+    	overflow:auto;
+    	margin-top: 22px;
+    }
+    .modal--builder small {
+    	font-size: 72%;
+    	line-height: 85%;
+    }
+    .modal--builder small a {
+    	font-family: "Source Sans Pro",sans-serif;
+    	font-style: normal;
+    }
+    .modal--builder .cta {
+      color: #ceed9f;
+      font-size: 1.2em;
+      text-decoration: underline;
+    }
+
+    .modal--builder .text-center {
+        text-align: center;
+    }
+
+/* hide disqus ads*/
+
+#dsq-app4 {
+  display:none;
+}
+
+
+/* timeline ammendum */
+
+.timeline_entry {
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 20px;
+  float: none !important;
+  overflow: hidden;
+  position: relative;
+}
+.timeline_entry .ar {
+  float: right !important;
+}
+.timeline_entry .seemore, .timeline_entry .readmore {
+  letter-spacing: 1px;
+}
+.timeline_entry .timelinedate {
+  width: 90%;
+  color: #ED1D25;
+  background: #EFEFEF;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.timeline_entry .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25% !important;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-bottom: 20px;
+  max-width: 100% !important;
+}
+.timeline_entry .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+}
+.timeline_entry .quote {
+  margin-bottom: 20px;
+}
+.timeline_entry .quote strong {
+  font-size: 24px !important;
+  line-height: 30px !important;
+}
+.timeline_entry .expand {
+  max-height: 136px;
+  overflow: hidden;
+  position: relative;
+}
+.timeline_entry .expand span, .timeline_entry .expand span p {
+  clear: both;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.timeline_entry .expand p {
+  margin-bottom: 0px;
+}
+.timeline_entry .expand.expanded {
+  max-height: none;
+  overflow: auto;
+}
+.timeline_entry.last {
+  margin-bottom: 60px;
+}
+.timeline_entry.last .bg {
+  background: none;
+}
+
+.timeline_entry .three {
+  width: 25%;
+  min-height: 5px;
+  float:left;
+}
+
+.timeline_entry .nine {
+  width: 70%;
+  margin-left: 4%;
+  float:left;
+}
+.timeline_entry .bg {
+  background: url("/ui/img/dotted_vertical.png") repeat-y;
+  background-position: top center;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 25%;
+}
+/* end timeline ammendum"
+
+
+        /* ---------  links ------------ */
+        /* unvisited link */
+        .modal--builder a:link {
+        	color: #fff;
+        }
+        /* visited link */
+        .modal--builder a:visited {
+        	color: #fff;
+        }
+        /* mouse over link */
+        .modal--builder a:hover, .modal--builder a:hover .cta {
+        	color: #DDECC7 !important;
+        }
+        /* selected link */
+        .modal--builder a:active {
+        	color: #fff;
+        }
+
+    .modal--builder .fsize18 {
+    	font-size: 18px;
+    	line-height: 1.1;
+    }
+
+
+    /*! == Support modal transition, positioning and chrome */
+    /*! Center the modal (except on mobile) and eliminate motion from fade-in transition */
+    @media screen and (min-width: 768px) {
+    	.modal--builder.modal {
+      	text-align: center;
+    	}
+      .modal--builder.modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+      }
+    	.modal--builder .modal-dialog {
+    		display: inline-block;
+    		text-align: left;
+    		vertical-align: middle;
+    	}
+
+    	.modal--builder.modal.fade .modal-dialog {
+      -webkit-transition: -webkit-transform .3s ease-out;
+           -o-transition:      -o-transform .3s ease-out;
+              transition:         transform .3s ease-out;
+      -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+           -o-transform: translate(0, 0);
+              transform: translate(0, 0);
+        }
+    }
+    .modal-backdrop.in {
+      filter: alpha(opacity=70);
+      opacity: .7;
+    }
+    .modal--builder .close {
+        float: right;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1;
+        text-shadow: none;
+        opacity: 0.95;
+        color: #FFF;
+    }
+    .modal--builder .close:hover,
+    .modal--builder .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      filter: alpha(opacity=50);
+      opacity: .9;
+    }
+    .modal--builder .no-border-top {
+    	border-top: none;
+    }
+
+    /*! ==  modal content layout */
+    .modal--builder .modal-header {
+        min-height: 20px;
+        padding: 19px 24px 16px 24px;
+        border-bottom: none;
+        margin-bottom: 0px;
+    }
+    .modal--builder .modal-body {
+        position: relative;
+        margin-top: 0px;
+        padding: 33px 24px 30px 24px;
+    }
+    .modal--builder .modal-footer{
+    	padding: 10px 24px 18px 24px;
+    	margin-top: 24px;
+    }
+
+    .bg-pattern  {background: url("/ui/img/Tyee-Builders-background.jpg") left bottom repeat-x #041E41;} */
+
+    .btn-green {
+    	color: #fff;
+    	background-color: #9AAB00;
+    	border-color: #9AAB00;
+    }
+    .modal--builder .modal-content{
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 0px;
+    }
+    .modal--builder .modal-backdrop {
+      background-color: #000;
+        }
+
+/*! End of modal customization for Tyee Builder campaign popup */
+/*! ---------------------------------------------------------------------------- */
+
+
+
+
+
+/* ARTICLE HEADER ========*/
+/* .author-info__bio{
+  display: block;
+}
+Not sure why this is here but it's preventing the .author-info__bio from disappear so I'm commenting it out. --AG */
+
+
+
+
+
+/* ==========================================================================
+   #HELPER Classes
+   ========================================================================== */
+
+
+/* Spacing helper classes =================================================== */
+
+.p-t-1 {
+      padding-bottom: .5em;
+}
+
+.p-b-1 {
+      padding-bottom: .5em;
+}
+
+.p-x-1 {
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.p-x-2 {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.p-x-3 {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.p-x-4 {
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.m-b-1 {
+      margin-bottom: .5em;
+}
+
+.m-b-2 {
+      margin-bottom: 1em;
+}
+
+.m-b-3 {
+      margin-bottom: 2em;
+}
+
+.m-b-4 {
+      margin-bottom: 3em;
+}
+
+.m-b-5 {
+      margin-bottom: 4em;
+}
+
+.m-t-1 {
+      margin-top: .5em;
+}
+
+.m-t-2 {
+      margin-top: 1em;
+}
+
+.m-t-3 {
+      margin-top: 2em;
+}
+
+.m-t-4 {
+      margin-top: 3em;
+}
+
+.m-t-5 {
+      margin-top: 4em;
+}
+
+
+
+/* FLOAT CLEARING FOR INDEX LISTS - Helper classes ========================================================== */
+
+/* custom bootstrap float reset required for column list https://stackoverflow.com/a/24590544/8305003
+   This applies proper clearing of floats when the number of items per line changes at different breakpoints. */
+
+/* CLEAR-0-2-3-3 -------------------------------------------------------------------- */
+/* All list items should be within one single bootstrap row.
+   The index-list-grid class should be applied to the bootstrap row.
+   Then add an empty div.clear-0-2-3-3 after every bootstrap column element. */
+/* In XS views do nothing. */
+/* In Small views clear every 4th element with .clear-0-2-3-3 class that is a direct child of .event-list-grid */
+/* This clear floats after every 2nd list item. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .index-list-grid>.clear-0-2-3-3:nth-child(4n)::before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+/* In Medium views and wider, clear every 6th element with .clear-0-2-3-3 class that is a direct child of .event-list-grid */
+/* This clear floats after every 3rd list item. */
+@media (min-width: 992px) {
+    .index-list-grid>.clear-0-2-3-3:nth-child(6n)::before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+
+
+
+
+.border-bottom {
+    padding-bottom: .5em !important;
+    border-bottom: 1px solid #777 !important;
+    width: 100%;
+}
+
+.border-below-Ps p {
+     padding-bottom: .5em;
+     border-bottom: 1px dotted #777;
+     margin-bottom: .5em;
+}
+
+
+/*  ACCENT COLOR HELPER CLASSES  ==========================================================================
+    These classes can get applied to elements that should employ the accent
+    color. This color may change depending on the website section and will
+    typically by synonymous with the lnk color. */
+
+.accent-color {
+    color: #82AD00;
+    color: var(--link-colour);
+    fill: #82AD00;
+    fill: var(--link-colour);
+}
+
+    .accent-color--background {
+      background-color: #82AD00; color: var(--link-colour);
+    }
+
+    .accent-color--border {
+      border-color: #90AD00 !important;
+    }
+
+
+
+/* RESPONSIVE HELPER CLASSES  ========================================================================== */
+
+/*  RESPONSIVE IMAGES -- forces the image to be the same width as its parent
+    element. Confusingly similar in name to Bootstrap's .img-responsive but this
+    will actually stretch an image rather than merely shrink it. */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* RESPONSIVE EMBED  ========================================================================== */
+/*  This allows a Youtube embed to expand proportionally to
+    fill a column. */
+
+.responsive-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0px;
+    height: 0;
+    overflow: hidden;
+}
+
+    .responsive-embed iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .responsive-embed--audio {
+        padding-bottom: 150px;
+    }
+
+
+
+/*  LINK WRAP  ==========================================================================
+    This class is used to make an entire div (or other container) into a clickable
+    link. To use it put this empty <a> element somewhere within your container:
+    <a href="[URL YOU WANT]" class="link-wrap"><span></span></a>
+
+    If you have any other links within your container you'll need to apply the
+    .link-wrap--contained-link class to them, otherwise they won't be clickable. */
+
+a.link-wrap span {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+
+    z-index: 1;
+
+    /* fixes overlap error in IE7/8,
+       make sure you have an empty gif */
+
+    /* TODO AG to fix this reference
+     * it's not linking to anything like this
+     * and causign a console error */
+    background-image: url('empty.gif');
+}
+
+    a.link-wrap--contained-link {
+        /* required to make other links within the container work */
+        position: relative;
+        z-index: 100;
+    }
+
+
+
+/* COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES  ========================================================================== */
+
+/**
+ *  COMMENT HELPER CLASS AND CUSTOM ATTRIBUTES
+ *  This displays the browser annotations on organisms and molecules.
+ *  This class and the custom attributes exist only for prototyping and
+ *  should be removed in production.
+ *  To disable the the annotation display just remove the .cmnt--visibility
+ *  class from the body tag.
+
+ *  HTML Syntax
+    -----------
+    The body tag receives a .cmnt--visibility class:
+        <body class="cmnt--visibility>
+
+    The outermost tag of every object (molecules and organisms)
+    gets 2 custom attributes that describe what the object is and
+    its current development status:
+        <tag data-dev-object-descrip="" data-dev-status="">
+
+    The value of data-dev-object-descrip should be the object's
+    include path and name. E.g.:
+        data-dev-object-descrip="molecules/navigation/primary-nav"
+
+    The value of data-dev-status should be the object's development
+    status. There's 3 options:
+        data-dev-status="IN-PROGRESS"
+        data-dev-status="IN-REVIEW"
+        data-dev-status="COMPLETE"
+    This value should be manually updated during the dev process.
+
+ */
+
+body.cmnt--visibility { }
+    /* This class is applied to the body tag to trigger the display of
+    object dev-status colours upon hover */
+
+        body.cmnt--visibility:hover [data-dev-status~="IN-PROGRESS"] {
+            background-color: hsla(60, 100%, 50%, 0.04) !important;
+        }   /* elements that are "in-progress" are coloured pale yellow when
+            there's hover on the body tag */
+
+        body.cmnt--visibility:hover [data-dev-status~="IN-REVIEW"] {
+            background-color: hsla(180, 100%, 50%, .1) !important;
+        }   /* elements that are "in-progress" are coloured pale cyan when
+            there's hover on the body tag */
+
+        body.cmnt--visibility [data-dev-status~="COMPLETE"]:hover {
+            background-color: hsla(120, 100%, 50%, .1) !important;
+        }   /* elements that are "complete" are coloured pale green but only when
+            there's hover directly on the element itself */
+
+        body.cmnt--visibility:hover [data-dev-object-descrip*="organisms"] {
+            border: 1px solid Tomato !important;
+        }   /* elements that are "organisms" receive a border when
+            there's hover on the body tag */
+
+        body.cmnt--visibility:hover [data-dev-object-descrip*="molecules"] {
+          border: 1px solid DodgerBlue !important;
+        }   /* elements that are "molecules" receive a border when
+            there's hover on the body tag */
+
+
+    body.cmnt--visibility [data-dev-object-descrip]:hover::before {
+        display: inline-block;
+
+        margin-top: -15px;
+        padding: 5px 0px 0px 10px;
+        /* background-color: hsla(120, 100%, 100%, 0.9); */
+
+
+        color: tomato;
+        font-size: .65em;
+        line-height: 1.1em;
+        font-weight: bold;
+
+        content: attr(data-dev-object-descrip) "\a0\a0\a0\a0\a0 ---> \a0" attr(data-dev-status);
+
+    }   /* elements that have a data-dev-object-descrip attribute get labeled with
+        their object-description and dev-status upon hover */
+
+
+        body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-descrip]:hover::before {
+            color: DodgerBlue;
+        }   /* elements that are molecules and have a data-dev-object-descrip
+            attribute get their label coloured blue to match their border */
+
+
+
+/* ==========================================================================
+   STATES
+   (A state is something that augments and overrides all other styles.
+   State styles can apply to layout and/or module styles; and State styles
+   indicate a JavaScript dependency.
+   For example, an accordion section may be in a collapsed or expanded state.
+   A message may be in a success or error state. Eg: .is-collapsed or .is-error
+   So again, something like a helper class.
+   But sometimes there may be a state that is specific to a particular object.
+   Eg: .is-tab-active
+   https://smacss.com/book/type-state)
+   ========================================================================== */
+
+
+
+
+
+/* ==========================================================================
+   Progressively enhance for larger screens.
+
+   NOTE: As per SMACSS Media quesries are grouped with their respective objects, above.
+   With SMACSS, the intent is to keep the styles that pertain to a specific
+   module with the rest of the module. That means that instead of having a
+   single break point, either in a main CSS file or in a separate media query
+   style sheet, place media queries around the module states.
+   See https://smacss.com/book/state
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+    #ad-leaderboard {
+    	height: 90px;
+    	width:100%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Adjust for standard desktop */
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /* portrait tablets */
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  /* Put high-resolution display styles here */
+}
+
+
+
+
+/* ==========================================================================
+   Print styles.
+   Should be inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links for images, or javascript/internal links
+     */
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+
+/* ==========================================================================
+   Temporary testing styles
+   ==========================================================================
+
+.container *:not(.row):not(section), .container-fluid *:not(.row):not(section) {
+    background-color: #eee;
+    border: 1px solid #ddd;
+}

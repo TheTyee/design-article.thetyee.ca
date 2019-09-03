@@ -1,0 +1,104 @@
+<!-- Begin molecules/navigation/primary-nav-IE -->
+<!-- Old navigation HTML for IE -->
+<nav class="[ navbar navbar-default ] site-nav primary-nav" data-dev-object-descrip="molecules/navigation/primary-nav" data-dev-status="IN-PROGRESS" role="navigation">
+
+<!--NARROW MENU-->
+
+  <div class="narrow-menu [  hidden-md hidden-lg hidden-xl ]">
+      <!--Toggle-->
+    <div class="[ col-xs-3 pull-left ] mobile-toggle hamburger-container">
+      <button type="button" class="collapsed menu__hamburger" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <i class="fa fa-bars"></i><span>Menu</span>
+      </button>
+    </div>
+    <!--logo -->
+    <a class="col-xs-6" href="/"><img src="/design-article.thetyee.ca/ui/img/tyee_logo.png" class="narrow-menu__logo" id="site-logo" alt="The Tyee Logo" /></a>
+
+    <!--search-->
+    <div class="narrow__search [ col-xs-3 ]">
+        <?php include_once($gitrootinc . "01-molecules/blocks/search-block.html") ?>
+    </div>
+  </div>
+
+
+<!-- WIDE MENU -->
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div style="position:relative;" class="[ collapse row navbar-collapse  ] menu" id="bs-example-navbar-collapse-1">
+
+
+    <nav class="[ navbar-nav col-xs-12 col-sm-12 col-md-4 col-lg-4 ] menu_left-nav-wrap">
+  <div style="width:100%; height:100%;position:relative;">
+   <div id="fakeborderleft"></div>
+  </div>
+
+      <ul class="[ col-sm-12 ] menu__left-nav ">
+        <li class="menu__latest-stories [ dropdown keep-open ]">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Latest Stories
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><?php  include_once($gitrootinc . "02-organisms/sections/latest-stories.html") ?></li>
+            </ul>
+        </li>
+        <li class="menu__sections[ dropdown keep-open ]">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Sections
+              <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+              <li><?php include_once($gitrootinc . "01-molecules/navigation/sections-nav.html") ?></li>
+          </ul>
+        </li>
+        <li class="menu__more [ dropdown keep-open ]">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            More
+              <span class="caret"></span>
+            </a>
+          <ul class="dropdown-menu">
+              <li><?php include_once($gitrootinc . "01-molecules/navigation/more-nav.html") ?></li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+
+      <!--LOGO-->
+      <nav class="[ hidden-xs hidden-sm col-lg-4 ] menu_center-nav-wrap">
+
+        <ul class="[ hidden-xs ] menu__logo ">
+          <li class="[ hidden-xs hidden-sm hidden-md ]">
+             <a href="/"><img src="/design-article.thetyee.ca/ui/img/tyee_logo.png" alt="Logo Alt Text" /></a>
+
+          </li>
+        </ul>
+      </nav>
+
+      <!--RIGHT NAV -->
+      <nav class="[ navbar-nav col-xs-12 col-sm-12 col-md-4 col-lg-4 ] menu_right-nav-wrap">
+         <div style="width:100%; height:100%;position:relative;">
+   <div id="fakeborderright"></div>
+  </div>
+
+               <ul class="[ col-sm-12 ] menu__right-nav ">
+        <li class="menu__join">
+          <a href="#" class="btn-join"><?php include_once($gitrootinc . "00-atoms/images/dollar-heart-icon.html") ?><span>Join</span></a>
+        </li>
+        <li class="menu__newsletter">
+          <a href="#">Newsletter</a>
+        </li>
+        <li class="menu__facebook">
+          <a href="#">
+            <i class="fa fa-facebook-square"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-twitter-square"></i>
+          </a>
+        </li>
+        <li class="menu__search [ hidden-xs hidden-sm dropdown nav ]">
+          <?php  include_once($gitrootinc . "01-molecules/blocks/search-block.html") ?>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</nav>

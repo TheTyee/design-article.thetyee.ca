@@ -1,0 +1,37 @@
+/* NOTE: Do not @import any stylesheets here */
+/* This stylesheet resets styles within the new header to prevent the
+application of styles from the old article page. */
+
+/* Header Reset */
+.site-header--homepage * {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ font-size:100%;
+ vertical-align:baseline;
+ background:transparent;
+ line-height:1;
+}
+
+.site-header--homepage footer,
+.site-header--homepage header,
+.site-header--homepage hgroup,
+.site-header--homepage menu,
+.site-header--homepage nav,
+.site-header--homepage section {
+ display:block;
+}
+
+nav ul {
+ list-style:none;
+}
+
+.site-header--homepage a {
+ margin:0;
+ padding:0;
+ font-size:100%;
+ vertical-align:baseline;
+ background:transparent;
+ color: inherit;
+}

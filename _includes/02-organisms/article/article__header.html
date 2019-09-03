@@ -7,18 +7,60 @@
     <div class="container-fluid">
 
         {% if page.presents == true %}
-        
+
             {% include 00-atoms/images/presents-badge.html badge-position="badge--headline-placement badge--headline-placement--presents" %}
             <h6 class="tyee-presents-label"><a href="/presents-link-here/">Events, contests and other initiatives by The Tyee and select partners.</a></h6>
-        
+
         {% elsif page.series == true %}
-        
+
             {% include 00-atoms/images/series-badge.html series-badge-position="badge--headline-placement" %}
             <h6 class="category-label"><a href="/category-link-here/" data-bind="category">{{ page.meta-category }}</a></h6>
-        
+            {% if page.story-tag1 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag1 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag2 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag2 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag3 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag3 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag4 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag4 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag5 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag5 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag6 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag6 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag7 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag7 }}</a></h6>
+            {% endif %}
+
         {% else %}
-        
+
             <h6 class="category-label"><a href="/category-link-here/" data-bind="category">{{ page.meta-category }}</a></h6>
+            {% if page.story-tag1 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag1 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag2 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag2 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag3 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag3 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag4 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag4 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag5 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag5 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag6 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag6 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag7 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag7 }}</a></h6>
+            {% endif %}
 
         {% endif %}
 
