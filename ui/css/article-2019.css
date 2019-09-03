@@ -478,7 +478,7 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
         }
 
     /* Prevent reflow that can occur when text within a paragraph becomes an inline-block.  */
-    p a:hover, figcaption a:hover {display: inline; font-size: 1.1em;}
+    p a:hover, figcaption a:hover {display: inline; }
 
     p a:hover, figcaption a:hover {color: #6F9400; color: var(--link-colour)}
 

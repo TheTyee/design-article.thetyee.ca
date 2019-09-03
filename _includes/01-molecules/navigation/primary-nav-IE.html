@@ -12,11 +12,11 @@
       </button>
     </div>
     <!--logo -->
-    <a class="col-xs-6" href="/"><img src="{{ site.url }}ui/img/tyee_logo.png" class="narrow-menu__logo" id="site-logo" alt="Logo Alt Text" /></a>
+    <a class="col-xs-6" href="/"><img src="/design-article.thetyee.ca/ui/img/tyee_logo.png" class="narrow-menu__logo" id="site-logo" alt="The Tyee Logo" /></a>
 
     <!--search-->
     <div class="narrow__search [ col-xs-3 ]">
-        {% include 01-molecules/blocks/search-block.html %}
+        <?php include_once($gitrootinc . "01-molecules/blocks/search-block.html") ?>
     </div>
   </div>
 
@@ -38,7 +38,7 @@
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li>{% include 02-organisms/sections/latest-stories.html %}</li>
+              <li><?php  include_once($gitrootinc . "02-organisms/sections/latest-stories.html") ?></li>
             </ul>
         </li>
         <li class="menu__sections[ dropdown keep-open ]">
@@ -47,7 +47,7 @@
               <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-              <li>{% include 01-molecules/navigation/sections-nav.html %}</li>
+              <li><?php include_once($gitrootinc . "01-molecules/navigation/sections-nav.html") ?></li>
           </ul>
         </li>
         <li class="menu__more [ dropdown keep-open ]">
@@ -56,7 +56,7 @@
               <span class="caret"></span>
             </a>
           <ul class="dropdown-menu">
-              <li>{% include 01-molecules/navigation/more-nav.html %}</li>
+              <li><?php include_once($gitrootinc . "01-molecules/navigation/more-nav.html") ?></li>
           </ul>
         </li>
 
@@ -68,7 +68,7 @@
 
         <ul class="[ hidden-xs ] menu__logo ">
           <li class="[ hidden-xs hidden-sm hidden-md ]">
-             <a href="/"><img src="{{site.url}}ui/img/tyee_logo.png" alt="Logo Alt Text" /></a>
+             <a href="/"><img src="/design-article.thetyee.ca/ui/img/tyee_logo.png" alt="Logo Alt Text" /></a>
 
           </li>
         </ul>
@@ -82,7 +82,7 @@
 
                <ul class="[ col-sm-12 ] menu__right-nav ">
         <li class="menu__join">
-          <a href="#" class="btn-join">{% include 00-atoms/images/dollar-heart-icon.html %}<span>Join</span></a>
+          <a href="#" class="btn-join"><?php include_once($gitrootinc . "00-atoms/images/dollar-heart-icon.html") ?><span>Join</span></a>
         </li>
         <li class="menu__newsletter">
           <a href="#">Newsletter</a>
@@ -96,7 +96,7 @@
           </a>
         </li>
         <li class="menu__search [ hidden-xs hidden-sm dropdown nav ]">
-          {% include 01-molecules/blocks/search-block.html %}
+          <?php  include_once($gitrootinc . "01-molecules/blocks/search-block.html") ?>
         </li>
       </ul>
     </nav>

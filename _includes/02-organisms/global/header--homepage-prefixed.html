@@ -6,9 +6,9 @@
 
     <!--site tagline A -->
     <div class="new-site-header__tagline new-site-header__tagline--a">
-      We value: Our readers.<br>
-      Our independence. Our region.<br>
-      The power of real journalism.
+      We value: <a href="/About/inc/Us/#readers">Our readers.</a><br>
+      <a href="/About/inc/Us/#independence">Our independence</a>. <a href="/About/inc/Us/#region">Our region</a>.<br>
+      The <a href="/About/inc/Us/#power">power</a> of <a href="/About/inc/Us/#real">real journalism</a>
     </div>
 
     <!--logo -->
@@ -22,9 +22,9 @@
 
     <!--site tagline B -->
     <div class="new-site-header__tagline new-site-header__tagline--b">
-      We’re reader supported.<br>
-      Get our <a href="/">newsletter</a> free.<br>
-      <a href="/">Help pay for our reporting.</a>
+      We're reader supported.<br>
+      Get our <a href="https://subscribe.thetyee.ca/?utm_campaign_new_head">newsletter</a> free.<br>
+      <a href="https://support.thetyee.ca/?utm_campaign=help_pay_nav">Help pay for our reporting.</a>
     </div>
 
     <!-- SITE NAV MENU -->
@@ -35,9 +35,9 @@
       <label for="new-expander--nav-menu" class="new-nav__link new-nav__burger new-site-nav-main__expander-toggle">Menu</label>
 
       <!-- MENU -- FULL BAR for wide views -->
-      <a class="new-nav__link new-nav__link--news"href="#">News</a>
-      <a class="new-nav__link new-nav__link--analysis"href="#">Analysis</a>
-      <a class="new-nav__link new-nav__link--culture"href="#">Culture</a>
+      <a class="nav__link nav__link--news"href="/News/">News</a>
+      <a class="nav__link nav__link--analysis"href="/Analysis">Analysis</a>
+      <a class="nav__link nav__link--culture"href="/Culture">Culture</a>
       <label for="new-expander--nav-menu" class="new-nav__link new-nav__link--more new-site-nav-main__expander-toggle">More</label> <!-- MENU more expander -->
       <a class="new-nav__link new-nav__link--join new-btn-join" href="https://support.thetyee.ca/?utm_campaign=nav_support_us">Support Us</a>
       <!-- SEARCH -- EXPANDER input checkbox toggle -->
@@ -134,5 +134,5 @@
 <!-- Begin organisms/global/header--IE -->
 <!-- Old header HTML for IE -->
 <header class="site__header site__header-IE" data-dev-object-descrip="organisms/global/header" data-dev-status="IN-PROGRESS">
-        {% include 01-molecules/navigation/primary-nav-IE.html %}
+       <?php include_once($gitrootinc . "01-molecules/navigation/primary-nav-IE.html" ); ?>
 </header>

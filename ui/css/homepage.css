@@ -8,6 +8,14 @@
   list-style-type: none;
 }
 
+.category-label a {
+background: rgb(255,208,0);
+background: rgba(255,208,0,0.8);
+color: black;
+font-weight: 500;
+font-size:90%;
+padding: 0 2px;
+}
 
 /* Border-box reset. */
 html {
@@ -504,6 +512,10 @@ body {
       transform: scale(.75) translate(-40%, -40%);
     }
 
+.story-item__deck a {
+border-bottom: 2px solid var(--link-colour);
+}
+
 .tyee-insider__story .story-item__deck,
 .hmpg-org-deep-dive .story-item--primary .story-item__deck {
   font-family: var(--typeface-serif);
@@ -545,7 +557,6 @@ body {
    line-height: 3rem; /* this is 1.5 x baseline, so headlines that break over
                          odd-numbered lines will throw off the grid */
    font-size: 1.5em;
-   text-transform: capitalize;
 
    margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
 }
@@ -580,16 +591,6 @@ body {
       display: inline-block;
     }
 
-    /* Multiple authors -- add separators between authors */
-    .story-item__author a:after {
-      content:", ";
-      font-weight: 400;
-    }
-
-    /* Multiple authors -- remove separator after last author */
-    .story-item__author a:last-of-type:after {
-      content: none;
-    }
 
     .m-comment-noted .story-item__author {
       display: block;
@@ -709,7 +710,7 @@ body {
         @media screen and (min-width: 684px) {
 
           .story-item--primary .story-item__deck {
-            text-transform: uppercase;
+		#            text-transform: uppercase;
           }
 
               .hmpg-org-tyee-insider .story-item--primary .story-item__deck {
@@ -745,7 +746,7 @@ body {
           .story-item--primary .story-item__headline {
             font-family: var(--typeface-display-large);
             line-height: 4rem; /* this is 2 x baseline */
-            font-size: 2.33em;
+            font-size: 2.33em !important;
             margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
           }
 
@@ -760,7 +761,7 @@ body {
           /* Reduce size of Primary headlines in Recent Stories module because halfpage adblock
              is reducing the column width. */
           .hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
-            line-height: 3rem; /* this is 2 x baseline */
+            line-height: 4rem; /* this is 2 x baseline */
             font-size: 1.65em;
           }
 
@@ -879,31 +880,32 @@ a {
           .site-footer a:hover  {
             display: inline-block;
             color: var(--link-colour);
-            transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+            transform: none; /* scale(1.0)!important; /* !important is required to override badges that are scaled by default */
           }
         }
 
         /* Hover states for text links and buttons */
         a:hover, a:focus {
-          display: inline-block;
+	  transform: none;
           color: var(--link-colour);
-          transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+	  font-size: 1em;
         }
+
+/* disabled all scalin - too many issues on hover - b.c */
 
             /* Patch hover states that cause layout reflow */
             .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:hover,
             .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:focus,
             .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:hover,
             .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:focus {
-              display: inline;
-              font-size: 1.05em;
+              font-size: 1.0em;
             }
 
             /* Patch hover states that cause layout reflow */
             p a:hover,
             p a:focus {
               display: inline;
-              font-size: 1.05em;
+              font-size: 1.0em;
             }
 
             .hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus  {
@@ -911,14 +913,14 @@ a {
             }
 
             .story-item p a:hover, .story-item p a:focus  {
-              margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
+             /* margin-bottom: -2px;  /* Offsets the effect of setting underlined text as an inline-block */
             }
 
             /*  Patch hover states that cause layout reflow */
             @media screen and (max-width: 683px) {
               .story-item--secondary .story-item__headline a:hover, .story-item--secondary .story-item__headline a:focus {
                 display: inline;
-                font-size: 1.05em;
+                font-size: 1.0em;
               }
             }
 
@@ -1117,7 +1119,7 @@ a {
     .story-item--index-page .badge--story-item-placement {/* grid-area: image; */z-index: 20;}
     .story-item--index-page .category-label { grid-area: category; }
     .story-item--index-page .story-item__headline { grid-area: headline; }
-    .story-item--index-page .story-item__deck { grid-area: deck; }
+    .story-item--index-page .story-item__deck { grid-area: deck;font-size: 115%; }
     .story-item--index-page .story-item__author { grid-area: author; }
     .story-item--index-page .story-item__date { grid-area: date; }
 
@@ -1148,7 +1150,7 @@ a {
         .story-item--tertiary .category-label { display: none; }
         .story-item--tertiary .story-item__headline { display: block; }
         .story-item--tertiary .story-item__deck { display: block; }
-        .story-item--tertiary .story-item__author { display: block; }
+        .story-item--tertiary .story-item__author { display: inline-block; }
         .story-item--tertiary .story-item__date { display: none; }
 
         .hmpg-org-recent-stories__list .story-item--tertiary {
@@ -1994,8 +1996,12 @@ a {
         max-width: 85%;
       }
       
+.barometer-form-list ul {
+/* list-style-type: circle; */
+}
+
       .barometer-form-list li {
-       display:block;
+       display:block; 
       }
 
       .barometer-form-label::before, .barometer-form-list li::before{
@@ -2008,6 +2014,8 @@ a {
         left: -3rem;
         background: hsla(0, 0%, 100%, 0.3);
         border: 2px solid white;
+    border-radius: 50%;
+
       }
 
       /*
