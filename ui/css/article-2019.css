@@ -447,7 +447,7 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
     }
 
     .index-page__container a:hover, .index-page__container a:focus {
-      display: block;  /* patch to prevent story-item images on Section Page from being converted to inline-block */
+ /*     display: block;   patch to prevent story-item images on Section Page from being converted to inline-block. DISABLED BECAUSE  ISSUES */
     }
 
     .index-page__container li a:hover, .index-page__container li a:focus {
