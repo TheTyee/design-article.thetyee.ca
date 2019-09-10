@@ -440,10 +440,11 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
 /* Scaling hover states for text links, buttons and nav-bar */
     a:hover, a:focus,
     .site-footer a:hover  {
-      display: inline-block; /* inline elements need to be converted into
+/*      display: inline-block; */ /* inline elements need to be converted into
                                 inline-blocks so they can be transformed */
       color: var(--link-colour);
-      transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+/*      transform: scale(1.05)!important; */
+ /* !important is required to override badges that are scaled by default */
     }
 
     .index-page__container a:hover, .index-page__container a:focus {
@@ -466,13 +467,13 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
         }
 
         a.link-wrap:hover {
-          display: block;
+         /* display: block; causes issues */
         }
 
-        .related-story:hover {
+  /*      .related-story:hover {
           transform: scale(1.05)!important;
         }
-
+*/
         a.badge--headline-placement:hover {
           transform: scale(1.2)!important;
         }
