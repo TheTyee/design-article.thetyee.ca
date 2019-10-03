@@ -829,9 +829,7 @@ a.new-site-header--homepage {
         /* Hover states for text links and buttons */
         .new-story-item a:hover, .new-story-item a:focus,
         .new-site-header__tagline a:hover, .new-site-header__tagline a:focus {
-          display: inline-block;
           color: var(--link-colour);
-          transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
         }
 
         .new-hmpg-org-tyee-insider a:hover, .new-hmpg-org-tyee-insider a:focus  {
