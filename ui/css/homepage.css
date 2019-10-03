@@ -513,7 +513,7 @@ body {
     }
 
 .story-item__deck a {
-border-bottom: 2px solid var(--link-colour);
+border-bottom: 2px solid black;
 }
 
 .tyee-insider__story .story-item__deck,
@@ -879,7 +879,7 @@ a {
           .nav__link:hover,
           .site-footer a:hover  {
             display: inline-block;
-            color: var(--link-colour);
+            color: black;
             transform: none; /* scale(1.0)!important; /* !important is required to override badges that are scaled by default */
           }
         }
@@ -887,9 +887,20 @@ a {
         /* Hover states for text links and buttons */
         a:hover, a:focus {
 	  transform: none;
-          color: var(--link-colour);
+/*          color: var(--link-colour); */
+           color: black;
 	  font-size: 1em;
         }
+
+h2 a:hover, p a:hover {
+ background: rgb(255,208,0);
+    background: rgba(255,208,0,0.8);
+}
+
+.story-item__author a:hover {
+    border-bottom:2px solid black;
+margin-bottom: -2px;
+}
 
 /* disabled all scalin - too many issues on hover - b.c */
 
