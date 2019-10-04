@@ -2436,6 +2436,7 @@ a.new-site-header--homepage {
 
   .new-site-header__tagline--mobile {
     position: absolute;
+    z-index:200;
     width: 100%;
     text-align: center;
   }
