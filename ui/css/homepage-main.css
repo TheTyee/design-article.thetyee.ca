@@ -15,4 +15,4 @@
 than directly <link>'ed in the header. <link>'ed CSS files are very slow to edit
 with Chrome's devtools due to some kind of resource mapping bug. @import'ing
 the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
-@import "homepage.css";
+@import "homepage.css?v=2";
