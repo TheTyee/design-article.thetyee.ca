@@ -2981,7 +2981,7 @@ margin-bottom: -2px;
 
                 /* Define Grid within element */
                 display: grid;
-                grid-template-columns:  calc(var(--page-margin-sides))  [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                grid-template-columns:  calc(var(--page-margin-sides))  [main-items] 1fr 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
                 padding-top: var(--gutter-row);
                 grid-column-gap: 0;
                 grid-row-gap: 0;
@@ -3181,7 +3181,7 @@ margin-bottom: -2px;
             /* Spacing for Nav buttons and dropdown */
 
             .site-nav-main {
-                grid-template-columns:  calc(var(--page-margin-sides))   [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                grid-template-columns:  calc(var(--page-margin-sides))   [main-items] 1fr 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
               }
 
             .site-nav-main .nav__link--join {
