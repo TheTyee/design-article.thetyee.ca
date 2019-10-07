@@ -433,7 +433,7 @@ a:active {color: #404040; color: var(--text-colour)}
 /* Text links within paragraphs get a solid underscore */
 p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
 p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
-      border-bottom: 2px solid black;
+      border-bottom: 1px solid black;
       margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
 }
 
