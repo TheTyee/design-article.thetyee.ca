@@ -2817,7 +2817,7 @@ a.new-site-header--homepage {
 
                 /* Define Grid within element */
                 display: grid;
-                grid-template-columns:  calc(var(--page-margin-sides))  [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                grid-template-columns:  calc(var(--page-margin-sides))  [main-items] 1fr 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
                 padding-top: var(--gutter-row);
                 grid-column-gap: 0;
                 grid-row-gap: 0;
@@ -3017,7 +3017,7 @@ a.new-site-header--homepage {
             /* Spacing for Nav buttons and dropdown */
 
             .new-site-nav-main {
-                grid-template-columns:  calc(var(--page-margin-sides))   [main-items] 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
+                grid-template-columns:  calc(var(--page-margin-sides))   [main-items] 1fr 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
               }
 
             .new-site-nav-main .new-nav__link--join {
