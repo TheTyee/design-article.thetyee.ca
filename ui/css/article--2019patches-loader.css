@@ -17,4 +17,4 @@ application of styles from the old article page. */
 
 /* This file adds prefixes to all the CSS classes so that components from the new
 homepage can be used on other pages without creating css collisions */
-@import "homepage--prefixed.css";
+@import "homepage--prefixed.css?v=2";
