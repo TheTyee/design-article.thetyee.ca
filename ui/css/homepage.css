@@ -648,7 +648,7 @@ border-bottom: 2px solid black;
       font-size: 1.11em;
     }
 
-    .story-item--primary .story-item__author {
+    .story-item--primary div.story-item__author {
       padding-top: 2rem; /* 2rem total aligns with baseline grid */
     }
 
