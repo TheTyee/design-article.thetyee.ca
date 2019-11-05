@@ -1879,7 +1879,8 @@ a.new-site-header--homepage {
         padding-bottom: 2rem;
       }
 
-      input[type=radio] {
+
+      .m-barometer input[type=radio] {
         visibility: hidden;
         display: none;
       }
