@@ -955,14 +955,14 @@ margin-bottom: -2px;
 
 .button {
   display: inline-block;
-  border: 2px solid var(--brand-colour--text);
+  border: 2px solid rgb(255,208,0);
+  border: 2px solid rgba(255,208,0,0.8);
   border-radius: 0rem;
   padding: calc(1rem - 2px) 4rem;
   margin: 0;
   height: 4rem;
   text-decoration: none;
-  background: none;
-  color: var(--text-colour);
+  color: black;
   font-family: var(--typeface-sans);
   font-size: 1em;
   font-weight: 500;
@@ -1006,8 +1006,9 @@ margin-bottom: -2px;
 
     .button:hover,
     .button:focus {
-        color: white;
-        background: var(--brand-colour--text-darker);
+        color: black;
+        background: rgb(255,208,0);
+        background: rgba(255,208,0,0.8);
         border-color: transparent;
         outline: 2px solid #fff;
         transform: scale(1.05)
