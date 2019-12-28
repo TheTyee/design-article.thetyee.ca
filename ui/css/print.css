@@ -30,9 +30,11 @@ iframe {
 /* HIDE ELEMENTS THAT ARE NOT REQUIRED IN PRINT  =================================== */
 
 .ad-banner, .mobile-toggle button, .search-block, .tool-bar, .ad-box, .series-box, aside .fact-box, .related-story, .presents-box, .messaging-block, .related-event-box, 
-.messaging-zone, #filed-in, #latest_bottom_wrap, .latest-stories, .comments-section, footer {
+.messaging-zone, #filed-in, #latest_bottom_wrap, .latest-stories, .comments-section, footer, .new-site-header {
     display: none !important;
 }
+
+
 
 /* Hide wide viewport nav (required for Safari) */
 #bs-example-navbar-collapse-1 {
