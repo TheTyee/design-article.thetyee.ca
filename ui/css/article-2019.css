@@ -32,7 +32,7 @@ body {
   overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
 }
 
-.article__body p {
+.article__body p, .article__body strong, .article__body li, .artical__body em, .article__body .ul, .article__body ol, .article__body {
   font-family: miller-text, serif;
 }
 
@@ -417,7 +417,8 @@ ul { }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
   color: white;
   background-color:darkgreen;
-  background-color: var(--brand-colour--text-darker);
+  background-color: rgb(255,208,0);
+  background-color: rgba(255,208,0,0.8);
 }
 
 
@@ -715,6 +716,7 @@ background: rgb(255,208,0);
     color: black;
     background-color: #74A600;  /* IE fallback */
     background-color: rgb(255,208,0);
+    background-color: rgba(255,208,0,0.8);
     border-color: rgb(255,208,0);
 }
 
