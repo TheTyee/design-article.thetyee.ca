@@ -269,3 +269,6 @@ article a[href^="#fact-box"]:after {
         font-weight: 300 !important;
         font-style: italic !important;
     }
+.popend {
+display:none;
+}
