@@ -431,6 +431,8 @@ a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
 a:active {color: #404040; color: var(--text-colour)}
   a.button , a.button :link, a.button :visited {color: #404040;color: var(--text-colour);}
 
+.button.m-t-2:hover { display: block; }
+
 /* Text links within paragraphs get a solid underscore */
 p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
 p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
