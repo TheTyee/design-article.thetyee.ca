@@ -516,12 +516,17 @@ body {
 border-bottom: 2px solid black;
 }
 
-.tyee-insider__story .story-item__deck,
-.hmpg-org-deep-dive .story-item--primary .story-item__deck {
+
+.tyee-insider__story .story-item__deck,.hmpg-org-deep-dive .story-item--primary .story-item__deck, .hmpg-org-tyee-insider .story-item__deck  {
   font-family: var(--typeface-serif);
   font-size: 1.33em;
   line-height: 3rem;
   color: var(--text-colour);
+}
+
+.hmpg-org-tyee-insider .story-item__deck p {
+font-size: 118%;
+line-height: 145%;
 }
 
 .tyee-insider__story .story-item__deck p:nth-of-type(n+2),
@@ -538,13 +543,21 @@ border-bottom: 2px solid black;
   margin: 3rem 0 1rem; /* 4rem total realigns with 2rem-baseline grid */
 }
 
-.m-comment-noted__title, .m-barometer__title {
+.m-comment-noted__title, .m-barometer__title, .m-barometer .barometer-form-list > p {
   font-family: var(--typeface-display-medium);
   font-weight: 600;
-  line-height: 3rem;
-  font-size: 1.5em;
+  line-height: 3.5rem;
+  font-size: 2.3em;
   text-transform: none;
 }
+
+.m-comment-noted__body p, .barometer-form-list p, .barometer-form-list ul {
+font-size: 1.3em;
+line-height: 1.6em;
+font-family: var(--typeface-serif);
+}
+
+
 
 
 /* Content text styles ----------------- */
@@ -1615,6 +1628,11 @@ margin-bottom: -2px;
       padding-top: calc(5rem - 0px);
     }
 
+main .hmpg-org-wrapper.annex {
+    padding-top: 2rem;
+}
+
+
         /* Omit top padding from first modules
            (This will maintain correct padding when the order of modules changes) */
         main .hmpg-org-wrapper:first-of-type {
@@ -1999,14 +2017,20 @@ margin-bottom: -2px;
       .m-tyee-insider__main .story-item--tertiary .story-item__deck {display: none;}
 
 
+.hmpg-org-tyee-insider.annex.hmpg-org-wrapper:before {
+ border-bottom: none;
+}
+
   /* Comment Noted and Barometer molecule styles */
+
+
 
   .m-comment-noted, .m-barometer {
 
     padding-top: 2rem;
-    border-top: 4px solid var(--text-colour);
+    border-top: 4px solid var(--text-colour); 
     margin-top: calc(2rem - 4px); /* Offsets the 1px border */
-
+    grid-column: auto / span 3 !important;
   }
 
       .m-comment-noted .hmpg-module-header, .m-barometer .hmpg-module-header {
@@ -2027,8 +2051,8 @@ margin-bottom: -2px;
 .barometer-form-list p:first-child  {
  font-family: var(--typeface-display-medium);
     font-weight: 600;
-    line-height: 3rem;
-    font-size: 1.5em;
+    line-height: 3.5rem;
+    font-size: 2.3em;
     text-transform: none;
     min-height:10rem;
     margin-bottom:2rem;
@@ -2157,6 +2181,7 @@ margin-bottom: -2px;
           }
         } /* End of Tyee Insider medium breakpoint */
 
+	.annex 
 
         /*  TYEE INSIDER LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
         @media screen and (min-width: 1368px) {
@@ -2165,7 +2190,7 @@ margin-bottom: -2px;
             grid-template-columns: repeat(5, 1fr);
           }
               .hmpg-org-tyee-insider > :first-child {
-              grid-column: auto / span 3;
+              grid-column: auto / span 5;
               }
               .hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 1;}
               .hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 1;}
