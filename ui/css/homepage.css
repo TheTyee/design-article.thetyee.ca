@@ -546,7 +546,7 @@ line-height: 145%;
 .m-comment-noted__title, .m-barometer__title, .m-barometer .barometer-form-list > p {
   font-family: var(--typeface-display-medium);
   font-weight: 600;
-  line-height: 3.5rem;
+  line-height: 4rem;
   font-size: 2.3em;
   text-transform: none;
 }
@@ -557,6 +557,14 @@ line-height: 1.6em;
 font-family: var(--typeface-serif);
 }
 
+
+@media screen and (max-width: 683px) {
+ .m-comment-noted__title, .m-barometer__title, .m-barometer .barometer-form-list > p, .barometer-form-list p:first-child {
+	font-size: 1.8em !important;;
+	line-height: 3.5rem !important;
+}
+
+}
 
 
 
@@ -2051,7 +2059,7 @@ main .hmpg-org-wrapper.annex {
 .barometer-form-list p:first-child  {
  font-family: var(--typeface-display-medium);
     font-weight: 600;
-    line-height: 3.5rem;
+    line-height: 4rem;
     font-size: 2.3em;
     text-transform: none;
     min-height:10rem;
