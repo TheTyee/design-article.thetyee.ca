@@ -547,7 +547,7 @@ line-height: 145%;
   font-family: var(--typeface-display-medium);
   font-weight: 600;
   line-height: 4rem;
-  font-size: 2.3em;
+  font-size: 2.33em;
   text-transform: none;
 }
 
@@ -2060,7 +2060,7 @@ main .hmpg-org-wrapper.annex {
  font-family: var(--typeface-display-medium);
     font-weight: 600;
     line-height: 4rem;
-    font-size: 2.3em;
+    font-size: 2.33em;
     text-transform: none;
     min-height:10rem;
     margin-bottom:2rem;
