@@ -36,6 +36,10 @@ body {
   font-family: miller-text, serif;
 }
 
+.article__body .caption {
+ font-family: var(--typeface-sans);
+}
+
 .article__body .editors-note {
   font-family: "Source Sans Pro", sans-serif;
 }
