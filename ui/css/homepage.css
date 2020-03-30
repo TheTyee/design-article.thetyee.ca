@@ -2016,7 +2016,7 @@ main .hmpg-org-wrapper.annex {
 
   /* Tyee Insider Tertiary Story-item */
   .m-tyee-insider__main .story-item--tertiary {
-      grid-template-rows: auto auto auto auto 1fr;
+      grid-template-rows: auto auto auto auto auto;
   }
       .m-tyee-insider__main .story-item--tertiary .story-item__image {display: grid; margin-bottom: 2rem;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
       .m-tyee-insider__main .story-item--tertiary .badge--story-item-placement {display: none;}
