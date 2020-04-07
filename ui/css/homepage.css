@@ -1242,7 +1242,7 @@ margin-bottom: -2px;
           /* Secondary story item gets single-col stacked layout in Deep Dive on narrow viewports. */
           .hmpg-org-deep-dive .story-item--secondary {
             grid-template-columns: 1fr;
-            grid-template-rows: auto auto auto auto auto 1fr;
+            grid-template-rows: auto auto auto auto auto auto;
             grid-template-areas: "image" "category" "headline" "deck" "author" "date";
           }
 
@@ -1360,7 +1360,7 @@ margin-bottom: -2px;
 
             .story-item--secondary {
               grid-template-columns: 1fr;
-              grid-template-rows: auto auto auto auto auto 1fr;
+              grid-template-rows: auto auto auto auto auto auto;
               grid-template-areas:
                   "image"
                   "category"
@@ -1374,7 +1374,7 @@ margin-bottom: -2px;
                                   between image and headline in stacked story-item layout */
 
             .story-item--tertiary {
-                grid-template-rows: auto auto auto auto 1fr;
+                grid-template-rows: auto auto auto auto auto;
             }
                 .story-item--tertiary .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
                 .story-item--tertiary .badge--story-item-placement {display: block;}
