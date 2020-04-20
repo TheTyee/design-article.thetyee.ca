@@ -1391,7 +1391,7 @@ margin-bottom: -2px;
              needs to be controled by the expander--recent-stories. (There seems to be some kind of CSS
              bug because nth-of-type is counting all story-items, not just .story-item--tertiary.
              We really only want to select the first 4 .story-item--tertiary elements)  */
-          .hmpg-org-recent-stories__list .story-item--tertiary:nth-of-type(-n+8) {
+          .hmpg-org-recent-stories__list .story-item--tertiary:nth-of-type(-n+16) {
             display: block;
           }
 
