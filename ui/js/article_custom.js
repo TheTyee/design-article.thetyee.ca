@@ -163,6 +163,9 @@ function sharesFromFB() {
 // Wrap IIFE around your code
 (function($, viewport){
     jQuery(document).ready(function() {
+jQuery(".chevron").click(function(){
+$(".latest-stories__media-wrapper li").toggle();
+});
 
         jQuery('a.btn-comment, a.str-comment').click(function(e){
             jQuery('html, body').animate({
