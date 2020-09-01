@@ -241,6 +241,7 @@ var segments = window.location.href.split("/");
 topic = segments[(segments.length - 2)]; 
 if (topic == "Zoe_Ducklow") { topic = "Zoë_Ducklow" 
 } else if (topic =="Geoff_D_Auria") { topic = "Geoff_D'Auria" };
+} else if (topic =="Michael_M_Gonigle") { topic = "Michael_M'Gonigle" };
         //make UnitObjects global, so I don't have to keep hitting the API
         UnitObjects = UnitObjects;
                 getUnitStories(18,0);
