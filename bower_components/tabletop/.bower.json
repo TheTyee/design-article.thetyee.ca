@@ -19,12 +19,12 @@
     "test",
     "tests"
   ],
-  "version": "1.4.3",
-  "_release": "1.4.3",
+  "version": "1.6.3",
+  "_release": "1.6.3",
   "_resolution": {
     "type": "version",
-    "tag": "v1.4.3",
-    "commit": "92923f23528972fd31243da5ce550021764f765e"
+    "tag": "v1.6.3",
+    "commit": "119bffc170a0783d45bc1ba7481806b9f4059f1b"
   },
   "_source": "https://github.com/jsoma/tabletop.git",
   "_target": "*",
