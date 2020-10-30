@@ -1,4 +1,5 @@
-/* ==========================================================================
+/* 
+==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
 
@@ -32,8 +33,12 @@ body {
   overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
 }
 
-.article__body p {
+.article__body p, .article__body strong, .article__body li, .artical__body em, .article__body .ul, .article__body ol, .article__body {
   font-family: miller-text, serif;
+}
+
+.article__body .caption {
+ font-family: var(--typeface-sans);
 }
 
 .article__body .editors-note {
@@ -144,16 +149,18 @@ h6 {
 
     /* Darken Tag Labels for better legibility */
     h6:nth-of-type(n+2) a {
-      color: var(--link-colour);
+      color: black;
     }
 
-    /* Separators between tag labels */
+    /* Separators between tag labels --disabled for now
     h6:nth-of-type(n+3):before {
       content:"|";
       color: var(--text-colour-light) ;
       font-weight: 400;
       margin-right: .35rem;
     }
+
+*/
 
 p {
   margin-bottom: 1em;
@@ -415,7 +422,8 @@ ul { }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
   color: white;
   background-color:darkgreen;
-  background-color: var(--brand-colour--text-darker);
+  background-color: rgb(255,208,0);
+  background-color: rgba(255,208,0,0.8);
 }
 
 
@@ -428,24 +436,27 @@ a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
 a:active {color: #404040; color: var(--text-colour)}
   a.button , a.button :link, a.button :visited {color: #404040;color: var(--text-colour);}
 
+.button.m-t-2:hover { display: block; }
+
 /* Text links within paragraphs get a solid underscore */
 p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {color: var(--text-colour); border-bottom: 1.5px solid #82AD00;}
 p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
-      border-bottom: 2px solid var(--link-colour);
+      border-bottom: 1px solid black;
       margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
 }
 
 /* Scaling hover states for text links, buttons and nav-bar */
     a:hover, a:focus,
     .site-footer a:hover  {
-      display: inline-block; /* inline elements need to be converted into
+/*      display: inline-block; */ /* inline elements need to be converted into
                                 inline-blocks so they can be transformed */
       color: var(--link-colour);
-      transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
+/*      transform: scale(1.05)!important; */
+ /* !important is required to override badges that are scaled by default */
     }
 
     .index-page__container a:hover, .index-page__container a:focus {
-      display: block;  /* patch to prevent story-item images on Section Page from being converted to inline-block */
+ /*     display: block;   patch to prevent story-item images on Section Page from being converted to inline-block. DISABLED BECAUSE  ISSUES */
     }
 
     .index-page__container li a:hover, .index-page__container li a:focus {
@@ -464,21 +475,25 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
         }
 
         a.link-wrap:hover {
-          display: block;
+         /* display: block; causes issues */
         }
 
-        .related-story:hover {
+  /*      .related-story:hover {
           transform: scale(1.05)!important;
         }
-
+*/
         a.badge--headline-placement:hover {
           transform: scale(1.2)!important;
         }
 
     /* Prevent reflow that can occur when text within a paragraph becomes an inline-block.  */
-    p a:hover, figcaption a:hover {display: inline; font-size: 1.1em;}
+    p a:hover, figcaption a:hover {display: inline; }
 
-    p a:hover, figcaption a:hover {color: #6F9400; color: var(--link-colour)}
+    p a:hover, figcaption a:hover {
+color: #6F9400; color: black;
+background: rgb(255,208,0);
+    background: rgba(255,208,0,0.8);
+}
 
 .new-site-header a, .new-site-header a:link, .new-site-header a:visited {color: #404040; color: var(--text-colour)}
 .new-site-header a:hover {color: #6F9400; color: var(--link-colour); text-decoration: none;}
@@ -488,7 +503,7 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
 }
 
 .category-label a {
-  color: var(--brand-colour--text);
+  color: black;
 }
 
 
@@ -696,7 +711,7 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
     letter-spacing: .075em;
     border-radius: 0px;
     border-color: #74A600; /* IE fallback */
-    border: 2px solid var(--brand-colour--text);
+    border: 2px solid rgb(255,208,0);
     width: 100%;
     padding-top: 1.5em;
     padding-bottom: .75em;
@@ -705,10 +720,11 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
 }
 
 .btn--load-more:hover {
-    color: #fff;
+    color: black;
     background-color: #74A600;  /* IE fallback */
-    background-color: var(--brand-colour--text);
-    border-color: var(--brand-colour--text);
+    background-color: rgb(255,208,0);
+    background-color: rgba(255,208,0,0.8);
+    border-color: rgb(255,208,0);
 }
 
     .btn--load-more span {
@@ -755,7 +771,7 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
     /* border-bottom: 1px solid #9D9D9C; */
 }
 
-    h2.index-list-header, .index-list h2 {
+    h2.index-list-header, .index-list h2, .block-inner h2 {
         color: #ccc;
         color: var(--text-colour);
         font-family: Georgia, Serif;
@@ -800,19 +816,27 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
     /*--- BLOCK LIST STYLING  ---*/
     /* This uses the stylikng method from https://www.w3.org/Style/Examples/007/color-bullets.en.html */
 
-    .index-list ol {
+    .index-list ol, .index-list .block-inner .content {
         padding-left: 1.83em;
         list-style: none;
         counter-reset: li;
     }
 
-        .index-list li {
+        .index-list li, h2.story-item__headline {
             margin-bottom: 1.5em;
             counter-increment: li;
+            text-transform:none;
+	    color:black !important;
             font-weight: 600;
+ 	     display: list-item;
+	    
         }
 
-        .index-list li::before {
+	.index-list .story-item__headline a {
+		color:black;
+	}
+
+        .index-list li::before, h2.story-item__headline::before {
             content: counter(li);
             display: inline-block;
             color: #bbb;  /* IE fallback */
@@ -823,19 +847,19 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
             font-size: 1.35em;
             font-weight: 600;
             width: 1.33em;
-            height: 1.33em;
+/*            height: 1.33em; */
 
             -ms-transform: scale(0.85); /* IE 9 */
             -webkit-transform: scale(0.85); /* Safari */
             transform: scale(.85);
 
             margin-left: -1.83em;
-            margin-right: 0.25em;
+            margin-right: 0.5em;
             /* text-align: right; */
             direction: rtl;
         }
 
-        .index-list li a {
+        .index-list li a, h2.story-item__headline {
             color: #404040;
             padding-right: .75em;
             font-family: var(--typeface-display-medium);
@@ -2100,7 +2124,7 @@ margin: 0;
     }
 
     .tool-bar .count {
-      width: 35px;
+      width: 46px;
       height: 40px;
 
     }
