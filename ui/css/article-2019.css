@@ -2039,8 +2039,16 @@ margin: 0;
       display: block;
       font-weight: 500 !important;
     }
-
-	 .author-more {
+    
+    @media screen and (min-width: 600px) {
+		.author-info__date span:before {
+			content: " / ";
+		}
+	}
+	
+	
+	
+	.author-more {
       display:none;
     }
 
