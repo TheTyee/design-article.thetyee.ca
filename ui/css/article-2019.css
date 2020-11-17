@@ -26,18 +26,24 @@ Html {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif; /* IE fallback */
+  font-family: var(--typeface-sans), sans-serif; /* IE fallback */
   font-family: var(--typeface-sans);
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.39em;
+  line-height: 1.45em;
   /* color: #404040; */
   color: var(--text-colour);
   overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
 }
 
 .article__body p, .article__body strong, .article__body li, .artical__body em, .article__body .ul, .article__body ol, .article__body {
-  font-family: miller-text, serif;
+  font-family: var(--typeface-serif), serif;
+}
+
+@media screen and (max-width: 568px) {
+	.article__body p, .article__body strong, .article__body li, .artical__body em, .article__body .ul, .article__body ol, .article__body {
+		font-size: 17px;
+	}
 }
 
 .article__body .caption {
@@ -58,7 +64,7 @@ h1 {
   font-weight: normal;
   font-size: 1.625em !important; /* Rethink has specified 48/50 but 48px is HUGE; !important to override Bootstrap. possibly not working anyway */
   line-height: 1.25em !important;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
 }
 
     .h1--border-bottom {
@@ -73,15 +79,15 @@ h1 {
         h1 {
             font-size: 2.4em !important;
             line-height: 1.136em;
+            margin-bottom: 0.25em;
         }
     }
 
 h2 {
   color: #424242;
-  /*font-family: franklin-gothic-urw, helvetica, sans-serif;*/
   font-family: 'Grey', helvetica, sans-serif;
   font-weight: 700;
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.333em; /* 36px */
   margin-top: 1.555em; /* 42px */
   margin-bottom: .666em; /* 18px */
@@ -96,7 +102,7 @@ h3 {
 
 h4 {
   font-family: 'Grey', helvetica, sans-serif;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 100;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -111,62 +117,19 @@ h4 {
 
         .article__header h4 {
             margin-top: 10px;
+            font-size: 1.4em;
         }
     }
 
 h5 {
   margin-top: 1em;
-  font-family: miller-text, Georgia, Serif;
+  font-family: var(--typeface-serif), Georgia, Serif;
   font-size: 1.2em;
   font-weight: 600;
   line-height: 1.18518519em;
   color: #424242; /* IE fallback */
   color: var(--text-colour);
 }
-
-/* Story Labels */
-h6 {
-  display: inline-block;
-  margin-bottom: 0;
-  margin-right: 1.85rem;
-
-}
-
-    /* Category Label gets prominent styling */
-    h6:first-of-type {
-      display: inline-block;
-      margin-top: 2.4em;
-      margin-bottom: 0;
-      border-bottom: 2px solid #90AD00;
-      border-bottom-color: var(--brand-colour--text);
-      padding-bottom: 0.15em;
-      font-size: 1em;
-      font-weight: 700;
-      letter-spacing: .04em;
-    }
-
-    /* Tag Labels get subordinate styling */
-    h6:nth-of-type(n+2) {
-      text-transform:capitalize;
-      font-size: .8em;
-      font-weight: 600;
-      margin-right: .15rem;
-    }
-
-    /* Darken Tag Labels for better legibility */
-    h6:nth-of-type(n+2) a {
-      color: black;
-    }
-
-    /* Separators between tag labels --disabled for now
-    h6:nth-of-type(n+3):before {
-      content:"|";
-      color: var(--text-colour-light) ;
-      font-weight: 400;
-      margin-right: .35rem;
-    }
-
-*/
 
 p {
   margin-bottom: 1em;
@@ -503,20 +466,79 @@ background: rgb(255,208,0);
   color: var(--brand-colour);
 }
 
-.category-label {
+/* Story Labels */
+h6 {
+  display: inline-block;
+  margin-bottom: 0;
+
+}
+
+/* Category Label gets prominent styling */
+h6:first-of-type {
+  display: inline-block;
+  margin-top: 2.4em;
+  margin-bottom: 0;
+  font-size: 0.95em;
+  font-weight: 300 !important;
+  letter-spacing: .04em;
   text-transform: uppercase;
-  border-bottom: none !important;
+  background: var(--yellow);
+   padding: 2px 6px 2px;
+}
+
+/* Tag Labels get subordinate styling */
+h6:nth-of-type(n+2) {
+  text-transform:capitalize;
+  font-size: 0.95em;
+  font-weight: 400;
+  margin-right: 0;
+  border: 1px solid var(--lightgrey);
+   padding: 0px 6px 1px;
+   letter-spacing: .03em;
+}
+
+/* Darken Tag Labels for better legibility */
+h6:nth-of-type(n+2) a {
+  color: var(--lightgrey);
+}
+
+h6:nth-of-type(n+2) a:hover {
+	color: black;
+}
+
+.category-label {  
   font-family: var(--typeface-sans);
-  font-weight: 300;
 }
 
 .category-label a {
-  color: black;
-  background: var(--yellow);
- padding: 0px 4px 2px;
-  /* grey medium 14pt with 100 tracking */
+	color: black;
+	font-weight: 500;
+	/* grey medium 14pt with 100 tracking */
 }
 
+h6:first-of-type:hover {
+	border-bottom: 1px solid black;
+}
+
+.container-fluid.clearfix > *:last-child:after {
+	content: "\f0c8";
+	font-family: "Font Awesome 5 Free"; 
+	font-size: 14px;
+	font-weight: 600;
+	display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    color: var(--yellow);
+    margin-left: 5px;    
+}
+
+/*#square {
+	background: var(--yellow);
+	width: 13px;
+	height: 13px;
+}*/
 
 
 /* PULLQUOTES  ========================================================================== */
@@ -538,7 +560,7 @@ background: rgb(255,208,0);
   padding-bottom: 1em;
   /* padding-left: 2.125em; */
   /* padding-right: 1.75em; */
-  font-family: miller-text, Georgia, Serif;
+  font-family: var(--typeface-serif), Georgia, Serif;
   font-weight: 800;
   font-size: 1.15em;
   line-height: 1.333em;
@@ -601,7 +623,7 @@ background: rgb(255,208,0);
     padding-bottom:0;
     margin-top: -0.09em;
     margin-bottom: -0.1em;
-    font-family: miller-display, Georgia, Serif;
+    font-family: 'Tiempos Headline', Georgia, Serif;
     font-style: normal;
     font-weight: 800;
     font-size: 5em;
@@ -632,9 +654,9 @@ background: rgb(255,208,0);
     padding-bottom: 1rem;
     border-bottom: 1px solid;
     border-color: inherit;
-    font-size: 0.777em;
-    font-weight: 700;
-    line-height: 1.5em;
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 1.4em;
     color: #404040;
     text-align: left;
     text-shadow: none;
@@ -814,7 +836,7 @@ background: rgb(255,208,0);
         }
 
 	/* this is to make category labels manageable in narrow views - hides all except first label */
-	.article__header .category-label, .article__header strong {
+	.article__header .category-label {
 	 display:none;
 
 	}
@@ -1991,6 +2013,7 @@ aside { }
   border-color: inherit;
   font-weight: 500;
   font-size: 0.92em;
+  color: black;
 }
 
     .author-info img{
@@ -2035,7 +2058,7 @@ margin: 0;
       padding-top: 0.15em;
       line-height: 1.4;
       font-weight: 400;
-      font-family: 'Grey', helvetica, sans-serif;
+      font-family: 'Grey', helvetica, sans-serif;      
     }
 
     .author-info div {
@@ -2045,8 +2068,17 @@ margin: 0;
     .author-info p {
       margin-bottom: 0;
     }
-
-    /* BREAKPOINT: 600px // Display author bio teaser, enlarge author photo, set date inline */
+    
+    .author-info a {
+		color: black;
+		text-decoration: underline;
+	}
+	
+	.author-info a:hover {
+		background: var(--yellow);
+	}
+    
+        /* BREAKPOINT: 600px // Display author bio teaser, enlarge author photo, set date inline */
     @media screen and (min-width: 600px) {
 
         /* Apply margin to author text only if an img is present.
@@ -2162,6 +2194,7 @@ margin: 0;
   #sharecount .text {
   	font-weight: 500;
   }
+ 
   
   .tool-bar .count .text {
       font-size: 11px;
@@ -2169,13 +2202,13 @@ margin: 0;
      	position: relative;
      	top: -5px;
     }
-    @media screen and (max-width: 400px) {
+/*    @media screen and (max-width: 400px) {
 
       .tool-bar a .text, .tool-bar li.count img {
 
         display:none;
       }
-    }
+    }*/
 
         /* TOOL-BAR BUTTONS */
 
@@ -2276,19 +2309,17 @@ margin: 0;
         }
         
         .str-comment {
-			color: #7A7C85 !important;
+			color: var(--lightgrey) !important;
 			font-weight: bold;
 			position: relative;
 			top: -6px;
 			margin-left: 2px;
 		}
 		
-		@media screen and (max-width: 400px) {
-                .btn-print {
-                  display:none;
-                }
-
-            }
+		.str-comment:hover {
+			color: black !important;
+		}
+		
 
         /* HIDE BUTTONS ON POLL STORIES */
         .article-poll .btn-join, .article-poll .btn-comment, .article-poll .str-comment {
