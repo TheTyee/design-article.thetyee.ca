@@ -29,9 +29,9 @@
 /* Tiempos Text web semibold italic, weight: 500 */
 @font-face {
   font-family: "Tiempos Text";
-  src: url(fonts/tiempos/tiempos-text-web-semmibold-italic.woff2) format("woff2"),
-       url(fonts/tiempos/tiempos-text-web-semmibold-italic.woff) format("woff"),
-       url(fonts/tiempos/tiempos-text-web-semmibold-italic.eot) format("eot");
+  src: url(fonts/tiempos/tiempos-text-web-semibold-italic.woff2) format("woff2"),
+       url(fonts/tiempos/tiempos-text-web-semibold-italic.woff) format("woff"),
+       url(fonts/tiempos/tiempos-text-web-semibold-italic.eot) format("eot");
   font-weight: 500;
   font-style: italic;
 }
