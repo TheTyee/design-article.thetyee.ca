@@ -6,9 +6,6 @@
 /* Import styles from article page */
 /*@import "homepage-articlepage_imports.css"; NOTE NOV 2020 the contents of this file are all commented out — ER*/
 
-/* Fonts */
-/* Miller and Franklin Gothic */
-@import url("https://use.typekit.net/whf8gkh.css");
 /* New brand fonts */
 @import "fonts-tiempos.css";
 @import "fonts-grey.css";
