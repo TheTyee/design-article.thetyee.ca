@@ -79,7 +79,7 @@ h1 {
 h2 {
   color: #424242;
   /*font-family: franklin-gothic-urw, helvetica, sans-serif;*/
-  font-family: 'grey trial', helvetica, sans-serif;
+  font-family: 'Grey', helvetica, sans-serif;
   font-weight: 700;
   font-size: 1.1em;
   line-height: 1.333em; /* 36px */
@@ -95,7 +95,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'grey trial', helvetica, sans-serif;
+  font-family: 'Grey', helvetica, sans-serif;
   font-size: 1.4em;
   font-weight: 100;
   line-height: 1.25;
@@ -514,7 +514,7 @@ background: rgb(255,208,0);
   color: black;
   background: var(--yellow);
  padding: 0px 4px 2px;
-  /* grey trial medium 14pt with 100 tracking */
+  /* grey medium 14pt with 100 tracking */
 }
 
 
@@ -2034,8 +2034,8 @@ margin: 0;
       display: none;
       padding-top: 0.15em;
       line-height: 1.4;
-      font-weight: 100;
-      font-family: 'grey trial', helvetica, sans-serif;
+      font-weight: 400;
+      font-family: 'Grey', helvetica, sans-serif;
     }
 
     .author-info div {
@@ -2155,8 +2155,15 @@ margin: 0;
   	line-height: 1;
   }
   
-
-    .tool-bar .count .text {
+  #sharecount .count {
+  	font-weight: bold;
+  }
+  
+  #sharecount .text {
+  	font-weight: 500;
+  }
+  
+  .tool-bar .count .text {
       font-size: 11px;
       vertical-align: top;
      	position: relative;
