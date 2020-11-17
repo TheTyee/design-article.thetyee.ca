@@ -1,8 +1,6 @@
 /* @override 
 	http://127.0.0.1:4000/ui/css/article-2019-loader.css */
 
-/* 
-
 /*
 ==========================================================================
    Globals & Mixins
@@ -17,6 +15,7 @@
 /* New brand fonts */
 @import "fonts-tiempos.css";
 @import "fonts-grey.css";
+@import "variables-2020.css"; /* Rethink changes for colour and fonts */
 
 /* ==========================================================================
    #STORY-PAGE-STYLES
