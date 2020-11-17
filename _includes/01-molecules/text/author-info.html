@@ -5,10 +5,10 @@
 
     <div class="author-info__text">
 
-        By <a href="/author-link-here/" data-bind="author-name">{{ include.author-name }}</a>
+        <a href="/author-link-here/" data-bind="author-name">{{ include.author-name }}</a>
         <span class="author-info__date">
-            <span data-bind="date">{{ include.article-date }}</span>&nbsp;|&nbsp;TheTyee.ca {% comment %}
-        </span> <-- NBSP IS NECESSARY HERE {% endcomment %}
+            / <span data-bind="date">{{ include.article-date }}</span>
+        </span>
 
         <span class="author-info__bio" data-bind="author-bio">{{ include.author-bio }}</span>
         
