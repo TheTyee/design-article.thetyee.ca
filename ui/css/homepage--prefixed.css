@@ -99,6 +99,7 @@ homepage can be used on other pages without creating css collisions */
   --border-colour-cols: hsl(0, 0%, 74%);
 
   --utility-background-color: #444; /* used for utility components like drop-down, footer, scroll-bounce */
+  --yellow: #ffcf00;
 }
 
 
@@ -115,8 +116,8 @@ html {
 
 /* Typefaces */
 :root {
-  --typeface-serif: miller-text, georgia, serif;
-  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+  --typeface-serif: 'Tiempos Text', georgia, serif;
+  --typeface-sans: 'Grey', 'grey trial', helvetica, sans-serif;
 
   --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
 
