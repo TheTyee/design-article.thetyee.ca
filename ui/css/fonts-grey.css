@@ -1,0 +1,58 @@
+/* Grey Regular */
+@font-face {
+  font-family: "Grey";
+  src: url(fonts/grey/GreyLLWeb-Regular.woff2) format("woff2"),
+       url(fonts/grey/GreyLLWeb-Regular.woff) format("woff"),
+       url(fonts/grey/GreyLLWeb-Regular.eot) format("eot");
+  font-weight: 300;
+}
+
+
+/* Grey Regular Italic */
+@font-face {
+  font-family: "Grey";
+  src: url(fonts/grey/GreyLLWeb-RegularItalic.woff2) format("woff2"),
+       url(fonts/grey/GreyLLWeb-RegularItalic.woff) format("woff"),
+       url(fonts/grey/GreyLLWeb-RegularItalic.eot) format("eot");
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Grey Book */
+@font-face {
+  font-family: "Grey";
+  src: url(fonts/grey/GreyLLWeb-Book.woff2) format("woff2"),
+       url(fonts/grey/GreyLLWeb-Book.woff) format("woff"),
+       url(fonts/grey/GreyLLWeb-Book.eot) format("eot");
+  font-weight: 400;
+}
+
+/* Grey Book Italic */
+@font-face {
+  font-family: "Grey";
+  src: url(fonts/grey/GreyLLWeb-BookItalic.woff2) format("woff2"),
+       url(fonts/grey/GreyLLWeb-BookItalic.woff) format("woff"),
+       url(fonts/grey/GreyLLWeb-BookItalic.eot) format("eot");
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/* Grey Medium */
+@font-face {
+  font-family: "Grey";
+  src: url(fonts/grey/GreyLLWeb-Medium.woff2) format("woff2"),
+       url(fonts/grey/GreyLLWeb-Medium.woff) format("woff"),
+       url(fonts/grey/GreyLLWeb-Medium.eot) format("eot");
+  font-weight: 500;
+}
+
+
+/* Grey Bold */
+@font-face {
+  font-family: "Grey";
+  src: url(fonts/grey/GreyLLWeb-Bold.woff2) format("woff2"),
+       url(fonts/grey/GreyLLWeb-Bold.woff) format("woff"),
+       url(fonts/grey/GreyLLWeb-Bold.eot) format("eot");
+  font-weight: bold;
+}
