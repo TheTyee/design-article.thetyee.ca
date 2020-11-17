@@ -117,21 +117,21 @@ html {
 /* Typefaces */
 :root {
   --typeface-serif: 'Tiempos Text', georgia, serif;
-  --typeface-sans: 'Grey', 'grey trial', helvetica, sans-serif;
+  --typeface-sans: 'Grey', helvetica, sans-serif;
 
-  --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
+  --typeface-item-body: 'Grey', helvetica, sans-serif;
 
-  --typeface-display: miller-text, georgia, serif;
-  --typeface-display-small: miller-text, georgia, serif;
-  --typeface-display-medium: miller-display, georgia, serif;
-  --typeface-display-large: miller-banner, georgia, serif;
+  --typeface-display: 'Tiempos Text', georgia, serif;
+  --typeface-display-small: 'Tiempos Text', georgia, serif;
+  --typeface-display-medium: 'Tiempos Headline', georgia, serif;
+  --typeface-display-large: 'Tiempos Headline', georgia, serif;
 }
 
 .new-homepage--harriet, .new-homepage--harriet_b {
   --typeface-serif: Harriet-Texttest, georgia, serif;
-  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+  --typeface-sans: 'Grey', helvetica, sans-serif;
 
-  --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
+  --typeface-item-body: 'Grey', helvetica, sans-serif;
 
   --typeface-display: Harriet-Texttest, georgia, serif;
   --typeface-display-small: Harriet-Texttest, georgia, serif;
@@ -141,9 +141,9 @@ html {
 
 .new-homepage--harriet_c {
   --typeface-serif: Harriet-Texttest, georgia, serif;
-  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+  --typeface-sans: 'Grey', helvetica, sans-serif;
 
-  --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
+  --typeface-item-body: 'Grey', helvetica, sans-serif;
 
   --typeface-display: Harriet-Texttest, georgia, serif;
   --typeface-display-small: Harriet-Texttest, georgia, serif;
@@ -152,12 +152,12 @@ html {
 }
 
 .new-homepage--harriet-some {
-  --typeface-serif: miller-text, georgia, serif;
-  --typeface-sans: franklin-gothic-urw, helvetica, sans-serif;
+  --typeface-serif: 'Tiempos Text', georgia, serif;
+  --typeface-sans: 'Grey', helvetica, sans-serif;
 
-  --typeface-item-body: franklin-gothic-urw, helvetica, sans-serif;
+  --typeface-item-body: 'Grey', helvetica, sans-serif;
 
-  --typeface-display: miller-text, georgia, serif;
+  --typeface-display: 'Tiempos Text', georgia, serif;
   --typeface-display-small: Harriet-Texttest, georgia, serif;
   --typeface-display-medium: Harriet-Texttest, georgia, serif;
   --typeface-display-large: Harriet-DisplayTest, georgia, serif;
@@ -167,10 +167,10 @@ html {
 /* Typefaces for retina and high-dpi screens */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 195dpi) {
   :root {
-    --typeface-display: miller-text, georgia, serif;
-    --typeface-display-small: miller-text, georgia, serif;
-    --typeface-display-medium: miller-text, georgia, serif;
-    --typeface-display-large: miller-display, georgia, serif;
+    --typeface-display: 'Tiempos Text', georgia, serif;
+    --typeface-display-small: 'Tiempos Text', georgia, serif;
+    --typeface-display-medium: 'Tiempos Text', georgia, serif;
+    --typeface-display-large: 'Tiempos Headline', georgia, serif;
   }
 }
 
