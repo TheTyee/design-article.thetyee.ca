@@ -2,4 +2,8 @@
 	--yellow: #ffcf00;
 	/*--serif: ;
 	--sans-serif: ;*/
+	
+	--grey: #56565D; /* meets AAA guidelines for all sizes */
+	
+	--lightgrey: #73737D; /* only meets AA guidelines for small text; AAA for "large text" */
 }
