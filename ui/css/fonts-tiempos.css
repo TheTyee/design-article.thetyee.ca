@@ -1,0 +1,56 @@
+/* Tiempos Text web regular, weight: 400 */
+@font-face {
+  font-family: "Tiempos Text";
+  src: url(fonts/tiempos/tiempos-text-web-regular.woff2) format("woff2"),
+       url(fonts/tiempos/tiempos-text-web-regular.woff) format("woff"),
+       url(fonts/tiempos/tiempos-text-web-regular.eot) format("eot");
+  font-weight: 400;
+}
+
+/* Tiempos Text web regular italic, weight: 400 */
+@font-face {
+  font-family: "Tiempos Text";
+  src: url(fonts/tiempos/tiempos-text-web-regular-italic.woff2) format("woff2"),
+       url(fonts/tiempos/tiempos-text-web-regular-italic.woff) format("woff"),
+       url(fonts/tiempos/tiempos-text-web-regular-italic.eot) format("eot");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Tiempos Text web semibold, weight: 500 */
+@font-face {
+  font-family: "Tiempos Text";
+  src: url(fonts/tiempos/tiempos-text-web-semmibold.woff2) format("woff2"),
+       url(fonts/tiempos/tiempos-text-web-semmibold.woff) format("woff"),
+       url(fonts/tiempos/tiempos-text-web-semmibold.eot) format("eot");
+  font-weight: 500;
+}
+
+/* Tiempos Text web semibold italic, weight: 500 */
+@font-face {
+  font-family: "Tiempos Text";
+  src: url(fonts/tiempos/tiempos-text-web-semmibold-italic.woff2) format("woff2"),
+       url(fonts/tiempos/tiempos-text-web-semmibold-italic.woff) format("woff"),
+       url(fonts/tiempos/tiempos-text-web-semmibold-italic.eot) format("eot");
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Tiempos Headline web semibold, weight: 500 */
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url(fonts/tiempos/tiempos-headline-web-semibold.woff2) format("woff2"),
+       url(fonts/tiempos/tiempos-headline-web-semibold.woff) format("woff"),
+       url(fonts/tiempos/tiempos-headline-web-semibold.eot) format("eot");
+  font-weight: normal;
+}
+
+/* Tiempos Headline web semibold italic, weight: 500 */
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url(fonts/tiempos/tiempos-headline-web-semibold-italic.woff2) format("woff2"),
+       url(fonts/tiempos/tiempos-headline-web-semibold-italic.woff) format("woff"),
+       url(fonts/tiempos/tiempos-headline-web-semibold-italic.eot) format("eot");
+  font-weight: normal;
+  font-style: italic;
+}
