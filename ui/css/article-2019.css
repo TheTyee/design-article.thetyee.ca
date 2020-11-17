@@ -1,3 +1,6 @@
+/* @override 
+	http://127.0.0.1:4000/ui/css/article-2019.css */
+
 /* 
 ==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
@@ -47,15 +50,14 @@ body {
 
 /* Reset to prevent some articles form displaying in italics */
 h1, h2, h3, h4, h5, h6, p, a, blockquote, .ad-box {
-  font-style: normal
+  font-style: normal;
 }
 
 h1 {
-  font-family: miller-display, Georgia, Serif;
-  font-weight: 800;
-  font-size: 1.625em;
-  line-height: 1.21em;
-  letter-spacing: 0.01em;
+  font-family: 'Tiempos Headline', Arial, Georgia, serif;
+  font-weight: normal;
+  font-size: 1.625em !important; /* Rethink has specified 48/50 but 48px is HUGE; !important to override Bootstrap. possibly not working anyway */
+  line-height: 1.25em !important;
   margin-bottom: 0.25em;
 }
 
@@ -69,14 +71,15 @@ h1 {
     @media screen and (min-width: 600px) {
 
         h1 {
-            font-size: 2.4em;
+            font-size: 2.4em !important;
             line-height: 1.136em;
         }
     }
 
 h2 {
   color: #424242;
-  font-family: franklin-gothic-urw, helvetica, sans-serif;;
+  /*font-family: franklin-gothic-urw, helvetica, sans-serif;*/
+  font-family: 'grey trial', helvetica, sans-serif;
   font-weight: 700;
   font-size: 1.1em;
   line-height: 1.333em; /* 36px */
@@ -92,9 +95,12 @@ h3 {
 }
 
 h4 {
-  font-size: 1.42em;
-  font-weight: 300;
-  line-height: 1.4em;
+  font-family: 'grey trial', helvetica, sans-serif;
+  font-size: 1.4em;
+  font-weight: 100;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  padding-bottom: 12px;
 }
     .article__header h4 {
       margin-top: 0px;
@@ -330,11 +336,6 @@ ul { }
   display: none;
 }
 
-.category-label {
-  text-transform: uppercase;
-}
-
-
 /* Modals */
 .modal-content {
     background-color: white !important;
@@ -502,8 +503,18 @@ background: rgb(255,208,0);
   color: var(--brand-colour);
 }
 
+.category-label {
+  text-transform: uppercase;
+  border-bottom: none !important;
+  font-family: var(--typeface-sans);
+  font-weight: 300;
+}
+
 .category-label a {
   color: black;
+  background: var(--yellow);
+ padding: 0px 4px 2px;
+  /* grey trial medium 14pt with 100 tracking */
 }
 
 
@@ -904,7 +915,7 @@ background: rgb(255,208,0);
 .featured-media { /* featured-media organism is centered on the page and occupies full page column
                      width at medium and small view widths */
   max-width: 57em;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   padding-top: 1em;
 }
 
@@ -923,9 +934,8 @@ background: rgb(255,208,0);
 	@media screen and (min-width: 1200px) {
         .featured-media {
              position: relative;
-             left: -9.7em;
              max-width: 48em;
-             margin: 0 auto 0 auto;
+             margin: 0 auto;
              padding-left: 1em;
              padding-right: 1em;
         }
@@ -952,10 +962,10 @@ background: rgb(255,208,0);
 
     /* BREAKPOINT: 1400px // At views wider than 1400px the feature-media organism shrinks
        and sits left-aligned to make room for the adjacent bigbox--1st-position */
+       /* ad removed */
     @media screen and (min-width: 1400px) {
         .featured-media {
              position: relative;
-             left: -12.7em;
              max-width: 53.75em;
              margin: 0 auto 0 auto;
              padding-left: 1em;
@@ -1979,7 +1989,8 @@ aside { }
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-color: inherit;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.92em;
 }
 
     .author-info img{
@@ -1990,7 +2001,7 @@ aside { }
       height: 2.3em;
       width: auto;
       background-color: none;
-      border-radius: 50%;
+      border-radius: 100%;
     }
 
 .author-info__bio img {
@@ -2003,7 +2014,7 @@ margin: 0;
 
     .author-info__date {
       display: block;
-      font-weight: 300;
+      font-weight: 500 !important;
     }
 
 	 .author-more {
@@ -2022,8 +2033,9 @@ margin: 0;
     .author-info__bio {
       display: none;
       padding-top: 0.15em;
-      font-size: 0.8em;
-      font-weight: 300;
+      line-height: 1.4;
+      font-weight: 100;
+      font-family: 'grey trial', helvetica, sans-serif;
     }
 
     .author-info div {
@@ -2053,10 +2065,10 @@ margin: 0;
           font-weight: 600;
         }
 
-        .author-info__date:before {
+        /*.author-info__date:before {
           content:", ";
           margin-left: -3px
-        }
+        }*/
 
         .author-info__bio {
           display: block;
@@ -2120,13 +2132,14 @@ margin: 0;
     .tool-bar li {
         position: relative;
         float: left;
-        margin-right: .7em;
+        margin-right: 8px;
     }
 
     .tool-bar .count {
       width: 46px;
-      height: 40px;
-
+      height: 36px;
+      text-align: center;
+      vertical-align: top;
     }
 
   .tool-bar .count img {
@@ -2136,16 +2149,18 @@ margin: 0;
     height: 15px !important;
     left: -15px;
   }
-
-    #sharecount .count {
-      position: absolute;
-      top:0px;
-    }
+  
+  #sharecount {
+  	position: relative;
+  	line-height: 1;
+  }
+  
 
     .tool-bar .count .text {
-      font-size: 10px;
-      position: absolute;
-      bottom:0px;
+      font-size: 11px;
+      vertical-align: top;
+     	position: relative;
+     	top: -5px;
     }
     @media screen and (max-width: 400px) {
 
@@ -2159,51 +2174,65 @@ margin: 0;
 
         .btn-social-icon { /* This is adapted from bootstrap */
             position:relative;
-            padding-left:44px;
-            text-align:left;
+            /*padding-left:44px;
+            text-align:left;*/
             white-space:nowrap;
             overflow:hidden;
             text-overflow:ellipsis;
-            height:32px;
-            width:32px;
+            height:29px;
+            width:29px;
             padding:0;
+            border-radius: 100%;
         }
 
             .btn-social-icon>:first-child {/* This is adapted from bootstrap */
-                position:absolute;
+                /*position:absolute;
                 left: 0;
                 top: 0;
-                bottom: 0;
-                width: 30px;
-                line-height: 32px;
+                bottom: 0;*/
+                width: 29px;
+                line-height: 29px;
                 text-align: center;
-                border-right: none;
+                border: none;
             }
 
         .fa:before, .btn-social-icon .glyphicon:before {
           display: inline-block;
           height: 100%;
-          font-size: 1.5em;
+          font-size: 1.45em;
         }
-
-        .btn-twitter {
-              color: #fff;
-              background-color: #55acee;
-        }
-
-        .btn-facebook {
-              color: #fff;
-              background-color: #3B5998;
-        }
-
+        
+        .fa-envelope, .fas-envelope {
+			font-size: 0.8em;
+			vertical-align: middle;
+			margin-top: -5px;
+		}
+		
+		.btn-twitter, 
+        .btn-facebook, 
         .btn-email {
-              color: #fff;
-              background-color: grey;
-        }
-
-        .btn-join {
+			color: #7A7C85 !important;
+			background: #E0E0E0;
+		}
+		
+		.btn-facebook:hover {
+			background: #3B5998;
+			color: #fff !important;
+		}
+		
+		.btn-twitter:hover {
+			background: #53ACEC;
+			color: #fff !important;
+		}
+		
+		.btn-email:hover {
+			background: #666;
+			color: #fff !important;
+		}
+		
+		.btn-join {
               position: relative;
-              top: .15em;
+              top: 2px;
               padding-left: 0em;
               padding-right: 0em;
               background-color: transparent;
@@ -2218,26 +2247,36 @@ margin: 0;
             }
 
             .btn-join .dollar-heart-svg {
-                height: 1.75em;
+                height: 27px;;
             }
-
-
-            .btn-join:hover .accent-color {
+			
+			.btn-join:hover .accent-color {
                 fill: #6F9400; /* legacy fallback */
                 fill: var(--link-colour);
                 cursor: pointer;
             }
 
-        .btn-print, .btn-comment {
+        .btn-comment {
               position: relative;
-              top: .25em;
-              padding-left: 0em;
+              top: 3px;
+              padding-left: 5px;
               padding-right: 0em;
-              background-color: transparent;
-              font-size: 1.2em;
+              background-color: transparent;     
         }
-
-            @media screen and (max-width: 400px) {
+        
+        .comment-bubble-svg {
+        	height: 27px;
+        }
+        
+        .str-comment {
+			color: #7A7C85 !important;
+			font-weight: bold;
+			position: relative;
+			top: -6px;
+			margin-left: 2px;
+		}
+		
+		@media screen and (max-width: 400px) {
                 .btn-print {
                   display:none;
                 }
