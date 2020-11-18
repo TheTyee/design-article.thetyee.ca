@@ -29,8 +29,8 @@ body {
   font-family: var(--typeface-sans), sans-serif; /* IE fallback */
   font-family: var(--typeface-sans);
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.45em;
+  font-size: 16px;
+  line-height: 1.5em;
   /* color: #404040; */
   color: var(--text-colour);
   overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
@@ -1013,7 +1013,7 @@ The .main-col-container styling is really the scaffold of the layout and most ot
 
 .main-col-container {/* the text column remains centred after hitting its max width. */
      position: relative;
-     max-width: 34em;
+     max-width: 38em;
      margin: 0;
      margin-left: auto;
      margin-right: auto;
@@ -2231,6 +2231,7 @@ margin: 0;
             width:29px;
             padding:0;
             border-radius: 100%;
+            font-size: 0.9em;
         }
 
             .btn-social-icon>:first-child {/* This is adapted from bootstrap */
@@ -2251,12 +2252,13 @@ margin: 0;
         }
         
         .fa-envelope, .fas-envelope {
-			font-size: 0.8em;
+			font-size: 0.9em;
 			vertical-align: middle;
 			margin-top: -5px;
 		}
 		
 		.btn-twitter, 
+        .btn-facebook,
         .btn-facebook, 
         .btn-email {
 			color: #7A7C85 !important;
