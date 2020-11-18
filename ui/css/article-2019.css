@@ -30,7 +30,7 @@ body {
   font-family: var(--typeface-sans);
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5em;
+  line-height: 1.6em;
   /* color: #404040; */
   color: var(--text-colour);
   overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
@@ -493,7 +493,7 @@ h6:nth-of-type(n+2) {
   font-weight: 400;
   margin-right: 0;
   border: 1px solid var(--lightgrey);
-   padding: 0px 6px 1px;
+   padding: 1px 6px 1px;
    letter-spacing: .03em;
 }
 
@@ -2014,6 +2014,7 @@ aside { }
   font-weight: 500;
   font-size: 0.92em;
   color: black;
+  line-height: 1.4;
 }
 
     .author-info img{
