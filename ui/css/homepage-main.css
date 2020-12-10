@@ -15,4 +15,9 @@
 than directly <link>'ed in the header. <link>'ed CSS files are very slow to edit
 with Chrome's devtools due to some kind of resource mapping bug. @import'ing
 the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
+
+/* ===========  2020: top navigation moved into a single file ====== */
+
+@import "global-nav.css"; 
+
 @import "homepage.css?v=10";
