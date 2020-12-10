@@ -5,32 +5,28 @@
 /* Set defaults like Normalize.css and border-sizing. */
 
 * {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 .category-label a {
-background: rgb(255,208,0);
-background: rgba(255,208,0,0.8);
-color: black;
-font-weight: 500;
-font-size:90%;
-padding: 0 2px;
+	background: rgb(255,208,0);
+	background: rgba(255,208,0,0.8);
+	color: black;
+	font-weight: 500;
+	font-size: 90%;
+	padding: 0 2px;
 }
 
 /* Border-box reset. */
+
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
   /* Sets inheritance so that compnents can easily override the border-box if required. */
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
 
-
-
-
+*, *:before, *:after {
+	box-sizing: inherit;
+}
 
 /*-----------------------------------------*\
   #SETTINGS
@@ -42,17 +38,17 @@ html {
 /* SET BASE PARAMETERS ------------------- */
 
 /* Base Units */
+
 :root {
-
-  /* Set REM size */
-  /* This sets the basic unit for the modular grid and typography systems */
-  font-size: 9px;
-
-  /* Set baseline grid increment */
-  --baseline-grid: 2rem; /* This should be a multiple of the rem grid unit. Probably 2rem. */
-
-  /* Set column number */
-  --column-number: 12; /* This is only used for drawing the test grid overlay. */
+	/* Set REM size */
+	  /* This sets the basic unit for the modular grid and typography systems */
+	font-size: 9px;
+	
+	  /* Set baseline grid increment */
+	--baseline-grid: 2rem; /* This should be a multiple of the rem grid unit. Probably 2rem. */
+	
+	  /* Set column number */
+	--column-number: 12; /* This is only used for drawing the test grid overlay. */
 }
 
 /* Set base type size and color */
@@ -61,134 +57,133 @@ html {
   --base-type-size: 2rem;
   --base-line-height: 3rem;
 } These variables aren't in use. The values are set on <body> below: */
-body{
-  font-size: 1.6rem;
-  line-height: 2rem;
-  color: var(--text-colour);
 
-  padding-top: .rem;
+body {
+	font-size: 1.6rem;
+	line-height: 2rem;
+	color: var(--text-colour);
+	padding-top: .rem;
 }
 
 /* Base Colours */
+
 :root {
-  /* BRAND COLOUR -- Tyee Orange.                                    */
-  --brand-colour__hue: 49;           /* HSLA values are broken into  */
-  --brand-colour__sat: 100%;         /* separate variables for       */
-  --brand-colour__lig: 50%;          /* computational manipulation   */
-  --brand-colour__alp: 1;            /* in Colour System below.      */
-        /* Set --brand-colour variable based on HSLA variables */
-        --brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
-
-  --link-colour: var(--brand-colour--text-darker);
-  --text-colour: #393939;
-  --text-colour-light: #808080;
-
-  --border-colour-cols: hsl(0, 0%, 74%);
-
-  --utility-background-color: #444; /* used for utility components like drop-down, footer, scroll-bounce */
+	/* BRAND COLOUR -- Tyee Orange.                                    */
+	--brand-colour__
+	hue: 49;           /* HSLA values are broken into  */
+	--brand-colour__
+	sat: 100%;         /* separate variables for       */
+	--brand-colour__
+	lig: 50%;          /* computational manipulation   */
+	--brand-colour__
+	alp: 1;            /* in Colour System below.      */
+    /* Set --brand-colour variable based on HSLA variables */
+	--brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
+	--link-colour: var(--brand-colour--text-darker);
+	--text-colour: #393939;
+	--text-colour-light: #808080;
+	--border-colour-cols: hsl(0, 0%, 74%);
+	--utility-background-color: #444; /* used for utility components like drop-down, footer, scroll-bounce */
 }
 
 
 /* Scroll-bounce Colours */
 
 html {
-  background-color: var(--utility-background-color);
+	background-color: var(--utility-background-color);
 }
 
 body {
-  background-color: white;
+	background-color: white;
 }
 
 
 /* Typefaces */
+
 :root {
-  --typeface-serif: 'Tiempos Text', georgia, serif;
-  --typeface-sans: 'Grey', helvetica, sans-serif;
-
-  --typeface-item-body: 'Grey', helvetica, sans-serif;
-
-  --typeface-display: 'Tiempos Text', georgia, serif;
-  --typeface-display-small: 'Tiempos Text', georgia, serif;
-  --typeface-display-medium: miller-display, georgia, serif;
-  --typeface-display-large: 'Tiempos Headline', georgia, serif;
+	--typeface-serif: 'Tiempos Text', georgia, serif;
+	--typeface-sans: 'Grey', helvetica, sans-serif;
+	--typeface-item-body: 'Grey', helvetica, sans-serif;
+	--typeface-display: 'Tiempos Text', georgia, serif;
+	--typeface-display-small: 'Tiempos Text', georgia, serif;
+	--typeface-display-medium: miller-display, georgia, serif;
+	--typeface-display-large: 'Tiempos Headline', georgia, serif;
 }
 
 .homepage--harriet, .homepage--harriet_b {
-  --typeface-serif: 'Tiempos Text', georgia, serif;
-  --typeface-sans: 'Grey', helvetica, sans-serif;
-
-  --typeface-item-body: 'Grey', helvetica, sans-serif;
-
-  --typeface-display: 'Tiempos Text', georgia, serif;
-  --typeface-display-small: 'Tiempos Text', georgia, serif;
-  --typeface-display-medium: Harriet-DisplayTest, georgia, serif;
-  --typeface-display-large: Harriet-DisplayTest, georgia, serif;
+	--typeface-serif: 'Tiempos Text', georgia, serif;
+	--typeface-sans: 'Grey', helvetica, sans-serif;
+	--typeface-item-body: 'Grey', helvetica, sans-serif;
+	--typeface-display: 'Tiempos Text', georgia, serif;
+	--typeface-display-small: 'Tiempos Text', georgia, serif;
+	--typeface-display-medium: Harriet-DisplayTest, georgia, serif;
+	--typeface-display-large: Harriet-DisplayTest, georgia, serif;
 }
 
 .homepage--harriet_c {
-  --typeface-serif: 'Tiempos Text', georgia, serif;
-  --typeface-sans: 'Grey', helvetica, sans-serif;
-
-  --typeface-item-body: 'Grey', helvetica, sans-serif;
-
-  --typeface-display: 'Tiempos Text', georgia, serif;
-  --typeface-display-small: 'Tiempos Text', georgia, serif;
-  --typeface-display-medium: 'Tiempos Text', georgia, serif;
-  --typeface-display-large: 'Tiempos Text', georgia, serif;
+	--typeface-serif: 'Tiempos Text', georgia, serif;
+	--typeface-sans: 'Grey', helvetica, sans-serif;
+	--typeface-item-body: 'Grey', helvetica, sans-serif;
+	--typeface-display: 'Tiempos Text', georgia, serif;
+	--typeface-display-small: 'Tiempos Text', georgia, serif;
+	--typeface-display-medium: 'Tiempos Text', georgia, serif;
+	--typeface-display-large: 'Tiempos Text', georgia, serif;
 }
 
 .homepage--harriet-some {
-  --typeface-serif: 'Tiempos Text', georgia, serif;
-  --typeface-sans: 'Grey', helvetica, sans-serif;
-
-  --typeface-item-body: 'Grey', helvetica, sans-serif;
-
-  --typeface-display: 'Tiempos Text', georgia, serif;
-  --typeface-display-small: 'Tiempos Text', georgia, serif;
-  --typeface-display-medium: 'Tiempos Text', georgia, serif;
-  --typeface-display-large: Harriet-DisplayTest, georgia, serif;
+	--typeface-serif: 'Tiempos Text', georgia, serif;
+	--typeface-sans: 'Grey', helvetica, sans-serif;
+	--typeface-item-body: 'Grey', helvetica, sans-serif;
+	--typeface-display: 'Tiempos Text', georgia, serif;
+	--typeface-display-small: 'Tiempos Text', georgia, serif;
+	--typeface-display-medium: 'Tiempos Text', georgia, serif;
+	--typeface-display-large: Harriet-DisplayTest, georgia, serif;
 }
 
 
 /* Typefaces for retina and high-dpi screens */
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 195dpi) {
-  :root {
-    --typeface-display: 'Tiempos Text', georgia, serif;
-    --typeface-display-small: 'Tiempos Text', georgia, serif;
-    --typeface-display-medium: 'Tiempos Text', georgia, serif;
-    --typeface-display-large: miller-display, georgia, serif;
-  }
+	:root {
+		--typeface-display: 'Tiempos Text', georgia, serif;
+		--typeface-display-small: 'Tiempos Text', georgia, serif;
+		--typeface-display-medium: 'Tiempos Text', georgia, serif;
+		--typeface-display-large: miller-display, georgia, serif;
+	}
 }
 
         /*  HIGH-DPI TYPOGRAPHY MEDIUM BRKPNT TO TERTIARY BREAKPOINT: 684px to 999px */
-        @media
-        (-webkit-min-device-pixel-ratio: 2) and (min-width: 684px) and (max-width: 999px),
-        (min-resolution: 195dpi) and (min-width: 684px) and (max-width: 999px) {
 
-          /* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
-             to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
-          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
-            font-weight: 700;
-          }
+@media
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 684px) and (max-width: 999px),
+    (min-resolution: 195dpi) and (min-width: 684px) and (max-width: 999px) {
+	/* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
+    to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
+	
+	.hmpg-org-recent-stories .story-item--primary .story-item__headline {
+		font-weight: 700;
+	}
 
-          /* Increase weight of Pinned Stories headline (set in Miller Display)
-             to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
-          .hmpg-org-pinned-story .story-item--primary .story-item__headline {
-            font-weight: 700;
-          }
-        }
+    /* Increase weight of Pinned Stories headline (set in Miller Display)
+       to match weight of Secondary Story headlines (set in Miller Text at high-dpi) */
+	
+	.hmpg-org-pinned-story .story-item--primary .story-item__headline {
+		font-weight: 700;
+	}
+}
 
         /*  HIGH-DPI TYPOGRAPHY TERTIARY BRKPNT TO LARGE BREAKPOINT: 1180px to 1367px */
-        @media
-        (-webkit-min-device-pixel-ratio: 2) and (min-width: 1180px) and (max-width: 1367px),
-        (min-resolution: 195dpi) and (min-width: 1180px) and (max-width: 1367px) {
 
-          /* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
-             to match weight of Secondary Story headlines (set in Miller Text) */
-          .hmpg-org-recent-stories .story-item--primary .story-item__headline {
-            font-weight: 700;
-          }
-        }
+@media
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 1180px) and (max-width: 1367px),
+    (min-resolution: 195dpi) and (min-width: 1180px) and (max-width: 1367px) {
+	/* Increase weight of Recent Stories Primary Story headline (set in Miller Display)
+    to match weight of Secondary Story headlines (set in Miller Text) */
+	
+	.hmpg-org-recent-stories .story-item--primary .story-item__headline {
+		font-weight: 700;
+	}
+}
 
 
 
@@ -209,19 +204,19 @@ Simple examples:
         grid-template-columns: var(--col-grid-main);
       }
  */
- :root {
-  --breakpoint-width-xs: 0;
-  --breakpoint-width-s: 0;
-  --breakpoint-width-m: 684px;
-  --breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav. Also increases lateral page margins */
-  --breakpoint-width-tertiary: 1000px; /* tertiary story-items expand from stacked to 2 columns */
 
-  --breakpoint-width-margins--min: 1100px /*  Page Margins breakpoint: 1100-1368px   */
-  --breakpoint-width-margins--max: 1368px /*  This breakpoint range prevents columns from getting too wide at upper end of Medium width range */
-
-  --breakpoint-width-adblock: 1180px; /* half-page ad appears at 1180px width */
-  --breakpoint-width-l: 1368px; /* >> This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
-  --breakpoint-width-xl: 1368px;
+:root {
+	--breakpoint-width-xs: 0;
+	--breakpoint-width-s: 0;
+	--breakpoint-width-m: 684px;
+	--breakpoint-width-nav: 850px; /* This is the breakpoint for expanding the nav. Also increases lateral page margins */
+	--breakpoint-width-tertiary: 1000px; /* tertiary story-items expand from stacked to 2 columns */
+	--breakpoint-width-margins--min: 1100px /*  Page Margins breakpoint: 1100-1368px   */
+	  --breakpoint-width-margins--max: 1368px /*  This breakpoint range prevents columns from getting too wide at upper end of Medium width range */
+	
+	  --breakpoint-width-adblock: 1180px; /* half-page ad appears at 1180px width */
+	--breakpoint-width-l: 1368px; /* >> This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
+	--breakpoint-width-xl: 1368px;
 }
 
 
@@ -245,62 +240,63 @@ https://caniuse.com/#feat=css3-colors
 
     /* BRAND TEXT COLOUR */
     /* Brand colour is darkened for use in text and icons */
-    :root {
-      --brand-colour--text:
-          hsla(
-            calc(var(--brand-colour__hue)*.9), /* makes brand colour more red */
-            var(--brand-colour__sat),
-            calc(var(--brand-colour__lig)*.98), /* darkens brand colour */
-            var(--brand-colour__alp)
-          );
-    }
+
+:root {
+	--brand-colour--text: hsla(
+    calc(var(--brand-colour__hue)*.9), /* makes brand colour more red */
+    var(--brand-colour__sat),
+    calc(var(--brand-colour__lig)*.98), /* darkens brand colour */
+    var(--brand-colour__alp)
+  );
+}
 
 
     /* BRAND TEXT COLOUR - darker */
     /* Brand colour is darkened further for particularly small text and fine lines */
-    :root {
-      --brand-colour--text-darker:
-          hsla(
-            calc(var(--brand-colour__hue)*.82), /* makes brand colour more red */
-            var(--brand-colour__sat),
-            calc(var(--brand-colour__lig)*.96), /* darkens brand colour */
-            var(--brand-colour__alp)
-          );
-    }
+
+:root {
+	--brand-colour--text-darker: hsla(
+    calc(var(--brand-colour__hue)*.82), /* makes brand colour more red */
+    var(--brand-colour__sat),
+    calc(var(--brand-colour__lig)*.96), /* darkens brand colour */
+    var(--brand-colour__alp)
+  );
+}
 
 
     /* BRAND BACKGROUND COLOUR */
     /* Brand colour is lightened for use in module backgrounds */
-    :root {
-      --brand-colour--mod-bg:
-          hsla(
-            var(--brand-colour__hue),
-            var(--brand-colour__sat),
-            calc(var(--brand-colour__lig)*1.34), /* lightens brand colour */
-            var(--brand-colour__alp) /* 0.5   /* AG - temporary tansparency to show grid */
-          );
-    }
+
+:root {
+	--brand-colour--mod-bg: hsla(
+    var(--brand-colour__hue),
+    var(--brand-colour__sat),
+    calc(var(--brand-colour__lig)*1.34), /* lightens brand colour */
+    var(--brand-colour__alp) /* 0.5   /* AG - temporary tansparency to show grid */
+  );
+}
 
 
     /* BRAND COLOUR PALE */
     /* Brand colour is lightened a lot */
-    :root {
-      --brand-colour--pale:
-          hsla(
-            var(--brand-colour__hue),
-            var(--brand-colour__sat),
-            calc(var(--brand-colour__lig)*1.99), /* lightens brand colour */
-            var(--brand-colour__alp) /* 0.5   /* AG - temporary tansparency to show grid */
-          );
-    }
+
+:root {
+	--brand-colour--pale: hsla(
+    var(--brand-colour__hue),
+    var(--brand-colour__sat),
+    calc(var(--brand-colour__lig)*1.99), /* lightens brand colour */
+    var(--brand-colour__alp) /* 0.5   /* AG - temporary tansparency to show grid */
+  );
+}
 
 
     /* ELEMENT COLOURS */
     /* Typographic Elements */
-    :root {
-      --icon-search-svg-colour: var(--text-colour);
-      --icon-arrow-toggle-down-svg-colour: var(--text-colour);
-    }
+
+:root {
+	--icon-search-svg-colour: var(--text-colour);
+	--icon-arrow-toggle-down-svg-colour: var(--text-colour);
+}
 
 /* end of Colour System */
 
@@ -313,14 +309,14 @@ https://caniuse.com/#feat=css3-colors
 /* Column Spacing */
 
 :root {
-  /* standard column gutter width */
-  --gutter-column: 4rem;
-  /* use half of gutter width when column borders are required */
-  --gutter-column-half: calc(var(--gutter-column) / 2);
-  /* standard row gutter width */
-  --gutter-row: 6rem;
-  /* use half of gutter width when row borders are required */
-  --gutter-row-half: calc(var(--gutter-row) / 2);
+	/* standard column gutter width */
+	--gutter-column: 4rem;
+	  /* use half of gutter width when column borders are required */
+	--gutter-column-half: calc(var(--gutter-column) / 2);
+	  /* standard row gutter width */
+	--gutter-row: 6rem;
+	  /* use half of gutter width when row borders are required */
+	--gutter-row-half: calc(var(--gutter-row) / 2);
 }
 
 /* >> Use pseudo element :after to create the column borders */
@@ -337,46 +333,50 @@ https://caniuse.com/#feat=css3-colors
    create fallbacks for older browsers that don't support CSS variables. */
 
 :root {
-  --page-margin-sides: var(--gutter-column-half);
-  --page-margin-top: 4rem;
+	--page-margin-sides: var(--gutter-column-half);
+	--page-margin-top: 4rem;
 }
 
 
     /*  PAGE MARGINS NAV BREAKPOINT -- breakpoint-width-nav: 850px */
-    @media screen and (min-width: 850px) {
 
-      /* Increase page margins */
-      :root {
-        --page-margin-sides: var(--gutter-column);
-      }
-    }
+@media screen and (min-width: 850px) {
+	/* Increase page margins */
+	
+	:root {
+		--page-margin-sides: var(--gutter-column);
+	}
+}
 
 
     /*  PAGE MARGINS LAYOUT BREAKPOINT 1 -- 1100px */
     /*  Prevents columns from getting too wide at upper end of Medium width range */
-    @media screen and (min-width: 1100px) and (max-width: 1367px) {
 
-      /* Keep content of organism containers at 1100px width but run lateral padding to
-         edge of screen so the borders and background colours don't show a gap */
-      :root {
-        --page-margin-sides: calc( var(--gutter-column)   +   (100vw - 1100px) * 0.5     ) ;
+@media screen and (min-width: 1100px) and (max-width: 1367px) {
+	/* Keep content of organism containers at 1100px width but run lateral padding to
+    edge of screen so the borders and background colours don't show a gap */
+	
+	:root {
+		--page-margin-sides: calc( var(--gutter-column)   +   (100vw - 1100px) * 0.5     );
         /*                          (base margin width)   +   (  view size   ) * rate of ) */
         /*                                                +   ( beyond 1100  )   change  ) */
-      }
-    }
+	}
+}
 
 
     /*  PAGE MARGINS LARGE BREAKPOINT -- breakpoint-width-l: 1380px */
     /*  This breakpoint needs to be increased to 1380px to accommodate the wider page margins */
-    @media screen and (min-width: 1380px) {
 
-      /* Progressively increase the page margins as viewport width expands beyond 1380px.
-         Increase the rate of change for larger page margins.                                 */
-      :root {
-        --page-margin-sides: calc( var(--gutter-column) + calc((100vw - 1380px) * 0.2     ));}
-        /*                          (base margin width) +     ((   view size  ) * rate of ) */
-        /*                                              +     ((  beyond 1380 )   change  ) */
-    }
+@media screen and (min-width: 1380px) {
+	/* Progressively increase the page margins as viewport width expands beyond 1380px.
+    Increase the rate of change for larger page margins.                                 */
+	
+	:root {
+		--page-margin-sides: calc( var(--gutter-column) + calc((100vw - 1380px) * 0.2     ));
+	}
+    /*                          (base margin width) +     ((   view size  ) * rate of ) */
+    /*                                              +     ((  beyond 1380 )   change  ) */
+}
 
 /* end of Page Margins */
 
@@ -391,179 +391,169 @@ https://caniuse.com/#feat=css3-colors
 /* Default text styles ----------------- */
 
 body {
-  font-family: var(--typeface-sans);
-  font-weight: 400;
-  font-style: normal;
+	font-family: var(--typeface-sans);
+	font-weight: 400;
+	font-style: normal;
 }
 
 
 /* Header Typography -- Logo block ----------------- */
 
-.site-header__tagline  {
-  position: relative;
-  font-family: var(--typeface-serif);
-  font-size: .86em;
-  font-weight: 600;
+.site-header__tagline {
+	position: relative;
+	font-family: var(--typeface-serif);
+	font-size: .86em;
+	font-weight: 600;
 }
 
-    .site-header__tagline::before, .site-header__tagline::after  {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 4rem;
-      border-top: 1px solid var(--text-colour);
-    }
+.site-header__tagline::before, .site-header__tagline::after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 4rem;
+	border-top: 1px solid var(--text-colour);
+}
 
-    .site-header__tagline::before  {
-      top: -1rem;
-    }
+.site-header__tagline::before {
+	top: -1rem;
+}
 
-    .site-header__tagline::after  {
-      bottom: -1rem;
-    }
+.site-header__tagline::after {
+	bottom: -1rem;
+}
 
-    .site-header__tagline--a::before,
-    .site-header__tagline--a::after {
-      right: 0;
-    }
+.site-header__tagline--a::before, .site-header__tagline--a::after {
+	right: 0;
+}
 
 
 /* Header Typography -- Navigation */
 
-.site-nav-main {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+/*.new-site-nav-main {
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
 }
 
-  .nav__link--join {
-    color: var(--brand-colour--text);
-  }
+.new-site-nav__link--join {
+	color: var(--brand-colour--text);
+}
 
-  .site-nav__dropdown-heading,
-  .site-nav__dropdown .nav__link--join,
-  .site-nav__dropdown .twitter {
-    padding-top: 2rem;
-  }
+.new-site-nav__dropdown-heading, .site-nav__dropdown .nav__link--join, .site-nav__dropdown .twitter {
+	padding-top: 2rem;
+}
 
-  .nav__link--dropdown-item {
-    font-weight: 400
-  }
+.new-site-nav__link--dropdown-item {
+	font-weight: 400
+}
 
-  .expander-content__topics-submenu .nav__link--dropdown-item,
-  .expander-content__more-submenu .nav__link--dropdown-item {
-    text-transform: capitalize;
-    letter-spacing: 0
-  }
+.expander-content__topics-submenu .nav__link--dropdown-item, .expander-content__more-submenu .nav__link--dropdown-item {
+	text-transform: capitalize;
+	letter-spacing: 0
+}
 
-  .site-nav__dropdown .nav__link--newsletter,
-  .site-nav__dropdown .facebook,
-  .site-nav__dropdown .twitter {
-    padding-top: 1rem;
-  }
+.new-site-nav__dropdown .nav__link--newsletter, .new-site-nav__dropdown .facebook, .site-nav__dropdown .twitter {
+	padding-top: 1rem;
+}*/
 
 
 /* Module text styles ----------------- */
 
 .label--small {
-  font-style: italic;
+	font-style: italic;
 }
 
 .hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
-  font-size: 1.4em;
-  font-weight: 800;
-  text-transform:uppercase;
-  letter-spacing: 0.125em;
-  display: inline-block;
-  position: relative;
+	font-size: 1.4em;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.125em;
+	display: inline-block;
+	position: relative;
 }
 
     /* HOMEPAGE MODULE HEADER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-    @media screen and (min-width: 684px) {
 
-      /* Center the module label when the module appears directly below page header
-         (and therefore with no top border)   */
-      .hmpg-org-wrapper:first-of-type .hmpg-module-header {
-        text-align: center;
-      }
-    }
+@media screen and (min-width: 684px) {
+	/* Center the module label when the module appears directly below page header
+    (and therefore with no top border)   */
+	
+	.hmpg-org-wrapper:first-of-type .hmpg-module-header {
+		text-align: center;
+	}
+}
 
 .m-comment-noted__label {
-  padding-left: 1.1em;
+	padding-left: 1.1em;
 }
 
-    .m-comment-noted__label::before {
-      content: url(../img/icon-comment-noted.svg);
-      display: inline-block;
-      position: absolute;
-      left: 0em;
-      transform: scale(.65) translate(-40%, -40%);
-    }
+.m-comment-noted__label::before {
+	content: url(../img/icon-comment-noted.svg);
+	display: inline-block;
+	position: absolute;
+	left: 0em;
+	transform: scale(.65) translate(-40%, -40%);
+}
 
 .m-barometer__label {
-  padding-left: 1.4em;
+	padding-left: 1.4em;
 }
 
-    .m-barometer__label::before {
-      content: url(../img/icon-barometer.svg);
-      display: inline-block;
-      position: absolute;
-      left: 0.2em;
-      transform: scale(.75) translate(-40%, -40%);
-    }
+.m-barometer__label::before {
+	content: url(../img/icon-barometer.svg);
+	display: inline-block;
+	position: absolute;
+	left: 0.2em;
+	transform: scale(.75) translate(-40%, -40%);
+}
 
 .story-item__deck a {
-border-bottom: 2px solid black;
+	border-bottom: 2px solid black;
 }
 
-
-.tyee-insider__story .story-item__deck,.hmpg-org-deep-dive .story-item--primary .story-item__deck, .hmpg-org-tyee-insider .story-item__deck  {
-  font-family: var(--typeface-serif);
-  font-size: 1.33em;
-  line-height: 3rem;
-  color: var(--text-colour);
+.tyee-insider__story .story-item__deck, .hmpg-org-deep-dive .story-item--primary .story-item__deck, .hmpg-org-tyee-insider .story-item__deck {
+	font-family: var(--typeface-serif);
+	font-size: 1.33em;
+	line-height: 3rem;
+	color: var(--text-colour);
 }
 
 .hmpg-org-tyee-insider .story-item__deck p {
-font-size: 118%;
-line-height: 145%;
+	font-size: 118%;
+	line-height: 145%;
 }
 
-.tyee-insider__story .story-item__deck p:nth-of-type(n+2),
-.hmpg-org-deep-dive .story-item--primary .story-item__deck p:nth-of-type(n+2) {
-  padding-top: 2rem;
+.tyee-insider__story .story-item__deck p:nth-of-type(n+2), .hmpg-org-deep-dive .story-item--primary .story-item__deck p:nth-of-type(n+2) {
+	padding-top: 2rem;
 }
 
 .m-tyee-insider__related-label {
-  font-size: .85em;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  margin: 3rem 0 1rem; /* 4rem total realigns with 2rem-baseline grid */
+	font-size: .85em;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	margin: 3rem 0 1rem; /* 4rem total realigns with 2rem-baseline grid */
 }
 
 .m-comment-noted__title, .m-barometer__title, .m-barometer .barometer-form-list > p {
-  font-family: var(--typeface-display-medium);
-  font-weight: 600;
-  line-height: 4rem;
-  font-size: 2.33em;
-  text-transform: none;
+	font-family: var(--typeface-display-medium);
+	font-weight: 600;
+	line-height: 4rem;
+	font-size: 2.33em;
+	text-transform: none;
 }
 
 .m-comment-noted__body p, .barometer-form-list p, .barometer-form-list ul {
-font-size: 1.3em;
-line-height: 1.6em;
-font-family: var(--typeface-serif);
+	font-size: 1.3em;
+	line-height: 1.6em;
+	font-family: var(--typeface-serif);
 }
-
 
 @media screen and (max-width: 683px) {
- .m-comment-noted__title, .m-barometer__title, .m-barometer .barometer-form-list > p, .barometer-form-list p:first-child {
-	font-size: 1.8em !important;;
-	line-height: 3.5rem !important;
-}
-
+	.m-comment-noted__title, .m-barometer__title, .m-barometer .barometer-form-list > p, .barometer-form-list p:first-child {
+		font-size: 1.8em !important;;
+		line-height: 3.5rem !important;
+	}
 }
 
 
@@ -573,295 +563,299 @@ font-family: var(--typeface-serif);
 /* Story Items */
 
 .story-item__headline {
-   font-family: var(--typeface-display);
-   font-weight: 600;
-   line-height: 3rem; /* this is 1.5 x baseline, so headlines that break over
-                         odd-numbered lines will throw off the grid */
-   font-size: 1.5em;
-
-   margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
+	font-family: var(--typeface-display);
+	font-weight: 600;
+	line-height: 3rem; /* this is 1.5 x baseline, so headlines that break over
+    odd-numbered lines will throw off the grid */
+	font-size: 1.5em;
+	margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
 }
 
 .homepage--harriet_b .story-item__headline {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .category-label {
-  font-family: var(--typeface-sans);
-  font-size: .875em;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--brand-colour--text);
-  margin: 1rem 0 1rem; /* Adds up to 2rem, aligning with baseline grid */
+	font-family: var(--typeface-sans);
+	font-size: .875em;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--brand-colour--text);
+	margin: 1rem 0 1rem; /* Adds up to 2rem, aligning with baseline grid */
 }
 
 .story-item__deck {
-  color: var(--text-colour-light);
+	color: var(--text-colour-light);
 }
 
 .story-item__author, .story-item__date {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 .story-item__author {
-  margin-top: 0rem;
+	margin-top: 0rem;
 }
 
-    .story-item__author a {
-      display: inline-block;
-    }
+.story-item__author a {
+	display: inline-block;
+}
 
+.m-comment-noted .story-item__author {
+	display: block;
+	margin-top: 2rem;
+	text-align
+}
 
-    .m-comment-noted .story-item__author {
-      display: block;
-      margin-top: 2rem;
-      text-align
-    }
-
-    .m-comment-noted .story-item__author::before {
-      content:"Submitted by";
-      display: block;
-      margin-top: 2rem;
-      font-weight: 400;
-      font-style: italic;
-    }
+.m-comment-noted .story-item__author::before {
+	content: "Submitted by";
+	display: block;
+	margin-top: 2rem;
+	font-weight: 400;
+	font-style: italic;
+}
 
 .story-item__news-source {
-  font-family: var(--typeface-sans);
-  font-weight: 200;
- 
+	font-family: var(--typeface-sans);
+	font-weight: 200;
 } /* for Reported Elsewhere */
 
 .default-global-homepage .story-item__headline div {
-  display:inline;
-  color: black !important;
-  font-style: normal !important;
-  font-family: var(--typeface-sans);
-  font-weight: 200;
-  margin-left: 5px;
-  
+	display: inline;
+	color: black !important;
+	font-style: normal !important;
+	font-family: var(--typeface-sans);
+	font-weight: 200;
+	margin-left: 5px;
 }
 
 
     /* Separator between headline and news source */
-    .story-item__news-source::before {
-      content:"•";
-      padding-left: .25em;
-      padding-right: .25em;
-    }
+
+.story-item__news-source::before {
+	content: "•";
+	padding-left: .25em;
+	padding-right: .25em;
+}
 
 .default-global-homepage .story-item__headline br {
- display: none;
+	display: none;
 }
 
 
     /* primary story-items */
 
-    .story-item--primary .story-item__headline {
-      font-family: var(--typeface-display-large);
-      line-height: 4rem; /* this is 2 x baseline */
-      font-size: 2.33em;
-      margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
-    }
+.story-item--primary .story-item__headline {
+	font-family: var(--typeface-display-large);
+	line-height: 4rem; /* this is 2 x baseline */
+	font-size: 2.33em;
+	margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+}
 
-    .story-item--primary .category-label {
-      font-size: 1.11em;
-    }
+.story-item--primary .category-label {
+	font-size: 1.11em;
+}
 
-    .story-item--primary div.story-item__author {
-      padding-top: 2rem; /* 2rem total aligns with baseline grid */
-    }
+.story-item--primary div.story-item__author {
+	padding-top: 2rem; /* 2rem total aligns with baseline grid */
+}
 
 
     /* secondary story-items */
 
-    .story-item--secondary .story-item__headline {
-      font-family: var(--typeface-display-medium);
-      font-size: 1.35em; /* Reduces font-size to increase the line measure */
-      -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-      hyphens: auto; /* Adds hyphenation in narrowest views */
-    }
+.story-item--secondary .story-item__headline {
+	font-family: var(--typeface-display-medium);
+	font-size: 1.35em; /* Reduces font-size to increase the line measure */
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto; /* Adds hyphenation in narrowest views */
+}
 
     /* tertiary story-items */
 
-    .story-item--tertiary .story-item__headline {
-      font-family: var(--typeface-display-medium);
-      font-size: 1.35em;
-      line-height: 2.75rem;
-      margin: 0; /* matches with deck margin-bottom to realign with baseline grid */
-    }
+.story-item--tertiary .story-item__headline {
+	font-family: var(--typeface-display-medium);
+	font-size: 1.35em;
+	line-height: 2.75rem;
+	margin: 0; /* matches with deck margin-bottom to realign with baseline grid */
+}
 
-    .story-item--tertiary .story-item__deck {
-      font-size: 1em;
-      line-height: 2rem;
-      margin: 1rem 0 0rem; /* No bottom padding to prevent gap above author byline */
-    }
+.story-item--tertiary .story-item__deck {
+	font-size: 1em;
+	line-height: 2rem;
+	margin: 1rem 0 0rem; /* No bottom padding to prevent gap above author byline */
+}
 
     /* minimum story-items */
 
-    .story-item--minimum .story-item__headline {
-      font-family: var(--typeface-display-medium);
-      /* font-weight: 600; */
-      font-size: 1.35em;
-      line-height: 3rem;
-      margin-bottom: 0rem;
-    }
+.story-item--minimum .story-item__headline {
+	font-family: var(--typeface-display-medium);
+    /* font-weight: 600; */
+	font-size: 1.35em;
+	line-height: 3rem;
+	margin-bottom: 0rem;
+}
 
 
     /* ---- STORY ITEMS TYPOGRAPHY responsive enhancement ----  */
 
 
         /*  STORY ITEMS TYPOGRAPHY SMALL BREAKPOINT -- max: 683px */
-        @media screen and (max-width: 683px) {
 
-          /* Reduce size of Primary Headlines in narrowest views */
-
-          .story-item--primary .story-item__headline {
-            line-height: 3.5rem; /* this is 2 x baseline */
-            font-size: 1.8em;
-            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
-          }
-        }
+@media screen and (max-width: 683px) {
+	/* Reduce size of Primary Headlines in narrowest views */
+	
+	.story-item--primary .story-item__headline {
+		line-height: 3.5rem; /* this is 2 x baseline */
+		font-size: 1.8em;
+		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+	}
+}
 
 
 
         /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-        @media screen and (min-width: 684px) {
 
-          .story-item--primary .story-item__deck {
+@media screen and (min-width: 684px) {
+	.story-item--primary .story-item__deck {
 		#            text-transform: uppercase;
-          }
+	}
+	
+	.hmpg-org-tyee-insider .story-item--primary .story-item__deck {
+		text-transform: none;
+	}
 
-              .hmpg-org-tyee-insider .story-item--primary .story-item__deck {
-                text-transform: none ;
-              }
+    /* Reduce size of Primary headlines so that they don't take up too much
+       vertical space in a 2-col layout */
+	
+	.story-item--primary .story-item__headline {
+		line-height: 3rem; /* this is 2 x baseline */
+		font-size: 1.65em;
+		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+	}
 
-          /* Reduce size of Primary headlines so that they don't take up too much
-             vertical space in a 2-col layout */
-          .story-item--primary .story-item__headline {
-            line-height: 3rem; /* this is 2 x baseline */
-            font-size: 1.65em;
-            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
-          }
+    /* Turn off auto-hyphenation in views where it might be excessive */
+	
+	.story-item--secondary .story-item__headline {
+		line-height: 2.75rem;
+	}
 
-          /* Turn off auto-hyphenation in views where it might be excessive */
-          .story-item--secondary .story-item__headline {
-            line-height: 2.75rem;
-          }
-
-          /* Keep large size of Primary headlines in module that have more space for them */
-          .m-tyee-insider__main .story-item--primary .story-item__headline,
-          .hmpg-org-deep-dive .story-item--primary .story-item__headline {
-            font-family: var(--typeface-display-large);
-            line-height: 4rem; /* this is 2 x baseline */
-            font-size: 2.33em;
-            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
-          }
-        }
+    /* Keep large size of Primary headlines in module that have more space for them */
+	
+	.m-tyee-insider__main .story-item--primary .story-item__headline, .hmpg-org-deep-dive .story-item--primary .story-item__headline {
+		font-family: var(--typeface-display-large);
+		line-height: 4rem; /* this is 2 x baseline */
+		font-size: 2.33em;
+		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+	}
+}
 
         /*  STORY ITEMS TYPOGRAPHY TERTIARY BREAKPOINT -- breakpoint-width-tertiary: 1000px */
-        @media screen and (min-width: 1000px) {
 
-          .story-item--primary .story-item__headline {
-            font-family: var(--typeface-display-large);
-            line-height: 4rem; /* this is 2 x baseline */
-            font-size: 2.33em !important;
-            margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
-          }
-
-          .story-item--secondary .story-item__headline {
-            font-family: var(--typeface-display-medium);
-            /* font-size: 1.5em; Restores font-size as column gets wider */
-          }
-        }
+@media screen and (min-width: 1000px) {
+	.story-item--primary .story-item__headline {
+		font-family: var(--typeface-display-large);
+		line-height: 4rem; /* this is 2 x baseline */
+		font-size: 2.33em !important;
+		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+	}
+	
+	.story-item--secondary .story-item__headline {
+		font-family: var(--typeface-display-medium);
+        /* font-size: 1.5em; Restores font-size as column gets wider */
+	}
+}
 
         /*  STORY ITEMS TYPOGRAPHY ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px - 1367px */
-        @media screen and (min-width: 1180px) and (max-width: 1367px) {
-          /* Reduce size of Primary headlines in Recent Stories module because halfpage adblock
-             is reducing the column width. */
-          .hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
-            line-height: 4rem; /* this is 2 x baseline */
-            font-size: 1.65em;
-          }
 
-          .hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
-            font-family: var(--typeface-display-medium);
-            font-size: 1.35em; /* Reduces font-size because Ad-block makes column narrow */
-          }
-        }
+@media screen and (min-width: 1180px) and (max-width: 1367px) {
+	/* Reduce size of Primary headlines in Recent Stories module because halfpage adblock
+    is reducing the column width. */
+	
+	.hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
+		line-height: 4rem; /* this is 2 x baseline */
+		font-size: 1.65em;
+	}
+	
+	.hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
+		font-family: var(--typeface-display-medium);
+		font-size: 1.35em; /* Reduces font-size because Ad-block makes column narrow */
+	}
+}
 
         /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
-        @media screen and (min-width: 1368px) {
 
-            /* Increase size for Secondary headlines in widest views */
-            /* No auto hyphenation for Secondary headlines in widest views */
-            .story-item--secondary .story-item__headline {
-                font-size: 1.5em;
-                line-height: 3rem;
-                -webkit-hyphens: manual;
-                -ms-hyphens: manual;
-                hyphens: manual;
-            }
+@media screen and (min-width: 1368px) {
+	/* Increase size for Secondary headlines in widest views */
+    /* No auto hyphenation for Secondary headlines in widest views */
+	
+	.story-item--secondary .story-item__headline {
+		font-size: 1.5em;
+		line-height: 3rem;
+		-webkit-hyphens: manual;
+		-ms-hyphens: manual;
+		hyphens: manual;
+	}
 
-            /* Keep Recent-stories Secondary headlines smaller because ad-block constrains width */
-            .hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
-                font-size: 1.35em;
-                line-height: 2.75rem;
-            }
+    /* Keep Recent-stories Secondary headlines smaller because ad-block constrains width */
+	
+	.hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
+		font-size: 1.35em;
+		line-height: 2.75rem;
+	}
 
-            /* Slightly reduce size of tertiary headlines in wide screens
-               to accommodate a 2-col stiry-item layout.                  */
-            .story-item--tertiary .story-item__headline {
-                font-family: var(--typeface-display);
-                font-family: var(--typeface-display-medium);
-                    font-size: 1.25em;
-                    line-height: 2.5rem; /* decimal values here cause a browser rounding error
-                                            that throws throws off the baseline grid.          */
-            }
+    /* Slightly reduce size of tertiary headlines in wide screens
+       to accommodate a 2-col stiry-item layout.                  */
+	
+	.story-item--tertiary .story-item__headline {
+		font-family: var(--typeface-display);
+		font-family: var(--typeface-display-medium);
+		font-size: 1.25em;
+		line-height: 2.5rem; /* decimal values here cause a browser rounding error
+        that throws throws off the baseline grid.          */
+	}
 
-            /* Enlarge Topic module primary story headline in wide views (like pinned story headline)  */
-            .hmpg-org-recent-stories--topic .story-item--primary .story-item__headline {
-              line-height: 6rem; /* this is 3 x baseline */
-              font-size: 3.35em;
-              margin-bottom: 4rem
-            }
+    /* Enlarge Topic module primary story headline in wide views (like pinned story headline)  */
+	
+	.hmpg-org-recent-stories--topic .story-item--primary .story-item__headline {
+		line-height: 6rem; /* this is 3 x baseline */
+		font-size: 3.35em;
+		margin-bottom: 4rem
+	}
+	
+	.hmpg-org-recent-stories--topic .story-item--primary > :not(.story-item__image):not(.story-item__headline) {
+		margin-left: 8rem;
+		margin-right: 8rem;
+	}
 
-                .hmpg-org-recent-stories--topic .story-item--primary > :not(.story-item__image):not(.story-item__headline) {
-                  margin-left: 8rem;
-                  margin-right: 8rem;
-                }
 
-
-            /* Pinned Story enhancement */
-
-            .hmpg-org-pinned-story .story-item--primary .category-label {
-                  margin-bottom: 1.5rem;
-                }
-
-            .hmpg-org-pinned-story .story-item--primary .story-item__headline {
-              line-height: 6rem; /* this is 3 x baseline */
-              font-size: 3.35em;
-              margin-bottom: 4rem
-            }
-
-            .hmpg-org-pinned-story .story-item--primary > :not(.story-item__image) {
-              margin-left: 4rem;
-              margin-right: 4rem;
-            }
-
-            .hmpg-org-pinned-story .story-item--primary .story-item__deck {
-              margin-left: 11.5rem;
-              margin-right: 11.5rem;
-            }
-
-            .hmpg-org-pinned-story .story-item--primary.story-item--reverse .badge--story-item-placement {
-              transform: scale(1.2);
-              right: -3em;
-            }
-
-        }
+    /* Pinned Story enhancement */
+	
+	.hmpg-org-pinned-story .story-item--primary .category-label {
+		margin-bottom: 1.5rem;
+	}
+	
+	.hmpg-org-pinned-story .story-item--primary .story-item__headline {
+		line-height: 6rem; /* this is 3 x baseline */
+		font-size: 3.35em;
+		margin-bottom: 4rem
+	}
+	
+	.hmpg-org-pinned-story .story-item--primary > :not(.story-item__image) {
+		margin-left: 4rem;
+		margin-right: 4rem;
+	}
+	
+	.hmpg-org-pinned-story .story-item--primary .story-item__deck {
+		margin-left: 11.5rem;
+		margin-right: 11.5rem;
+	}
+	
+	.hmpg-org-pinned-story .story-item--primary.story-item--reverse .badge--story-item-placement {
+		transform: scale(1.2);
+		right: -3em;
+	}
+}
 /* end of Story Items Typography */
 
 
@@ -873,180 +867,183 @@ font-family: var(--typeface-serif);
 \*-----------------------------------------*/
 
 strong {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 
 /* LINK atom */
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
     /* link styles for body text of Insider and Deep Dive */
-    p a,
-    .site-header__tagline a {
-      border-bottom: 2px solid var(--link-colour);
-    }
+
+p a, .site-header__tagline a {
+	border-bottom: 2px solid var(--link-colour);
+}
 
 
         /* link styles for body text of Insider */
-        .hmpg-org-tyee-insider p a {
-          border-color: white;  /* can't be brand color because Insider has an orange background */
-        }
+
+.hmpg-org-tyee-insider p a {
+	border-color: white;  /* can't be brand color because Insider has an orange background */
+}
 
         /* Hovers states for nav-bar items -- only on devices with hover capability, exclude mobile */
-        @media (hover: hover) and (pointer: fine) {
-          .nav__link:hover,
-          .site-footer a:hover  {
-            display: inline-block;
-            color: black;
-            transform: none; /* scale(1.0)!important; /* !important is required to override badges that are scaled by default */
-          }
-        }
+
+@media (hover: hover) and (pointer: fine) {
+	.nav__link:hover, .site-footer a:hover {
+		display: inline-block;
+		color: black;
+		transform: none; /* scale(1.0)!important; /* !important is required to override badges that are scaled by default */
+	}
+}
 
         /* Hover states for text links and buttons */
-        a:hover, a:focus {
-	  transform: none;
-/*          color: var(--link-colour); */
-           color: black;
-	  font-size: 1em;
-        }
+
+a:hover, a:focus {
+	transform: none;
+	/*          color: var(--link-colour); */
+	color: black;
+	font-size: 1em;
+}
 
 h2 a:hover, p a:hover {
- background: rgb(255,208,0);
-    background: rgba(255,208,0,0.8);
+	background: rgb(255,208,0);
+	background: rgba(255,208,0,0.8);
 }
 
 .story-item__author a:hover {
-    border-bottom:2px solid black;
-margin-bottom: -2px;
+	border-bottom: 2px solid black;
+	margin-bottom: -2px;
 }
 
 /* disabled all scalin - too many issues on hover - b.c */
 
             /* Patch hover states that cause layout reflow */
-            .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:hover,
-            .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:focus,
-            .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:hover,
-            .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:focus {
-              font-size: 1.0em;
-            }
+
+.hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:hover, .hmpg-org-recent-stories__list .story-item--tertiary .story-item__headline a:focus, .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:hover, .hmpg-org-tyee-insider .story-item--tertiary .story-item__headline a:focus {
+	font-size: 1.0em;
+}
 
             /* Patch hover states that cause layout reflow */
-            p a:hover,
-            p a:focus {
-              display: inline;
-              font-size: 1.0em;
-            }
 
-            .hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus  {
-              color: white; /* can't be brand color because Insider has an orange background */
-            }
+p a:hover, p a:focus {
+	display: inline;
+	font-size: 1.0em;
+}
 
-            .story-item p a:hover, .story-item p a:focus  {
-             /* margin-bottom: -2px;  /* Offsets the effect of setting underlined text as an inline-block */
-            }
+.hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus {
+	color: white; /* can't be brand color because Insider has an orange background */
+}
+
+.story-item p a:hover, .story-item p a:focus {
+	/* margin-bottom: -2px;  /* Offsets the effect of setting underlined text as an inline-block */
+}
 
             /*  Patch hover states that cause layout reflow */
-            @media screen and (max-width: 683px) {
-              .story-item--secondary .story-item__headline a:hover, .story-item--secondary .story-item__headline a:focus {
-                display: inline;
-                font-size: 1.0em;
-              }
-            }
+
+@media screen and (max-width: 683px) {
+	.story-item--secondary .story-item__headline a:hover, .story-item--secondary .story-item__headline a:focus {
+		display: inline;
+		font-size: 1.0em;
+	}
+}
 
 
     .text-link--button {
-      display:table;
-      padding-top: 2rem;
-      font-style:italic;
-      border-bottom: 1px solid;
-      margin-bottom: -1px; /* Offsets 1px border */
-    }
+	display: table;
+	padding-top: 2rem;
+	font-style: italic;
+	border-bottom: 1px solid;
+	margin-bottom: -1px; /* Offsets 1px border */
+}
 
 /* BUTTON atom */
 
 .button {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-  cursor: pointer;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	cursor: pointer;
 }
 
 .button {
-  display: inline-block;
-  border: 2px solid rgb(255,208,0);
-  border: 2px solid rgba(255,208,0,0.8);
-  border-radius: 0rem;
-  padding: calc(1rem - 2px) 4rem;
-  margin: 0;
-  height: 4rem;
-  text-decoration: none;
-  color: black;
-  font-family: var(--typeface-sans);
-  font-size: 1em;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  cursor: pointer;
-  text-align: center;
-  transition: background 250ms ease-in-out,
-              transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+	display: inline-block;
+	border: 2px solid rgb(255,208,0);
+	border: 2px solid rgba(255,208,0,0.8);
+	border-radius: 0rem;
+	padding: calc(1rem - 2px) 4rem;
+	margin: 0;
+	height: 4rem;
+	text-decoration: none;
+	color: black;
+	font-family: var(--typeface-sans);
+	font-size: 1em;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: .08em;
+	cursor: pointer;
+	text-align: center;
+	transition: background 250ms ease-in-out,
+    transform 150ms ease;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
 
-    .button--spanrow {
-      grid-column: 1 / -1;  /* Make button span entire grid row */
-      justify-self: center; /* Collapses button width to its content + padding */
-    }
+.button--spanrow {
+	grid-column: 1 / -1;  /* Make button span entire grid row */
+	justify-self: center; /* Collapses button width to its content + padding */
+}
 
-    .button--dark-bg {
-      color: var(--text-colour);
-      background-color: hsla(0, 0%, 100%, 0.3);
-      border: 2px solid white;
-    }
+.button--dark-bg {
+	color: var(--text-colour);
+	background-color: hsla(0, 0%, 100%, 0.3);
+	border: 2px solid white;
+}
 
-    .button--dark {
-      color: white;
-      background-color: var(--text-colour);
-    }
+.button--dark {
+	color: white;
+	background-color: var(--text-colour);
+}
 
-    .button--barometer {
-      display: block;
-    }
+.button--barometer {
+	display: block;
+}
 
-        .site-nav__search-form .button {
-          display: inline-block;
-          border: none;
-          padding: 1rem 2rem;
-          background: var(--brand-colour);
-          color: #ffffff;
-        }
+.site-nav__search-form .button {
+	display: inline-block;
+	border: none;
+	padding: 1rem 2rem;
+	background: var(--brand-colour);
+	color: #ffffff;
+}
 
-    .button:hover,
-    .button:focus {
-        color: black;
-        background: rgb(255,208,0);
-        background: rgba(255,208,0,0.8);
-        border-color: transparent;
-        outline: 2px solid #fff;
-        transform: scale(1.05)
-    }
+.button:hover, .button:focus {
+	color: black;
+	background: rgb(255,208,0);
+	background: rgba(255,208,0,0.8);
+	border-color: transparent;
+	outline: 2px solid #fff;
+	transform: scale(1.05)
+}
 
-    .button:focus {
-        outline: 1px solid #fff;
-        outline-offset: -4px;
-    }
+.button:focus {
+	outline: 1px solid #fff;
+	outline-offset: -4px;
+}
 
-    .button:active {
-        transform: scale(0.99);
-    }
+.button:active {
+	transform: scale(0.99);
+}
 
 
     /* BUTTON EXPANDER is used to show and hide content */
-    .button--expander { }
+
+.button--expander {
+	
+}
 
 
 
@@ -1059,67 +1056,65 @@ margin-bottom: -2px;
 /* BADGE molecule */
 /* This styles the existing story-badge html molecule from the story page to work on the homepage. These styles replace the story page badge styles. */
 
-.badge { }
+.badge {
+	
+}
 
-  .badge--story-item-placement {
-    display: block;
-    position: absolute;
-    width: auto;
-    left: -1.25em;
-    top: -1.5em;
-    transform: scale(1);
-    padding-left: inherit; /* Adjusts badge position when there's padding on the parent */
-  }
+.badge--story-item-placement {
+	display: block;
+	position: absolute;
+	width: auto;
+	left: -1.25em;
+	top: -1.5em;
+	transform: scale(1);
+	padding-left: inherit; /* Adjusts badge position when there's padding on the parent */
+}
 
-  .story-item--secondary .badge--story-item-placement,
-  .story-item--tertiary .badge--story-item-placement {
-    left: -2.5em;
-    top: -1em;
-    transform: scale(.85);
-  }
+.story-item--secondary .badge--story-item-placement, .story-item--tertiary .badge--story-item-placement {
+	left: -2.5em;
+	top: -1em;
+	transform: scale(.85);
+}
 
-  .hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement,
-  .hmpg-org-deep-dive .story-item--tertiary .badge--story-item-placement {
-    left: -2.5em;
-    top: -1.5em;
-    transform: scale(.7);
-  }
+.hmpg-org-recent-stories__list .story-item--tertiary .badge--story-item-placement, .hmpg-org-deep-dive .story-item--tertiary .badge--story-item-placement {
+	left: -2.5em;
+	top: -1.5em;
+	transform: scale(.7);
+}
 
   /* ---- BADGE responsive enhancement ----  */
 
       /*  BADGE MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-      @media screen and (min-width: 684px) {
 
-          .story-item--primary .badge--story-item-placement,
-          .story-item--reverse.story-item--primary .badge--story-item-placement {
-            left: -2.25em;
-            top: 1em;
-          }
-
-          .story-item--reverse.story-item--primary .badge--story-item-placement {
-            left: unset;
-            right: -2.25em;
-          }
-      }
+@media screen and (min-width: 684px) {
+	.story-item--primary .badge--story-item-placement, .story-item--reverse.story-item--primary .badge--story-item-placement {
+		left: -2.25em;
+		top: 1em;
+	}
+	
+	.story-item--reverse.story-item--primary .badge--story-item-placement {
+		left: unset;
+		right: -2.25em;
+	}
+}
 
       /*  BADGE MEDIUM BREAKPOINT -- breakpoint-width-nav: 850px */
-      @media screen and (min-width: 850px) {
 
-          .story-item--primary .badge--story-item-placement,
-          .story-item--reverse.story-item--primary .badge--story-item-placement {
-            left: -2.25em;
-            top: calc(1em + 1.5vw);
-          }
-
-          .story-item--reverse.story-item--primary .badge--story-item-placement {
-            left: unset;
-            right: -2.25em;
-          }
-
-          .story-item--secondary .badge--story-item-placement, .story-item--tertiary .badge--story-item-placement {
-            transform: scale(1);
-          }
-      }
+@media screen and (min-width: 850px) {
+	.story-item--primary .badge--story-item-placement, .story-item--reverse.story-item--primary .badge--story-item-placement {
+		left: -2.25em;
+		top: calc(1em + 1.5vw);
+	}
+	
+	.story-item--reverse.story-item--primary .badge--story-item-placement {
+		left: unset;
+		right: -2.25em;
+	}
+	
+	.story-item--secondary .badge--story-item-placement, .story-item--tertiary .badge--story-item-placement {
+		transform: scale(1);
+	}
+}
 
 /* end of Badge molecule */
 
@@ -1127,275 +1122,354 @@ margin-bottom: -2px;
 /* STORY ITEM MOLECULE ------------------- */
 
 /* default story item grid -- single column  */
+
 .story-item--index-page {
-    position: relative;
-    display: grid;
-    grid-column-gap: var(--gutter-column);
-    grid-row-gap: 0;
-    grid-template-areas:
-        "image"
-        "category"
-        "headline"
-        "deck"
-        "author"
-        "date"
-        "border";
+	position: relative;
+	display: grid;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: 0;
+	grid-template-areas: "image"
+    "category"
+    "headline"
+    "deck"
+    "author"
+    "date"
+    "border";
 }
 
-    .story-item__image {
-        display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
-        position: relative;
-    }
+.story-item__image {
+	display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
+	position: relative;
+}
 
     /* Story Item element layout -- Assign story-item elements to grid areas */
-    .story-item--index-page .story-item__image { grid-area: image; }
-    .story-item--index-page .badge--story-item-placement {/* grid-area: image; */z-index: 20;}
-    .story-item--index-page .category-label { grid-area: category; }
-    .story-item--index-page .story-item__headline { grid-area: headline; }
-    .story-item--index-page .story-item__deck { grid-area: deck;font-size: 115%; }
-    .story-item--index-page .story-item__author { grid-area: author; }
-    .story-item--index-page .story-item__date { grid-area: date; }
+
+.story-item--index-page .story-item__image {
+	grid-area: image;
+}
+
+.story-item--index-page .badge--story-item-placement {
+	/* grid-area: image; */
+	z-index: 20;
+}
+
+.story-item--index-page .category-label {
+	grid-area: category;
+}
+
+.story-item--index-page .story-item__headline {
+	grid-area: headline;
+}
+
+.story-item--index-page .story-item__deck {
+	grid-area: deck;
+	font-size: 115%;
+}
+
+.story-item--index-page .story-item__author {
+	grid-area: author;
+}
+
+.story-item--index-page .story-item__date {
+	grid-area: date;
+}
 
 
     /* STORY ITEM EXTENSIONS */
-    .story-item--primary { }
 
-    .story-item--secondary {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(4, auto) 1fr;
-      grid-template-areas:
-        "category image"
-        "headline image"
-        "deck image"
-        "author image"
-        "date image";
-    }
+.story-item--primary {
+	
+}
 
-    .story-item--secondary .category-label { margin-top: 0} /* 0 top margin aligns label with figure in 2-col story-item layouts */
+.story-item--secondary {
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(4, auto) 1fr;
+	grid-template-areas: "category image"
+    "headline image"
+    "deck image"
+    "author image"
+    "date image";
+}
 
-    .story-item--secondary .story-item__author {
-      justify-self: start;
-    }
+.story-item--secondary .category-label {
+	margin-top: 0
+} /* 0 top margin aligns label with figure in 2-col story-item layouts */
 
-    .story-item--tertiary { }
-        .story-item--tertiary .story-item__image { display: none; }
-        .story-item--tertiary .badge--story-item-placement { display: none; }
-        .story-item--tertiary .category-label { display: none; }
-        .story-item--tertiary .story-item__headline { display: block; }
-        .story-item--tertiary .story-item__deck { display: block; }
-        .story-item--tertiary .story-item__author { display: inline-block; }
+.story-item--secondary .story-item__author {
+	justify-self: start;
+}
 
-        .hmpg-org-recent-stories__list .story-item--tertiary {
-          /* font-size: var(--small-text); */
-          grid-column-gap: calc(var(--gutter-column) * 0.5);
-        }
+.story-item--tertiary {
+	
+}
 
-        .story-item--tertiary .story-item__author {
-          justify-self: start;
-        }
+.story-item--tertiary .story-item__image {
+	display: none;
+}
 
-    .story-item--minimum { }
-        .story-item--minimum .story-item__image { display: none; }
-        .story-item--minimum .badge--story-item-placement { display: none; }
-        .story-item--minimum .category-label { display: none; }
-        .story-item--minimum .story-item__headline { display: block; }
-        .story-item--minimum .story-item__deck { display: none; }
-        .story-item--minimum .story-item__author { display: none; }
-        .story-item--minimum .story-item__date { display: none; }
+.story-item--tertiary .badge--story-item-placement {
+	display: none;
+}
 
-    .story-item--reverse { }
+.story-item--tertiary .category-label {
+	display: none;
+}
+
+.story-item--tertiary .story-item__headline {
+	display: block;
+}
+
+.story-item--tertiary .story-item__deck {
+	display: block;
+}
+
+.story-item--tertiary .story-item__author {
+	display: inline-block;
+}
+
+.hmpg-org-recent-stories__list .story-item--tertiary {
+	/* font-size: var(--small-text); */
+	grid-column-gap: calc(var(--gutter-column) * 0.5);
+}
+
+.story-item--tertiary .story-item__author {
+	justify-self: start;
+}
+
+.story-item--minimum {
+	
+}
+
+.story-item--minimum .story-item__image {
+	display: none;
+}
+
+.story-item--minimum .badge--story-item-placement {
+	display: none;
+}
+
+.story-item--minimum .category-label {
+	display: none;
+}
+
+.story-item--minimum .story-item__headline {
+	display: block;
+}
+
+.story-item--minimum .story-item__deck {
+	display: none;
+}
+
+.story-item--minimum .story-item__author {
+	display: none;
+}
+
+.story-item--minimum .story-item__date {
+	display: none;
+}
+
+.story-item--reverse {
+	
+}
 
 
     /* ---- STORY ITEM responsive enhancement ----  */
 
         /*  STORY ITEM SUB-MEDIUM BREAKPOINT -- < breakpoint-width-m: < 683px */
-        @media screen and (max-width: 683px) {
 
-          /* Some story-items use float-based layout in small viewports:
-             -> Secondary story-items in the recent stories list
-             -> Tertiary story-items in the Insider Related Stories list  */
-          /* Same as Tertiary items in large viewports. */
-          .hmpg-org-recent-stories__list .story-item--secondary,
-          .m-tyee-insider__related-stories .story-item--tertiary {
-            display: block;
-          }
+@media screen and (max-width: 683px) {
+	/* Some story-items use float-based layout in small viewports:
+       -> Secondary story-items in the recent stories list
+       -> Tertiary story-items in the Insider Related Stories list  */
+    /* Same as Tertiary items in large viewports. */
+	
+	.hmpg-org-recent-stories__list .story-item--secondary, .m-tyee-insider__related-stories .story-item--tertiary {
+		display: block;
+	}
 
-          /* Use float-based layout for Secondary story-items in Recent Stories and Insider modules */
-          /* Same as Tertiary items in large viewports. */
-                .hmpg-org-recent-stories__list .story-item--secondary .story-item__image,
-                .m-tyee-insider__related-stories .story-item--tertiary .story-item__image {
-                  float: right;
-                  width: calc(35% - (var(--gutter-column-half) * 0.5));
-                  margin-left: var(--gutter-column-half);
-                  margin-bottom: 2rem;
-                }
+    /* Use float-based layout for Secondary story-items in Recent Stories and Insider modules */
+    /* Same as Tertiary items in large viewports. */
+	
+	.hmpg-org-recent-stories__list .story-item--secondary .story-item__image, .m-tyee-insider__related-stories .story-item--tertiary .story-item__image {
+		float: right;
+		width: calc(35% - (var(--gutter-column-half) * 0.5));
+		margin-left: var(--gutter-column-half);
+		margin-bottom: 2rem;
+	}
 
-                /* Align photo vertically with adjacent headline. */
-                .hmpg-org-recent-stories__list .story-item--secondary .story-item__image {
-                  padding-top: 3.5rem;
-                }
+    /* Align photo vertically with adjacent headline. */
+	
+	.hmpg-org-recent-stories__list .story-item--secondary .story-item__image {
+		padding-top: 3.5rem;
+	}
+	
+	.m-tyee-insider__related-stories .story-item--tertiary .story-item__headline {
+		padding-top: 0;
+	}
 
-                .m-tyee-insider__related-stories .story-item--tertiary .story-item__headline {
-                  padding-top: 0;
-                }
+    /* Secondary story item gets single-col stacked layout in Deep Dive on narrow viewports. */
+	
+	.hmpg-org-deep-dive .story-item--secondary {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto auto auto auto;
+		grid-template-areas: "image" "category" "headline" "deck" "author" "date";
+	}
+	
+	.hmpg-org-deep-dive .story-item--secondary .category-label {
+		font-family: var(--typeface-sans);
+		font-size: .875em;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--brand-colour--text);
+		margin: 1rem 0 1rem;
+	}
+	
+	.hmpg-org-deep-dive .story-item--secondary .story-item__headline {
+		font-family: var(--typeface-display-medium);
+		font-weight: 600;
+		line-height: 3rem;
+		font-size: 1.5em;
+		text-transform: capitalize;
+		margin: 0rem 0 2rem;
+	}
+} /* end of Story Item sub-Medium breakpoint */
 
-          /* Secondary story item gets single-col stacked layout in Deep Dive on narrow viewports. */
-          .hmpg-org-deep-dive .story-item--secondary {
-            grid-template-columns: 1fr;
-            grid-template-rows: auto auto auto auto auto auto;
-            grid-template-areas: "image" "category" "headline" "deck" "author" "date";
-          }
-
-              .hmpg-org-deep-dive .story-item--secondary .category-label {
-                font-family: var(--typeface-sans);
-                font-size: .875em;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                color: var(--brand-colour--text);
-                margin: 1rem 0 1rem;
-              }
-
-              .hmpg-org-deep-dive .story-item--secondary .story-item__headline {
-                font-family: var(--typeface-display-medium);
-                font-weight: 600;
-                line-height: 3rem;
-                font-size: 1.5em;
-                text-transform: capitalize;
-                margin: 0rem 0 2rem;
-              }
-
-        } /* end of Story Item sub-Medium breakpoint */
-
-
-        .hmpg-org-recent-stories__list.wide .hmpg-ad-box--halfpage aside {
-         transform: scale(.99);
-         margin-top:3px;
-        }
+.hmpg-org-recent-stories__list.wide .hmpg-ad-box--halfpage aside {
+	transform: scale(.99);
+	margin-top: 3px;
+}
         
 
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-        @media screen and (min-width: 684px) {
+
+@media screen and (min-width: 684px) {
+	.story-item--primary {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(4, auto) 1fr;
+		grid-template-areas: "category image"
+        "headline image"
+        "deck image"
+        "author image"
+        "date image";
+	}
+	
+	.wide   .story-item--primary {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(4, auto) 1fr;
+		grid-template-rows: auto !important;
+		grid-template-areas: "headline headline"
+        "image image"
+        "image image"
+        "category category"
+        "deck deck"
+        "author author"
+        "date date"
+	}
+	
+	.wide .story-item--primary .category-label {
+		margin-top: 2rem;
+	}
+	
+	.wide .story-item--primary .story-item__deck {
+		margin-top: 1rem;
+	}
+	
+	.wide  .story-item--primary .story-item__headline {
+		text-transform: uppercase;
+		font-style: italic;
+		letter-spacing: 2px;
+		line-height: 110%;
+	}
+	
+	.wide .story-item--primary .story-item__author {
+		padding-top: 0;
+	}
 
 
 
-            .story-item--primary {
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: repeat(4, auto) 1fr;
-              grid-template-areas:
-                "category image"
-                "headline image"
-                "deck image"
-                "author image"
-                "date image";
-            }
-            
-            
-                 .wide   .story-item--primary {
-             
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: repeat(4, auto) 1fr;
-              grid-template-rows: auto !important;
-              grid-template-areas:
-               "headline headline"
-               "image image"
-               "image image"
-               "category category"
-               "deck deck"
-               "author author"
-               "date date"
-            }
-        
-       .wide .story-item--primary .category-label{
-           margin-top: 2rem;
-        }
-  
-       .wide .story-item--primary .story-item__deck{
-           margin-top: 1rem;
-        }
-        
-         .wide  .story-item--primary .story-item__headline{
-          text-transform: uppercase;
-          font-style: italic;
-          letter-spacing: 2px;
-          line-height: 110%;
-          
-        }
-        
-        .wide .story-item--primary .story-item__author{
-           padding-top: 0;
-        }
-        
-        
 
-        
-            /* Vertically centre Primary story-item text block in wide views
-               (only for Recent Stories and Pinned Story modules)            */
-            .hmpg-org-recent-stories__list .story-item--primary,
-            .hmpg-org-pinned-story .story-item--primary {
-              grid-template-rows: 1fr auto auto auto 1fr;
-            }
-
-                .hmpg-org-recent-stories__list .story-item--primary .story-item__image {
-                }
-
-                .story-item--primary .category-label {
-                  margin: 0 0 1rem;
-                  align-self: end;
-                }
-                .story-item--primary .story-item__date {
-                  margin-bottom: 1rem; /* offsets the 1-rem margin of the category-label */
-                }
-
-                .story-item--primary.story-item--reverse {
-                  grid-template-columns: 1fr 1fr;
-                  grid-template-areas:
-                    "image category"
-                    "image headline"
-                    "image deck"
-                    "image author"
-                    "image date";
-                  text-align: center;
-                }
-
-            .story-item--secondary {
-              grid-template-columns: 1fr;
-              grid-template-rows: auto auto auto auto auto auto;
-              grid-template-areas:
-                  "image"
-                  "category"
-                  "headline"
-                  "deck"
-                  "author"
-                  "date";
-            }
-
-            .story-item--secondary .category-label { margin-top: 1rem} /* Creates space
-                                  between image and headline in stacked story-item layout */
-
-            .story-item--tertiary {
-                grid-template-rows: auto auto auto auto auto;
-            }
-                .story-item--tertiary .story-item__image {display: grid;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
-                .story-item--tertiary .badge--story-item-placement {display: block;}
-                .story-item--tertiary .category-label {display: block;}
-                .story-item--tertiary .story-item__deck {display: block;}
-        } /* end of Story Item medium breakpoint */
+    /* Vertically centre Primary story-item text block in wide views
+       (only for Recent Stories and Pinned Story modules)            */
+	
+	.hmpg-org-recent-stories__list .story-item--primary, .hmpg-org-pinned-story .story-item--primary {
+		grid-template-rows: 1fr auto auto auto 1fr;
+	}
+	
+	.hmpg-org-recent-stories__list .story-item--primary .story-item__image {
+		
+	}
+	
+	.story-item--primary .category-label {
+		margin: 0 0 1rem;
+		align-self: end;
+	}
+	
+	.story-item--primary .story-item__date {
+		margin-bottom: 1rem; /* offsets the 1-rem margin of the category-label */
+	}
+	
+	.story-item--primary.story-item--reverse {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: "image category"
+        "image headline"
+        "image deck"
+        "image author"
+        "image date";
+		text-align: center;
+	}
+	
+	.story-item--secondary {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto auto auto auto;
+		grid-template-areas: "image"
+        "category"
+        "headline"
+        "deck"
+        "author"
+        "date";
+	}
+	
+	.story-item--secondary .category-label {
+		margin-top: 1rem
+	} /* Creates space
+    between image and headline in stacked story-item layout */
+	
+	.story-item--tertiary {
+		grid-template-rows: auto auto auto auto auto;
+	}
+	
+	.story-item--tertiary .story-item__image {
+		display: grid;
+	} /* Necessary for baseline-element.js to prevent element height from collapsing  */
+	
+	.story-item--tertiary .badge--story-item-placement {
+		display: block;
+	}
+	
+	.story-item--tertiary .category-label {
+		display: block;
+	}
+	
+	.story-item--tertiary .story-item__deck {
+		display: block;
+	}
+} /* end of Story Item medium breakpoint */
 
 
         /*  STORY ITEM LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
-        @media screen and (min-width: 1368px) {
 
-          /* Teriary story-items in the recent stories list use float-based layout in wide viewports. */
-          /* This selects only the first 8 story items because the display of the subsequent items
-             needs to be controled by the expander--recent-stories. (There seems to be some kind of CSS
-             bug because nth-of-type is counting all story-items, not just .story-item--tertiary.
-             We really only want to select the first 4 .story-item--tertiary elements)  */
-          .hmpg-org-recent-stories__list .story-item--tertiary:nth-of-type(-n+16) {
-            display: block;
-          }
-
-        } /* end of Story Item large breakpoint */
+@media screen and (min-width: 1368px) {
+	/* Teriary story-items in the recent stories list use float-based layout in wide viewports. */
+    /* This selects only the first 8 story items because the display of the subsequent items
+       needs to be controled by the expander--recent-stories. (There seems to be some kind of CSS
+       bug because nth-of-type is counting all story-items, not just .story-item--tertiary.
+       We really only want to select the first 4 .story-item--tertiary elements)  */
+	
+	.hmpg-org-recent-stories__list .story-item--tertiary:nth-of-type(-n+16) {
+		display: block;
+	}
+} /* end of Story Item large breakpoint */
 
 /* end of Story Item */
 
@@ -1407,135 +1481,142 @@ margin-bottom: -2px;
 /* row border */
     /* Uses a pseudo element to create borders within the grid-row-gap. Excludes the first item.
     Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-    .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before,
-    .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
-    .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
-      content:"";
-      position: absolute;
-      top: calc(var(--gutter-row-half) * -1);
-      width: 100%;
-      border-bottom: 1px solid var(--border-colour-cols);
-      mix-blend-mode: multiply;
-    }
+
+.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before, .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before, .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
+	content: "";
+	position: absolute;
+	top: calc(var(--gutter-row-half) * -1);
+	width: 100%;
+	border-bottom: 1px solid var(--border-colour-cols);
+	mix-blend-mode: multiply;
+}
 
     /* ---- ROW & COLUMN BORDERS responsive enhancement ----  */
 
         /*  ROW & COLUMN BORDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-        @media screen and (min-width: 684px) {
 
-            /* row border */
-            /* expand Recent Stories row borders in medium views */
-            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before  {
-              left: calc(var(--gutter-column-half) * -1);
-              width: calc(100% + var(--gutter-column));
-            }
+@media screen and (min-width: 684px) {
+	/* row border */
+    /* expand Recent Stories row borders in medium views */
+	
+	.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before {
+		left: calc(var(--gutter-column-half) * -1);
+		width: calc(100% + var(--gutter-column));
+	}
 
-            /* removes row borders from Insider and Deep Dive in medium views */
-            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
-            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before  {
-              content: none;
-            }
+    /* removes row borders from Insider and Deep Dive in medium views */
+	
+	.hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before, .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
+		content: none;
+	}
 
-            /* column border */
-            /* Uses a pseudo element to create column borders within the grid-column-gap. Excludes the first item.
-               Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
-            .hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::after  {
-              content:'';
-              position: absolute;
-              top: 0;
-              right: calc(var(--gutter-column-half) * -1);
-              height: 100%;
-              border-right: 1px solid var(--border-colour-cols);
-            }
-        } /* end of borders medium breakpoint */
+    /* column border */
+    /* Uses a pseudo element to create column borders within the grid-column-gap. Excludes the first item.
+       Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
+	
+	.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: calc(var(--gutter-column-half) * -1);
+		height: 100%;
+		border-right: 1px solid var(--border-colour-cols);
+	}
+} /* end of borders medium breakpoint */
 
 
         /* ROW & COLUMN BORDER ONLY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px - 999px */
-        @media screen and (min-width: 684px) and (max-width: 999px) {
 
-            /* remove column border on last item in each Recent Stories row */
-            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
-              content:none;
-            }
+@media screen and (min-width: 684px) and (max-width: 999px) {
+	/* remove column border on last item in each Recent Stories row */
+	
+	.hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after {
+		content: none;
+	}
 
-            /* remove column border on all tertiary story-items in Recent Stories */
-            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
-              content:none;
-            }
-        } /* end of borders medium breakpoint */
+    /* remove column border on all tertiary story-items in Recent Stories */
+	
+	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after {
+		content: none;
+	}
+} /* end of borders medium breakpoint */
 
 
         /*  ROW & COLUMN BORDER ONLY TERTIARY BREAKPOINT -- breakpoint-width-tertiary: 1000px - 1367px */
-        @media screen and (min-width: 1000px) and (max-width: 1367px) {
 
-            /* remove column border on last item in each Recent Stories row */
-            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+4):nth-of-type(2n)::after  {
-              content:none;
-            }
+@media screen and (min-width: 1000px) and (max-width: 1367px) {
+	/* remove column border on last item in each Recent Stories row */
+	
+	.hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+4):nth-of-type(2n)::after {
+		content: none;
+	}
 
-            /* remove column border on all tertiary story-items in Recent Stories */
-            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
-              content:none;
-            }
-
-        } /* end of borders tertiary breakpoint */
+    /* remove column border on all tertiary story-items in Recent Stories */
+	
+	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after {
+		content: none;
+	}
+} /* end of borders tertiary breakpoint */
 
 
         /*  ROW & COLUMN BORDER LARGE BREAKPOINT -- breakpoint-width-l: 1367px */
-        @media screen and (min-width: 1368px) {
 
-            /* remove column border on last item in each Recent Stories row */
-            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after  {
-              content:none;
-            }
+@media screen and (min-width: 1368px) {
+	/* remove column border on last item in each Recent Stories row */
+	
+	.hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after {
+		content: none;
+	}
 
-            /* remove column border on all tertiary story-items in Recent Stories */
-            .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after  {
-              content:none;
-            }
+    /* remove column border on all tertiary story-items in Recent Stories */
+	
+	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after {
+		content: none;
+	}
 
-            /* This would remove row borders on tertiary story-items in Recent Stories
-            .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+9)::before  {
-              content: none;
-            } */
+    /* This would remove row borders on tertiary story-items in Recent Stories
+    .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+9)::before  {
+      content: none;
+    } */
 
-            /* add column borders around Insider molecules */
-            .hmpg-org-tyee-insider > div:not(:last-of-type)::after {
-              content:'';
-              position: absolute;
-              bottom: 0;
-              right: calc(var(--gutter-column-half) * -1);
-              height: calc(100% - 10rem);
-              border-right: 1px solid var(--text-colour);
-            }
+    /* add column borders around Insider molecules */
+	
+	.hmpg-org-tyee-insider > div:not(:last-of-type)::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: calc(var(--gutter-column-half) * -1);
+		height: calc(100% - 10rem);
+		border-right: 1px solid var(--text-colour);
+	}
 
-            /* add row borders around Deep Dive tertiary story-items */
-            .hmpg-org-deep-dive > .story-item--tertiary:nth-of-type(n+4)::before {
-              content:'' !important; /* !important is required to overrule the earlier
-                                            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
-                                            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
-                                                content: none;
-                                        but this could also achieved by making the breakpoint of this previous
-                                        rule more specific. */
-              position: absolute;
-              top: calc(var(--gutter-row-half) * -1);
-              left: calc(0);
-              width: calc(100%);
-              border-bottom: 1px solid var(--border-colour-cols);
-            }
+    /* add row borders around Deep Dive tertiary story-items */
+	
+	.hmpg-org-deep-dive > .story-item--tertiary:nth-of-type(n+4)::before {
+		content: '' !important; /* !important is required to overrule the earlier
+            .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before,
+            .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
+                content: none;
+        but this could also achieved by making the breakpoint of this previous
+        rule more specific. */
+		position: absolute;
+		top: calc(var(--gutter-row-half) * -1);
+		left: calc(0);
+		width: calc(100%);
+		border-bottom: 1px solid var(--border-colour-cols);
+	}
 
-            /* add column border around Deep Dive tertiary story-items */
-            .hmpg-org-deep-dive > .story-item--tertiary::after {
-              content:'';
-              position: absolute;
-              top: calc(var(--gutter-row-half) * -1);
-              left: calc(var(--gutter-column-half) * -1);
-              height: calc(100% + var(--gutter-row));
-              border-left: 1px solid var(--border-colour-cols);
-            }
-
-
-        } /* end of borders large breakpoint */
+    /* add column border around Deep Dive tertiary story-items */
+	
+	.hmpg-org-deep-dive > .story-item--tertiary::after {
+		content: '';
+		position: absolute;
+		top: calc(var(--gutter-row-half) * -1);
+		left: calc(var(--gutter-column-half) * -1);
+		height: calc(100% + var(--gutter-row));
+		border-left: 1px solid var(--border-colour-cols);
+	}
+} /* end of borders large breakpoint */
 
 /* end of Row & Column Borders */
 
@@ -1544,36 +1625,40 @@ margin-bottom: -2px;
 /* HMPG AD BOX MOLECULE ------------------- */
 
 .hmpg-ad-box {
-  position: relative;
+	position: relative;
 }
 
-  .hmpg-ad-box--halfpage {
-    display: none;
-  }
+.hmpg-ad-box--halfpage {
+	display: none;
+}
 
-  .hmpg-ad-box iframe {
-    /* width:100%; This prevents the ad from breaking the col but it will get crops the graphic */
-  }
+.hmpg-ad-box iframe {
+	/* width:100%; This prevents the ad from breaking the col but it will get crops the graphic */
+}
 
   /* Towards a scaling ad solution: */
-  .hmpg-ad-box--halfpage iframe {
-    /*
+
+.hmpg-ad-box--halfpage iframe {
+	/*
     position: absolute;   --> This pulls ad out of flow and lets grid col size properly
     top:0;
     left:0;
     transform: scale(.8) translate(-55px, -75px);  --> translations must be calculated relative grid col size depending on viewport width
     */
-  }
+}
 
-  .hmpg-ad-box--bigbox {
-    margin-top: var(--gutter-row);
-    height: calc(2rem * 14); /* Set ad-box height to an even multiple of the baseline grid */
-  }
+.hmpg-ad-box--bigbox {
+	margin-top: var(--gutter-row);
+	height: calc(2rem * 14); /* Set ad-box height to an even multiple of the baseline grid */
+}
 
     /*  HMPG AD BOX BREAKPOINT -- breakpoint-width-adblock: 1180px */
-    @media screen and (min-width: 1180px) {
-      .hmpg-ad-box--halfpage {display: block;}
-    }
+
+@media screen and (min-width: 1180px) {
+	.hmpg-ad-box--halfpage {
+		display: block;
+	}
+}
 /* end of HMPG Ad Box molecule */
 
 
@@ -1584,35 +1669,35 @@ margin-bottom: -2px;
 /* This formats a container of articles into a numbered list with custom numbers. It uses the styling method from https://www.w3schools.com/css/css_counters.asp Variants can be seen here: https://www.w3.org/Style/Examples/007/color-bullets.en.html */
 
 .counter-list--story-items {
-  counter-reset: story-item;
+	counter-reset: story-item;
 }
 
-    .counter-list--story-items > .story-item {
-      counter-increment: story-item;
-
-      padding-left: 1.4em;
-      position: relative;
-    }
+.counter-list--story-items > .story-item {
+	counter-increment: story-item;
+	padding-left: 1.4em;
+	position: relative;
+}
 
         /* Realign odd-numbered list with baseline grid.
            This doesn't work if there's an even # of items in the list.
            Using margins that vary between odd and even items could produce a universal solution.
            E.g. select the last list item only if it's odd-numbered. */
-        .counter-list--story-items > .story-item:last-of-type {
-          margin-bottom: 0rem;
-        }
 
-        .counter-list--story-items > .story-item h2::before {
-          content: counter(story-item);
-          display: inline-block;
-          position: absolute;
-          left: -.1em;
-          color: var(--brand-colour--text);
-          background-color: none;
-          font-family: var(--typeface-display);
-          font-weight: 800;
-          font-size: 1.1em;
-        }
+.counter-list--story-items > .story-item:last-of-type {
+	margin-bottom: 0rem;
+}
+
+.counter-list--story-items > .story-item h2::before {
+	content: counter(story-item);
+	display: inline-block;
+	position: absolute;
+	left: -.1em;
+	color: var(--brand-colour--text);
+	background-color: none;
+	font-family: var(--typeface-display);
+	font-weight: 800;
+	font-size: 1.1em;
+}
 /* end of Counter List molecule */
 
 
@@ -1627,65 +1712,73 @@ margin-bottom: -2px;
 /* Should be considolidated at some point. */
 
 .hmpg-org-wrapper {
-  position: relative;
-  padding: 0 var(--page-margin-sides);
-  padding-bottom: calc(var(--gutter-row) + 0rem);
+	position: relative;
+	padding: 0 var(--page-margin-sides);
+	padding-bottom: calc(var(--gutter-row) + 0rem);
 }
 
-    main .hmpg-org-wrapper {
-      padding-top: calc(5rem - 0px);
-    }
+main .hmpg-org-wrapper {
+	padding-top: calc(5rem - 0px);
+}
 
 main .hmpg-org-wrapper.annex {
-    padding-top: 2rem;
+	padding-top: 2rem;
 }
 
 
         /* Omit top padding from first modules
            (This will maintain correct padding when the order of modules changes) */
-        main .hmpg-org-wrapper:first-of-type {
-          padding-top: 0;
-        }
+
+main .hmpg-org-wrapper:first-of-type {
+	padding-top: 0;
+}
 
     /* Create thick top border on modules that doesn't extend into page magins */
-    main .hmpg-org-wrapper::before {
-        content: "";
-        position: absolute;
-        top: 3rem;
-        left: 0;
-        grid-column: 1 / -1;
-        width: 100%;
-        border-bottom: 4px solid var(--text-colour);
-    }
+
+main .hmpg-org-wrapper::before {
+	content: "";
+	position: absolute;
+	top: 3rem;
+	left: 0;
+	grid-column: 1 / -1;
+	width: 100%;
+	border-bottom: 4px solid var(--text-colour);
+}
 
         /* Omit top border from first modules
            (This will maintain correct borders when the order of modules changes) */
-        main .hmpg-org-wrapper:first-of-type::before {
-          content: none;
-        }
+
+main .hmpg-org-wrapper:first-of-type::before {
+	content: none;
+}
 
     /*  Increase separation between Page Header and first content module. */
     /*  Applying padding-top to the content module (rather than padding-bottom
         to the Header) allows for modules with coloured backgorunds.     */
-    main .hmpg-org-wrapper:first-of-type {
-        padding-top: 1rem;
-    }
+
+main .hmpg-org-wrapper:first-of-type {
+	padding-top: 1rem;
+}
 
     /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 600px */
-    @media screen and (min-width: 600px) {
-      /*  Progressively increase separation between Page Header and first content module. */
-      main .hmpg-org-wrapper:first-of-type {
-          padding-top: 1rem;
-      }
-    }
+
+@media screen and (min-width: 600px) {
+	/*  Progressively increase separation between Page Header and first content module. */
+	
+	main .hmpg-org-wrapper:first-of-type {
+		padding-top: 1rem;
+	}
+}
 
     /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
-    @media screen and (min-width: 850px) {
-        /*  Progressively increase separation between Page Header and first content module. */
-        main .hmpg-org-wrapper:first-of-type {
-          padding-top: 4rem;
-        }
-    }
+
+@media screen and (min-width: 850px) {
+	/*  Progressively increase separation between Page Header and first content module. */
+	
+	main .hmpg-org-wrapper:first-of-type {
+		padding-top: 4rem;
+	}
+}
 /* end of HMPG Organism Wrapper */
 
 
@@ -1695,30 +1788,32 @@ main .hmpg-org-wrapper.annex {
 /* HMPG RECENT STORIES organism ---------- */
 
 .hmpg-org-recent-stories {
-  display: grid;
+	display: grid;
 }
 
     /* Add space between Recent Stories module header and content */
-    .hmpg-org-recent-stories .hmpg-module-header {
-        margin-bottom: 6rem;
-    }
+
+.hmpg-org-recent-stories .hmpg-module-header {
+	margin-bottom: 6rem;
+}
 
       /* Reduce space between Recent Stories module header and content when module
          appears at top of page */
-      .hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories .hmpg-module-header {
-          margin-bottom: 4rem;
-      }
+
+.hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories .hmpg-module-header {
+	margin-bottom: 4rem;
+}
 
 .hmpg-org-recent-stories__list {
-      /* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
-      display: grid;
-      width: 100%;
-      grid-column-gap: var(--gutter-column);
-      grid-row-gap: var(--gutter-row);
-      margin-bottom: 0rem;/* Aligns with baseline grid (content may still throw it off)   */
-                          /* Decimal values in the .story-item--tertiary headline line-height
-                             (at some medium and large views)cause a browser rounding error
-                             that throws throws off the baseline grid.                      */
+	/* AG -- might want to abstract universal grid specs to "".hmpg-org-wrapper >" */
+	display: grid;
+	width: 100%;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: var(--gutter-row);
+	margin-bottom: 0rem;/* Aligns with baseline grid (content may still throw it off)   */
+    /* Decimal values in the .story-item--tertiary headline line-height
+       (at some medium and large views)cause a browser rounding error
+       that throws throws off the baseline grid.                      */
 }
 
   /* RECENT STORIES LIST EXPANDER */
@@ -1728,187 +1823,190 @@ main .hmpg-org-wrapper.annex {
   https://jsfiddle.net/Algreenwich/uym9s0bg/
   https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
-  .button--expander-open ~ :not(script) {
-    display: none;
-  }
+.button--expander-open ~ :not(script) {
+	display: none;
+}
 
-      #expander--recent-stories:checked ~ :not(script) {
-        display: grid;   /* This must be "grid" because the revealed items are themselves using internal grid layouts */
-      }
+#expander--recent-stories:checked ~ :not(script) {
+	display: grid;   /* This must be "grid" because the revealed items are themselves using internal grid layouts */
+}
 
             /*  LIST EXPANDER LARGE BREAKPOINT -- breakpoint-width-adblock: 1368px */
-            @media screen and (min-width: 1368px) {
 
-              /* Tertiary story-items in the recent stories list use float-based layout in wide viewports,
-                 so at large screen sizes the expander must set the display to block instead of grid.     */
-              #expander--recent-stories:checked ~ :not(script) {
-                display: block;   /* This must be "block" because revealed items are using internal float layouts */
-              }
-            } /* end of List Expander adblock breakpoint */
+@media screen and (min-width: 1368px) {
+	/* Tertiary story-items in the recent stories list use float-based layout in wide viewports,
+    so at large screen sizes the expander must set the display to block instead of grid.     */
+	
+	#expander--recent-stories:checked ~ :not(script) {
+		display: block;   /* This must be "block" because revealed items are using internal float layouts */
+	}
+} /* end of List Expander adblock breakpoint */
 
-      #expander--recent-stories:checked ~ .button--expander-open {
-        display: none;
-      }
+#expander--recent-stories:checked ~ .button--expander-open {
+	display: none;
+}
 
 
       /* ---- RECENT STORIES responsive enhancement ---- */
       /* Story items are allocated grid space and location based on their story-item extension class, e.g. .story-item--primary spans full first row. */
 
           /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-          @media screen and (min-width: 684px) {
 
-            .hmpg-org-recent-stories__list {
-              grid-template-columns: repeat(12, 1fr);
-              grid-template-areas:
-                "primary primary primary primary primary primary"
-                "2ndary  2ndary  2ndary 2ndary  2ndary  2ndary";
-            }
-
-                .hmpg-org-recent-stories__list > .story-item--primary {
-                grid-column: auto / span 12;
-                text-align: center;
-                }
-
-                .hmpg-org-recent-stories__list > .story-item--secondary {
-                grid-column: auto / span 4;
-                }
-
-                .hmpg-org-recent-stories__list > .story-item--tertiary {
-                grid-column: auto / span 3;
-                }
-
-                .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                  font-size: 1.15em;
-                  line-height: 2.5rem; /* decimal values here cause a browser rounding error
-                                          that throws throws off the baseline grid.          */
-                  -webkit-hyphens: auto;
-                  -ms-hyphens: auto;
-                  hyphens: auto; /* Adds hyphenation in medium views where column is narrow */
-                }
-
-                .hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
-                margin-top: 1rem;
-                }
-          }
+@media screen and (min-width: 684px) {
+	.hmpg-org-recent-stories__list {
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas: "primary primary primary primary primary primary"
+        "2ndary  2ndary  2ndary 2ndary  2ndary  2ndary";
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--primary {
+		grid-column: auto / span 12;
+		text-align: center;
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--secondary {
+		grid-column: auto / span 4;
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--tertiary {
+		grid-column: auto / span 3;
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+		font-size: 1.15em;
+		line-height: 2.5rem; /* decimal values here cause a browser rounding error
+        that throws throws off the baseline grid.          */
+		-webkit-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto; /* Adds hyphenation in medium views where column is narrow */
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
+		margin-top: 1rem;
+	}
+}
 
           /*  STORY ITEM TERTIARY BREAKPOINT -- breakpoint: 1000px */
           /* tertiary story-items expand from stacked to 2 columns */
-          @media screen and (min-width: 1000px)  {
 
-            .hmpg-org-recent-stories__list > .story-item--tertiary {
-                grid-column: auto / span 6;
-            }
+@media screen and (min-width: 1000px) {
+	.hmpg-org-recent-stories__list > .story-item--tertiary {
+		grid-column: auto / span 6;
+	}
 
-            /* Slightly increases Recent-stories tertiary headline size */
-            .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                font-size: 1.2em;
-                line-height: 2.5rem;
-            }
-
-            .hmpg-org-recent-stories__list .story-item--tertiary {
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: repeat(4, auto) 1fr;
-              grid-template-areas:
-                "category image"
-                "headline image"
-                "deck image"
-                "author image"
-                "date image";
-            }
-
-            .hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
-              display: block;margin-top: 0;
-            } /* 0 top margin aligns label with figure in 2-col story-item layouts */
-          }
+    /* Slightly increases Recent-stories tertiary headline size */
+	
+	.hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+		font-size: 1.2em;
+		line-height: 2.5rem;
+	}
+	
+	.hmpg-org-recent-stories__list .story-item--tertiary {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(4, auto) 1fr;
+		grid-template-areas: "category image"
+        "headline image"
+        "deck image"
+        "author image"
+        "date image";
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
+		display: block;
+		margin-top: 0;
+	} /* 0 top margin aligns label with figure in 2-col story-item layouts */
+}
 
           /*  RECENT STORIES ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px */
           /*  This breakpoint adds the half-page ad into the layout so it is only relevant
               for hmpg-org-recent-stories--general */
-          @media screen and (min-width: 1180px) {
 
-            .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list {
-              grid-template-columns: repeat(4, 1fr);
-              grid-template-areas:
-                "primary primary primary ad"
-                "2ndary  2ndary  2ndary  ad";
-            }
+@media screen and (min-width: 1180px) {
+	.hmpg-org-recent-stories--general .hmpg-org-recent-stories__list {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: "primary primary primary ad"
+        "2ndary  2ndary  2ndary  ad";
+	}
+	
+	.hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--primary {
+		grid-area: primary;
+	}
+	
+	.hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary {
+		grid-column: auto / span 1;
+	}
+	
+	.hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--tertiary {
+		grid-column: auto / span 2;
+	}
 
-                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--primary {
-                grid-area: primary;
-                }
-
-                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary {
-                grid-column: auto / span 1;
-                }
-
-                .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--tertiary {
-                grid-column: auto / span 2;
-                }
-
-                 /* Scale Half-page Adblock so it doesn't break the grid */
-                .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
-                  position: relative;
-                  grid-area: ad;
-                }
-
-                    .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
-                      position: absolute;
-                      transform: scale(.9);
-                      transform-origin: 0% 0%;
-                    }
-
-          } /* end of Recent Stories Adblock Breakpoint */
+    /* Scale Half-page Adblock so it doesn't break the grid */
+	
+	.hmpg-org-recent-stories__list .hmpg-ad-box--halfpage {
+		position: relative;
+		grid-area: ad;
+	}
+	
+	.hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
+		position: absolute;
+		transform: scale(.9);
+		transform-origin: 0% 0%;
+	}
+} /* end of Recent Stories Adblock Breakpoint */
 
 
           /*  RECENT STORIES SECONDARY IMAGE BREAKPOINT RANGE -- breakpoint-width-adblock: 1180px-1367px */
-          @media screen and (min-width: 1180px) and (max-width: 1367px) {
 
-            /* Force Secondary Recent Story images to display at correct layout size. */
-            /* This only applies while the margins are keeping the module width constant and the half-page ad is showing. */
-            .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
-              height: 18rem !important;
-            }
-          }
+@media screen and (min-width: 1180px) and (max-width: 1367px) {
+	/* Force Secondary Recent Story images to display at correct layout size. */
+    /* This only applies while the margins are keeping the module width constant and the half-page ad is showing. */
+	
+	.hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary .story-item__image .responsive-img {
+		height: 18rem !important;
+	}
+}
 
 
           /*  RECENT STORIES LARGE BREAKPOINT -- breakpoint: 1368px */
-          @media screen and (min-width: 1368px)  {
 
-              .hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--tertiary {
-                grid-column: auto / span 1;
-              }
+@media screen and (min-width: 1368px) {
+	.hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--tertiary {
+		grid-column: auto / span 1;
+	}
 
-              /* Slightly reduce size of tertiary headlines in wide screens to accommodate extra column */
-              .hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
-                  font-family: var(--typeface-display-medium);
-                  font-size: 1.15em;
-                  line-height: 2.5rem; /* decimal values here cause a browser rounding error
-                                          that throws throws off the baseline grid.          */
-              }
+    /* Slightly reduce size of tertiary headlines in wide screens to accommodate extra column */
+	
+	.hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
+		font-family: var(--typeface-display-medium);
+		font-size: 1.15em;
+		line-height: 2.5rem; /* decimal values here cause a browser rounding error
+        that throws throws off the baseline grid.          */
+	}
 
-              /* Use float-based layout for Tertiary story-items in Recent Stories module */
+    /* Use float-based layout for Tertiary story-items in Recent Stories module */
+	
+	.hmpg-org-recent-stories__list .story-item--tertiary .story-item__image {
+		float: right;
+		width: calc(40% - (var(--gutter-column-half) * 0.5));
+		margin-left: var(--gutter-column-half);
+		margin-bottom: 1rem;
+		padding-top: 3.15rem;
+	}
 
-              .hmpg-org-recent-stories__list .story-item--tertiary .story-item__image {
-                float: right;
-                width: calc(40% - (var(--gutter-column-half) * 0.5));
-                margin-left: var(--gutter-column-half);
-                margin-bottom: 1rem;
-                padding-top: 3.15rem;
-              }
+    /* Disable scaling of Half-page Adblock so that it displays at full size */
+	
+	.hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
+		transform: none;
+		transform-origin: 0% 0%;
+	}
 
-              /* Disable scaling of Half-page Adblock so that it displays at full size */
-              .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside {
-                transform: none;
-                transform-origin: 0% 0%;
-              }
-
-                  /* Align Half-page Ad with right edge of its grid container */
-                  .hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside div div {
-                    display: grid;
-                    justify-items: end;
-                  }
-
-          } /* end of Recent Stories Large Breakpoint */
+    /* Align Half-page Ad with right edge of its grid container */
+	
+	.hmpg-org-recent-stories__list .hmpg-ad-box--halfpage aside div div {
+		display: grid;
+		justify-items: end;
+	}
+} /* end of Recent Stories Large Breakpoint */
 
   /* end of Recent Stories */
 
@@ -1918,195 +2016,220 @@ main .hmpg-org-wrapper.annex {
     /* AG -- It would be great to use subgrids to keep molecules separated yet aligned, but the subgrid spec isn't completed yet and no browsers support it. The display: content also has very poor support so that's not viable either. */
 
 .hmpg-org-tyee-insider {
-  position: relative;
-  display: grid;
-  grid-column-gap: var(--gutter-column);
-  grid-row-gap: var(--gutter-row);
-
-  background-color: var(--brand-colour--mod-bg);
+	position: relative;
+	display: grid;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: var(--gutter-row);
+	background-color: var(--brand-colour--mod-bg);
 }
 
 .hmpg-module-header {
-  height: 2rem;
-  margin-bottom: 2rem;
+	height: 2rem;
+	margin-bottom: 2rem;
 }
 
-  .hmpg-org-tyee-insider .hmpg-module-header {
-    margin-bottom: 8rem;
+.hmpg-org-tyee-insider .hmpg-module-header {
+	margin-bottom: 8rem;
     /* Insider needs more space here because it doesn't use
        Grid at top level and therefore has no row gap */
-  }
+}
 
-  .hmpg-org-most--column .hmpg-module-header {
-    margin-bottom: 4rem;
+.hmpg-org-most--column .hmpg-module-header {
+	margin-bottom: 4rem;
     /* Most module columns need more space here because they only use
        a half-gutter row gap */
-  }
+}
 
-  .hmpg-org-reported-elsewhere .hmpg-module-header {
-    margin-bottom: 4rem;
+.hmpg-org-reported-elsewhere .hmpg-module-header {
+	margin-bottom: 4rem;
     /* Reported Elsewhere module needs more space here because they only use
        a half-gutter row gap */
-  }
+}
 
   /* Modules that have a tagline/blurb following their label need a margin */
-  .m-tyee-insider__main .hmpg-module-header__main-label,
-  .hmpg-org-deep-dive .hmpg-module-header__main-label {
-    margin-right: 3rem;
-  }
+
+.m-tyee-insider__main .hmpg-module-header__main-label, .hmpg-org-deep-dive .hmpg-module-header__main-label {
+	margin-right: 3rem;
+}
 
   /* When Recent Stories module appears at top of page
      its module header and label are hidden          */
-  .hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories--general .hmpg-module-header {
-    display: none;
-  }
+
+.hmpg-org-wrapper:first-of-type.hmpg-org-recent-stories--general .hmpg-module-header {
+	display: none;
+}
 
 .hmpg-module-header__main-label-blurb {
-  display: inline-block;
+	display: inline-block;
 }
 
 .m-tyee-insider__related-stories {
-  display: grid;
-  grid-row-gap: var(--gutter-row);
-  margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
+	display: grid;
+	grid-row-gap: var(--gutter-row);
+	margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
 }
 
-.m-tyee-insider__main,
-.m-comment-noted {
-  position: relative
+.m-tyee-insider__main, .m-comment-noted {
+	position: relative
 }
 
 
   /* Tyee Insider Primary Story-item */
-  .m-tyee-insider__main .story-item--primary { }
-    .m-tyee-insider__main .story-item--primary .badge--story-item-placement
-      { display: none;}
-    .m-tyee-insider__main .story-item--primary .category-label
-      { display: none;}
-    .m-tyee-insider__main .story-item--primary .story-item__headline
-      { grid-area: headline; }
-    .m-tyee-insider__main .story-item--primary .story-item__deck
-      { grid-area: deck; }
-    .m-tyee-insider__main .story-item--primary .story-item__author
-      { display: none;}
-    .m-tyee-insider__main .story-item--primary .story-item__date
-      { display: none;}
 
-  .m-tyee-insider__main .story-item--primary {
-    grid-template-areas:
-        "headline" /* put headline above image */
-        "image"
-        "deck"
-        "author"
-        "date";
-  }
+.m-tyee-insider__main .story-item--primary {
+	
+}
 
-  .m-tyee-insider__main .story-item--primary .story-item__headline {
-    margin-bottom: 4rem;
-  }
+.m-tyee-insider__main .story-item--primary .badge--story-item-placement {
+	display: none;
+}
 
-  .m-tyee-insider__main .story-item--primary img {
-    width: 100%; /* required becasue this img must omit the .responsive-img class
-                    so that it doesn't get targeted by baselineElement */
-  }
+.m-tyee-insider__main .story-item--primary .category-label {
+	display: none;
+}
 
-  .m-tyee-insider__main .story-item--primary .story-item__image {
-    margin-bottom: 4rem
-  }
+.m-tyee-insider__main .story-item--primary .story-item__headline {
+	grid-area: headline;
+}
+
+.m-tyee-insider__main .story-item--primary .story-item__deck {
+	grid-area: deck;
+}
+
+.m-tyee-insider__main .story-item--primary .story-item__author {
+	display: none;
+}
+
+.m-tyee-insider__main .story-item--primary .story-item__date {
+	display: none;
+}
+
+.m-tyee-insider__main .story-item--primary {
+	grid-template-areas: "headline" /* put headline above image */
+    "image"
+    "deck"
+    "author"
+    "date";
+}
+
+.m-tyee-insider__main .story-item--primary .story-item__headline {
+	margin-bottom: 4rem;
+}
+
+.m-tyee-insider__main .story-item--primary img {
+	width: 100%; /* required becasue this img must omit the .responsive-img class
+    so that it doesn't get targeted by baselineElement */
+}
+
+.m-tyee-insider__main .story-item--primary .story-item__image {
+	margin-bottom: 4rem
+}
 
   /* Tyee Insider Tertiary Story-item */
-  .m-tyee-insider__main .story-item--tertiary {
-      grid-template-rows: auto auto auto auto auto;
-  }
-      .m-tyee-insider__main .story-item--tertiary .story-item__image {display: grid; margin-bottom: 2rem;} /* Necessary for baseline-element.js to prevent element height from collapsing  */
-      .m-tyee-insider__main .story-item--tertiary .badge--story-item-placement {display: none;}
-      .m-tyee-insider__main .story-item--tertiary .category-label {display: none;}
-      .m-tyee-insider__main .story-item--tertiary .story-item__headline {display: block; padding: 0rem 0 1rem}
-      .m-tyee-insider__main .story-item--tertiary .story-item__deck {display: none;}
 
+.m-tyee-insider__main .story-item--tertiary {
+	grid-template-rows: auto auto auto auto auto;
+}
+
+.m-tyee-insider__main .story-item--tertiary .story-item__image {
+	display: grid;
+	margin-bottom: 2rem;
+} /* Necessary for baseline-element.js to prevent element height from collapsing  */
+
+.m-tyee-insider__main .story-item--tertiary .badge--story-item-placement {
+	display: none;
+}
+
+.m-tyee-insider__main .story-item--tertiary .category-label {
+	display: none;
+}
+
+.m-tyee-insider__main .story-item--tertiary .story-item__headline {
+	display: block;
+	padding: 0rem 0 1rem
+}
+
+.m-tyee-insider__main .story-item--tertiary .story-item__deck {
+	display: none;
+}
 
 .hmpg-org-tyee-insider.annex.hmpg-org-wrapper:before {
- border-bottom: none;
+	border-bottom: none;
 }
 
   /* Comment Noted and Barometer molecule styles */
 
+.m-comment-noted, .m-barometer {
+	padding-top: 2rem;
+	border-top: 4px solid var(--text-colour);
+	margin-top: calc(2rem - 4px); /* Offsets the 1px border */
+	grid-column: auto / span 3 !important;
+}
 
+.m-comment-noted .hmpg-module-header, .m-barometer .hmpg-module-header {
+	height: 2rem;
+	margin-bottom: 4rem;
+}
 
-  .m-comment-noted, .m-barometer {
+.m-comment-noted__title, .m-barometer__title {
+	/* padding: 1rem 0;  This should be contained in typographic styles not module layout */
+	min-height: 10rem;
+}
 
-    padding-top: 2rem;
-    border-top: 4px solid var(--text-colour); 
-    margin-top: calc(2rem - 4px); /* Offsets the 1px border */
-    grid-column: auto / span 3 !important;
-  }
+.m-barometer__footer {
+	padding-top: 4rem;
+}
 
-      .m-comment-noted .hmpg-module-header, .m-barometer .hmpg-module-header {
-        height: 2rem;
-        margin-bottom: 4rem;
-      }
-
-  .m-comment-noted__title, .m-barometer__title {
-    /* padding: 1rem 0;  This should be contained in typographic styles not module layout */
-    min-height: 10rem;
-  }
-
-  .m-barometer__footer {
-    padding-top: 4rem;
-  }
-
-
-.barometer-form-list p:first-child  {
- font-family: var(--typeface-display-medium);
-    font-weight: 600;
-    line-height: 4rem;
-    font-size: 2.33em;
-    text-transform: none;
-    min-height:10rem;
-    margin-bottom:2rem;
+.barometer-form-list p:first-child {
+	font-family: var(--typeface-display-medium);
+	font-weight: 600;
+	line-height: 4rem;
+	font-size: 2.33em;
+	text-transform: none;
+	min-height: 10rem;
+	margin-bottom: 2rem;
 }
       /* Barometer form */
       /* Checkbox display method is adapted from here:
          https://paulund.co.uk/how-to-style-a-checkbox-with-css */
 
-      .barometer-form-list__item, .barometer-form-list li {
-        display: block;
-        padding-bottom: 2rem;
-      }
-
-      input[type=radio] {
-        visibility: hidden;
-        display: none;
-      }
-
-      .barometer-form-label, .barometer-form-list li {
-        position: relative;
-        left: 3rem;
-        display: inline-block;
-        max-width: 85%;
-      }
-      
-.barometer-form-list ul {
-/* list-style-type: circle; */
+.barometer-form-list__item, .barometer-form-list li {
+	display: block;
+	padding-bottom: 2rem;
 }
 
-      .barometer-form-list li {
-       display:block; 
-      }
+input[type=radio] {
+	visibility: hidden;
+	display: none;
+}
 
-      .barometer-form-label::before, .barometer-form-list li::before{
-        content:"";
-        cursor: default;
-        position: absolute;
-        width: 2rem;
-        height: 2rem;
-        top: 0;
-        left: -3rem;
-        background: hsla(0, 0%, 100%, 0.3);
-        border: 2px solid white;
-    border-radius: 50%;
+.barometer-form-label, .barometer-form-list li {
+	position: relative;
+	left: 3rem;
+	display: inline-block;
+	max-width: 85%;
+}
 
-      }
+.barometer-form-list ul {
+	/* list-style-type: circle; */
+}
+
+.barometer-form-list li {
+	display: block;
+}
+
+.barometer-form-label::before, .barometer-form-list li::before {
+	content: "";
+	cursor: default;
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	top: 0;
+	left: -3rem;
+	background: hsla(0, 0%, 100%, 0.3);
+	border: 2px solid white;
+	border-radius: 50%;
+}
 
       /*
        input[name="barometerpoll"]:checked + .barometer-form-label::after {
@@ -2130,99 +2253,111 @@ main .hmpg-org-wrapper.annex {
     /* ---- TYEE INSIDER responsive enhancement ---- */
 
         /*  TYEE INSIDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-        @media screen and (min-width: 684px) {
 
+@media screen and (min-width: 684px) {
+	.hmpg-org-tyee-insider {
+		position: relative;
+		grid-template-columns: repeat(6, 1fr);
+	}
+	
+	.hmpg-org-tyee-insider > :first-child {
+		grid-column: auto / span 6;
+	}
+	
+	.hmpg-org-tyee-insider > :nth-child(2) {
+		grid-column: auto / span 3;
+	}
+	
+	.hmpg-org-tyee-insider > :nth-child(3) {
+		grid-column: auto / span 3;
+	}
 
-          .hmpg-org-tyee-insider {
-            position: relative;
-            grid-template-columns: repeat(6, 1fr);
-          }
-              .hmpg-org-tyee-insider > :first-child {
-              grid-column: auto / span 6;
-              }
-              .hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 3;}
-              .hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 3;}
+    /*  Insider Primary Story uses a float-based layout so that text can wrap the image */
+	
+	.hmpg-org-tyee-insider .story-item--primary {
+		display: block;
+	}
+	
+	.hmpg-org-tyee-insider .story-item--primary .story-item__image {
+		float: right;
+		display: block;
+		width: Calc(50% - var(--gutter-column-half));
+		margin-left: var(--gutter-column);
+		margin-bottom: 3rem;
+	}
+	
+	.m-tyee-insider__main .story-item--primary img {
+		display: block;
+		width: 100%; /* required becasue this img must omit the .responsive-img class
+        so that it doesn't get targeted by baselineElement */
+	}
+	
+	.m-tyee-insider__main .story-item--primary .story-item__deck {
+		max-width: 34em;
+	}
+	
+	.m-tyee-insider__main .story-item--primary .story-item__headline {
+		margin-bottom: 4rem;
+	}
+	
+	.m-tyee-insider__related-stories {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-row-gap: 2rem;
+		grid-column-gap: var(--gutter-column);
+		margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
+	}
+	
+	.m-tyee-insider__related-label {
+		grid-column: 1 / -1; /* Span all columns (required for medium views) */
+	}
+	
+	.m-comment-noted__title, .m-barometer__title {
+		min-height: 10rem;
+		margin-bottom: 2rem;
+	}
+} /* End of Tyee Insider medium breakpoint */
 
-           /*  Insider Primary Story uses a float-based layout so that text can wrap the image */
-
-          .hmpg-org-tyee-insider .story-item--primary {
-            display: block;
-          }
-
-                .hmpg-org-tyee-insider .story-item--primary .story-item__image {
-                  float: right;
-                  display: block;
-                  width: Calc(50% - var(--gutter-column-half));
-                  margin-left: var(--gutter-column);
-                  margin-bottom: 3rem;
-                }
-
-                .m-tyee-insider__main .story-item--primary img {
-                  display: block;
-                  width: 100%; /* required becasue this img must omit the .responsive-img class
-                                  so that it doesn't get targeted by baselineElement */
-                }
-
-                .m-tyee-insider__main .story-item--primary .story-item__deck {
-                  max-width: 34em;
-                }
-
-                .m-tyee-insider__main .story-item--primary .story-item__headline {
-                    margin-bottom: 4rem;
-                }
-
-          .m-tyee-insider__related-stories {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-row-gap: 2rem;
-            grid-column-gap: var(--gutter-column);
-            margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
-          }
-
-          .m-tyee-insider__related-label {
-            grid-column: 1 / -1; /* Span all columns (required for medium views) */
-          }
-
-          .m-comment-noted__title, .m-barometer__title {
-            min-height: 10rem;
-            margin-bottom: 2rem;
-          }
-        } /* End of Tyee Insider medium breakpoint */
-
-	.annex 
+.annex 
 
         /*  TYEE INSIDER LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
         @media screen and (min-width: 1368px) {
+	.hmpg-org-tyee-insider {
+	grid-template-columns: repeat(5, 1fr);
+}
 
-          .hmpg-org-tyee-insider {
-            grid-template-columns: repeat(5, 1fr);
-          }
-              .hmpg-org-tyee-insider > :first-child {
-              grid-column: auto / span 5;
-              }
-              .hmpg-org-tyee-insider > :nth-child(2) { grid-column: auto / span 1;}
-              .hmpg-org-tyee-insider > :nth-child(3) { grid-column: auto / span 1;}
+.hmpg-org-tyee-insider > :first-child {
+	grid-column: auto / span 5;
+}
 
-              .m-tyee-insider__main .story-item--primary .story-item__headline {
-                  min-height: 12rem;
-                  margin-bottom: 2rem;
-              }
+.hmpg-org-tyee-insider > :nth-child(2) {
+	grid-column: auto / span 1;
+}
 
-          .m-comment-noted, .m-barometer {
-              padding-top: 0rem;
-              border-top: none;
-              margin-top: 0;
-          }
+.hmpg-org-tyee-insider > :nth-child(3) {
+	grid-column: auto / span 1;
+}
 
-              .m-comment-noted .hmpg-module-header, .m-barometer .hmpg-module-header {
-                  height: 2rem;
-                  margin-bottom: 8rem;
-              }
+.m-tyee-insider__main .story-item--primary .story-item__headline {
+	min-height: 12rem;
+	margin-bottom: 2rem;
+}
 
-              .m-comment-noted__title, .m-barometer__title {
-                  min-height: 12rem;
-                  margin-bottom: 2rem;
-              }
+.m-comment-noted, .m-barometer {
+	padding-top: 0rem;
+	border-top: none;
+	margin-top: 0;
+}
+
+.m-comment-noted .hmpg-module-header, .m-barometer .hmpg-module-header {
+	height: 2rem;
+	margin-bottom: 8rem;
+}
+
+.m-comment-noted__title, .m-barometer__title {
+	min-height: 12rem;
+	margin-bottom: 2rem;
+}
         } /* End of Tyee Insider large breakpoint */
 /* End of Tyee Insider organism */
 
@@ -2231,15 +2366,15 @@ main .hmpg-org-wrapper.annex {
 /* PINNED STORY organism ----------------- */
 
 .hmpg-org-pinned-story {
-  display: grid;
-  z-index: 10; /* So that bottom border doesn't fall underneath
-                  the BG of next module due to negative margin */
-  padding-top: var(--gutter-row);
+	display: grid;
+	z-index: 10; /* So that bottom border doesn't fall underneath
+    the BG of next module due to negative margin */
+	padding-top: var(--gutter-row);
 }
 
-    .hmpg-org-pinned-story .story-item {
-      padding-top: calc(var(--gutter-row) - 2rem);
-    }
+.hmpg-org-pinned-story .story-item {
+	padding-top: calc(var(--gutter-row) - 2rem);
+}
 
     /* Set second top border */
     /* .hmpg-org-pinned-story::before {
@@ -2269,112 +2404,133 @@ main .hmpg-org-wrapper.annex {
 /* DEEP DIVE organism ----------------- */
 
 .hmpg-org-deep-dive {
+	display: grid;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: var(--gutter-row);
+	background-color: hsla(0, 0%, 90%, 0.68); /* For testing purposes */ /* AG - temporary tansparency to show grid */
+}
 
-  display: grid;
-  grid-column-gap: var(--gutter-column);
-  grid-row-gap: var(--gutter-row);
-  background-color: hsla(0, 0%, 90%, 0.68); /* For testing purposes */ /* AG - temporary tansparency to show grid */
-  }
+.hmpg-org-deep-dive > .story-item:first-of-type .story-item__image {
+	display: none;
+}
 
-  .hmpg-org-deep-dive > .story-item:first-of-type .story-item__image { display: none; }
-  .hmpg-org-deep-dive > .story-item:first-of-type .badge--story-item-placement { display: none; }
-  .hmpg-org-deep-dive > .story-item:first-of-type .category-label { display: none; }
-  .hmpg-org-deep-dive > .story-item:first-of-type .story-item__author { display: none; }
-  .hmpg-org-deep-dive > .story-item:first-of-type .story-item__date { display: none; }
+.hmpg-org-deep-dive > .story-item:first-of-type .badge--story-item-placement {
+	display: none;
+}
+
+.hmpg-org-deep-dive > .story-item:first-of-type .category-label {
+	display: none;
+}
+
+.hmpg-org-deep-dive > .story-item:first-of-type .story-item__author {
+	display: none;
+}
+
+.hmpg-org-deep-dive > .story-item:first-of-type .story-item__date {
+	display: none;
+}
 
 /* Remove bottom row border from first story-item */
-.hmpg-org-deep-dive .story-item--index-page:first-of-type::after  {
-      content:none;
-    }
+
+.hmpg-org-deep-dive .story-item--index-page:first-of-type::after {
+	content: none;
+}
 
   /* Tyee Insider Story-items */
-  .hmpg-org-deep-dive .story-item--primary {
-    grid-template-columns: 1fr;
-  }
 
-  .hmpg-org-deep-dive .story-item--primary .story-item__deck {
-    text-transform: none;
-  }
+.hmpg-org-deep-dive .story-item--primary {
+	grid-template-columns: 1fr;
+}
+
+.hmpg-org-deep-dive .story-item--primary .story-item__deck {
+	text-transform: none;
+}
 
       /* ---- DEEP DIVE responsive enhancement ---- */
       /*  */
 
       /*  DEEP DIVE MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-      @media screen and (min-width: 684px) {
 
-        .hmpg-org-deep-dive {
-          grid-template-columns: repeat(6, 1fr);
-        }
-            .hmpg-org-deep-dive > *
-              { grid-column: auto / span 2; }
-            .hmpg-org-deep-dive > .hmpg-module-header
-              { grid-column: 1 / -1; }
-            .hmpg-org-deep-dive > .story-item:first-of-type
-              { grid-column: 1 / span 3;
-                grid-template-rows: auto 1fr;
-                grid-template-areas:
-                  "headline"
-                  "deck";
-              }
-            .hmpg-org-deep-dive > .story-item--secondary
-              { grid-column: auto / span 3; }
-            .hmpg-org-deep-dive > .story-item--tertiary {
-              grid-column: auto / span 2;
-              grid-template-columns: 1fr;
-              grid-template-areas:
-                "image"
-                "category"
-                "headline"
-                "deck"
-                "author"
-                "date";
-              }
-      }
+@media screen and (min-width: 684px) {
+	.hmpg-org-deep-dive {
+		grid-template-columns: repeat(6, 1fr);
+	}
+	
+	.hmpg-org-deep-dive > * {
+		grid-column: auto / span 2;
+	}
+	
+	.hmpg-org-deep-dive > .hmpg-module-header {
+		grid-column: 1 / -1;
+	}
+	
+	.hmpg-org-deep-dive > .story-item:first-of-type {
+		grid-column: 1 / span 3;
+		grid-template-rows: auto 1fr;
+		grid-template-areas: "headline"
+        "deck";
+	}
+	
+	.hmpg-org-deep-dive > .story-item--secondary {
+		grid-column: auto / span 3;
+	}
+	
+	.hmpg-org-deep-dive > .story-item--tertiary {
+		grid-column: auto / span 2;
+		grid-template-columns: 1fr;
+		grid-template-areas: "image"
+        "category"
+        "headline"
+        "deck"
+        "author"
+        "date";
+	}
+}
 
       /*  DEEP DIVE LARGE BREAKPOINT -- breakpoint-width-l: 1368px */
-          @media screen and (min-width: 1368px) {
 
-            .hmpg-org-deep-dive {
-              grid-template-columns: repeat(6, 1fr);
-            }
-                .hmpg-org-deep-dive > .story-item:first-of-type {
-                  /* Set the item's position */
-                  grid-column: 1 / span 2;
-                  grid-row: auto / span 3;
+@media screen and (min-width: 1368px) {
+	.hmpg-org-deep-dive {
+		grid-template-columns: repeat(6, 1fr);
+	}
+	
+	.hmpg-org-deep-dive > .story-item:first-of-type {
+		/* Set the item's position */
+		grid-column: 1 / span 2;
+		grid-row: auto / span 3;
 
-                  /* Set the item's internal grid */
-                  grid-template-rows: auto;
-                  align-content: start;
-                  }
+        /* Set the item's internal grid */
+		grid-template-rows: auto;
+		align-content: start;
+	}
+	
+	.hmpg-org-deep-dive > .story-item--secondary {
+		/* Set the item's position */
+		grid-column: auto / span 2;
+		grid-row: auto / span 3;
 
-                .hmpg-org-deep-dive > .story-item--secondary {
-                  /* Set the item's position */
-                  grid-column: auto / span 2;
-                  grid-row: auto / span 3;
+        /* Set the item's internal grid */
+		align-content: start;
+	}
+	
+	.hmpg-org-deep-dive > .story-item--tertiary {
+		/* Set the item's position */
+		grid-column: auto / span 2;
 
-                  /* Set the item's internal grid */
-                  align-content: start;
-                  }
-
-                .hmpg-org-deep-dive > .story-item--tertiary {
-                  /* Set the item's position */
-                  grid-column: auto / span 2;
-
-                  /* Set the item's internal grid */
-                  grid-template-columns: 1fr 1fr;
-                  grid-template-rows: repeat(4, auto) 1fr;
-                  grid-template-areas:
-                    "category image"
-                    "headline image"
-                    "deck image"
-                    "author image"
-                    "date image";
-                  }
-
-                  .hmpg-org-deep-dive > .story-item--tertiary .category-label {
-                    margin-top: 0; /* 0 top margin aligns label with figure in 2-col story-item layouts */
-                  }
-          } /* End of Deep Dive large breakpoint */
+        /* Set the item's internal grid */
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(4, auto) 1fr;
+		grid-template-areas: "category image"
+        "headline image"
+        "deck image"
+        "author image"
+        "date image";
+	}
+	
+	.hmpg-org-deep-dive > .story-item--tertiary .category-label {
+		margin-top: 0; /* 0 top margin aligns label with figure in 2-col story-item layouts */
+	}
+} /* End of Deep Dive large breakpoint */
 
 /* End of Deep Dive organism */
 
@@ -2383,73 +2539,78 @@ main .hmpg-org-wrapper.annex {
 /* MOST organism ----------------- */
 
 .hmpg-org-most {
-  display: grid;
-  grid-column-gap: var(--gutter-column);
-  grid-row-gap: var(--gutter-row);
+	display: grid;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: var(--gutter-row);
 }
 
     /* In narrow views override universal top border (border is on each column)  */
-    main .hmpg-org-most::before {
-      content: none;
-    }
+
+main .hmpg-org-most::before {
+	content: none;
+}
 
     /* In narrow views adjust first column top border position to match other module top borders  */
-    .hmpg-org-most--column:first-child {
-      margin-top: -2rem;
-    }
+
+.hmpg-org-most--column:first-child {
+	margin-top: -2rem;
+}
 
 .hmpg-org-most--column {
-  position: relative;
-  display: grid;
-  grid-row-gap: var(--gutter-row-half);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
+	position: relative;
+	display: grid;
+	grid-row-gap: var(--gutter-row-half);
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
 }
 
 .hmpg-org-most--column::before {
-        content: "";
-        position: absolute;
-        top: 0px;
-        left: 0;
-        grid-column: 1 / -1;
-        width: 100%;
-        border-bottom: 4px solid var(--text-colour);
-    }
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0;
+	grid-column: 1 / -1;
+	width: 100%;
+	border-bottom: 4px solid var(--text-colour);
+}
 
-    .hmpg-org-most--column .story-item__headline {
-      margin-bottom: 0;
-    }
+.hmpg-org-most--column .story-item__headline {
+	margin-bottom: 0;
+}
 
       /* ---- MOST responsive enhancement ---- */
       /*  */
 
       /*  MOST MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-      @media screen and (min-width: 684px) {
 
-        .hmpg-org-most {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
+@media screen and (min-width: 684px) {
+	.hmpg-org-most {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 
-        /* In wider eliminate first column position adjustment  */
-        .hmpg-org-most--column:first-child {
-          margin-top: 0rem;
-        }
+    /* In wider eliminate first column position adjustment  */
+	
+	.hmpg-org-most--column:first-child {
+		margin-top: 0rem;
+	}
 
-        /* Set top border on outer container instead of on each column */
-        main .hmpg-org-most::before {
-          content: "";
-        }
+    /* Set top border on outer container instead of on each column */
+	
+	main .hmpg-org-most::before {
+		content: "";
+	}
 
-        /* Remove top borders from each column */
-        .hmpg-org-most--column {
-          padding-top: 0;
-        }
-
-        .hmpg-org-most--column::before {
-          content: none;
-        }
-      }
+    /* Remove top borders from each column */
+	
+	.hmpg-org-most--column {
+		padding-top: 0;
+	}
+	
+	.hmpg-org-most--column::before {
+		content: none;
+	}
+}
 
 /* End of Most organism */
 
@@ -2458,52 +2619,56 @@ main .hmpg-org-wrapper.annex {
 /* REPORTED ELSEWHERE organism ----------------- */
 
 .hmpg-org-reported-elsewhere {
-  display: grid;
-  padding-top: 2rem;
-  grid-column-gap: var(--gutter-column);
-  grid-row-gap: 0;
-  align-items: start;
+	display: grid;
+	padding-top: 2rem;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: 0;
+	align-items: start;
 }
 
+.hmpg-org-reported-elsewhere > .hmpg-module-header {
+	
+}
 
-  .hmpg-org-reported-elsewhere > .hmpg-module-header {
-  }
-
-  .hmpg-org-reported-elsewhere__list .story-item {
-    padding-top: var(--gutter-row-half);
-  }
+.hmpg-org-reported-elsewhere__list .story-item {
+	padding-top: var(--gutter-row-half);
+}
 
 
       /* ---- REPORTED ELSEWHERE responsive enhancement ---- */
       /*  */
 
       /*  Reported Elsewhere MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-      @media screen and (min-width: 684px) {
-        .hmpg-org-reported-elsewhere__list {
-          column-count: 2;
-          column-gap: var(--gutter-column);
-        }
-        .hmpg-org-reported-elsewhere__list > .story-item{
-          -webkit-column-break-inside: avoid;
-          break-inside: avoid;
-          page-break-inside: avoid;
-        }
-      }
+
+@media screen and (min-width: 684px) {
+	.hmpg-org-reported-elsewhere__list {
+		column-count: 2;
+		column-gap: var(--gutter-column);
+	}
+	
+	.hmpg-org-reported-elsewhere__list > .story-item {
+		-webkit-column-break-inside: avoid;
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+}
 
 
       /*  Reported Elsewhere NONSTANDARD BREAKPOINT -- breakpoint: 1010px */
       /*  The fixed width of the bigbox ad requires a specific breakpoint here. */
-      @media screen and (min-width: 1010px) {
-        .hmpg-org-reported-elsewhere__list {
-          column-count: 3;
-          column-gap: var(--gutter-column);
-        }
-        .hmpg-org-reported-elsewhere__list > .story-item{
-          -webkit-column-break-inside: avoid;
-          break-inside: avoid;
-          page-break-inside: avoid;
-        }
-      }
+
+@media screen and (min-width: 1010px) {
+	.hmpg-org-reported-elsewhere__list {
+		column-count: 3;
+		column-gap: var(--gutter-column);
+	}
+	
+	.hmpg-org-reported-elsewhere__list > .story-item {
+		-webkit-column-break-inside: avoid;
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+}
 
 /* End of Reported Elsewhere organism */
 
@@ -2512,104 +2677,112 @@ main .hmpg-org-wrapper.annex {
 /* BUILDER organism ----------------- */
 
 .hmpg-org-builder {
-  display: grid;
-  justify-content: center;
-  padding-top: 3rem !important;
-  background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing: hsla(51, 100%, 50%, 0.3); should be var(--brand-colour--mod-bg) */
+	display: grid;
+	justify-content: center;
+	padding-top: 3rem !important;
+	background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing: hsla(51, 100%, 50%, 0.3); should be var(--brand-colour--mod-bg) */
 }
 
   /* Override unversal module top border */
-  main .hmpg-org-builder::before {
-    content:none;
-  }
 
-.builder__content {
-    position: relative;
-    max-width: 1000px;
-    display: grid;
-    justify-items: center;
-    grid-column-gap: var(--gutter-column-half);
-    grid-row-gap: 0;
-    grid-template-areas:
-        "image"
-        "headline"
-        "deck"
-        "cta";
-    text-align: center;
+main .hmpg-org-builder::before {
+	content: none;
 }
 
-    .builder__image { grid-area: image; }
-    .builder__headline { grid-area: headline; }
-    .builder__deck { grid-area: deck; }
-    .builder__cta { grid-area: cta; }
+.builder__content {
+	position: relative;
+	max-width: 1000px;
+	display: grid;
+	justify-items: center;
+	grid-column-gap: var(--gutter-column-half);
+	grid-row-gap: 0;
+	grid-template-areas: "image"
+    "headline"
+    "deck"
+    "cta";
+	text-align: center;
+}
 
+.builder__image {
+	grid-area: image;
+}
 
-    .builder__image {
-        display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
-        position: relative;
-    }
+.builder__headline {
+	grid-area: headline;
+}
 
-    .builder__image img {
-        width: 100%;
-        max-height: 14rem;
-    }
+.builder__deck {
+	grid-area: deck;
+}
 
-    .button--builder {
-      max-width: 280px
-    }
+.builder__cta {
+	grid-area: cta;
+}
 
-    .button--builder span {
-      color: var(--brand-colour);
-    }
+.builder__image {
+	display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
+	position: relative;
+}
+
+.builder__image img {
+	width: 100%;
+	max-height: 14rem;
+}
+
+.button--builder {
+	max-width: 280px
+}
+
+.button--builder span {
+	color: var(--brand-colour);
+}
 
     /* Builder text styles */
 
-    .builder__headline {
-      font-family: var(--typeface-display-large);
-      line-height: 4rem;
-      font-size: 2.33em;
-      margin: 2rem 0 2rem;
-    }
+.builder__headline {
+	font-family: var(--typeface-display-large);
+	line-height: 4rem;
+	font-size: 2.33em;
+	margin: 2rem 0 2rem;
+}
 
-    .builder__deck {
-      font-family: var(--typeface-serif);
-      font-size: 1.33em;
-      line-height: 3rem;
-      color: var(--text-colour);
-      margin: 0 0 3rem;
-    }
+.builder__deck {
+	font-family: var(--typeface-serif);
+	font-size: 1.33em;
+	line-height: 3rem;
+	color: var(--text-colour);
+	margin: 0 0 3rem;
+}
 
         /*  BUILDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-        @media screen and (min-width: 684px) {
 
-            .builder__content {
-              justify-items: stretch;
-              grid-template-columns: 1fr 3fr;
-              grid-template-rows: auto auto 1fr;
-              align-content: center;
-              grid-template-areas:
-                "image headline"
-                "image deck"
-                "image cta";
-              text-align: left;
-            }
-
-            .builder__image {
-              justify-self:end;
-            }
-
-            .builder__image img {
-              width: 100%;
-              max-width: 20rem;
-              max-height: none;
-            }
-
-            .builder__headline {
-              margin-top: 3rem;
-              align-self: end;
-            }
-
-        } /* end of Builder medium breakpoint */
+@media screen and (min-width: 684px) {
+	.builder__content {
+		justify-items: stretch;
+		grid-template-columns: 1fr 3fr;
+		grid-template-rows: auto auto 1fr;
+		align-content: center;
+		grid-template-areas: "image headline"
+        "image deck"
+        "image cta";
+		text-align: left;
+	}
+	
+	.builder__image {
+		justify-self: end;
+	}
+	
+	.builder__image img {
+		width: 100%;
+		max-width: 20rem;
+		max-height: none;
+	}
+	
+	.builder__headline {
+		margin-top: 3rem;
+		align-self: end;
+	}
+} /* end of Builder medium breakpoint */
 
 
 /* end of Builder organism */
@@ -2620,117 +2793,116 @@ main .hmpg-org-wrapper.annex {
 /* This thing is a beast ---------------- */
 
 .site-header {
-  padding-bottom: 0rem;
+	padding-bottom: 0rem;
 }
 
 .site-header__logo-block {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-column-gap: var(--gutter-column);
-  grid-row-gap: 0;
-  align-items: start;
-  padding-top: 3rem;
-  padding-bottom: 1rem; /* balances grid alignment */
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: 0;
+	align-items: start;
+	padding-top: 3rem;
+	padding-bottom: 1rem; /* balances grid alignment */
 }
 
 .site-header__tagline {
-  margin-top: calc(.3rem + 2vw);
+	margin-top: calc(.3rem + 2vw);
 }
 
-  .site-header__tagline--a, .site-header__tagline--b {
-    display: none;
-  }
+.site-header__tagline--a, .site-header__tagline--b {
+	display: none;
+}
 
-  .site-header__tagline--mobile {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-  }
+.site-header__tagline--mobile {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
 
-      .site-header__tagline--mobile::before,
-      .site-header__tagline--mobile::after {
-        display: none;
-      }
+.site-header__tagline--mobile::before, .site-header__tagline--mobile::after {
+	display: none;
+}
 
-  .site-header__logo {
-    position: relative;
-    justify-self:center;
-    line-height: 0; /* required to prevent additional height in element */
-    min-height: 12rem; /* Keeps height of logo block aligned with grid */
-  }
+.site-header__logo {
+	position: relative;
+	justify-self: center;
+	line-height: 0; /* required to prevent additional height in element */
+	min-height: 12rem; /* Keeps height of logo block aligned with grid */
+}
 
-    .site-header__logo img{
-      max-width: 100%;
-      max-height: 96px;
-      padding: 0 2vw;
-    }
+.site-header__logo img {
+	max-width: 100%;
+	max-height: 96px;
+	padding: 0 2vw;
+}
 
     /* SITE NAV MOLECULE */
 
     /* Default for narrow views:
     Hide all nav item items except the hamburger, search button, and the dropdown menus.
         (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
-    .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
-      display: none;
-    }
 
-    .nav__link {
-      cursor: pointer;
-    }
+.site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
+	display: none;
+}
 
-    .site-nav-main__expander-toggle.nav__burger::before,
-    .site-nav-main__expander-toggle.nav__link--more::after {
-      content: "arrow_drop_down";
-      display: inline-block;
-      vertical-align: -.25em;
-      font-family: 'Material Icons';
-      font-weight: normal;
-      font-style: normal;
-      font-size: 1.5em;
-      line-height: 1rem; /* required to prevent additional height in element */
-      letter-spacing: normal;
-      text-transform: none;
-      display: inline-block;
-      white-space: nowrap;
-      word-wrap: normal;
-      direction: ltr;
-      -webkit-font-feature-settings: 'liga';
-      -webkit-font-smoothing: antialiased;
-    }
+.nav__link {
+	cursor: pointer;
+}
 
-    .nav__link--join {
-        position: relative;
-        left: 1.35em; /* Keeps icon placed ::before within the grid column */
-        margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
-    }
+.site-nav-main__expander-toggle.nav__burger::before, .site-nav-main__expander-toggle.nav__link--more::after {
+	content: "arrow_drop_down";
+	display: inline-block;
+	vertical-align: -.25em;
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.5em;
+	line-height: 1rem; /* required to prevent additional height in element */
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
 
-    .site-footer .nav__link--join {
-        position: relative;
-        left: unset; /* Keeps link centered in narrow ipad view */
-        margin-right: -1.25em; /* Keeps link centered in narrow ipad view */
-    }
+.nav__link--join {
+	position: relative;
+	left: 1.35em; /* Keeps icon placed ::before within the grid column */
+	margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
+}
 
-      .nav__link--join::before {
-        content: url('../img/icon-dollar-heart.svg');
-        display: block;
-        position: absolute;
-        left: -1.5em;
-        transform: scale(.6) translate(-40%, -30%);
-      }
+.site-footer .nav__link--join {
+	position: relative;
+	left: unset; /* Keeps link centered in narrow ipad view */
+	margin-right: -1.25em; /* Keeps link centered in narrow ipad view */
+}
 
-    .nav__link--search {
-      position: relative;
-      left: 1.35em; /* Keeps icon placed ::before within the grid column */
-      margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
-    }
+.nav__link--join::before {
+	content: url('../img/icon-dollar-heart.svg');
+	display: block;
+	position: absolute;
+	left: -1.5em;
+	transform: scale(.6) translate(-40%, -30%);
+}
 
-      .nav__link--search::before {
-        content: url('../img/icon-search.svg');
-        display: inline-block;
-        position: absolute;
-        left: -1.35em;
-        transform: scale(.6) translate(-40%, -30%);
-      }
+.nav__link--search {
+	position: relative;
+	left: 1.35em; /* Keeps icon placed ::before within the grid column */
+	margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
+}
+
+.nav__link--search::before {
+	content: url('../img/icon-search.svg');
+	display: inline-block;
+	position: absolute;
+	left: -1.35em;
+	transform: scale(.6) translate(-40%, -30%);
+}
 
 
 
@@ -2742,54 +2914,56 @@ main .hmpg-org-wrapper.annex {
       https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
           /* DEFAULT state: Dropdown Menu is hidden */
-          .site-nav__dropdown {
-            display: none ;
-            grid-column: 1 / -1;
-          }
+
+.site-nav__dropdown {
+	display: none;
+	grid-column: 1 / -1;
+}
 
           /* ACTIVATED state: Menu is shown and toggle icon is inverted */
-          #expander--nav-menu:checked ~ .site-nav__dropdown {
-            display: grid ; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
-          }
-          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before,
-          .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
-            transform: rotate(180deg);
-          }
+
+#expander--nav-menu:checked ~ .site-nav__dropdown {
+	display: grid; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+}
+
+.site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::before, .site-nav #expander--nav-menu:checked ~ .site-nav-main__expander-toggle::after {
+	transform: rotate(180deg);
+}
 
       /* SEARCH DROPDOWN EXPANDER */
       /* Search Dropdown is now integrated into the Nav Dropdown and the Search button is
          just another label for the input#expander--nav-menu checkbox */
 
-          .site-nav__search-dropdown {
-            grid-column: 1 / -1;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-            margin-top: .5rem;
-            margin-bottom: -.5rem;
-            background-color: var(--utility-background-color);
-          }
+.site-nav__search-dropdown {
+	grid-column: 1 / -1;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	margin-top: .5rem;
+	margin-bottom: -.5rem;
+	background-color: var(--utility-background-color);
+}
 
-          .site-nav__search-dropdown .site-nav__search-form {
-            display: grid ;
-            grid-template-columns: 4fr 1fr;
-            font-size: 2.7rem;
-          }
+.site-nav__search-dropdown .site-nav__search-form {
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+	font-size: 2.7rem;
+}
 
-          .site-nav__search-dropdown .site-nav__search-form .button {
-            padding-top: 1rem;
-          }
+.site-nav__search-dropdown .site-nav__search-form .button {
+	padding-top: 1rem;
+}
 
-          .site-nav__search-dropdown .site-nav__search-form > * {
-            display: grid ;
-            grid-template-columns: 4fr 1fr;
-            font-size: .6em;
-            height: 4rem;
-            border: 1px solid var(--utility-background-color);
-          }
+.site-nav__search-dropdown .site-nav__search-form > * {
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+	font-size: .6em;
+	height: 4rem;
+	border: 1px solid var(--utility-background-color);
+}
 
-          form input {
-            padding-left: .65em;
-          }
+form input {
+	padding-left: .65em;
+}
 
       /* SUB-NAV DROPDOWN EXPANDERS */
       /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
@@ -2799,544 +2973,135 @@ main .hmpg-org-wrapper.annex {
       https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
 
           /* Sub-nav has arrow toggle icon */
-          .site-nav__dropdown-expander-toggle::after {
-            content: "arrow_drop_down";
-            display: inline-block;
-            vertical-align: -.25em;
-            font-family: 'Material Icons';
-            font-weight: normal;
-            font-style: normal;
-            font-size: 1.5em;
-            line-height: 1rem; /* required to prevent additional height in element */
-            letter-spacing: normal;
-            text-transform: none;
-            display: inline-block;
-            white-space: nowrap;
-            word-wrap: normal;
-            direction: ltr;
-            -webkit-font-feature-settings: 'liga';
-            -webkit-font-smoothing: antialiased;
-          }
+
+.site-nav__dropdown-expander-toggle::after {
+	content: "arrow_drop_down";
+	display: inline-block;
+	vertical-align: -.25em;
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.5em;
+	line-height: 1rem; /* required to prevent additional height in element */
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
 
           /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
-          #expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-topics-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-more-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
-            display: none ;
-          }
+
+#expander--nav-menu-section-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content, #expander--nav-menu-topics-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content, #expander--nav-menu-more-submenu + label.site-nav__dropdown-expander-toggle + div.expander-content {
+	display: none;
+}
 
           /* subnav ACTIVATED STATE: Menu content is shown and adjacent sibling toggle icon is inverted */
-          #expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-topics-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content,
-          #expander--nav-menu-more-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
-            display: grid ; /* Menu content is shown */
-          }
-          #expander--nav-menu-section-submenu:checked + .site-nav__dropdown-expander-toggle::after,
-          #expander--nav-menu-topics-submenu:checked + .site-nav__dropdown-expander-toggle::after,
-          #expander--nav-menu-more-submenu:checked + .site-nav__dropdown-expander-toggle::after {
-            transform: rotate(180deg); /* toggle icon is inverted */
-          }
+
+#expander--nav-menu-section-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content, #expander--nav-menu-topics-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content, #expander--nav-menu-more-submenu:checked + label.site-nav__dropdown-expander-toggle + div.expander-content {
+	display: grid; /* Menu content is shown */
+}
+
+#expander--nav-menu-section-submenu:checked + .site-nav__dropdown-expander-toggle::after, #expander--nav-menu-topics-submenu:checked + .site-nav__dropdown-expander-toggle::after, #expander--nav-menu-more-submenu:checked + .site-nav__dropdown-expander-toggle::after {
+	transform: rotate(180deg); /* toggle icon is inverted */
+}
 
 
           /* ---- SITE HEADER responsive enhancement ---- */
           /* -------------------------------------------- */
 
-
-          /*  Site Header MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
-          @media screen and (min-width: 684px) {
-            .site-header {
-              padding-bottom: 1rem;
-            }
-          }
-
-          /*  Site Header NON-STANDARD BREAKPOINT -- MAX 849px */
-          /*  Style Nav only in narrow views */
-          @media screen and (max-width: 849px) {
-
-              .site-header__logo-block {
-                  padding-top: 2rem;
-                  padding-bottom: 0; /* balances grid alignment */
-              }
-
-               .site-header__logo img{
-                max-width: 50vw; /*  Makes room for burger and search icons beside logo */
-               }
-
-              /* Raise Nav to be parallel with logo in narrow views */
-              .site-nav-main {
-                position: relative;
-                top: -4rem;
-              }
-
-              .site-nav-main__expander-toggle.nav__burger {
-                position: relative;
-              }
-
-              .site-nav-main__expander-toggle.nav__burger::before {
-                content: "menu";
-                display: inline-block;
-                position: absolute;
-                top: -3rem;
-                left: -.5rem;
-                font-family: 'Material Icons';
-                font-weight: normal;
-                font-style: normal;
-                font-size: 5.5rem;
-                line-height: 1rem; /* required to prevent additional height in element */
-                letter-spacing: normal;
-                text-transform: none;
-                display: inline-block;
-                white-space: nowrap;
-                word-wrap: normal;
-                direction: ltr;
-                -webkit-font-feature-settings: 'liga';
-                -webkit-font-smoothing: antialiased;
-              }
-
-
-              .nav__link--search {
-                position: absolute;
-                right: 0rem;
-                left: initial;
-                margin-right: 0; /* Eliminates an offset required in wide views */
-              }
-
-               .nav__link--search::before {
-                top: -4rem;
-                left: 1rem;
-                transform: scale(1);
-              }
-
-              /* Dropdown Menu appearance in narrow views */
-              .site-nav__dropdown {
-                position: absolute;
-                left: -2rem;
-                top: 4rem;
-                z-index: 100;
-
-                grid-template-rows: auto auto auto auto auto auto auto 1fr;
-                width: 100vw;
-                padding-left: 2rem;
-                padding-right: 2rem;
-                min-height: 100vh;
-                padding-bottom: 8rem;
-                background-color: var(--utility-background-color);
-                color: #eee;
-              }
-
-                  /* Adds inside border to Dropdown Menu in narrow views */
-                  .site-nav__dropdown::after {
-                    content: '';
-                    position: absolute;
-                    left: 0rem;
-                    bottom: 1rem;
-                    z-index: 100;
-                    width: calc(100vw);
-                    border-bottom: 1px solid #bbb;
-                  }
-
-                  .site-nav__dropdown a {
-                    color: var(--brand-colour);
-                    padding: .5rem 0;
-                  }
-
-                  .site-nav__dropdown-heading {
-                    padding-bottom: .5rem;
-                    border-bottom: 1px solid #888;
-                  }
-
-                  .expander-content__section-submenu a, .expander-content__topics-submenu a, .expander-content__more-submenu a {
-                    border-bottom: 1px solid #888;
-                  }
-
-                  .site-nav__dropdown .nav__link--join  {
-                    padding-top: 3rem;
-                  }
-
-              /* Search Dropdown appearance in narrow views */
-              .site-nav__search-dropdown {
-                position: relative;
-                /* left: -2rem; */
-                /* width: 100vw; */
-                /* min-height: 100vh; */
-              }
-
-              .hmpg-org-recent-stories {
-                  padding-top: 2rem; /* Narrows gap between header and main content */
-              }
-
-          } /*  end os narrow breakpoint styles -- max-wdith 849px */
-
-
-          /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 425px */
-          @media screen and (min-width: 0px) and (max-width: 425px) {
-            /* Raise Nav to be parallel with logo in narrowest views */
-              .site-nav-main {
-                position: relative;
-                top: -5rem;
-              }
-          }
-
-
-          /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
-          @media screen and (min-width: 850px) {
-
-              .site-header {
-                padding-bottom: 0rem;
-                /* Run logo block and nav to edge of screen */
-                padding-left: 0;
-                padding-right: 0;
-              }
-
-              /* Expand site-header grid and show taglines */
-              .site-header__logo-block {
-                grid-template-columns: 1fr 1fr 1fr;
-              }
-
-              .site-header__tagline--a {
-                display: block;
-                text-align: right;
-              }
-
-              .site-header__tagline--b {
-                display: block;
-              }
-
-              .site-header__tagline--mobile {
-                display: none;
-              }
-
-
-              /* Create SITE-NAV BAR GRID */
-              .site-nav-main {
-                /* Set element's position within its container (.site-header__logo-block) */
-                grid-column: 1 / -1;
-                position: relative;
-
-                /* Define Grid within element */
-                display: grid;
-                grid-template-columns:  calc(var(--page-margin-sides))  [main-items] 1fr 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
-                padding-top: var(--gutter-row);
-                grid-column-gap: 0;
-                grid-row-gap: 0;
-                align-items: end;
-
-                margin-top: 1.5rem; /* desired offset from logo (3rem) - self padding-top (.5rem) - padding on nav__link (0.5rem)*/
-                border-top: 1px solid var(--border-colour-cols);
-                padding: calc(.5rem) 0 calc(0rem + 2px);
-                /* border-bottom: 1px solid var(--text-colour); */
-                margin-bottom: calc(.5rem - 1px - 2px);
-                /*             increment to offset margin-top for grid alignment
-                             - self top border (1px)
-                             - self padding-bottom (2px)      */
-              }
-
-                  /* Nav bar button spacing and positioning */
-
-                  .site-nav-main > .nav__link {
-                    padding-top: .25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
-                    padding-bottom: .25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
-                  }
-
-                  .site-nav-main > a:first-of-type {
-                    grid-column: main-items;
-                  }
-
-                  .site-nav-main .nav__link--news,
-                  .site-nav-main .nav__link--analysis,
-                  .site-nav-main .nav__link--culture,
-                  .site-nav-main .nav__link--more {
-                    justify-self: center;
-                    width: 100%;
-                    border-right: 1px solid var(--border-colour-cols);
-                    text-align: center;
-                  }
-
-                  .site-nav-main .nav__link--more {
-                    border-right: none;
-                  }
-
-
-                  .site-nav-main .nav__link--join {
-                    grid-column: secondary-items;
-                    justify-self: center;
-                  }
-
-                  .site-nav-main .nav__link--news,
-                  .site-nav-main .nav__link--analysis,
-                  .site-nav-main .nav__link--culture,
-                  .site-nav-main .nav__link--more {
-                    padding-right: var(--gutter-column-half);
-                    padding-left: var(--gutter-column-half);
-                  }
-
-
-                  /* Nav bar borders */
-
-                  /* dot-screen shadow */
-                  .site-nav-main::after {
-                    content:"";
-                    display: grid;
-                    z-index: 0;
-                    grid-column: 1 / -1;
-                    position: relative;
-                    top: calc(1rem - 1px);
-                    /* top: calc(1rem + 2px + 1px); -- for nav version with double bottom border */
-                    /*   height of self (1rem)
-                       + .site-nav-main padding-bottom (2px)
-                       + .site-nav-main border-top (1px)      */
-                    left: 0;
-                    width: 100%;
-                    height: 1rem;
-                    background-image: url(../img/texture-dotscreen-1.2x.svg);
-                  }
-
-                  /* heavy-border below */
-                  .site-nav-main::before {
-                    content:"";
-                    position: absolute;
-                    bottom: 3px; /* .site-nav-main padding-bottom(2px) + .site-nav-main border-top(1px) */
-                    left: 0;
-                    grid-column: 1 / -1;
-                    width: 100%;
-                    border-bottom: 4px solid var(--text-colour);
-                  }
-
-
-
-
-                /* HAMBURGER SHOW/HIDE */
-                /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
-                    (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #expander--nav-menu (and #expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
-                .site-nav-main > :not(.nav__burger):not(.site-nav__dropdown):not(.nav__link--search):not(.site-nav__search-dropdown) {
-                  display: block;
-                }
-
-                /* In wide views hide the hamburger */
-                .site-nav-main > .nav__burger {
-                  display: none;
-                }
-
-
-                /* DROPDOWN NAV MENU */
-                /* Nav Dropdown grid for wide views */
-                .site-nav__dropdown {
-                  grid-column: 1 / -1;
-                  grid-template-columns: calc(var(--page-margin-sides) + .5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
-                                                                    /* + offset to align with nav button */
-                  grid-template-rows: auto auto [row-2] 1fr;
-                  grid-column-gap: 0;
-                  grid-auto-flow: row dense;
-                  align-items: start;
-                  margin-top: .5rem;
-                  padding-bottom: 7.5rem;
-                  background-color: var(--utility-background-color);
-                  color: #eee;
-                }
-
-                .site-nav__search-dropdown {
-                  grid-column: 2 / -2;
-                }
-
-                  .site-nav__dropdown > * {
-                    padding-right: 0;
-                    padding-left: 4.5vw; /* offset to align with nav button */
-                  }
-
-                  .site-nav__search-dropdown {
-                      padding-left: ;
-                      padding-right: 8rem;
-                  }
-
-                  .site-nav__dropdown .site-nav__dropdown-heading-sections,
-                  .site-nav__dropdown .expander-content__section-submenu {
-                    padding-left: 5.5vw; /* offset to align with nav button */
-                  }
-
-                  .site-nav__dropdown .facebook,
-                  .site-nav__dropdown .twitter {
-                    padding-left: 0;
-                  }
-
-                  .site-nav__dropdown a {
-                    color: var(--brand-colour);
-                    line-height: 2.5rem
-                  }
-
-                    .expander-content__section-submenu,
-                    .expander-content__topics-submenu,
-                    .expander-content__more-submenu { display: grid !important} /* show submenus by default */
-
-                    .site-nav__dropdown-expander-toggle::after {content: none;} /* Hides dropdown toggle arrows */
-
-                    .site-nav__dropdown-heading-more {grid-column: col-3;}
-
-                    .site-nav__dropdown-heading-sections,
-                    .expander-content__section-submenu {grid-column: col-1;}
-
-                    .site-nav__dropdown-heading-topics,
-                    .expander-content__topics-submenu {grid-column: col-2;}
-
-
-                    .expander-content__more-submenu {
-                      grid-column: col-3;
-                      grid-row: row-2; /* Prevents submenu from expanding first row of grid.
-                                         (Only necessary if .site-nav__dropdown-heading-more is hidden) )*/
-                      position: relative;
-                    }
-
-                    .site-nav__dropdown .nav__link--newsletter {grid-column: col-4; padding-top: 2rem;}
-
-                    .site-nav__dropdown .nav__link--join {display: none} /* Hides redundant link */
-
-                    .site-nav__dropdown .facebook {grid-column: col-5; justify-self: center; padding-top: 2rem;}
-
-                    .site-nav__dropdown .twitter {grid-column: col-5; justify-self: center; }
-
-          } /* End of Site Header responsive breakpoint 850px*/
-
-          /*  Site Header MARGINS BREAKPOINT -- breakpoint-width-margins 1100px --------------- */
-          @media screen and (min-width: 1100px) {
-
-            .site-nav__dropdown > * {
-              padding-left: 5.75rem;  /* offset to align with nav button */
-            }
-
-            .site-nav__dropdown .site-nav__dropdown-heading-sections,
-            .site-nav__dropdown .expander-content__section-submenu {
-              padding-left: 6.9rem; /* offset to align with nav button */
-            }
-          }
-
-
-          /*  Site Header LARGE BREAKPOINT -- breakpoint-width-l 1368px --------------- */
-          @media screen and (min-width: 1368px) {
-
-            /* Spacing for Nav buttons and dropdown */
-
-            .site-nav-main {
-                grid-template-columns:  calc(var(--page-margin-sides))   [main-items] 1fr 1fr 1fr 1fr 1fr  [secondary-items] 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
-              }
-
-            .site-nav-main .nav__link--join {
-                justify-self: end;
-            }
-
-            .site-nav-main .nav__link--search {
-                justify-self: center;
-            }
-
-            .site-nav__dropdown {
-                  grid-template-columns: calc(var(--page-margin-sides) + 2.75em)[col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
-                }                                                   /* + offset to align with nav button */
-
-                  .site-nav__dropdown > * {
-                    padding-left: 3.5vw; /* offset to align with nav button */
-                  }
-
-                  .site-nav__dropdown .site-nav__dropdown-heading-sections,
-                  .site-nav__dropdown .expander-content__section-submenu {
-                    padding-left: 4vw; /* offset to align with nav button */
-                  }
-
-                  .site-nav__dropdown .site-nav__dropdown-heading-more,
-                  .site-nav__dropdown .expander-content__more-submenu {
-                    padding-left: 4vw; /* offset to align with nav button */
-                  }
-
-          }
-
-
-  /* End of Site Header organism */
+/* DELETED — moved to nav-deleted-css */
 
 
 
 /* SITE FOOTER organism ----------------- */
 
 .site-footer {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 140px);
-  grid-column-gap: var(--gutter-column);
-  grid-row-gap: 2rem;
-  align-items: start;
-  justify-content: center;
-  padding-top: 4rem;
-  padding-bottom: var(--gutter-row);
-  color: #eee;
-  background-color: var(--utility-background-color);
-
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 140px);
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: 2rem;
+	align-items: start;
+	justify-content: center;
+	padding-top: 4rem;
+	padding-bottom: var(--gutter-row);
+	color: #eee;
+	background-color: var(--utility-background-color);
 }
 
-    .site-footer div {
-      padding-bottom: 2rem;
-      text-align: center
-    }
+.site-footer div {
+	padding-bottom: 2rem;
+	text-align: center
+}
 
-    .site-footer .facebook {
-      padding-bottom: 2rem;
-    }
+.site-footer .facebook {
+	padding-bottom: 2rem;
+}
 
-    .site-footer .site-footer__logo-container {
-      display: none;
-    }
+.site-footer .site-footer__logo-container {
+	display: none;
+}
 
-    .site-footer .site-footer__logo {
-      width: 80%;
-    }
+.site-footer .site-footer__logo {
+	width: 80%;
+}
 
 .links-group {
-  display:grid;
-  grid-template-rows: auto;
+	display: grid;
+	grid-template-rows: auto;
 }
 
-    .links-group h2 {
-      min-height: 4rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+.links-group h2 {
+	min-height: 4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
 
-    .links-group a {
-      color: var(--brand-colour);
-      line-height: 2.5rem;
-    }
+.links-group a {
+	color: var(--brand-colour);
+	line-height: 2.5rem;
+}
 
 
       /* ---- SITE FOOTER responsive enhancement ---- */
       /*  */
 
       /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
-      @media screen and (min-width: 704px) {
 
-        .site-footer {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          justify-content: left;
-        }
-
-        .site-footer div {
-          padding-bottom: 2rem;
-          text-align: left;
-        }
-      }
+@media screen and (min-width: 704px) {
+	.site-footer {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		justify-content: left;
+	}
+	
+	.site-footer div {
+		padding-bottom: 2rem;
+		text-align: left;
+	}
+}
 
 
       /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
-      @media screen and (min-width: 950px) {
 
-        .site-footer {
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        }
-      }
+@media screen and (min-width: 950px) {
+	.site-footer {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	}
+}
 
 
       /*  Site Header LARGE BREAKPOINT -- 1368px */
-      @media screen and (min-width: 1368px) {
 
-        .site-footer .site-footer__logo-container {
-          display: block;
-        }
-      }
+@media screen and (min-width: 1368px) {
+	.site-footer .site-footer__logo-container {
+		display: block;
+	}
+}
 
 /* End of Site Footer organism */
 
@@ -3357,10 +3122,11 @@ main .hmpg-org-wrapper.annex {
 /*  RESPONSIVE IMAGES -- forces the image to be the same width as its parent
     element. Confusingly similar in name to Bootstrap's .img-responsive but this
     will actually stretch an image rather than merely shrink it. */
+
 .responsive-img {
-  width: 100%;
-  height: auto;
-  display: block;
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
 
@@ -3375,8 +3141,9 @@ Some of the tertiary recent stories items are hidden and only revealed when the 
 img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
            =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 1          ) / img-aspect )
 */
+
 .hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
-  min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 1 ) / 1.5 )
+	min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * 1 ) / 1.5 )
 }
 
   /* RECENT STORIES DEFAULT IMG HEIGHT LARGE BREAKPOINT -- breakpoint: 1368px */
@@ -3385,9 +3152,9 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
   img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #cols ) x img-col-size ) / img-aspect )
            =   ( ( ( (100vw - (page-margin x 2) - ( #cols-1 x colgutter) ) / #cols ) x 0.5          ) / img-aspect )
   */
-  @media screen and (min-width: 1368px) {
 
-    .hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
-      min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .4 ) / 1.5 );
-    }
-  }
+@media screen and (min-width: 1368px) {
+	.hmpg-org-recent-stories .story-item--tertiary .story-item__image .responsive-img {
+		min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .4 ) / 1.5 );
+	}
+}
