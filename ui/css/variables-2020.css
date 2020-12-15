@@ -1,9 +1,29 @@
 :root {
-	--yellow: #ffcf00;
+	--yellow: #ffd000; /* rethink */
 	/*--serif: ;
 	--sans-serif: ;*/
 	
 	--grey: #56565D; /* meets AAA guidelines for all sizes */
 	
 	--lightgrey: #73737D; /* only meets AA guidelines for small text; AAA for "large text" */
+	
+	--yellow-link: #F5A400; /* FAILS AA GUIDELINES */
+	
+	/* RETHINK accent colours below */
+	
+	--highlight-blue: #B4F4F4;
+	
+	--highlight-yellow: #FCFF42;
+	
+	--light-green: #D9E3D1;
+	
+	--mid-green: #7DC2A3;
+	
+	--dark-green: #387352;
+	
+	--dark-grey: #80828A;
+	
+	--mid-grey: #DBDBDB;
+	
+	--light-grey: #F5F5F5;
 }
