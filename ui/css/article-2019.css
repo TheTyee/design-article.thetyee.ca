@@ -692,6 +692,12 @@ h6:first-of-type:hover {
 	text-shadow: none;
 }
 
+@media screen and (max-width: 568px) {
+	.caption {
+		font-size: 17px;
+	}
+}
+
 .caption__media--credit {
 	font-weight: 300;
 }
@@ -2850,11 +2856,11 @@ aside .messaging-block h3 {
 }
 
 .messaging-block--ask span {
-	display: inline-block;
+	display: block;
 	max-width: 325px; /* prevents bad line breaks */
 	padding-top: 0em;
 	font-size: 1.1em;
-	line-height: 1.33em;
+	line-height: 1.4 !important;
 	font-weight: 600;
     /* -webkit-hyphens: auto;
     -moz-hyphens: auto;
@@ -2867,9 +2873,22 @@ aside .messaging-block--ask span {
 	font-size: 1em;
 }
 
+aside .messaging-block--ask {
+	color: var(--yellow-link);
+}
+
+aside .messaging-block--ask span {
+	text-decoration: underline;
+}
+
+aside .messaging-block--ask span:hover {
+	background: var(--yellow);
+}
+
 aside .messaging-block--ask .dollar-heart-svg {
-	margin-right: -.35em;
+	margin-right: 2px;
 	margin-left: -.25em;
+	vertical-align: top;
 }
 
 .messaging-zone .messaging-block {
@@ -3983,6 +4002,40 @@ footer .footer__menu {
    largely to the Molecule and Organism levels)
    ========================================================================== */
 
+
+/* FEATURED SPONSOR ====== */
+/* added Dec 2020 */
+
+#featured-sponsor--article {
+	width: 100%;
+}
+
+#featured-sponsor--article_wrapper {
+	background: var(--light-green);
+	padding: 40px;
+	height: auto;
+	width: 80%;
+	margin: 30px auto;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+
+#featured-sponsor--article figure {
+	width: 340px;
+	margin: 0 25px 0 0;
+	padding: 0;
+	grid-column: 1;
+}
+
+#featured-sponsor--article figure img {
+	max-width: 100%;
+}
+
+#featured-sponsor--article p {
+	font-size: 1.2em;
+	line-height: 1.4;
+	grid-column: 2;
+}
 
 /* LATEST STORIES ========================================================================== */
 
