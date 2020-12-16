@@ -85,6 +85,19 @@ ul#nav-bar li label:hover {
 	font-weight: 400;
 	font-size: 1.2em;
 	line-height: 1.2;
+	background: none !important;
+}
+
+.new-nav__link--dropdown-item:hover {
+	text-decoration: underline;
+}
+
+.new-site-nav__dropdown ul {
+	padding-left: 0;
+}
+
+.new-site-nav__dropdown li {
+	margin-bottom: 2px;
 }
 
 .new-expander-content__topics-submenu .new-nav__link--dropdown-item, .new-expander-content__more-submenu .new-nav__link--dropdown-item {
