@@ -20,4 +20,4 @@ the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
 
 @import "global-nav.css"; 
 
-@import "homepage.css?v=10";
+@import "homepage.css";

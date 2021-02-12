@@ -155,7 +155,6 @@ ul#nav-bar li label:hover {
 @media screen and (min-width: 1201px) {
 	.new-site-header__logo-block {
 		max-width: 772px;
-		grid-template-columns: 150px 1fr 300px 1fr 150px !important;
 	}
 }
 
