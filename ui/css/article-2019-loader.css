@@ -2,9 +2,11 @@
 	http://127.0.0.1:4000/ui/css/article-2019-loader.css */
 
 /* ===========   Globals & Mixins   
-   2020: top navigation moved into a single file ====== */
+   2020: top navigation moved into a single file
+   and 2021: footer moved into a single file ====== */
 
 @import "global-nav.css"; 
+@import "global-footer.css";
 
 /*  ==== #FONTS === */
 
@@ -26,3 +28,5 @@
   any @import declarations, otherwise you end up with yet another devtools bug
   shitstorm and a headache the size of mother russia. */
 @import "article-2019.css";
+
+
