@@ -742,14 +742,6 @@ strong.new-site-header--homepage {
 
         /* Hovers states for nav-bar items -- only on devices with hover capability, exclude mobile */
 
-@media (hover: hover) and (pointer: fine) {
-	.new-site-footer a:hover {
-		display: inline-block;
-		color: var(--link-colour);
-        /*transform: scale(1.05)!important; /* !important is required to override badges that are scaled by default */
-	}
-}
-
         /* Hover states for text links and buttons */
 
 .new-story-item a:hover, .new-story-item a:focus {
@@ -2534,122 +2526,7 @@ main .new-hmpg-org-builder::before {
 /* *** TUCKED INTO GLOBAL-NAV.CSS ****/
 
 
-/* SITE FOOTER organism ----------------- */
-
-.new-site-footer {
-	position: relative;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, 140px);
-	grid-column-gap: var(--gutter-column);
-	grid-row-gap: 2rem;
-	align-items: start;
-	justify-content: center;
-	padding-top: 4rem;
-	padding-bottom: var(--gutter-row);
-	color: #eee;
-	background-color: var(--utility-background-color);
-	
-	  /* Patches CSS for new footer on storypages */
-	font-family: var(--typeface-sans);
-	font-weight: 400;
-	font-style: normal;
-	font-size: 1.6rem;
-	line-height: 2rem;
-}
-
-.new-site-footer div {
-	padding-bottom: 2rem;
-	text-align: center
-}
-
-.new-site-footer .new-facebook {
-	padding-bottom: 2rem;
-    /* Patches CSS for new footer on storypages */
-	font-size: 100%;
-}
-
-    /* Patches CSS for new footer on storypages */
-
-.new-site-footer .fa {
-	font-size: 100%;
-}
-
-.new-site-footer .new-site-footer__logo-container {
-	display: none;
-}
-
-.new-site-footer .new-site-footer__logo {
-	width: 80%;
-}
-
-.new-links-group {
-	display: grid;
-	grid-template-rows: auto;
-}
-
-.new-links-group h2 {
-	min-height: 4rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.08em;
-
-    /* Patches CSS for new footer on storypages */
-	font-family: var(--typeface-sans);
-	color: #eee;
-	font-size: 1.6rem;
-	line-height: 2rem;
-	margin: 0;
-}
-
-.new-links-group a {
-	color: var(--brand-colour);
-	line-height: 2.5rem;
-}
-
-
-      /* ---- SITE FOOTER responsive enhancement ---- */
-      /*  */
-
-      /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
-
-@media screen and (min-width: 704px) {
-	.new-site-footer {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		justify-content: left;
-	}
-	
-	.new-site-footer div {
-		padding-bottom: 2rem;
-		text-align: left;
-	}
-}
-
-
-      /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
-
-@media screen and (min-width: 950px) {
-	.new-site-footer {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-	}
-}
-
-
-      /*  Site Header LARGE BREAKPOINT -- 1368px */
-
-@media screen and (min-width: 1368px) {
-	.new-site-footer .new-site-footer__logo-container {
-		display: block;
-	}
-}
-
-/* End of Site Footer organism */
-
-
-
-
-
-
-
+/** FOOTER MOVED TO GLOBAL-FOOTER.CSS **/
 
 
 
@@ -2714,42 +2591,3 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
   } */
 
 
-  /*  IE PATCHES */
-  /* Hide old header from all non-IE browsers */
-
-.site__header-IE {
-	display: none;
-}
-  /* Show old header to IE 10 and IE 11. Hide new header. */
-
-@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-	.site__header-IE {
-		display: block;
-	}
-	
-	.new-site-header {
-		display: none;
-	}
-}
-
-  /* Hide old footer from all non-IE browsers */
-
-.site-footer-IE {
-	display: none;
-}
-  /* Show old footer to IE 10 and IE 11. Hide new header. */
-
-@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-	.site-footer-IE {
-		display: block;
-	}
-	
-	.new-site-footer {
-		display: none;
-	}
-}
-  /* Set footer links in green on IE 10 and 11 */
-
-.site-footer-IE .footer__menu a, .site-footer-IE .footer__menu a:link, .site-footer-IE .footer__menu a:visited {
-	color: #82AD00;
-}

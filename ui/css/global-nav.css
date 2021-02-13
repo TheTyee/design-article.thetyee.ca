@@ -290,10 +290,6 @@ ul#nav-bar li label:hover {
 
 /* @group moved from homepage-prefixed.css */
 
-.new-site-footer .new-nav__link--join {
-	position: relative;
-	left: unset; /* Keeps link centered in narrow ipad view */
-	margin-right: -1.25em; /* Keeps link centered in narrow ipad view */
 }
 
 .new-nav__link--join::before {
