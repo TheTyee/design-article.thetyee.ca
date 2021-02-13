@@ -1,3 +1,6 @@
+/* @override 
+	http://127.0.0.1:4000/ui/css/homepage.css */
+
 /*-----------------------------------------*\
   #GENERIC
 \*-----------------------------------------*/
@@ -511,11 +514,23 @@ body {
 	border-bottom: 2px solid black;
 }
 
-.tyee-insider__story .story-item__deck, .hmpg-org-deep-dive .story-item--primary .story-item__deck, .hmpg-org-tyee-insider .story-item__deck {
+.tyee-insider__story .story-item__deck, 
+.hmpg-org-deep-dive .story-item--primary .story-item__deck, 
+.hmpg-org-tyee-insider .story-item__deck {
 	font-family: var(--typeface-serif);
 	font-size: 1.33em;
-	line-height: 3rem;
+	line-height: 145% !important;
 	color: var(--text-colour);
+}
+
+.story-item__deck {
+	line-height: 135% !important;
+}
+
+.story-item--index-page.story-item--primary .story-item__deck {
+	font-size: 1.5em !important;
+	text-align: left;
+	font-weight: 300;
 }
 
 .hmpg-org-tyee-insider .story-item__deck p {
@@ -598,7 +613,7 @@ body {
 }
 
 .story-item__author a {
-	display: inline-block;
+	display: inline;
 }
 
 .m-comment-noted .story-item__author {
@@ -647,17 +662,26 @@ body {
 
 .story-item--primary .story-item__headline {
 	font-family: var(--typeface-display-large);
-	line-height: 4rem; /* this is 2 x baseline */
-	font-size: 2.33em;
+	line-height: 1.2;
+	font-size: 3.33em;
 	margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
 }
 
 .story-item--primary .category-label {
-	font-size: 1.11em;
+	font-size: 1.4em;
+	text-align: left;
+	margin-bottom: 20px !important;
+}
+
+.story-item--primary .category-label a {
+	padding: 2px 7px 1px !important;
 }
 
 .story-item--primary div.story-item__author {
 	padding-top: 2rem; /* 2rem total aligns with baseline grid */
+	text-align: left;
+	font-size: 1.3em;
+	font-weight: 400;
 }
 
 
@@ -755,8 +779,9 @@ body {
 @media screen and (min-width: 1000px) {
 	.story-item--primary .story-item__headline {
 		font-family: var(--typeface-display-large);
-		line-height: 4rem; /* this is 2 x baseline */
-		font-size: 2.33em !important;
+		line-height: 1.2;
+		text-align: left;
+		font-size: 3.33em !important;
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
 	}
 	
