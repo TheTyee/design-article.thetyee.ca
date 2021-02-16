@@ -441,7 +441,7 @@ p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visite
 
 /* Scaling hover states for text links, buttons and nav-bar */
 
-a:hover, a:focus, .site-footer a:hover {
+a:hover, a:focus {
 	/*      display: inline-block; */ /* inline elements need to be converted into
     inline-blocks so they can be transformed */
 	color: var(--link-colour);
@@ -561,6 +561,50 @@ h6:first-of-type:hover {
 	-webkit-font-smoothing: antialiased;
 	color: var(--yellow);
 	margin-left: 5px;
+}
+
+.article-footer {
+
+}
+
+.article-footer .container-fluid {
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-top: none;
+}
+
+@media screen and (max-width: 530px) {
+	.article-footer .container-fluid {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.article-footer .container-fluid section {
+	border-top: 1px solid #A8A8A8;
+	padding-top: 20px;
+}
+
+@media screen and (max-width: 530px) {
+	.article-footer .container-fluid section {
+		padding-left: 23px;
+		padding-right: 23px;
+	}
+}
+
+.article-footer--builder-ask {
+	background: var(--light-green);
+	padding: 25px 23px 15px !important;
+}
+
+.article-footer--builder-ask h2 {
+	margin-top: 0;
+	font-size: 1.4em;
+}
+
+.article-footer--builder-ask p {
+	font-size: 1.1em;
 }
 
 /*#square {
@@ -2874,7 +2918,7 @@ aside .messaging-block--ask span {
 }
 
 aside .messaging-block--ask {
-	color: var(--yellow-link);
+	color: var(--grey);
 }
 
 aside .messaging-block--ask span {
@@ -2882,7 +2926,8 @@ aside .messaging-block--ask span {
 }
 
 aside .messaging-block--ask span:hover {
-	background: var(--yellow);
+	/*background: var(--yellow);*/
+	color: var(--yellow-link);
 }
 
 aside .messaging-block--ask .dollar-heart-svg {
@@ -3804,196 +3849,6 @@ img.fact-box--headshot {
 	background-color: #555;
 	border-color: #333;
 }
-
-/* SITE-FOOTER  ========================================================================== */
-
-footer.site-footer {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background-color: #424242;
-}
-
-footer {
-	clear: both;
-	  /* line-height: 2em; -AG */
-	font-size: 0.9em;
-}
-
-footer div:first-child {
-	margin-top: 20px;
-	padding: 20px 0px;
-}
-
-footer ul {
-	padding: 0px;
-	list-style-type: none;
-	margin: 0px;
-}
-
-footer .footer__menu {
-	overflow: hidden;
-	padding: 0px;
-	margin: 0px;
-}
-
-.footer__menu li {
-	display: block;
-	clear: both;
-	text-align: center;
-	border-top: solid 1px #696868;
-	padding: 8px 0px;
-}
-
-.footer__menu li:last-child {
-	border-bottom: solid 1px #696868;
-}
-
-.footer__menu li .btn-join {
-	text-transform: capitalize;
-}
-
-.footer__menu li .btn-join span {
-	padding-bottom: 10px;
-	vertical-align: middle;
-	font-weight: normal;
-	margin-left: 1px;
-}
-
-.footer__social-links {
-	margin-top: 20px;
-}
-
-.footer__social-links li {
-	text-align: center;
-	display: inline;
-}
-
-.footer__social-links li a {
-	color: #fff;
-	display: block;
-}
-
-.footer__social-links li a:hover {
-	background-color: #aaa;
-}
-
-.footer__social-links li a i {
-	vertical-align: middle;
-}
-
-.footer__social-links .facebook {
-	background-color: #3b5998;
-	padding: 8px;
-}
-
-.footer__social-links .facebook i {
-	margin-top: 2px;
-}
-
-.footer__social-links .twitter {
-	background-color: #00aced;
-	padding: 8px 4px;
-}
-
-.footer__social-links .twitter i {
-	margin-top: 2px;
-}
-
-.footer__social-links .envelope {
-	background-color: #666;
-	padding: 4px;
-}
-
-@media (min-width: 768px) {
-	footer {
-		clear: both;
-	}
-	
-	footer div:first-child {
-		border-top: solid 1px #696868;
-		margin-top: 20px;
-		padding: 20px 0px;
-	}
-	
-	footer ul {
-		padding: 0px;
-		list-style-type: none;
-		margin: 0px;
-	}
-	
-	footer .footer__menu {
-		overflow: hidden;
-		padding: 0px;
-		margin: 0px;
-	}
-	
-	.footer__menu li {
-		display: inline-block;
-		margin-left: 20px;
-		border-top: 0px;
-	}
-	
-	.footer__menu li:last-child {
-		border-bottom: 0px;
-	}
-	
-	.footer__menu li .btn-join {
-		text-transform: capitalize;
-	}
-	
-	.footer__menu li .btn-join span {
-		padding-bottom: 10px;
-		vertical-align: middle;
-		font-weight: normal;
-		margin-left: 1px;
-	}
-	
-	.footer__social-links li {
-		float: right;
-		text-align: center;
-	}
-	
-	.footer__social-links li a {
-		color: #fff;
-		display: block;
-	}
-	
-	.footer__social-links li a:hover {
-		background-color: #aaa;
-	}
-	
-	.footer__social-links li a i {
-		vertical-align: middle;
-	}
-	
-	.footer__social-links .facebook {
-		background-color: #3b5998;
-		padding: 8px;
-	}
-	
-	.footer__social-links .facebook i {
-		margin-top: 2px;
-	}
-	
-	.footer__social-links .twitter {
-		background-color: #00aced;
-		padding: 8px 4px;
-	}
-	
-	.footer__social-links .twitter i {
-		margin-top: 2px;
-	}
-	
-	.footer__social-links .envelope {
-		background-color: #666;
-		padding: 4px;
-	}
-}
-
-@media (min-width: 992px) {
-	
-}
-
 
 /* ==========================================================================
    #MODULES
