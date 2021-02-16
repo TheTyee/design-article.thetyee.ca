@@ -47,7 +47,9 @@
     {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
 
     {% include 02-organisms/sections/messaging-zone.html %}
-	
+    
+    {% include /01-molecules/blocks/messaging-block--share.html %}
+
 	{% include 02-organisms/sections/featured-sponsor-article.html %} 
 
     {% include 02-organisms/sections/comments.html %}          <!-- NEEDS WORK -->
@@ -70,7 +72,7 @@
     <!-- =============================== -->
     <!-- ===== Footer ===== -->
 
-   {% include 02-organisms/global/footer-homepage.html %}
+   {% include 02-organisms/global/footer-global.html %}
 
     {% include footer_scripts_standard.html %}
 
