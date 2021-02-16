@@ -189,18 +189,18 @@
 	background-color: #424242;
 }*/
 
-footer {
+footer(not:.article-footer) {
 	clear: both;
 	  /* line-height: 2em; -AG */
 	font-size: 0.9em;
 }
 
-footer div:first-child {
+footer(not:.article-footer) div:first-child {
 	margin-top: 20px;
 	padding: 20px 0px;
 }
 
-footer ul {
+footer(not:.article-footer) ul {
 	padding: 0px;
 	list-style-type: none;
 	margin: 0px;
