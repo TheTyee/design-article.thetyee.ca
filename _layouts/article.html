@@ -37,6 +37,8 @@
     <!-- ===== Tertiary components ===== -->    
 
     {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+    
+    {% include /01-molecules/blocks/messaging-block--share.html %}
 
     {% include 02-organisms/sections/messaging-zone.html %}
 
@@ -49,6 +51,7 @@
     {% assign barometer = 'true' %}
     
     {% include 02-organisms/sections/messaging-zone.html %}
+    
 
     <div class="presents-col-container main-col-container container-fluid">{% include 01-molecules/blocks/presents-box.html %}</div>
 
