@@ -1801,8 +1801,9 @@ p a:hover, p a:focus {
 }
 
 .hmpg-ad-box--bigbox {
-	margin-top: var(--gutter-row);
+	/*margin-top: var(--gutter-row);*/
 	height: calc(2rem * 14); /* Set ad-box height to an even multiple of the baseline grid */
+	
 }
 
     /*  HMPG AD BOX BREAKPOINT -- breakpoint-width-adblock: 1180px */
@@ -1810,7 +1811,7 @@ p a:hover, p a:focus {
 @media screen and (min-width: 1180px) {
 	.hmpg-ad-box--halfpage {
 		display: block;
-	}
+	}	
 }
 /* end of HMPG Ad Box molecule */
 
@@ -2005,6 +2006,12 @@ main .hmpg-org-wrapper:first-of-type {
 
           /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
 
+@media screen and (min-width: 684px) and (max-width: 1179px) {
+	.hmpg-org-recent-stories__list .hmpg-ad-box--bigbox {
+		display: none;
+	}
+}
+
 @media screen and (min-width: 684px) {
 	.hmpg-org-recent-stories__list {
 		grid-template-columns: repeat(12, 1fr);
@@ -2023,7 +2030,7 @@ main .hmpg-org-wrapper:first-of-type {
 	
 	.hmpg-org-recent-stories__list > .story-item--tertiary {
 		grid-column: auto / span 3;
-	}
+	}	
 	
 	.hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
 		font-size: 1.15em;
@@ -2077,7 +2084,7 @@ main .hmpg-org-wrapper:first-of-type {
 @media screen and (min-width: 1180px) {
 	.hmpg-org-recent-stories--general .hmpg-org-recent-stories__list {
 		grid-template-columns: repeat(4, 1fr);
-		grid-template-areas: "primary primary primary ad"
+		grid-template-areas: "primary primary primary primary"
         "2ndary  2ndary  2ndary  ad";
 	}
 	
