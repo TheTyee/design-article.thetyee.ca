@@ -28,7 +28,8 @@ meta-url: "http://thetyee.ca/home"
         {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/TahoeMineProtestGuatemala.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." story-badge=nil %}
         {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/MissingWomensMarch2012_610px_front__size__thumb.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Gray at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
       <!-- AD BOX  -->
-      <div class="hmpg-ad-box hmpg-ad-box--halfpage">
+      {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--bigbox index-list-spacing hmpg-ad-box hmpg-ad-box--bigbox" ad-source="" ad-slot="ad-bigbox" %}
+      <div class="hmpg-ad-box hmpg-ad-box--halfpage" style="display: none;">
         {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--no-label index-list-spacing" ad-slot="ad-300x600" ad-source="" %}
       </div>
       <!-- STORY RIVER  -->
