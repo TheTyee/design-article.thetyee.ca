@@ -1,5 +1,5 @@
 /* @override 
-	http://127.0.0.1:4000/ui/css/homepage.css */
+	http://127.0.0.1:4000/ui/css/homepage.css?ver=11 */
 
 /*-----------------------------------------*\
   #GENERIC
@@ -792,6 +792,30 @@ body {
 	font-weight: 400;
 }
 
+
+
+
+@media screen and (max-width: 685px) {
+	.hmpg-org-recent-stories__list .story-item--primary .story-item__image {
+		margin-bottom: 15px;
+	}
+	
+	.hmpg-org-recent-stories__list .story-item--primary .story-item__image {
+		/*width: 100vw;
+		position: relative;
+		left: 50%;
+		right: 50%;
+		margin-left: -50vw;
+		margin-right: -50vw;	*/
+		margin-left: -2rem; /* equiv --page-margin-sides but neg. */
+		margin-right: -2rem;
+	}
+	
+	.hmpg-org-recent-stories__list .story-item--primary .story-item__image img {
+		width: 100%;
+	}
+}
+
     /* secondary story-items */
 
 .story-item--secondary .story-item__headline {
@@ -1350,6 +1374,8 @@ p a:hover, p a:focus {
 
 .story-item--secondary .story-item__author {
 	justify-self: start;
+	font-size: 1.1em;
+	line-height: 1.25;
 }
 
 .story-item--tertiary {
@@ -1871,8 +1897,17 @@ p a:hover, p a:focus {
 	padding-bottom: calc(var(--gutter-row) + 0rem);
 }
 
-main .hmpg-org-wrapper {
-	padding-top: calc(5rem - 0px);
+@media screen and (max-width: 683px) {
+
+	main section.hmpg-org-recent-stories.hmpg-org-recent-stories--general.hmpg-org-wrapper {
+		padding-top: 0;
+	}
+}
+
+@media screen and (min-width: 684px) {
+	main .hmpg-org-wrapper {
+		padding-top: 5rem;
+	}
 }
 
 main .hmpg-org-wrapper.annex {
@@ -1916,23 +1951,23 @@ main .hmpg-org-wrapper:first-of-type {
 
     /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 600px */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 684px) {
 	/*  Progressively increase separation between Page Header and first content module. */
 	
 	main .hmpg-org-wrapper:first-of-type {
-		padding-top: 1rem;
+		padding-top: 3rem;
 	}
 }
 
     /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
 
-@media screen and (min-width: 850px) {
-	/*  Progressively increase separation between Page Header and first content module. */
+/*@media screen and (min-width: 850px) {
+	/*  Progressively increase separation between Page Header and first content module. *!/
 	
 	main .hmpg-org-wrapper:first-of-type {
 		padding-top: 4rem;
 	}
-}
+}*/
 /* end of HMPG Organism Wrapper */
 
 
@@ -2947,7 +2982,11 @@ main .hmpg-org-builder::before {
 
 /* end of Builder organism */
 
-
+@media screen and (max-width: 849px) {
+	.hmpg-org-recent-stories__list .story-item--primary .story-item__image .badge--story-item-placement {
+		display: none !important;
+	}
+}
 
 /* SITE HEADER organism ----------------- */
 /* This thing is a beast ---------------- */
