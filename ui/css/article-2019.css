@@ -28,8 +28,7 @@ Html {
 }
 
 body {
-	font-family: var(--typeface-sans), sans-serif; /* IE fallback */
-	font-family: var(--typeface-sans);
+	font-family: var(--typeface-sans), sans-serif;
 	font-weight: 400;
 	font-size: 17px;
 	line-height: 1.6em;
@@ -392,7 +391,7 @@ ul {
 
 .button:hover, .button:focus, .button:active, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
 	color: white;
-	background-color: darkgreen;
+	background-color: var(--dark-green);
 	background-color: rgb(255,208,0);
 	background-color: rgba(255,208,0,0.8);
 }
@@ -1083,7 +1082,7 @@ span.list-metric, .index-list span {
 /* ARTICLE BODY ========================================================================== */
 
 .article__body {
-	padding-bottom: 2em;
+	padding-bottom: 10px;
 }
 
 
@@ -1923,7 +1922,7 @@ figure.figure.medium {
         =        34em           +            4em       = 38em x 16px = 608px  */ {
 	.figure--xl {
 		position: relative;
-		left: calc((34em - 100vw + 0px) / 2);
+		left: calc((38em - 100vw + 0px) / 2);
         /* Set figure flush-left with viewport.
            [[.main-col-container width] - [view width]] / 2           */
 		width: calc(100vw - 30px);
@@ -2313,6 +2312,8 @@ aside {
 	vertical-align: top;
 }
 
+
+
 .tool-bar .count img {
 	position: absolute;
 	top: 10px;
@@ -2340,6 +2341,34 @@ aside {
 	position: relative;
 	top: -5px;
 }
+
+/* article footer version */
+.messaging-block--share .tool-bar .count .text,
+#filed-in span {
+	font-size: 16px;
+	display: inline-block;
+	text-transform: uppercase;
+	color: var(--grey);
+}
+
+.messaging-block--share .tool-bar .count .text {
+	margin-top: 6px;
+}
+
+.messaging-block--share .tool-bar .count {
+	margin-right: 15px;
+}
+
+.messaging-block--share .related-tags a {
+	color: var(--grey);
+	border-bottom: 1px solid;
+}
+
+.messaging-block--share .related-tags a:hover {
+	background: var(--yellow);
+	color: #424242;
+}
+
 /*    @media screen and (max-width: 400px) {
 
       .tool-bar a .text, .tool-bar li.count img {
@@ -2470,10 +2499,6 @@ aside {
 	cursor: pointer;
 }
 
-.messaging-block--share .btn {
-	width: 45px;
-}
-
         /* BREAKPOINT: small screens // collapse messaging block button labels */
 
 .messaging-block--share-button--label {
@@ -2485,10 +2510,6 @@ aside {
 @media screen and (min-width: 540px) {
 	.messaging-block--share-button--label {
 		display: inline;
-	}
-	
-	.messaging-block--share .btn {
-		width: auto;
 	}
 }
 
