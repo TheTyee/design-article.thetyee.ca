@@ -27,4 +27,8 @@
 	--mid-grey: #DBDBDB;
 	
 	--light-grey: #F5F5F5;
+	
+	--orange: rgb(250, 184, 0);
+	
+	--button-bg: var(--dark-green);
 }
