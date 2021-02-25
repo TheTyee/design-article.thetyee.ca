@@ -1360,7 +1360,7 @@ p a:hover, p a:focus {
 	
 }
 
-.story-item--secondary {
+.story-item--secondary.story-item {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(4, auto) 1fr;
 	grid-template-areas: "category image"
@@ -1599,7 +1599,7 @@ p a:hover, p a:focus {
 		text-align: center;
 	}
 	
-	.story-item--secondary {
+	.story-item--secondary.story-item {
 		grid-template-columns: 1fr;
 		grid-template-rows: auto auto auto auto auto auto;
 		grid-template-areas: "image"
@@ -1811,6 +1811,80 @@ p a:hover, p a:focus {
 
 
 /* HMPG AD BOX MOLECULE ------------------- */
+
+.hmpg-org-recent-stories .house-ad {
+	display: block !important; /* see line 1303 */
+	/* border-top becones no longer contiguous */
+}
+
+.hmpg-org-recent-stories .house-ad div {
+	background: var(--yellow);
+	padding: 20px;
+	max-width: 340px;
+	margin: 0 auto;
+}
+
+.hmpg-org-recent-stories .house-ad figure {
+	margin: 0 auto 15px;
+	max-width: 300px;
+}
+
+.hmpg-org-recent-stories .house-ad figure img {
+	width: 100%;
+}
+
+.hmpg-org-recent-stories .house-ad h2, 
+.hmpg-org-recent-stories .house-ad p {
+	width: 100%;
+	max-width: 300px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.hmpg-org-recent-stories .house-ad h2 {
+	font-size: 1.5em;
+	line-height: 1.2;
+}
+
+@media screen and (max-width: 1060px) {
+	.hmpg-org-recent-stories .house-ad h2 {
+		font-size: 1.15em;
+	}
+}
+
+@media screen and (max-width: 684px) {	
+	.hmpg-org-recent-stories .house-ad h2 {
+		font-size: 1.8em;
+	}
+}
+
+.hmpg-org-recent-stories .house-ad p {
+	font-size: 1.2em;
+	line-height: 1.35;
+}
+
+.hmpg-org-recent-stories .house-ad .house-ad--button {
+	font-family: var(--typeface-sans), sans-serif;
+	font-size: 1em;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	text-align: center;
+	padding: 5px 15px;
+	color: var(--yellow);
+	border: 2px solid #fff;
+	display: block;
+	width: 100%;
+	max-width: 200px;
+	background: #000;
+	margin: 0 auto;
+}
+
+.hmpg-org-recent-stories .house-ad .house-ad--button:hover {
+	color: #000;
+	background: #fff;
+	border-color: #000;
+}
 
 .hmpg-ad-box {
 	position: relative;
