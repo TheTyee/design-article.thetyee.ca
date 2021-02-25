@@ -2989,14 +2989,32 @@ aside .messaging-block--ask .dollar-heart-svg {
 	}
 }
 
-.btn--subscribe {
-	color: white;
-	color: var(--text-colour);
-	background-color: #82AD00;
-	background-color: var(--brand-colour--text);
+.messaging-block--subscribe form.hidden-xs div.input-group {
+	min-height: 43px;
 }
 
+.messaging-block--subscribe form input.email-subscribe.form-control {
+	font-size: 1em;
+	min-height: 43px;
+}
 
+.messaging-block--subscribe select#bigoption.frequency {
+	font-size: 1.2em !important;
+	height: auto !important;
+}
+
+.btn--subscribe {
+	color: var(--text-colour);
+	color: #fff;
+	background-color: var(--button-bg);
+	min-height: 43px;
+	font-size: 18px;
+}
+
+.btn--subscribe:hover {
+	background: var(--mid-green);
+	color: #262626;
+}
 
 /* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
 
