@@ -838,7 +838,7 @@ body {
 .story-item--tertiary .story-item__deck {
 	font-size: 1em;
 	line-height: 2rem;
-	margin: 1rem 0 0rem; /* No bottom padding to prevent gap above author byline */
+	margin: 1rem 0 0.6rem;
 }
 
     /* minimum story-items */
@@ -898,7 +898,7 @@ body {
 	
 	.hmpg-org-recent-stories__list .story-item--primary .story-item__headline {
 		line-height: 1.2;
-		font-size: 2.8em;
+		font-size: 2.4em;
 		margin: 0rem 0 2rem;
 	}
 
@@ -1345,6 +1345,8 @@ p a:hover, p a:focus {
 
 .story-item--index-page .story-item__author {
 	grid-area: author;
+	font-size: 1.1em;
+	line-height: 1.25;
 }
 
 .story-item--index-page .story-item__date {
@@ -1374,8 +1376,7 @@ p a:hover, p a:focus {
 
 .story-item--secondary .story-item__author {
 	justify-self: start;
-	font-size: 1.1em;
-	line-height: 1.25;
+	
 }
 
 .story-item--tertiary {
@@ -2041,11 +2042,11 @@ main .hmpg-org-wrapper:first-of-type {
 
           /*  RECENT STORIES MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
 
-@media screen and (min-width: 684px) and (max-width: 1179px) {
+/*@media screen and (min-width: 684px) and (max-width: 1179px) {
 	.hmpg-org-recent-stories__list .hmpg-ad-box--bigbox {
 		display: none;
 	}
-}
+}*/
 
 @media screen and (min-width: 684px) {
 	.hmpg-org-recent-stories__list {
