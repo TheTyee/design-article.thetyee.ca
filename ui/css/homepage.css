@@ -1662,7 +1662,7 @@ p a:hover, p a:focus {
     /* Uses a pseudo element to create borders within the grid-row-gap. Excludes the first item.
     Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
 
-.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before, .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before, .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
+.hmpg-org-recent-stories .story-item--index-page:not(:first-child)::before, .hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before, .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
 	content: "";
 	position: absolute;
 	top: calc(var(--gutter-row-half) * -1);
@@ -1675,12 +1675,20 @@ p a:hover, p a:focus {
 
         /*  ROW & COLUMN BORDER MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
 
+
+@media screen and (min-width: 684px) and (max-width: 845px) {
+	.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before {
+		left: calc(var(--gutter-column-half) * -1); /* required to prevent horizontal scroll */
+		width: calc(100% + var(--gutter-column));
+	}
+}
+
 @media screen and (min-width: 684px) {
 	/* row border */
     /* expand Recent Stories row borders in medium views */
 	
 	.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before {
-		left: calc(var(--gutter-column-half) * -1);
+		/*left: calc(var(--gutter-column-half) * -1); bumps the line out of the margin */
 		width: calc(100% + var(--gutter-column));
 	}
 
@@ -1727,7 +1735,7 @@ p a:hover, p a:focus {
 @media screen and (min-width: 1000px) and (max-width: 1367px) {
 	/* remove column border on last item in each Recent Stories row */
 	
-	.hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+4):nth-of-type(2n)::after {
+	.hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+4):nth-of-type(3n)::after {
 		content: none;
 	}
 
@@ -2049,20 +2057,6 @@ main .hmpg-org-wrapper:first-of-type {
 }*/
 
 @media screen and (min-width: 684px) {
-	.hmpg-org-recent-stories__list {
-		grid-template-columns: repeat(12, 1fr);
-		grid-template-areas: "primary primary primary primary primary primary"
-        "2ndary  2ndary  2ndary 2ndary  2ndary  2ndary";
-	}
-	
-	.hmpg-org-recent-stories__list > .story-item--primary {
-		grid-column: auto / span 12;
-		text-align: center;
-	}
-	
-	.hmpg-org-recent-stories__list > .story-item--secondary {
-		grid-column: auto / span 4;
-	}
 	
 	.hmpg-org-recent-stories__list > .story-item--tertiary {
 		grid-column: auto / span 3;
@@ -2079,6 +2073,45 @@ main .hmpg-org-wrapper:first-of-type {
 	
 	.hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
 		margin-top: 1rem;
+	}
+}
+
+@media screen and (min-width: 684px) and (max-width: 845px) {
+	.hmpg-org-recent-stories__list {
+		grid-template-rows: auto;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas: "primary primary primary primary primary primary"
+	    "2ndary  2ndary  2ndary 2ndary  2ndary  2ndary";
+	}
+	
+	.hmpg-org-recent-stories__list .house-ad {
+		grid-column: 1 / span 12 !important;
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--primary {
+		grid-column: auto / span 12;
+		text-align: center;
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--secondary {
+		grid-column: auto / span 4;
+	}
+}
+
+@media screen and (min-width: 846px) {
+	.hmpg-org-recent-stories__list {
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-areas: "primary primary primary primary primary primary"
+	    "2ndary  2ndary  2ndary 2ndary  2ndary  2ndary";
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--primary {
+		grid-column: auto / span 12;
+		text-align: center;
+	}
+	
+	.hmpg-org-recent-stories__list > .story-item--secondary {
+		grid-column: auto / span 3;
 	}
 }
 
