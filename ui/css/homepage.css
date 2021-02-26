@@ -72,14 +72,10 @@ body {
 
 :root {
 	/* BRAND COLOUR -- Tyee Orange.                                    */
-	--brand-colour__
-	hue: 49;           /* HSLA values are broken into  */
-	--brand-colour__
-	sat: 100%;         /* separate variables for       */
-	--brand-colour__
-	lig: 50%;          /* computational manipulation   */
-	--brand-colour__
-	alp: 1;            /* in Colour System below.      */
+	--brand-colour__	hue: 49;           /* HSLA values are broken into  */
+	--brand-colour__	sat: 100%;         /* separate variables for       */
+	--brand-colour__	lig: 50%;          /* computational manipulation   */
+	--brand-colour__	alp: 1;            /* in Colour System below.      */
     /* Set --brand-colour variable based on HSLA variables */
 	--brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
 	--link-colour: var(--brand-colour--text-darker);
@@ -2323,7 +2319,7 @@ main .hmpg-org-wrapper:first-of-type {
 	display: grid;
 	grid-column-gap: var(--gutter-column);
 	grid-row-gap: var(--gutter-row);
-	background-color: var(--brand-colour--mod-bg);
+	background-color: var(--section-bg-yellow);
 }
 
 .hmpg-module-header {
@@ -2379,8 +2375,9 @@ main .hmpg-org-wrapper:first-of-type {
 
   /* Tyee Insider Primary Story-item */
 
-.m-tyee-insider__main .story-item--primary {
-	
+.m-tyee-insider__main .story-item--primary .story-item__deck p {
+	font-size: 1em;
+	line-height: 1.5;
 }
 
 .m-tyee-insider__main .story-item--primary .badge--story-item-placement {
@@ -2983,7 +2980,7 @@ main .hmpg-org-most::before {
 	display: grid;
 	justify-content: center;
 	padding-top: 3rem !important;
-	background-color: var(--brand-colour--mod-bg); /* temporary alpha for testing: hsla(51, 100%, 50%, 0.3); should be var(--brand-colour--mod-bg) */
+	background-color: var(--section-bg-yellow); /* var(--brand-colour--mod-bg) not working */
 }
 
   /* Override unversal module top border */
