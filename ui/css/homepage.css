@@ -1674,8 +1674,13 @@ p a:hover, p a:focus {
 
 @media screen and (min-width: 684px) and (max-width: 845px) {
 	.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::before {
-		left: calc(var(--gutter-column-half) * -1); /* required to prevent horizontal scroll */
-		width: calc(100% + var(--gutter-column));
+		/*left: calc(var(--gutter-column-half) * -1); /* required to prevent horizontal scroll *!/
+		width: calc(100% + var(--gutter-column));*/
+	}
+		
+	.hmpg-org-recent-stories .story-item--index-page:last-of-type::before {
+		
+		left: 0;
 	}
 }
 
@@ -1687,8 +1692,9 @@ p a:hover, p a:focus {
 		/*left: calc(var(--gutter-column-half) * -1); bumps the line out of the margin */
 		width: calc(100% + var(--gutter-column));
 	}
-
-    /* removes row borders from Insider and Deep Dive in medium views */
+	
+	
+	    /* removes row borders from Insider and Deep Dive in medium views */
 	
 	.hmpg-org-deep-dive .story-item--index-page:nth-of-type(n+3)::before, .m-tyee-insider__main .story-item--tertiary:not(:first-of-type)::before {
 		content: none;
@@ -1709,6 +1715,13 @@ p a:hover, p a:focus {
 } /* end of borders medium breakpoint */
 
 
+
+@media screen and (min-width: 684px) {
+	.hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n+8)::before {
+		width: 100%;
+	}
+}
+
         /* ROW & COLUMN BORDER ONLY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px - 999px */
 
 @media screen and (min-width: 684px) and (max-width: 999px) {
@@ -1723,7 +1736,17 @@ p a:hover, p a:focus {
 	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after {
 		content: none;
 	}
-} /* end of borders medium breakpoint */
+	
+} 
+
+@media screen and (min-width: 684px) and (max-width: 845px) {
+	.hmpg-org-recent-stories .story-item--index-page:nth-of-type(4)::before {
+		left: 0;
+		width: 100%;
+	}
+}
+
+/* end of borders medium breakpoint */
 
 
         /*  ROW & COLUMN BORDER ONLY TERTIARY BREAKPOINT -- breakpoint-width-tertiary: 1000px - 1367px */
@@ -1741,6 +1764,13 @@ p a:hover, p a:focus {
 		content: none;
 	}
 } /* end of borders tertiary breakpoint */
+
+@media screen and (min-width: 1001px) and (max-width: 1368px) {
+	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary:nth-of-type(2n)::before {
+		width: 100%;
+		/* eliminate border jutting out right side at mid-size on tertiary stories */
+	}
+}
 
 
         /*  ROW & COLUMN BORDER LARGE BREAKPOINT -- breakpoint-width-l: 1367px */
@@ -1765,14 +1795,14 @@ p a:hover, p a:focus {
 
     /* add column borders around Insider molecules */
 	
-	.hmpg-org-tyee-insider > div:not(:last-of-type)::after {
+/*	.hmpg-org-tyee-insider > div:not(:last-of-type)::after {
 		content: '';
 		position: absolute;
 		bottom: 0;
 		right: calc(var(--gutter-column-half) * -1);
 		height: calc(100% - 10rem);
 		border-right: 1px solid var(--text-colour);
-	}
+	}*/
 
     /* add row borders around Deep Dive tertiary story-items */
 	
@@ -1848,11 +1878,12 @@ p a:hover, p a:focus {
 	}
 }
 
-@media screen and (max-width: 684px) {	
+@media screen and (max-width: 845px) {
 	.hmpg-org-recent-stories .house-ad h2 {
 		font-size: 1.8em;
 	}
 }
+
 
 .hmpg-org-recent-stories .house-ad p {
 	font-size: 1.2em;
@@ -2366,6 +2397,7 @@ main .hmpg-org-wrapper:first-of-type {
 	display: grid;
 	grid-row-gap: var(--gutter-row);
 	margin-bottom: -1rem; /* offsets 3rem line-height of headlines in list */
+	clear: both; /* replaces br clear tag in live version html */
 }
 
 .m-tyee-insider__main, .m-comment-noted {
