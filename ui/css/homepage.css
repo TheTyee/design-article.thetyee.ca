@@ -80,7 +80,7 @@ body {
 	--brand-colour: hsla(var(--brand-colour__hue),var(--brand-colour__sat),var(--brand-colour__lig),var(--brand-colour__alp));
 	--link-colour: var(--brand-colour--text-darker);
 	--text-colour: #393939;
-	--text-colour-light: #808080;
+	--text-colour-light: #737373;
 	--border-colour-cols: hsl(0, 0%, 74%);
 	--utility-background-color: #444; /* used for utility components like drop-down, footer, scroll-bounce */
 }
@@ -607,6 +607,12 @@ body {
 	margin-bottom: 8px;
 }
 
+@media screen and (max-width: 870px) {
+	.story-item__deck {
+		line-height: 130% !important;
+	}
+}
+
 .story-item--index-page.story-item--primary .story-item__deck {
 	font-size: 1.3em !important;
 	text-align: left;
@@ -908,7 +914,7 @@ body {
 	
 	.m-tyee-insider__main .story-item--primary .story-item__headline, .hmpg-org-deep-dive .story-item--primary .story-item__headline {
 		font-family: var(--typeface-display-large);
-		line-height: 4rem; /* this is 2 x baseline */
+		/*line-height: 4rem;*/ /* this is 2 x baseline */
 		font-size: 2.33em;
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
 	}
@@ -921,7 +927,7 @@ body {
 		font-family: var(--typeface-display-large);
 		line-height: 1.4;
 		text-align: left;
-		font-size: 2em !important;
+		/*font-size: 2em !important;*/
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
 	}
 	
@@ -996,10 +1002,10 @@ body {
 		margin-bottom: 4rem
 	}
 	
-	.hmpg-org-recent-stories--topic .story-item--primary > :not(.story-item__image):not(.story-item__headline) {
+	/*.hmpg-org-recent-stories--topic .story-item--primary > :not(.story-item__image):not(.story-item__headline) {
 		margin-left: 8rem;
 		margin-right: 8rem;
-	}
+	}*/
 
 
     /* Pinned Story enhancement */
@@ -1375,8 +1381,14 @@ p a:hover, p a:focus {
 	
 }
 
-.story-item--tertiary {
-	
+.hmpg-org-tyee-insider .story-item--tertiary {
+	display: block; /* grid messes up alignment */
+}
+
+@media screen and (max-width: 1367px) {
+	.hmpg-org-deep-dive .story-item--tertiary {
+		display: block; /* grid messes up alignment */
+	}
 }
 
 .story-item--tertiary .story-item__image {
@@ -1693,6 +1705,9 @@ p a:hover, p a:focus {
 		width: calc(100% + var(--gutter-column));
 	}
 	
+	.hmpg-org-recent-stories .story-item--index-page:last-of-type::before {
+		width: 100%; /* prevent border from extending into margin on R side */
+	}
 	
 	    /* removes row borders from Insider and Deep Dive in medium views */
 	
@@ -1704,14 +1719,14 @@ p a:hover, p a:focus {
     /* Uses a pseudo element to create column borders within the grid-column-gap. Excludes the first item.
        Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
 	
-	.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type)::after {
+	/*.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type):not(:last-of-type)::after {
 		content: '';
 		position: absolute;
 		top: 0;
 		right: calc(var(--gutter-column-half) * -1);
 		height: 100%;
 		border-right: 1px solid var(--border-colour-cols);
-	}
+	}*/
 } /* end of borders medium breakpoint */
 
 
@@ -1845,7 +1860,7 @@ p a:hover, p a:focus {
 
 .hmpg-org-recent-stories .house-ad div {
 	background: var(--yellow);
-	padding: 20px;
+	padding: 20px 20px 25px 20px;
 	max-width: 340px;
 	margin: 0 auto;
 }
@@ -1863,18 +1878,28 @@ p a:hover, p a:focus {
 .hmpg-org-recent-stories .house-ad p {
 	width: 100%;
 	max-width: 300px;
-	margin-bottom: 15px;
 	text-align: center;
 }
 
 .hmpg-org-recent-stories .house-ad h2 {
 	font-size: 1.5em;
 	line-height: 1.2;
+	margin-bottom: 12px;
+}
+
+.hmpg-org-recent-stories .house-ad p {
+	font-size: 1.2em;
+	line-height: 1.35;
+	margin-bottom: 2px;
 }
 
 @media screen and (max-width: 1060px) {
 	.hmpg-org-recent-stories .house-ad h2 {
-		font-size: 1.15em;
+		font-size: 1.2em;
+	}
+	
+	.hmpg-org-recent-stories .house-ad p {
+		font-size: 1.05em;
 	}
 }
 
@@ -1882,13 +1907,14 @@ p a:hover, p a:focus {
 	.hmpg-org-recent-stories .house-ad h2 {
 		font-size: 1.8em;
 	}
+	
+	.hmpg-org-recent-stories .house-ad p {
+		font-size: 1.35em;
+	}
 }
 
 
-.hmpg-org-recent-stories .house-ad p {
-	font-size: 1.2em;
-	line-height: 1.35;
-}
+
 
 .hmpg-org-recent-stories .house-ad .house-ad--button {
 	font-family: var(--typeface-sans), sans-serif;
@@ -1904,7 +1930,7 @@ p a:hover, p a:focus {
 	width: 100%;
 	max-width: 200px;
 	background: #000;
-	margin: 0 auto;
+	margin: 20px auto 0;
 }
 
 .hmpg-org-recent-stories .house-ad .house-ad--button:hover {
@@ -2014,11 +2040,11 @@ p a:hover, p a:focus {
 	}
 }
 
-@media screen and (min-width: 684px) {
+/*@media screen and (min-width: 684px) {*/
 	main .hmpg-org-wrapper {
 		padding-top: 5rem;
 	}
-}
+/*}*/
 
 main .hmpg-org-wrapper.annex {
 	padding-top: 2rem;
@@ -2157,10 +2183,14 @@ main .hmpg-org-wrapper:first-of-type {
 	}
 }*/
 
+.hmpg-org-recent-stories__list > .story-item--tertiary {
+	align-items: start;
+}
+
 @media screen and (min-width: 684px) {
 	
 	.hmpg-org-recent-stories__list > .story-item--tertiary {
-		grid-column: auto / span 3;
+		grid-column: auto / span 3;		
 	}	
 	
 	.hmpg-org-recent-stories__list > .story-item--tertiary .story-item__headline {
@@ -2212,6 +2242,10 @@ main .hmpg-org-wrapper:first-of-type {
 	}
 	
 	.hmpg-org-recent-stories__list > .story-item--secondary {
+		grid-column: auto / span 4;
+	}
+	
+	.hmpg-org-recent-stories--general .hmpg-org-recent-stories__list > .story-item--secondary {
 		grid-column: auto / span 3;
 	}
 }
@@ -2778,6 +2812,11 @@ input[type=radio] {
 	text-transform: none;
 }
 
+.hmpg-org-deep-dive .story-item--secondary .story-item__deck,
+.hmpg-org-deep-dive .story-item--tertiary .story-item__deck {
+	color: #4F4F4F; /* a11y contrast on grey bg */
+}
+
       /* ---- DEEP DIVE responsive enhancement ---- */
       /*  */
 
@@ -2801,10 +2840,12 @@ input[type=radio] {
 		grid-template-rows: auto 1fr;
 		grid-template-areas: "headline"
         "deck";
+        
 	}
 	
 	.hmpg-org-deep-dive > .story-item--secondary {
 		grid-column: auto / span 3;
+		display: block;
 	}
 	
 	.hmpg-org-deep-dive > .story-item--tertiary {
