@@ -105,7 +105,7 @@ body {
 	--typeface-item-body: 'Grey', helvetica, sans-serif;
 	--typeface-display: 'Tiempos Text', georgia, serif;
 	--typeface-display-small: 'Tiempos Text', georgia, serif;
-	--typeface-display-medium: miller-display, georgia, serif;
+	--typeface-display-medium: 'Tiempos Text', georgia, serif;
 	--typeface-display-large: 'Tiempos Headline', georgia, serif;
 }
 
@@ -147,7 +147,7 @@ body {
 		--typeface-display: 'Tiempos Text', georgia, serif;
 		--typeface-display-small: 'Tiempos Text', georgia, serif;
 		--typeface-display-medium: 'Tiempos Text', georgia, serif;
-		--typeface-display-large: miller-display, georgia, serif;
+		--typeface-display-large: 'Tiempos Headline', georgia, serif;
 	}
 }
 
@@ -822,6 +822,7 @@ body {
 
 .story-item--secondary .story-item__headline {
 	font-family: var(--typeface-display-medium);
+	font-weight: 500;
 	font-size: 1.35em; /* Reduces font-size to increase the line measure */
 	-webkit-hyphens: auto;
 	-ms-hyphens: auto;
@@ -832,6 +833,7 @@ body {
 
 .story-item--tertiary .story-item__headline {
 	font-family: var(--typeface-display-medium);
+	font-weight: 500;
 	font-size: 1.35em;
 	line-height: 2.75rem;
 	margin: 0; /* matches with deck margin-bottom to realign with baseline grid */
@@ -847,7 +849,7 @@ body {
 
 .story-item--minimum .story-item__headline {
 	font-family: var(--typeface-display-medium);
-    /* font-weight: 600; */
+    font-weight: 500;
 	font-size: 1.35em;
 	line-height: 3rem;
 	margin-bottom: 0rem;
@@ -3005,6 +3007,10 @@ main .hmpg-org-most::before {
 
 .hmpg-org-reported-elsewhere__list .story-item {
 	padding-top: var(--gutter-row-half);
+}
+
+.hmpg-org-reported-elsewhere__list .story-item:last-of-type {
+	padding-bottom: var(--gutter-row-half);
 }
 
 
