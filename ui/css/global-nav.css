@@ -6,6 +6,36 @@
 	display: none;
 }
 
+#highlight-bar {
+	background: var(--highlight-blue);
+	min-height: 42px;
+	text-align: center;
+	font-family: var(--typeface-sans);
+	font-weight: 500;
+	padding: 12px 0 10px;
+	font-size: 1.05em;
+}
+
+#highlight-bar a {
+	border-bottom: 1px solid;
+	margin-bottom: 0;
+}
+
+#highlight-bar a:hover {
+	background: none;
+}
+
+#highlight-bar p {
+	margin-bottom: 0;
+	line-height: 1.2;
+}
+
+/* hide from article page for demo purposes */
+body.default-global--new2019 #highlight-bar {
+	display: none;
+	font-size: 0.9em;
+}
+
 /* Header and navigation ----------------- */
 
 a.new-site-header--homepage {
