@@ -371,8 +371,8 @@ ul {
 
 /* BUTTON styles */
 
-.button {
-	background-color: #82AD00; /* legacy fallback */
+/*.button ==== replaced with .button from homepage, below 16-03-2021 {
+	background-color: #82AD00; /* legacy fallback *!/
 	background: var(--brand-colour);
 	padding: 4px 10px;
 	width: 100%;
@@ -380,13 +380,34 @@ ul {
 	font-weight: bold;
 	letter-spacing: .08em;
 	display: block;
-	color: #fff; /* legacy fallback */
+	color: #fff; /* legacy fallback *!/
 	color: var(--text-colour);
 	text-transform: uppercase;
 	text-align: center;
-	border-radius: 2px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
+	border-radius: 4px;
+}*/
+
+.button {
+	display: inline-block;
+	border: 2px solid rgb(255,208,0);
+	border: 2px solid rgba(255,208,0,0.8);
+	border-radius: 0rem;
+	padding: calc(1rem - 2px) 4rem;
+	margin: 0;
+	height: 4rem;
+	text-decoration: none;
+	color: black;
+	font-family: var(--typeface-sans);
+	font-size: 1em;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: .08em;
+	cursor: pointer;
+	text-align: center;
+	transition: background 250ms ease-in-out,
+    transform 150ms ease;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
 
 .button:hover, .button:focus, .button:active, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
