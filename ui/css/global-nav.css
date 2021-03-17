@@ -180,6 +180,7 @@ ul#nav-bar li label:hover {
 	
 	/*background: var(--yellow);*/
 	padding-bottom: 28px; /* balances grid alignment *!/*/
+	position: relative;
 }
 
 @media screen and (max-width: 849px) {
@@ -567,7 +568,7 @@ form input {
 	}
 	
 	.new-site-nav__dropdown {
-		position: absolute;
+		position: relative;
 		/*left: -2rem;*/
 		top: 0;
 		z-index: 100;
@@ -646,12 +647,6 @@ form input {
 }
 
 @media screen and (max-width: 425px) {
-	/* Raise Nav to be parallel with logo in narrowest views */
-	
-	.new-site-nav-main {
-		position: absolute;
-		top: 0;
-	}
 	
 	.new-site-header__logo-block {
 		display: grid;
@@ -675,10 +670,7 @@ form input {
 	.new-site-header__menu-toggle {
 		grid-column: 2;
 	}	
-	
-	.new-site-nav__dropdown {
-		top: 49px;
-	}
+
 }
 
 
