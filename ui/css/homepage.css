@@ -1206,12 +1206,10 @@ p a:hover, p a:focus {
 	background: rgb(255,208,0);
 	background: rgba(255,208,0,0.8);
 	border-color: transparent;
-	outline: 2px solid #fff;
 	transform: scale(1);
 }
 
 .button:focus {
-	outline: 1px solid #fff;
 	outline-offset: -4px;
 }
 
