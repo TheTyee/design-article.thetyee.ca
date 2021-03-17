@@ -323,8 +323,9 @@ ul#nav-bar li label:hover {
 
 .new-nav__link--join {
 	position: relative;
-	left: 1.35em; /* Keeps icon placed ::before within the grid column */
-	margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
+	/*left: 1.35em;*/ /* Keeps icon placed ::before within the grid column */
+	/* well there's no icon */
+	/*margin-right: 1.35em;*/ /* Offsets the shift left to prevent breaking the grid in narrow views */
 }
 
 .new-nav__link--search {
@@ -400,8 +401,7 @@ ul#nav-bar li label:hover {
 
 .new-site-nav__search-dropdown {
 	grid-column: 1 / -1;
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+	padding: 3rem 0px;
 	margin-top: 0.5rem;
 	margin-bottom: -0.5rem;
 	background-color: var(--utility-background-color);
@@ -562,22 +562,26 @@ form input {
 
     /* Dropdown Menu appearance in narrow views */
 	
+	.new-site-nav-main {
+		width: 100%;
+	}
+	
 	.new-site-nav__dropdown {
 		position: absolute;
-		left: -2rem;
+		/*left: -2rem;*/
 		top: 0;
 		z-index: 100;
 		grid-template-rows: auto auto auto auto auto auto auto 1fr;
-		width: 100vw;
+		width: 100%; /* 100vw causes horizontal scroll but 100% doesn't work on phone size */
 		padding-left: 2rem;
 		padding-right: 2rem;
 		min-height: 100vh;
 		padding-bottom: 8rem;
 		background-color: var(--utility-background-color);
 		color: #eee;
-	}
-
-    /* Adds inside border to Dropdown Menu in narrow views */
+	}	
+	
+	    /* Adds inside border to Dropdown Menu in narrow views */
 	
 	.new-site-nav__dropdown::after {
 		content: '';
@@ -585,8 +589,12 @@ form input {
 		left: 0rem;
 		bottom: 1rem;
 		z-index: 100;
-		width: calc(100vw);
+		/*width: calc(100vw);*/
 		border-bottom: 1px solid #bbb;
+	}
+	
+	.new-site-nav__dropdown li {
+		margin-bottom: 15px; /* increase spacing for mobile */
 	}
 	
 	.new-site-nav__dropdown a {
@@ -595,12 +603,13 @@ form input {
 	}
 	
 	.new-site-nav__dropdown-heading {
-		padding-bottom: 0.5rem;
+		padding-bottom: 0.5em;
+		margin-bottom: 15px;
 		border-bottom: 1px solid #888;
 	}
 	
 	.new-expander-content__section-submenu a, .new-expander-content__topics-submenu a, .new-expander-content__more-submenu a {
-		border-bottom: 1px solid #888;
+		/*border-bottom: 1px solid #888; remove the border, it's busy */ 
 	}
 	
 	.new-site-nav__dropdown .new-nav__link--join {
@@ -624,6 +633,17 @@ form input {
 
 
           /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 425px */
+
+@media screen and (max-width: 530px) {
+	.new-site-nav__search-dropdown .new-site-nav__search-form > *,
+	.new-site-nav__search-dropdown .new-site-nav__search-form {
+		grid-template-columns: 1fr; /* stack search bar and button on small devices to avoid horizontal overflow */
+	}
+	
+	.new-site-nav__search-dropdown .new-site-nav__search-form #new-search-form-input {
+		margin-bottom: 10px;
+	}
+}
 
 @media screen and (max-width: 425px) {
 	/* Raise Nav to be parallel with logo in narrowest views */
