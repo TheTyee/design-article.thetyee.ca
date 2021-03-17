@@ -1207,7 +1207,7 @@ p a:hover, p a:focus {
 	background: rgba(255,208,0,0.8);
 	border-color: transparent;
 	outline: 2px solid #fff;
-	transform: scale(1.05)
+	transform: scale(1);
 }
 
 .button:focus {
