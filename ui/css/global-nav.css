@@ -432,7 +432,18 @@ ul#nav-bar li label:hover {
 }
 
 form input {
-	padding-left: 0.65em;
+	padding-left: 0.65em;	
+}
+
+.new-site-nav__dropdown form input  {
+	border-radius: 4px;
+	font-weight: normal;
+}
+
+.new-site-nav__dropdown form input[type="text"]  {
+	font-size: 0.7em !important;
+	font-family: var(--typeface-sans);
+	color: var(--grey) !important;
 }
 
       /* SUB-NAV DROPDOWN EXPANDERS */
