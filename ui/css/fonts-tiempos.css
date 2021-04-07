@@ -26,6 +26,15 @@
   font-weight: 500;
 }
 
+/* Tiempos Text web semibold, weight: 500 */
+@font-face {
+  font-family: "Tiempos Text";
+  src: url(fonts/tiempos/tiempos-text-web-semibold.woff2) format("woff2"),
+       url(fonts/tiempos/tiempos-text-web-semibold.woff) format("woff"),
+       url(fonts/tiempos/tiempos-text-web-semibold.eot) format("eot");
+  font-weight: 600;
+}
+
 /* Tiempos Text web semibold italic, weight: 500 */
 @font-face {
   font-family: "Tiempos Text";
@@ -33,6 +42,16 @@
        url(fonts/tiempos/tiempos-text-web-semibold-italic.woff) format("woff"),
        url(fonts/tiempos/tiempos-text-web-semibold-italic.eot) format("eot");
   font-weight: 500;
+  font-style: italic;
+}
+
+/* Tiempos Text web semibold italic, weight: 500 */
+@font-face {
+  font-family: "Tiempos Text";
+  src: url(fonts/tiempos/tiempos-text-web-semibold-italic.woff2) format("woff2"),
+       url(fonts/tiempos/tiempos-text-web-semibold-italic.woff) format("woff"),
+       url(fonts/tiempos/tiempos-text-web-semibold-italic.eot) format("eot");
+  font-weight: 600;
   font-style: italic;
 }
 
