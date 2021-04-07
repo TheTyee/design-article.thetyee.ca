@@ -45,3 +45,17 @@ googletag.cmd.push(function() { googletag.display('ad-bigbox'); });
 googletag.cmd.push(function() { googletag.display('ad-bigboxlower'); });
 </script>
 <script id="dsq-count-scr" src="//thetyee.disqus.com/count.js" async></script>
+
+<script>
+jQuery( document ).ready( function( $ ) {
+	$('.new-nav__burger').click(function() {
+        //e.preventDefault();       
+			  if ( $('.new-site-nav__dropdown').is(":hidden")) {
+			  	$('.new-nav__burger .fas').removeClass('fa-bars').addClass('fa-times');
+			  	} else {
+				  	$('.new-nav__burger .fas').removeClass('fa-times').addClass('fa-bars');
+				}
+		$('#new-search-form-input').focus();		
+	});  
+});	
+</script>
