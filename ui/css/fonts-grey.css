@@ -11,9 +11,9 @@
 /* Grey Regular Italic */
 @font-face {
   font-family: "Grey";
-  src: url(fonts/grey/GreyLLWeb-RegularItalic.woff2) format("woff2"),
-       url(fonts/grey/GreyLLWeb-RegularItalic.woff) format("woff"),
-       url(fonts/grey/GreyLLWeb-RegularItalic.eot) format("eot");
+  src: url(fonts/grey/GreyLLWeb-Italic.woff2) format("woff2"),
+       url(fonts/grey/GreyLLWeb-Italic.woff) format("woff"),
+       url(fonts/grey/GreyLLWeb-Italic.eot) format("eot");
   font-weight: 300;
   font-style: italic;
 }
