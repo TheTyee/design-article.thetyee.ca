@@ -272,7 +272,8 @@ ul#nav-bar li label:hover {
 	
 }
 
-.new-nav__burger .fa-bars {
+.new-nav__burger .fa-bars,
+.new-nav__burger .fa-times {
 	font-size: 40px;
 }
 
