@@ -540,9 +540,9 @@ h6:nth-of-type(n+2) {
 	font-size: 0.95em;
 	font-weight: 400;
 	margin-right: 0;
-	border: 1px solid var(--lightgrey);
+	border: 1px solid #bbb;
 	padding: 1px 6px 1px;
-	letter-spacing: .03em;
+	letter-spacing: .01em;
 }
 
 /* Darken Tag Labels for better legibility */
@@ -2218,6 +2218,7 @@ aside {
 	line-height: 1.4;
 	font-weight: 400;
 	font-family: 'Grey', helvetica, sans-serif;
+	color: var(--grey);
 }
 
 .author-info div {
@@ -2933,7 +2934,7 @@ div.embedded-poll {
 	margin-bottom: 0px;
 	padding-top: 0.5em;
 	font-size: 1.1em;
-	line-height: 1.33em;
+	line-height: 1.5em;
 	font-weight: 700;
 }
 
@@ -2946,7 +2947,7 @@ aside .messaging-block h3 {
 	max-width: 325px; /* prevents bad line breaks */
 	padding-top: 0em;
 	font-size: 1.1em;
-	line-height: 1.4 !important;
+	line-height: 1.5 !important;
 	font-weight: 600;
     /* -webkit-hyphens: auto;
     -moz-hyphens: auto;
@@ -2974,7 +2975,6 @@ aside .messaging-block--ask span:hover {
 
 aside .messaging-block--ask .dollar-heart-svg {
 	margin-right: 2px;
-	margin-left: -.25em;
 	vertical-align: top;
 }
 
@@ -3963,7 +3963,7 @@ img.fact-box--headshot {
 	width: 100%;
 	height: auto;
 	margin: 0;
-	padding: 0;
+	padding: 30px 0 0 0;
 	grid-column: 2;
 }
 
