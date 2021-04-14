@@ -345,7 +345,7 @@ ul#nav-bar li label:hover {
 }
 
 .new-site-header a, .new-site-header a:link, .new-site-header a:visited, .nav-bar__link--more, .nav-bar__link--search {
-	color: var(--y) !important;
+	/*color: var(--yellow) !important*/;
 }
 
 .new-site-header #nav-bar a:hover {
