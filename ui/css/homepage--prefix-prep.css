@@ -105,10 +105,11 @@ body {
 
   --typeface-item-body: 'Grey', helvetica, sans-serif;
 
-  --typeface-display: 'Tiempos Text', georgia, serif;
+  --typeface-display: 'Tiempos Headline', georgia, serif;
   --typeface-display-small: 'Tiempos Text', georgia, serif;
   --typeface-display-medium: 'Tiempos Headline', georgia, serif;
   --typeface-display-large: 'Tiempos Headline', georgia, serif;
+  --tiempos-headline:  'Tiempos Headline', georgia, serif;
 }
 
 .homepage--harriet, .homepage--harriet_b {
