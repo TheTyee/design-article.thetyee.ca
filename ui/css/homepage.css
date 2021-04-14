@@ -507,7 +507,7 @@ body {
 	width: 100%;
 	height: auto;
 	margin: 0;
-	padding: 0;
+	padding: 30px 0 0 0;
 	grid-column: 2;
 }
 
@@ -671,9 +671,8 @@ body {
 
 .story-item__headline {
 	font-family: var(--typeface-display);
-	font-weight: 600;
-	line-height: 3rem; /* this is 1.5 x baseline, so headlines that break over
-    odd-numbered lines will throw off the grid */
+	font-weight: 500;
+	line-height: 1.5;
 	font-size: 1.5em;
 	margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
 }
@@ -871,12 +870,17 @@ body {
 	}
 	
 	.hmpg-org-recent-stories__list .story-item--primary .story-item__headline {
-		line-height: 1.3;
-		font-size: 1.8em;
+		line-height: 1.35;
+		font-size: 1.5em;
+		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
+	}
+	
+	.hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
+		line-height: 1.35;
+		font-size: 2em;
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
 	}
 }
-
 
 
         /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
@@ -894,19 +898,25 @@ body {
        vertical space in a 2-col layout */
 	
 	.story-item--primary .story-item__headline {
-		line-height: 1.4; /* this is 2 x baseline */
-		font-size: 1.4em;
+		line-height: 1.35;
+		font-size: 1.8em;
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
 		text-align: left;
 	}
 	
 	.hmpg-org-recent-stories__list .story-item--primary .story-item__headline {
-		line-height: 1.2;
-		font-size: 2.4em;
+		line-height: 1.35;
+		font-size: 1.8em;
 		margin: 0rem 0 2rem;
 	}
-
-    /* Turn off auto-hyphenation in views where it might be excessive */
+	
+	.hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
+		line-height: 1.35;
+		font-size: 2.1em;
+		margin: 0rem 0 2rem;
+	}
+	
+	    /* Turn off auto-hyphenation in views where it might be excessive */
 	
 	.story-item--secondary .story-item__headline {
 		line-height: 2.75rem;
@@ -925,19 +935,22 @@ body {
         /*  STORY ITEMS TYPOGRAPHY TERTIARY BREAKPOINT -- breakpoint-width-tertiary: 1000px */
 
 @media screen and (min-width: 1000px) {
-	.story-item--primary .story-item__headline {
+
+	.story-item--primary .story-item__headline,
+	.hmpg-org-recent-stories__list .story-item--primary .story-item__headline {
 		font-family: var(--typeface-display-large);
-		line-height: 1.4;
+		line-height: 1.35;
 		text-align: left;
-		/*font-size: 2em !important;*/
+		font-size: 2em;
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
 	}
 	
-	.hmpg-org-recent-stories__list .story-item--primary .story-item__headline {
+	/* top story only */
+	.hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
 		font-family: var(--typeface-display-large);
-		line-height: 1.2;
+		line-height: 1.35;
 		text-align: left;
-		font-size: 3.33em !important;
+		font-size: 3em;
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
 	}
 	
@@ -950,18 +963,16 @@ body {
         /*  STORY ITEMS TYPOGRAPHY ADBLOCK BREAKPOINT -- breakpoint-width-adblock: 1180px - 1367px */
 
 @media screen and (min-width: 1180px) and (max-width: 1367px) {
-	/* Reduce size of Primary headlines in Recent Stories module because halfpage adblock
-    is reducing the column width. */
-	
-	.hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
-		line-height: 1.2; /* this is 2 x baseline */
+	/* top story */
+/*	.hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
+		line-height: 1.2; /* this is 2 x baseline *!/
 		font-size: 1.65em;
 	}
 	
 	.hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
 		font-family: var(--typeface-display-medium);
-		font-size: 1.35em; /* Reduces font-size because Ad-block makes column narrow */
-	}
+		font-size: 1.35em; /* Reduces font-size because Ad-block makes column narrow *!/
+	}*/
 }
 
         /*  STORY ITEMS TYPOGRAPHY LARGE BREAKPOINT -- breakpoint-width-l: 1368px; */
@@ -980,10 +991,10 @@ body {
 
     /* Keep Recent-stories Secondary headlines smaller because ad-block constrains width */
 	
-	.hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
+/*	.hmpg-org-recent-stories--general .story-item--secondary .story-item__headline {
 		font-size: 1.35em;
 		line-height: 2.75rem;
-	}
+	}*/
 
     /* Slightly reduce size of tertiary headlines in wide screens
        to accommodate a 2-col stiry-item layout.                  */
@@ -999,8 +1010,9 @@ body {
     /* Enlarge Topic module primary story headline in wide views (like pinned story headline)  */
 	
 	.hmpg-org-recent-stories--topic .story-item--primary .story-item__headline {
-		line-height: 6rem; /* this is 3 x baseline */
-		font-size: 3.35em;
+		/*font-size: 3.35em;*/
+		font-size: 2.6em;
+		line-height: 1.35;
 		margin-bottom: 4rem
 	}
 	
@@ -1017,8 +1029,8 @@ body {
 	}
 	
 	.hmpg-org-pinned-story .story-item--primary .story-item__headline {
-		line-height: 1.4; 
-		font-size: 3.5em;
+		font-size: 2.6em;
+		line-height: 1.35;
 		margin-bottom: 2.2rem;
 	}
 	
