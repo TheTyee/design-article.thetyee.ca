@@ -365,7 +365,7 @@ ul {
 }
 
 .end-mark-svg path {
-	fill: #6F9400;
+	fill: #333;
 }
 
 
@@ -569,7 +569,8 @@ h6:first-of-type:hover {
 	border-bottom: 1px solid black;
 }
 
-.container-fluid.clearfix > *:last-child:after {
+/* end of story square -- cut */
+/*.container-fluid.clearfix > *:last-child:after {
 	content: "\f0c8";
 	font-family: "Font Awesome 5 Free";
 	font-size: 14px;
@@ -581,7 +582,7 @@ h6:first-of-type:hover {
 	-webkit-font-smoothing: antialiased;
 	color: var(--yellow);
 	margin-left: 5px;
-}
+}*/
 
 .article-footer {
 
