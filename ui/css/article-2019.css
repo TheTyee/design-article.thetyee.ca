@@ -85,6 +85,14 @@ h1 {
 	}
 }
 
+@media screen and (min-width: 1500px) {
+	h1 {
+		font-size: 2.8em !important;
+		line-height: 1.136em;
+		margin-bottom: 0.25em;
+	}
+}
+
 h2 {
 	color: #424242;
 	font-family: 'Grey', helvetica, sans-serif;
@@ -359,8 +367,8 @@ ul {
 .end-mark-svg {
 	position: relative;
 	vertical-align: bottom;
-	margin-left: .25em;
-	top: 0px;
+	margin-left: .1em;
+	top: -2px;
 	transform: scale(1.1);
 }
 
@@ -1030,6 +1038,13 @@ span.list-metric, .index-list span {
 	.article__header {
 		padding-left: 1em;
 		padding-right: 1em;
+	}
+}
+
+@media screen and (min-width: 1500px) {
+	.article__header {
+		width: 55vw;
+		max-width: 60em;
 	}
 }
 
