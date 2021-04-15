@@ -821,7 +821,7 @@ h6:first-of-type:hover {
 .section__header h1 {
 	display: inline-block;
 	font-size: 2.2em;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: var(--typeface-sans), sans-serif;
 	font-weight: 800;
 	color: #333;
 	text-transform: uppercase;
@@ -1579,7 +1579,7 @@ ul.book_profile {
 	bottom_
 	wrap {
 	border-bottom: none !important;
-	max-width: 34em;
+	max-width: 38em;
 	margin: auto !important;
 }
 
@@ -1962,7 +1962,7 @@ figure.figure.medium {
 @media screen and (min-width: 608px)
     /*  When viewport exceeds the max-width of the article__body ...
         [article__body max width] + [bootstrap margins]
-        =        34em           +            4em       = 38em x 16px = 608px  */ {
+        =        38em           +            4em       = 38em x 16px = 608px  */ {
 	.figure--xl {
 		position: relative;
 		left: calc((38em - 100vw + 0px) / 2);
@@ -1998,7 +1998,7 @@ figure.figure.medium {
 	position: relative;
 	width: calc(100vw);
     /* Set figure to full width with no margins  */
-	left: -15px;
+	/*left: -15px;*/
     /* Set figure flush-left with viewport.
        Compensate for bootstrap padding.
        -[bootstrap padding]                      */
@@ -2015,12 +2015,12 @@ figure.figure.medium {
 @media screen and (min-width: 608px)
     /*  When viewport exceeds the max-width of the article__body ...
         [article__body max width] + [bootstrap margins]
-        =        34em           +            4em       = 38em x 16px = 608px  */ {
+        =        38em           +            4em       = 38em x 16px = 608px  */ {
 	.figure--xxl {
 		position: relative;
 		width: calc(100vw);
         /* Set figure to full width with no margins  */
-		left: calc((34em - 100vw - 30px) / 2);
+		left: calc((38em - 100vw - 30px) / 2);
         /* Set figure flush-left with viewport.
            [ offset between text colunm and left viewport edge]
            [ [.main-col-container width] - [view width] - [bootstrap padding] ] / 2           */
@@ -2036,7 +2036,7 @@ figure.figure.medium {
 		position: relative;
 		width: calc(100vw);
         /* Set figure to full width with no margins   */
-		left: calc(((34em - 100vw - 30px) / 2) + 4.5em);
+		left: calc(((38em - 100vw - 30px) / 2) + 4.5em);
         /* Set figure flush-left with viewport.
            Calc as above but compensate for the -4.5em left offset of the .main-col-container.
            [calc as above] + 4.53em
@@ -2076,7 +2076,7 @@ aside {
         /* Set content of asides in sans font */
 
 .aside p, .aside ul {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: var(--typeface-sans), sans-serif;
 }
 
 .aside:has(> img) {
@@ -2116,11 +2116,12 @@ aside {
 @media screen and (min-width: 696px) {
 	/* When viewport exceeds width of article__body ...
     [article__body max-width] - [article__body left margin]
-    =          34em           -          -5.5em
+    =          38em           -          -5.5em
     >> if this value is set in px then the 5.5em should be omitted. (612px) <<  */
 	
 	.aside {
 		margin-right: calc(38.5em - 100vw);
+		margin-right: calc(42.5em - 100vw);
         /* ... aligns asides flush right with viewport. */
 	}
 }
@@ -2132,7 +2133,7 @@ aside {
     */
 	
 	.aside {
-		margin-right: calc( -1 * (((100vw - 34em) / 2) - (1em)));
+		margin-right: calc( -1 * (((100vw - 38em) / 2) - (1em)));
         /*         ( [make neg] [right textcol margin] - [right articleheader margin] )
                    ( [make neg] [view - textcol] / 2)  - [right articleheader margin] )
 
@@ -2147,7 +2148,7 @@ aside {
     /* When viewport exceeds the max-width of the article__header and article__body shifts to
        to left-align with article__header ... */ {
 	.aside {
-		margin-right: calc( -1 * ( ((100vw - 34em) / 2) - (1em) ) - 4.5em );
+		margin-right: calc( -1 * ( ((100vw - 38em) / 2) - (1em) ) - 4.5em );
         /*         (                      [prior breakpoint calc] - 4.5em )
 
         ... compensate for the left-align shift of the article__body to keep asides flush
@@ -2922,10 +2923,6 @@ div.embedded-poll {
 	font-style: italic;
 }
 
-.series-link a {
-	border: none !important;
-}
-
 .series-link .arrow-svg {
 	position: relative;
 	top: .125em;
@@ -3271,20 +3268,20 @@ label.valid {
 	background-color: white;
 }
 
-.text-block-container h3 {
+.text-block-container h4 {
 	display: table;
 	margin-top: 0;
 	margin-bottom: .75em;
 	padding-bottom: 0em;
-	font-family: Georgia, Serif;
-	font-size: .85em;
+	font-family: var(--typeface-display-medium), sans-serif;
+	font-size: 1em;
 	line-height: 1.25em;
-	font-weight: 700;
+	font-weight: normal;
 	text-align: center;
 	text-transform: capitalize;
 }
 
-.text-block-container h4 {
+.text-block-container h5 {
 	display: table;
 	margin-top: 1em;
 	margin-bottom: 1em;
@@ -3294,11 +3291,11 @@ label.valid {
 	text-transform: uppercase;
 }
 
-.text-block-container h5 {
+.text-block-container h3 {
 	margin-top: 1.6em;
 	margin-bottom: 0.25em;
 	padding-bottom: 0em;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: var(--typeface-sans), sans-serif;
 	font-size: .75em;
 	font-weight: 400;
 	text-align: center;
@@ -3311,18 +3308,18 @@ label.valid {
 }
 
 .text-block-container ul {
-	line-height: 2.5rem;
+	line-height: 1.4;
 	list-style: none outside;
 	padding-left: 0em;
 }
 
 .text-block-container ul a {
-	font-size: .8em;
-	font-weight: 600;
+	font-size: .9em;
+	font-weight: 500;
 }
 
 .text-block-container ul li {
-	margin-bottom: 1rem;
+	margin-bottom: 1.1rem;
 }
 
 
@@ -3363,12 +3360,33 @@ label.valid {
     container itself.)
      */
 
+
+
+.presents-box img {
+    float: right;
+    margin-top: 0.3em;
+    margin-bottom: 0em;
+    padding-right: .75em;
+    height: auto;
+    max-width: 5.5em;
+    background-color: none;
+}
+
+.presents-col-container {
+    margin-top: -1.5em;
+    margin-bottom: 3em;
+}
+
 .presents-box {
 	padding-bottom: 0;
 }
 
 .presents-box h5 {
 	margin-bottom: 1em;
+}
+
+.presents-box h6 {
+    padding-top: .66em;
 }
 
 .presents-box li a {
@@ -3381,81 +3399,92 @@ label.valid {
 	margin-top: .125em;
 }
 
-.presents-box ul {
-	margin-bottom: 0;
-} /* overrides bootstrap ul margin */
-
-.presents-box li {
-	padding-top: .66em;
-	border-top: 1px solid;
-}
-
-.presents-box--index-page li {
-	min-height: 5.5em;
-}
-
-.presents-box p {
-	/* display: inline; */
-}
-
-.presents-box li img {
-	float: left;
-	margin-top: 0.3em;
-	margin-bottom: 0em;
-	padding-right: .75em;
-	height: auto;
-	max-width: 5.5em;
-	background-color: none;
-}
-
-.presents-col-container {
-	margin-top: -1.5em;
-	margin-bottom: 3em;
-}
-
-.presents-col-container .presents-box h5 {
-	margin-top: 1.75em;
-}
-
-.presents-col-container .presents-box li {
-	min-height: 4.75em;
-}
-
-
-    /*  IN WIDER VIEWPORTS:
-        - don't show the fact-box at the bottom of the article-body
-        - show the aside containing the fact-bax (.hide-on-narrow-vp)
-        - show the factbox within an aside */
-
+/*  IN WIDER VIEWPORTS: 
+- don't show the fact-box at the bottom of the article-body
+- show the aside containing the fact-bax (.hide-on-narrow-vp)
+- show the factbox within an aside */
 @media screen and (min-width: 939px) {
+
 	.presents-box {
-		display: none;
+	    display: none;
 	}
 	
 	.aside .presents-box {
-		display: block;
+	    display: block;
 	}
 }
 
-
-    /* PRESENTS-BOX ON INDEX PAGES (e.g. section pages) */
-
 .index-page__story-list .presents-box {
-	
+    display: block;  /* Show presents-box at all views on index-pages. */
 }
 
-.index-page__story-list .presents-box {
-	display: block;  /* Show presents-box at all views on index-pages. */
-}
-
-.presents-box.index-list-spacing {
-	margin-top: 2em;
+.presents-box.index-list-spacing { 
+    margin-top: 2em;
 }  /* Matches margin to the common index-list-spacing margin */
 
-.presents-box--index-page li img {
-	max-width: 7em;
-}   /* Makes thumbnail bigger on index pages (e.g. section pages) */
 
+.presents-box.text-block-container {
+	border-bottom: 0;
+	border-top: 6px solid;
+}
+
+.presents-box p {
+	font-family: var(--typeface-sans);
+	font-size: 1em;
+	line-height: 1.4;
+	margin-top: 7px;
+	border-bottom: 1px solid #333;
+	padding-bottom: 15px;
+}
+
+.presents-box h5 {
+	font-weight: normal;
+	text-align: center;
+	font-size: 0.9em;
+	font-family: var(--typeface-sans);
+	letter-spacing: 0.03em;
+	border-bottom: 1px solid #111;
+	padding-bottom: 15px;
+	margin-top: 1.4em;
+}
+
+.presents-box h6,
+body.subpage aside .toc h6 {
+	font-family: var(--typeface-sans);
+	font-size: 1em;
+	font-weight: bold;
+	letter-spacing: 0;
+	text-align: left;
+	line-height: 1.5 !important;
+	border: 0;
+	background: none;
+	color: #111 !important;
+	padding: 0 !important;
+}
+
+.presents-box h6 a {
+	text-transform: none;
+	text-decoration: underline;
+	color: #111 !important;
+	font-weight: bold !important;
+	padding: 0;
+}
+
+.presents-box a:hover {
+	transform: scale(1);
+	font-size: 1em;
+	background: var(--yellow);
+	border: 0;
+}
+
+.presents-box h6:hover {
+	border: 0;
+}
+
+.presents-box img {
+	float: right;
+	margin-top: 14px;
+}
 
 
 
@@ -3486,7 +3515,7 @@ label.valid {
 	position: relative;
 	float: left;
 	margin-left: -.65em;
-	margin-top: .5em;
+	margin-top: 1.7em;
 	transform: scale(.8);
 }
 
@@ -3532,7 +3561,7 @@ label.valid {
 
          /* BREAKPOINT: 1024px // Move headline series badge into left page margin */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 950px) {
 	.badge--headline-placement {
 		margin-top: 4em;
 		margin-left: -5.25em;
@@ -3625,8 +3654,12 @@ label.valid {
 }
 
 .fact-box p, .fact-box ul {
-	font-size: .8em !important;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-size: .9em !important;
+	font-family: var(--typeface-sans), sans-serif;
+}
+
+.fact-box p {
+	line-height: 1.65;
 }
 
 .fact-box ul {
@@ -4587,7 +4620,7 @@ section.messaging-block.messaging-block--barometer ul, section.messaging-block.m
 /* ===== Popup =======*/
 
 div.ntnl-sgnup-modal {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: var(--typeface-sans), sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 28px;
@@ -4617,7 +4650,7 @@ div.ntnl-sgnup-modal {
 }
 
 .modal-header h2 {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: var(--typeface-sans), sans-serif;
 	font-weight: 700;
 	font-size: 40px;
 	line-height: 38px;
@@ -4858,7 +4891,7 @@ div.ntnl-sgnup-modal {
 /*! Alexg */
 
 div.modal--builder {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: var(--typeface-sans), sans-serif;
 	font-weight: 300;
 	font-size: 18px;
 	line-height: 28px;
@@ -4874,7 +4907,7 @@ div.modal--builder {
 }
 
 .modal--builder h2 {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: var(--typeface-sans), sans-serif;
 	font-weight: 700;
 	font-size: 28px;
 	line-height: 36px;
