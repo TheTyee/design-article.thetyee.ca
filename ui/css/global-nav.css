@@ -97,6 +97,13 @@ ul#nav-bar li {
 	margin: 0 1.5vw;
 }
 
+@media screen and (min-width: 1200px) {
+	ul#nav-bar li {
+		margin: 0 2.1vw;
+	}
+}
+
+
 .new-site-nav li a, ul#nav-bar label {
 	background: #fff;
 	font-size: 1.25em !important;
