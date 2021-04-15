@@ -1029,7 +1029,7 @@ span.list-metric, .index-list span {
 	/* article__header is always centered on the page */
 	position: relative;
 	max-width: 45em;
-	margin: 30px auto 0 auto;
+	margin: 30px auto 0 auto !important;
 }
 
     /* BREAKPOINT: 640px // Increase page margin */
@@ -1038,6 +1038,13 @@ span.list-metric, .index-list span {
 	.article__header {
 		padding-left: 1em;
 		padding-right: 1em;
+	}
+}
+
+
+@media screen and (min-width: 1200px) {
+	.article__header {
+		max-width: 48em;
 	}
 }
 
