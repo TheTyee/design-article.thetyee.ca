@@ -208,7 +208,8 @@ ul#nav-bar li label.nav-bar__link--more:after {
 
 @media screen and (max-width: 849px) {
 	.new-site-header__logo-block {
-		grid-template-columns: 1fr 1fr minmax(30px, 200px) 1fr 1fr !important;
+		/*grid-template-columns: 1fr 1fr minmax(30px, 200px) 1fr 1fr !important;*/
+		grid-template-columns: 150px 1fr minmax(30px, 200px) 1fr 150px !important;
 		grid-column-gap: 0;
 		padding-top: 15px;
 	}
@@ -259,10 +260,11 @@ ul#nav-bar li label.nav-bar__link--more:after {
 }
 
 @media screen and (max-width: 567px) {
-	.new-site-header__logo img {
+	.new-site-header__logo {
 		width: 30vw;
 	}
 }
+
 
 @media screen and (max-width: 370px) {
 	.new-site-header__logo img {
@@ -686,7 +688,7 @@ form input {
 	}
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 468px) {
 	
 	.new-site-header__logo-block {
 		display: grid;
