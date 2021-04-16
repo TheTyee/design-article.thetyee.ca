@@ -205,6 +205,7 @@ ul#nav-bar li label.nav-bar__link--more:after {
 	position: relative;
 }
 
+
 @media screen and (max-width: 849px) {
 	.new-site-header__logo-block {
 		grid-template-columns: 1fr 1fr minmax(30px, 200px) 1fr 1fr !important;
@@ -227,6 +228,8 @@ ul#nav-bar li label.nav-bar__link--more:after {
 		padding-right: var(--page-margin-sides);
 	}
 }
+
+
 
 .new-site-header__tagline {
 	/*margin-top: calc(.3rem + 2vw);*/
@@ -298,10 +301,6 @@ ul#nav-bar li label.nav-bar__link--more:after {
 	}
 }
 
-.new-nav__burger {
-	
-}
-
 .new-nav__burger .fa-bars,
 .new-nav__burger .fa-times {
 	font-size: 40px;
@@ -316,7 +315,6 @@ ul#nav-bar li label.nav-bar__link--more:after {
 .new-site-header__tagline--mobile::before, .new-site-header__tagline--mobile::after {
 	display: none;
 }
-
 
     
     /* SITE NAV MOLECULE */

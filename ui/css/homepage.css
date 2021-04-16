@@ -17,7 +17,7 @@
 	color: black;
 	font-weight: 500;
 	font-size: 90%;
-	padding: 0 2px;
+	padding: 0 4px;
 }
 
 /* Border-box reset. */
@@ -625,6 +625,12 @@ body {
 	font-weight: 300;
 }
 
+@media screen and (max-width: 568px) {
+	.story-item--index-page.story-item--primary .story-item__deck .story-item__deck {
+		font-size: 1.5em !important;
+	}
+}
+
 .hmpg-org-tyee-insider .story-item__deck p {
 	font-size: 118%;
 	line-height: 145%;
@@ -689,6 +695,7 @@ body {
 	letter-spacing: 0.1em;
 	color: var(--brand-colour--text);
 	margin: 1rem 0 1rem; /* Adds up to 2rem, aligning with baseline grid */
+	
 }
 
 .story-item__deck {
@@ -762,13 +769,24 @@ body {
 }
 
 .story-item--primary .category-label {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	text-align: left;
 	margin-bottom: 20px !important;
 }
 
 .story-item--primary .category-label a {
 	padding: 2px 7px 1px !important;
+}
+
+@media screen and (max-width: 667px) {
+	.story-item--primary .category-label {
+		font-size: 0.9em;
+		margin-bottom: 8px !important;
+	}
+	
+	.story-item--primary .category-label a {
+		padding: 0px 4px !important;
+	}
 }
 
 .story-item--primary div.story-item__author {
@@ -1077,12 +1095,6 @@ p a, .site-header__tagline a {
 }
 
 
-        /* link styles for body text of Insider */
-
-.hmpg-org-tyee-insider p a {
-	border-color: white;  /* can't be brand color because Insider has an orange background */
-}
-
         /* Hovers states for nav-bar items -- only on devices with hover capability, exclude mobile */
 
 @media (hover: hover) and (pointer: fine) {
@@ -1125,10 +1137,6 @@ h2 a:hover, p a:hover {
 p a:hover, p a:focus {
 	display: inline;
 	font-size: 1.0em;
-}
-
-.hmpg-org-tyee-insider a:hover, .hmpg-org-tyee-insider a:focus {
-	color: white; /* can't be brand color because Insider has an orange background */
 }
 
 .story-item p a:hover, .story-item p a:focus {
@@ -1905,29 +1913,6 @@ p a:hover, p a:focus {
 	margin-bottom: 2px;
 }
 
-@media screen and (max-width: 1060px) {
-	.hmpg-org-recent-stories .house-ad h2 {
-		font-size: 1.2em;
-	}
-	
-	.hmpg-org-recent-stories .house-ad p {
-		font-size: 1.05em;
-	}
-}
-
-@media screen and (max-width: 845px) {
-	.hmpg-org-recent-stories .house-ad h2 {
-		font-size: 1.8em;
-	}
-	
-	.hmpg-org-recent-stories .house-ad p {
-		font-size: 1.35em;
-	}
-}
-
-
-
-
 .hmpg-org-recent-stories .house-ad .house-ad--button {
 	font-family: var(--typeface-sans), sans-serif;
 	font-size: 1em;
@@ -1950,6 +1935,49 @@ p a:hover, p a:focus {
 	background: #fff;
 	border-color: #000;
 }
+
+@media screen and (max-width: 1060px) {
+	.hmpg-org-recent-stories .house-ad h2 {
+		font-size: 1.2em;
+	}
+	
+	.hmpg-org-recent-stories .house-ad p {
+		font-size: 1.05em;
+	}
+}
+
+@media screen and (max-width: 845px) {
+	.hmpg-org-recent-stories .house-ad h2 {
+		font-size: 1.8em;
+	}
+	
+	.hmpg-org-recent-stories .house-ad p {
+		font-size: 1.35em;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.hmpg-org-recent-stories .house-ad h2 {
+		font-size: 1.35em;
+		margin-bottom: 8px;
+	}
+	
+	.hmpg-org-recent-stories .house-ad p {
+		font-size: 1.1em;
+		margin-bottom: 0;
+	}
+	
+	.hmpg-org-recent-stories .house-ad figure {
+		max-width: 200px;
+	}
+	
+	.hmpg-org-recent-stories .house-ad .house-ad--button { 
+		font-size: 1.1em;
+	}
+}
+
+
+
 
 .hmpg-ad-box {
 	position: relative;
