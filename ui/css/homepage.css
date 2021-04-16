@@ -469,14 +469,28 @@ body {
 	height: auto;
 	width: 80%;
 	margin: 30px auto 40px;
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-column-gap: 40px;
 	border-left: 5px solid var(--light-green);
 }
 
+/*@media screen and (min-width: 668px) {
+	#featured-sponsor--article_wrapper {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		grid-column-gap: 40px;
+	}
+	
+	#featured-sponsor--text {
+		grid-column: 1;
+	}
+	
+	#featured-sponsor--article figure {
+		grid-column: 2;
+	}
+}*/
+
 #featured-sponsor--text {
-	grid-column: 1;
+	width: 100%;
+	clear: both;
 }
 
 #featured-sponsor--text span {
@@ -490,25 +504,23 @@ body {
 #featured-sponsor--text h2 {
 	margin-top: 18px;
 	font-size: 1.6em;
+	line-height: 1.3;
 	margin-bottom: 15px;
 }
 
-#featured-sponsor--text p {
+#featured-sponsor--article p {
 	font-size: 1.25em;
 	line-height: 1.4;
-	
 }
 
-#featured-sponsor--text p a {
+#featured-sponsor--article p a {
 	border-bottom: 1px solid;
 }
 
 #featured-sponsor--article figure {
-	width: 100%;
-	height: auto;
-	margin: 0;
-	padding: 30px 0 0 0;
-	grid-column: 2;
+	float: right;
+	width: 40%;
+	margin: 5px 0 20px 40px;
 }
 
 #featured-sponsor--article figure img {
@@ -532,12 +544,40 @@ body {
 	}
 }*/
 
+#featured-sponsor--article_wrapper:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
 @media screen and (max-width: 1000px) { 
 	#featured-sponsor--article_wrapper {
 		width: 100%;
+		padding-left: var(--page-margin-sides);
+		padding-right: var(--page-margin-sides);
+		border-left: 0;
 	}
 }
 
+@media screen and (max-width: 667px) { 
+	
+	#featured-sponsor--article p {
+		font-size: 1.25em;
+		line-height: 1.4;
+	}
+	
+	#featured-sponsor--article figure {
+		margin: 5px 0 20px 20px;
+	}
+}
+
+@media screen and (max-width: 667px) { 
+	#featured-sponsor--article figure {
+		width: 100%;
+		float: none;
+		margin: 25px 0 15px 0;
+	}
+}
 
 /* Module text styles ----------------- */
 
@@ -647,6 +687,17 @@ body {
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	margin: 3rem 0 1rem; /* 4rem total realigns with 2rem-baseline grid */
+}
+
+/* giant gap below related story label, due to grid. easiest fix is to hide */
+@media screen and (max-width: 687px) {
+	.m-tyee-insider__related-label {
+		display: none;
+	}
+	
+	.m-tyee-insider__related-stories {
+		margin-top: 30px;
+	}
 }
 
 .m-comment-noted__title, .m-barometer__title, .m-barometer .barometer-form-list > p {
@@ -1379,9 +1430,6 @@ p a:hover, p a:focus {
 
     /* STORY ITEM EXTENSIONS */
 
-.story-item--primary {
-	
-}
 
 .story-item--secondary.story-item {
 	grid-template-columns: 1fr 1fr;
@@ -1475,10 +1523,6 @@ p a:hover, p a:focus {
 
 .story-item--minimum .story-item__date {
 	display: none;
-}
-
-.story-item--reverse {
-	
 }
 
 
