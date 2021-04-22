@@ -124,37 +124,6 @@ html {
 	--typeface-display-large: 'Tiempos Headline', georgia, serif;
 }
 
-.new-homepage--harriet, .new-homepage--harriet_b {
-	--typeface-serif: Harriet-Texttest, georgia, serif;
-	--typeface-sans: 'Grey', helvetica, sans-serif;
-	--typeface-item-body: 'Grey', helvetica, sans-serif;
-	--typeface-display: Harriet-Texttest, georgia, serif;
-	--typeface-display-small: Harriet-Texttest, georgia, serif;
-	--typeface-display-medium: Harriet-DisplayTest, georgia, serif;
-	--typeface-display-large: Harriet-DisplayTest, georgia, serif;
-}
-
-.new-homepage--harriet_c {
-	--typeface-serif: Harriet-Texttest, georgia, serif;
-	--typeface-sans: 'Grey', helvetica, sans-serif;
-	--typeface-item-body: 'Grey', helvetica, sans-serif;
-	--typeface-display: Harriet-Texttest, georgia, serif;
-	--typeface-display-small: Harriet-Texttest, georgia, serif;
-	--typeface-display-medium: Harriet-Texttest, georgia, serif;
-	--typeface-display-large: Harriet-Texttest, georgia, serif;
-}
-
-.new-homepage--harriet-some {
-	--typeface-serif: 'Tiempos Text', georgia, serif;
-	--typeface-sans: 'Grey', helvetica, sans-serif;
-	--typeface-item-body: 'Grey', helvetica, sans-serif;
-	--typeface-display: 'Tiempos Text', georgia, serif;
-	--typeface-display-small: Harriet-Texttest, georgia, serif;
-	--typeface-display-medium: Harriet-Texttest, georgia, serif;
-	--typeface-display-large: Harriet-DisplayTest, georgia, serif;
-}
-
-
 /* Typefaces for retina and high-dpi screens */
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 195dpi) {
@@ -503,10 +472,6 @@ https://caniuse.com/#feat=css3-colors
 	font-size: 1.5em;
 	text-transform: capitalize;
 	margin: 0rem 0 2rem; /* 4rem total realigns with baseline grid */
-}
-
-.new-homepage--harriet_b .new-story-item__headline {
-	font-weight: 700;
 }
 
 .new-category-label {

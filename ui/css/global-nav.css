@@ -107,6 +107,7 @@ ul#nav-bar li {
 .new-site-nav li a, ul#nav-bar label {
 	background: #fff;
 	font-size: 1.25em !important;
+	font-size: 1.15em !important;
 	color: var(--grey);
 }
 
@@ -224,7 +225,7 @@ ul#nav-bar li label.nav-bar__link--more:after {
 
 @media screen and (min-width: 1201px) {
 	.new-site-header__logo-block {
-		/*max-width: 772px;*/
+		max-width: 1600px;
 		padding-left: var(--page-margin-sides);
 		padding-right: var(--page-margin-sides);
 	}

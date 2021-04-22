@@ -32,6 +32,12 @@ strong {
 	margin-bottom: 20px;
 }
 
+@media screen and (min-width: 1200px) {
+	body.subpage .article__header {
+		max-width: 45em;
+	}
+}
+
 body.subpage article h2, h3, h4 {
 	line-height: 1.3;
 }
