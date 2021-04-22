@@ -93,15 +93,14 @@ ul#nav-bar {
 
 ul#nav-bar li {
 	display: inline;
-	/*margin: 0 15px;*/
-	margin: 0 1.5vw;
+	margin: 0 15px;
 }
 
-@media screen and (min-width: 1200px) {
+/*@media screen and (min-width: 1200px) {
 	ul#nav-bar li {
 		margin: 0 2.1vw;
 	}
-}
+}*/
 
 
 .new-site-nav li a, ul#nav-bar label {
@@ -225,11 +224,57 @@ ul#nav-bar li label.nav-bar__link--more:after {
 
 @media screen and (min-width: 1201px) {
 	.new-site-header__logo-block {
-		max-width: 1600px;
+		/*max-width: 1600px;*/
 		padding-left: var(--page-margin-sides);
 		padding-right: var(--page-margin-sides);
 	}
 }
+
+/* limit width for articles */
+body.default-global--new2019 .new-site-header__logo-block {
+	max-width: 55em;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@media screen and (min-width: 850px) {
+	body.default-global--new2019 .new-site-header__logo-block {
+		grid-template-columns: 150px 1fr minmax(30px, 200px) 1fr 150px !important;
+		max-width: 48.8em;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+
+    /* BREAKPOINT: 640px // Increase page margin */
+
+/*@media screen and (min-width: 640px) {
+	.article__header {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}*/
+
+
+@media screen and (min-width: 1200px) {
+	body.default-global--new2019 .new-site-header__logo-block {
+		grid-template-columns: 150px 1fr 300px 1fr 150px !important;
+		max-width: 52.3em;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	body.default-global--new2019 .new-site-header__logo-block {
+		max-width: 59em;
+		
+	}
+}
+
+
 
 
 
