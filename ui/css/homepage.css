@@ -666,9 +666,10 @@ body {
 }
 
 @media screen and (max-width: 568px) {
-	.story-item--index-page.story-item--secondary .story-item__deck {
+	.story-item--index-page.story-item--secondary .story-item__deck,
+	.story-item--index-page.story-item--tertiary .story-item__deck {
 		font-size: 1.3em !important;
-		line-height: 1.4 !important;
+		line-height: 1.35 !important;
 	}
 }
 
