@@ -2117,6 +2117,8 @@ p a:hover, p a:focus {
 	position: relative;
 	padding: 0 var(--page-margin-sides);
 	padding-bottom: calc(var(--gutter-row) + 0rem);
+	max-width: 1600px; /* limit width */
+	margin: 0 auto;
 }
 
 @media screen and (max-width: 683px) {
