@@ -1034,7 +1034,17 @@ span.list-metric, .index-list span {
 	/* article__header is always centered on the page */
 	position: relative;
 	max-width: 45em;
+	max-width: 49em;
 	margin: 30px auto 0 auto !important;
+}
+
+/*.article__header .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}*/
+
+.figure {
+	display: none; /* temp hide image */
 }
 
     /* BREAKPOINT: 640px // Increase page margin */
@@ -1043,19 +1053,15 @@ span.list-metric, .index-list span {
 	.article__header {
 		padding-left: 1em;
 		padding-right: 1em;
+		padding-left: 17px;
+		padding-right: 17px;
 	}
 }
 
 
 @media screen and (min-width: 1200px) {
 	.article__header {
-		max-width: 48em;
-	}
-}
-
-@media screen and (min-width: 1400px) {
-	.article__header {
-		max-width: 53.75em;
+		max-width: 49em;
 	}
 }
 
@@ -1146,6 +1152,14 @@ The .main-col-container styling is really the scaffold of the layout and most ot
 	margin: 0;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+@media screen and (min-width: 640px) and (max-width: 750px) {
+	.main-col-container {
+		max-width: 45em;
+		padding-left: 17px;
+		padding-right: 17px;
+	}
 }
 
     /* Set a top margin on article__body for LEGACY ARTICLES and POLLS that don't have a featured-media section */
@@ -3990,7 +4004,7 @@ img.fact-box--headshot {
 	padding: 40px;
 	height: auto;
 	width: 80%;
-	margin: 30px auto 40px;
+	margin: 30px auto 60px;
 	border-left: 5px solid var(--light-green);
 }
 
