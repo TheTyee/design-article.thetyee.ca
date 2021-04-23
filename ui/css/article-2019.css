@@ -1042,11 +1042,6 @@ span.list-metric, .index-list span {
 	padding-left: 0;
 	padding-right: 0;
 }*/
-
-.figure {
-	display: none; /* temp hide image */
-}
-
     /* BREAKPOINT: 640px // Increase page margin */
 
 @media screen and (min-width: 640px) {
