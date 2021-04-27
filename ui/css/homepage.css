@@ -1785,7 +1785,7 @@ p a:hover, p a:focus {
     /* Uses a pseudo element to create column borders within the grid-column-gap. Excludes the first item.
        Explained here: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
 	
-	/*.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type):not(:last-of-type)::after {
+	.hmpg-org-recent-stories .story-item--index-page:not(:first-of-type):not(:last-of-type)::after {
 		content: '';
 		position: absolute;
 		top: 0;
