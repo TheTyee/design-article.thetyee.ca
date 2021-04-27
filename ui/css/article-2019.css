@@ -1883,6 +1883,23 @@ figure {
 	margin-bottom: 2em;
 }
 
+@media screen and (max-width: 640px) {
+	figure {
+		width: 100vw;
+		  position: relative;
+		  left: 50%;
+		  right: 50%;
+		  margin-left: -50vw;
+		  margin-right: -50vw;
+	}
+	
+	figcaption {
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 100%;
+	}
+}
+
     /* Remove float when view is wide enough */
 
 @media screen and (min-width: 976px) {
