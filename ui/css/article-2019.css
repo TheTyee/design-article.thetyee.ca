@@ -1884,13 +1884,13 @@ figure {
 }
 
 @media screen and (max-width: 640px) {
+	.featured-media .container-fluid {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
 	figure {
-		width: 100vw;
-		  position: relative;
-		  left: 50%;
-		  right: 50%;
-		  margin-left: -50vw;
-		  margin-right: -50vw;
+		width: 100%;
 	}
 	
 	figcaption {
