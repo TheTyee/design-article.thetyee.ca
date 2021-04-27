@@ -1792,7 +1792,8 @@ p a:hover, p a:focus {
 		right: calc(var(--gutter-column-half) * -1);
 		height: 100%;
 		border-right: 1px solid var(--border-colour-cols);
-	}*/
+	}
+	
 } /* end of borders medium breakpoint */
 
 
@@ -1812,12 +1813,14 @@ p a:hover, p a:focus {
 		content: none;
 	}
 
-    /* remove column border on all tertiary story-items in Recent Stories */
-	
-	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after {
-		content: none;
-	}
-	
+    .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary:nth-of-type(4)::after {
+    	content: none !important;
+    	border: none !important;
+    }
+    
+/*    .hmpg-org-recent-stories .story-item--index-page.story-item--tertiary {
+		background: #faebee !important;
+	}*/
 } 
 
 @media screen and (min-width: 684px) and (max-width: 845px) {
@@ -1825,6 +1828,10 @@ p a:hover, p a:focus {
 		left: 0;
 		width: 100%;
 	}
+}
+
+.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary {
+	background: #faebee;
 }
 
 /* end of borders medium breakpoint */
@@ -1841,12 +1848,15 @@ p a:hover, p a:focus {
 
     /* remove column border on all tertiary story-items in Recent Stories */
 	
-	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after {
+	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary:nth-child(odd)::after {
 		content: none;
+		border: none;
 	}
+	
+	
 } /* end of borders tertiary breakpoint */
 
-@media screen and (min-width: 1001px) and (max-width: 1368px) {
+@media screen and (min-width: 1000px) and (max-width: 1368px) {
 	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary:nth-of-type(2n)::before {
 		width: 100%;
 		/* eliminate border jutting out right side at mid-size on tertiary stories */
@@ -1862,12 +1872,17 @@ p a:hover, p a:focus {
 	.hmpg-org-recent-stories .story-item--index-page:nth-of-type(4n)::after {
 		content: none;
 	}
-
-    /* remove column border on all tertiary story-items in Recent Stories */
 	
-	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after {
+	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary:nth-of-type(4n+4)::after {
 		content: none;
+		border: none;
 	}
+	
+	    /* remove column border on all tertiary story-items in Recent Stories */
+	
+/*	.hmpg-org-recent-stories .story-item--index-page.story-item--tertiary::after {
+		content: none;
+	}*/
 
     /* This would remove row borders on tertiary story-items in Recent Stories
     .hmpg-org-recent-stories .story-item--index-page:nth-of-type(n+9)::before  {
