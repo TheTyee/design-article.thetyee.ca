@@ -468,7 +468,7 @@ body {
 	padding: 40px;
 	height: auto;
 	width: 80%;
-	margin: 30px auto 40px;
+	margin: 30px auto 65px;
 	border-left: 5px solid var(--light-green);
 }
 
@@ -2568,6 +2568,7 @@ main .hmpg-org-wrapper:first-of-type {
 
 .m-tyee-insider__main .story-item--primary .story-item__headline {
 	margin-bottom: 4rem;
+	max-width: 636px;
 }
 
 .m-tyee-insider__main .story-item--primary img {
@@ -2747,7 +2748,7 @@ input[type=radio] {
 	}
 	
 	.m-tyee-insider__main .story-item--primary .story-item__deck {
-		max-width: 34em;
+		max-width: 636px;
 	}
 	
 	.m-tyee-insider__main .story-item--primary .story-item__headline {
