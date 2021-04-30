@@ -1060,6 +1060,11 @@ span.list-metric, .index-list span {
 	}
 }
 
+/* no h4 on these so balance by moving badge up */
+.article-series.index .series-badge {
+	margin-top: 40px;
+}
+
 
 /* ARTICLE LAYOUT - FEATURED MEDIA ========================================================================== */
 
@@ -5697,11 +5702,66 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
 }
 
 
-/* ==========================================================================
-   Temporary testing styles
-   ==========================================================================
+/** SERIES LANDING PAGE **/
 
-.container *:not(.row):not(section), .container-fluid *:not(.row):not(section) {
-    background-color: #eee;
-    border: 1px solid #ddd;
+.article-series.index .series-list-wrapper {
+	padding-top: 30px;
+}
+
+.article-series.index .article-list {
+	border-top: 1px solid var(--dark-grey);
+	padding-top: 30px;
+}
+
+.article-series.index .article-list:first-child {
+	padding-top: 30px;
+}
+
+.article-series.index .photo-insert {
+	float: left;
+	margin: 0 20px 10px 0;
+	padding-top: 4px;
+}
+
+@media screen and (min-width: 640px) {
+	.article-series.index .photo-insert {
+		margin: 0 20px 40px 0;
+	}
+}
+
+.article-series.index h4 {
+	font-family: var(--typeface-headlines-medium);
+	font-weight: bold;
+	margin: 0;
+	line-height: 1.4;
+}
+
+.article-series.index .meta {
+	font-family: var(--typeface-sans);
+}
+
+
+@media screen and (min-width: 580px) {
+	.article-series.index .meta {
+		margin-left: 166px; /* photo width + 20px margin */
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.container-fluid.article-image {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.article-series.index .photo-insert {
+		width: 100%;
+		height: auto;
+	}
+	
+	.article-series.index .photo-insert img {
+		width: 100%;
+		height: auto;
+	}
 }
