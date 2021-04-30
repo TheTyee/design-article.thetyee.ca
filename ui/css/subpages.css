@@ -19,6 +19,7 @@ strong {
 
 .article__header {
 	padding: 15px 0 0 0;
+	max-width: 45em;
 }
 
 @media screen and (max-width: 879px) {

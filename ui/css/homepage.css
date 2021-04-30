@@ -951,12 +951,21 @@ body {
 		font-size: 2em;
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
 	}
+	
+	.hmpg-org-pinned-story .story-item--primary .category-label {
+		margin-top: 15px;
+	}
 }
 
 
         /*  STORY ITEMS TYPOGRAPHY MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
 
 @media screen and (min-width: 684px) {
+	.hmpg-org-pinned-story .story-item--primary .category-label {
+		margin-top: 5px;
+	}
+	
+	
 	.story-item--primary .story-item__deck {
 		#            text-transform: uppercase;
 	}
