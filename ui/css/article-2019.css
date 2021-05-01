@@ -5755,6 +5755,11 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
 }
 
 @media screen and (max-width: 500px) {
+	.article-series.index .article-list {
+		border-top: none;
+		padding-top: 15px;
+	}
+	
 	.article-series.index .photo-insert {
 		width: 100%;
 		height: auto;
