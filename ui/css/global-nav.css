@@ -94,15 +94,8 @@ ul#nav-bar {
 
 ul#nav-bar li {
 	display: inline;
-	margin: 0 15px;
+	margin: 0 16px;
 }
-
-/*@media screen and (min-width: 1200px) {
-	ul#nav-bar li {
-		margin: 0 2.1vw;
-	}
-}*/
-
 
 .new-site-nav li a, ul#nav-bar label {
 	background: #fff;
