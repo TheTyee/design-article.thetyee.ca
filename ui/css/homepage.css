@@ -894,9 +894,10 @@ body {
 	font-family: var(--typeface-display-medium);
 	font-weight: 500;
 	font-size: 1.35em; /* Reduces font-size to increase the line measure */
-	-webkit-hyphens: auto;
+	margin-bottom: 1.5rem;
+	/*-webkit-hyphens: auto;
 	-ms-hyphens: auto;
-	hyphens: auto; /* Adds hyphenation in narrowest views */
+	hyphens: auto; /* Adds hyphenation in narrowest views *!/*/
 }
 
     /* tertiary story-items */
@@ -1064,9 +1065,9 @@ body {
 	.story-item--secondary .story-item__headline {
 		font-size: 1.5em;
 		line-height: 3rem;
-		-webkit-hyphens: manual;
+		/*-webkit-hyphens: manual;
 		-ms-hyphens: manual;
-		hyphens: manual;
+		hyphens: manual;*/
 	}
 
     /* Keep Recent-stories Secondary headlines smaller because ad-block constrains width */
@@ -1306,8 +1307,11 @@ p a:hover, p a:focus {
 	
 }
 
-
-
+@media screen and (min-width: 1368px) {
+	.default-global-homepage .button--expander-open {
+		display: none;
+	}
+}
 
 /*-----------------------------------------*\
   #MOLECULES
@@ -1396,6 +1400,7 @@ p a:hover, p a:focus {
     "author"
     "date"
     "border";
+    align-content: start;
 }
 
 .story-item__image {
@@ -2300,9 +2305,9 @@ main .hmpg-org-wrapper:first-of-type {
 		font-size: 1.15em;
 		line-height: 2.5rem; /* decimal values here cause a browser rounding error
         that throws throws off the baseline grid.          */
-		-webkit-hyphens: auto;
+		/*-webkit-hyphens: auto;
 		-ms-hyphens: auto;
-		hyphens: auto; /* Adds hyphenation in medium views where column is narrow */
+		hyphens: auto;*/ /* Adds hyphenation in medium views where column is narrow */
 	}
 	
 	.hmpg-org-recent-stories__list > .story-item--tertiary .category-label {
