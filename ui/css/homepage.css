@@ -101,42 +101,12 @@ body {
 
 :root {
 	--typeface-serif: 'Tiempos Text', georgia, serif;
-	--typeface-sans: 'Grey', helvetica, sans-serif;
-	--typeface-item-body: 'Grey', helvetica, sans-serif;
+	--typeface-sans: 'franklin-gothic-urw', 'Grey', helvetica, sans-serif;
+	--typeface-item-body: 'franklin-gothic-urw', 'Grey', helvetica, sans-serif;
 	--typeface-display: 'Tiempos Text', georgia, serif;
 	--typeface-display-small: 'Tiempos Text', georgia, serif;
 	--typeface-display-medium: 'Tiempos Text', georgia, serif;
 	--typeface-display-large: 'Tiempos Headline', georgia, serif;
-}
-
-.homepage--harriet, .homepage--harriet_b {
-	--typeface-serif: 'Tiempos Text', georgia, serif;
-	--typeface-sans: 'Grey', helvetica, sans-serif;
-	--typeface-item-body: 'Grey', helvetica, sans-serif;
-	--typeface-display: 'Tiempos Text', georgia, serif;
-	--typeface-display-small: 'Tiempos Text', georgia, serif;
-	--typeface-display-medium: Harriet-DisplayTest, georgia, serif;
-	--typeface-display-large: Harriet-DisplayTest, georgia, serif;
-}
-
-.homepage--harriet_c {
-	--typeface-serif: 'Tiempos Text', georgia, serif;
-	--typeface-sans: 'Grey', helvetica, sans-serif;
-	--typeface-item-body: 'Grey', helvetica, sans-serif;
-	--typeface-display: 'Tiempos Text', georgia, serif;
-	--typeface-display-small: 'Tiempos Text', georgia, serif;
-	--typeface-display-medium: 'Tiempos Text', georgia, serif;
-	--typeface-display-large: 'Tiempos Text', georgia, serif;
-}
-
-.homepage--harriet-some {
-	--typeface-serif: 'Tiempos Text', georgia, serif;
-	--typeface-sans: 'Grey', helvetica, sans-serif;
-	--typeface-item-body: 'Grey', helvetica, sans-serif;
-	--typeface-display: 'Tiempos Text', georgia, serif;
-	--typeface-display-small: 'Tiempos Text', georgia, serif;
-	--typeface-display-medium: 'Tiempos Text', georgia, serif;
-	--typeface-display-large: Harriet-DisplayTest, georgia, serif;
 }
 
 
@@ -640,6 +610,7 @@ body {
 	font-size: 1.33em;
 	line-height: 145% !important;
 	color: var(--text-colour);
+	font-weight: 400;
 }
 
 .story-item__deck {
