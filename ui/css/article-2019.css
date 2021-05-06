@@ -95,7 +95,7 @@ h1 {
 
 h2 {
 	color: #424242;
-	font-family: 'Grey', helvetica, sans-serif;
+	font-family: var(--typeface-sans);
 	font-weight: 700;
 	font-size: 1.2em;
 	line-height: 1.333em; /* 36px */
@@ -111,7 +111,7 @@ h3 {
 }
 
 h4 {
-	font-family: 'Grey', helvetica, sans-serif;
+	font-family: var(--typeface-sans);
 	font-size: 1.2em;
 	font-weight: 100;
 	line-height: 1.3;
@@ -2276,7 +2276,7 @@ aside {
 	padding-top: 0.15em;
 	line-height: 1.4;
 	font-weight: 400;
-	font-family: 'Grey', helvetica, sans-serif;
+	font-family: var(--typeface-sans);
 	color: var(--grey);
 }
 
