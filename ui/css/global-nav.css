@@ -290,6 +290,7 @@ body.article-series .new-site-header__logo-block {
 	display: block;
 	width: 100% !important;
 	height: 100% !important;
+	text-align: center;
 }
 
 .new-site-header__logo img {
