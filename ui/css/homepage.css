@@ -628,12 +628,14 @@ body {
 	font-size: 1.3em !important;
 	text-align: left;
 	font-weight: 300;
+	font-weight: 400;
 }
 
 .hmpg-org-recent-stories__list .story-item--index-page.story-item--primary .story-item__deck {
 	font-size: 1.5em !important;
 	text-align: left;
 	font-weight: 300;
+	font-weight: 400;
 }
 
 @media screen and (max-width: 568px) {
