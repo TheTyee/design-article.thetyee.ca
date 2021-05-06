@@ -28,7 +28,7 @@
 #highlight-bar p {
 	margin-bottom: 0;
 	line-height: 1.2;
-	font-weight: bold;
+	font-weight: 500;
 }
 
 /* hide from article page for demo purposes */
@@ -55,7 +55,6 @@ a.new-site-header--homepage {
 	font-family: var(--typeface-sans);
 	font-size: 1em;
 	font-weight: 500;
-	font-weight: bold;
 	color: black;
 }
 
