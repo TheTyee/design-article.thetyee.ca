@@ -569,8 +569,7 @@ h6:nth-of-type(n+2) a:hover {
 
 .category-label a {
 	color: black;
-	font-weight: 500;
-	/* grey medium 14pt with 100 tracking */
+	font-weight: 400;
 }
 
 h6:first-of-type:hover {
@@ -2216,7 +2215,7 @@ aside {
 .author-info {
 	margin-top: 0.75em;
 	margin-bottom: 1em;
-	padding: 0.45em 0  0.5em 0;
+	padding: 0.45em 0  0.55em 0;
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 	border-color: inherit;
@@ -2274,7 +2273,7 @@ aside {
 .author-info__bio {
 	display: none;
 	padding-top: 0.15em;
-	line-height: 1.4;
+	line-height: 1.45;
 	font-weight: 400;
 	font-family: var(--typeface-sans);
 	color: var(--grey);
@@ -5727,6 +5726,10 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
 	.article-series.index .photo-insert {
 		margin: 0 20px 40px 0;
 	}
+}
+
+.article-series.index h2.title {
+	font-weight: 600;
 }
 
 .article-series.index h4 {
