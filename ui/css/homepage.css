@@ -16,7 +16,6 @@
 	background: rgba(255,208,0,0.8);
 	color: black;
 	font-weight: 500;
-	font-size: 90%;
 	padding: 0 4px;
 }
 
@@ -725,7 +724,17 @@ body {
 }
 
 .story-item__deck {
-	color: var(--text-colour-light);
+	color: var(--text-colour);
+}
+
+@media screen and (max-width: 568px) {
+	.story-item__deck {
+		color: var(--grey); /* higher contrast for mobile */
+	}
+	
+	.category-label {
+		font-size: 1em;
+	}
 }
 
 /*.story-item__author, .story-item__date {
@@ -1456,9 +1465,7 @@ p a:hover, p a:focus {
 	display: none;
 }
 
-.story-item--tertiary .category-label {
-	display: none;
-}
+
 
 .story-item--tertiary .story-item__headline {
 	display: block;
