@@ -29,6 +29,16 @@ strong {
 	}
 }
 
+@media screen and (max-width: 568px) {
+	body.subpage .article__header {
+		margin-top: 15px !important;
+	}
+	
+	p.intro-large {
+		font-size: 1.2em;
+	}
+}
+
 .article__header h1 {
 	margin-bottom: 20px;
 }
@@ -60,6 +70,32 @@ body.subpage article h4 {
 	font-weight: 500;
 	margin-top: 15px;
 	margin-bottom: 0;
+}
+
+@media screen and (max-width: 599px) {
+	body.subpage header h1 {
+		font-size: 2em !important;
+	}
+
+	body.subpage article h2 {
+		font-size: 1.5em;
+		border-top: 1px solid var(--grey);
+		padding-top: 30px;
+	}
+	
+	body.subpage article h2:first-of-type {
+		margin-top: 1em;
+		border-top: none;
+		padding-top: 0;
+	}
+	
+	body.subpage article h3 {
+		font-size: 1.25em;
+	}
+	
+	body.subpage article h4 {
+		font-size: 1em;
+	}
 }
 
 body.subpage article h3 {
