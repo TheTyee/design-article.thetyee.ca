@@ -101,8 +101,8 @@ body {
 
 :root {
 	--typeface-serif: 'Tiempos Text', georgia, serif;
-	--typeface-sans: 'Grey','franklin-gothic-urw', helvetica, sans-serif;
-	--typeface-item-body: 'Grey', 'franklin-gothic-urw', helvetica, sans-serif;
+	--typeface-sans: 'franklin-gothic-urw', helvetica, sans-serif;
+	--typeface-item-body: 'franklin-gothic-urw', helvetica, sans-serif;
 	--typeface-display: 'Tiempos Text', georgia, serif;
 	--typeface-display-small: 'Tiempos Text', georgia, serif;
 	--typeface-display-medium: 'Tiempos Text', georgia, serif;
