@@ -3091,6 +3091,12 @@ aside .messaging-block--ask .dollar-heart-svg {
 	color: #262626;
 }
 
+@media screen and (max-width: 768px) {
+	.btn--subscribe {
+			border: none;
+	}
+}
+
 /* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
 
 .messaging-block--subscribe form, .messaging-block--subscribe--events form {
@@ -5728,10 +5734,6 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
 	}
 }
 
-.article-series.index h2.title {
-	font-weight: 600;
-}
-
 .article-series.index h4 {
 	font-family: var(--typeface-headlines-medium);
 	font-weight: bold;
@@ -5754,6 +5756,10 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
 	.container-fluid.article-image {
 		padding-left: 0;
 		padding-right: 0;
+	}
+	
+	.article-series.index h2 {
+		margin-bottom: 0;
 	}
 }
 
