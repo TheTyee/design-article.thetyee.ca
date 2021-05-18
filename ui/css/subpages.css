@@ -29,6 +29,14 @@ strong {
 	}
 }
 
+@media screen and (min-width: 640px) and (max-width: 750px) {
+	.article__header {
+		max-width: 45em;
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+}
+
 @media screen and (max-width: 568px) {
 	body.subpage .article__header {
 		margin-top: 15px !important;
