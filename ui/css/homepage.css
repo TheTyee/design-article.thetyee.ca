@@ -3532,3 +3532,71 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
 		min-height: calc( ( ( ( 100vw - (var(--page-margin-sides) * 2) - (3 * var(--gutter-column)) ) / 4 ) * .4 ) / 1.5 );
 	}
 }
+
+/*------------------------------------*\
+  #SECTION INDEX ie NEWS
+\*------------------------------------*/
+
+
+body#section-index .hmpg-org-recent-stories .hmpg-module-header h2.hmpg-module-header__main-label {
+	font-size: 3em;
+	padding: 10px 0 20px;
+	/*margin-bottom: 30px;*/
+}
+
+body#section-index.news main section.hmpg-org-recent-stories.hmpg-org-recent-stories--topic.hmpg-org-wrapper {
+	padding-bottom: 5px;
+}
+
+/*body#section-index .hmpg-org-recent-stories__list {
+	padding-top: 20px;
+}*/
+
+body#section-index .news main section.hmpg-org-recent-stories.hmpg-org-recent-stories--topic.hmpg-org-wrapper {
+	border-top: 1px var(--light-grey);
+}
+
+body#section-index .story-item__image {
+	margin-bottom: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+	body#section-index section.section-stories .hmpg-org-recent-stories__list > .story-item--secondary {
+		grid-column: auto / span 4;
+	}
+	
+	body#section-index section.section-stories .hmpg-org-recent-stories__list .hmpg-ad-box {
+		grid-column: 9 / span 4;
+		/*background: #faebee;*/
+	}
+}
+
+@media screen and (max-width: 999px) {
+	body#section-index section.section-stories .hmpg-org-recent-stories__list > .story-item--secondary {
+		grid-column: auto / span 6;
+	}
+	
+	body#section-index section.section-stories .hmpg-org-recent-stories__list .hmpg-ad-box {
+		display: none;
+	}
+}
+
+main .hmpg-org-wrapper.section-stories::before {
+	content: none; /* eliminate thick border; see ln 2151*/
+}
+
+body#section-index section.section-stories .hmpg-org-recent-stories__list .hmpg-ad-box::before {
+	content: "";
+	position: absolute;
+	top: calc(var(--gutter-row-half) * -1);
+	width: 100%;
+	border-bottom: 1px solid var(--border-colour-cols);
+}
+
+/*body#section-index .hmpg-org-recent-stories__list > .story-item--secondary:nth-of-type(n+3)::after {
+	content: none;
+}
+
+body#section-index .hmpg-org-recent-stories__list > .story-item--secondary:nth-of-type(3n+3) {
+	background: aqua;
+}*/
