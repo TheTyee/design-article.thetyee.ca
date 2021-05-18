@@ -3593,10 +3593,20 @@ body#section-index section.section-stories .hmpg-org-recent-stories__list .hmpg-
 	border-bottom: 1px solid var(--border-colour-cols);
 }
 
-/*body#section-index .hmpg-org-recent-stories__list > .story-item--secondary:nth-of-type(n+3)::after {
-	content: none;
+@media screen and (min-width: 684px) {
+	/* row border */
+    /* expand Recent Stories row borders in medium views */
+	
+	body#section-index .hmpg-org-recent-stories__list > .story-item--tertiary:nth-of-type(even)::before {
+		/*left: calc(var(--gutter-column-half) * -1); bumps the line out of the margin */
+		width: calc(100% + var(--gutter-column));
+	}
+	
+	body#section-index .hmpg-org-recent-stories__list > .story-item--tertiary:nth-of-type(odd)::before {
+		width: 100%; /* prevent border from extending into margin on R side */
+	}
 }
 
-body#section-index .hmpg-org-recent-stories__list > .story-item--secondary:nth-of-type(3n+3) {
+/*body#section-index .hmpg-org-recent-stories__list > .story-item--secondary:nth-of-type(3n+3) {
 	background: aqua;
 }*/
