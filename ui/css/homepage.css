@@ -3581,13 +3581,17 @@ body#section-index .story-item__image {
 	}
 }
 
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 683px) {
 	body#section-index section.section-stories .hmpg-org-recent-stories__list > .story-item--primary,
 	body#section-index section.section-stories .hmpg-org-recent-stories__list > .story-item--secondary,
 	body#section-index section.section-stories .hmpg-org-recent-stories__list > .story-item--tertiary,
 	body#section-index section.section-stories .hmpg-org-recent-stories__list .hmpg-ad-box,
 	body#section-index.news label.button.button--spanrow {
 		grid-column: auto / span 12;
+	}
+
+	body#section-index.news main section.hmpg-org-recent-stories.hmpg-org-recent-stories--topic.hmpg-org-wrapper.section-stories div.hmpg-org-recent-stories__list article.story-item.story-item--index-page.story-item--primary {
+		width: 100%;
 	}
 }
 
@@ -3614,6 +3618,41 @@ body#section-index section.section-stories .hmpg-org-recent-stories__list .hmpg-
 	
 	body#section-index .hmpg-org-recent-stories__list > .story-item--tertiary:nth-of-type(odd)::before {
 		width: 100%; /* prevent border from extending into margin on R side */
+	}
+}
+
+@media screen and (max-width: 989px) {
+	/* row border */
+    /* expand Recent Stories row borders in medium views */
+    
+    body#section-index .hmpg-org-recent-stories__list > .story-item--secondary:nth-of-type(odd)::before {
+		width: 100%;
+	}
+	
+	body#section-index .hmpg-org-recent-stories__list > .story-item--secondary:nth-of-type(odd)::after {
+		content: none;
+	}
+	
+	body#section-index .hmpg-org-recent-stories__list > .story-item--tertiary:nth-of-type(4n+3)::before {
+		/*left: calc(var(--gutter-column-half) * -1); bumps the line out of the margin */
+		width: calc(100% + var(--gutter-column)) !important;
+	}
+	
+	body#section-index .hmpg-org-recent-stories__list > .story-item--tertiary:nth-of-type(odd)::before {
+		width: 100%; /* prevent border from extending into margin on R side */
+	}
+	
+	body#section-index .hmpg-org-recent-stories__list > .story-item--tertiary:nth-of-type(4n+4)::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: calc(var(--gutter-column-half) * -1);
+		height: 100%;
+		border-right: 1px solid var(--border-colour-cols) !important;
+	}
+	
+	body#section-index .hmpg-org-recent-stories__list > .story-item--tertiary:nth-of-type(4n+5)::after {
+		content: none;
 	}
 }
 
