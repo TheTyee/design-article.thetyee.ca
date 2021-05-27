@@ -278,3 +278,7 @@ body.subpage aside .toc h6 {
 	float: right;
 	margin-top: 14px;
 }
+
+.article-footer.main-col-container {
+	padding-bottom: 30px !important;
+}
