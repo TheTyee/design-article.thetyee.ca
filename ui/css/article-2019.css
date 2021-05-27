@@ -93,6 +93,12 @@ h1 {
 	}
 }
 
+@media screen and (max-width: 568px) {
+	h1 {
+		margin-top: 10px;
+	}
+}
+
 h2 {
 	color: #424242;
 	font-family: var(--typeface-sans);
@@ -1887,17 +1893,53 @@ figure {
 	margin-bottom: 2em;
 }
 
+@media screen and (max-width: 879px) {
+	.figure--xl,
+	.figure--xxl {
+		width: 100vw !important;
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+	
+	.figure--xl figcaption,
+	.figure--xxl figcaption {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+@media screen and (max-width: 745px) {
+	.figure--xl,
+	.figure--xxl {
+		width: 100vw !important;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	
+	.figure--xl figcaption,
+	.figure--xxl figcaption {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
 @media screen and (max-width: 640px) {
 	.featured-media .container-fluid {
 		padding-left: 0;
 		padding-right: 0;
 	}
 	
-	figure {
-		width: 100%;
+	figure:not(:first-of-type),
+	.aside {
+		/*width: 100%;*/
+		width: 100vw !important;
+		margin-left: -15px;
+		margin-right: -15px;
+		float: none;
 	}
 	
-	figcaption {
+	figcaption,
+	.aside .caption {
 		padding-left: 15px;
 		padding-right: 15px;
 		width: 100%;
@@ -2289,7 +2331,8 @@ aside {
 
 .author-info a {
 	color: black;
-	text-decoration: underline;
+	text-decoration: none;
+	border-bottom: 1px solid;
 }
 
 .author-info a:hover {
@@ -3505,15 +3548,15 @@ body.subpage aside .toc h6 {
 
 .presents-box h6 a {
 	text-transform: none;
-	text-decoration: underline;
+	text-decoration: none;
+	border-bottom: 1px solid;
 	color: #111 !important;
 	font-weight: bold !important;
 	padding: 0;
 }
 
 .presents-box a:hover {
-	transform: scale(1);
-	font-size: 1em;
+	font-size: inherit !important;
 	background: var(--yellow);
 	border: 0;
 }
@@ -4114,6 +4157,8 @@ img.fact-box--headshot {
 		padding-left: var(--page-margin-sides);
 		padding-right: var(--page-margin-sides);
 		border-left: 0;
+		margin-bottom: 0;
+		padding-bottom: 50px;
 	}
 }
 
