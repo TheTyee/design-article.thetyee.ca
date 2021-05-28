@@ -2194,6 +2194,17 @@ figure.figure.medium {
 	    width: 100vw;
 	    transform: translateX(calc((38em - 100vw)/2 ));
 	  }
+	  
+	  .figure-xl,
+	 .figure--xxl {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		transform: none;
+		left: 0;
+		padding: 0 !important;
+		clear: both !important;
+		width: 100vw;
+	}
 	
 	/* feat media test */
 		.featured-media {
