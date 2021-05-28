@@ -2517,7 +2517,7 @@ main .hmpg-org-wrapper:first-of-type {
 
 @media screen and (max-width: 1000px) {
 	.hmpg-org-most--column .hmpg-module-header,
-	.hmpg-org-reported-elsewhere .hmpg-module-header { {
+	.hmpg-org-reported-elsewhere .hmpg-module-header {
 		margin-bottom: 1rem;
 	}
 }
@@ -3565,7 +3565,7 @@ img height =   ( ( ( (100vw - page-margins - col-gutters)                  / #co
 \*------------------------------------*/
 
 body#section-index .hmpg-org-recent-stories .hmpg-module-header {
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 	height: auto;
 }
 
