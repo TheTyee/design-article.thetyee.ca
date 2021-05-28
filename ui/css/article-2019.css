@@ -1895,12 +1895,6 @@ figure {
 }
 
 @media screen and (max-width: 879px) {
-/* FIGTEST	.figure--xl,
-	.figure--xxl {
-		width: 100vw !important;
-		margin-left: -10px;
-		margin-right: -10px;
-	}*/
 	
 	.figure--xl figcaption,
 	.figure--xxl figcaption {
@@ -1923,29 +1917,6 @@ figure {
 		padding-right: 15px;
 	}
 }
-
-/* FIGTEST @media screen and (max-width: 640px) {
-	.featured-media .container-fluid {
-		padding-left: 0;
-		padding-right: 0;
-	}
-	
-	figure:not(:first-of-type),
-	.aside {
-		/*width: 100%;*!/
-		width: 100vw !important;
-		margin-left: -15px;
-		margin-right: -15px;
-		float: none;
-	}
-	
-	figcaption,
-	.aside .caption {
-		padding-left: 15px;
-		padding-right: 15px;
-		width: 100%;
-	}
-}*/
 
     /* Remove float when view is wide enough */
 
@@ -2072,16 +2043,6 @@ figure.figure.medium {
     width. In narrow and medium viewports it's almost identical to the figure--xl, but
     in large viewports it gets gigantic. */
 
-.figure--xxl {
-/*	FIGTEST position: relative;
-	width: calc(100vw);*/
-    /* Set figure to full width with no margins  */
-	/*left: -15px;*/
-    /* Set figure flush-left with viewport.
-       Compensate for bootstrap padding.
-       -[bootstrap padding]                      */
-}
-
 .figure--xxl .caption {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -2092,18 +2053,6 @@ figure.figure.medium {
 
 @media screen and (min-width: 880px) {
 
-    /*  When viewport exceeds the max-width of the article__body ...
-        [article__body max width] + [bootstrap margins]
-        =        38em           +            4em       = 38em x 16px = 608px  */ 
-/* FIGTEST	.figure--xxl {
-		position: relative;
-		width: calc(100vw);
-        /* Set figure to full width with no margins  *!/
-		left: calc((38em - 100vw - 30px) / 2);
-        /* Set figure flush-left with viewport.
-           [ offset between text colunm and left viewport edge]
-           [ [.main-col-container width] - [view width] - [bootstrap padding] ] / 2           *!/
-	}*/
 /* see https://css-tricks.com/full-width-containers-limited-width-parents/ for solutions */	
 	.figure--xxl {
 	    width: 100vw;
@@ -2227,22 +2176,6 @@ figure.figure.medium {
 			padding-right: 15px;
 		}
 }
-
-    /* BREAKPOINT: 880px (article__body left-aligned) // set figure--xl left-align with article__body */
-
-/* FIGTEST @media screen and (min-width: 880px)
-    /*  When viewport exceeds the max-width of the article__header ... *!/ {
-	.figure--xxl {
-		position: relative;
-		width: calc(100vw);
-        /* Set figure to full width with no margins   *!/
-		left: calc(((38em - 100vw - 30px) / 2) + 4.5em);
-        /* Set figure flush-left with viewport.
-           Calc as above but compensate for the -4.5em left offset of the .main-col-container.
-           [calc as above] + 4.53em
-           [ [ [view width] - [txt col width] - [bootstrap padding] ] / 2 ] + 4.5em           *!/
-	}
-}*/
 
 
 
