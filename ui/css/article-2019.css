@@ -1894,12 +1894,12 @@ figure {
 }
 
 @media screen and (max-width: 879px) {
-	.figure--xl,
+/* FIGTEST	.figure--xl,
 	.figure--xxl {
 		width: 100vw !important;
 		margin-left: -10px;
 		margin-right: -10px;
-	}
+	}*/
 	
 	.figure--xl figcaption,
 	.figure--xxl figcaption {
@@ -2036,10 +2036,10 @@ figure.figure.medium {
 
     /* BREAKPOINT: 608px // Keep figure--xl at full width but maintain correct margins */
 
-@media screen and (min-width: 608px)
+@media screen and (min-width: 608px) {
     /*  When viewport exceeds the max-width of the article__body ...
         [article__body max width] + [bootstrap margins]
-        =        38em           +            4em       = 38em x 16px = 608px  */ {
+        =        38em           +            4em       = 38em x 16px = 608px  */
 	.figure--xl {
 		position: relative;
 		left: calc((38em - 100vw + 0px) / 2);
@@ -2053,8 +2053,8 @@ figure.figure.medium {
 
     /* BREAKPOINT: 880px (article__body left-aligned) // set figure--xl left-align with article__body */
 
-@media screen and (min-width: 880px)
-    /*  When viewport exceeds the max-width of the article__header ... */ {
+@media screen and (min-width: 880px) {
+    /*  When viewport exceeds the max-width of the article__header ... */ 
 	.figure--xl {
 		position: relative;
 		width: calc(100vw - 37px - ((100vw - 42em) / 2));
@@ -2112,6 +2112,14 @@ figure.figure.medium {
 
 /* ^ breaks again between 640 and 880 */
 
+@media screen and (min-width: 640px) and (max-width: 879px) {
+	.figure--xl, .figure--xxl {
+	    /*margin-left: -10px;
+	    margin-right: -10px;*/
+	}
+}
+
+
 @media screen and (min-width: 640px) and (max-width: 750px) {
 	.figure--xl,
 	.figure--xxl {
@@ -2125,6 +2133,27 @@ figure.figure.medium {
 		padding-left: 17px;
 		padding-right: 17px;
 	}
+	
+	/* feat media test */
+	.featured-media {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.featured-media .container-fluid {
+		padding: 0;
+		margin: 0;
+	}
+	
+	.featured-media .container-fluid .figure {
+
+		width: 100vw;
+	}
+	
+	.featured-media .container-fluid .figure .caption {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 
 @media screen and (min-width: 751px) and (max-width: 879px) {
@@ -2133,6 +2162,27 @@ figure.figure.medium {
 	    width: 100vw;
 	    transform: translateX(calc((38em - 100vw)/2 ));
 	  }
+	
+	/* feat media test */
+		.featured-media {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		
+		.featured-media .container-fluid {
+			padding: 0;
+			margin: 0;
+		}
+		
+		.featured-media .container-fluid .figure {
+	
+			width: 100vw;
+		}
+		
+		.featured-media .container-fluid .figure .caption {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
 }
 
     /* BREAKPOINT: 880px (article__body left-aligned) // set figure--xl left-align with article__body */
