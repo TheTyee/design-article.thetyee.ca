@@ -591,6 +591,12 @@ form input {
 	}
 }
 
+@media screen and (max-width: 500px) {
+	.new-site-nav__dropdown li {
+		margin-bottom: 20px; /* increase spacing for mobile */
+	}
+}
+
           /*  Site Header NON-STANDARD BREAKPOINT -- MAX 849px */
           /*  Style Nav only in narrow views */
 
@@ -694,7 +700,7 @@ form input {
 	}
 	
 	.new-site-nav__dropdown li {
-		margin-bottom: 20px; /* increase spacing for mobile */
+		margin-bottom: 15px; /* increase spacing for mobile */
 	}
 	
 	.new-site-nav__dropdown a {
