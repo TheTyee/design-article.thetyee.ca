@@ -694,7 +694,7 @@ form input {
 	}
 	
 	.new-site-nav__dropdown li {
-		margin-bottom: 18px; /* increase spacing for mobile */
+		margin-bottom: 20px; /* increase spacing for mobile */
 	}
 	
 	.new-site-nav__dropdown a {
