@@ -31,10 +31,8 @@
 	font-weight: 500;
 }
 
-/* hide from article page for demo purposes */
 body.default-global--new2019 #highlight-bar,
 body.article-series #highlight-bar {
-	display: none;
 	font-size: 0.9em;
 }
 
