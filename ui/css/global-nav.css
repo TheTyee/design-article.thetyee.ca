@@ -704,7 +704,7 @@ form input {
 	
 	.new-site-nav__dropdown-heading {
 		padding-bottom: 0.5em;
-		margin-bottom: 15px;
+		margin-bottom: 15px !important;
 		border-bottom: 1px solid #888;
 	}
 	
