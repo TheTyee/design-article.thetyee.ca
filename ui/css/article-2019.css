@@ -1923,7 +1923,7 @@ figure {
 	}
 }
 
-@media screen and (max-width: 640px) {
+/* FIGTEST @media screen and (max-width: 640px) {
 	.featured-media .container-fluid {
 		padding-left: 0;
 		padding-right: 0;
@@ -1931,7 +1931,7 @@ figure {
 	
 	figure:not(:first-of-type),
 	.aside {
-		/*width: 100%;*/
+		/*width: 100%;*!/
 		width: 100vw !important;
 		margin-left: -15px;
 		margin-right: -15px;
@@ -1944,7 +1944,7 @@ figure {
 		padding-right: 15px;
 		width: 100%;
 	}
-}
+}*/
 
     /* Remove float when view is wide enough */
 
@@ -2072,8 +2072,8 @@ figure.figure.medium {
     in large viewports it gets gigantic. */
 
 .figure--xxl {
-	position: relative;
-	width: calc(100vw);
+/*	FIGTEST position: relative;
+	width: calc(100vw);*/
     /* Set figure to full width with no margins  */
 	/*left: -15px;*/
     /* Set figure flush-left with viewport.
@@ -2089,37 +2089,67 @@ figure.figure.medium {
 
     /* BREAKPOINT: 608px // Keep figure--xl at full width but maintain correct margins */
 
-@media screen and (min-width: 608px)
+@media screen and (min-width: 880px) {
+
     /*  When viewport exceeds the max-width of the article__body ...
         [article__body max width] + [bootstrap margins]
-        =        38em           +            4em       = 38em x 16px = 608px  */ {
-	.figure--xxl {
+        =        38em           +            4em       = 38em x 16px = 608px  */ 
+/* FIGTEST	.figure--xxl {
 		position: relative;
 		width: calc(100vw);
-        /* Set figure to full width with no margins  */
+        /* Set figure to full width with no margins  *!/
 		left: calc((38em - 100vw - 30px) / 2);
         /* Set figure flush-left with viewport.
            [ offset between text colunm and left viewport edge]
-           [ [.main-col-container width] - [view width] - [bootstrap padding] ] / 2           */
+           [ [.main-col-container width] - [view width] - [bootstrap padding] ] / 2           *!/
+	}*/
+/* see https://css-tricks.com/full-width-containers-limited-width-parents/ for solutions */	
+	.figure--xxl {
+	    width: 100vw;
+	    transform: translateX(calc((38em - 100vw)/2  + 4em));
+	  }
+}
+
+/* ^ breaks again between 640 and 880 */
+
+@media screen and (min-width: 640px) and (max-width: 750px) {
+	.figure--xl,
+	.figure--xxl {
+	    margin-left: calc(50% - 50vw);
+	    margin-right: calc(50% - 50vw);
+	    left: 0;
+	  }
+
+	.figure--xl .caption,
+	.figure--xxl .caption {
+		padding-left: 17px;
+		padding-right: 17px;
 	}
 }
 
+@media screen and (min-width: 751px) and (max-width: 879px) {
+	.figure-xl,
+	.figure--xxl {
+	    width: 100vw;
+	    transform: translateX(calc((38em - 100vw)/2 ));
+	  }
+}
 
     /* BREAKPOINT: 880px (article__body left-aligned) // set figure--xl left-align with article__body */
 
-@media screen and (min-width: 880px)
-    /*  When viewport exceeds the max-width of the article__header ... */ {
+/* FIGTEST @media screen and (min-width: 880px)
+    /*  When viewport exceeds the max-width of the article__header ... *!/ {
 	.figure--xxl {
 		position: relative;
 		width: calc(100vw);
-        /* Set figure to full width with no margins   */
+        /* Set figure to full width with no margins   *!/
 		left: calc(((38em - 100vw - 30px) / 2) + 4.5em);
         /* Set figure flush-left with viewport.
            Calc as above but compensate for the -4.5em left offset of the .main-col-container.
            [calc as above] + 4.53em
-           [ [ [view width] - [txt col width] - [bootstrap padding] ] / 2 ] + 4.5em           */
+           [ [ [view width] - [txt col width] - [bootstrap padding] ] / 2 ] + 4.5em           *!/
 	}
-}
+}*/
 
 
 
