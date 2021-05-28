@@ -2195,7 +2195,7 @@ figure.figure.medium {
 	    transform: translateX(calc((38em - 100vw)/2 ));
 	  }
 	  
-	  .figure-xl,
+	  .figure--xl,
 	 .figure--xxl {
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
