@@ -2509,16 +2509,17 @@ main .hmpg-org-wrapper:first-of-type {
        a half-gutter row gap */
 }
 
-@media screen and (max-width: 1000px) {
-	.hmpg-org-most--column .hmpg-module-header {
-		margin-bottom: 1rem;
-	}
-}
-
 .hmpg-org-reported-elsewhere .hmpg-module-header {
 	margin-bottom: 4rem;
     /* Reported Elsewhere module needs more space here because they only use
        a half-gutter row gap */
+}
+
+@media screen and (max-width: 1000px) {
+	.hmpg-org-most--column .hmpg-module-header,
+	.hmpg-org-reported-elsewhere .hmpg-module-header { {
+		margin-bottom: 1rem;
+	}
 }
 
   /* Modules that have a tagline/blurb following their label need a margin */
@@ -3116,10 +3117,6 @@ main .hmpg-org-most::before {
 	grid-column-gap: var(--gutter-column);
 	grid-row-gap: 0;
 	align-items: start;
-}
-
-.hmpg-org-reported-elsewhere > .hmpg-module-header {
-	
 }
 
 .hmpg-org-reported-elsewhere__list .story-item {
