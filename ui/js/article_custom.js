@@ -124,7 +124,7 @@ window.datatwo;
 
 function showShares() {
     
-      if (combined > 1000) {
+      if (combined > 20) {
                          jQuery("#sharecount span.count").text(combined);
                         jQuery("#sharecount").fadeIn();
                      } else {
