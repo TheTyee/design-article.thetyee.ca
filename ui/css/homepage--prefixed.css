@@ -380,6 +380,14 @@ https://caniuse.com/#feat=css3-colors
 }
 
 
+header.new-site-header, header.new-site-header--homepage  {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 2000;
+width: 100%;
+}
+
 /* *** TUCKED INTO GLOBAL-NAV.CSS *** */
 
 /* Module text styles ----------------- */
