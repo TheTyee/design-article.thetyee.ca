@@ -6,6 +6,17 @@
 	display: none;
 }
 
+
+
+header.new-site-header, header.new-site-header--homepage  {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 2000;
+width: 100%;
+}
+
+
 #highlight-bar {
 	background: var(--highlight-blue);
 	min-height: 42px;
