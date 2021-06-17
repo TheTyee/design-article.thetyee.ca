@@ -8,7 +8,7 @@
 
 
 
-header.new-site-header, header.new-site-header--homepage  {
+.new-site-header__logo-block-wrapper  {
 position: fixed;
 top: 0;
 left: 0;
