@@ -88,7 +88,7 @@ a.new-site-header--homepage {
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
 	background: #fff;
-	margin-top: 0 !important;
+	margin-top: 0;
 	padding-top: 15px !important;
 	
 }
@@ -832,7 +832,7 @@ form input {
 		grid-column-gap: 0;
 		grid-row-gap: 0;
 		align-items: end;
-		margin-top: 1.5rem; /* desired offset from logo (3rem) - self padding-top (.5rem) - padding on nav__link (0.5rem)*/
+	/*	margin-top: 1.5rem; /* desired offset from logo (3rem) - self padding-top (.5rem) - padding on nav__link (0.5rem)*/
 		border-bottom: 1px solid var(--border-colour-cols);
 		padding: calc(.5rem) 0 calc(0rem + 2px);
         /* border-bottom: 1px solid var(--text-colour); */
