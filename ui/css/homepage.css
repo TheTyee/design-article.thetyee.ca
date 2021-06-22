@@ -438,6 +438,11 @@ body {
 
   .nav__link--join {
     color: var(--brand-colour--text);
+    background: rgb(255,208,0);
+background: rgba(255,208,0,0.8);
+padding: 0 10px;
+color: black;
+
   }
 
   .site-nav__dropdown-heading,
