@@ -6,9 +6,16 @@
 	display: none;
 }
 
-
+.new-site-nav__dropdown {
+	position: fixed;
+	top:0px;
+	left:0px;
+	width: 100%;
+	z-index:1999;
+}
 
 .new-site-header__logo-block-wrapper  {
+
 position: fixed;
 top: 0;
 left: 0;
