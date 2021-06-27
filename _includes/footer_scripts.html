@@ -36,36 +36,4 @@ App.router = new App.Router();
 {% endif %}
 </script>
 
-<script>
-jQuery( document ).ready( function( $ ) {
-	$('.new-nav__burger').click(function() {
-        //e.preventDefault();       
-			  if ( $('.new-site-nav__dropdown').is(":hidden")) {
-			  	$('.new-nav__burger .fas').removeClass('fa-bars').addClass('fa-times');
-			  	} else {
-				  	$('.new-nav__burger .fas').removeClass('fa-times').addClass('fa-bars');
-				}
-		$('#new-search-form-input').focus();		
-	});  
-});	
-</script>
-
-<script>
-function bumpMenu() {
-var barHeight = $(".new-site-header__logo-block-wrapper").height();
-$("#new-site-navigation").css("margin-top", barHeight + "px");
-}
-
-
-jQuery(document).ready(function() {
-bumpMenu();
-});
-$( window ).on( "load", function() { bumpMenu() })
-
-$(window).on('resize', function(){
-bumpMenu();
-}
-
-
-</script>
-
+<script src="{{ site.url }}ui/js/newnav-interact.js" type="text/javascript" charset="utf-8"></script>

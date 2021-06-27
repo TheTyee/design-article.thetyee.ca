@@ -9,7 +9,7 @@ jQuery( document ).ready( function( $ ) {
 			  	} else {
 				  	$('.new-nav__burger .fas').removeClass('fa-times').addClass('fa-bars');
 				if (typeof startpoint !== "undefined" || startpoing !== null) {				
-					$(window).scrollTop(startPoint);
+					$(window).scrollTop(window.startPoint);
 				}
 				}
 		$('#new-search-form-input').focus();		
