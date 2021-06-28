@@ -1,6 +1,7 @@
-/* Fonts */
-/* Miller and Franklin Gothic */
-@import url("https://use.typekit.net/whf8gkh.css");
+/* @override 
+	http://127.0.0.1:4000/ui/css/article--2019patches-loader.css */
+
+/* 
 
 /* Add CSS patches for the storypage based on the new home page */
 /* NOTE: For jekyll dev purposes the main css code should be @import'ed rather
@@ -17,4 +18,5 @@ application of styles from the old article page. */
 
 /* This file adds prefixes to all the CSS classes so that components from the new
 homepage can be used on other pages without creating css collisions */
-@import "homepage--prefixed.css?v=2";
+
+@import "homepage--prefixed.css";

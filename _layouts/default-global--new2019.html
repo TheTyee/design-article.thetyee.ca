@@ -12,10 +12,9 @@
     <!-- ===== Header ===== -->
 
     {% include 01-molecules/messaging/alerts--browser-support.html %}
-
-    {% include 01-molecules/blocks/ad-banner.html ad-source="UBCMUD-leaderboard.jpg" %}
-
-    {% include 02-organisms/sections/httpswarning.html %}
+    {% comment %}
+    {% include 01-molecules/messaging/highlight-bar.html %}
+    {% endcomment %}
 
     {% include 02-organisms/global/header--homepage-prefixed.html %}
 
@@ -34,24 +33,35 @@
         {% include 02-organisms/sections/messaging-zone.html %}
 
     {% endif %}
+    
+    <footer class="article-footer clearfix main-col-container">
+	    <div class="container-fluid">
+		    
+		{% include /01-molecules/blocks/messaging-block--builder.html %}
+    
+	    {% include /01-molecules/blocks/messaging-block--share.html %}
+	    
+	    {% include /01-molecules/blocks/messaging-block--subscribe.html %}
+	    
+	    </div>	        
+    </footer>
 
     {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
 
+	{% include 02-organisms/sections/featured-sponsor-article.html %} 
 
     {% include 02-organisms/sections/comments.html %}          <!-- NEEDS WORK -->
 
     {% assign barometer = 'true' %}
 
-    {% include 02-organisms/sections/messaging-zone.html %}
-
-    <div class="presents-col-container main-col-container container-fluid">{% include 01-molecules/blocks/presents-box.html %}</div>
+    {% include 02-organisms/sections/messaging-zone.html %}    
 
 
 
     <!-- =============================== -->
     <!-- ===== Footer ===== -->
 
-    {% include 02-organisms/global/footer-homepage-prefixed.html %}
+    {% include 02-organisms/global/footer-global.html %}
 
     {% include 02-organisms/global/footer-IE-fallback.html %}
 

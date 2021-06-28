@@ -302,14 +302,19 @@ console.log(datatwo.result);
         };
 
         //Moves focus directly to search field when user begins typing
+/*
         jQuery('.search-block').on('show.bs.dropdown', function(event) {
 
             setTimeout(function(){
                 jQuery('input#menu__search--input').focus();
             }, 500);
         });
+*/
 
-
+		/* place cursor in search field on toggle */
+		jQuery('.nav-bar__link--search').click(function(e) {      
+			$('input#new-search-form-input').focus();
+		});
 
        
 

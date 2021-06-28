@@ -5,16 +5,17 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-{% include meta/head.html %}
+{% include meta/head--2019.html %}
   <body class="{{ page.layout }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
     <!-- =============================== -->
     <!-- ===== Header ===== -->
 
     {% include 01-molecules/messaging/alerts--browser-support.html %}
-
-    {% include 01-molecules/blocks/ad-banner.html ad-source="UBCMUD-leaderboard.jpg" %}
     
-    {% include 02-organisms/global/header.html %}
+    {% include 01-molecules/messaging/highlight-bar.html %}
+
+    {% include 02-organisms/global/header--homepage-prefixed.html %}
+
 
     <!-- =============================== -->
     <!-- ===== Article components ===== -->
@@ -31,7 +32,17 @@
 
     {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
 
-    {% include 02-organisms/sections/messaging-zone.html %}
+     <footer class="article-footer clearfix main-col-container">
+	    <div class="container-fluid">
+		    
+		{% include /01-molecules/blocks/messaging-block--builder.html %}
+    
+	    {% include /01-molecules/blocks/messaging-block--share.html %}
+	    
+	    {% include /01-molecules/blocks/messaging-block--subscribe.html %}
+	    
+	    </div>	        
+    </footer>
 
     {% include 02-organisms/sections/latest-stories.html %}    <!-- NEEDS WORK -->
 
@@ -46,9 +57,13 @@
     <!-- =============================== -->
     <!-- ===== Footer ===== -->
 
-    {% include footer.html %}                 <!-- NEEDS WORK -->
+    {% include 02-organisms/global/footer-global.html %}
+
+    {% include 02-organisms/global/footer-IE-fallback.html %}
 
     {% include footer_scripts_standard.html %}
+
+    {% include 02-organisms/sections/subscription-modal.html %}
 
 
     </body>

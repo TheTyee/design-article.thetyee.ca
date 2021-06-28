@@ -18,11 +18,6 @@ You may also want to add a story badge (e.g. a series-badge), like this:
 <article class="story-item {{ include.story-item-class }}">
 
   <figure class="story-item__image">
-		{% if include.story-badge != nil %}
-
-	        {% include 00-atoms/images/story-badge.html badge-position="badge--story-item-placement" story-badge=include.story-badge %}
-
-	    {% endif %}
 	   <a href="">
         {% include 00-atoms/images/image.html content-source=include.content-source %}
     </a>
@@ -32,15 +27,13 @@ You may also want to add a story badge (e.g. a series-badge), like this:
 	<h2 class="story-item__headline"><a href="">{{ include.story-item-headline }}</a></h2>
 	<p class="story-item__deck">{{ include.story-item-dek }}</p>
   <div class="story-item__author">
-    <a href="author" rel="author">David Beers</a>
-    {% if include.author-2 != nil %}
-      <a href="author" rel="author">{{ include.author-2 }}</a>
+    <a href="author" rel="author">David Beers</a>{% if include.author-2 != nil %}, <a href="author" rel="author">{{ include.author-2 }}</a>
     {% endif %}
     {% if include.author-3 != nil %}
-      <a href="author" rel="author">{{ include.author-3 }}</a>
+      and <a href="author" rel="author">{{ include.author-3 }}</a>
     {% endif %}
-  </div>
-	<div class="story-item__date">30 Sep 2018</div>
+	/ 30 Sep 2018
+	</div>
 
 </article>
 <!-- END 01-molecules/blocks/story-item -->

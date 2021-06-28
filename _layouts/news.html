@@ -1,0 +1,30 @@
+---
+---
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+{% include meta/head-homepage.html %}
+  <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="section-index">
+
+    <!-- =============================== -->
+    <!-- ===== Header ===== -->
+
+    {% include 02-organisms/global/header--homepage.html %}
+
+    <!-- =============================== -->
+
+
+{{ content }}
+
+    <!-- ===== Footer ===== -->
+
+    {% include 02-organisms/global/footer-global.html %}
+
+    {% include footer_scripts_standard.html %}
+
+    </body>
+
+</html>
+

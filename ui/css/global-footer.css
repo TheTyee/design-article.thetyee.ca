@@ -1,0 +1,264 @@
+/* @override 
+	http://127.0.0.1:4000/ui/css/global-footer.css */
+
+
+
+/* SITE FOOTER organism ----------------- */
+
+.site-footer {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 140px);
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: 2rem;
+	align-items: start;
+	/*justify-content: center;*/
+	color: #eee;
+	background-color: var(--utility-background-color);
+	
+	  /* Patches CSS for new footer on storypages */
+	font-family: var(--typeface-sans);
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	padding: 4rem var(--page-margin-sides) var(--gutter-row) !important;
+}
+
+@media screen and (min-width: 950px) {
+	.site-footer {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	}
+}
+
+
+.site-footer div {
+	padding-bottom: 1rem;
+}
+
+.site-footer .new-facebook {
+	padding-bottom: 2rem;
+    /* Patches CSS for new footer on storypages */
+	font-size: 100%;
+}
+
+    /* Patches CSS for new footer on storypages */
+
+
+
+.site-footer .site-footer__logo-container {
+	display: none;
+}
+
+.site-footer .site-footer__logo {
+	width: 80%;
+}
+
+.links-group {
+	display: grid;
+	grid-template-rows: auto;
+}
+
+.links-group h2 {
+	min-height: 4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+
+    /* Patches CSS for new footer on storypages */
+	font-family: var(--typeface-sans);
+	color: #eee;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	margin: 0;
+}
+
+.links-group li {
+	font-size: 1.2em;
+	line-height: 2.5rem;
+	margin-bottom: 7px;
+}
+
+.links-group.social li {
+	display: inline;
+	margin-right: 12px;
+}
+
+.links-group.social li > * {
+	font-size: 26px !important;
+}
+
+.site-footer .fa {
+	font-size: 26px !important;
+}
+
+.links-group li a {
+	color: var(--brand-colour);
+	
+}
+
+.links-group li a:hover {
+	color: var(--yellow);
+}
+
+
+
+/* End of Site Footer organism */
+
+
+      /* ---- SITE FOOTER responsive enhancement ---- */
+      /*  */
+
+      /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
+
+@media screen and (min-width: 704px) {
+	.site-footer {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		justify-content: left;
+	}
+	
+	.site-footer div {
+		padding-bottom: 2rem;
+		text-align: left;
+	}
+}
+
+
+      /*  Site Header NON-STANDARD BREAKPOINT -- 664px */
+
+@media screen and (min-width: 950px) {
+	.site-footer {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	}
+}
+
+
+      /*  Site Header LARGE BREAKPOINT -- 1368px */
+
+@media screen and (min-width: 1368px) {
+	.site-footer .site-footer__logo-container {
+		display: block;
+	}
+}
+
+/* End of Site Footer organism */
+
+
+  /*  IE PATCHES */
+  /* Hide old header from all non-IE browsers */
+
+.site__header-IE {
+	display: none;
+}
+  /* Show old header to IE 10 and IE 11. Hide new header. */
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+	.site__header-IE {
+		display: block;
+	}
+	
+	.new-site-header {
+		display: none;
+	}
+}
+
+  /* Hide old footer from all non-IE browsers */
+
+.site-footer-IE {
+	display: none;
+}
+  /* Show old footer to IE 10 and IE 11. Hide new header. */
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+	.site-footer-IE {
+		display: block;
+	}
+	
+	.site-footer {
+		display: none;
+	}
+}
+  /* Set footer links in green on IE 10 and 11 */
+
+.site-footer-IE .footer__menu a, .site-footer-IE .footer__menu a:link, .site-footer-IE .footer__menu a:visited {
+	color: #82AD00;
+}
+
+
+/* SITE-FOOTER ========================================================================== */
+
+/*footer.site-footer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #424242;
+}*/
+
+footer(not:.article-footer) {
+	clear: both;
+	  /* line-height: 2em; -AG */
+	font-size: 0.9em;
+}
+
+footer(not:.article-footer) div:first-child {
+	margin-top: 20px;
+	padding: 20px 0px;
+}
+
+footer(not:.article-footer) ul {
+	padding: 0px;
+	list-style-type: none;
+	margin: 0px;
+}
+
+footer .footer__menu {
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+.footer__menu li {
+	display: block;
+	clear: both;
+	text-align: center;
+	border-top: solid 1px #696868;
+	padding: 8px 0px;
+}
+
+.footer__menu li:last-child {
+	border-bottom: solid 1px #696868;
+}
+
+footer ul {
+	padding: 0px;
+	list-style-type: none;
+	margin: 0px;
+}
+
+footer .footer__menu {
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+}
+
+.footer__menu li {
+	display: inline-block;
+	margin-left: 20px;
+	border-top: 0px;
+}
+
+@media (min-width: 768px) {
+	footer {
+		clear: both;
+	}
+	
+	footer div:first-child {
+		/*border-top: solid 1px #696868;
+		margin-top: 20px;*/
+		/*padding: 20px 0px;*/
+	}
+	
+	.footer__menu li:last-child {
+		border-bottom: 0px;
+	}
+}
