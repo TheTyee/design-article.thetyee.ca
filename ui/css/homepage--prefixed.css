@@ -440,6 +440,18 @@ https://caniuse.com/#feat=css3-colors
       right: 0;
     }
 
+.nobefore {
+   font-family: var(--typeface-serif);
+  font-size: .86em;
+  font-weight: 600;
+  margin: 10px;
+ 
+}
+.nobefore::before, .nobefore::after  {
+ content: none;
+ margin-top:2px;
+}
+
 
 /* Header Typography -- Navigation */
 
@@ -453,6 +465,7 @@ https://caniuse.com/#feat=css3-colors
 background: rgba(255,208,0,0.8);
 color: black !important;
 padding: 0 2px;
+border-radius: 5px;
 }
 
   .new-site-nav-main a.new-nav__link--join {
@@ -803,6 +816,10 @@ strong.new-site-header--homepage {
   font-weight: 600;
 }
 
+.nobefore a {
+      border-bottom: 2px solid var(--link-colour);
+    }
+
 
 /* LINK atom */
 
@@ -1008,6 +1025,12 @@ a.new-site-header--homepage {
           .new-story-item--secondary .new-badge--story-item-placement, .new-story-item--tertiary .new-badge--story-item-placement {
             transform: scale(1);
           }
+          
+          .new-site-header__logo {
+            min-width: 320px;
+          }
+          
+          
       }
 
 /* end of Badge molecule */
@@ -2650,6 +2673,11 @@ a.new-site-header--homepage {
             .new-site-header {
               padding-bottom: 1rem;
             }
+            
+            
+             .nobefore {
+              display:none;
+              }
           }
 
           /*  Site Header NON-STANDARD BREAKPOINT -- MAX 849px */
@@ -2787,6 +2815,11 @@ a.new-site-header--homepage {
           }
 
 
+.nobefore {
+   display:none;
+  }
+
+
           /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
           @media screen and (min-width: 850px) {
 
@@ -2815,7 +2848,15 @@ a.new-site-header--homepage {
                 display: none;
               }
 
+                    .nobefore {
+                 display:block;
+                 line-height: 100%;
+                 text-align: center;
+              }
 
+
+              
+       
               /* Create SITE-NAV BAR GRID */
               .new-site-nav-main {
                 /* Set element's position within its container (.site-header__logo-block) */
