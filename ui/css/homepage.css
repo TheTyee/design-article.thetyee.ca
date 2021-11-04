@@ -427,6 +427,19 @@ body {
       right: 0;
     }
 
+.nobefore {
+   font-family: var(--typeface-serif);
+  font-size: .86em;
+  font-weight: 600;
+  margin: 10px;
+ 
+}
+.nobefore::before, .nobefore::after  {
+ content: none;
+ margin-top:2px;
+}
+
+
 
 /* Header Typography -- Navigation */
 
@@ -442,6 +455,7 @@ body {
 background: rgba(255,208,0,0.8);
 padding: 0 10px;
 color: black;
+border-radius: 5px;
 
   }
 
@@ -888,9 +902,9 @@ a {
   text-decoration: none;
 }
 
-    /* link styles for body text of Insider and Deep Dive */
+  /* link styles for body text of Insider and Deep Dive */
     p a,
-    .site-header__tagline a {
+    .site-header__tagline a, .nobefore a {
       border-bottom: 2px solid var(--link-colour);
     }
 
@@ -2657,6 +2671,10 @@ main .hmpg-org-wrapper.annex {
         display: none;
       }
 
+ .nobefore {
+   display:none;
+  }
+
   .site-header__logo {
     position: relative;
     justify-self:center;
@@ -2877,6 +2895,10 @@ main .hmpg-org-wrapper.annex {
                 position: relative;
               }
 
+              .nobefore {
+                display:none;
+               }
+               
               .site-nav-main__expander-toggle.nav__burger::before {
                 content: "menu";
                 display: inline-block;
@@ -3006,11 +3028,20 @@ main .hmpg-org-wrapper.annex {
               .site-header__tagline--b {
                 display: block;
               }
+              
+              .site-header__logo {
+                min-width: 320px;
+              }
 
               .site-header__tagline--mobile {
                 display: none;
               }
 
+              .nobefore {
+                 display:block;
+                 line-height: 100%;
+                 text-align: center;
+              }
 
               /* Create SITE-NAV BAR GRID */
               .site-nav-main {
