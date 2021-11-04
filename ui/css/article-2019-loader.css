@@ -20,4 +20,4 @@
   Another thing to note is that the @import'ed stylesheet shouldn't itself contain
   any @import declarations, otherwise you end up with yet another devtools bug
   shitstorm and a headache the size of mother russia. */
-@import "article-2019.css";
+@import "article-2019.css?v=6";
