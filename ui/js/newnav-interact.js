@@ -1,6 +1,6 @@
 
 jQuery( document ).ready( function( $ ) {
-	$('.new-nav__burger').click(function() {
+	$('.new-nav__burger, .nav-bar__link--more, .nav-bar__link--search').click(function() {
         //e.preventDefault();       
 			  if ( $('.new-site-nav__dropdown').is(":hidden")) {
 			  	$('.new-nav__burger .fas').removeClass('fa-bars').addClass('fa-times');

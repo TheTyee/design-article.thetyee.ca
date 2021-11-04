@@ -243,6 +243,8 @@ if (topic == "Zoe_Ducklow") { topic = "Zoë_Ducklow"
 } else if (topic =="Geoff_D_Auria") { topic = "Geoff_D'Auria" 
 } else if (topic =="Michael_M_Gonigle") { topic = "Michael_M'Gonigle" 
 } else if (topic =="Kata__Catherine__Lafferty") { topic = "Catherine__Lafferty" };
+// topic = topic.replace(/ë/gi, "e");
+
         //make UnitObjects global, so I don't have to keep hitting the API
         UnitObjects = UnitObjects;
                 getUnitStories(18,0);

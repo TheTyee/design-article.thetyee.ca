@@ -30,7 +30,7 @@ function fixFeaturedMediaOffset(){
     if (jQuery(window).width() >= 1200 && (jQuery('.featured-media .figure').height() >= 5 )  ) {
         var mediaHeight=  jQuery('.featured-media .figure').outerHeight();
         var sectionHeight=  jQuery(".featured-media .ad-box").outerHeight();
-        if (  (sectionHeight - mediaHeight) >= 0) {
+        if (  (sectionHeight - mediaHeight) >= 0  && jQuery(".featured-media .ad-box").css("display") === "block" ) {
 
             var mediamargin =  mediaHeight - sectionHeight + -13;
             jQuery("section.featured-media").css("margin-bottom", mediamargin);
@@ -213,7 +213,7 @@ console.log(datatwo.result);
                 
        
        }
-        getShares();
+       // getShares();
        
        
        
