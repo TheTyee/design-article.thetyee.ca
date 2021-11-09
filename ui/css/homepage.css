@@ -2977,7 +2977,9 @@ main .hmpg-org-wrapper.annex {
                   }
 
                   .site-nav__dropdown .nav__link--join  {
-                    padding-top: 3rem;
+                    padding-left: 1rem;
+                    color: white;
+                    padding-top:5px;
                   }
 
               /* Search Dropdown appearance in narrow views */
