@@ -3,8 +3,8 @@
 
   <!--Site Header Logo Block -->
   <div class="new-site-header__logo-block-wrapper">
-  {% include 01-molecules/messaging/highlight-bar.html %}
-  <div class="new-site-header__logo-block">
+  <!-- include 01-molecules/messaging/highlight-bar.html %} -->
+  <div class="new-site-header__logo-block scroll"> <!-- add class 'scroll' for compact sticky version -->
 	    <!--site tagline A -->
 	    <div class="new-site-header__tagline new-site-header__tagline--a">
 		    Independent<br />
@@ -17,6 +17,11 @@
 	    <div class="new-site-header__logo">
 	      <a href="#"><img src="http://thetyee.github.io/design-article.thetyee.ca/ui/img/thetyee.svg" class="new-site-header__logo-img" id="new-site-logo" alt="Tyee logo" /></a>
 	      <!--site mobile tagline CTA -->
+	    </div>
+	    
+	    <div class="new-site-header__buttons"> 
+		    <a href="https://support.thetyee.ca/" class="yellow"><i class="fas fa-heart" aria-hidden="true"></i> support<span> us</span></a>
+		    <a href="https://subscribe.thetyee.ca/?utm_campaign=new_head/" class="black hide-on-phone"><i class="fas fa-envelope" aria-hidden="true"></i> subscribe<span> free</span></a>
 	    </div>
 	
 	    <!--site tagline B .new-site-header__tagline--b deprecated -->
