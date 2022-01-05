@@ -21,18 +21,44 @@ var barHeight = $(".new-site-header__logo-block-wrapper").height();
 $("#new-site-navigation").css("margin-top", barHeight + "px");
 var menuheight = $(".new-site-navigation").height();
 $(".new-site-nav__dropdown").css("top", barHeight-15 + "px");
-}
+};
 
 
 jQuery(document).ready(function() {
 bumpMenu();
 });
+
 jQuery( window ).on( "load", function() {
     bumpMenu();
+	setMain();
     });
 
 jQuery(window).on('resize', function(){
 bumpMenu();
+setMain();
+});
+
+window.mainPosition = $("main").offset().top;
+
+
+function setMain(){
+	window.mainPosition = $("main").offset().top;
+}
+
+// Add/remove classes to navigation based on position
+
+
+function scrollMenu(){
+	setMain();
+	if ($(window).scrollTop()  > mainPosition) {
+      $('.new-site-header__logo-block').addClass('scroll');
+    } else {
+      $('.new-site-header__logo-block').removeClass('scroll');
+	}
+}
+
+$(window).bind('load scroll', function() {
+ scrollMenu();
 });
 
 
