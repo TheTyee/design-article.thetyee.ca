@@ -38,11 +38,15 @@ bumpMenu();
 setMain();
 });
 
-window.mainPosition = $("main").offset().top;
+
 
 
 function setMain(){
+	if ($("main").offset() ) {
 	window.mainPosition = $("main").offset().top;
+	} else if ($("header.article__header").offset() ) {
+		window.mainPosition = $("header.article__header").offset().top;
+	}
 }
 
 // Add/remove classes to navigation based on position
