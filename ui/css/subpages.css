@@ -336,13 +336,12 @@ body.subpage aside .toc h6 {
 .team .person .title {
 	font-weight: bold;
 	line-height: 1.4;
-	margin-bottom: 7px;
 }
 
 .team .person p {
 	font-size: 1em;
 	line-height: 1.4;
-	margin-bottom: 0;
+	margin: 7px 0 0 0;
 }
 
 .team .person p a {
