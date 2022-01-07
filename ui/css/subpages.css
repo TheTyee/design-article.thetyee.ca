@@ -282,3 +282,71 @@ body.subpage aside .toc h6 {
 .article-footer.main-col-container {
 	padding-bottom: 30px !important;
 }
+
+/* team */
+
+.team .top-photo {
+	margin: 18px 0 42px;
+}
+
+.team .team-grid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-column-gap: 7%;
+	grid-row-gap: 45px;
+	column-gap: 49px;
+}
+
+@media screen and (max-width: 567px) {
+	.team .team-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.team .team-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.team .team-grid:last-of-type {
+	margin-bottom: 40px;
+}
+
+.team .person {
+	grid-columns: auto / span 1;
+}
+
+.team .person > * {
+	font-family: var(--typeface-sans);
+}
+
+.team .person img {
+	width: 100%;
+	height: auto;
+	margin: 0 0 8px;
+}
+
+.team .person .name {
+	font-size: 1.12em;
+}
+
+.team .person .title {
+	font-weight: bold;
+	line-height: 1.4;
+	margin-bottom: 7px;
+}
+
+.team .person p {
+	font-size: 1em;
+	line-height: 1.4;
+	margin-bottom: 0;
+}
+
+.team .person p a {
+	font-size: 0.9em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
