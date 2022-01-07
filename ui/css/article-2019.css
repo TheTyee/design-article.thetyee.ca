@@ -939,6 +939,20 @@ h2.index-list-header, .index-list h2, .block-inner h2 {
 	margin-bottom: 1em;
 }
 
+/* little bump for article because it hides behind the menu at some width */
+
+@media (max-width: 845px) {
+	.article__header {
+		margin-top: 75px !important;
+	margin-top: 14vw !important;
+	}
+	
+	html {
+		background: white !important;
+	}
+}
+
+
     /* BREAKPOINT: in xs views remove top-border from block and apply it to each list,
        also, adjust vertial spacing */
 
@@ -1041,7 +1055,10 @@ span.list-metric, .index-list span {
 	position: relative;
 	max-width: 45em;
 	max-width: 49em;
-	margin: 30px auto 0 auto !important;
+	margin-right: auto !important;
+	margin-bottom: 0 !important;
+    margin-left: auto !important;
+	margin-top: 30px;
 }
 
 /*.article__header .container-fluid {
