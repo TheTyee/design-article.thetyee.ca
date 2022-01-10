@@ -2,35 +2,35 @@
 
 /* subpage specific code */
 
-p.intro-large {
+.subpage p.intro-large {
 	font-family: var(--typeface-sans);
 	font-size: 1.42em;
 	line-height: 1.4;
 	font-weight: 300;
 }
 
-strong {
+.subpage strong {
 	font-weight: 500;
 }
 
-.fluid-width-video-wrapper {
+.subpage .fluid-width-video-wrapper {
 	margin: 30px 0;
 }
 
-.article__header {
+.subpage .article__header {
 	padding: 15px 0 0 0;
 	max-width: 45em;
 }
 
 @media screen and (max-width: 879px) {
-	.article__header {
+	.subpage .article__header {
 		max-width: 38em;
 		padding: 15px 0 0 15px;
 	}
 }
 
 @media screen and (min-width: 640px) and (max-width: 750px) {
-	.article__header {
+	.subpage .article__header {
 		max-width: 45em;
 		padding-left: 32px;
 		padding-right: 32px;
@@ -47,7 +47,7 @@ strong {
 	}
 }
 
-.article__header h1 {
+.subpage .article__header h1 {
 	margin-bottom: 20px;
 }
 
@@ -163,20 +163,20 @@ body.subpage aside .toc li a:hover {
 
 /* see line 2885+ on article.css */
 
-.presents-box { 
+.subpage .presents-box { 
     padding-bottom: 0;
 }
         
-.presents-box h5 {
+.subpage .presents-box h5 {
     margin-bottom: 1em;
 }
 
-.presents-box h6 {
+.subpage .presents-box h6 {
     padding-top: .66em;
 }
 
 
-.presents-box img {
+.subpage .presents-box img {
     float: right;
     margin-top: 0.3em;
     margin-bottom: 0em;
@@ -186,7 +186,7 @@ body.subpage aside .toc li a:hover {
     background-color: none;
 }
 
-.presents-col-container {
+.subpage .presents-col-container {
     margin-top: -1.5em;
     margin-bottom: 3em;
 }
@@ -198,30 +198,30 @@ body.subpage aside .toc li a:hover {
 - show the factbox within an aside */
 @media screen and (min-width: 939px) {
 
-	.presents-box {
+	.subpage .presents-box {
 	    display: none;
 	}
 	
-	.aside .presents-box {
+	.subpage .aside .presents-box {
 	    display: block;
 	}
 }
 
-.index-page__story-list .presents-box {
+.subpage .index-page__story-list .presents-box {
     display: block;  /* Show presents-box at all views on index-pages. */
 }
 
-.presents-box.index-list-spacing { 
+.subpage .presents-box.index-list-spacing { 
     margin-top: 2em;
 }  /* Matches margin to the common index-list-spacing margin */
 
 
-.presents-box.text-block-container {
+.subpage .presents-box.text-block-container {
 	border-bottom: 0;
 	border-top: 6px solid;
 }
 
-.presents-box p {
+.subpage .presents-box p {
 	font-family: var(--typeface-sans);
 	font-size: 1em;
 	line-height: 1.4;
@@ -230,7 +230,7 @@ body.subpage aside .toc li a:hover {
 	padding-bottom: 15px;
 }
 
-.presents-box h5 {
+.subpage .presents-box h5 {
 	font-weight: normal;
 	text-align: center;
 	font-size: 0.9em;
@@ -241,7 +241,7 @@ body.subpage aside .toc li a:hover {
 	margin-top: 1.4em;
 }
 
-.presents-box h6,
+.subpage .presents-box h6,
 body.subpage aside .toc h6 {
 	font-family: var(--typeface-sans);
 	font-size: 1em;
@@ -255,7 +255,7 @@ body.subpage aside .toc h6 {
 	padding: 0 !important;
 }
 
-.presents-box h6 a {
+.subpage .presents-box h6 a {
 	text-transform: none;
 	text-decoration: underline;
 	color: #111 !important;
@@ -263,23 +263,23 @@ body.subpage aside .toc h6 {
 	padding: 0;
 }
 
-.presents-box a:hover {
+.subpage .presents-box a:hover {
 	transform: scale(1);
 	font-size: 1em;
 	background: var(--yellow);
 	border: 0;
 }
 
-.presents-box h6:hover {
+.subpage .presents-box h6:hover {
 	border: 0;
 }
 
-.presents-box img {
+.subpage .presents-box img {
 	float: right;
 	margin-top: 14px;
 }
 
-.article-footer.main-col-container {
+.subpage .article-footer.main-col-container {
 	padding-bottom: 30px !important;
 }
 
