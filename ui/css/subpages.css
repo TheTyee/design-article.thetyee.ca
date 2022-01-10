@@ -357,6 +357,14 @@ body.subpage aside .toc h6 {
 		grid-template-columns: 1fr;
 	}
 	
+	.team .person .name {
+		font-size: 1.2em;
+	}
+	
+	.team .person .title {
+		font-size: 1.15em;
+	}
+	
 	.team .person p {
 		font-size: 1.1em;
 	}
