@@ -111,7 +111,7 @@ ul#nav-bar {
 
 ul#nav-bar li {
 	display: inline;
-	margin: 0 16px;
+	margin: 0 15px;
 }
 
 .new-site-nav li a, ul#nav-bar label {
@@ -272,7 +272,7 @@ body.article-series .new-site-header__logo-block.scroll {
 @media screen and (min-width: 640px) and (max-width: 849px) {
 	body.default-global--new2019 .new-site-header__logo-block,
 	body.article-series .new-site-header__logo-block {
-		max-width: 54.5em;
+		max-width: 57.7em;
 		padding-left: 32px !important;
 		padding-right: 32px !important;
 	}
