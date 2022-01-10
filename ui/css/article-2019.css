@@ -1115,7 +1115,7 @@ span.list-metric, .index-list span {
 @media screen and (min-width: 1200px) {
 	.featured-media {
 		position: relative;
-		max-width: 48em;
+		/*max-width: 48em;*/
 		margin: 0 auto;
 		padding-left: 1em;
 		padding-right: 1em;
@@ -1147,10 +1147,9 @@ span.list-metric, .index-list span {
 @media screen and (min-width: 1400px) {
 	.featured-media {
 		position: relative;
-		max-width: 53.75em;
+		/*max-width: 53.75em;*/
 		margin: 0 auto 0 auto;
-		padding-left: 1em;
-		padding-right: 1em;
+		
 	}
 }
 
