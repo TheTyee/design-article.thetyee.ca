@@ -287,6 +287,8 @@ body.subpage aside .toc h6 {
 
 .team .top-photo {
 	margin: 18px 0 42px;
+	width: 100%;
+	height: auto;
 }
 
 .team .team-grid {
@@ -297,18 +299,6 @@ body.subpage aside .toc h6 {
 	grid-column-gap: 7%;
 	grid-row-gap: 45px;
 	column-gap: 49px;
-}
-
-@media screen and (max-width: 567px) {
-	.team .team-grid {
-		grid-template-columns: 1fr 1fr;
-	}
-}
-
-@media screen and (max-width: 350px) {
-	.team .team-grid {
-		grid-template-columns: 1fr;
-	}
 }
 
 .team .team-grid:last-of-type {
@@ -348,4 +338,26 @@ body.subpage aside .toc h6 {
 	font-size: 0.9em;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 567px) {
+	.team .team-grid {
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 6%;
+		grid-row-gap: 40px;
+	}
+	
+	.team h2 {
+		margin-top: 45px !important;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.team .team-grid {
+		grid-template-columns: 1fr;
+	}
+	
+	.team .person p {
+		font-size: 1.1em;
+	}
 }
