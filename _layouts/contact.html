@@ -6,8 +6,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 {% include meta/head--2019.html %}
-
-  <body class="article-series index" id="">
+  <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %} default-global--new2019 subpage" id="">
 
     <!-- =============================== -->
     <!-- ===== Header ===== -->
@@ -171,117 +170,232 @@ This page requires Javascript. Your browser either doesn't support JavaScript or
 
 <!-- Begin organisms/article/article__header -->
 <!--Article header, including hed, dek, author and social links-->
-<!-- {% include 02-organisms/article/article__header.html %} -->
+<header class="article__header" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">   
 
-<!-- Begin organisms/article/article__header -->
-<!--Article header, including hed, dek, author and social links-->
-<header class="article__header" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">
-
-    <div class="container-fluid">
-
-            <!-- 00-atoms/images/series-badge -->
-
-<a href="#series-listview-link" class="series-badge badge--headline-placement"><img src="http://thetyee.github.io/design-article.thetyee.ca/ui/img/badge-series.svg"></a>
-            <h6 class="category-label"><a href="/category-link-here/" data-bind="category">News</a></h6>
-        <h1 class="" data-bind="title">Fixing a Family Housing Crisis</h1>
-<!-- 		<h4 data-bind="teaser">A series on the housing crisis</h4> -->
-        <!-- Begin molecules/blocks/tool-bar -->
-
-    </div> <!--END .container-fluid-->
+        <h1 class="" data-bind="title">Contact us</h1>
 
 </header>
+
+
+   <!-- NEEDS WORK add full-width format -->
 
 <!-- Begin organisms/article/article__body -->
 
 <article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
+    <!--These are includes for each modular element (if i've missed any let me know and I can build it out). These are all includes and can be found in the _includes folder. -->
 
-    <div class="container-fluid clearfix article-image">
-	    
-		<!-- Replace with 01-molecules/blocks/figure -->
-		<figure class="figure {{ include.figure-class }}" data-dev-object-descrip="01-molecules/blocks/figure" data-dev-status="IN-PROGRESS">
-			<img width="960" height="639" src="http://www.thetyee.ca/News/2020/05/13/StefaniaSecciaSonMax.jpg" class="responsive-img" width="960" alt="StefaniaSecciaSonMax.jpg" />
-				<figcaption class="caption">Stefania Seccia and son Max: ‘We just see homeownership as a way to secure our future. I kind of hate that that dream seems so unrealistic.’ <span class="caption__media--credit"></span></figcaption>
-		</figure>
-        
-    </div>
-        
-        <div class="container-fluid clearfix">                
-                          <p>Four years ago, a spike in home prices and rent rates spurred B.C. residents to call for change and politicians to respond with new taxes to prevent speculation, and funding to build housing. Then the COVID-19 crisis hit. In this special series, Jen St. Denis reports in-depth on how families are faring in Metro Vancouver’s housing market, whether new policies are making an impact, and how to build a resilient housing system post-pandemic.</p>
-                          <p>This series is produced with financial support from SFU Vancity Office of Community Engagement. Support for this project does not necessarily imply endorsement of the findings nor content of this report. Funders neither influence nor endorse the particular content of reporting. Other publications wishing to publish this series, contact The Tyee <a href=”mailto:rsmith@thetyee.ca”>here</a>.</p>
-                        
-                      </div>
-                    </div>
-                       <div class="share-tools" style="opacity:0;position:fixed;">
-    <a href="#" title="Share article via email" data-toggle="modal" data-target="#share-email"><img src="/ui/img/share-via-email.png" alt="Share article via email" /></a>
-    <a href="javascript:window.print()" title="Print this article"><img src="/ui/img/print-this-story.png" alt="Print this article" /></a>
-    <div class="fb-like" data-href="http://thetyee.ca/Series/2020/04/23/Fixing-A-Family-Housing-Crisis/" data-send="true" data-layout="button_count" data-width="100" data-show-faces="false" data-font="lucida grande" data-action="recommend"></div>
-            &nbsp;
-            <div id="twitterwrap">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://thetyee.ca/Series/2020/04/23/Fixing-A-Family-Housing-Crisis/" data-via="TheTyee" data-hashtags="">Tweet</a>
-            </div>
-<!--There was a onload script here for the Twitter widget, but it's been moved to the GTM onload tag-->
-</div>
-                  </div>
-                  <div class="container-fluid clearfix series-list-wrapper">
-                    <div class="content-main">
-                      <div class="block block-article_list">
-                        <div class="block-inner">
-                          <h2 class="title">In This Series</h2>
-                          <div class="content">
-                          <div class="article-list news">
-                            <div class="photo-insert"><a href="/News/2020/04/23/Canada-Housing-System-Cracking-Under-Crisis/"><img src="http://www.thetyee.ca/News/2020/04/23/MazdakGharibnavazBalcony_newcover_size_thumb.jpg" width="146" height="112" alt="MazdakGharibnavazBalcony.jpg" /></a></div>
-                            <div class="article-list-content">
-                              <h4><a href="/News/2020/04/23/Canada-Housing-System-Cracking-Under-Crisis/">Canada’s Housing System Is Cracking under the Crisis</a></h4>
-                              <p>Renters are asking why they should pay their landlords, while landlords fear losing their own housing.</p>
-                              <p class="meta"><a class="contrib-link" title="Bio page for Jen St. Denis" href="/Bios/Jen_St__Denis/">Jen St. Denis</a>, 23 Apr 2020</p>
+    <div class="container-fluid clearfix">
 
-                            </div>
-                          <br clear="all" />
-                          </div>
-                          <div class="article-list news">
-                            <div class="photo-insert"><a href="/News/2020/05/11/The-Human-Cost-Of-Making-Social-Housing-Scarce/"><img src="http://www.thetyee.ca/News/2020/05/10/Evangeline-D_newcover_size_thumb.jpg" width="146" height="112" alt="Evangeline-D.jpg" /></a></div>
-                            <div class="article-list-content">
-                              <h4><a href="/News/2020/05/11/The-Human-Cost-Of-Making-Social-Housing-Scarce/">No Escape: The Human Cost of Making Social Housing Scarce</a></h4>
-                              <p>Rental discrimination and a big BC Housing backlog are leaving desperate single moms out in the cold.</p>
-                              <p class="meta"><a class="contrib-link" title="Bio page for Jen St. Denis" href="/Bios/Jen_St__Denis/">Jen St. Denis</a>, 11 May 2020</p>
+        <!--An ASIDE containing a FACT BOX. This aside will be hidden in narrow viewports. -->
+        <!-- Begin 01-molecules/blocks/aside -->
 
-                            </div>
-                          <br clear="all" />
-                          </div>
-                          <div class="article-list news">
-                            <div class="photo-insert"><a href="/News/2020/05/14/Families-Falling-Off-Housing-Ladder/"><img src="http://www.thetyee.ca/News/2020/05/13/StefaniaSecciaSonMax_newcover_size_thumb.jpg" width="146" height="112" alt="StefaniaSecciaSonMax.jpg" /></a></div>
-                            <div class="article-list-content">
-                              <h4><a href="/News/2020/05/14/Families-Falling-Off-Housing-Ladder/">Shut Out: How Families Have Fallen Off the Housing Ladder</a></h4>
-                              <p>Owning a home was once the Canadian dream. In Vancouver, it’s out of reach for most.</p>
-                              <p class="meta"><a class="contrib-link" title="Bio page for Jen St. Denis" href="/Bios/Jen_St__Denis/">Jen St. Denis</a>, 14 May 2020</p>
 
-                            </div>
-                          <br clear="all" />
-                          </div>
-                          <div class="article-list news">
-                            <div class="photo-insert"><a href="/News/2020/05/18/Evicted-Renting-Families-Lose-Home-After-Home/"><img src="http://www.thetyee.ca/News/2020/05/17/Goss-main_newcover_size_thumb.jpg" width="146" height="112" alt="Goss-main.jpg" /></a></div>
-                            <div class="article-list-content">
-                              <h4><a href="/News/2020/05/18/Evicted-Renting-Families-Lose-Home-After-Home/">Evicted: Renting Families Lose Home after Home after Home</a></h4>
-                              <p>In Metro Vancouver, it’s tough to put down roots. Will new rent laws and speculation taxes help?</p>
-                              <p class="meta"><a class="contrib-link" title="Bio page for Jen St. Denis" href="/Bios/Jen_St__Denis/">Jen St. Denis</a>, 18 May 2020</p>
 
-                            </div>
-                          <br clear="all" />
-                          </div>
-                          <div class="article-list news">
-                            <div class="photo-insert"><a href="/News/2020/05/21/Indigenous-Housing-Crisis-Things-Getting-Better/"><img src="http://www.thetyee.ca/News/2020/05/21/WomanBeadsTable_newcover_size_thumb.jpg" width="146" height="112" alt="WomanBeadsTable.jpg" /></a></div>
-                            <div class="article-list-content">
-                              <h4><a href="/News/2020/05/21/Indigenous-Housing-Crisis-Things-Getting-Better/">Indigenous Housing Has Been In Crisis. Things Are Getting Better</a></h4>
-                              <p>Deanna Pointe’s family was shattered by the Sixties Scoop. Now she heads a three-generation family in East Vancouver.</p>
-                              <p class="meta"><a class="contrib-link" title="Bio page for Jen St. Denis" href="/Bios/Jen_St__Denis/">Jen St. Denis</a>, 21 May 2020</p>
+        <!-- Begin molecules/text/lead-in-text -->
 
-                            </div>
-                          <br clear="all" />
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+
+        <p class="first">To contact The Tyee with <strong>general inquiries</strong>, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('info' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+<p>Visit our <a href="#">Frequently Asked Questions</a> page for help on newsletter subscriptions, financial contributions, and more.</p>
+                          <p>You can also reach us by regular mail. <br/></p>
+                          <p><strong>The Tyee<br /> 
+PO Box 28187 <br />
+West Pender St <br />
+Vancouver, BC V6C 3T7
+ </strong>
+<hr /></p>
+                          <p><strong>To contact the Tyee editor or a writer:</strong> <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('editor' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p>Please make all requests for journalist contact information through the editors' email box. It is our policy to protect the privacy of our journalists, meaning we cannot distribute telephone phone numbers — other than those listed below — without individual consent.</p>
+                          <p><strong>To submit or suggest a story:</strong> click <a href="/About/Submissions/">here</a>.</p>
+                          <p><strong>For information about advertising:</strong> contact <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('adsales' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>To support The Tyee financially, visit our <a href="https://support.thetyee.ca/">support site</a> or send an email :</strong> <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('builders' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT> to become a Tyee Builder. Just $5/month can make a difference.<br /></strong></p>
+                          <p><hr /></p>
+                          <p><h3>Editorial</h3></p>
+                          <p>Toll-free: 1-844-301-6677 <br>
+Vancouver: (604) 689-7489</p>
+                          <p><strong>Editor in chief</strong><br />
+<a href="https://thetyee.ca/Bios/Robyn_Smith/">Robyn Smith</a>, extension 102, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('rsmith' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>Editor for initiatives</strong> <br />
+<a href="https://thetyee.ca/Bios/David_Beers/">Dave Beers</a>, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('dbeers' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>Senior editor</strong> (Victoria, B.C.) <br />
+<a href="https://thetyee.ca/Bios/Paul_Willcocks/">Paul Willcocks</a>, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('pwillcocks' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>Associate editor</strong> <br />
+<a href="https://thetyee.ca/Bios/Olamide_Olaniyan/">Olamide Olaniyan</a>, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('oolaniyan' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>Home page editor</strong> (Victoria, B.C.) <br />
+<a href="https://thetyee.ca/Bios/Tara_Campbell/">Tara Campbell</a>, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('tcampbell' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>Culture editor</strong> <br />
+<a href="https://thetyee.ca/Bios/Dorothy_Woodend/">Dorothy Woodend</a>, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('dwoodend' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>Education and youth issues reporter</strong> <br />
+<a href="http://thetyee.ca/Bios/Katie_Hyslop/">Katie Hyslop</a>, extension 107, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('khyslop' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>Health reporter</strong> <br />
+<a href="https://thetyee.ca/Bios/Moira_Wyton/">Moira Wyton</a>, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('mwyton' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT>
+Twitter: <a href="https://twitter.com/moirawyton">@moirawyton</a></p>
+                          <p><strong>Northern BC reporter</strong> (Smithers, B.C.) <br />
+<a href="https://thetyee.ca/Bios/Amanda_Follett_Hosgood/">Amanda Follett Hosgood</a>, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('afolletthosgood' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT><br></p>
+                          <p><strong>Reporter</strong><br /> <a href="http://thetyee.ca/Bios/Christopher_Cheung/">Christopher Cheung</a>, extension 105, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('ccheung' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT>
+</p>
+                          <p><strong>Reporter</strong> <br />
+<a href="https://thetyee.ca/Bios/Jen_St__Denis/">Jen St. Denis</a>, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('jstdenis' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>BC legislative bureau chief</strong> (Victoria, B.C.) <br /> <a href="/Bios/Andrew_MacLeod/">Andrew MacLeod</a>, (250) 885-7662, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('amacleod' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT><br></p>
+                          <p><hr/></p>
+                          <p><h3>Business / Advertising </h3></p>
+                          <p>Toll-free: 1-844-301-6677<br>
+Vancouver: (604) 689-7489</p>
+                          <p><strong>Publisher</strong><br />
+<a href="https://thetyee.ca/Bios/Jeanette_Ageson/">Jeanette Ageson</a>, extension 104, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('jageson' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p></p>
+                          <p><strong>Outreach manager</strong><br />
+<a href="https://thetyee.ca/Bios/Emma_Cooper/">Em Cooper</a> (they/them), extension 101, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('ecooper' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><strong>Social media manager</strong> (Toronto, Ont.) <br />Sarah Krichel, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('skrichel' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT><br></p>
+                          <p><hr /></p>
+                          <p><h3>Technical contacts</h3></p>
+                          <p><strong>Director, web production</strong><br />
+<a href="/Bios/Bryan_Carney/">Bryan Carney</a>, Extension 103, <SCRIPT TYPE="text/javascript">
+  emailE = 'thetyee.ca'
+  emailE = ('bcarney' + '@' + emailE)
+  document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+</script>
+<NOSCRIPT>
+  Email address protected by JavaScript
+</NOSCRIPT></p>
+                          <p><hr/></p>
+                          <p><h3>Acknowledgements</h3></p>
+                          <p><strong>Fast, secure, and proudly-Canadian web hosting</strong><br />
+<a href="https://gt.net">GT.net</a></p>
+                          <p><strong>Legal counsel</strong><br /> The Tyee is represented by the law firm of <b><a href="http://www.mbwlaw.ca" target="_blank">McGrady and Co</a>, </b>Vancouver, Canada.</p>
+
 
 
     </div> <!--END .container-fluid-->
@@ -303,31 +417,11 @@ This page requires Javascript. Your browser either doesn't support JavaScript or
 		<!-- BEGIN 01-molecules/blocks/messaging-block--builder -->
 
 
-<section class="article-footer--builder-ask">
 
-<h2>Quality journalism doesn't just happen.</h2>
-
-<p>The Tyee is proud to be a reader-funded publication. Every day, we publish original stories about topics that matter. No junk, just good journalism is our motto.</p>
-
-<p>Original news reporting is not cheap, but we're able to support our team of fiercely independent journalists because of our Tyee Builder program.</p><p>Tyee Builders chip in a few bucks each per month towards our reporting budget. Even a little goes a long way, and it adds up quickly. Because of the support of Tyee Builders, we can offer our news for free to whoever wants to read it. We believe that in-depth public-interest journalism should be accessible by all, not just by those who can afford to pay for pricey subscriptions.</p>
-
-<p>If you believe in the power of real journalism, please consider joining as a monthly Tyee Builder. You choose the amount you contribute, and you can cancel anytime. <span style="background: rgb(255,208,0); background: rgba(255,208,0,0.8);"><a target="_blank"  href="https://support.thetyee.ca/?utm_source=website&utm_medium=footer_Dec2019b23&utm_campaign=footer_Dec2019b23"><strong>Join now.</strong></a></span></p>
-
-</section>
     
 	    <!-- BEGIN 01-molecules/blocks/messaging-block--share -->
 
-<section class="messaging-block messaging-block--share" data-dev-object-descrip="01-molecules/blocks/messaging-block--share" data-dev-status="IN-PROGRESS">	
-	
-    <div class="tool-bar clearfix" data-dev-object-descrip="USES CODE FROM: molecules/blocks/tool-bar" data-dev-status="IN-PROGRESS">
-	<ul class="clearfix">
-        <li class="count"><span class="text">Share:</span></strong></li>
-        <li><a style="color:white;" href="#" onclick="share_fb(window.location.href);return false;" rel="nofollow" share_url="<?=$escaped_url ?>" target="_blank" class="btn btn-social-icon btn-facebook"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a style="color:white;" target="_blank" href="#" onclick="share_tw(); return false;" class="btn btn-social-icon btn-twitter"><i class="fab fa-twitter"></i></a></li>
-        <li><a class="btn btn-social-icon btn-email"><span data-toggle="modal" data-target="#share-email"><i class="fas fa-envelope"></i></span></a></li>      
-    </ul></div>
 
-    </section>
 
     <!--E-mail share modal -->
     <div class="modal fade" id="share-email" tabindex="-1" role="dialog" aria-labelledby="share-email-label" aria-hidden="true">
@@ -468,138 +562,8 @@ server to keep evidence of misuse."
 	    </div>	        
     </footer>
 
-    <!-- Begin 02-organisms/sections/latest-stories -->
-<!-- This object will be used below the article body amd also as a dropdown in the primary nav -->
+  
 
-<section class="section latest-stories" data-dev-object-descrip="02-organisms/sections/latest-stories" data-dev-status="IN-PROGRESS">
-
-			<!-- Put the story list in here.
-		Start from bootstrap’s default Media Object (if possible) ( http://getbootstrap.com/components/#media ) and then applying my atomic conventions.
-		This object should default to its mobile-first stacked state and only become horizontal at higher breakpoints (see mockups for the 2 states). In mobile stacked state it should be limited to 3 items. In horizontal state it should show enough items to fill the viewport width, ideally with slider functionality to reveal more items.
-		-->
-		<ul class="latest-stories__media-wrapper row">
-			<span class="chevron prev left"></span>
-			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-3">
-				<!-- BEGIN 01-molecules/blocks/latest-story-item -->
-
-
-	<div class="media-image col-sm-12 col-xs-4">
-        <a href="#">
-		<img class="media-object" src="../ui/img/placeholder.svg"/>
-                </a>
-
-	</div>
-	<div class="media-body col-sm-12 col-xs-8">
-    <a href="#">
-		<h4 class="hed_preload_placeholder latest-stories__hed"></h4>
-        </a>
-		<p class="dek_preload_placeholder latest-stories__dek"></p>
-	</div>
-	<div class="media-meta">
-		<span class="latest-stories__date hidden-xs"></span>
-		<span class="latest-stories__authour hidden-xs"></span>
-	</div>
-
-
-<!-- END 01-molecules/blocks/story-item -->
-			</li>
-			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-3">
-				<!-- BEGIN 01-molecules/blocks/latest-story-item -->
-
-
-	<div class="media-image col-sm-12 col-xs-4">
-        <a href="#">
-		<img class="media-object" src="../ui/img/placeholder.svg"/>
-                </a>
-
-	</div>
-	<div class="media-body col-sm-12 col-xs-8">
-    <a href="#">
-		<h4 class="hed_preload_placeholder latest-stories__hed"></h4>
-        </a>
-		<p class="dek_preload_placeholder latest-stories__dek"></p>
-	</div>
-	<div class="media-meta">
-		<span class="latest-stories__date hidden-xs"></span>
-		<span class="latest-stories__authour hidden-xs"></span>
-	</div>
-
-
-<!-- END 01-molecules/blocks/story-item -->
-			</li>
-			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-3">
-				<!-- BEGIN 01-molecules/blocks/latest-story-item -->
-
-
-	<div class="media-image col-sm-12 col-xs-4">
-        <a href="#">
-		<img class="media-object" src="../ui/img/placeholder.svg"/>
-                </a>
-
-	</div>
-	<div class="media-body col-sm-12 col-xs-8">
-    <a href="#">
-		<h4 class="hed_preload_placeholder latest-stories__hed"></h4>
-        </a>
-		<p class="dek_preload_placeholder latest-stories__dek"></p>
-	</div>
-	<div class="media-meta">
-		<span class="latest-stories__date hidden-xs"></span>
-		<span class="latest-stories__authour hidden-xs"></span>
-	</div>
-
-
-<!-- END 01-molecules/blocks/story-item -->
-			</li>
-			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-sm">
-				<!-- BEGIN 01-molecules/blocks/latest-story-item -->
-
-
-	<div class="media-image col-sm-12 col-xs-4">
-        <a href="#">
-		<img class="media-object" src="../ui/img/placeholder.svg"/>
-                </a>
-
-	</div>
-	<div class="media-body col-sm-12 col-xs-8">
-    <a href="#">
-		<h4 class="hed_preload_placeholder latest-stories__hed"></h4>
-        </a>
-		<p class="dek_preload_placeholder latest-stories__dek"></p>
-	</div>
-	<div class="media-meta">
-		<span class="latest-stories__date hidden-xs"></span>
-		<span class="latest-stories__authour hidden-xs"></span>
-	</div>
-
-
-<!-- END 01-molecules/blocks/story-item -->
-			</li>
-			<span class="chevron next right"></span>
-		</ul>
-
-		
-
-
-</section>
-<!-- END 02-organisms/sections/latest-stories -->    <!-- NEEDS WORK -->
-
-	  
-
-    
-<!-- BEGIN 02-organisms/sections/messaging-zone -->
-
-
-<div class="messaging-zone main-col-container container-fluid" data-dev-object-descrip="02-organisms/sections/messaging-zone" data-dev-status="IN-PROGRESS">
-		
-   
-		
-		
-
-</div>
-<!-- END 02-organisms/sections/messaging-zone -->
-    
-    
 
     <!-- =============================== -->
     <!-- ===== Footer ===== -->
