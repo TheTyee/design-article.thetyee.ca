@@ -12,166 +12,19 @@
     <!-- =============================== -->
     <!-- ===== Header ===== -->
 
-    <!-- Begin molecules/messaging/alerts--browser-support -->
+    {% include 01-molecules/messaging/alerts--browser-support.html %}
+    {% comment %}
+    {% include 01-molecules/messaging/highlight-bar.html %}
+    {% endcomment %}
 
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-<![endif]-->
-
-<noscript id="js-warning" data-dev-object-descrip="molecules/messaging/alerts--browser-support" data-dev-status="IN-PROGRESS">
-This page requires Javascript. Your browser either doesn't support JavaScript or you have it turned off. Please enable JavaScript before you proceed.
-</noscript>
+    {% include 02-organisms/global/header--homepage-prefixed.html %}
 
 
-    <!-- organisms/global/HEADER--HOMEPAGE-PREFIXED -->
-<header class="new-site-header new-site-header--homepage">
-
-  <!--Site Header Logo Block -->
-  <div class="new-site-header__logo-block-wrapper">
-  <div class="new-site-header__logo-block">
-	    <!--site tagline A -->
-	    <div class="new-site-header__tagline new-site-header__tagline--a">
-		    Independent<br />
-			journalism that swims<br />
-			 against the current.<br />
-	    </div>
-
-	    <!--logo -->
-	    <!-- NEW LIVE SOURCE IS <img src="/ui/img/thetyee.svg" class="new-site-header__logo-img" id="new-site-logo" alt="Tyee logo" /> -->
-	    <div class="new-site-header__logo">
-	      <a href="#"><img src="http://thetyee.github.io/design-article.thetyee.ca/ui/img/thetyee.svg" class="new-site-header__logo-img" id="new-site-logo" alt="Tyee logo" /></a>
-	      <!--site mobile tagline CTA -->
-	    </div>
-	
-	    <!--site tagline B .new-site-header__tagline--b deprecated -->
-	    <div class="new-site-header__menu-toggle">
-			<label for="new-expander--nav-menu" class="new-nav__link new-nav__burger new-site-nav-main__expander-toggle"><i class="fas fa-bars"></i></label>
-	    </div>
-	</div> <!--end of Site Header Logo Block -->
-  </div>
-	
-    <!-- SITE NAV MENU -->
-    <nav id="new-site-navigation" class="new-site-nav new-site-nav-main">
-      <!-- MENU -- EXPANDER input checkbox toggle -->
-      <input type="checkbox" id="new-expander--nav-menu" style="display: none;">
-      <!-- MENU -- BURGER for narrow views -->
-<!--       <label for="new-expander--nav-menu" class="new-nav__link new-nav__burger new-site-nav-main__expander-toggle">Menu</label> -->
-
-      <!-- MENU -- FULL BAR for wide views -->
-      <ul id="nav-bar">
-      	<li><a class="nav-bar__link--news"href="#">News</a></li>
-	  	<li><a class="nav-bar__link--analysis"href="#">Analysis</a></li>
-	  	<li><a class="nav-bar__link--culture"href="#">Culture</a></li>
-	  	<li><a class="nav-bar__link--solutions"href="#">Solutions</a></li>
-	  	<li><label for="new-expander--nav-menu" class="nav-bar__link--more new-site-nav-main__expander-toggle">More</label></li> <!-- MENU more expander -->
-	  	<li><a class="nav-bar__link--join new-btn-join" href="#">Support Us</a></li>
-	  	<li><label for="new-expander--nav-menu" class="nav-bar__link--search">Search <i class="fas fa-search"></i></label></li> <!-- SEARCH expander -->
-      </ul>
-      <!-- SEARCH -- EXPANDER input checkbox toggle -->
-      
-           
-
-      <!-- MENU -- EXPANDER dropdown -->
-      <div class="new-site-nav__dropdown">
-          <!-- SEARCH  -->
-          <div class="new-site-nav__search-dropdown">
-            <form id="new-search-form" class="new-site-nav__search-form" method="get" role="search" action="/Newsearch">
-              <input id="new-search-form-input" type="text" class="form-control form-text" placeholder="Search" name="q">
-              <input type="hidden" name="domains" value="thetyee.ca">
-              <input type="hidden" name="sitesearch" value="thetyee.ca" checked="checked">
-              <input type="hidden" name="client" value="pub-2188005021510640">
-              <input type="hidden" name="forid" value="1">
-              <input type="hidden" name="ie" value="UTF-8">
-              <input type="hidden" name="oe" value="UTF-8">
-              <input type="hidden" name="hl" value="en">
-              <button type="submit" class="button new-site-nav__search-form-button">Search</button>
-            </form>
-          </div> <!-- end of Search  -->
-          <!-- SECTION SUBMENU -->
-          <!-- expander input checkbox toggle for section submenu -->
-          <input type="checkbox" id="new-expander--nav-menu-section-submenu" style="display: none;">
-          <label for="new-expander--nav-menu-section-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-sections new-site-nav__dropdown-expander-toggle ">Sections</label>
-          <!-- section submenu content -->
-          <div class="new-expander-content new-expander-content__section-submenu">
-	          <ul>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="#">News</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="#">Analysis</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="#">Culture</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="#">National</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="#">Solutions</a></li>
-	          </ul>
-          </div>
-          <!-- TOPICS SUBMENU -->
-          <!-- expander input checkbox toggle for Topics submenu -->
-          <input type="checkbox" id="new-expander--nav-menu-topics-submenu" style="display: none;">
-          <label for="new-expander--nav-menu-topics-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-topics new-site-nav__dropdown-expander-toggle ">Topics</label>
-          <!-- Topics submenu content -->
-          <div class="new-expander-content new-expander-content__topics-submenu">
-	          <ul>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">BC Politics</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Education</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Energy</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Environment</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Federal Politics</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Film</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Food</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Gender & Sexuality</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Health</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Housing</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Labour & Industry</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Indigenous Affairs</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Local Media</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Municipal Politics</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Music</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Rights & Justice</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Science & Tech</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Transportation</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Travel</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Urban Planning & Architecture</a></li>
-	          </ul>
-          </div>
-          <!-- MORE SUBMENU -->
-          <!-- expander input checkbox toggle for More submenu -->
-          <input type="checkbox" id="new-expander--nav-menu-more-submenu" style="display: none;">
-          <label for="new-expander--nav-menu-more-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-more new-site-nav__dropdown-expander-toggle ">More</label>
-          <!-- More submenu content -->
-          <div class="new-expander-content new-expander-content__more-submenu">
-          <ul>
-		         <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Advertise</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">About Us</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">The Barometer</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Contact</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Contributors</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Funding</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Jobs</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Events</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Newsletter</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Privacy Policy</a></li>
-		         <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Submissions</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Support The Tyee</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Weekly Archives</a></li>
-          	</ul>
-          </div>
-          <!-- misc new-nav -->
-          <a class="new-nav__link new-nav__link--join new-btn-join" href="#">Support Us</a>
-          <a class="new-nav__link new-nav__link--newsletter"href="#">Newsletter</a>
-          <a class="new-nav__link new-facebook" href="#"><i class="fa fa-facebook fa-lg"></i></a>
-          <a class="new-nav__link new-twitter" href="#"><i class="fa fa-twitter fa-lg"></i></a>
-      </div> <!-- end of Site-Nav Dropdown -->
-
-    </nav> <!-- end of Site Navigation --> 
-
-</header>
-
-
-
-    <!-- =============================== -->
-
+    <!-- =============================== --> 
     
 
 <!-- Begin organisms/article/article__header -->
 <!--Article header, including hed, dek, author and social links-->
-<!-- {% include 02-organisms/article/article__header.html %} -->
 
 <!-- Begin organisms/article/article__header -->
 <!--Article header, including hed, dek, author and social links-->
@@ -184,10 +37,10 @@ This page requires Javascript. Your browser either doesn't support JavaScript or
 <a href="#series-listview-link" class="series-badge badge--headline-placement"><img src="http://thetyee.github.io/design-article.thetyee.ca/ui/img/badge-series.svg"></a>
             <h6 class="category-label"><a href="/category-link-here/" data-bind="category">News</a></h6>
         <h1 class="" data-bind="title">Fixing a Family Housing Crisis</h1>
-<!-- 		<h4 data-bind="teaser">A series on the housing crisis</h4> -->
+<!-- <h4 data-bind="teaser">A series on the housing crisis</h4> -->
         <!-- Begin molecules/blocks/tool-bar -->
 
-    </div> <!--END .container-fluid-->
+    </div> <!--END .container-fluid -->
 
 </header>
 
