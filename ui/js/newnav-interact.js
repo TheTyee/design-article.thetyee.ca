@@ -48,8 +48,10 @@ function setMain(){
 		window.mainPosition = $("header.article__header").offset().top;
 	} else if ($($("article")[0]).offset() ) {
 	  window.mainPosition = $($("article")[0]).offset().top;
+	  	} else if ($($("body")[0]).offset() ) {
+	  window.mainPosition = $($("body")[0]).offset().top + 50;
 	} else {
-		window.mainPosition = 300;
+		window.mainPosition = 700;
 	}
 }
 // Add/remove classes to navigation based on position
