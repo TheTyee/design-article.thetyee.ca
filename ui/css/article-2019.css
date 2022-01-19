@@ -461,14 +461,14 @@ a.button , a.button :link, a.button :visited {
 	display: block;
 }
 
-/* Text links within paragraphs get a solid underscore */
+/* Text links within paragraphs AND LISTS get a solid underscore */
 
-p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited, li a:link, li a:visited {
 	color: var(--text-colour);
 	border-bottom: 1.5px solid #82AD00;
 }
 
-p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited, li a:link, li a:visited {
 	border-bottom: 1px solid black;
 	margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
 }
@@ -3620,7 +3620,7 @@ body.subpage aside .toc h6 {
 
 .presents-box h6 a {
 	text-transform: none;
-	text-decoration: none;
+	text-decoration: none !important;
 	border-bottom: 1px solid;
 	color: #111 !important;
 	font-weight: bold !important;
@@ -3642,6 +3642,9 @@ body.subpage aside .toc h6 {
 	margin-top: 14px;
 }
 
+.toc li a:all {
+	border-bottom: none;
+}
 
 
 /* BADGE  ================================================================
