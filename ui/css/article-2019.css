@@ -3642,7 +3642,7 @@ body.subpage aside .toc h6 {
 	margin-top: 14px;
 }
 
-.toc li a:all {
+.toc li a {
 	border-bottom: none;
 }
 
