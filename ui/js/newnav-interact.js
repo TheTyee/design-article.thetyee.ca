@@ -26,6 +26,7 @@ $(".new-site-nav__dropdown").css("top", barHeight-15 + "px");
 
 jQuery(document).ready(function() {
 bumpMenu();
+setMain();
 });
 
 jQuery( window ).on( "load", function() {
