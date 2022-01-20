@@ -743,6 +743,7 @@ h6:first-of-type:hover {
 	line-height: 1em;
 	text-transform: capitalize;
 	color: #424242;
+	padding-top: .14em;
 }
 
 /* To prevent collision with the dropcap add extra space if the lead-in starts with
