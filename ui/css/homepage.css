@@ -2011,8 +2011,8 @@ p a:hover, p a:focus {
 
 @media screen and (max-width: 845px) {
 	
-	main {
-		margin-top: 14vw !important;
+	.new-site-header--homepage {
+		margin-top: 11vw !important;
 	}
 	
 	html {
