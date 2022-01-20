@@ -5,8 +5,8 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-{% include meta/head-homepage.html %}
-  <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+    {% include meta/head-homepage.html %}
+    <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
 
     <!-- =============================== -->
     <!-- ===== Header ===== -->
@@ -37,7 +37,7 @@
 
     {% include 02-organisms/global/footer-global.html %}
 
-    {% include footer_scripts_standard.html %}
+    {% include footer_scripts_home.html %}
 
     {% if page.page-type != 'home' %}
       {% include 02-organisms/sections/subscription-modal.html %}

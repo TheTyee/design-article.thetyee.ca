@@ -2010,6 +2010,17 @@ p a:hover, p a:focus {
 }
 
 @media screen and (max-width: 845px) {
+	
+	main {
+		margin-top: 14vw !important;
+	}
+	
+	html {
+		background:white;
+	}
+
+	
+	
 	.hmpg-org-recent-stories .house-ad h2 {
 		font-size: 1.8em;
 	}

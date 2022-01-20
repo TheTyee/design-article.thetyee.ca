@@ -21,7 +21,28 @@ var barHeight = $(".new-site-header__logo-block-wrapper").height();
 $("#new-site-navigation").css("margin-top", barHeight + "px");
 var menuheight = $(".new-site-navigation").height();
 $(".new-site-nav__dropdown").css("top", barHeight-15 + "px");
-};
+}
+
+
+
+
+
+var resizeTimer;
+
+$(window).on('resize', function(e) {
+
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+
+    // Run code here, resizing has "stopped"
+	    	console.log("resize event done?");
+	bumpMenu();
+setMain();
+            
+  }, 250);
+
+});
+
 
 
 jQuery(document).ready(function() {
@@ -33,11 +54,6 @@ jQuery( window ).on( "load", function() {
     bumpMenu();
 	setMain();
     });
-
-jQuery(window).on('resize', function(){
-bumpMenu();
-setMain();
-});
 
 
 
@@ -70,5 +86,6 @@ function scrollMenu(){
 $(window).bind('load scroll', function() {
  scrollMenu();
 });
+
 
 
