@@ -8,7 +8,7 @@ jQuery( document ).ready( function( $ ) {
 			    $(window).scrollTop($(".new-site-nav__search-dropdown").scrollTop() );
 			  	} else {
 				  	$('.new-nav__burger .fas').removeClass('fa-times').addClass('fa-bars');
-				if (typeof startpoint !== "undefined" || startpoing !== null) {				
+				if (typeof startpoint !== "undefined" || startpoint !== null) {				
 					$(window).scrollTop(window.startPoint);
 				}
 				}
