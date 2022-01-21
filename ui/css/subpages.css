@@ -11,6 +11,12 @@ iframe { max-width: 98%; }
 	font-weight: 300;
 }
 
+@media screen and (max-width: 667px) {
+	.subpage p.intro-large {
+			font-size: 1.2em;
+	}
+}
+
 .subpage strong {
 	font-weight: 500;
 }
@@ -393,5 +399,9 @@ body.subpage aside .toc h6 {
 	
 	.team .person p {
 		font-size: 1.1em;
+	}
+	
+	.contacts-list p {
+		line-height: 1.7;
 	}
 }
