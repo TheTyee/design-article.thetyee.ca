@@ -2112,7 +2112,8 @@ figure.figure.medium {
 	}
 	
 	.featured-media .container-fluid .figure .caption,
-	.main-col-container .container-fluid .aside .caption {
+	.main-col-container .container-fluid .aside .caption,
+	.container-fluid.article-image .caption /* series landing page top img */ {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
