@@ -12,6 +12,10 @@ body {
     width: 800px !important;
 }
 
+header .category-label, header strong {
+display:none !important;
+}
+
 body {
       color: #000;
       background: #fff;
