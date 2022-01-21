@@ -2,6 +2,8 @@
 
 /* subpage specific code */
 
+iframe { max-width: 98%; }
+
 .subpage p.intro-large {
 	font-family: var(--typeface-sans);
 	font-size: 1.42em;
@@ -38,10 +40,11 @@
 }
 
 @media screen and (max-width: 568px) {
-	body.subpage .article__header {
+/*	body.subpage .article__header {
 		margin-top: 15px !important;
+
 	}
-	
+*/	
 	p.intro-large {
 		font-size: 1.2em;
 	}
