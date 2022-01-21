@@ -8,9 +8,13 @@ jQuery( document ).ready( function( $ ) {
 			    $(window).scrollTop($(".new-site-nav__search-dropdown").scrollTop() );
 			  	} else {
 				  	$('.new-nav__burger .fas').removeClass('fa-times').addClass('fa-bars');
-				if (typeof startPoint !== "undefined" || startPoint !== null) {				
-					$(window).scrollTop(window.startPoint);
-				}
+							if (typeof startPoint !== "undefined" || startPoint !== null) {				
+								$(window).scrollTop(window.startPoint);
+								//repeating this scroll directive because fails sometimes on mobile
+								setTimeout(function() {
+									 $(window).scrollTop(window.startPoint);
+									 }, 250);
+							}
 				}
 		$('#new-search-form-input').focus();		
 	});  
