@@ -467,26 +467,18 @@ body.article-series .new-site-header__logo-block.scroll {
 
 }
 
-/*@media screen and (min-width: 421px) {*/
-	.new-site-header__logo-block:not(.scroll) .new-site-header__buttons {
-		-webkit-transition: 0.5s visibility ease-out, 
-		-moz-transition: 0.5s visibility ease-out;
-		-o-transition: 0.5s visibility ease-out;
-		transition: 0.5s visibility ease-out;
-		visibility: hidden;
-		height:0px;
-		width:0px;
-		opacity:0;
-		position: absolute;
-		bottom: -300;
-	}
-/*}*/
-
-/*@media screen and (max-width: 420px) {
-	.new-site-header__logo-block:not(.scroll) .new-site-header__buttons .hide-on-phone { 
-		display: none;
-	}
-}*/
+.new-site-header__logo-block:not(.scroll) .new-site-header__buttons {
+	-webkit-transition: 0.5s visibility ease-out, 
+	-moz-transition: 0.5s visibility ease-out;
+	-o-transition: 0.5s visibility ease-out;
+	transition: 0.5s visibility ease-out;
+	visibility: hidden;
+	height:0px;
+	width:0px;
+	opacity:0;
+	position: absolute;
+	bottom: -300;
+}
 
 .new-site-header__buttons {
 	grid-column: 2;
