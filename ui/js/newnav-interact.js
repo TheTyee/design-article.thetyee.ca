@@ -16,7 +16,7 @@ jQuery( document ).ready( function( $ ) {
 									 }, 250);
 							}
 				}
-		$('#new-search-form-input').focus();		
+		//$('#new-search-form-input').focus();		
 	});  
 });	
 
