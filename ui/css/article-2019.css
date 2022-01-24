@@ -756,10 +756,10 @@ h6:first-of-type:hover {
 }
 */
 
-@-moz-document url-prefix() {
-	.lead-in: first-letter {
-	padding-top: 0.15em;
-}
+@supports (-moz-appearance:none) {
+	.lead-in:first-letter {
+	padding-top: 0.35em;
+	}
  }
 
 /* CAPTIONS  ========================================================================== */
