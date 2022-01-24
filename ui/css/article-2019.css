@@ -734,7 +734,7 @@ h6:first-of-type:hover {
 	float: left;
 	padding-right: 0.06em;
 	padding-bottom: 0;
-	margin-top: -0.09em;
+	margin-top: -0.26em; /* was -0.09 */
 	margin-bottom: -0.1em;
 	font-family: 'Tiempos Headline', Georgia, Serif;
 	font-style: normal;
@@ -2112,7 +2112,8 @@ figure.figure.medium {
 	}
 	
 	.featured-media .container-fluid .figure .caption,
-	.main-col-container .container-fluid .aside .caption {
+	.main-col-container .container-fluid .aside .caption,
+	.container-fluid.article-image .caption /* series landing page top img */ {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
