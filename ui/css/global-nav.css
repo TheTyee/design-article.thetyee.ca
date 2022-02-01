@@ -91,7 +91,7 @@ a.new-site-header--homepage {
 /* Header Typography -- Navigation */
 
 .new-site-nav-main {
-	font-weight: 600;
+	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
 	background: #fff;
@@ -130,6 +130,7 @@ ul#nav-bar li label.nav-bar__link--more:after {
 	content: "\f0d7";
 	font-family: "Font Awesome 5 Free";
 	margin-left: 5px;
+	font-weight:600;
 }
 
 .new-site-header #nav-bar a:hover {

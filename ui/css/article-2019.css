@@ -403,8 +403,8 @@ ul {
 
 .button {
 	display: inline-block;
-	border: 2px solid rgb(255,208,0);
-	border: 2px solid rgba(255,208,0,0.8);
+	border: 2px solid rgb(255,208,0) !important;
+	border: 2px solid rgba(255,208,0,0.8) !important;
 	border-radius: 0rem;
 	padding: calc(1rem - 2px) 4rem;
 	margin: 0;
@@ -4797,7 +4797,7 @@ img.fact-box--headshot {
 	padding: 4px 10px;
 	width: 100%;
 	font-size: 0.85em;
-	font-weight: normal;
+	font-weight: 500;
 	display: block;
 	color: #fff;
 	color: var(--text-colour);
@@ -4806,7 +4806,12 @@ img.fact-box--headshot {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 }
-
+ 
+.messaging-block--barometer p a:hover {
+	color:black !important;
+}
+ 
+ 
 section.messaging-block.messaging-block--barometer ul, section.messaging-block.messaging-block--barometer li {
 	width: 100%;
 	clear: both;

@@ -618,6 +618,7 @@ body {
 .story-item__deck {
 	line-height: 135% !important;
 	margin-bottom: 8px;
+	font-weight:100;
 }
 
 @media screen and (max-width: 870px) {
@@ -636,8 +637,7 @@ body {
 .hmpg-org-recent-stories__list .story-item--index-page.story-item--primary .story-item__deck {
 	font-size: 1.5em !important;
 	text-align: left;
-	font-weight: 300;
-	font-weight: 400;
+	font-weight: 100;
 }
 
 @media screen and (max-width: 568px) {
@@ -680,7 +680,7 @@ body {
 	font-family: var(--typeface-display-medium);
 	font-weight: 600;
 	line-height: 4rem;
-	font-size: 2.33em;
+	font-size: 2em;
 	text-transform: none;
 }
 
@@ -1026,7 +1026,7 @@ body {
 	/* top story only */
 	.hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
 		font-family: var(--typeface-display-large);
-		line-height: 1.35;
+		line-height: 1.2;
 		text-align: left;
 		font-size: 3em;
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
@@ -2674,7 +2674,7 @@ main .hmpg-org-wrapper:first-of-type {
 	font-family: var(--typeface-display-medium);
 	font-weight: 600;
 	line-height: 4rem;
-	font-size: 2.33em;
+	font-size: 2em;
 	text-transform: none;
 	min-height: 10rem;
 	margin-bottom: 2rem;
