@@ -1552,6 +1552,10 @@ p a:hover, p a:focus {
 		display: block;
 	}
 
+	.hmpg-org-recent-stories__list .house-ad.story-item--index-page    {
+		display: none !important;
+	}
+	
     /* Use float-based layout for Secondary story-items in Recent Stories and Insider modules */
     /* Same as Tertiary items in large viewports. */
 	
@@ -2332,7 +2336,8 @@ main .hmpg-org-wrapper:first-of-type {
 	}
 	
 	.hmpg-org-recent-stories__list .house-ad {
-		grid-column: 1 / span 12 !important;
+		/*grid-column: 1 / span 12 !important;*/
+		display:none !important;
 	}
 	
 	.hmpg-org-recent-stories__list > .story-item--primary {
@@ -2341,7 +2346,8 @@ main .hmpg-org-wrapper:first-of-type {
 	}
 	
 	.hmpg-org-recent-stories__list > .story-item--secondary {
-		grid-column: auto / span 4;
+		/*grid-column: auto / span 4;*/
+		display:none !important
 	}
 }
 
