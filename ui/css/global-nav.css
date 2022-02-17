@@ -119,6 +119,7 @@ ul#nav-bar li {
 	font-size: 1.25em !important;
 	font-size: 1.15em !important;
 	color: var(--grey);
+	font-weight: 500;
 }
 
 ul#nav-bar li label:hover {
@@ -1014,6 +1015,9 @@ form input {
 	.new-site-header__tagline--a {
 		display: block;
 		text-align: left;
+		-webkit-text-stroke: .025em rgba(51,51,51,0.50);
+		-webkit-font-smoothing:antialiased !important;
+		text-shadow:1px 1px 1px rgba(0,0,0,0.005);
 	}
 	
 	.new-site-header__menu-toggle {
