@@ -1950,11 +1950,12 @@ p a:hover, p a:focus {
 	padding: 20px 20px 25px 20px;
 	max-width: 340px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 .hmpg-org-recent-stories .house-ad figure {
-	margin: 0 auto 15px;
-	max-width: 300px;
+	margin: -31px auto 5px;
+	max-width: 80%;
 }
 
 .hmpg-org-recent-stories .house-ad figure img {
