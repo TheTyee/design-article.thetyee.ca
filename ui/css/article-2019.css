@@ -2615,13 +2615,19 @@ aside {
 	margin-top: -5px;
 }
 
+@-moz-document url-prefix() {
+  .fa-envelope, .fas-envelope {
+	margin-top: -3.1px !important;
+}
+}
+
+
 /* Chrome 29+ */
 @media screen and (-webkit-min-device-pixel-ratio:0)
   and (min-resolution:.001dpcm) {
 
   .fa-envelope, .fas-envelope {
-	font-size: 0.9em;
-	vertical-align: middle;
+	
 	margin-top: -2px;
 }
   
