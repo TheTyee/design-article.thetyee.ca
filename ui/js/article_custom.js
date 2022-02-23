@@ -214,7 +214,7 @@ console.log(datatwo.result);
        
        }
        // getShares();
-       
+       jQuery("li.count").hide();
        
        
        

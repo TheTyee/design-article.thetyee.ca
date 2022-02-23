@@ -8,7 +8,7 @@ jQuery( document ).ready( function( $ ) {
 			    $(window).scrollTop($(".new-site-nav__search-dropdown").scrollTop() );
 			  	} else {
 				  	$('.new-nav__burger .fas').removeClass('fa-times').addClass('fa-bars');
-				if (typeof startpoint !== "undefined" || startpoing !== null) {				
+				if (typeof startpoint !== "undefined" || startpoint !== null) {				
 					$(window).scrollTop(window.startPoint);
 				}
 				}
@@ -29,10 +29,36 @@ bumpMenu();
 });
 jQuery( window ).on( "load", function() {
     bumpMenu();
+	setMain();
     });
 
 jQuery(window).on('resize', function(){
 bumpMenu();
+setMain();
 });
 
+var window.mainPosition = $("main").offset().top;
+
+
+function setMain(){
+	
+	window.mainPosition = $("main").offset().top;
+}
+
+// Add/remove classes to navigation based on position
+
+var hideHeaderOnScrollDelay = 200;
+
+function scrollMenu(){
+	setMain();
+	if ($(window).scrollTop()  > mainPosition) {
+      $('.new-site-header__logo-block').addClass('scroll');
+    } else {
+      $('.new-site-header__logo-block').removeClass('scroll');
+	}
+}
+
+$(window).bind('load scroll', function() {
+ scrollMenu();
+});
 

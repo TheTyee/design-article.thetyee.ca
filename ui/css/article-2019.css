@@ -37,6 +37,12 @@ body {
 	overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
 }
 
+/* temp fix for article top */
+
+.article__header .container-fluid {
+margin-top:200px;
+}
+
 .article__body p, .article__body strong, .article__body li, .artical__body em, .article__body .ul, .article__body ol, .article__body {
 	font-family: var(--typeface-serif), serif;
 }

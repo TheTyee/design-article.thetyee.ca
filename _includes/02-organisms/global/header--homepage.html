@@ -3,7 +3,7 @@
 
   <!--Site Header Logo Block -->
   <div class="new-site-header__logo-block-wrapper">
-  {% include 01-molecules/messaging/highlight-bar.html %}
+ <?php include($gitrootinc . "01-molecules/messaging/highlight-bar.html")?> 
   <div class="new-site-header__logo-block">
 	    <!--site tagline A -->
 	    <div class="new-site-header__tagline new-site-header__tagline--a">
@@ -15,7 +15,7 @@
 	    <!--logo -->
 	    <!-- NEW LIVE SOURCE IS <img src="{{ site.url }}ui/img/thetyee.svg" class="new-site-header__logo-img" id="new-site-logo" alt="Tyee logo" /> -->
 	    <div class="new-site-header__logo">
-	      <a href="#"><img src="http://thetyee.github.io/design-article.thetyee.ca/ui/img/thetyee.svg" class="new-site-header__logo-img" id="new-site-logo" alt="Tyee logo" /></a>
+	      <a href="/"><img src="http://thetyee.github.io/design-article.thetyee.ca/ui/img/thetyee.svg" class="new-site-header__logo-img" id="new-site-logo" alt="Tyee logo" /></a>
 	      <!--site mobile tagline CTA -->
 	    </div>
 	
@@ -34,13 +34,13 @@
 <!--       <label for="new-expander--nav-menu" class="new-nav__link new-nav__burger new-site-nav-main__expander-toggle">Menu</label> -->
 
       <!-- MENU -- FULL BAR for wide views -->
-      <ul id="nav-bar">
-      	<li><a class="nav-bar__link--news"href="#">News</a></li>
-	  	<li><a class="nav-bar__link--analysis"href="#">Analysis</a></li>
-	  	<li><a class="nav-bar__link--culture"href="#">Culture</a></li>
-	  	<li><a class="nav-bar__link--solutions"href="#">Solutions</a></li>
+            <ul id="nav-bar">
+      	<li><a class="nav-bar__link--news"href="/News">News</a></li>
+	  	<li><a class="nav-bar__link--analysis"href="/Analysis">Analysis</a></li>
+	  	<li><a class="nav-bar__link--culture"href="/Culture">Culture</a></li>
+	  	<li><a class="nav-bar__link--solutions"href="/Solutions">Solutions</a></li>
 	  	<li><label for="new-expander--nav-menu" class="nav-bar__link--more new-site-nav-main__expander-toggle">More</label></li> <!-- MENU more expander -->
-	  	<li><a class="nav-bar__link--join new-btn-join" href="#">Support Us</a></li>
+	  	<li><a class="nav-bar__link--join new-btn-join" href="https://support.thetyee.ca/?utm_campaign=menu">Support Us</a></li>
 	  	<li><label for="new-expander--nav-menu" class="nav-bar__link--search">Search <i class="fas fa-search"></i></label></li> <!-- SEARCH expander -->
       </ul>
       <!-- SEARCH -- EXPANDER input checkbox toggle -->
@@ -111,32 +111,27 @@
           <!-- expander input checkbox toggle for More submenu -->
           <input type="checkbox" id="new-expander--nav-menu-more-submenu" style="display: none;">
           <label for="new-expander--nav-menu-more-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-more new-site-nav__dropdown-expander-toggle ">More</label>
-          <!-- More submenu content -->
-          <div class="new-expander-content new-expander-content__more-submenu">
-	          <ul>
-		         <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Advertise</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">About Us</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">The Barometer</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Contact</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Contributors</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Funding</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Jobs</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Events</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Newsletter</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Privacy Policy</a></li>
-		         <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Submissions</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Support The Tyee</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Weekly Archives</a></li>
+<div class="new-expander-content new-expander-content__more-submenu">
+          <ul>
+		         <li><a class="new-nav__link new-nav__link--dropdown-item" href="/About/Advertise/">Advertise</a></li>
+		          <li><a class="new-nav__link new-nav__link--dropdown-item" href="/About/Us/">About Us</a></li>
+		          <li><a class="new-nav__link new-nav__link--dropdown-item" href="/Polls">The Barometer</a></li>
+		          <li><a class="new-nav__link new-nav__link--dropdown-item" href="/About/Contact/">Contact</a></li>
+		          <li><a class="new-nav__link new-nav__link--dropdown-item" href="/About/Funding/"></a></li>
+		          <li><a class="new-nav__link new-nav__link--dropdown-item" href="/Jobs/Intro/">Jobs</a></li>
+		          <li><a class="new-nav__link new-nav__link--dropdown-item" href="https://subscribe.thetyee.ca/?utm_campaign=menu" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+              <li><a class="new-nav__link new-nav__link--dropdown-item" href="http://subscribe.thetyee.ca/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+		          <li><a class="new-nav__link new-nav__link--dropdown-item" href="/About/Submissions/">Submissions</a></li>
+              <li><a class="new-nav__link new-nav__link--dropdown-item" href="/Archive/weekly/">Weekly Archives</a></li>
           	</ul>
           </div>
-          <!-- misc new-nav -->
-          <a class="new-nav__link new-nav__link--join new-btn-join" href="#">Support Us</a>
-          <a class="new-nav__link new-nav__link--newsletter"href="#">Newsletter</a>
-          <a class="new-nav__link new-facebook" href="#"><i class="fab fa-facebook fa-lg"></i></a>
-          <a class="new-nav__link new-twitter" href="#"><i class="fab fa-twitter fa-lg"></i></a>
-          	
-      </div> <!-- end of Site-Nav Dropdown -->
+               <!-- misc new-nav -->
+          <a class="new-nav__link new-nav__link--join new-btn-join" href="https://support.thetyee.ca/?utm_campaign=support_us_nav">Support Us</a>
+          <a class="new-nav__link new-nav__link--newsletter"href="https://subscribe.thetyee.ca/?utm_campaign=foottwo" target="_blank">Newsletter</a>
+         <a class="new-nav__link new-facebook" href="https://facebook.com/TheTyee"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a>
+<a class="new-nav__link new-twitter"href="https://twitter.com/thetyee/"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 
     </nav> <!-- end of Site Navigation --> 
 
 </header>
+<!-- /header--homepage.html-->

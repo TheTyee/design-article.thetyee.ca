@@ -90,7 +90,12 @@ img, figure, aside, .pullquote {
    page-break-inside: avoid;
 }
 
+img.responsive-img {
+ max-height:35vw !important;
+height: auto !important;
+width: auto !important;
 
+}
 
 /* HEADER STYLES  ============================================================= */
 

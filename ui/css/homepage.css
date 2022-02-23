@@ -615,6 +615,31 @@ body {
 	font-weight: 400;
 }
 
+.caption {
+  padding-top: .65em;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid;
+    border-bottom-color: currentcolor;
+  border-color: inherit;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: #404040;
+  text-align: left;
+  text-shadow: none;
+}
+
+.caption__media--credit {
+  padding-top: .65em;
+  padding-bottom: 1rem;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #404040;
+  text-align: left;
+  text-shadow: none;
+}
+
 .story-item__deck {
 	line-height: 135% !important;
 	margin-bottom: 8px;
@@ -2262,6 +2287,8 @@ main .hmpg-org-wrapper:first-of-type {
 
 .hmpg-org-recent-stories {
 	display: grid;
+/* temp fix for homepage preview margin */
+margin-top:150px;
 }
 
     /* Add space between Recent Stories module header and content */
