@@ -615,34 +615,10 @@ body {
 	font-weight: 400;
 }
 
-.caption {
-  padding-top: .65em;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid;
-    border-bottom-color: currentcolor;
-  border-color: inherit;
-  font-size: 1em;
-  font-weight: 700;
-  line-height: 1.5em;
-  color: #404040;
-  text-align: left;
-  text-shadow: none;
-}
-
-.caption__media--credit {
-  padding-top: .65em;
-  padding-bottom: 1rem;
-  font-weight: 300;
-  font-size: 1em;
-  line-height: 1.5em;
-  color: #404040;
-  text-align: left;
-  text-shadow: none;
-}
-
 .story-item__deck {
 	line-height: 135% !important;
 	margin-bottom: 8px;
+	font-weight:100;
 }
 
 @media screen and (max-width: 870px) {
@@ -661,8 +637,7 @@ body {
 .hmpg-org-recent-stories__list .story-item--index-page.story-item--primary .story-item__deck {
 	font-size: 1.5em !important;
 	text-align: left;
-	font-weight: 300;
-	font-weight: 400;
+	font-weight: 100;
 }
 
 @media screen and (max-width: 568px) {
@@ -705,7 +680,7 @@ body {
 	font-family: var(--typeface-display-medium);
 	font-weight: 600;
 	line-height: 4rem;
-	font-size: 2.33em;
+	font-size: 2em;
 	text-transform: none;
 }
 
@@ -721,22 +696,6 @@ body {
 		line-height: 3.5rem !important;
 	}
 }
-
-.m-comment-noted__body p, .barometer-form-list p, .barometer-form-list ul {
-font-size: 1.3em;
-line-height: 1.6em;
-font-family: var(--typeface-serif);
-}
-
-
-@media screen and (max-width: 683px) {
- .m-comment-noted__title, .m-barometer__title, .m-barometer .barometer-form-list > p, .barometer-form-list p:first-child {
-	font-size: 1.8em !important;;
-	line-height: 3.5rem !important;
-}
-
-}
-
 
 
 
@@ -833,10 +792,6 @@ font-family: var(--typeface-serif);
 
 .default-global-homepage .story-item__headline br {
 	display: none;
-}
-
-.default-global-homepage .story-item__headline br {
- display: none;
 }
 
 
@@ -1071,7 +1026,7 @@ font-family: var(--typeface-serif);
 	/* top story only */
 	.hmpg-org-recent-stories--general .story-item--primary .story-item__headline {
 		font-family: var(--typeface-display-large);
-		line-height: 1.35;
+		line-height: 1.2;
 		text-align: left;
 		font-size: 3em;
 		margin: 0rem 0 2rem; /* 2rem total aligns with baseline grid */
@@ -1227,18 +1182,6 @@ h2 a:hover, p a:hover {
 .story-item__author a:hover {
 	border-bottom: 2px solid black;
 	margin-bottom: -2px;
-}
-
-/* disabled all scalin - too many issues on hover - b.c */
-
-h2 a:hover, p a:hover {
- background: rgb(255,208,0);
-    background: rgba(255,208,0,0.8);
-}
-
-.story-item__author a:hover {
-    border-bottom:2px solid black;
-margin-bottom: -2px;
 }
 
 /* disabled all scalin - too many issues on hover - b.c */
@@ -1609,6 +1552,10 @@ p a:hover, p a:focus {
 		display: block;
 	}
 
+	.hmpg-org-recent-stories__list .house-ad.story-item--index-page    {
+		display: none !important;
+	}
+	
     /* Use float-based layout for Secondary story-items in Recent Stories and Insider modules */
     /* Same as Tertiary items in large viewports. */
 	
@@ -1661,12 +1608,6 @@ p a:hover, p a:focus {
 	transform: scale(.99);
 	margin-top: 3px;
 }
-        
-
-        .hmpg-org-recent-stories__list.wide .hmpg-ad-box--halfpage aside {
-         transform: scale(.99);
-         margin-top:3px;
-        }
         
 
         /*  STORY ITEM MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
@@ -2009,11 +1950,12 @@ p a:hover, p a:focus {
 	padding: 20px 20px 25px 20px;
 	max-width: 340px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 .hmpg-org-recent-stories .house-ad figure {
-	margin: 0 auto 15px;
-	max-width: 300px;
+	margin: -31px auto 5px;
+	max-width: 80%;
 }
 
 .hmpg-org-recent-stories .house-ad figure img {
@@ -2073,6 +2015,17 @@ p a:hover, p a:focus {
 }
 
 @media screen and (max-width: 845px) {
+	
+	.new-site-header--homepage {
+		margin-top: 11vw !important;
+	}
+	
+	html {
+		background:white;
+	}
+
+	
+	
 	.hmpg-org-recent-stories .house-ad h2 {
 		font-size: 1.8em;
 	}
@@ -2219,11 +2172,6 @@ main .hmpg-org-wrapper.annex {
 }
 
 
-main .hmpg-org-wrapper.annex {
-    padding-top: 2rem;
-}
-
-
         /* Omit top padding from first modules
            (This will maintain correct padding when the order of modules changes) */
 
@@ -2287,8 +2235,6 @@ main .hmpg-org-wrapper:first-of-type {
 
 .hmpg-org-recent-stories {
 	display: grid;
-/* temp fix for homepage preview margin */
-margin-top:150px;
 }
 
     /* Add space between Recent Stories module header and content */
@@ -2391,7 +2337,8 @@ margin-top:150px;
 	}
 	
 	.hmpg-org-recent-stories__list .house-ad {
-		grid-column: 1 / span 12 !important;
+		/*grid-column: 1 / span 12 !important;*/
+		display:none !important;
 	}
 	
 	.hmpg-org-recent-stories__list > .story-item--primary {
@@ -2400,7 +2347,8 @@ margin-top:150px;
 	}
 	
 	.hmpg-org-recent-stories__list > .story-item--secondary {
-		grid-column: auto / span 4;
+		/*grid-column: auto / span 4;*/
+		display:none !important
 	}
 }
 
@@ -2733,7 +2681,7 @@ margin-top:150px;
 	font-family: var(--typeface-display-medium);
 	font-weight: 600;
 	line-height: 4rem;
-	font-size: 2.33em;
+	font-size: 2em;
 	text-transform: none;
 	min-height: 10rem;
 	margin-bottom: 2rem;

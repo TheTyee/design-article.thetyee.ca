@@ -4,15 +4,17 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 {% include meta/head--2019.html %}
-  <body class="{{ page.layout }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+  <body class="{{ page.layout }}" id="{{ page.slug | 'front' }}">
+
     <!-- =============================== -->
     <!-- ===== Header ===== -->
 
     {% include 01-molecules/messaging/alerts--browser-support.html %}
-    
+    {% comment %}
     {% include 01-molecules/messaging/highlight-bar.html %}
+    {% endcomment %}
 
     {% include 02-organisms/global/header--homepage-prefixed.html %}
 

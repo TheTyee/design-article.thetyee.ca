@@ -37,12 +37,6 @@ body {
 	overflow-x: hidden; /* body overflow-x fix to prevent horizontal scrolling bug chrome */
 }
 
-/* temp fix for article top */
-
-.article__header .container-fluid {
-margin-top:200px;
-}
-
 .article__body p, .article__body strong, .article__body li, .artical__body em, .article__body .ul, .article__body ol, .article__body {
 	font-family: var(--typeface-serif), serif;
 }
@@ -55,10 +49,6 @@ margin-top:200px;
 
 .article__body .caption {
 	font-family: var(--typeface-sans);
-}
-
-.article__body .caption {
- font-family: var(--typeface-sans);
 }
 
 .article__body .editors-note {
@@ -413,8 +403,8 @@ ul {
 
 .button {
 	display: inline-block;
-	border: 2px solid rgb(255,208,0);
-	border: 2px solid rgba(255,208,0,0.8);
+	border: 2px solid rgb(255,208,0) !important;
+	border: 2px solid rgba(255,208,0,0.8) !important;
 	border-radius: 0rem;
 	padding: calc(1rem - 2px) 4rem;
 	margin: 0;
@@ -471,16 +461,14 @@ a.button , a.button :link, a.button :visited {
 	display: block;
 }
 
-.button.m-t-2:hover { display: block; }
+/* Text links within paragraphs AND LISTS get a solid underscore */
 
-/* Text links within paragraphs get a solid underscore */
-
-p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited, article li a:link, article li a:visited {
 	color: var(--text-colour);
 	border-bottom: 1.5px solid #82AD00;
 }
 
-p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited {
+p a, p a:link, p a:visited, figcaption a, figcaption a:link, figcaption a:visited, article li a:link, article li a:visited {
 	border-bottom: 1px solid black;
 	margin-bottom: -2px; /* Offsets the effect of setting underlined text as an inline-block */
 }
@@ -746,7 +734,7 @@ h6:first-of-type:hover {
 	float: left;
 	padding-right: 0.06em;
 	padding-bottom: 0;
-	margin-top: -0.09em;
+	margin-top: -0.26em; /* was -0.09 */
 	margin-bottom: -0.1em;
 	font-family: 'Tiempos Headline', Georgia, Serif;
 	font-style: normal;
@@ -755,6 +743,7 @@ h6:first-of-type:hover {
 	line-height: 1em;
 	text-transform: capitalize;
 	color: #424242;
+	padding-top: .14em;
 }
 
 /* To prevent collision with the dropcap add extra space if the lead-in starts with
@@ -767,10 +756,10 @@ h6:first-of-type:hover {
 }
 */
 
-@-moz-document url-prefix() {
-	.lead-in: first-letter {
-	padding-top: 0.15em;
-}
+@supports (-moz-appearance:none) {
+	.lead-in:first-letter {
+	padding-top: 0.35em;
+	}
  }
 
 /* CAPTIONS  ========================================================================== */
@@ -951,6 +940,20 @@ h2.index-list-header, .index-list h2, .block-inner h2 {
 	margin-bottom: 1em;
 }
 
+/* little bump for article because it hides behind the menu at some width */
+
+@media (max-width: 845px) {
+	.article__header {
+		margin-top: 75px !important;
+	margin-top: 15vw !important;
+	}
+	
+	html {
+		background: white !important;
+	}
+}
+
+
     /* BREAKPOINT: in xs views remove top-border from block and apply it to each list,
        also, adjust vertial spacing */
 
@@ -1053,7 +1056,10 @@ span.list-metric, .index-list span {
 	position: relative;
 	max-width: 45em;
 	max-width: 49em;
-	margin: 30px auto 0 auto !important;
+	margin-right: auto !important;
+	margin-bottom: 0 !important;
+    margin-left: auto !important;
+	margin-top: 30px;
 }
 
 /*.article__header .container-fluid {
@@ -1110,7 +1116,7 @@ span.list-metric, .index-list span {
 @media screen and (min-width: 1200px) {
 	.featured-media {
 		position: relative;
-		max-width: 48em;
+		/*max-width: 48em;*/
 		margin: 0 auto;
 		padding-left: 1em;
 		padding-right: 1em;
@@ -1142,10 +1148,9 @@ span.list-metric, .index-list span {
 @media screen and (min-width: 1400px) {
 	.featured-media {
 		position: relative;
-		max-width: 53.75em;
+		/*max-width: 53.75em;*/
 		margin: 0 auto 0 auto;
-		padding-left: 1em;
-		padding-right: 1em;
+		
 	}
 }
 
@@ -2107,7 +2112,8 @@ figure.figure.medium {
 	}
 	
 	.featured-media .container-fluid .figure .caption,
-	.main-col-container .container-fluid .aside .caption {
+	.main-col-container .container-fluid .aside .caption,
+	.container-fluid.article-image .caption /* series landing page top img */ {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
@@ -2360,8 +2366,8 @@ aside {
 }
 
 @media screen and (min-width: 600px) {
-	.author-info__date span:before {
-		content: " / ";
+	.author-info__date span:first-of-type:before, .author-info__date span:first-of-type:after {
+		content: " / "; 
 	}
 }
 	
@@ -2608,6 +2614,26 @@ aside {
 	vertical-align: middle;
 	margin-top: -5px;
 }
+
+@-moz-document url-prefix() {
+  .fa-envelope, .fas-envelope {
+	margin-top: -3.1px !important;
+}
+}
+
+
+/* Chrome 29+ */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+
+  .fa-envelope, .fas-envelope {
+	
+	margin-top: -2px;
+}
+  
+}
+
+
 
 .btn-twitter, .btn-facebook, .btn-facebook, .btn-email {
 	color: #7A7C85 !important;
@@ -3616,7 +3642,7 @@ body.subpage aside .toc h6 {
 
 .presents-box h6 a {
 	text-transform: none;
-	text-decoration: none;
+	text-decoration: none !important;
 	border-bottom: 1px solid;
 	color: #111 !important;
 	font-weight: bold !important;
@@ -3638,6 +3664,9 @@ body.subpage aside .toc h6 {
 	margin-top: 14px;
 }
 
+article .toc li a {
+	border-bottom: none;
+}
 
 
 /* BADGE  ================================================================
@@ -4788,7 +4817,7 @@ img.fact-box--headshot {
 	padding: 4px 10px;
 	width: 100%;
 	font-size: 0.85em;
-	font-weight: normal;
+	font-weight: 500;
 	display: block;
 	color: #fff;
 	color: var(--text-colour);
@@ -4797,7 +4826,12 @@ img.fact-box--headshot {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 }
-
+ 
+.messaging-block--barometer p a:hover {
+	color:black !important;
+}
+ 
+ 
 section.messaging-block.messaging-block--barometer ul, section.messaging-block.messaging-block--barometer li {
 	width: 100%;
 	clear: both;

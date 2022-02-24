@@ -1,6 +1,6 @@
 
 jQuery( document ).ready( function( $ ) {
-	$('.new-nav__burger, .nav-bar__link--more, .nav-bar__link--search').click(function() {
+	$('.new-nav__burger').click(function() {
         //e.preventDefault();       
 			  if ( $('.new-site-nav__dropdown').is(":hidden")) {
 			  	$('.new-nav__burger .fas').removeClass('fa-bars').addClass('fa-times');
@@ -8,11 +8,15 @@ jQuery( document ).ready( function( $ ) {
 			    $(window).scrollTop($(".new-site-nav__search-dropdown").scrollTop() );
 			  	} else {
 				  	$('.new-nav__burger .fas').removeClass('fa-times').addClass('fa-bars');
-				if (typeof startpoint !== "undefined" || startpoint !== null) {				
-					$(window).scrollTop(window.startPoint);
+							if (typeof startPoint !== "undefined" || startPoint !== null) {				
+								$(window).scrollTop(window.startPoint);
+								//repeating this scroll directive because fails sometimes on mobile
+								setTimeout(function() {
+									 $(window).scrollTop(window.startPoint);
+									 }, 250);
+							}
 				}
-				}
-		$('#new-search-form-input').focus();		
+		//$('#new-search-form-input').focus();		
 	});  
 });	
 
@@ -24,30 +28,55 @@ $(".new-site-nav__dropdown").css("top", barHeight-15 + "px");
 }
 
 
+
+
+
+var resizeTimer;
+
+$(window).on('resize', function(e) {
+
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+
+    // Run code here, resizing has "stopped"
+	    	console.log("resize event done?");
+	bumpMenu();
+setMain();
+            
+  }, 250);
+
+});
+
+
+
 jQuery(document).ready(function() {
 bumpMenu();
+setMain();
 });
+
 jQuery( window ).on( "load", function() {
     bumpMenu();
 	setMain();
     });
 
-jQuery(window).on('resize', function(){
-bumpMenu();
-setMain();
-});
 
-var window.mainPosition = $("main").offset().top;
 
 
 function setMain(){
-	
+	if ($("main").offset() ) {
 	window.mainPosition = $("main").offset().top;
+	} else if ($("header.article__header").offset() ) {
+		window.mainPosition = $("header.article__header").offset().top;
+	} else if ($($("article")[0]).offset() ) {
+	  window.mainPosition = $($("article")[0]).offset().top;
+	  	} else if ($($("body")[0]).offset() ) {
+	  window.mainPosition = $($("body")[0]).offset().top + 50;
+	} else {
+		window.mainPosition = 700;
+	}
 }
-
 // Add/remove classes to navigation based on position
 
-var hideHeaderOnScrollDelay = 200;
 
 function scrollMenu(){
 	setMain();
@@ -61,4 +90,6 @@ function scrollMenu(){
 $(window).bind('load scroll', function() {
  scrollMenu();
 });
+
+
 

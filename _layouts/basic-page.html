@@ -1,244 +1,25 @@
-
+---
+---
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-    <title>The Default Article Layout: Here&rsquo;s a few more &lsquo;Words&rsquo; to lengthen the Title | The Tyee</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="robots" content="index, follow" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="generator" content="Bricolage 2.1.0" />
-    <meta name="bricolage-id" content="81176" />
-    <meta name="bricolage-uuid" content="3A6F6BCE-F229-11E5-BC84-AE7EF8925F09" />
-    <meta name="bricolage-title" content="The Default Article Layout: Here&rsquo;s a few more &lsquo;Words&rsquo; to lengthen the Title" />
-    <meta name="bricolage-enable-comments" content="1" />
-    <meta name="bricolage-days-comments" content="5" />
-    <meta name="bricolage-publish-date" content="2016-03-25 00:40:00.000000" />
-<!-- General properties -->
-    <meta name="description" content="" />
-    <meta name="keywords" content="">
-    <meta name="copyright" content="TheTyee.ca &copy; 2021" />
-    <meta name="unix_date" content="1458891600" />
-    <meta name="date" content="27&nbsp;Jan&nbsp;2016" />
-    <meta name="MSSmartTagsPreventParsing" content="TRUE" />
-
-    <!-- /Meta -->
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="../ui/img/favicon.ico">
-    <script src="https://kit.fontawesome.com/d17963dfc5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/whf8gkh.css">
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <link rel="canonical" href="//">
-    <!-- CSS -->
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../ui/css/print.css" type="text/css" media="print" title="no title" charset="utf-8">
-
-    <link rel="stylesheet" href="../ui/css/article-2019-loader.css" type="text/css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="../ui/css/article--2019patches-loader.css" type="text/css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="../ui/css/subpages.css" type="text/css" media="screen" title="no title" charset="utf-8">
-    <!--[if IE]> <link rel="stylesheet" type="text/css" href="/ui/css/article-IE9-patches.css" /> <![endif]-->
-    <!-- /CSS -->
-    <!-- Load Google Material icon font -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-    <!-- JS Head -->
-<!--     <script type="text/javascript" charset="utf-8" src="../bower_components/jquery/dist/jquery.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../bower_components/moment/moment.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../bower_components/js-cookie/src/js.cookie.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../bower_components/urijs/src/URI.min.js"></script>
-    <script src="../bower_components/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../ui/js/jquery.slides.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../ui/js/article_subscription_popup.js"></script>
-
-    <script>
-
-window.addEventListener('load', function(){
-                           ga('create', 'UA-169022-1');
-console.log("created UA-169022-1");
-
-    for(var i=0; i < slotTrack.length; i++) {
-        console.log("tracking " + slotTrack[i]);
-            ga('send', 'event', "googleads", slotTrack[i] );
-
-    };
-
-}, false);
-
-</script>
-
-
-    <!-- /JS Head -->
-</head>
-
-  <body class="default-global--new2019 subpage" id="">
+{% include meta/head--2019.html %}
+  <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %} default-global--new2019 subpage">
 
     <!-- =============================== -->
     <!-- ===== Header ===== -->
 
-    <!-- Begin molecules/messaging/alerts--browser-support -->
+    {% include 01-molecules/messaging/alerts--browser-support.html %}
+    {% comment %}
+    {% include 01-molecules/messaging/highlight-bar.html %}
+    {% endcomment %}
 
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-<![endif]-->
-
-<noscript id="js-warning" data-dev-object-descrip="molecules/messaging/alerts--browser-support" data-dev-status="IN-PROGRESS">
-This page requires Javascript. Your browser either doesn't support JavaScript or you have it turned off. Please enable JavaScript before you proceed.
-</noscript>
-
-
-    <!-- organisms/global/HEADER--HOMEPAGE-PREFIXED -->
-<header class="new-site-header new-site-header--homepage">
-
-  <!--Site Header Logo Block -->
-  <div class="new-site-header__logo-block-wrapper">
-  <div class="new-site-header__logo-block">
-	    <!--site tagline A -->
-	    <div class="new-site-header__tagline new-site-header__tagline--a">
-		    Independent<br />
-			journalism that swims<br />
-			 against the current.<br />
-	    </div>
-
-	    <!--logo -->
-	    <!-- NEW LIVE SOURCE IS <img src="/ui/img/thetyee.svg" class="new-site-header__logo-img" id="new-site-logo" alt="Tyee logo" /> -->
-	    <div class="new-site-header__logo">
-	      <a href="#"><img src="http://thetyee.github.io/design-article.thetyee.ca/ui/img/thetyee.svg" class="new-site-header__logo-img" id="new-site-logo" alt="Tyee logo" /></a>
-	      <!--site mobile tagline CTA -->
-	    </div>
-	
-	    <!--site tagline B .new-site-header__tagline--b deprecated -->
-	    <div class="new-site-header__menu-toggle">
-			<label for="new-expander--nav-menu" class="new-nav__link new-nav__burger new-site-nav-main__expander-toggle"><i class="fas fa-bars"></i></label>
-	    </div>
-	</div> <!--end of Site Header Logo Block -->
-  </div>
-	
-    <!-- SITE NAV MENU -->
-    <nav id="new-site-navigation" class="new-site-nav new-site-nav-main">
-      <!-- MENU -- EXPANDER input checkbox toggle -->
-      <input type="checkbox" id="new-expander--nav-menu" style="display: none;">
-      <!-- MENU -- BURGER for narrow views -->
-<!--       <label for="new-expander--nav-menu" class="new-nav__link new-nav__burger new-site-nav-main__expander-toggle">Menu</label> -->
-
-      <!-- MENU -- FULL BAR for wide views -->
-      <ul id="nav-bar">
-      	<li><a class="nav-bar__link--news"href="#">News</a></li>
-	  	<li><a class="nav-bar__link--analysis"href="#">Analysis</a></li>
-	  	<li><a class="nav-bar__link--culture"href="#">Culture</a></li>
-	  	<li><a class="nav-bar__link--solutions"href="#">Solutions</a></li>
-	  	<li><label for="new-expander--nav-menu" class="nav-bar__link--more new-site-nav-main__expander-toggle">More</label></li> <!-- MENU more expander -->
-	  	<li><a class="nav-bar__link--join new-btn-join" href="#">Support Us</a></li>
-	  	<li><label for="new-expander--nav-menu" class="nav-bar__link--search">Search <i class="fas fa-search"></i></label></li> <!-- SEARCH expander -->
-      </ul>
-      <!-- SEARCH -- EXPANDER input checkbox toggle -->
-      
-           
-
-      <!-- MENU -- EXPANDER dropdown -->
-      <div class="new-site-nav__dropdown">
-          <!-- SEARCH  -->
-          <div class="new-site-nav__search-dropdown">
-            <form id="new-search-form" class="new-site-nav__search-form" method="get" role="search" action="/Newsearch">
-              <input id="new-search-form-input" type="text" class="form-control form-text" placeholder="Search" name="q">
-              <input type="hidden" name="domains" value="thetyee.ca">
-              <input type="hidden" name="sitesearch" value="thetyee.ca" checked="checked">
-              <input type="hidden" name="client" value="pub-2188005021510640">
-              <input type="hidden" name="forid" value="1">
-              <input type="hidden" name="ie" value="UTF-8">
-              <input type="hidden" name="oe" value="UTF-8">
-              <input type="hidden" name="hl" value="en">
-              <button type="submit" class="button new-site-nav__search-form-button">Search</button>
-            </form>
-          </div> <!-- end of Search  -->
-          <!-- SECTION SUBMENU -->
-          <!-- expander input checkbox toggle for section submenu -->
-          <input type="checkbox" id="new-expander--nav-menu-section-submenu" style="display: none;">
-          <label for="new-expander--nav-menu-section-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-sections new-site-nav__dropdown-expander-toggle ">Sections</label>
-          <!-- section submenu content -->
-          <div class="new-expander-content new-expander-content__section-submenu">
-	          <ul>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="#">News</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="#">Analysis</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="#">Culture</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="#">National</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="#">Solutions</a></li>
-	          </ul>
-          </div>
-          <!-- TOPICS SUBMENU -->
-          <!-- expander input checkbox toggle for Topics submenu -->
-          <input type="checkbox" id="new-expander--nav-menu-topics-submenu" style="display: none;">
-          <label for="new-expander--nav-menu-topics-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-topics new-site-nav__dropdown-expander-toggle ">Topics</label>
-          <!-- Topics submenu content -->
-          <div class="new-expander-content new-expander-content__topics-submenu">
-	          <ul>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">BC Politics</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Education</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Energy</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Environment</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Federal Politics</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Film</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Food</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Gender & Sexuality</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Health</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Housing</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Labour & Industry</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Indigenous Affairs</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Local Media</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Municipal Politics</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Music</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Rights & Justice</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Science & Tech</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Transportation</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Travel</a></li>
-	            <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Urban Planning & Architecture</a></li>
-	          </ul>
-          </div>
-          <!-- MORE SUBMENU -->
-          <!-- expander input checkbox toggle for More submenu -->
-          <input type="checkbox" id="new-expander--nav-menu-more-submenu" style="display: none;">
-          <label for="new-expander--nav-menu-more-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-more new-site-nav__dropdown-expander-toggle ">More</label>
-          <!-- More submenu content -->
-          <div class="new-expander-content new-expander-content__more-submenu">
-          <ul>
-		         <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Advertise</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">About Us</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">The Barometer</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Contact</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Contributors</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Funding</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Jobs</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Events</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Newsletter</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Privacy Policy</a></li>
-		         <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Submissions</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Support The Tyee</a></li>
-		          <li><a class="new-nav__link new-nav__link--dropdown-item"href="#">Weekly Archives</a></li>
-          	</ul>
-          </div>
-          <!-- misc new-nav -->
-          <a class="new-nav__link new-nav__link--join new-btn-join" href="#">Support Us</a>
-          <a class="new-nav__link new-nav__link--newsletter"href="#">Newsletter</a>
-          <a class="new-nav__link new-facebook" href="#"><i class="fa fa-facebook fa-lg"></i></a>
-          <a class="new-nav__link new-twitter" href="#"><i class="fa fa-twitter fa-lg"></i></a>
-      </div> <!-- end of Site-Nav Dropdown -->
-
-    </nav> <!-- end of Site Navigation --> 
-
-</header>
-
+    {% include 02-organisms/global/header--homepage-prefixed.html %}
 
 
     <!-- =============================== -->
-
     
 
 <!-- Begin organisms/article/article__header -->
@@ -263,15 +44,34 @@ This page requires Javascript. Your browser either doesn't support JavaScript or
         <!-- Begin 01-molecules/blocks/aside -->
 
 
+<aside class="aside hide-on-narrow-vp" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS" >
+	<!-- BEGIN 01-molecules/blocks/presents-box -->
+        <div class="presents-box text-block-container" style="border-bottom: 1px solid #111; padding-bottom:10px;padding-top:0;margin-top:-15px;" data-dev-object-descrip="01-molecules/blocks/presents-box" data-dev-status="IN-PROGRESS">
+    <!-- 00-atoms/images/series-badge -->
+
+<!-- <a href="#series-listview-link" class="series-badge badge--aside-placement badge--aside-placement--presents"><img src="../ui/img/badge-presents.svg"></a> -->
+    <h5 style="width:100%; font-weight:bold;">Jump To Section </h5>
+
+
+<h6><a href="#readers">Commitment to readers</a></h6><br>
+<h6><a href="#independence">Funding</a></h6><br>
+<h6><a href="#region">Editorial focus</a></h6><br>
+<h6><a href="#power">Impact</a></h6><br>
+<h6><a href="#real">Principles</a></h6><br>
+<h6><a href="#background">History</a></h6><br>
+</div>
+        </aside>
+
 
         <!-- Begin molecules/text/lead-in-text -->
 
 
         <p class="intro-large">We're an independent, online news magazine from B.C. founded in 2003. We're devoted to fact-driven stories, reporting and analysis that informs and enlivens our democratic conversation. Our reporting has changed laws, started movements and garnered numerous awards. While some journalism gives the last word to power, we try to give the last word to ordinary folks. Our name? It's pronounced Tie-yee. We explain its origins in the 'our region' section below.</p>
-        
+
+  
 <!--         <iframe style="width:100%; max-width:100%;" width="560" height="315" src="https://www.youtube.com/embed/jF1ZElM7-nA" frameborder="0" allowfullscreen=""></iframe> -->
         
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/jF1ZElM7-nA" frameborder="0" allowfullscreen=""></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jF1ZElM7-nA" frameborder="0" allowfullscreen=""></iframe><a name="readers"></a>
 
 
 <h2>The Tyee values our readers.</h2>                          <p>You are invited to deepen the relationship by subscribing to one or more of our <a target="_blank" href="https://subscribe.thetyee.ca/?q=Subscribe/Headlines/">email newsletters</a>, and by <a href="https://support.thetyee.ca/">supporting</a> us  financially by becoming a Tyee Builder. In return, we pledge to keep listening in order to produce journalism reflecting the values we share — a deep concern for truth-telling, justice, the environment and holding power accountable. We exist to serve you (not advertisers, hedge fund owners or political agendas).</p>
@@ -333,6 +133,7 @@ Since our founding in 2003, The Tyee has published public interest journalism th
                           <p><em><strong>Facts are primary.</strong></em> Publish credible, fact-based journalism, fairly reported and rigorously edited. Be open to criticism and correction. Handle errors with speed, transparency and humility.</p>
                           <p><em><strong>Strengthen democracy:</strong></em> Hold power accountable. Defend workers’ rights. Amplify voices of those marginalized. Model fair-minded tolerance. Reveal causes of wealth inequality and injustice. Find and share practical solutions.</p>
                           <p><strong><em>Seek a sustainable planet:</em></strong> Report with the next generation in mind. Expose dangers to the environment. Bring to light the true value of nature. Find and share practical solutions.</p>
+                          <a name="background"></a>
                           <p><em><strong>Operate ethically:</strong></em> Pay staff and contributors fairly. Be transparent about how we pay our bills. Spend every dime to create more and better journalism. Strive to be majority reader funded. Grow responsibly.</p>
                           <p></p>
 <h2>A bit more background on The Tyee.</h2>                          <p>If you’d like to read about our many journalistic breakthroughs and highlights since our founding in 2003, here’s a <a target="_blank" href="https://thetyee.ca/Tyeenews/2018/11/23/Tyee-15-Years-Old/">round-up</a>. </p>
@@ -350,444 +151,16 @@ Since our founding in 2003, The Tyee has published public interest journalism th
 
 <!-- END organisms/article/article__body -->
 
+  {% include 02-organisms/global/footer-global.html %}
 
+    {% include 02-organisms/global/footer-IE-fallback.html %}
 
-    <!-- =============================== -->
-    <!-- ===== Tertiary components ===== -->
+    {% include footer_scripts_standard.html %}
 
-    
-    
-    <footer class="article-footer clearfix main-col-container">
-	    <div class="container-fluid">
-		    
-		<!-- BEGIN 01-molecules/blocks/messaging-block--builder -->
-
-
-<section class="article-footer--builder-ask">
-
-<h2>Quality journalism doesn't just happen.</h2>
-
-<p>The Tyee is proud to be a reader-funded publication. Every day, we publish original stories about topics that matter. No junk, just good journalism is our motto.</p>
-
-<p>Original news reporting is not cheap, but we're able to support our team of fiercely independent journalists because of our Tyee Builder program.</p><p>Tyee Builders chip in a few bucks each per month towards our reporting budget. Even a little goes a long way, and it adds up quickly. Because of the support of Tyee Builders, we can offer our news for free to whoever wants to read it. We believe that in-depth public-interest journalism should be accessible by all, not just by those who can afford to pay for pricey subscriptions.</p>
-
-<p>If you believe in the power of real journalism, please consider joining as a monthly Tyee Builder. You choose the amount you contribute, and you can cancel anytime. <span style="background: rgb(255,208,0); background: rgba(255,208,0,0.8);"><a target="_blank"  href="https://support.thetyee.ca/?utm_source=website&utm_medium=footer_Dec2019b23&utm_campaign=footer_Dec2019b23"><strong>Join now.</strong></a></span></p>
-
-</section>
-    
-	    <!-- BEGIN 01-molecules/blocks/messaging-block--share -->
-
-<section class="messaging-block messaging-block--share" data-dev-object-descrip="01-molecules/blocks/messaging-block--share" data-dev-status="IN-PROGRESS">	
-	
-    <div class="tool-bar clearfix" data-dev-object-descrip="USES CODE FROM: molecules/blocks/tool-bar" data-dev-status="IN-PROGRESS">
-	<ul class="clearfix">
-        <li class="count"><span class="text">Share:</span></strong></li>
-        <li><a style="color:white;" href="#" onclick="share_fb(window.location.href);return false;" rel="nofollow" share_url="<?=$escaped_url ?>" target="_blank" class="btn btn-social-icon btn-facebook"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a style="color:white;" target="_blank" href="#" onclick="share_tw(); return false;" class="btn btn-social-icon btn-twitter"><i class="fab fa-twitter"></i></a></li>
-        <li><a class="btn btn-social-icon btn-email"><span data-toggle="modal" data-target="#share-email"><i class="fas fa-envelope"></i></span></a></li>      
-    </ul></div>
-
-    </section>
-
-    <!--E-mail share modal -->
-    <div class="modal fade" id="share-email" tabindex="-1" role="dialog" aria-labelledby="share-email-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="share-email-label">Share article via email</h4>
-                </div>
-                <div class="modal-body">
-
-                    <div id="errors"></div>
-                    <div id="messages"></div>
-
-                    <form role="form" id="share">
-                        <div class="form-group">
-                            <label for="email_to">Send this article to:</label>
-                            <textarea class="form-control" rows="2" placeholder="Enter one email address, or multiple (up to 10) separated with a comma or one on each line." name="email_to" id="email_to"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="email_from">Your email address:</label>
-                            <input type="email" class="form-control" name="email_from" id="email_from" placeholder="" />
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your message:</label>
-                            <textarea class="form-control" name="message" id="message" rows="3" placeholder="Please write more than a couple of words here. It's how we know you're not an evil Internet-spamming robot.  This message will be stored on a 
-server to keep evidence of misuse." 
-></textarea>
-                        </div>
-                        <div class="form-group" >
-                            <label for="subscription">Would you like to receive The Tyee's headlines free by email?</label>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="subscription" id="sub-daily" value="Daily">
-                                    Yes, every day.
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="subscription" id="sub-weekly" value="Weekly">
-                                    Yes, once a week.
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="subscription" id="sub-alreadysubscribed" value="Already subscribed">
-                                    I already subscribe.
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="subscription" id="sub-nothanks" value="No thanks">
-                                    No, thanks.
-                                </label>
-                            </div>
-                            <span id="radio-error"></span>
-
-                        </div>
-
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                    <button type="button" id="showForm" class="btn btn-link" style="display:none;">Show form again &raquo;</button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <!-- END 01-molecules/blocks/messaging-block--share -->
-
-	    
-	    <!-- BEGIN 01-molecules/blocks/messaging-block--subscribe -- -->
-<section class="messaging-block messaging-block--subscribe" data-dev-object-descrip="01-molecules/blocks/messaging-block--subscribe" data-dev-status="IN-PROGRESS" id="subscribesection">
-    <h3>Get The Tyee in your inbox</h3>
-    <form class="hidden-xs">
-        <input type="hidden" name="slid" value="6B5869DC547D3D46CFC60A3DF69EE7EB" />
-        <input type="hidden" name="cmd" value="subscribe" />
-        <input type="hidden" name="errors_to" value="" />
-        <input type="hidden" name="custom_pref_tyeenews_casl" value="1" />
-        <input type="hidden" id="format_mime" name="format" value="mime" />
-        <div class="input-group">
-            <input type="text" name="email" class="email-subscribe form-control" placeholder="Enter your email address...">
-            <span class="input-group-addon">
-                <select id="bigoption" class="frequency">
-                    <option value="custom_pref_enews_daily">Daily</option>
-                    <option value="custom_pref_enews_weekly">Weekly</option>
-                    <option value="custom_pref_enews_national">National (weekly)</option>
-                </select>
-            </span>
-            <span class="input-group-btn">
-                <button id="big" class="btn btn-default btn--subscribe" type="button">Subscribe now</button>
-            </span>
-        </div><!-- /input-group -->
-        <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
-    </form>
-    <form class="hidden-sm hidden-md hidden-lg">
-            <input type="hidden" name="slid" value="6B5869DC547D3D46CFC60A3DF69EE7EB" />
-            <input type="hidden" name="cmd" value="subscribe" />
-            <input type="hidden" name="errors_to" value="" />
-            <input type="hidden" name="custom_pref_tyeenews_casl" value="1" />
-            <input type="hidden" id="format_mime" name="format" value="mime" />
-            <input type="text" name="email" class="email-subscribe form-control" placeholder="Enter your email address...">
-            <select class="form-control subscribe-frequency frequency" id="smalloption">
-                <option value="custom_pref_enews_daily">Daily</option>
-                <option value="custom_pref_enews_weekly">Weekly</option>
-                <option value="custom_pref_enews_national">National (weekly)</option>
-            </select>
-            <button id="small" class="btn btn-default btn--subscribe form-control" type="button">Subscribe now</button>
-        <span class="help-block small"><a href="#" data-toggle="modal" data-target="#privacyModal">Privacy policy</a></span>
-    </form>
-
-</section>
-<!-- Modal -->
-<div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Your privacy is important to us.</h4>
-            </div>
-            <div class="modal-body">
-                <p>When subscribing to a newsletter edition you'll also get early notice on Tyee events, news, promotions, partner messages and special initiatives.</p>
-                <p>Further to the provision of the Personal Information Protection Act, personal information is kept confidential by TheTyee.ca and will not be sold, traded, released, shared or distributed to any other individuals, organizations or agencies without prior consent or notification.</p>
-                <p>Measures have been enacted to ensure the integrity of personal information and to protect it from misuse, loss or alteration. All information submitted to The Tyee is only available to employees or sub-contractors who are bound by agreement with The Tyee to keep the information private. E-mail addresses are only used for the purposes of Tyee-related correspondence or comment moderation.</p>
-                <p>If you have concerns related to your privacy please contact us at <a href="mailto:info@thetyee.ca">info@thetyee.ca</a></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END 01-molecules/blocks/messaging-block--subscribe -->
-
-	    
-	    </div>	        
-    </footer>
-
-    <!-- Begin 02-organisms/sections/latest-stories -->
-<!-- This object will be used below the article body amd also as a dropdown in the primary nav -->
-
-<section class="section latest-stories" data-dev-object-descrip="02-organisms/sections/latest-stories" data-dev-status="IN-PROGRESS">
-
-			<!-- Put the story list in here.
-		Start from bootstrap’s default Media Object (if possible) ( http://getbootstrap.com/components/#media ) and then applying my atomic conventions.
-		This object should default to its mobile-first stacked state and only become horizontal at higher breakpoints (see mockups for the 2 states). In mobile stacked state it should be limited to 3 items. In horizontal state it should show enough items to fill the viewport width, ideally with slider functionality to reveal more items.
-		-->
-		<ul class="latest-stories__media-wrapper row">
-			<span class="chevron prev left"></span>
-			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-3">
-				<!-- BEGIN 01-molecules/blocks/latest-story-item -->
-
-
-	<div class="media-image col-sm-12 col-xs-4">
-        <a href="#">
-		<img class="media-object" src="../ui/img/placeholder.svg"/>
-                </a>
-
-	</div>
-	<div class="media-body col-sm-12 col-xs-8">
-    <a href="#">
-		<h4 class="hed_preload_placeholder latest-stories__hed"></h4>
-        </a>
-		<p class="dek_preload_placeholder latest-stories__dek"></p>
-	</div>
-	<div class="media-meta">
-		<span class="latest-stories__date hidden-xs"></span>
-		<span class="latest-stories__authour hidden-xs"></span>
-	</div>
-
-
-<!-- END 01-molecules/blocks/story-item -->
-			</li>
-			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-3">
-				<!-- BEGIN 01-molecules/blocks/latest-story-item -->
-
-
-	<div class="media-image col-sm-12 col-xs-4">
-        <a href="#">
-		<img class="media-object" src="../ui/img/placeholder.svg"/>
-                </a>
-
-	</div>
-	<div class="media-body col-sm-12 col-xs-8">
-    <a href="#">
-		<h4 class="hed_preload_placeholder latest-stories__hed"></h4>
-        </a>
-		<p class="dek_preload_placeholder latest-stories__dek"></p>
-	</div>
-	<div class="media-meta">
-		<span class="latest-stories__date hidden-xs"></span>
-		<span class="latest-stories__authour hidden-xs"></span>
-	</div>
-
-
-<!-- END 01-molecules/blocks/story-item -->
-			</li>
-			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-3">
-				<!-- BEGIN 01-molecules/blocks/latest-story-item -->
-
-
-	<div class="media-image col-sm-12 col-xs-4">
-        <a href="#">
-		<img class="media-object" src="../ui/img/placeholder.svg"/>
-                </a>
-
-	</div>
-	<div class="media-body col-sm-12 col-xs-8">
-    <a href="#">
-		<h4 class="hed_preload_placeholder latest-stories__hed"></h4>
-        </a>
-		<p class="dek_preload_placeholder latest-stories__dek"></p>
-	</div>
-	<div class="media-meta">
-		<span class="latest-stories__date hidden-xs"></span>
-		<span class="latest-stories__authour hidden-xs"></span>
-	</div>
-
-
-<!-- END 01-molecules/blocks/story-item -->
-			</li>
-			<li class="media col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-sm">
-				<!-- BEGIN 01-molecules/blocks/latest-story-item -->
-
-
-	<div class="media-image col-sm-12 col-xs-4">
-        <a href="#">
-		<img class="media-object" src="../ui/img/placeholder.svg"/>
-                </a>
-
-	</div>
-	<div class="media-body col-sm-12 col-xs-8">
-    <a href="#">
-		<h4 class="hed_preload_placeholder latest-stories__hed"></h4>
-        </a>
-		<p class="dek_preload_placeholder latest-stories__dek"></p>
-	</div>
-	<div class="media-meta">
-		<span class="latest-stories__date hidden-xs"></span>
-		<span class="latest-stories__authour hidden-xs"></span>
-	</div>
-
-
-<!-- END 01-molecules/blocks/story-item -->
-			</li>
-			<span class="chevron next right"></span>
-		</ul>
-
-		
-
-
-</section>
-<!-- END 02-organisms/sections/latest-stories -->    <!-- NEEDS WORK -->
-
-	  
-
-    
-<!-- BEGIN 02-organisms/sections/messaging-zone -->
-
-
-<div class="messaging-zone main-col-container container-fluid" data-dev-object-descrip="02-organisms/sections/messaging-zone" data-dev-status="IN-PROGRESS">
-		
-   
-		
-		
-
-</div>
-<!-- END 02-organisms/sections/messaging-zone -->
-    
-     <!-- =============================== -->
-    <!-- ===== Footer ===== -->
-
-    <footer class="site-footer site-footer--homepage hmpg-org-wrapper">
-
-  <a href="/" class="site-footer__logo-container"><img src="../ui/img/tyee-logo-reversed.svg" class="site-footer__logo" alt="Tyee logo" /></a>
-  <div class="links-group">
-    <h2>The Tyee</h2>
-    <ul>
-    <li><a href="#">About The Tyee</a></li>
-    <li><a href="#">Advertise</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Funding</a></li>
-    <li><a href="#">Jobs</a></li>
-    <li><a href="#">Master Classes</a></li>
-    <li><a href="#">Privacy Policy</a></li>
-    <li><a href="#">Submissions</a></li>
-    <li><a href="#">Support The Tyee</a></li>
-    <li><a href="#">Advertise</a></li>
-    </ul>
-  </div>
-  <div class="links-group">
-    <h2>Articles</h2>
-    <ul>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Culture</a></li>
-    <li><a href="#">Opinion</a></li>
-    <li><a href="#">National</a></li>
-    <li><a href="#">Mediacheck</a></li>
-    <li><a href="#">Solutions</a></li>
-    <li><a href="#">Video</a></li>
-    <li><a href="#">Publications</a></li>
-    <li><a href="#">Tyee News</a></li>
-    <li><a href="#">Weekly Archives</a></li>
-    </ul>
-  </div>
-  <div class="links-group">
-    <h2>Columns</h2>
-    <ul>
-    <li><a href="#">Steve Burgess</a></li>
-    <li><a href="#">Ian Gill</a></li>
-    <li><a href="#">Crawford Killian</a></li>
-    <li><a href="#">Andrew Nikiforuk</a></li>
-    <li><a href="#">Dorothy Woodend</a></li>
-    </ul>
-  </div>
-  <div class="links-group">
-    <h2>Your Account</h2>
-    <ul>
-    <li><a href="#">Follow The Tyee</a></li>
-    <li><a href="#">Subscribe by email</a></li>
-    </ul>
-  </div>
-  <div class="links-group social">
-	  <ul>
-    <li><a class="facebook" href="#" title="Follow us on Facebook" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a></li>
-    <li><a class="twitter" href="#" title="Follow us on Twitter" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a></li>
-	  </ul>
-  </div>
-
-</footer>
-
-
-    <footer class="site-footer site-footer-IE">
-	<div class="container">
-
-			<ul class="footer__menu col-sm-9 col-md-10">
-				<li><a href="#">Subscribe</a></li>
-				<li><a href="#">Advertise</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#" class=""><svg id="Layer_1" class="dollar-heart-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.07 27.56"><defs><style>.heart-bg{fill:var(--yellow);}.heart-text{fill:#5f6066;}</style></defs><path class="heart-bg dollar-heart-icon" d="M15,4.3C12.54-2.46,0-1.46,0,8.77c0,5.1,3.83,11.88,15,18.79,11.2-6.91,15-13.69,15-18.79C30.07-1.4,17.54-2.5,15,4.3Z"/><path class="heart-text" d="M14.69,20.35a5.62,5.62,0,0,1-4.14-2.52l1.68-1.33a3.89,3.89,0,0,0,2.46,1.82V14.73c-1.76-.64-3.58-1.65-3.58-3.83a3.73,3.73,0,0,1,3.58-3.53V5.86h1.14V7.37a5.4,5.4,0,0,1,3.42,1.84l-1.62,1.35a3.38,3.38,0,0,0-1.8-1.14V13A.52.52,0,0,0,16,13c1.92.72,3.54,1.57,3.54,3.84,0,2.07-1.67,3.28-3.74,3.47v1.52H14.69Zm0-7.85V9.42a1.59,1.59,0,0,0-1.38,1.48C13.31,11.67,13.79,12.09,14.69,12.5Zm1.14,2.65V18.3c.83-.15,1.55-.61,1.55-1.44S16.82,15.56,15.83,15.15Z"/></svg>
-<span>Join</span></a></li>
-				<li><a href="#">About</a></li>
-			</ul>
-			<ul class="footer__social-links [ col-xs-12 col-sm-3 col-md-2 ]">
-				<li class="[ col-xs-6 col-sm-6 col-md-6 ]"><a class="facebook" href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
-				<li class=" [ col-xs-6 col-sm-6 col-md-6 ]"><a class="twitter" href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
-			</ul>
-
-	</div>
-</footer>
-
-<script src="../ui/js/FitVids/min/jquery.fitvids-min.js"></script>
-    <script src="../ui/js/article_custom.js" type="text/javascript" charset="utf-8"></script>
-<script src="../ui/js/article_share.js" type="text/javascript" charset="utf-8"></script>
-<script src="../ui/js/polyfill.min.js"></script>
-<script src="../ui/js/ads.js"></script>
-
-
-
-<script>
-  jQuery(document).ready(function(){
-    // Target your .container, .wrapper, .post, etc.
-    jQuery('iframe[src*="youtube"]').parent().fitVids();
-  });
-</script>
-
-<!-- Run Baseline-element.js to resize images so that they conform to the baseline grid. Set baseline variable to the baseline height and set the selector for the elements to be sized. https://github.com/betsol/baseline-element -->
-<script type="text/javascript">
-    var baseline = 18;
-    $('.responsive-img').baselineElement(baseline);
-</script>
-
-<!-- This implements the :has Pseudo-Class selector from editor's draft of the CSS Selectors Level 4 as described here: http://www.ericponto.com/blog/2015/01/10/has-pseudo-class-parent-selector/. Requires jquery, polyfill.js)-->
-<script>
-    Polyfill({
-        selectors: [":has"]
-    }).doMatched(rules => {
-        rules.each(rule => {
-            // just pass it into jQuery since it supports `:has`
-            $(rule.getSelectors()).css(rule.getDeclaration())
-        });
-    });
-</script>
-    <!-- BEGIN 02-organisms/sections/subscription-popup -->
-<script>
-jQuery( document ).ready( function( $ ) {
-	$('.new-nav__burger').click(function() {
-        //e.preventDefault();       
-			  if ( $('.new-site-nav__dropdown').is(":hidden")) {
-			  	$('.new-nav__burger .fas').removeClass('fa-bars').addClass('fa-times');
-			  	} else {
-				  	$('.new-nav__burger .fas').removeClass('fa-times').addClass('fa-bars');
-				}
-		$('#new-search-form-input').focus();		
-	});  
-});	
-</script>
 
     </body>
 
 </html>
+
+    
+    
