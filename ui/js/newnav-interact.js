@@ -1,6 +1,6 @@
 
 jQuery( document ).ready( function( $ ) {
-	$('.new-nav__burger').click(function() {
+	$('.new-site-nav-main__expander-toggle').click(function() {
         //e.preventDefault();       
 			  if ( $('.new-site-nav__dropdown').is(":hidden")) {
 			  	$('.new-nav__burger .fas').removeClass('fa-bars').addClass('fa-times');
@@ -50,13 +50,25 @@ setMain();
 
 
 jQuery(document).ready(function() {
-bumpMenu();
+
+setTimeout(function() {
+	bumpMenu();
 setMain();
+            
+  }, 250);
+
+
+
 });
 
 jQuery( window ).on( "load", function() {
-    bumpMenu();
-	setMain();
+   
+			setTimeout(function() {
+	bumpMenu();
+setMain();
+            
+  }, 250);
+			
     });
 
 
@@ -82,14 +94,19 @@ function scrollMenu(){
 	setMain();
 	if ($(window).scrollTop()  > mainPosition) {
       $('.new-site-header__logo-block').addClass('scroll');
+						setTimeout(function() {
+	bumpMenu();
+  }, 500);
     } else {
       $('.new-site-header__logo-block').removeClass('scroll');
+					setTimeout(function() {
+	bumpMenu();            
+  }, 500);
 	}
 }
-
 $(window).bind('load scroll', function() {
  scrollMenu();
 });
 
-
-
+   
+		
