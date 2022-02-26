@@ -1189,9 +1189,7 @@ form input {
 	}
 	
 	.new-site-nav__dropdown .new-nav__link--join {
-		grid-column: col-4;
-padding-top: 2rem;
-justify-self:auto;
+grid-column:col-4;
 	} /* Hides redundant link */
 	
 	.new-site-nav__dropdown .new-facebook {
@@ -1229,7 +1227,7 @@ justify-self:auto;
 	}
 	
 	.new-site-nav-main .new-nav__link--join {
-		/*justify-self: end;*/
+		justify-self: end;
 	}
 	
 	.new-site-nav-main .new-nav__link--search {
