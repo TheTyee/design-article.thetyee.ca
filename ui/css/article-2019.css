@@ -2376,7 +2376,8 @@ aside {
 		content: "\00a0";
 		padding-right: 5px;
 	}
-}	
+}
+
 	.author-info__date span {
   content: "\00a0";
   display: inline-block;
