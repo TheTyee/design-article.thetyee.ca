@@ -1189,7 +1189,7 @@ form input {
 	}
 	
 	.new-site-nav__dropdown .new-nav__link--join {
-		display: none
+grid-column:col-4;
 	} /* Hides redundant link */
 	
 	.new-site-nav__dropdown .new-facebook {
