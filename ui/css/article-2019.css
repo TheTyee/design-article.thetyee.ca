@@ -2372,15 +2372,13 @@ aside {
 }
 	
 @media screen and (max-width: 600px) {
-	.author-info__date span:before {
-		content: "\00a0";
+	span.author-info__date span {
 		padding-right: 5px;
 	}
 }
 
-	.author-info__date span {
+span.author-info__date span {
   content: "\00a0";
-  display: inline-block;
   padding-right: 5px;
 }
 	
