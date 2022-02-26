@@ -4294,10 +4294,11 @@ img.fact-box--headshot {
 
 .latest-stories h4 {
 	font-size: 1.125em;
+	color: #444;
 }
 
-.latest-stories a {
-	color: #82AD00;
+.latest-stories a, .latest-stories a:visited {
+	color: #444;
 }
 
 .latest-stories__media-wrapper {
