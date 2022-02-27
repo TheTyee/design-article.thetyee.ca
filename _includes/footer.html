@@ -15,3 +15,18 @@
 
 	</div>
 </footer>
+   {% include 02-organisms/sections/builder-modal.html %}
+
+<script>
+$( document ).ready( function( $ ) {
+		  if ( $(.new-site-nav__dropdown).is(":visible")) {
+		  	$('.new-nav__burger .fas').removeClass('fa-bars').addClass('fa-times');
+		  	} else {
+			  	$('.new-nav__burger .fas').removeClass('fa-times').addClass('fa-bars');
+			}
+		});
+		//$('#searchbtn .fa-search').toggleClass("fa-times");
+		$('#new-search-form-input').focus();		
+	//});  
+}	
+</script>

@@ -5,16 +5,14 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-{% include meta/head-homepage.html %}
-  <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+    {% include meta/head-homepage.html %}
+    <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
 
     <!-- =============================== -->
     <!-- ===== Header ===== -->
 
     {% include 01-molecules/messaging/alerts--browser-support.html %}
-
-    {% comment %} include 02-organisms/sections/httpswarning.html --> temporarily removed for grid design purposes {% endcomment} %}
-
+  
     {% include 02-organisms/global/header--homepage.html %}
 
     <!-- =============================== -->
@@ -37,7 +35,7 @@
     <!-- =============================== -->
     <!-- ===== Footer ===== -->
 
-    {% include 02-organisms/global/footer-homepage.html %}
+    {% include 02-organisms/global/footer-global.html %}
 
     {% include footer_scripts_standard.html %}
 

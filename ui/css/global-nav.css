@@ -1,0 +1,1258 @@
+/* @override 
+	http://127.0.0.1:4000/ui/css/global-nav.css */
+
+#ad-leaderboard,
+.ad-banner {
+	display: none;
+}
+
+.new-site-nav__dropdown {
+	position: fixed;
+	top:0px;
+	left:0px;
+	width: 100%;
+	z-index:1999;
+}
+
+.new-site-header__logo-block-wrapper  {
+
+position: fixed;
+top: 0;
+left: 0;
+z-index: 2000;
+width: 100%;
+}
+
+
+#highlight-bar {
+	background: var(--highlight-blue);
+	min-height: 42px;
+	text-align: center;
+	font-family: var(--typeface-sans);
+	font-weight: 500;
+	padding: 12px 20px 10px;
+	font-size: 1.05em;
+}
+
+#highlight-bar a {
+	border-bottom: 1px solid;
+	margin-bottom: 0;
+}
+
+#highlight-bar a:hover {
+	background: none;
+}
+
+#highlight-bar p {
+	margin-bottom: 0;
+	line-height: 1.2;
+	font-weight: 500;
+}
+
+body.default-global--new2019 #highlight-bar,
+body.article-series #highlight-bar {
+	font-size: 0.9em;
+}
+
+/* Header and navigation ----------------- */
+
+a.new-site-header--homepage {
+	text-decoration: none;
+}
+
+.new-site-header--homepage {
+	font-size: 1.6rem;
+	line-height: 2rem;
+	color: var(--text-colour);
+}
+
+.new-site-header__tagline {
+	position: relative;
+	font-family: var(--typeface-sans);
+	font-size: 1em;
+	font-weight: 500;
+	color: black;
+}
+
+@media screen and (max-width: 849px) {
+	.new-site-header__tagline {
+		font-size: 0.9em;
+		line-height: 1.2;
+	}
+}
+
+@media screen and (min-width: 1500px) {
+	.new-site-header__tagline {
+		font-size: 1.2em;
+		line-height: 1.2;
+	}
+}
+
+/* Header Typography -- Navigation */
+
+.new-site-nav-main {
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	background: #fff;
+	margin-top: 0;
+	padding-top: 15px !important;
+	
+}
+
+ul#nav-bar {
+	grid-column: 1 / -1;
+	background: #fff;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 10px;
+	padding: 0;
+}
+
+ul#nav-bar li {
+	display: inline;
+	margin: 0 15px;
+}
+
+.new-site-nav li a, ul#nav-bar label {
+	background: #fff;
+	font-size: 1.25em !important;
+	font-size: 1.15em !important;
+	color: var(--grey);
+	font-weight: 500;
+}
+
+ul#nav-bar li label:hover {
+	cursor: pointer;
+	color: #000;
+}
+
+ul#nav-bar li label.nav-bar__link--more:after {
+	content: "\f0d7";
+	font-family: "Font Awesome 5 Free";
+	margin-left: 5px;
+	font-weight:600;
+}
+
+.new-site-header #nav-bar a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.nav-bar__link--search .fa-search {
+	margin-left: 2px;
+	font-size: 0.9em;
+}
+
+.new-site-nav-main a.new-nav__link--join {
+	color: var(--grey);
+}
+
+.new-site-nav__dropdown a.new-nav__link--join {
+	color: var(--grey);
+}
+
+.new-site-nav__dropdown-heading, .new-site-nav__dropdown .new-nav__link--join, .new-site-nav__dropdown .new-twitter {
+	padding-top: 2rem;
+}
+
+.new-nav__link--dropdown-item {
+	font-weight: 400;
+	font-size: 1.2em;
+	line-height: 1.2;
+	background: none !important;
+}
+
+.new-nav__link--dropdown-item:hover {
+	text-decoration: underline;
+}
+
+.new-site-nav__dropdown ul {
+	padding-left: 0;
+}
+
+.new-site-nav__dropdown li {
+	margin-bottom: 2px;
+}
+
+.new-expander-content__topics-submenu .new-nav__link--dropdown-item, .new-expander-content__more-submenu .new-nav__link--dropdown-item {
+	text-transform: capitalize;
+	letter-spacing: 0
+}
+
+.new-site-nav__dropdown .new-nav__link--newsletter, .new-site-nav__dropdown .new-facebook, .new-site-nav__dropdown .new-twitter {
+	padding-top: 1rem;
+}
+
+.new-site-header {
+	padding-bottom: 0rem;
+	z-index: 1000;
+}
+
+.new-site-header__logo-block-wrapper {
+	background: var(--yellow);
+}
+
+/*@media (min-height: 300px) {
+  .new-site-header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+  }
+}*/
+
+.new-site-header__logo-block {
+	display: grid;
+	grid-template-columns: 150px 1fr 300px 1fr 150px !important;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: 0;
+	align-items: center;
+	/*justify-items: center;*/
+	margin: 0 auto;
+	width: auto;
+	width: 100%;
+	/*max-width: 849px;*/
+	padding-top: 3rem;
+	/*background: var(--yellow);*/
+	padding-bottom: 28px; /* balances grid alignment *!/*/
+	position: relative;
+	
+-webkit-transition: 0.5s padding-top ease-out, 0.5s padding-bottom ease-out;
+	-moz-transition: 0.5s padding-top ease-out, 0.5s padding-bottom ease-out;
+	-o-transition: 0.5s padding-top ease-out, 0.5s padding-bottom ease-out;
+	transition: 0.5s padding-top ease-out, 0.5s padding-bottom ease-out;
+}
+
+@media screen and (max-width: 849px) {
+	.new-site-header__logo-block:not(.scroll) {
+		/*grid-template-columns: 1fr 1fr minmax(30px, 200px) 1fr 1fr !important;*/
+		grid-template-columns: 150px 1fr minmax(30px, 200px) 1fr 150px !important;
+		grid-column-gap: 0;
+		padding-top: 15px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.new-site-header__logo-block {
+		padding-left: var(--page-margin-sides);
+		padding-right: var(--page-margin-sides);
+	}
+}
+
+@media screen and (min-width: 1201px) {
+	.new-site-header__logo-block {
+		/*max-width: 1600px;*/
+		padding-left: var(--page-margin-sides);
+		padding-right: var(--page-margin-sides);
+	}
+}
+
+/* limit width for articles */
+body.default-global--new2019 .new-site-header__logo-block,
+body.article-series .new-site-header__logo-block {
+	max-width: 55em;
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+
+/* limit width for articles */
+body.default-global--new2019 .new-site-header__logo-block.scroll,
+body.article-series .new-site-header__logo-block.scroll {
+	max-width: 56em;
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+
+/*@media screen and (min-width: 0px) and (max-width: 768px) {
+	body.default-global--new2019 .new-site-header__logo-block,
+	body.article-series .new-site-header__logo-block {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+}*/
+
+@media screen and (min-width: 640px) and (max-width: 849px) {
+	body.default-global--new2019 .new-site-header__logo-block,
+	body.article-series .new-site-header__logo-block {
+		max-width: 57.7em;
+		padding-left: 32px !important;
+		padding-right: 32px !important;
+	}
+}
+
+@media screen and (min-width: 640px) and (max-width: 849px) {
+	body.default-global--new2019 .new-site-header__logo-block.scroll,
+	body.article-series .new-site-header__logo-block.scroll {
+		padding-left: 32px !important;
+		padding-right: 32px !important;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	body.default-global--new2019 .new-site-header__logo-block:not(.scroll),
+	body.article-series .new-site-header__logo-block:not(.scroll) {
+		grid-template-columns: 150px 1fr minmax(30px, 200px) 1fr 150px !important;
+		max-width: 55.5em;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+@media screen and (min-width: 1200px) {
+	body.default-global--new2019 .new-site-header__logo-block:not(.scroll),
+	body.article-series .new-site-header__logo-block:not(.scroll) {
+		grid-template-columns: 150px 1fr 300px 1fr 150px !important;
+		max-width: 55.5em;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.new-site-header__tagline {
+	/*margin-top: calc(.3rem + 2vw);*/
+	grid-column: 1;
+	width: 170px;
+	justify-self: start;
+}
+
+.new-site-header__logo {
+	grid-column: 3;
+	display: block;
+	width: 100%;
+	/*height: auto;
+	max-height: 58px;*/
+	justify-self: center;
+	  
+}
+
+.new-site-header__logo a {
+	display: block;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+@media screen and (min-width: 470px) {
+	.new-site-header__logo a {
+		text-align: center;
+	}
+	
+	.new-site-header__logo-block.scroll .new-site-header__logo a {
+		text-align: left;
+	}
+}
+
+.new-site-header__logo {
+	max-width: 243px;
+}
+
+.new-site-header__logo img {
+	width: 100%;
+}
+
+@media screen and (max-width: 567px) {
+	.new-site-header__logo {
+		width: 30vw;
+	}
+	
+	.new-site-header__logo-block.scroll .new-site-header__logo {
+		width: 20vw;
+	}
+}
+
+
+@media screen and (max-width: 370px) {
+	.new-site-header__logo {
+		width: 115px;
+	}
+	
+	.new-site-header__logo img {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	.new-site-header__logo {
+		width: 243px;
+	}
+	
+	.new-site-header__logo img {
+		width: 100%;
+	}
+}
+
+.new-site-header__menu-toggle {
+	grid-column: 5;
+	text-align: right;
+	justify-self: end;
+	align-self: center;
+}
+
+@media screen and (max-width: 849px) {
+	.new-site-header__logo-block:not(.scroll).new-site-header__menu-toggle,
+	.new-site-header__tagline {
+		align-self: start;
+	}
+	
+	.new-site-header__logo { 
+		align-self: center;
+		position: relative;
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 600px) {
+	.new-site-header__logo-block:not(.scroll) .new-site-header__logo img {
+		/*position: absolute;
+		top: 50%;
+		transform: translateY(-50%);*/
+		position: relative;
+		/*top: 5px;*/
+	}
+}
+
+.new-nav__burger .fa-bars,
+.new-nav__burger .fa-times {
+	font-size: 40px;
+}
+
+@media screen and (max-width: 400px) {
+	.new-nav__burger .fa-times {
+		font-size: 30px;
+		position: relative;
+		top: -2px;
+	}
+}
+
+
+.new-site-header__tagline--mobile {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+
+.new-site-header__tagline--mobile::before, .new-site-header__tagline--mobile::after {
+	display: none;
+}
+
+
+
+/* compact sticky header on scroll */
+
+.new-site-header__logo-block.scroll {
+	grid-template-columns: 150px 1fr 44px !important;	
+}
+
+.new-site-header__logo-block.scroll .new-site-header__tagline {
+	display: none;
+}
+
+.new-site-header__logo-block.scroll {
+	height: 66px;
+	padding-top: 0;
+	padding-bottom: 0;
+	-webkit-transition: 0.5s padding-top ease-out, 0.5s padding-bottom ease-out;
+	-moz-transition: 0.5s padding-top ease-out, 0.5s padding-bottom ease-out;
+	-o-transition: 0.5s padding-top ease-out, 0.5s padding-bottom ease-out;
+	transition: 0.5s padding-top ease-out, 0.5s padding-bottom ease-out;
+
+	
+}
+
+.new-site-header__logo-block.scroll .new-site-header__logo,
+.new-site-header__logo-block.scroll .new-site-header__logo-img {
+	height: 29px;
+}
+
+.new-site-header__logo-block.scroll .new-site-header__logo {
+	width: 150px;
+	grid-column: 1;
+
+}
+
+.new-site-header__logo-block:not(.scroll) .new-site-header__buttons {
+	-webkit-transition: 0.5s visibility ease-out, 
+	-moz-transition: 0.5s visibility ease-out;
+	-o-transition: 0.5s visibility ease-out;
+	transition: 0.5s visibility ease-out;
+	visibility: hidden;
+	height:0px;
+	width:0px;
+	opacity:0;
+	position: absolute;
+	bottom: -300;
+}
+
+.new-site-header__buttons {
+	grid-column: 2;
+	justify-self: end;
+	padding-top: 1px;
+		-webkit-transition: 0.5s visibility ease-out, 
+	-moz-transition: 0.5s visibility ease-out;
+	-o-transition: 0.5s visibility ease-out;
+	transition: 0.5s visibility ease-out;
+	visibility: visible;
+}
+
+.new-site-header__buttons a:last-child {
+	margin-left: 18px;
+}
+
+.new-site-header__logo-block.scroll .new-site-header__menu-toggle {
+	grid-column: 3;
+	justify-self: end;
+}
+
+.new-site-header__logo-block.scroll .new-site-header__menu-toggle .fa-bars {
+	font-size: 37px !important;
+}
+
+.new-site-header__buttons a {
+	border: 1px solid #000;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding: 6px 10px 5px;
+}
+
+.new-site-header__buttons a.black {
+	background: #000;
+	color: #fff;
+}
+
+.new-site-header__buttons a:hover {
+	background: #fff;
+	font-size: 14px;
+}
+
+.new-site-header__buttons a.black:hover {
+	color: var(--darkgrey);
+}
+
+.new-site-header__buttons a:hover .fas {
+	color: var(--yellow) !important;
+}
+
+@media screen and (max-width: 645px) {
+	.new-site-header__logo-block.scroll {
+		height: 58px;
+	}
+	
+	.new-site-header__logo-block.scroll {
+		grid-template-columns: 150px 1fr 30px !important;	
+	}
+	
+	.new-site-header__buttons a,
+	.new-site-header__buttons a:hover {
+		padding: 4px 9px 3px;
+		font-size: 13px;
+	}
+	
+	.new-site-header__buttons a:last-child {
+		margin-left: 10px;
+	}
+	
+	.new-site-header__logo-block.scroll .new-site-header__logo {
+		justify-self: start;
+	}
+	
+	.new-site-header__logo-block.scroll .new-site-header__logo,
+	.new-site-header__logo-block.scroll .new-site-header__logo-img {
+		height: 22px;
+	}
+	
+	.new-site-header__logo-block.scroll .new-site-header__logo {
+		width: 115px;
+		grid-column: 1;
+	}
+	
+	.new-site-header__logo-block.scroll .new-site-header__menu-toggle .fa-bars,
+	.new-site-header__logo-block.scroll .new-site-header__menu-toggle .fa-times {
+		font-size: 29px !important;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.new-site-header__buttons a span {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 515px) {
+	.hide-on-phone { /* hide one button at small sizes */
+		display: none;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	.new-site-header__buttons { /* hide both buttons at small sizes */
+		display: none;
+	}
+}
+
+/* end */
+
+    
+    /* SITE NAV MOLECULE */
+
+    /* Default for narrow views:
+    Hide all nav item items except the hamburger, search button, and the dropdown menus.
+        (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #new-expander--nav-menu (and #new-expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+
+.new-site-nav-main > :not(.new-nav__burger):not(.new-site-nav__dropdown):not(.new-nav__link--search):not(.new-site-nav__search-dropdown) {
+	display: none;
+}
+
+.new-nav__link {
+	cursor: pointer;
+}
+
+/*.new-site-nav-main__expander-toggle.new-nav__burger::before, .new-site-nav-main__expander-toggle.new-nav__link--more::after {
+	content: "arrow_drop_down";
+	display: inline-block;
+	vertical-align: -0.25em;
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.5em;
+	line-height: 1rem; /* required to prevent additional height in element *!/
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+	font-feature-settings: 'liga'; /* required for Edge browser *!/
+}*/
+
+.new-nav__link--join {
+	position: relative;
+	/*left: 1.35em;*/ /* Keeps icon placed ::before within the grid column */
+	/* well there's no icon */
+	/*margin-right: 1.35em;*/ /* Offsets the shift left to prevent breaking the grid in narrow views */
+}
+
+.new-nav__link--search {
+	position: relative;
+	left: 1.35em; /* Keeps icon placed ::before within the grid column */
+	margin-right: 1.35em; /* Offsets the shift left to prevent breaking the grid in narrow views */
+}
+
+.new-nav__link--search::before {
+	content: url('../img/icon-search.svg');
+	display: inline-block;
+	position: absolute;
+	left: -1.35em;
+	transform: scale(.6) translate(-40%, -30%);
+}
+
+.new-site-header a, .new-site-header a:link, .new-site-header a:visited, .nav-bar__link--more, .nav-bar__link--search {
+	/*color: var(--yellow) !important*/;
+}
+
+.new-site-header #nav-bar a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.new-site-nav__dropdown a, .new-site-nav__dropdown a:link, .new-site-nav__dropdown a:visited {
+	color: var(--yellow) !important;
+}
+
+
+
+
+/* @group moved from homepage-prefixed.css */
+
+}
+
+.new-nav__link--join::before {
+	content: url('../img/icon-dollar-heart.svg');
+	display: block;
+	position: absolute;
+	left: -1.5em;
+	transform: scale(.6) translate(-40%, -30%);
+}
+
+
+      /* NAV DROPDOWN EXPANDER */
+      /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
+      This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
+      An alternative (although less robust) method is to use anchors links:
+      https://jsfiddle.net/Algreenwich/uym9s0bg/
+      https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
+
+          /* DEFAULT state: Dropdown Menu is hidden */
+
+.new-site-nav__dropdown {
+	display: none;
+	grid-column: 1 / -1;
+}
+
+          /* ACTIVATED state: Menu is shown and toggle icon is inverted */
+
+#new-expander--nav-menu:checked ~ .new-site-nav__dropdown {
+	display: grid; /* This must be "grid" if the revealed menu is itself using an internal grid layout */
+}
+
+.new-site-nav #new-expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::before, .new-site-nav #new-expander--nav-menu:checked ~ .new-site-nav-main__expander-toggle::after {
+	transform: rotate(180deg);
+}
+
+      /* SEARCH DROPDOWN EXPANDER */
+      /* Search Dropdown is now integrated into the Nav Dropdown and the Search button is
+         just another label for the input#new-expander--nav-menu checkbox */
+
+.new-site-nav__search-dropdown {
+	grid-column: 1 / -1;
+	padding: 3rem 0px;
+	margin-top: 0.5rem;
+	margin-bottom: -0.5rem;
+	background-color: var(--utility-background-color);
+}
+
+.new-site-nav__search-dropdown .new-site-nav__search-form {
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+	font-size: 2.7rem;
+}
+
+.new-site-nav__search-dropdown .new-site-nav__search-form .new-button {
+	padding-top: 1rem;
+}
+
+.new-site-nav__search-dropdown .new-site-nav__search-form > * {
+	display: block;
+	grid-template-columns: 4fr 1fr;
+	font-size: 0.6em;
+	height: 4rem;
+	border: 1px solid var(--utility-background-color);
+}
+
+.new-site-nav__search-form-button {
+	background: var(--yellow) !important;
+	border-radius: 4px !important;
+}
+
+form input {
+	padding-left: 0.65em;	
+}
+
+.new-site-nav__dropdown form input  {
+	border-radius: 4px;
+	font-weight: normal;
+}
+
+.new-site-nav__dropdown form input[type="text"]  {
+	font-size: 0.7em !important;
+	font-family: var(--typeface-sans);
+	color: var(--grey) !important;
+}
+
+      /* SUB-NAV DROPDOWN EXPANDERS */
+      /* This uses a checkbox and labels to toggle the display of content without using javascript. See: https://jsfiddle.net/Algreenwich/uLpzvx4n/36/
+      This was adapted from The Checkbox/Label Trick described here: https://javascript.works-hub.com/learn/a-javascript-free-frontend-61275
+      An alternative (although less robust) method is to use anchors links:
+      https://jsfiddle.net/Algreenwich/uym9s0bg/
+      https://stackoverflow.com/questions/40312901/showing-and-hiding-something-with-pure-css-with-show-and-hide-button */
+
+          /* Sub-nav has arrow toggle icon */
+
+.new-site-nav__dropdown-expander-toggle::after {
+	content: "arrow_drop_down";
+	display: inline-block;
+	vertical-align: -0.25em;
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.5em;
+	line-height: 1rem; /* required to prevent additional height in element */
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+	font-feature-settings: 'liga'; /* required for Edge browser */
+}
+
+          /* subnav DEFAULT STATE: Menu content in adjacent sibling div is hidden */
+
+#new-expander--nav-menu-section-submenu + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content, #new-expander--nav-menu-topics-submenu + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content, #new-expander--nav-menu-more-submenu + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content {
+	display: none;
+}
+
+          /* subnav ACTIVATED STATE: Menu content is shown and adjacent sibling toggle icon is inverted */
+
+#new-expander--nav-menu-section-submenu:checked + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content, #new-expander--nav-menu-topics-submenu:checked + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content, #new-expander--nav-menu-more-submenu:checked + label.new-site-nav__dropdown-expander-toggle + div.new-expander-content {
+	display: grid; /* Menu content is shown */
+}
+
+#new-expander--nav-menu-section-submenu:checked + .new-site-nav__dropdown-expander-toggle::after, #new-expander--nav-menu-topics-submenu:checked + .new-site-nav__dropdown-expander-toggle::after, #new-expander--nav-menu-more-submenu:checked + .new-site-nav__dropdown-expander-toggle::after {
+	transform: rotate(180deg); /* toggle icon is inverted */
+}
+
+          /* ---- SITE HEADER responsive enhancement ---- */
+          /* -------------------------------------------- */
+
+
+          /*  Site Header MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+
+@media screen and (min-width: 684px) {
+	.new-site-header {
+		padding-bottom: 1rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.new-site-nav__dropdown li {
+		margin-bottom: 20px; /* increase spacing for mobile */
+	}
+}
+
+          /*  Site Header NON-STANDARD BREAKPOINT -- MAX 849px */
+          /*  Style Nav only in narrow views */
+
+@media screen and (max-width: 849px) {
+	/* Reduce space below page header on Story-pages in narrow views */
+	
+	.story-page .new-site-header {
+		margin-bottom: -4rem;
+	}
+	
+	.new-site-header__logo-block {
+		padding-top: 2rem;
+		padding-bottom: 10px;
+	}
+	
+	.new-site-header__logo img {
+		max-width: 50vw; /*  Makes room for burger and search icons beside logo */
+	}
+
+    /* Raise Nav to be parallel with logo in narrow views */
+	
+	.new-site-nav-main {
+		position: relative;
+		/*top: -4rem;*/
+		top: 0;
+		height: 0px !important;
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	
+	.new-site-nav-main__expander-toggle.new-nav__burger {
+		position: relative;
+	}
+	
+	/*.new-site-nav-main__expander-toggle.new-nav__burger::before {
+		content: "menu";
+		display: inline-block;
+		position: absolute;
+		top: -3rem;
+		left: -0.5rem;
+		font-family: 'Material Icons';
+		font-weight: normal;
+		font-style: normal;
+		font-size: 5.5rem;
+		line-height: 1rem; /* required to prevent additional height in element *!/
+		letter-spacing: normal;
+		text-transform: none;
+		display: inline-block;
+		white-space: nowrap;
+		word-wrap: normal;
+		direction: ltr;
+		-webkit-font-feature-settings: 'liga';
+		-webkit-font-smoothing: antialiased;
+		font-feature-settings: 'liga'; /* required for Edge browser *!/
+	}*/
+	
+	.new-nav__link--search {
+		position: absolute;
+		right: 0rem;
+		left: initial;
+		margin-right: 0; /* Eliminates an offset required in wide views */
+	}
+	
+	.new-nav__link--search::before {
+		top: -4rem;
+		left: 1rem;
+		transform: scale(1);
+	}
+
+    /* Dropdown Menu appearance in narrow views */
+	
+	.new-site-nav-main {
+		width: 100%;
+	}
+	
+	.new-site-nav__dropdown {
+		position: relative;
+		/*left: -2rem;*/
+		top: 0;
+		z-index: 100;
+		grid-template-rows: auto auto auto auto auto auto auto 1fr;
+		width: 100%; /* 100vw causes horizontal scroll but 100% doesn't work on phone size */
+		padding-left: 2rem;
+		padding-right: 2rem;
+		min-height: 100vh;
+		padding-bottom: 8rem;
+		background-color: var(--utility-background-color);
+		color: #eee;
+	}	
+	
+	    /* Adds inside border to Dropdown Menu in narrow views */
+	
+	.new-site-nav__dropdown::after {
+		content: '';
+		position: absolute;
+		left: 0rem;
+		bottom: 1rem;
+		z-index: 100;
+		/*width: calc(100vw);*/
+		border-bottom: 1px solid #bbb;
+	}
+	
+	.new-site-nav__dropdown li {
+		margin-bottom: 15px; /* increase spacing for mobile */
+	}
+	
+	.new-site-nav__dropdown a {
+		color: var(--yellow);
+		padding: 0.5rem 0;
+	}
+	
+	.new-site-nav__dropdown-heading {
+		padding-bottom: 0.5em;
+		margin-bottom: 15px !important;
+		border-bottom: 1px solid #888;
+	}
+	
+	.new-expander-content__section-submenu a, .new-expander-content__topics-submenu a, .new-expander-content__more-submenu a {
+		/*border-bottom: 1px solid #888; remove the border, it's busy */ 
+	}
+	
+	.new-site-nav__dropdown .new-nav__link--join {
+		padding-top: 3rem;
+	}
+
+    /* Search Dropdown appearance in narrow views */
+	
+	.new-site-nav__search-dropdown {
+		position: relative;
+        /* left: -2rem; */
+        /* width: 100vw; */
+        /* min-height: 100vh; */
+	}	
+	
+	.new-hmpg-org-recent-stories {
+		padding-top: 2rem; /* Narrows gap between header and main content */
+	}
+	
+} /*  end os narrow breakpoint styles -- max-wdith 849px */
+
+
+          /*  Site Header NON-STANDARD BREAKPOINT -- non-standard-width: 425px */
+
+@media screen and (max-width: 530px) {
+	.new-site-nav__search-dropdown .new-site-nav__search-form > *,
+	.new-site-nav__search-dropdown .new-site-nav__search-form {
+		grid-template-columns: 1fr; /* stack search bar and button on small devices to avoid horizontal overflow */
+	}
+	
+	.new-site-nav__search-dropdown .new-site-nav__search-form #new-search-form-input {
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 468px) {
+	
+	.new-site-header__logo-block:not(.scroll) {
+		display: grid;
+		grid-template-columns: 1fr 1fr !important;
+		align-items: stretch;
+	}
+	
+	.new-nav__burger .fa-bars {
+		font-size: 30px;
+	}
+	
+	div.new-site-header__logo-block div.new-site-header__tagline.new-site-header__tagline--a {
+		display: none;
+	}
+	
+	.new-site-header__logo {
+		grid-column: 1;
+		justify-self: start;
+	}
+	
+	.new-site-header__menu-toggle {
+		grid-column: 2;
+	}	
+
+}
+
+
+          /*  Site Header NON-STANDARD BREAKPOINT -- MIN-WIDTH 850px --------------- */
+
+@media screen and (min-width: 850px) {
+	.new-site-header {
+		padding-bottom: 0rem;
+        /* Run logo block and nav to edge of screen */
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+    /* Expand site-header grid and show taglines */
+	
+	.new-site-header__logo-block {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	.new-site-header__tagline--a {
+		display: block;
+		text-align: left;
+		-webkit-text-stroke: .025em rgba(51,51,51,0.50);
+		-webkit-font-smoothing:antialiased !important;
+		text-shadow:1px 1px 1px rgba(0,0,0,0.005);
+	}
+	
+	.new-site-header__menu-toggle {
+		display: block;
+	}
+	
+	.new-site-header__tagline--mobile {
+		display: none;
+	}
+
+
+    /* Create SITE-NAV BAR GRID */
+	
+	.new-site-nav-main {
+		/* Set element's position within its container (.site-header__logo-block) */
+		grid-column: 1 / -1;
+		position: relative;
+
+        /* Define Grid within element */
+		display: grid;
+		grid-template-columns: calc(var(--page-margin-sides))  [main-items] 1fr 1fr 1fr 1fr  1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
+		padding-top: var(--gutter-row);
+		grid-column-gap: 0;
+		grid-row-gap: 0;
+		align-items: end;
+	/*	margin-top: 1.5rem; /* desired offset from logo (3rem) - self padding-top (.5rem) - padding on nav__link (0.5rem)*/
+		border-bottom: 1px solid var(--border-colour-cols);
+		padding: calc(.5rem) 0 calc(0rem + 2px);
+        /* border-bottom: 1px solid var(--text-colour); */
+		margin-bottom: calc(.5rem - 1px - 2px);
+        /*             increment to offset margin-top for grid alignment
+                     - self top border (1px)
+                     - self padding-bottom (2px)      */
+	}
+
+    /* Nav bar button spacing and positioning */
+	
+	.new-site-nav-main > .new-nav__link {
+		padding-top: 0.25rem;    /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+		padding-bottom: 0.25rem; /* offset by reduction in top-margin in site-nav-main to realign with baseline grid */
+	}
+	
+	
+	
+	
+	                  /* Nav bar borders */
+	
+	/*                  /* dot-screen shadow *!/
+	                  .new-site-nav-main::after {
+	                    content:"";
+	                    display: grid;
+	                    z-index: 0;
+	                    grid-column: 1 / -1;
+	                    position: relative;
+	                    top: calc(1rem - 1px);
+	                    /* top: calc(1rem + 2px + 1px); -- for nav version with double bottom border *!/
+	                    /*   height of self (1rem)
+	                       + .new-site-nav-main padding-bottom (2px)
+	                       + .new-site-nav-main border-top (1px)      *!/
+	                    left: 0;
+	                    width: 100%;
+	                    height: 1rem;
+	                    background-image: url(../img/texture-dotscreen-1.2x.svg);
+	                  }*/
+	
+	                  /* heavy-border below */
+	/*                  .new-site-nav-main::before {
+	                    content:"";
+	                    position: absolute;
+	                    bottom: 3px; /* .new-site-nav-main padding-bottom(2px) + .new-site-nav-main border-top(1px) *!/
+	                    left: 0;
+	                    grid-column: 1 / -1;
+	                    width: 100%;
+	                    border-bottom: 4px solid var(--text-colour);
+	                  }*/
+	
+	
+	
+	
+	                /* HAMBURGER SHOW/HIDE */
+	                /* In wide views show all nav item items except the hamburger, search button, and the dropdown menus.
+	                    (This rule leaves the dropdown menus unaffected so that their visibility will be controlled by the checkbox state of #new-expander--nav-menu (and #new-expander--search) as defined below in the NAV DROPDOWN EXPANDER rules) */
+	
+	.new-site-nav-main > :not(.new-nav__burger):not(.new-site-nav__dropdown):not(.new-nav__link--search):not(.new-site-nav__search-dropdown) {
+		display: block;
+	}
+
+    /* In wide views hide the hamburger */
+	
+	.new-site-nav-main > .new-nav__burger {
+		display: none;
+	}
+
+
+    /* DROPDOWN NAV MENU */
+    /* Nav Dropdown grid for wide views */
+	
+	.new-site-nav__dropdown {
+		grid-column: 1 / -1;
+		grid-template-columns: calc(var(--page-margin-sides) + 0.5rem) [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
+        /* + offset to align with nav button */
+		grid-template-rows: auto auto [row-2] 1fr;
+		grid-column-gap: 0;
+		grid-auto-flow: row dense;
+		align-items: start;
+		margin-top: 0.5rem;
+		padding-bottom: 7.5rem;
+		background-color: var(--utility-background-color);
+		color: #eee;
+	}
+	
+	.new-site-nav__search-dropdown {
+		grid-column: 2 / -2;
+	}
+	
+	.new-site-nav__dropdown > * {
+		padding-right: 0;
+		padding-left: 4.5vw; /* offset to align with nav button */
+	}
+	
+	.new-site-nav__search-dropdown {
+		padding-left: ;
+		padding-right: 8rem;
+	}
+	
+	.new-site-nav__dropdown .new-site-nav__dropdown-heading-sections, .new-site-nav__dropdown .new-expander-content__section-submenu {
+		padding-left: 5.5vw; /* offset to align with nav button */
+	}
+	
+	.new-site-nav__dropdown .new-facebook, .new-site-nav__dropdown .new-twitter {
+		padding-left: 0;
+	}
+	
+	.new-site-nav__dropdown a {
+		color: var(--brand-colour);
+		line-height: 2.5rem
+	}
+	
+	.new-expander-content__section-submenu, .new-expander-content__topics-submenu, .new-expander-content__more-submenu {
+		display: grid !important
+	} /* show submenus by default */
+	
+	.new-site-nav__dropdown-expander-toggle::after {
+		content: none;
+	} /* Hides dropdown toggle arrows */
+	
+	.new-site-nav__dropdown-heading-more {
+		grid-column: col-3;
+	}
+	
+	.new-site-nav__dropdown-heading-sections, .new-expander-content__section-submenu {
+		grid-column: col-1;
+	}
+	
+	.new-site-nav__dropdown-heading-topics, .new-expander-content__topics-submenu {
+		grid-column: col-2;
+	}
+	
+	.new-expander-content__more-submenu {
+		grid-column: col-3;
+		grid-row: row-2; /* Prevents submenu from expanding first row of grid.
+        (Only necessary if .new-site-nav__dropdown-heading-more is hidden) )*/
+		position: relative;
+	}
+	
+	.new-site-nav__dropdown .new-nav__link--newsletter {
+		grid-column: col-4;
+		padding-top: 2rem;
+	}
+	
+	.new-site-nav__dropdown .new-nav__link--join {
+grid-column:col-4;
+	} /* Hides redundant link */
+	
+	.new-site-nav__dropdown .new-facebook {
+		grid-column: col-5;
+		justify-self: center;
+		padding-top: 2rem;
+	}
+	
+	.new-site-nav__dropdown .new-twitter {
+		grid-column: col-5;
+		justify-self: center;
+	}
+} /* End of Site Header responsive breakpoint 850px*/
+
+          /*  Site Header MARGINS BREAKPOINT -- breakpoint-width-margins 1100px --------------- */
+
+@media screen and (min-width: 1100px) {
+	.new-site-nav__dropdown > * {
+		padding-left: 5.75rem;  /* offset to align with nav button */
+	}
+	
+	.new-site-nav__dropdown .new-site-nav__dropdown-heading-sections, .new-site-nav__dropdown .new-expander-content__section-submenu {
+		padding-left: 6.9rem; /* offset to align with nav button */
+	}
+}
+
+
+          /*  Site Header LARGE BREAKPOINT -- breakpoint-width-l 1368px --------------- */
+
+@media screen and (min-width: 1368px) {
+	/* Spacing for Nav buttons and dropdown */
+	
+	.new-site-nav-main {
+		grid-template-columns: calc(var(--page-margin-sides))   [main-items] 1fr 1fr 1fr 1fr 1fr  1fr calc(var(--page-margin-sides) - var(--gutter-column));
+	}
+	
+	.new-site-nav-main .new-nav__link--join {
+		justify-self: end;
+	}
+	
+	.new-site-nav-main .new-nav__link--search {
+		justify-self: center;
+	}
+	
+	.new-site-nav__dropdown {
+		grid-template-columns: calc(var(--page-margin-sides) + 2.75em)[col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4 secondary-items] 1fr [col-5] 1fr [col-6] 1fr calc(var(--page-margin-sides) - var(--gutter-column));
+	}                                                   /* + offset to align with nav button */
+	
+	.new-site-nav__dropdown > * {
+		padding-left: 3.5vw; /* offset to align with nav button */
+	}
+	
+	.new-site-nav__dropdown .new-site-nav__dropdown-heading-sections, .new-site-nav__dropdown .new-expander-content__section-submenu {
+		padding-left: 4vw; /* offset to align with nav button */
+	}
+	
+	.new-site-nav__dropdown .new-site-nav__dropdown-heading-more, .new-site-nav__dropdown .new-expander-content__more-submenu {
+		padding-left: 4vw; /* offset to align with nav button */
+	}
+}
+
+
+  /* End of Site Header organism */
+
+
+/* @end */

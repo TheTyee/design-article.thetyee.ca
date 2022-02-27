@@ -12,6 +12,10 @@ body {
     width: 800px !important;
 }
 
+header .category-label, header strong {
+display:none !important;
+}
+
 body {
       color: #000;
       background: #fff;
@@ -86,7 +90,12 @@ img, figure, aside, .pullquote {
    page-break-inside: avoid;
 }
 
+img.responsive-img {
+ max-height:35vw !important;
+height: auto !important;
+width: auto !important;
 
+}
 
 /* HEADER STYLES  ============================================================= */
 

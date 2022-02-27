@@ -1,0 +1,230 @@
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The font file(s) should be placed relative to the regular CSS file.
+ *
+ */
+
+/*
+ * Legal Disclaimer for Web licence
+ *
+ * Licence to use self-hosted webfonts for displaying dynamic text on specified website domains. Our package includes WOFF and WOFF2 font formats.
+ *
+ * Should the license page views limit be exceeded the license holder will be required to contact Lineto.com for an upgrade.
+ * 
+ * It is strictly prohibited to rename the font and to download or use these fonts in any other media. 
+ * 
+ * These Web fonts are licensed exclusively for the use on the following domain(s) and their subdomains:
+ *
+ * thetyee.ca (monthly pageviews: < 1M)
+ *
+ */
+
+/* complete */
+
+@font-face {
+  font-family: "GreyLLWeb-Light";
+  src: url("GreyLLWeb-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Light";
+  src: url("GreyLLWeb-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-LightItalic";
+  src: url("GreyLLWeb-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-LightItalic";
+  src: url("GreyLLWeb-LightItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Regular";
+  src: url("GreyLLWeb-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Regular";
+  src: url("GreyLLWeb-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Italic";
+  src: url("GreyLLWeb-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Italic";
+  src: url("GreyLLWeb-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Book";
+  src: url("GreyLLWeb-Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Book";
+  src: url("GreyLLWeb-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-BookItalic";
+  src: url("GreyLLWeb-BookItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-BookItalic";
+  src: url("GreyLLWeb-BookItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Medium";
+  src: url("GreyLLWeb-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Medium";
+  src: url("GreyLLWeb-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-MediumItalic";
+  src: url("GreyLLWeb-MediumItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-MediumItalic";
+  src: url("GreyLLWeb-MediumItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Bold";
+  src: url("GreyLLWeb-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-Bold";
+  src: url("GreyLLWeb-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-BoldItalic";
+  src: url("GreyLLWeb-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLWeb-BoldItalic";
+  src: url("GreyLLWeb-BoldItalic.woff2") format("woff2");
+}
+
+
+/* subset */
+
+@font-face {
+  font-family: "GreyLLSub-LightSubset";
+  src: url("GreyLLSub-LightSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-LightSubset";
+  src: url("GreyLLSub-LightSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLSub-LightItalicSubset";
+  src: url("GreyLLSub-LightItalicSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-LightItalicSubset";
+  src: url("GreyLLSub-LightItalicSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLSub-RegularSubset";
+  src: url("GreyLLSub-RegularSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-RegularSubset";
+  src: url("GreyLLSub-RegularSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLSub-ItalicSubset";
+  src: url("GreyLLSub-ItalicSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-ItalicSubset";
+  src: url("GreyLLSub-ItalicSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLSub-BookSubset";
+  src: url("GreyLLSub-BookSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-BookSubset";
+  src: url("GreyLLSub-BookSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLSub-BookItalicSubset";
+  src: url("GreyLLSub-BookItalicSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-BookItalicSubset";
+  src: url("GreyLLSub-BookItalicSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLSub-MediumSubset";
+  src: url("GreyLLSub-MediumSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-MediumSubset";
+  src: url("GreyLLSub-MediumSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLSub-MediumItalicSubset";
+  src: url("GreyLLSub-MediumItalicSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-MediumItalicSubset";
+  src: url("GreyLLSub-MediumItalicSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLSub-BoldSubset";
+  src: url("GreyLLSub-BoldSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-BoldSubset";
+  src: url("GreyLLSub-BoldSubset.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GreyLLSub-BoldItalicSubset";
+  src: url("GreyLLSub-BoldItalicSubset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GreyLLSub-BoldItalicSubset";
+  src: url("GreyLLSub-BoldItalicSubset.woff") format("woff");
+}
+
+

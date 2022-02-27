@@ -31,6 +31,7 @@ function fixFeaturedMediaOffset(){
         var mediaHeight=  jQuery('.featured-media .figure').outerHeight();
         var sectionHeight=  jQuery(".featured-media .ad-box").outerHeight();
         if (  (sectionHeight - mediaHeight) >= 0  && jQuery(".featured-media .ad-box").css("display") === "block" ) {
+
             var mediamargin =  mediaHeight - sectionHeight + -13;
             jQuery("section.featured-media").css("margin-bottom", mediamargin);
 
@@ -212,8 +213,8 @@ console.log(datatwo.result);
                 
        
        }
-        getShares();
-       
+       // getShares();
+       jQuery("li.count").hide();
        
        
        
@@ -301,14 +302,19 @@ console.log(datatwo.result);
         };
 
         //Moves focus directly to search field when user begins typing
+/*
         jQuery('.search-block').on('show.bs.dropdown', function(event) {
 
             setTimeout(function(){
                 jQuery('input#menu__search--input').focus();
             }, 500);
         });
+*/
 
-
+		/* place cursor in search field on toggle */
+		jQuery('.nav-bar__link--search').click(function(e) {      
+			$('input#new-search-form-input').focus();
+		});
 
        
 

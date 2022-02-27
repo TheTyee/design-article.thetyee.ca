@@ -1,18 +1,24 @@
 /* Reset */
 @import "html5doctor-reset.css";
 
-/* Import styles from article page */
-@import "homepage-articlepage_imports.css";
+@import "variables-2020.css"; /* Rethink changes for colour and fonts */
 
-/* Fonts */
-/* Miller and Franklin Gothic */
-@import url("https://use.typekit.net/whf8gkh.css");
-/* Harriet test fonts */
-@import "fonts-harriet.css";
+/* Import styles from article page */
+/*@import "homepage-articlepage_imports.css"; NOTE NOV 2020 the contents of this file are all commented out — ER*/
+
+/* New brand fonts */
+@import "fonts-tiempos.css";
+@import "fonts-grey.css";
 
 /* Add the new CSS for the homepage */
 /* NOTE: For jekyll dev purposes the main css code should be @import'ed rather
 than directly <link>'ed in the header. <link>'ed CSS files are very slow to edit
 with Chrome's devtools due to some kind of resource mapping bug. @import'ing
 the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
-@import "homepage.css?v=16";
+
+/* ===========  2020: top navigation moved into a single file ====== */
+
+@import "global-nav.css?v=23"; 
+@import "global-footer.css?v=23";
+
+@import "homepage.css?ver=23";

@@ -1,0 +1,36 @@
+:root {
+	--yellow: #ffd000; /* rethink */
+
+	/*--serif: ;
+	--sans-serif: ;*/
+	
+	--grey: #56565D; /* meets AAA guidelines for all sizes */
+	
+	--lightgrey: #73737D; /* only meets AA guidelines for small text; AAA for "large text" */
+	
+	--yellow-link: #F5A400; /* FAILS AA GUIDELINES */
+	
+	/* RETHINK accent colours below */
+	
+	--highlight-blue: #B4F4F4;
+	
+	--highlight-yellow: #FCFF42;
+	
+	--light-green: #D9E3D1;
+	
+	--mid-green: #7DC2A3;
+	
+	--dark-green: #387352;
+	
+	--dark-grey: #80828A; /* more like a medium */
+	
+	--mid-grey: #DBDBDB; /* a light grey */
+	
+	--light-grey: #F5F5F5; /* a very light grey */
+	
+	--orange: rgb(250, 184, 0);
+	
+	--button-bg: var(--dark-green);
+	
+	--section-bg-yellow: rgb(255, 224, 87);
+}

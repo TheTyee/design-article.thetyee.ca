@@ -1,0 +1,146 @@
+---
+---
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+{% include meta/head--2019.html %}
+  <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %} default-global--new2019 subpage" id="{{ page.slug | 'front' }}">
+
+    <!-- =============================== -->
+    <!-- ===== Header ===== -->
+
+    {% include 01-molecules/messaging/alerts--browser-support.html %}
+    {% comment %}
+    {% include 01-molecules/messaging/highlight-bar.html %}
+    {% endcomment %}
+
+    {% include 02-organisms/global/header--homepage-prefixed.html %}
+
+
+    <!-- =============================== -->
+<!-- Begin organisms/article/article__header -->
+<!--Article header, including hed, dek, author and social links-->
+<header class="article__header" data-dev-object-descrip="organisms/article/article__header" data-dev-status="IN-PROGRESS">   
+        <h1 class="" data-bind="title">Frequently Asked Questions</h1>
+</header>
+
+<!-- Begin organisms/article/article__body -->
+
+<article class="article__body main-col-container" data-dev-object-descrip="organisms/article/article__body" data-dev-status="IN-PROGRESS">
+
+    <div class="container-fluid clearfix">
+
+				
+				   <aside class="aside hide-on-narrow-vp" data-dev-object-descrip="01-molecules/blocks/aside" data-dev-status="IN-PROGRESS">
+					<!-- BEGIN 01-molecules/blocks/presents-box -->
+				        <div class="toc" data-dev-object-descrip="01-molecules/blocks/presents-box" data-dev-status="IN-PROGRESS">
+				    <!-- 00-atoms/images/series-badge -->
+				
+				<!-- <a href="#series-listview-link" class="series-badge badge--aside-placement badge--aside-placement--presents"><img src="../ui/img/badge-presents.svg"></a> -->
+				    <h6>Jump to...</h6>
+				
+						<ul>
+							<li><a href="#faq-newsletter">Newsletters</a></li>
+							<li><a href="#faq-technical-support">Technical Support</a></li>
+							<li>Tyee Builders</li>
+							<li>Editorial</li>
+							<li>Other</li>
+						</ul>
+				
+				</div>
+			</aside>
+
+
+<h2 id="faq-newsletter">Newsletters</h2>
+<h3>What is the difference between your daily, weekly and national newsletters?</h3>
+
+<p>Get Tyee stories straight to your email inbox, for free. We offer three different email newsletters for you to choose from:</p>
+
+<ul>
+	<li><strong>The daily newsletter</strong> comes out each weekday morning and contains the stories of the day. It is the best way to get the most up to date news.</li>
+	<li><strong>The weekly newsletter</strong> is sent out each Monday and is a complete list of all the stories that were on the site in the past week, including that Monday. </li>
+	<li><strong>The national newsletter</strong> contains a selection of stories that are of national interest. It is great for readers outside of B.C. who don't want to get inundated with B.C. stories. It is sent out each Thursday.</li>
+</ul>
+
+<p><strong>Note: You only need to sign up for one newsletter.</strong> The weekly and daily contain the same stories and the national is a selection of those same stories.</p>
+
+<h3>I want to sign up for a newsletter. How do I do that?</h3>
+
+<ul><li>If you want to subscribe to a newsletter, you can enter your email here: <a href="https://subscribe.thetyee.ca/">https://subscribe.thetyee.ca/</a></li>
+<li>Check the newsletter that you wish to receive, then click join.</li>
+</ul>
+
+<h3>How do I manage my newsletters? </h3>
+
+<p>At the end of each newsletter that is sent to your email, you will find the following, personalized links:</p>
+
+<h4>To Unsubscribe:</h4>
+<ul>
+	<li>If you want to unsubscribe an email, click on that link. You will see:</li>
+	<li>Click ‘OK’.</li>
+</ul>
+
+<h4>To change your newsletter settings</h4>
+<ul><li>If you click ‘To change your email address or subscription options’ you will see:</li>
+	<li>Etc.</li>
+</ul>
+
+<h2 id="faq-technical-support">Technical Support</h2>
+
+<h3>I keep getting an email subscription pop-up ad that I find annoying. How do I stop it?</h3>
+
+<p>Our pop-up relies on “cookies” to tell us that you have already seen and declined the offer. It should only show once in several months if you were visiting with the same browser (on the same device) with cookies enabled. Apologies if you are someone who prefers not to store cookies, we don’t have another way of verifying if you have already declined, but it should only show once per session in any case.</p>
+	
+<p>If you visit our site by clicking a link in a newsletter, the pop-up ad should not display.</p>
+
+
+
+
+    </div> <!--END .container-fluid-->
+
+</article>
+
+<!-- END organisms/article/article__body -->
+
+  <!-- =============================== -->
+    <!-- ===== Tertiary components ===== -->
+
+    {% if page.page-type == 'article' and page.messaging-zone != 'no' %}
+
+        {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+
+        {% include 02-organisms/sections/messaging-zone.html %}
+
+    {% endif %}
+
+    <footer class="article-footer clearfix main-col-container">
+            <div class="container-fluid">
+
+                {% include /01-molecules/blocks/messaging-block--builder.html %}
+
+            {% include /01-molecules/blocks/messaging-block--share.html %}
+
+            {% include /01-molecules/blocks/messaging-block--subscribe.html %}
+
+            </div>
+    </footer>
+
+
+
+
+    <!-- =============================== -->
+    <!-- ===== Footer ===== -->
+
+    {% include 02-organisms/global/footer-global.html %}
+
+    {% include 02-organisms/global/footer-IE-fallback.html %}
+
+    {% include footer_scripts_standard.html %}
+
+
+    </body>
+
+</html>
+

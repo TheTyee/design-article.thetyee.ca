@@ -13,25 +13,6 @@ meta-url: "http://thetyee.ca/home"
 ---
 
 <main>
-  <!-- HMPG TOPIC organism ----------------------------------- -->
-  <section class="hmpg-org-recent-stories hmpg-org-recent-stories--topic hmpg-org-wrapper">
-    <header class="hmpg-module-header">
-      <h2 class="hmpg-module-header__main-label">Election 2019</h2>
-    </header>
-
-    <div class="hmpg-org-recent-stories__list">
-      <!-- FEATURED STORY  -->
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/TrudeauSinghMay.jpg" story-item-class="story-item--index-page story-item--primary" story-item-category="opinion" story-item-headline="Why Not an NDP-Green-Liberal Coalition to Battle the&nbsp;Climate Crisis?" story-item-dek="Polls suggest a minority government, but we need a full coalition. Imagine the possibilities." author-2="Amanda Follett Hosgood" author-3="Yasmin Jiwani" story-badge=nil %}
-      <!-- TOP THREE STORIES  -->
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/JagmeetSinghParksvilleBeach.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="opinion" story-item-headline="The ‘Moderate’ NDP Hasn’t Worked. Let’s Resurrect the Regina Manifesto" story-item-dek="The CCF-NDP has buried its radical roots, and in the process become irrelevant." story-badge=nil %}
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/JanePhilpottIndependentAnnouncement.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="news" story-item-headline="The Forging of Jane Philpott’s Moral Will" story-item-dek="Her path to principled outcast is a five-act story suffused with religion, tragedy and Trudeau. A Tyee interview." author-2="Amanda Follett Hosgood" author-3="Yasmin Jiwani" story-badge=nil %}
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/COVER.Trudeau-Two.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="opinion" story-item-headline="Eight Hard Questions for the PM of Pipelines and Climate Emergency" story-item-dek="He says Canadians can have it both ways. The facts say otherwise." story-badge=nil %}
-        <a href="" class="button button--spanrow">More Election 2019</a>
-    </div> <!-- end of hmpg-org-recent-stories__list -->
-
-  </section>
-  <!-- end of Hmpg Topic organism -->
-
   <!-- HMPG RECENT STORIES organism ----------------------------------- -->
   <section class="hmpg-org-recent-stories hmpg-org-recent-stories--general hmpg-org-wrapper">
     <header class="hmpg-module-header">
@@ -41,13 +22,11 @@ meta-url: "http://thetyee.ca/home"
       <!-- FEATURED STORY  -->
         {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/ReinaFosterHorizon.jpg" story-item-class="story-item--index-page story-item--primary" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One&nbsp;thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
       <!-- TOP THREE STORIES  -->
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page story-item--secondary" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." author-2="Amanda Follett Hosgood" author-3="Yasmin Jiwani" story-badge="series" %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item--index-page story-item--secondary" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." author-2="Amanda Follett Hosgood" author-3="Yasmin Jiwani" %}
         {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/TahoeMineProtestGuatemala.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." story-badge=nil %}
-        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/MissingWomensMarch2012_610px_front__size__thumb.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Gray at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/MissingWomensMarch2012_610px_front__size__thumb.jpg" story-item-class="story-item--index-page story-item--secondary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Gray at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" %}
       <!-- AD BOX  -->
-      <div class="hmpg-ad-box hmpg-ad-box--halfpage">
-        {% include 01-molecules/blocks/ad-box.html ad-size="ad-box--no-label index-list-spacing" ad-slot="ad-300x600" ad-source="" %}
-      </div>
+      {% include 01-molecules/blocks/homepg-house-ad.html %}
       <!-- STORY RIVER  -->
       <!-- row 1  -->
         {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/MissingWomensMarch2012_610px_front__size__thumb.jpg" story-item-class="story-item--index-page story-item--tertiary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Gray at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
@@ -80,6 +59,7 @@ meta-url: "http://thetyee.ca/home"
   </section>
   <!-- end of Hmpg Recent Stories organism -->
 
+  {% include 02-organisms/sections/featured-sponsor-article.html %} 
 
   <!-- HMPG TYEE INSIDER organism ----------------------------------- -->
   <section class="hmpg-org-tyee-insider hmpg-org-wrapper">
@@ -115,70 +95,70 @@ meta-url: "http://thetyee.ca/home"
       </div>
     </div> <!-- End of Tyee Insider main  -->
 
-    <!-- Comment Noted molecule ----- -->
-    <div class="m-comment-noted">
-      <header class="hmpg-module-header">
-        <h2 class="m-comment-noted__label">Comment Noted</h2>
-      </header>
-      <h3 class="m-comment-noted__title">Uh oh. I’m a Planner and Planning Makes Housing More Expensive</h3>
-      <div class="m-comment-noted__body">
-        <p>Condon is correct that the the city doesn’t budget as if housing was truly a top priority. So it’s time for a rethink. Housing is literally foundational to organizing ourselves. Without it, our lives fall apart.</p>
-        <p>At the same time, money isn’t all that City Hall has in their toolbox to increase supply. The zoning incentives Condon lists here seem highly affordable.</p>
-        <p>If current approaches are driving up land prices, I’d like City Hall to plan community engagement to generate more practical ideas and initiatives for affordable housing. The more heads on this one, the better.</p>
-      </div>
-      <a href="author" rel="author" class="story-item__author">ZweiSystem</a>
-    	<div class="story-item__date">26 Feb 2019</div>
-    </div>
-    <!-- End of Comment Noted molecule  -->
-
-    <!-- Barometer molecule ----- -->
-    <div class="m-barometer">
-      <header class="hmpg-module-header">
-        <h2 class="m-barometer__label">Take Our&nbsp;Poll</h2>
-      </header>
-      <h3 class="m-barometer__title">How are Trudeau’s Liberals going to try and survive the SNC- Lavalin scandal?</h3>
-
-      <ul class="barometer-form-list">
-          <li class="barometer-form-list__item">
-            <input type="radio" value="1" id="barometer-poll-item-1" name="barometerpoll" />
-            <label class="barometer-form-label" for="barometer-poll-item-1">We did it for the jobs</label>
-          </li>
-          <li class="barometer-form-list__item">
-            <input type="radio" value="2" id="barometer-poll-item-2" name="barometerpoll" />
-            <label class="barometer-form-label" for="barometer-poll-item-2">Smear campaign of Wilson-Raybould</label>
-          </li>
-          <li class="barometer-form-list__item">
-            <input type="radio" value="3" id="barometer-poll-item-3" name="barometerpoll" />
-            <label class="barometer-form-label" for="barometer-poll-item-3">New leader time!</label>
-          </li>
-          <li class="barometer-form-list__item">
-            <input type="radio" value="4" id="barometer-poll-item-4" name="barometerpoll" />
-            <label class="barometer-form-label" for="barometer-poll-item-4">Wait it out and hope the country gets bored</label>
-          </li>
-          <li class="barometer-form-list__item">
-            <input type="radio" value="5" id="barometer-poll-item-5" name="barometerpoll" />
-            <label class="barometer-form-label" for="barometer-poll-item-5">Other</label>
-          </li>
-      </ul>
-
-      <input class="barometer-form-input button button--barometer button--dark-bg" type="submit" value="Vote Now">
-
-      <footer class="m-barometer__footer">
-        <p class="label--small">Last week:</p>
-        <a href="#"><strong>What you thought fully extending the subway to UBC</strong></a>
-        <a class="text-link text-link--button" href="#">Read the results of that poll here.</a>
-      </footer>
-    </div>
-    <!-- End of Barometer molecule -->
-
   </section>
   <!-- end of Hmpg Tyee Insider organism -->
 
 
   <!-- HMPG PINNED STORY organism ----------------------------------- -->
   <section class="hmpg-org-pinned-story hmpg-org-wrapper">
+	 <header class="hmpg-module-header">
+	  <h2 class="hmpg-module-header__main-label">Editor’s Pick</h2>
+	  <p class="hmpg-module-header__main-label-blurb">This story is making waves.</p>
+	 </header>
       {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/ReinaFosterHorizon.jpg" story-item-class="story-item--index-page story-item--primary story-item--reverse" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One&nbsp;thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." story-badge="series" %}
   </section>
+
+
+<!-- comment noted / poll -->
+<section class="hmpg-org-tyee-insider annex annex2 hmpg-org-wrapper">
+
+	
+	<!-- Comment Noted molecule ----- -->
+	    <div class="m-comment-noted">
+	      <header class="hmpg-module-header">
+	        <h2 class="m-comment-noted__label">Comment Noted</h2>
+	<p class="hmpg-module-header__main-label-blurb">We hear you.</p>
+	      </header>
+	      <h3 class="m-comment-noted__title"><a href="https://thetyee.ca/News/2021/03/11/BC-Rewriting-Regulations-To-Include-All-Gender-Identities/">Language Change Is Not Top-Down<span style="font-size: 80%;"> <br>(click to read in context)</span></a></h3>
+	      <div class="m-comment-noted__body">
+	        <p>Language belongs to the people.</p><br>
+	
+	<p>Dictionary compilers periodically research a broad category of writers and speakers for word and grammar usages not in the dictionary for their revisions.</p><br>
+	
+	<p>Authoritarians have no business dictating how we speak and write.</p><br>
+	        
+	      </div>
+	      
+	      <a class="story-item__author" href="https://thetyee.ca/News/2021/03/11/BC-Rewriting-Regulations-To-Include-All-Gender-Identities/">DavesNotHere, in response to The Tyee article <strong>“BC Is Rewriting 70 Different Regulations to Include All Gender Identities”</strong></a>
+	    </div>
+	    <!-- End of Comment Noted molecule  -->
+	    <!-- Barometer molecule ----- -->
+	    <div class="m-barometer">
+	      <header class="hmpg-module-header">
+	        <h2 class="m-barometer__label">Take Our&nbsp;Poll</h2>
+	<p class="hmpg-module-header__main-label-blurb">Vote now.</p>
+	      </header>
+	      <div class="barometer-form-list">
+	<p>Tyee Poll: Do You Think Fish Farms Should Be Banned on the Pacific Coast?</p>
+	
+	<ul>
+	<li>Yes.</li>
+	<li>No.</li>
+	<li>I’m not sure.</li>
+	</ul>
+	      </div>
+	      <a href="https://thetyee.ca/Polls/2021/04/01/Fish-Farms/"><input class="barometer-form-input button button--barometer button--dark-bg" type="submit" value="Vote Now"></a>
+	      <footer class="m-barometer__footer">
+	        <p class="label--small">Last week:</p>
+	        <a href="/Polls/2021/03/19/Vaccine-Rollout-Demographics/?results=true"><strong>When is your demographic eligible to receive the vaccine?</strong></a>
+	        <a class="text-link text-link--button" href="/Polls/2021/03/19/Vaccine-Rollout-Demographics/?results=true">Read the results of that poll here.</a>
+	      </footer>
+	    </div>
+	    <!-- End of Barometer molecule -->
+
+</section>
+
+<!-- end of comment / poll -->
 
 
   <!-- HMPG DEEP DIVE organism ----------------------------------- -->
@@ -246,12 +226,7 @@ meta-url: "http://thetyee.ca/home"
       <article class="story-item story-item--index-page story-item--minimum">
       	<h2 class="story-item__headline"><a href="">Are Conservative Senators Going to Kill Law Protecting Indigenous Rights?</a></h2>
       </article>
-      <article class="story-item story-item--index-page story-item--minimum">
-      	<h2 class="story-item__headline"><a href="">Here’s Why Ottawa’s Politicos Can’t Understand Wilson-Raybould and Philpott</a></h2>
-      </article>
-      <article class="story-item story-item--index-page story-item--minimum">
-      	<h2 class="story-item__headline"><a href="">How a Team of Women Helped Make BC a World Leader in Treating Postpartum Depression</a></h2>
-      </article>
+      
     </div>
     <!-- end of Most Popular molecule  -->
 
@@ -268,12 +243,6 @@ meta-url: "http://thetyee.ca/home"
       </article>
       <article class="story-item story-item--index-page story-item--minimum">
       	<h2 class="story-item__headline"><a href="">Are Conservative Senators Going to Kill Law Protecting Indigenous Rights?</a></h2>
-      </article>
-      <article class="story-item story-item--index-page story-item--minimum">
-      	<h2 class="story-item__headline"><a href="">Here’s Why Ottawa’s Politicos Can’t Understand Wilson-Raybould and Philpott</a></h2>
-      </article>
-      <article class="story-item story-item--index-page story-item--minimum">
-      	<h2 class="story-item__headline"><a href="">How a Team of Women Helped Make BC a World Leader in Treating Postpartum Depression</a></h2>
       </article>
     </div>
     <!-- end of Most Commented molecule -->
@@ -292,21 +261,23 @@ meta-url: "http://thetyee.ca/home"
       <article class="story-item story-item--index-page story-item--minimum">
         <h2 class="story-item__headline"><a href="">Are Conservative Senators Going to Kill Law Protecting Indigenous Rights?</a></h2>
       </article>
-      <article class="story-item story-item--index-page story-item--minimum">
-        <h2 class="story-item__headline"><a href="">Here’s Why Ottawa’s Politicos Can’t Understand Wilson-Raybould and Philpott</a></h2>
-      </article>
-      <article class="story-item story-item--index-page story-item--minimum">
-        <h2 class="story-item__headline"><a href="">How a Team of Women Helped Make BC a World Leader in Treating Postpartum Depression</a></h2>
-      </article>
     </div>
     <!-- end of Most Emailed molecule -->
 
   </section>
   <!-- end of Most organism -->
+  
+
 
 
   <!-- HMPG PINNED STORY organism ----------------------------------- -->
   <section class="hmpg-org-pinned-story hmpg-org-wrapper">
+	  
+	   <header class="hmpg-module-header">
+	  <h2 class="hmpg-module-header__main-label">Editor’s Pick</h2>
+	  <p class="hmpg-module-header__main-label-blurb">This story is making waves.</p>
+	 </header>
+	  
     <article class="story-item story-item--index-page story-item--primary story-item--reverse">
 
     <figure class="story-item__image">
@@ -322,8 +293,7 @@ meta-url: "http://thetyee.ca/home"
     <div class="category-label"><a href="/category-link-here/" data-bind="category">news</a></div>
     <h2 class="story-item__headline"><a href="">If Doctors Said This Was Your Last&nbsp;Spring, What&nbsp;Would You&nbsp;Do?</a></h2>
     <p class="story-item__deck">My answer has been to roam the night with pruning shears.</p>
-    <a href="author" rel="author" class="story-item__author">Brian Brett</a>
-    <div class="story-item__date">20 Jun 2019</div>
+    <div class="story-item__author"><a href="author" rel="author" class="story-item__author">Brian Brett</a> / 20 Jun 2019</div>
 
     </article>
   </section>
@@ -379,9 +349,11 @@ meta-url: "http://thetyee.ca/home"
   <section class="hmpg-org-builder hmpg-org-wrapper">
     <article class="builder__content">
       <h2 class="builder__headline"><a href="">Make great journalism happen</a></h2>
+
       <figure class="builder__image">
-          <img src='{{ site.url }}ui/img/tyee-logo-builder-reversed-outline.svg' class="" />
+          <img src='{{ site.url }}ui/img/Artboard 1.svg' class="" alt="" />
       </figure>
+
       <div class="builder__deck">
         <p>The Tyee is a reader-supported publication. If&nbsp;you&nbsp;value&nbsp;what&nbsp;we&nbsp;do, help&nbsp;us&nbsp;make&nbsp;it.</p>
       </div>
