@@ -30,7 +30,7 @@ function fixFeaturedMediaOffset(){
     if (jQuery(window).width() >= 1200 && (jQuery('.featured-media .figure').height() >= 5 )  ) {
         var mediaHeight=  jQuery('.featured-media .figure').outerHeight();
         var sectionHeight=  jQuery(".featured-media .ad-box").outerHeight();
-        if (  (sectionHeight - mediaHeight) >= 0) {
+        if (  (sectionHeight - mediaHeight) >= 0  && jQuery(".featured-media .ad-box").css("display") === "block" ) {
 
             var mediamargin =  mediaHeight - sectionHeight + -13;
             jQuery("section.featured-media").css("margin-bottom", mediamargin);
@@ -52,8 +52,11 @@ function fixFeaturedMediaOffset(){
 function mobileFriendlyCommentsStr() {
     // Adds the .stric-comment-cnt class to the Disqus comment counter
     // so it can be hidden on mobile
-    var str = jQuery('.str-comment').html();
-    if (str) {
+    var str = jQuery('.str-comment').text();
+    if (str ===  "No comments yet") {
+var newstr =  "None yet"; 
+ jQuery('.str-comment').html(newstr);
+} else {
     var newstr = str.replace(/comments/i, '<span class="str-comment-cnt hidden-sm hidden-xs">Comments</span>');
     jQuery('.str-comment').html(newstr);
     }
@@ -112,7 +115,7 @@ function enableEmailSubscription() {
 jQuery(window).load(function() {
     // attaching to window load
     latestFix();
-    mobileFriendlyCommentsStr();
+  mobileFriendlyCommentsStr();
     hideIfNoHash();
     enableEmailSubscription();
 });
@@ -124,7 +127,7 @@ window.datatwo;
 
 function showShares() {
     
-      if (combined > 10) {
+      if (combined > 20) {
                          jQuery("#sharecount span.count").text(combined);
                         jQuery("#sharecount").fadeIn();
                      } else {
@@ -163,6 +166,9 @@ function sharesFromFB() {
 // Wrap IIFE around your code
 (function($, viewport){
     jQuery(document).ready(function() {
+jQuery(".chevron").click(function(){
+$(".latest-stories__media-wrapper li").toggle();
+});
 
         jQuery('a.btn-comment, a.str-comment').click(function(e){
             jQuery('html, body').animate({
@@ -197,7 +203,7 @@ function sharesFromFB() {
                     datatwo = dttwo;
                         combined = combined +  parseInt(datatwo.result.total); 
 console.log(datatwo.result);   
-                  if (combined < 1 ||  parseInt(datatwo.result.facebook.engagement.share_count) < 1 ) {
+                  if (combined < 1 &&  parseInt(datatwo.result.facebook.engagement.share_count) < 1 ) {
                    // sharesFromFB();
                    console.log("no shares found");
                   } else {
@@ -210,8 +216,8 @@ console.log(datatwo.result);
                 
        
        }
-        getShares();
-       
+       // getShares();
+       jQuery("li.count").hide();
        
        
        
@@ -313,298 +319,7 @@ console.log(datatwo.result);
 			$('input#new-search-form-input').focus();
 		});
 
-        //LATEST STORIES
-
-
-        jQuery.fn.reverse = function() {
-            return this.pushStack(this.get().reverse(), arguments);
-        };
-
-
-        //GLOBALS
-        var totalStoryPositions;
-        var counter =0;
-        var topCounter = 0;
-        var bottomCounter = 0;
-        var response;
-        var recentItems;
-        var returnedStories = [];
-        var storyObjects = [];
-        var firstStory;
-        var topPrevCounter = 0;
-        var bottomPrevCounter = 0;
-
-        //make storyObjects global, so I don't have to keep hitting the API
-        storyObjects = storyObjects;
-
-        //Returned stories from the API
-        function getLatestStories(){
-            storiesRequested = 25;
-            returnedStories = jQuery.ajax({
-                method: 'POST',
-                url: 'https://api.thetyee.ca/v1/latest/' + storiesRequested,
-                dataType: 'jsonp',
-                data: response,
-                crossDomain: true,
-                success: function(response){
-                    returnedStories = returnedStories.responseJSON.hits.hits;
-                    //pass data to the create function so I can create my own story objects
-                    recentItems = createStoryObjects(returnedStories);
-                    return recentItems;
-                },
-                error: function(){
-                }
-            });
-        }//end lateststories()
-
-        //Format the json data for ease of manipulation
-        function createStoryObjects(returnedStories, callback){
-            //remove the placeholder classes
-            jQuery('.latest-stories__hed').removeClass('hed_preload_placeholder');
-            jQuery('.latest-stories__dek').removeClass('dek_preload_placeholder');
-
-            //API data, to feed into an array of custom story objects
-            recentItems = returnedStories;
-
-            //for each item from the API, plug info into a story object
-            jQuery.each(recentItems, function(key, value){
-
-                latestStoryImage = value._source.related_media[0].uri;
-
-                // get the smallest image > 200px available
-                var bestWidth = value._source.related_media[0].width;
-                var bestHeight = value._source.related_media[0].height;
-                 var latestThumbFound=0;
-                for (var k in value._source.related_media[0].thumbnails) {
-                    var thumb = value._source.related_media[0].thumbnails[k];
-                    thumb.uri = thumb.uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
-                    thumb.url = thumb.uri.replace("http://thetyee", "//thetyee");
-                    if (thumb.uri.indexOf("latest") > -1) {
-                        latestStoryImage = thumb.uri;
-                        LatestThumbFound = 1;
-                        break; }
-                    };
-
-                if (latestThumbFound < 1) {
-                    for (var k in value._source.related_media[0].thumbnails) {
-                        var thumb = value._source.related_media[0].thumbnails[k];
-                        if (thumb.uri.indexOf("square") > -1) { continue; }
-                        thumb.uri = thumb.uri.replace("thetyee.cachefly.net", "thetyee.ca");
-                        if (
-                            // re-enable live to filter out not yet published thumbnails
-                            //			imageExists(thumb.uri) == true &&
-                            thumb.width >= 200 && thumb.width <= bestWidth) {
-                                bestWidth = thumb.width;
-                                bestHeight = thumb.height;
-                                latestStoryImage = thumb.uri;
-                                }
-                          
-                    }
-                }
-
-                //Format the API img uri's so they don't point at cachefly
-                latestStoryImage = latestStoryImage.replace("thetyee.cachefly.net", "thetyee.ca");
-               // also remove http references
-                latestStoryImage = latestStoryImage.replace("http://thetyee", "//thetyee");
-
-                //Use moment.js to format the date
-                formattedDate = moment.utc(value._source.storyDate).format("DD MMM");
-
-                //Set default values for the Story object
-                var Story = {
-                    urlPath : 'link',
-                    hed : 'title',
-                    image : 'image',
-                    dek : 'test',
-                    date : 'date',
-                    authour : 'authour'
-                };
-
-                //Populate Story objects with API data
-                Story.urlPath = value._source.path;
-                Story.hed = value._source.title;
-                Story.image = latestStoryImage;
-                Story.dek = value._source.teaser;
-                Story.date = formattedDate;
-                Story.authour = value._source.byline;
-                Story.imageWidth = bestWidth;
-                Story.imageHeight = bestHeight;
-
-                //Put all objects into a new array for easier handling
-                storyObjects.push(Story);
-            });
-            // on load, populate the DOM
-            jQuery('.latest-stories__media-wrapper').each(function(key, index){
-                jQuery(this).parent().find('li').each(function(i, details){
-
-                    if (key === 0){
-                        // TODO swap this out when closer to production
-                        //jQuery(this).find('a').attr('href', '#');
-                        // Old value
-                        jQuery(this).find('a').attr('href', "//thetyee.ca" + storyObjects[topCounter].urlPath);
-                        if (storyObjects[topCounter].urlPath.indexOf("/Presents/") > -1) {
-                          jQuery(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
-                            jQuery(this).addClass("sponsored");
-                        }
-                        jQuery(this).find('img').attr('src', storyObjects[topCounter].image);
-                        jQuery(this).find('img').attr('width',storyObjects[topCounter].imageWidth);
-                        jQuery(this).find('img').attr('height', storyObjects[topCounter].imageHeight);
-                        jQuery(this).find('h4').html(storyObjects[topCounter].hed);
-                        jQuery(this).find('p').html(storyObjects[topCounter].dek);
-                        jQuery(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
-                        jQuery(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
-                        topCounter++;
-                    }
-                    if (key == 1){
-                        // TODO swap this out when closer to production
-                        //jQuery(this).find('a').attr('href', '#');
-                        // Old value
-                        jQuery(this).find('a').attr('href', "//thetyee.ca" + storyObjects[bottomCounter].urlPath);
-                        if (storyObjects[bottomCounter].urlPath.indexOf("/Presents/") > -1) {
-                            jQuery(this).find('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
-                            jQuery(this).addClass("sponsored");
-                        }
-                        jQuery(this).find('img').attr('src', storyObjects[bottomCounter].image);
-                        jQuery(this).find('img').attr('width',storyObjects[topCounter].imageWidth);
-                        jQuery(this).find('img').attr('height', storyObjects[topCounter].imageHeight);
-                        jQuery(this).find('h4').html(storyObjects[bottomCounter].hed);
-                        jQuery(this).find('p').html(storyObjects[bottomCounter].dek);
-                        jQuery(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
-                        jQuery(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
-                        bottomCounter++;
-                    }
-                });
-            });
-            //control the scrolling
-            scrollLatestStories();
-        }
-
-
-        //Make Ajax call and put data into the returnedStories var for manipulation.
-        getLatestStories();
-
-
-
-        //takes parameters of current slider
-        function scrollLatestStories(){
-            //Get the next group of stories on click
-
-            function stylePresents(counter, element) {
-                                                            if (counter && counter.urlPath.indexOf("/Presents/") > -1) {
-                                    jQuery(element).children('.media-body').prepend('<a class="remove" href="/Presents"><strong>TYEE PRESENTS</strong></a>');
-                                    jQuery(element).addClass("sponsored");
-                            } else {
-                                   jQuery(element).find(".remove").remove();
-                                   jQuery(element).removeClass("sponsored");
-                            }
-    
-    
-}
-            
-            jQuery('.latest-stories__media-wrapper').each(function(key, index){
-                jQuery(this).on('click', '.next', function(event){
-
-                    jQuery(this).parent().find('li').each(function(i, details){
-
-                        if (key === 0){
-                            
-                            if (storyObjects[topCounter]) {
-                             stylePresents(storyObjects[topCounter], this);
-                             jQuery(this).find('a').attr('href', "//thetyee.ca" + storyObjects[topCounter].urlPath);                            
-                            jQuery(this).find('a').attr('href', storyObjects[topCounter].urlPath);
-                            jQuery(this).find('img').attr('src', storyObjects[topCounter].image);
-                            jQuery(this).find('h4').html(storyObjects[topCounter].hed);
-                            jQuery(this).find('p').html(storyObjects[topCounter].dek);
-                            jQuery(this).find('.latest-stories__date').html(storyObjects[topCounter].date);
-                            jQuery(this).find('.latest-stories__authour').html(storyObjects[topCounter].authour);
-                            }
-                            topCounter++;
-
-                            if (topCounter >= storiesRequested){
-                                topCounter = 0;
-                            }
-
-                        }
-
-                        if (key == 1){
-                           if (storyObjects[bottomCounter]) {
-                                        stylePresents(storyObjects[bottomCounter], this);
-                                        jQuery(this).find('a').attr('href', storyObjects[bottomCounter].urlPath);
-                                        jQuery(this).find('img').attr('src', storyObjects[bottomCounter].image);
-                                        jQuery(this).find('h4').html(storyObjects[bottomCounter].hed);
-                                        jQuery(this).find('p').html(storyObjects[bottomCounter].dek);
-                                        jQuery(this).find('.latest-stories__date').html(storyObjects[bottomCounter].date);
-                                        jQuery(this).find('.latest-stories__authour').html(storyObjects[bottomCounter].authour);
-                            
-                             }
-                            bottomCounter++;
-
-                            if (bottomCounter >= storiesRequested){
-                                bottomCounter = 0;
-                            }
-                        }
-
-
-                    });
-                    //reset the counter so I can scroll the other way
-                    topPrevCounter = topCounter - 7;
-                    bottomPrevCounter = bottomCounter - 7;
-
-                    //reset the click event
-
-                });
-
-
-
-                jQuery(this).on('click', '.prev', function(event){
-                    jQuery(this).parent().find('li').reverse().each(function(i, details){
-                        //infinite backwards scroll
-                        if (topPrevCounter <=0){
-                            topPrevCounter = (storiesRequested-1);
-                        }
-                        if (key === 0){
-                        if (storyObjects[topPrevCounter]) {
-                            stylePresents(storyObjects[topPrevCounter], this);
-                            jQuery(this).find('a').attr('href', storyObjects[topPrevCounter].urlPath);
-                            jQuery(this).find('img').attr('src', storyObjects[topPrevCounter].image);
-                            jQuery(this).find('h4').html(storyObjects[topPrevCounter].hed);
-                            jQuery(this).find('p').html(storyObjects[topPrevCounter].dek);
-                            jQuery(this).find('.latest-stories__date').html(storyObjects[topPrevCounter].date);
-                            jQuery(this).find('.latest-stories__authour').html(storyObjects[topPrevCounter].authour);
-
-                        }        
-                            topPrevCounter--;
-                        }
-
-                        if (bottomPrevCounter <= 0){
-                            bottomPrevCounter = 24;
-                        }
-
-                        if (key == 1){
-                             if (storyObjects[topPrevCounter]) {
-                            stylePresents(storyObjects[bottomPrevCounter], this);
-                            jQuery(this).find('a').attr('href', storyObjects[bottomPrevCounter].urlPath);
-                            jQuery(this).find('img').attr('src', storyObjects[bottomPrevCounter].image);
-                            jQuery(this).find('h4').html(storyObjects[bottomPrevCounter].hed);
-                            jQuery(this).find('p').html(storyObjects[bottomPrevCounter].dek);
-                            jQuery(this).find('.latest-stories__date').html(storyObjects[bottomPrevCounter].date);
-                            jQuery(this).find('.latest-stories__authour').html(storyObjects[bottomPrevCounter].authour);
-                             }
-                            bottomPrevCounter--;
-                                console.log(bottomPrevCounter);
-                        }
-
-                    });
-                    //reset the counter so i can go the other way
-                    topCounter = topPrevCounter + 7;
-                    bottomCounter = bottomPrevCounter + 7;
-                    //reset the counter for infinite scrolling
-
-                });
-            });
-
-        }//END LATEST STORIES SCROLLER
-
+       
 
         // Show Disqus comments
         jQuery(".comments-section .btn").click(function(e) {
