@@ -52,8 +52,11 @@ function fixFeaturedMediaOffset(){
 function mobileFriendlyCommentsStr() {
     // Adds the .stric-comment-cnt class to the Disqus comment counter
     // so it can be hidden on mobile
-    var str = jQuery('.str-comment').html();
-    if (str) {
+    var str = jQuery('.str-comment').text();
+    if (str ===  "No comments yet") {
+var newstr =  "None yet"; 
+ jQuery('.str-comment').html(newstr);
+} else {
     var newstr = str.replace(/comments/i, '<span class="str-comment-cnt hidden-sm hidden-xs">Comments</span>');
     jQuery('.str-comment').html(newstr);
     }
@@ -112,7 +115,7 @@ function enableEmailSubscription() {
 jQuery(window).load(function() {
     // attaching to window load
     latestFix();
-    mobileFriendlyCommentsStr();
+  mobileFriendlyCommentsStr();
     hideIfNoHash();
     enableEmailSubscription();
 });
