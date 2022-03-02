@@ -2347,8 +2347,8 @@ main .hmpg-org-wrapper:first-of-type {
 	}
 	
 	.hmpg-org-recent-stories__list > .story-item--secondary {
-		/*grid-column: auto / span 4;*/
-		display:none !important
+		grid-column: auto / span 4;
+/*		display:none !important */
 	}
 }
 
