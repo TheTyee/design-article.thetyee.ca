@@ -1,26 +1,36 @@
 {
   "name": "tabletop",
-  "version": "1.4.3",
+  "version": "1.6.3",
   "description": "**Tabletop.js** takes a Google Spreadsheet and makes it easily accessible through JavaScript. With zero dependencies!",
   "main": "src/tabletop.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "node examples/nodejs/test.js"
+    "test": "node node_modules/mocha/bin/mocha --timeout 10000",
+    "uglify": "node node_modules/uglify-js/bin/uglifyjs src/tabletop.js > src/tabletop.min.js "
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/jsoma/tabletop.git"
   },
-  "author": "",
-  "license": "BSD",
+  "author": "Jonathan Soma <jonathan.soma@gmail.com>",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "fdb1c3ee3bc0f7f3be6ab223a56f9f050fe32496",
-  "dependencies": {
+  "devDependencies": {
+    "chai": "^3.5.0",
     "grunt": "*",
     "grunt-contrib-connect": "*",
-    "request": "~2.51.0"
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "jshint-stylish": "^2.0.0",
+    "mocha": "^6.2.1",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "lodash": "^4.17.12"
   },
   "engines": {
     "node": ">=0.10.0"
