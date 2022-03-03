@@ -2312,7 +2312,7 @@ aside {
 @media screen and (min-width: 1025px)
     /* When viewport exceeds the max desired width of the page ... */ {
 	.aside {
-		margin-right: -15em;/* ... keep the aside at a constant offset from the text column (article__body) */
+		margin-right: -16em;/* ... keep the aside at a constant offset from the text column (article__body) */
 	}
 }
 
