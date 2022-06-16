@@ -49,7 +49,7 @@ width: 100%;
 	font-weight: 500;
 }
 
-body.default-global--new2019 #highlight-bar,
+body.article-standard #highlight-bar, body.default-global--new2019 #highlight-bar,
 body.article-series #highlight-bar {
 	font-size: 0.9em;
 }
@@ -248,7 +248,7 @@ ul#nav-bar li label.nav-bar__link--more:after {
 }
 
 /* limit width for articles */
-body.default-global--new2019 .new-site-header__logo-block,
+body.article-standard .new-site-header__logo-block,  body.default-global--new2019 .new-site-header__logo-block,
 body.article-series .new-site-header__logo-block {
 	max-width: 55em;
 	padding-left: 15px !important;
@@ -256,7 +256,7 @@ body.article-series .new-site-header__logo-block {
 }
 
 /* limit width for articles */
-body.default-global--new2019 .new-site-header__logo-block.scroll,
+body.article-standard .new-site-header__logo-block.scroll, body.default-global--new2019 .new-site-header__logo-block.scroll,
 body.article-series .new-site-header__logo-block.scroll {
 	max-width: 56em;
 	padding-left: 15px !important;
@@ -272,7 +272,7 @@ body.article-series .new-site-header__logo-block.scroll {
 }*/
 
 @media screen and (min-width: 640px) and (max-width: 849px) {
-	body.default-global--new2019 .new-site-header__logo-block,
+	body.article-standard .new-site-header__logo-block, body.default-global--new2019 .new-site-header__logo-block,
 	body.article-series .new-site-header__logo-block {
 		max-width: 57.7em;
 		padding-left: 32px !important;
@@ -281,7 +281,7 @@ body.article-series .new-site-header__logo-block.scroll {
 }
 
 @media screen and (min-width: 640px) and (max-width: 849px) {
-	body.default-global--new2019 .new-site-header__logo-block.scroll,
+	body.article-standard .new-site-header__logo-block.scroll, body.default-global--new2019 .new-site-header__logo-block.scroll,
 	body.article-series .new-site-header__logo-block.scroll {
 		padding-left: 32px !important;
 		padding-right: 32px !important;
@@ -289,7 +289,7 @@ body.article-series .new-site-header__logo-block.scroll {
 }
 
 @media screen and (min-width: 850px) {
-	body.default-global--new2019 .new-site-header__logo-block:not(.scroll),
+    body.article-standard .new-site-header__logo-block:not(.scroll),	body.default-global--new2019 .new-site-header__logo-block:not(.scroll),
 	body.article-series .new-site-header__logo-block:not(.scroll) {
 		grid-template-columns: 150px 1fr minmax(30px, 200px) 1fr 150px !important;
 		max-width: 55.5em;
@@ -300,6 +300,7 @@ body.article-series .new-site-header__logo-block.scroll {
 
 
 @media screen and (min-width: 1200px) {
+	body.article-standard .new-site-header__logo-block:not(.scroll),
 	body.default-global--new2019 .new-site-header__logo-block:not(.scroll),
 	body.article-series .new-site-header__logo-block:not(.scroll) {
 		grid-template-columns: 150px 1fr 300px 1fr 150px !important;
