@@ -1068,6 +1068,12 @@ span.list-metric, .index-list span {
 }*/
     /* BREAKPOINT: 640px // Increase page margin */
 
+
+.series-box li a {
+  border-bottom: none !important;
+}
+
+
 @media screen and (min-width: 640px) {
 	.article__header {
 		padding-left: 1em;
