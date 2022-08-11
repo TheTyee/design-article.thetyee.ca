@@ -2270,6 +2270,42 @@ aside {
 	}
 }
 
+@media screen and (max-width: 640px) {
+	
+	.aside {
+		margin-bottom: 1em; 
+	}
+	
+	.aside .story-item .responsive-img {
+		
+		width: 20%;
+		float: left;
+		margin-left:5%;
+		
+	}
+	
+	.aside .story-item__description {
+		width: 70%;
+		float: left;
+		margin-top:0px;
+		
+	}
+	
+	.aside .story-item__description h5 {
+		margin-top: 0px;
+	}
+	
+	 .aside .story-item::after{
+		content: "";
+  clear: both;
+  display: table;
+	}
+	
+	
+	
+}
+
+
         /* BREAKPOINT: 696px // gradually moves aside outward to align flush right w/ viewport */
 
 @media screen and (min-width: 696px) {
