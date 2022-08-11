@@ -2281,13 +2281,14 @@ aside {
 		width: 20%;
 		float: left;
 		margin-left:5%;
+		margin-top:15px;
 		
 	}
 	
 	.aside .story-item__description {
 		width: 70%;
 		float: left;
-		margin-top:0px;
+		margin-top:15px;
 		
 	}
 	
