@@ -2441,7 +2441,7 @@ span.author-info__date span {
  end fix */ /* This was causing a gap at the bottom of author-info__text --AG */
 
 .author-info__bio {
-	display: none;
+	display: block;
 	padding-top: 0.15em;
 	line-height: 1.45;
 	font-weight: 400;
