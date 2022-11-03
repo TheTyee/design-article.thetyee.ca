@@ -1,11 +1,11 @@
 /* @override 
 	http://127.0.0.1:4000/ui/css/article-2019.css */
 
+
 /* 
 ==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
-
 
 /* Default Border Color - set border-color:inherit on elements to inherit the default */
 
@@ -2441,7 +2441,7 @@ span.author-info__date span {
  end fix */ /* This was causing a gap at the bottom of author-info__text --AG */
 
 .author-info__bio {
-	display: block;
+	display: block; /*start showing */
 	padding-top: 0.15em;
 	line-height: 1.45;
 	font-weight: 400;
