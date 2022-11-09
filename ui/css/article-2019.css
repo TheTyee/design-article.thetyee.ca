@@ -1940,7 +1940,11 @@ figure {
 		padding-right: 15px;
 	}
 	
-	.featured-media .container-fluid .figure, .figure--xl, .figure--xxl { width: calc(100vw - 15px) !important; } 
+	.featured-media .container-fluid .figure, .figure--xl { width: calc(100vw - 15px) !important; } 
+
+.figure--xxl { width: calc(100vw) !important; }
+}
+
 }
 
     /* Remove float when view is wide enough */
