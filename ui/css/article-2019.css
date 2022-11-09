@@ -3346,6 +3346,8 @@ aside .messaging-block--ask .dollar-heart-svg {
 .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
 	float: none;
 	margin-left: 0;
+        display:inline-block;
+        visibility:visible;
 }
 
 label.error {
