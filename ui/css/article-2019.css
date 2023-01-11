@@ -5661,7 +5661,10 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 	display: block;
 }
 
-
+figure audio {
+	
+	width: 100%;
+}
 
 /* RESPONSIVE EMBED  ========================================================================== */
 /*  This allows a Youtube embed to expand proportionally to
@@ -5686,6 +5689,7 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 .responsive-embed--audio {
 	padding-bottom: 150px;
 }
+
 
 
 
