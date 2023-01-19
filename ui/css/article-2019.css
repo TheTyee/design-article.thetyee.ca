@@ -1940,7 +1940,7 @@ figure {
 		padding-right: 15px;
 	}
 	
-	.featured-media .container-fluid .figure, .figure--xl { width: calc(100vw - 15px) !important; } 
+	.featured-media .container-fluid .figure img, .figure--xl img { width: calc(100vw - 15px) !important; } 
 
 .figure--xxl { width: calc(100vw) !important; }
 }
