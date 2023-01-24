@@ -1333,7 +1333,7 @@ p a:hover, p a:focus {
 @media screen and (min-width: 1368px) {
 	.default-global-homepage .button--expander-open,
 	#section-index .button--expander-open {
-		display: none;
+/*		display: none; */ not sure why this is hidden
 	}
 }
 
