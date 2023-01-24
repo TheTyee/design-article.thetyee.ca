@@ -11,6 +11,32 @@
 	list-style-type: none;
 }
 
+/* CAPTIONS  ========================================================================== */
+
+.caption {
+	padding-top: .65em;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid;
+	border-color: inherit;
+	font-size: 0.9em;
+	font-weight: 500;
+	line-height: 1.4em;
+	color: #404040;
+	text-align: left;
+	text-shadow: none;
+}
+
+@media screen and (max-width: 568px) {
+	.caption {
+		font-size: 17px;
+	}
+}
+
+.caption__media--credit {
+	font-weight: 300;
+}
+
+
 .category-label a {
 	background: rgb(255,208,0);
 	background: rgba(255,208,0,0.8);
