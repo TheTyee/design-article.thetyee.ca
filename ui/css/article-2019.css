@@ -1914,7 +1914,7 @@ figure {
 	float: left; /* This prevents the figure from colliding with any asides. */
 	width: 100%;
 	margin-top: 1em;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 }
 
 @media screen and (max-width: 879px) {
