@@ -3529,17 +3529,20 @@ label.valid {
 
 .text-block-container h5 {
 	display: table;
-	margin-top: 1em;
+	margin-top: 1.5em;
 	margin-bottom: 1em;
 	padding-bottom: 0em;
 	font-size: 1em;
 	font-weight: 700;
 	text-transform: uppercase;
+	margin-left: auto;
+	margin-right:auto;
+	
 }
 
 .text-block-container h3 {
 	margin-top: 1.6em;
-	margin-bottom: 0.25em;
+	margin-bottom: 1.25em;
 	padding-bottom: 0em;
 	font-family: var(--typeface-sans), sans-serif;
 	font-size: .75em;
