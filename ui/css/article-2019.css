@@ -41,6 +41,12 @@ body {
 	font-family: var(--typeface-serif), serif;
 }
 
+body.series .photo-insert img {
+		width: 100%;
+	}
+
+
+
 /*@media screen and (max-width: 568px) {
 	.article__body p, .article__body strong, .article__body li, .artical__body em, .article__body .ul, .article__body ol, .article__body {
 		font-size: 17px;
@@ -1939,6 +1945,8 @@ figure {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+	
+	
 	
 	.featured-media .container-fluid .figure img, .figure--xl img { width: calc(100vw - 15px) !important; } 
 
@@ -5939,6 +5947,7 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
 	margin: 0 20px 10px 0;
 	padding-top: 4px;
 }
+
 
 @media screen and (min-width: 640px) {
 	.article-series.index .photo-insert {
