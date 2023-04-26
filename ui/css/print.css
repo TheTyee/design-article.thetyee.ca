@@ -1,3 +1,6 @@
+/* @override 
+	https://preview.thetyee.ca/design-article.thetyee.ca/ui/css/print.css?* */
+
 /* ==========================================================================
    Print styles
    ========================================================================== */
@@ -34,7 +37,7 @@ iframe {
 /* HIDE ELEMENTS THAT ARE NOT REQUIRED IN PRINT  =================================== */
 
 .ad-banner, .mobile-toggle button, .search-block, .tool-bar, .ad-box, .series-box, aside .fact-box, .related-story, .presents-box, .messaging-block, .related-event-box, 
-.messaging-zone, #filed-in, #latest_bottom_wrap, .latest-stories, .comments-section, footer, .new-site-header {
+.messaging-zone, #filed-in, #latest_bottom_wrap, .latest-stories, .comments-section, footer, .new-site-header, .story aside.ad-box--bigbox {
     display: none !important;
 }
 
@@ -217,7 +220,7 @@ figure {
 /* LINK STYLES  ============================================================= */
 
 article a {
-  font-weight: bolder;
+  /* font-weight: bolder;*/
   text-decoration: none;
 }
 
@@ -230,9 +233,9 @@ article a {
 /* Show link urls */
 section.featured-media a[href^=http]:after, article a[href^=http]:after {
   content:" (" attr(href) ") ";
-  font-style: italic;
+  /*font-style: italic;*/
   border-bottom: 1px solid white;  
-  color: #000;
+  color: #444;
   word-wrap: break-word;
 }
 
@@ -280,4 +283,69 @@ article a[href^="#fact-box"]:after {
     }
 .popend {
 display:none;
+}
+
+/* ARTICLES  ============================================================= */
+
+
+
+.story > * {
+	font-family: "Tiempos Text", georgia, serif;
+}
+
+.story h1 {
+	font-family: "Tiempos Headline", georgia, serif;
+	font-size: 4rem;
+}
+
+.story h4 {
+	font-family: 'franklin-gothic-urw', Arial, sans-serif;
+	font-weight: normal;
+	line-height: 1.4;
+	margin-bottom: 25px;
+}
+
+.story h1, h2, h3, p, li, blockquote {
+	line-height: 1.5;
+}
+
+
+.story .author-info {
+	font-family: 'franklin-gothic-urw', Arial, sans-serif;
+	font-size: 1.7rem;
+}
+
+.story .author-info__date span {
+	margin-right: 5px;
+}
+
+.story .author-info__date span:first-of-type:before {
+	content: " / ";
+}
+
+.story .contrib-link {
+	font-weight: bold;
+}
+
+.story .author-info__bio p {
+	margin-bottom: 0;
+}
+
+.story .author-headshot {
+	width: 50px;
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+.story figure {
+	margin-bottom: 0;
+}
+
+.story figure img {
+	margin-bottom: 15px;
+}
+
+.story .caption {
+	font-size: 1.7rem;
+	margin-bottom: 15px;
 }
