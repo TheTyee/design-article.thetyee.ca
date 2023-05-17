@@ -55,6 +55,7 @@ var email_to;
 var email_from;
 var message;
 var wc_sub_pref;
+
 jQuery("form#share").submit(function(event) {
     event.preventDefault();
     jQuery('#messages').html('');
@@ -65,7 +66,7 @@ jQuery("form#share").submit(function(event) {
         getCurrentValues();
         var title = jQuery('meta[property="og:title"]').attr("content");
         var summary = jQuery('meta[property="og:description"]').attr("content");
-        var image = jQuery('meta[property="og:image"]').attr("content");
+        var image = jQuery('meta[property="og:image"]').attr("content").replace(".jpg" ,"_front__size__thumb.jpg");
         var url = jQuery('meta[property="og:url"]').attr("content");
         var shareAPI;
 
