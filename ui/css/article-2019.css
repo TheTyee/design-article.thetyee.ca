@@ -2398,6 +2398,11 @@ aside {
 	line-height: 1.4;
 }
 
+.author-info .contrib-link {
+  font-weight: 500;
+  color: var(--grey) !important;
+}
+
 .author-info img {
 	float: left;
 	margin-top: 0.25em;
