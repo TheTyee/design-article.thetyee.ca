@@ -81,6 +81,17 @@ h1 {
 	margin-bottom: 2rem;
 }
 
+/* optinmonster inline ad */
+#om-zc4zqugunpu882seo8vt-holder {
+margin-bottom: 18px;
+}
+
+#om-zc4zqugunpu882seo8vt-holder:after {
+content: "";
+  display: table;
+  clear: both;
+}
+
     /* BREAKPOINT: 600px // Increase article headline size */
 
 @media screen and (min-width: 600px) {
