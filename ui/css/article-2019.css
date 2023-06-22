@@ -84,6 +84,7 @@ h1 {
 /* optinmonster inline ad */
 #om-zc4zqugunpu882seo8vt-holder {
 margin-bottom: 18px;
+clear:both;
 }
 
 
@@ -3659,11 +3660,22 @@ label.valid {
 	margin-top: .125em;
 }
 
+@media screen and (max-width: 939px) {
+
+.aside-mobile {
+display:block !important;
+}รร
+
+}
+
 /*  IN WIDER VIEWPORTS: 
 - don't show the fact-box at the bottom of the article-body
 - show the aside containing the fact-bax (.hide-on-narrow-vp)
 - show the factbox within an aside */
 @media screen and (min-width: 939px) {
+.aside-mobile {
+display:none;
+}
 
 	.presents-box {
 	    display: none;
