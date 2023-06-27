@@ -84,7 +84,8 @@ h1 {
 /* optinmonster inline ad */
 #om-zc4zqugunpu882seo8vt-holder {
 margin-bottom: 18px;
-clear:both;
+width: 100%;
+min-height: 10px;
 }
 
 
