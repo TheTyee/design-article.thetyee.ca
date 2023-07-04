@@ -616,6 +616,10 @@ h6:first-of-type:hover {
 
 }
 
+
+.fab { margin-bottom: 10px;}
+
+
 .article-footer .container-fluid {
 	margin: 0 auto;
 	padding-left: 15px;

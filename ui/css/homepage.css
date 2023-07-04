@@ -2703,6 +2703,9 @@ main .hmpg-org-wrapper:first-of-type {
 	padding-top: 4rem;
 }
 
+
+.fab { margin-bottom: 10px;}
+
 .barometer-form-list p:first-child {
 	font-family: var(--typeface-display-medium);
 	font-weight: 600;
