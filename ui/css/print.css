@@ -19,6 +19,10 @@ header .category-label, header strong {
 display:none !important;
 }
 
+#ad-auris-iframe {
+display:none;
+}
+
 body {
       color: #000;
       background: #fff;
