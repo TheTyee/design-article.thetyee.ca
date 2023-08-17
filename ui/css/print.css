@@ -40,7 +40,7 @@ iframe {
 
 /* HIDE ELEMENTS THAT ARE NOT REQUIRED IN PRINT  =================================== */
 
-.hide-print, .ad-banner, .mobile-toggle button, .search-block, .tool-bar, .ad-box, .series-box, aside .fact-box, .related-story, .presents-box, .messaging-block, .related-event-box, 
+.hide-print, #om-zc4zqugunpu882seo8vt-holder, .ad-banner, .mobile-toggle button, .search-block, .tool-bar, .ad-box, .series-box, aside .fact-box, .related-story, .presents-box, .messaging-block, .related-event-box, 
 .messaging-zone, #filed-in, #latest_bottom_wrap, .latest-stories, .comments-section, footer, .new-site-header, .story aside.ad-box--bigbox {
     display: none !important;
 }
