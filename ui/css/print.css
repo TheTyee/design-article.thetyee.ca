@@ -97,6 +97,12 @@ img, figure, aside, .pullquote {
    page-break-inside: avoid;
 }
 
+img {
+    page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-inside: avoid; /* or 'auto' */
+}
+
 img.responsive-img {
  max-height:35vw !important;
 height: auto !important;
