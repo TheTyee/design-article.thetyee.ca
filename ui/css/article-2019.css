@@ -89,6 +89,11 @@ min-height: 10px;
 display: inline-block;
 }
 
+/* more optin */
+.CampaignType--inline {
+    float: left !important;
+}
+
 
     /* BREAKPOINT: 600px // Increase article headline size */
 
@@ -5221,12 +5226,16 @@ div.ntnl-sgnup-modal {
 
 
 
+
+
 /* BUILDER MODAL STYLES ======================================================= */
 /*! ---------------------------------------------------------------------------- */
 /*! Customization of bootstrap modal styles for 2016 Tyee support/builder campaign popup ad
 /*! It's based on an 2015 Tyee support/builder campaign pop-up, but I've used the .modal--builder class (instead of .support-modal) to (hopefully) prevent any styling conflicts
 /*! Where possible I've narrowed the selector scope to target only elements within .modal--builder so that other modals can still adhere to the standard bootstrap style. But we'll probably want to standardize the styling for all modals at some point.
 /*! Alexg */
+
+
 
 div.modal--builder {
 	font-family: var(--typeface-sans), sans-serif;
