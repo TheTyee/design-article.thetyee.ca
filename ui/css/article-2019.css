@@ -693,12 +693,14 @@ h6:first-of-type:hover {
 	  /* padding-left: 2.125em; */
 	  /* padding-right: 1.75em; */
 	font-family: var(--typeface-serif), Georgia, Serif;
-	font-weight: 800;
+/*	font-weight: 800;*/
 	font-size: 1.15em;
-	line-height: 1.333em;
+	line-height: 1.5em;
 }
 
     /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
+
+
 
 @media screen and (min-width: 500px) {
 	.pullquote {
