@@ -89,10 +89,14 @@ min-height: 10px;
 display: inline-block;
 }
 
-/* more optin */
-.CampaignType--inline {
-    float: left !important;
+div[id^='om-'] {
+margin-bottom: 18px;
+width: 100%;
+min-height: 10px;
+display: inline-block;
+
 }
+
 
 
     /* BREAKPOINT: 600px // Increase article headline size */
