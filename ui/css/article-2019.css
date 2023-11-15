@@ -2465,7 +2465,7 @@ aside {
 
 span.author-info__date span {
   content: "\00a0";
-  padding-right: 5px;
+  padding-right: 2px; 
 }
 	
 	.author-more {
