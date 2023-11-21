@@ -126,7 +126,7 @@ function renderRow(num){
     rowCount++;
  //   console.log("rowCount is " + rowCount);
    jQuery(".index-page__story-list .filler").append(text);
-
+smartquotes();
         i++;
     }
     
