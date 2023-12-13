@@ -2,8 +2,8 @@
 version: 0.0.1
 title: "The Tyee Article Page"
 description: ""
-baseurl: ""
-url: "http://thetyee.github.io/design-article.thetyee.ca/"
+baseurl: "https://thetyee.github.io/design-article.thetyee.ca/"
+url: ""
 logo: 'tyee_logo.png'
 
 # Project settings - Analytics
