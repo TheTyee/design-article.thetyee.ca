@@ -288,7 +288,7 @@ body.article-series .new-site-header__logo-block.scroll {
 @media screen and (min-width: 640px) and (max-width: 849px) {
 	body.article-standard .new-site-header__logo-block.scroll, body.default-global--new2019 .new-site-header__logo-block.scroll,
 	body.article-series .new-site-header__logo-block.scroll {
-		padding-left: 32px !important;
+	/*	padding-left: 32px !important; */
 		padding-right: 32px !important;
 	}
 }
