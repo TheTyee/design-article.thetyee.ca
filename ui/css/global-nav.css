@@ -446,9 +446,15 @@ body.article-series .new-site-header__logo-block.scroll {
 
 .new-site-header__logo-block.scroll {
 	grid-template-columns: 150px 1fr 44px !important;	
-background-position: 8vw;
+background-position: 3vw;
     background-size: 80px;
 }
+
+
+.article .new-site-header__logo-block.scroll {
+background-position : 7%;
+}
+
 
 .new-site-header__logo-block.scroll .new-site-header__tagline {
 	display: none;
