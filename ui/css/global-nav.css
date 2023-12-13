@@ -202,6 +202,11 @@ ul#nav-bar li label.nav-bar__link--more:after {
 }*/
 
 .new-site-header__logo-block {
+
+    background-image: url(/ui/img/20.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 145px;
 	display: grid;
 	grid-template-columns: 150px 1fr 300px 1fr 150px !important;
 	grid-column-gap: var(--gutter-column);
@@ -441,6 +446,8 @@ body.article-series .new-site-header__logo-block.scroll {
 
 .new-site-header__logo-block.scroll {
 	grid-template-columns: 150px 1fr 44px !important;	
+background-position: 8vw;
+    background-size: 80px;
 }
 
 .new-site-header__logo-block.scroll .new-site-header__tagline {
@@ -537,6 +544,7 @@ body.article-series .new-site-header__logo-block.scroll {
 @media screen and (max-width: 645px) {
 	.new-site-header__logo-block.scroll {
 		height: 58px;
+                background-position: 42px;
 	}
 	
 	.new-site-header__logo-block.scroll {
@@ -975,6 +983,8 @@ form input {
 		display: grid;
 		grid-template-columns: 1fr 1fr !important;
 		align-items: stretch;
+                background-position: 42px;
+                background-size:80px;
 	}
 	
 	.new-nav__burger .fa-bars {
