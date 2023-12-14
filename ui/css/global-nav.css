@@ -446,7 +446,7 @@ body.article-series .new-site-header__logo-block.scroll {
 
 .new-site-header__logo-block.scroll {
 	grid-template-columns: 150px 1fr 44px !important;	
-background-position: 3vw;
+background-position: calc(3vw + var(--page-margin-sides));
     background-size: 80px;
 }
 
