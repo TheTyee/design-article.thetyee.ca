@@ -451,7 +451,7 @@ background-position: calc(3vw + var(--page-margin-sides));
 }
 
 
-.story .new-site-header__logo-block.scroll {
+.story .new-site-header__logo-block.scroll, .index .new-site-header__logo-block.scroll, .cover .new-site-header__logo-block.scroll  {
 background-position : 7%;
 }
 
