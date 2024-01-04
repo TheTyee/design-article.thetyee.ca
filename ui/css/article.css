@@ -2859,6 +2859,19 @@ label.valid {
 }
 
 
+.series-box h5 {
+display:block !important;
+text-align:center;
+margin-top: 1.5em !important;
+}
+
+.series-box h3 {
+margin-bottom: 1em;
+}
+
+.series-box h3.title {
+margin-bottom: 1em;
+}
 
 /* RELATED-EVENT-BOX  ================================================================
     This object mostly just employs the default text-block-container style. An 
