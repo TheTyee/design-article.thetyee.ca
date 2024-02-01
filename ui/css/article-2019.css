@@ -834,6 +834,10 @@ h6:first-of-type:hover {
 }
 
 
+.carousel-caption a {
+text-decoration: underline;
+}
+
 
 /* ==========================================================================
    #LAYOUT
