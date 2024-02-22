@@ -1958,6 +1958,10 @@ figure {
 	margin-bottom: 1em;
 }
 
+figure video {
+max-width: 100%;
+}
+
 @media screen and (max-width: 879px) {
 	
 	.figure--xl figcaption,
