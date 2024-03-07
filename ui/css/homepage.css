@@ -2122,6 +2122,32 @@ p a:hover, p a:focus {
 }
 /* end of HMPG Ad Box molecule */
 
+.mobile	.house-ad div {
+max-width: 100% !important;
+width: 100%;
+}
+
+
+.mobile .house-ad div figure {
+width: 100px;
+max-width: 100px;
+}
+
+
+.mobile .house-ad div  h2, .mobile .house-ad div p {
+
+max-width: 95%;
+width: 95%;
+}
+
+@media screen and (min-width: 845px) {
+
+.mobile .house-ad {
+display:none !important;
+}
+
+}
+
 
 /* COUNTER LIST molecule ----------------- */
 /* This formats a container of articles into a numbered list with custom numbers. It uses the styling method from https://www.w3schools.com/css/css_counters.asp Variants can be seen here: https://www.w3.org/Style/Examples/007/color-bullets.en.html */
