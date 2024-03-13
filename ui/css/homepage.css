@@ -2142,7 +2142,7 @@ width: 95%;
 
 @media screen and (min-width: 845px) {
 
-.mobile .house-ad {
+.mobile .house-ad, .mobile.hmpg-org-recent-stories  {
 display:none !important;
 }
 
