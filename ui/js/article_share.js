@@ -1,4 +1,5 @@
 // Validation and submission of email to a friend form
+$( document ).ready(function() {
 var validator = jQuery('form#share').validate({
     errorPlacement: function(error, element) {
         if (element.attr("name") == "subscription" ) {
@@ -118,4 +119,6 @@ jQuery('#showForm').click(
         jQuery('#showForm').toggle();
     }
 );
+
+});
 
