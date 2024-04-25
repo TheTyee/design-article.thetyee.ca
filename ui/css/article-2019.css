@@ -2587,6 +2587,35 @@ span.author-info__date span {
    started in the messaging-zone buttons.
    For some reason the bootstrap default button html & css wasn't working. -- AG */
 
+.article__header .tool-bar.scroll {
+    left: 0px;
+    position: fixed;
+    bottom: -5px;
+    background: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 999999999;
+	border-top: 2px solid black !important;
+}
+
+
+.tool-bar.scroll ul {
+    margin: 0;
+    padding: 0;
+    font-size: em;
+    list-style: none;
+    align-items: center;
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+    background: white;
+    z-index: 999999999999999;
+    position: relative;
+	height:50px;
+}
+
+
 .tool-bar {
 	margin: .85em 0 .3em 0;
 }
@@ -2743,6 +2772,12 @@ span.author-info__date span {
   
 }
 
+
+@media screen and (max-width: 480px) {
+.tool-bar .desktop {
+display:none;
+}
+}
 
 
 .btn-twitter, .btn-facebook, .btn-facebook, .btn-email, .btn-flip {

@@ -1,18 +1,42 @@
 <!-- Begin molecules/blocks/tool-bar -->
+<script>
+        function copyText() {
+
+            navigator.clipboard.writeText(window.location.href);
+        $("#copied").fadeIn(1000, function() {
+        		 $("#copied").fadeOut(6000);
+       			 });
+        }
+    </script>
 
 <div class="tool-bar clearfix" data-dev-object-descrip="molecules/blocks/tool-bar" data-dev-status="IN-PROGRESS">
-    <ul class="clearfix">
+<div id="copied" style="display:none; position: absolute; border: 1px solid;bottom: 52px;left:5px;background: white; z-index:999999;"><strong><small>&nbsp;URL copied to clipboard!&nbsp;</small></strong></div> 
+   <ul class="clearfix">
+
+
+ <li><a target="_blank" class="btn-join" href="https://support.thetyee.ca?utm_campaign=toolbar"><?php include($gitrootinc . "00-atoms/images/dollar-heart-icon.html") ?></a></li>
+
+        <li style="display:none;cursor:pointer;" class="sharetext" onclick="copyText();" ><img src="/ui/img/share-cc.png" width="20" height="20"><strong>SHARE:</strong></li>
+       
+        <li><a class="btn btn-social-icon btn-email"><span data-toggle="modal" data-target="#share-email"><i class="fas fa-envelope"></i></span></a></li>
+
         <li class="count" ><strong id="sharecount"><span class="count">68</span> <span class="text">SHARES</span></strong></li>
-        <li><a style="color:white;" href="#" onclick="share_fb(window.location.href);return false;" rel="nofollow" share_url="<?=$escaped_url ?> target="_blank" class="btn btn-social-icon btn-facebook"><i class="fab fa-facebook-f"></i></a></li>
         <li><a style="color:white;" target="_blank" href="#" onclick="share_tw(); return false;" class="btn btn-social-icon btn-twitter"><i class="fab fa-x-twitter"></i></a></li>
 <li><a style="color:white;" target="_blank" href="#" onclick="share_flip(); return false;" class="btn btn-social-icon btn-flip"><i class="fab fa-flipboard"></i></a></li>
-        <li><a class="btn btn-social-icon btn-email"><span data-toggle="modal" data-target="#share-email"><i class="fas fa-envelope"></i></span></a></li>     
-<li><a style="color:white;" onclick="window.print();" href="#" return="" class="btn btn-social-icon btn-facebook btn-print"><i class="fa fa-print" aria-hidden="true"></i></a></li>
+<li class="desktop"><a style="color:white;" onclick="window.print();" href="#" return="" class="btn btn-social-icon btn-facebook btn-print"><i class="fa fa-print" aria-hidden="true"></i></a></li>
 
-        <li><a target="_blank" class="btn-join" href="https://support.thetyee.ca?utm_campaign=toolbar"><?php include($gitrootinc . "00-atoms/images/dollar-heart-icon.html") ?></a></li>
 
-        <li><a class="btn-comment" href="#comments"><?php include($gitrootinc . "00-atoms/images/comment-bubble.html") ?></a>
-            <a class="str-comment" href="#disqus_thread"></a>
+        <li class="desktop"><a class="btn-comment" href="#comments"><?php include($gitrootinc . "00-atoms/images/comment-bubble.html") ?></a>
+
+       <li class="bluesky">
+       <a target="_blank" onclick="share_bluesky(); return false;" class="bluseky btn btn-social-icon btn-flip" href="#"  rel="noopener noreferrer"><img style="width:26px;" src="/ui/img/bluesky-white-small.png"></a>
+      </li>
+
+     <li class="mastodon">
+        <a onclick="share_mast(); return false;" class="mastodon btn btn-social-icon btn-flip" href="#" title="follow us on Mastodon"  rel="noopener noreferrer"><i class="fab fa-brands fa-mastodon" aria-hidden="true"></i></a>
+</li>
+      <li>
+      <a class="str-comment" href="#disqus_thread"></a>
         </li>   
     </ul>
 
