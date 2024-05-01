@@ -1,13 +1,4 @@
 <!-- Begin molecules/blocks/tool-bar -->
-<script>
-        function copyText() {
-
-            navigator.clipboard.writeText(window.location.href);
-        $("#copied").fadeIn(1000, function() {
-        		 $("#copied").fadeOut(6000);
-       			 });
-        }
-    </script>
 
 <div id="sharetoolbar" class="tool-bar clearfix" data-dev-object-descrip="molecules/blocks/tool-bar" data-dev-status="IN-PROGRESS">
 <div id="copied" style="display:none; position: absolute; border: 1px solid;bottom: 52px;left:5px;background: white; z-index:999999;"><strong><small>&nbsp;URL copied to clipboard!&nbsp;</small></strong></div> 
@@ -16,7 +7,7 @@
 
  <li id="heart" ><a target="_blank" class="btn-join" href="https://support.thetyee.ca?utm_campaign=toolbar"><?php include($gitrootinc . "00-atoms/images/dollar-heart-icon.html") ?></a></li>
 
-        <li id="sharecopy" style="display:none;cursor:pointer;" class="sharetext" onclick="copyText();" ><img src="/ui/img/share-cc.png" width="20" height="20"><strong>SHARE:</strong></li>
+        <li id="sharecopy"  style="display:none;cursor:pointer;" class="sharetext" ><a class="sharecopy" href="#" ><img src="/ui/img/share-cc.png" width="20" height="20"><strong class="sharecopy">SHARE:</strong></li>
 
         <li id="email" ><a  class="btn btn-social-icon btn-email"><span data-toggle="modal" data-target="#share-email"><i class="fas fa-envelope"></i></span></a></li>
        
@@ -45,3 +36,14 @@
     </ul>
 
 </div>
+
+
+<script>
+      $("#sharecopy a").click(function(e){
+e.preventDefault();
+            navigator.clipboard.writeText(window.location.href);
+        $("#copied").fadeIn(1000, function() {
+                         $("#copied").fadeOut(6000);
+                         });
+     });
+    </script>
