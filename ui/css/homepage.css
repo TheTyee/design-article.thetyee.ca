@@ -1290,6 +1290,12 @@ p a:hover, p a:focus {
 	border: 2px solid white;
 }
 
+.m-barometer .button--dark-bg {
+        color: white;     
+        background-color: hsla(146,35%,34%,1);
+        border: 2px solid white;
+}
+
 .button--dark {
 	color: white;
 	background-color: var(--text-colour);
@@ -2770,7 +2776,7 @@ input[type=radio] {
 	display: block;
 }
 
-.barometer-form-label::before, .barometer-form-list li::before {
+\.barometer-form-label::before, .barometer-form-list li::before {
 	content: "";
 	cursor: default;
 	position: absolute;
@@ -2778,8 +2784,8 @@ input[type=radio] {
 	height: 2rem;
 	top: 0;
 	left: -3rem;
-	background: hsla(0, 0%, 100%, 0.3);
-	border: 2px solid white;
+	background: hsla(0, 0%, 0%, 1);
+	border: 2px solid black;
 	border-radius: 50%;
 }
 
