@@ -6105,3 +6105,215 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
 		height: auto;
 	}
 }
+
+/** graft of 'most' section from homepage */
+
+
+
+@media screen and (max-width: 867px) {
+    .story-item--minimum .story-item__headline {
+        font-size: 1.2em !important;
+        line-height: 1.4;
+    }
+}
+
+
+
+
+.hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
+    font-size: 1.4em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    display: inline-block;
+    position: relative;
+}
+
+
+.counter-list--story-items > .story-item {
+    counter-increment: story-item;
+    padding-left: 1.4em;
+    position: relative;
+}
+
+.story-item--index-page {
+    position: relative;
+    display: grid;
+    grid-column-gap: var(--gutter-column);
+    grid-row-gap: 0;
+    grid-template-areas:
+        "image"
+        "category"
+        "headline"
+        "deck"
+        "author"
+        "date"
+        "border";
+    align-content: start;
+}
+
+
+
+.hmpg-org-most--column {
+    position: relative;
+    display: grid;
+    grid-row-gap: var(--gutter-row-half);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: -1rem;
+}
+
+
+
+
+
+.hmpg-org-wrapper {
+    position: relative;
+    padding: 0 var(--page-margin-sides);
+    padding-bottom: calc(var(--gutter-row) + 0rem);
+    margin: 0 auto;
+}
+
+
+.hmpg-org-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    grid-column: 1 / -1;
+    width: 100%;
+    border-bottom: 4px solid var(--text-colour);
+}
+
+
+h2.hmpg-module-header__main-label {
+    font-size: 1.4em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    display: inline-block;
+    position: relative;
+}
+
+.counter-list--story-items > .story-item h2::before {
+    content: counter(story-item);
+    display: inline-block;
+    position: absolute;
+    left: -.5em;
+    color: var(--brand-colour--text);
+    background-color: none;
+    font-family: var(--typeface-display);
+    font-weight: 800;
+    font-size: 1.1em;
+    margin-left: auto;
+}
+
+.story-item--minimum .story-item__headline {
+    font-family: var(--typeface-display-medium);
+    font-weight: 400;
+    font-size: 1.35em;
+    line-height: 3rem;
+    margin-bottom: 0rem;
+}
+
+
+
+
+
+.story-item--minimum .story-item__headline {
+    display: block;
+}
+
+.story-item--index-page .story-item__headline {
+    grid-area: headline;
+}
+
+/* end of graft of most section from home */ 
+
+
+
+
+/* part two */
+
+
+
+/* MOST organism ----------------- */
+
+.hmpg-org-most {
+	display: grid;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: var(--gutter-row);
+}
+
+    /* In narrow views override universal top border (border is on each column)  */
+
+.hmpg-org-most::before {
+	content: none;
+}
+
+    /* In narrow views adjust first column top border position to match other module top borders  */
+
+.hmpg-org-most--column:first-child {
+	margin-top: -2rem;
+}
+
+.hmpg-org-most--column {
+	position: relative;
+	display: grid;
+	grid-row-gap: var(--gutter-row-half);
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
+}
+
+.hmpg-org-most--column::before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0;
+	grid-column: 1 / -1;
+	width: 100%;
+	border-bottom: 4px solid var(--text-colour);
+}
+
+.hmpg-org-most--column .story-item__headline {
+	margin-bottom: 0;
+}
+
+
+
+      /* ---- MOST responsive enhancement ---- */
+      /*  */
+
+      /*  MOST MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+
+@media screen and (min-width: 684px) {
+	.hmpg-org-most {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+    /* In wider eliminate first column position adjustment  */
+	
+	.hmpg-org-most--column:first-child {
+		margin-top: 0rem;
+	}
+
+    /* Set top border on outer container instead of on each column */
+	
+	.hmpg-org-most::before {
+		content: "";
+	}
+
+    /* Remove top borders from each column */
+	
+	.hmpg-org-most--column {
+		padding-top: 0;
+	}
+	
+	.hmpg-org-most--column::before {
+		content: none;
+	}
+}
+
+/* End of Most organism */
+
