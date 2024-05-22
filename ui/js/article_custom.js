@@ -116,7 +116,7 @@ jQuery(window).load(function() {
     // attaching to window load
     latestFix();
   mobileFriendlyCommentsStr();
-    hideIfNoHash();
+   //  hideIfNoHash();
     enableEmailSubscription();
 });
 window.data;
