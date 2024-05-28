@@ -821,6 +821,11 @@ h6:first-of-type:hover {
 	font-weight: 300;
 }
 
+.caption__media--credit a {
+    text-decoration: underline;
+}
+
+
     /* Eliminate double-border on slideshow carousel captions.
        Problem: the figure which contains the carousel has a caption and captions have a bottom border,
        but each slide in the carousel also has a caption.
