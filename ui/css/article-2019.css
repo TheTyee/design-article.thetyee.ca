@@ -822,7 +822,7 @@ h6:first-of-type:hover {
 }
 
 .caption__media--credit a {
-    text-decoration: underline;
+border-bottom: 1px solid black;
 }
 
 
