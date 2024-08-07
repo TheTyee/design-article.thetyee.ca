@@ -1182,19 +1182,19 @@ form input {
 	} /* Hides dropdown toggle arrows */
 	
 	.new-site-nav__dropdown-heading-more {
-		grid-column: col-3;
-	}
-	
-	.new-site-nav__dropdown-heading-sections, .new-expander-content__section-submenu {
 		grid-column: col-1;
 	}
 	
-	.new-site-nav__dropdown-heading-topics, .new-expander-content__topics-submenu {
+	.new-site-nav__dropdown-heading-sections, .new-expander-content__section-submenu {
 		grid-column: col-2;
 	}
 	
-	.new-expander-content__more-submenu {
+	.new-site-nav__dropdown-heading-topics, .new-expander-content__topics-submenu {
 		grid-column: col-3;
+	}
+	
+	.new-expander-content__more-submenu {
+		grid-column: col-1;
 		grid-row: row-2; /* Prevents submenu from expanding first row of grid.
         (Only necessary if .new-site-nav__dropdown-heading-more is hidden) )*/
 		position: relative;
