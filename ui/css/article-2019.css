@@ -1,11 +1,11 @@
 /* @override 
 	http://127.0.0.1:4000/ui/css/article-2019.css */
 
+
 /* 
 ==========================================================================
    #BASE (Global) (This mostly applies to the Atoms)
    ========================================================================== */
-
 
 /* Default Border Color - set border-color:inherit on elements to inherit the default */
 
@@ -41,6 +41,12 @@ body {
 	font-family: var(--typeface-serif), serif;
 }
 
+body.series .photo-insert img {
+		width: 100%;
+	}
+
+
+
 /*@media screen and (max-width: 568px) {
 	.article__body p, .article__body strong, .article__body li, .artical__body em, .article__body .ul, .article__body ol, .article__body {
 		font-size: 17px;
@@ -74,6 +80,28 @@ h1 {
 	border-bottom: 1px solid;
 	margin-bottom: 2rem;
 }
+
+/* optinmonster inline ad */
+#om-zc4zqugunpu882seo8vt-holder {
+margin-bottom: 18px;
+width: 100%;
+min-height: 10px;
+display: inline-block;
+}
+
+div[id^='om-'] {
+margin-bottom: 18px;
+width: 100%;
+min-height: 10px;
+display: inline-block;
+
+}
+
+div[id$='-holder'] {
+display:none;
+}
+
+
 
     /* BREAKPOINT: 600px // Increase article headline size */
 
@@ -601,6 +629,10 @@ h6:first-of-type:hover {
 
 }
 
+
+.fab { margin-bottom: 10px;}
+
+
 .article-footer .container-fluid {
 	margin: 0 auto;
 	padding-left: 15px;
@@ -674,12 +706,14 @@ h6:first-of-type:hover {
 	  /* padding-left: 2.125em; */
 	  /* padding-right: 1.75em; */
 	font-family: var(--typeface-serif), Georgia, Serif;
-	font-weight: 800;
+/*	font-weight: 800;*/
 	font-size: 1.15em;
-	line-height: 1.333em;
+	line-height: 1.5em;
 }
 
     /* BREAKPOINT: 500px // Show asides at viewports wider than 500px */
+
+
 
 @media screen and (min-width: 500px) {
 	.pullquote {
@@ -787,6 +821,11 @@ h6:first-of-type:hover {
 	font-weight: 300;
 }
 
+.caption__media--credit a {
+border-bottom: 1px solid black;
+}
+
+
     /* Eliminate double-border on slideshow carousel captions.
        Problem: the figure which contains the carousel has a caption and captions have a bottom border,
        but each slide in the carousel also has a caption.
@@ -803,6 +842,10 @@ h6:first-of-type:hover {
 	line-height: 1.33em;
 }
 
+
+.carousel-caption a {
+text-decoration: underline;
+}
 
 
 /* ==========================================================================
@@ -824,11 +867,18 @@ h6:first-of-type:hover {
 	max-width: 1000px; /* Sets a limit on the width of the bootstrap layout */
 }
 
+@media screen and (max-width: 849px) {
+.cover .section__header {
+        margin-top: 3em;
+}
+
+}
 .section__header {
 	margin-top: .66em;
 	margin-bottom: 1.5em;
 	text-align: center;
 }
+
 
 .section__header h1 {
 	display: inline-block;
@@ -1067,6 +1117,12 @@ span.list-metric, .index-list span {
 	padding-right: 0;
 }*/
     /* BREAKPOINT: 640px // Increase page margin */
+
+
+.series-box li a {
+  border-bottom: none !important;
+}
+
 
 @media screen and (min-width: 640px) {
 	.article__header {
@@ -1360,7 +1416,7 @@ ul.book_profile {
     /* border-bottom: 1px dotted; */
     /* width: 90%; */
 	display: block;
-	line-height: 0.9em;
+	line-height: 1em;
 	padding: 0.2em;
 }
 
@@ -1908,7 +1964,11 @@ figure {
 	float: left; /* This prevents the figure from colliding with any asides. */
 	width: 100%;
 	margin-top: 1em;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
+}
+
+figure video {
+max-width: 100%;
 }
 
 @media screen and (max-width: 879px) {
@@ -1933,7 +1993,14 @@ figure {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+	
+	
+	
+	.featured-media .container-fluid .figure img, .figure--xl img { width: calc(100vw - 15px) !important; } 
+
+.figure--xxl { width: calc(100vw) !important; }
 }
+
 
     /* Remove float when view is wide enough */
 
@@ -2262,6 +2329,43 @@ aside {
 	}
 }
 
+@media screen and (max-width: 640px) {
+	
+	.aside {
+		margin-bottom: 1em; 
+	}
+	
+	.aside .story-item .responsive-img {
+		
+		width: 20%;
+		float: left;
+		margin-left:5%;
+		margin-top:15px;
+		
+	}
+	
+	.aside .story-item__description {
+		width: 70%;
+		float: left;
+		margin-top:15px;
+		
+	}
+	
+	.aside .story-item__description h5 {
+		margin-top: 0px;
+	}
+	
+	 .aside .story-item::after{
+		content: "";
+  clear: both;
+  display: table;
+	}
+	
+	
+	
+}
+
+
         /* BREAKPOINT: 696px // gradually moves aside outward to align flush right w/ viewport */
 
 @media screen and (min-width: 696px) {
@@ -2312,7 +2416,7 @@ aside {
 @media screen and (min-width: 1025px)
     /* When viewport exceeds the max desired width of the page ... */ {
 	.aside {
-		margin-right: -15em;/* ... keep the aside at a constant offset from the text column (article__body) */
+		margin-right: -16em;/* ... keep the aside at a constant offset from the text column (article__body) */
 	}
 }
 
@@ -2341,6 +2445,11 @@ aside {
 	line-height: 1.4;
 }
 
+.author-info .contrib-link {
+  font-weight: 500;
+  color: var(--grey) !important;
+}
+
 .author-info img {
 	float: left;
 	margin-top: 0.25em;
@@ -2366,22 +2475,20 @@ aside {
 }
 
 @media screen and (min-width: 600px) {
-	.author-info__date span:before {
-		content: " / ";
+	.author-info__date span:first-of-type:before, .author-info__date span:first-of-type:after {
+		content: " / "; 
 	}
 }
 	
 @media screen and (max-width: 600px) {
-	.author-info__date span:before {
-		content: "\00a0";
+	span.author-info__date span {
 		padding-right: 5px;
 	}
 }
 
-	.author-info__date span {
+span.author-info__date span {
   content: "\00a0";
-  display: inline-block;
-  padding-right: 5px;
+  padding-right: 2px; 
 }
 	
 	.author-more {
@@ -2398,7 +2505,7 @@ aside {
  end fix */ /* This was causing a gap at the bottom of author-info__text --AG */
 
 .author-info__bio {
-	display: none;
+	display: block; /*start showing */
 	padding-top: 0.15em;
 	line-height: 1.45;
 	font-weight: 400;
@@ -2487,6 +2594,35 @@ aside {
    Might be best to start again from scratch using the basic bootstrap button markup, like I already
    started in the messaging-zone buttons.
    For some reason the bootstrap default button html & css wasn't working. -- AG */
+
+.article__header .tool-bar.scroll {
+    left: 0px;
+    position: fixed;
+    bottom: -5px;
+    background: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 999999999;
+	border-top: 2px solid black !important;
+}
+
+
+.tool-bar.scroll ul {
+    margin: 0;
+    padding: 0;
+    font-size: em;
+    list-style: none;
+    align-items: center;
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+    background: white;
+    z-index: 999999999999999;
+    position: relative;
+	height:50px;
+}
+
 
 .tool-bar {
 	margin: .85em 0 .3em 0;
@@ -2645,8 +2781,14 @@ aside {
 }
 
 
+@media screen and (max-width: 480px) {
+.tool-bar .desktop {
+display:none;
+}
+}
 
-.btn-twitter, .btn-facebook, .btn-facebook, .btn-email {
+
+.btn-twitter, .btn-facebook, .btn-facebook, .btn-email, .btn-flip {
 	color: #7A7C85 !important;
 	background: #E0E0E0;
 }
@@ -2660,6 +2802,13 @@ aside {
 	background: #53ACEC;
 	color: #fff !important;
 }
+
+.btn-flip:hover {
+background: #53ACEC;
+    color: #fff !important;
+}
+
+
 
 .btn-email:hover {
 	background: #666;
@@ -3299,6 +3448,8 @@ aside .messaging-block--ask .dollar-heart-svg {
 .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
 	float: none;
 	margin-left: 0;
+        display:inline-block;
+        visibility:visible;
 }
 
 label.error {
@@ -3424,7 +3575,7 @@ label.valid {
 }
 
 .index-page__featured-story .story-item--event__details {
-	margin-bottom: -.5em; */
+	margin-bottom: -.5em;
 }
 
 .story-item__date--event {
@@ -3472,17 +3623,20 @@ label.valid {
 
 .text-block-container h5 {
 	display: table;
-	margin-top: 1em;
+	margin-top: 1.5em;
 	margin-bottom: 1em;
 	padding-bottom: 0em;
 	font-size: 1em;
 	font-weight: 700;
 	text-transform: uppercase;
+	margin-left: auto;
+	margin-right:auto;
+	
 }
 
 .text-block-container h3 {
 	margin-top: 1.6em;
-	margin-bottom: 0.25em;
+	margin-bottom: 1.25em;
 	padding-bottom: 0em;
 	font-family: var(--typeface-sans), sans-serif;
 	font-size: .75em;
@@ -3588,11 +3742,20 @@ label.valid {
 	margin-top: .125em;
 }
 
+@media screen and (max-width: 939px) {
+    .aside-mobile {
+        display:block !important;
+    }
+}
+
 /*  IN WIDER VIEWPORTS: 
 - don't show the fact-box at the bottom of the article-body
 - show the aside containing the fact-bax (.hide-on-narrow-vp)
 - show the factbox within an aside */
 @media screen and (min-width: 939px) {
+.aside-mobile {
+display:none;
+}
 
 	.presents-box {
 	    display: none;
@@ -4305,10 +4468,11 @@ img.fact-box--headshot {
 
 .latest-stories h4 {
 	font-size: 1.125em;
+	color: #444;
 }
 
-.latest-stories a {
-	color: #82AD00;
+.latest-stories a, .latest-stories a:visited {
+	color: #444;
 }
 
 .latest-stories__media-wrapper {
@@ -5129,12 +5293,16 @@ div.ntnl-sgnup-modal {
 
 
 
+
+
 /* BUILDER MODAL STYLES ======================================================= */
 /*! ---------------------------------------------------------------------------- */
 /*! Customization of bootstrap modal styles for 2016 Tyee support/builder campaign popup ad
 /*! It's based on an 2015 Tyee support/builder campaign pop-up, but I've used the .modal--builder class (instead of .support-modal) to (hopefully) prevent any styling conflicts
 /*! Where possible I've narrowed the selector scope to target only elements within .modal--builder so that other modals can still adhere to the standard bootstrap style. But we'll probably want to standardize the styling for all modals at some point.
 /*! Alexg */
+
+
 
 div.modal--builder {
 	font-family: var(--typeface-sans), sans-serif;
@@ -5611,7 +5779,10 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 	display: block;
 }
 
-
+figure audio {
+	
+	width: 100%;
+}
 
 /* RESPONSIVE EMBED  ========================================================================== */
 /*  This allows a Youtube embed to expand proportionally to
@@ -5636,6 +5807,7 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 .responsive-embed--audio {
 	padding-bottom: 150px;
 }
+
 
 
 
@@ -5886,9 +6058,11 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
 	padding-top: 4px;
 }
 
+
 @media screen and (min-width: 640px) {
 	.article-series.index .photo-insert {
 		margin: 0 20px 40px 0;
+                min-height: 160px;
 	}
 }
 
@@ -5937,3 +6111,215 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
 		height: auto;
 	}
 }
+
+/** graft of 'most' section from homepage */
+
+
+
+@media screen and (max-width: 867px) {
+    .story-item--minimum .story-item__headline {
+        font-size: 1.2em !important;
+        line-height: 1.4;
+    }
+}
+
+
+
+
+.hmpg-module-header__main-label, .m-comment-noted__label, .m-barometer__label {
+    font-size: 1.4em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    display: inline-block;
+    position: relative;
+}
+
+
+.counter-list--story-items > .story-item {
+    counter-increment: story-item;
+    padding-left: 1.4em;
+    position: relative;
+}
+
+.story-item--index-page {
+    position: relative;
+    display: grid;
+    grid-column-gap: var(--gutter-column);
+    grid-row-gap: 0;
+    grid-template-areas:
+        "image"
+        "category"
+        "headline"
+        "deck"
+        "author"
+        "date"
+        "border";
+    align-content: start;
+}
+
+
+
+.hmpg-org-most--column {
+    position: relative;
+    display: grid;
+    grid-row-gap: var(--gutter-row-half);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: -1rem;
+}
+
+
+
+
+
+.hmpg-org-wrapper {
+    position: relative;
+    padding: 0 var(--page-margin-sides);
+    padding-bottom: calc(var(--gutter-row) + 0rem);
+    margin: 0 auto;
+}
+
+
+.hmpg-org-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    grid-column: 1 / -1;
+    width: 100%;
+    border-bottom: 4px solid var(--text-colour);
+}
+
+
+h2.hmpg-module-header__main-label {
+    font-size: 1.4em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.125em;
+    display: inline-block;
+    position: relative;
+}
+
+.counter-list--story-items > .story-item h2::before {
+    content: counter(story-item);
+    display: inline-block;
+    position: absolute;
+    left: -.5em;
+    color: var(--brand-colour--text);
+    background-color: none;
+    font-family: var(--typeface-display);
+    font-weight: 800;
+    font-size: 1.1em;
+    margin-left: auto;
+}
+
+.story-item--minimum .story-item__headline {
+    font-family: var(--typeface-display-medium);
+    font-weight: 400;
+    font-size: 1.35em;
+    line-height: 3rem;
+    margin-bottom: 0rem;
+}
+
+
+
+
+
+.story-item--minimum .story-item__headline {
+    display: block;
+}
+
+.story-item--index-page .story-item__headline {
+    grid-area: headline;
+}
+
+/* end of graft of most section from home */ 
+
+
+
+
+/* part two */
+
+
+
+/* MOST organism ----------------- */
+
+.hmpg-org-most {
+	display: grid;
+	grid-column-gap: var(--gutter-column);
+	grid-row-gap: var(--gutter-row);
+}
+
+    /* In narrow views override universal top border (border is on each column)  */
+
+.hmpg-org-most::before {
+	content: none;
+}
+
+    /* In narrow views adjust first column top border position to match other module top borders  */
+
+.hmpg-org-most--column:first-child {
+	margin-top: -2rem;
+}
+
+.hmpg-org-most--column {
+	position: relative;
+	display: grid;
+	grid-row-gap: var(--gutter-row-half);
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-bottom: -1rem; /* offsets the row-gap (but dependent on length of headlines) */
+}
+
+.hmpg-org-most--column::before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0;
+	grid-column: 1 / -1;
+	width: 100%;
+	border-bottom: 4px solid var(--text-colour);
+}
+
+.hmpg-org-most--column .story-item__headline {
+	margin-bottom: 0;
+}
+
+
+
+      /* ---- MOST responsive enhancement ---- */
+      /*  */
+
+      /*  MOST MEDIUM BREAKPOINT -- breakpoint-width-m: 684px */
+
+@media screen and (min-width: 684px) {
+	.hmpg-org-most {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+    /* In wider eliminate first column position adjustment  */
+	
+	.hmpg-org-most--column:first-child {
+		margin-top: 0rem;
+	}
+
+    /* Set top border on outer container instead of on each column */
+	
+	.hmpg-org-most::before {
+		content: "";
+	}
+
+    /* Remove top borders from each column */
+	
+	.hmpg-org-most--column {
+		padding-top: 0;
+	}
+	
+	.hmpg-org-most--column::before {
+		content: none;
+	}
+}
+
+/* End of Most organism */
+
