@@ -11,7 +11,7 @@
     </div>
 	
     <nav>
-      <div class="new-site-nav__dropdown nav-modal">
+      <div class="new-site-nav__dropdown nav-modal is-closed">
           <!-- SEARCH  -->
           <div class="new-site-nav__search-dropdown">
             <form id="new-search-form" class="new-site-nav__search-form" method="get" role="search" action="/Newsearch">
@@ -106,7 +106,7 @@ $( document ).ready( function( $ ) {
         const $menuIcon = $('.header-basic .fas');
 
         // Whenever the menu toggle button is clicked, show or hide the nav modal
-        $navModal.toggle();
+        $navModal.toggleClass('is-closed');
 
         // Change the appearance of the toggle button based on the visibility of the nav modal
         if ( $navModal.is(":visible")) {
@@ -149,7 +149,7 @@ $( document ).ready( function( $ ) {
 
         // Only hide the sticky header when the user scrolls all the way to the top of the page
         if ($(window).scrollTop() === 0) {
-            $headerClone.hide();
+            $headerClone.fadeOut(100);
         }
     });
 

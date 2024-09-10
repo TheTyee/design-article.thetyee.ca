@@ -32,6 +32,10 @@
     margin-top: 0;
 }
 
+.header-basic .nav-modal.is-closed {
+    display: none;
+}
+
 /* Sticky clone */
 .header-basic--clone {
     position: fixed;
