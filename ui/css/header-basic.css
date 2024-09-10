@@ -1,6 +1,9 @@
+:root {
+    --header-height: 66px;
+}
+
 .header-basic {
-    --height: 66px;
-    height: var(--height);
+    height: var(--header-height);
     padding-left: var(--page-margin-sides);
     padding-right: var(--page-margin-sides);
     z-index: 1000;
@@ -46,7 +49,7 @@
     top: var(--height);
     margin-top: 0;
     display: grid;
-    height: calc(100% - var(--height));
+    height: calc(100% - var(--header-height));
     overflow-y: auto;
 }
 

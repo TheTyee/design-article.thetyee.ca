@@ -11,7 +11,7 @@
 /* Full-bleed hero image */
 
 .article-feature-wide .article-hero {
-    margin-top: -66px;
+    margin-top: calc(-1 * var(--header-height));
 }
 
 .article-feature-wide .article-hero figure {
@@ -20,15 +20,38 @@
 }
 
 .article-feature-wide .article-hero figure img {
-    height: 80vh;
+    height: 85vh;
     min-height: 500px;
     object-fit: cover;
-    filter: brightness(0.85);
+    filter: brightness(0.80);
 }
 
 .article-feature-wide .article-hero figure figcaption {
     padding-inline: var(--page-margin-sides);
+    max-width: 80ch;
     border-bottom: none;
+    font-size: 0.8em;
+}
+
+/* Position headline on top of hero image */
+
+.article-feature-wide .article-hero .article-headline .container-fluid {
+    padding-inline: var(--page-margin-sides);
+}
+
+.article-feature-wide .article-hero .article-headline {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    transform: translate(0, -50%);
+    color: white;
+    max-width: 100ch;
+}
+
+/* Adjust tag styles so they stand out against hero image */
+
+.article-feature-wide .article-hero .category-label:not(:first-of-type) {
+    background: white;
 }
 
 /* Space below author byline */
