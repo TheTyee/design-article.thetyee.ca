@@ -7,16 +7,18 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 {% include meta/head--2019.html %}
-  
+
 <body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
 
     {% include 01-molecules/messaging/alerts--browser-support.html %}
 
-    {% comment %}
-        {% include 01-molecules/messaging/highlight-bar.html %}
-    {% endcomment %}
+    {% include 02-organisms/global/header--basic.html %}
 
-    {% include 02-organisms/global/header--homepage-prefixed.html %}
+    {% include 02-organisms/article/article__headline.html %}
+
+    {% include 02-organisms/article/featured-media.html %}
+
+    {% include 02-organisms/article/article__byline.html %}
 
     {{ content }}
 

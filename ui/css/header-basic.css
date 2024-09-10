@@ -1,0 +1,33 @@
+.header-basic {
+    --height: 50px;
+    height: var(--height);
+    background-color: lightpink;
+}
+
+.header-basic .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header-basic .logo {
+    height: 100%;
+    margin-inline: auto;
+}
+
+.header-basic .logo a {
+    display: block;
+    height: 100%;
+}
+
+.header-basic .logo img {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+.header-basic .nav-modal {
+    top: var(--height);
+    margin-top: 0;
+}

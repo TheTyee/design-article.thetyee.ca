@@ -1,0 +1,137 @@
+<!-- organisms/global/header--basic -->
+<header class="header-basic">
+    <div class="wrapper">
+	    <div class="logo">
+            <a href="/"><img src="http://thetyee.github.io/design-article.thetyee.ca/ui/img/thetyee.svg" class="" alt="The Tyee" /></a>
+	    </div>
+	    
+	    <div class="menu-toggle">
+            <button aria-label="Toggle Menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
+	    </div>
+    </div>
+	
+    <nav>
+
+      <!-- MENU -- EXPANDER dropdown -->
+      <div class="new-site-nav__dropdown nav-modal">
+          <!-- SEARCH  -->
+          <div class="new-site-nav__search-dropdown">
+            <form id="new-search-form" class="new-site-nav__search-form" method="get" role="search" action="/Newsearch">
+              <input id="new-search-form-input" type="text" class="form-control form-text" placeholder="Search" name="q">
+              <input type="hidden" name="domains" value="thetyee.ca">
+              <input type="hidden" name="sitesearch" value="thetyee.ca" checked="checked">
+              <input type="hidden" name="client" value="pub-2188005021510640">
+              <input type="hidden" name="forid" value="1">
+              <input type="hidden" name="ie" value="UTF-8">
+              <input type="hidden" name="oe" value="UTF-8">
+              <input type="hidden" name="hl" value="en">
+              <button type="submit" class="button new-site-nav__search-form-button">Search</button>
+            </form>
+          </div> <!-- end of Search  -->
+          <!-- SECTION SUBMENU -->
+          <!-- expander input checkbox toggle for section submenu -->
+          <input type="checkbox" id="new-expander--nav-menu-section-submenu" style="display: none;">
+          <label for="new-expander--nav-menu-section-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-sections new-site-nav__dropdown-expander-toggle ">Sections</label>
+          <!-- section submenu content -->
+          <div class="new-expander-content new-expander-content__section-submenu">
+	          <ul>
+	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/News">News</a></li>
+	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="/Analysis">Analysis</a></li>
+	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="/Culture">Culture</a></li>
+	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="/National">National</a></li>
+	            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section"href="/Solutions">Solutions</a></li>
+	          </ul>
+          </div>
+          <!-- TOPICS SUBMENU -->
+          <!-- expander input checkbox toggle for Topics submenu -->
+          <input type="checkbox" id="new-expander--nav-menu-topics-submenu" style="display: none;">
+          <label for="new-expander--nav-menu-topics-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-topics new-site-nav__dropdown-expander-toggle ">Topics</label>
+          <!-- Topics submenu content -->
+          <div class="new-expander-content new-expander-content__topics-submenu">
+            <ul>
+	            
+<li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/BC-Politics">BC Politics</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Education">Education</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Energy">Energy</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Environment">Environment</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Federal-Politics">Federal Politics</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Film">Film</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Food/">Food</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/GenderSexuality/">Gender & Sexuality</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Health/">Health</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Housing/">Housing</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/LabourIndustry/">Labour & Industry</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Indigenous-Affairs">Indigenous</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Municipal-Politics">Municipal Politics</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Music">Music</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/RightsJustice">Rights & Justice</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/ScienceTech">Science & Tech</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Transportation/">Transportation</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/Travel/">Travel</a></li>
+            <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section "href="/Topic/PlanningArch">Urban Planning & Architecture</a></li>
+	          </ul>
+          </div>
+          <!-- MORE SUBMENU -->
+          <!-- expander input checkbox toggle for More submenu -->
+          <input type="checkbox" id="new-expander--nav-menu-more-submenu" style="display: none;">
+          <label for="new-expander--nav-menu-more-submenu" class="new-site-nav__dropdown-heading new-site-nav__dropdown-heading-more new-site-nav__dropdown-expander-toggle ">More</label>
+          <!-- More submenu content -->
+          <div class="new-expander-content new-expander-content__more-submenu">
+	          <ul>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="/About/Advertise/">Advertise</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="/about_us/">About Us</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="/team/">The Tyee Team</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="/Polls">The Barometer</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="/contact/">Contact</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="/about_us/#independence">Funding</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="/Jobs/Intro/">Jobs</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="https://subscribe.thetyee.ca/?utm_campaign=menu">Newsletter</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="http://subscribe.thetyee.ca/privacy/">Privacy Policy</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="/About/Submissions/">Submissions</a></li>
+          <li><a class="new-nav__link new-nav__link--dropdown-item new-nav__link--dropdown-item-section " href="/Archive/weekly/">Weekly Archives</a></li>
+          	</ul>
+          </div>
+          <!-- misc new-nav -->
+          <a class="new-nav__link new-nav__link--join new-btn-join" href="https://support.thetyee.ca/?utm_campaign=miscnav">Support Us</a>
+          <a class="new-nav__link new-nav__link--newsletter"href="https://subscribe.thetyee.ca?utm_campaign=navm">Newsletter</a>
+          <a class="new-nav__link new-facebook" href="https://facebook.com/thetyee"><i class="fab fa-facebook fa-lg"></i></a>
+          <a class="new-nav__link new-twitter" href="https://twitter.com/thetyee"><i class="fab fa-twitter fa-lg"></i></a>
+          	
+      </div> <!-- end of Site-Nav Dropdown -->
+
+    </nav>
+</header>
+
+<script>
+$( document ).ready( function( $ ) {
+    $('.header-basic .menu-toggle button').click(function() {
+        const $navModal = $('.header-basic .nav-modal');
+        const $menuIcon = $('.header-basic .fas');
+
+        // Whenever the menu toggle button is clicked, show or hide the nav modal
+        $navModal.toggle();
+
+        // Change the appearance of the toggle button based on the visibility of the nav modal
+        if ( $navModal.is(":visible")) {
+            $menuIcon.removeClass('fa-bars').addClass('fa-times');
+        } else {
+            $menuIcon.removeClass('fa-times').addClass('fa-bars');
+        }
+
+        // Lock the body content when the nav modal is visible
+        // 'modal-open' is a bootstrap class used to prevent scrolling on the body content
+        // https://getbootstrap.com/docs/3.3/javascript/#modals-usage
+        if ( $navModal.is(":visible")) {
+            $('body').addClass('modal-open');
+        } else {
+            $('body').removeClass('modal-open');
+        }
+    });
+
+    /* 
+    No-op bumpMenu function
+    The bumpMenu function is used to bump the menu position when 
+       the user scrolls down the page for the standard menu, not this one. */
+    window.bumpMenu = () => { }
+});
+</script>
