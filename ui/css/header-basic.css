@@ -1,7 +1,8 @@
 .header-basic {
-    --height: 50px;
+    --height: 66px;
     height: var(--height);
-    background-color: lightpink;
+    padding-left: var(--page-margin-sides);
+    padding-right: var(--page-margin-sides);
 }
 
 .header-basic .wrapper {
@@ -14,6 +15,7 @@
 .header-basic .logo {
     height: 100%;
     margin-inline: auto;
+    padding-block: 18px;
 }
 
 .header-basic .logo a {
@@ -27,9 +29,23 @@
     width: auto;
 }
 
+.header-basic .menu-toggle button {
+    /* Reset button styles */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    /* Icon size */
+    font-size: 37px;    
+}
+
 .header-basic .nav-modal {
     top: var(--height);
     margin-top: 0;
+    display: grid;
+    height: calc(100% - var(--height));
+    overflow-y: auto;
 }
 
 .header-basic .nav-modal.is-closed {
@@ -42,4 +58,5 @@
     top: 0;
     width: 100%;
     z-index: 1000;
+    background-color: white;
 }
