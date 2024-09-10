@@ -14,9 +14,11 @@
 
     {% include 02-organisms/global/header--basic.html %}
 
-    {% include 02-organisms/article/article__headline.html %}
+    <div class="article-hero">
+        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption=page.featured-media-caption media-credit=page.featured-media-credit content-source=page.featured-media-source %}
 
-    {% include 02-organisms/article/featured-media.html %}
+        {% include 02-organisms/article/article__headline.html %}
+    </div>
 
     {% include 02-organisms/article/article__byline.html %}
 

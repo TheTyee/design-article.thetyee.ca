@@ -1,6 +1,57 @@
-/* TODO: Feature article styles */
+/* Adjust basic header so that it can be superimposed on hero image */
 
-.article-feature-wide {
-
+.article-feature-wide .header-basic:not(.header-basic--clone) {
+    color: white;
 }
 
+.article-feature-wide .header-basic:not(.header-basic--clone) .logo img {
+    filter: invert(1);
+}
+
+/* Full-bleed hero image */
+
+.article-feature-wide .article-hero {
+    margin-top: -66px;
+}
+
+.article-feature-wide .article-hero figure {
+    padding: 0;
+    margin: 0;
+}
+
+.article-feature-wide .article-hero figure img {
+    height: 80vh;
+    min-height: 500px;
+    object-fit: cover;
+    filter: brightness(0.85);
+}
+
+.article-feature-wide .article-hero figure figcaption {
+    padding-inline: var(--page-margin-sides);
+    border-bottom: none;
+}
+
+/* Space below author byline */
+
+.article-feature-wide .article-byline {
+    margin-block: 1rem 2rem;
+}
+
+/* Inline margins for byline should match .article__header. Copying here... */
+
+.article-feature-wide .article-byline {
+	max-width: 49em;
+	margin-inline: auto;
+}
+
+@media screen and (min-width: 640px) {
+	.article-feature-wide .article-byline {
+		padding-inline: 17px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.article-feature-wide .article-byline {
+		max-width: 49em;
+	}
+}
