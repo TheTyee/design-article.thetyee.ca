@@ -120,9 +120,11 @@ html {
 	--typeface-item-body: 'franklin-gothic-urw', helvetica, sans-serif;
 	--typeface-display: 'Tiempos Text', georgia, serif;
 	--typeface-display-small: 'Tiempos Text', georgia, serif;
-	--typeface-display-medium: 'Tiempos Headline', georgia, serif;
+	--typeface-display-medium: 'Tiempos Text', georgia, serif;
 	--typeface-display-large: 'Tiempos Headline', georgia, serif;
 }
+
+
 
 /* Typefaces for retina and high-dpi screens */
 

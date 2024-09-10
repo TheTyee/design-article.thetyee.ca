@@ -11,6 +11,32 @@
 	list-style-type: none;
 }
 
+/* CAPTIONS  ========================================================================== */
+
+.caption {
+	padding-top: .65em;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid;
+	border-color: inherit;
+	font-size: 0.9em;
+	font-weight: 500;
+	line-height: 1.4em;
+	color: #404040;
+	text-align: left;
+	text-shadow: none;
+}
+
+@media screen and (max-width: 568px) {
+	.caption {
+		font-size: 17px;
+	}
+}
+
+.caption__media--credit {
+	font-weight: 300;
+}
+
+
 .category-label a {
 	background: rgb(255,208,0);
 	background: rgba(255,208,0,0.8);
@@ -1264,6 +1290,12 @@ p a:hover, p a:focus {
 	border: 2px solid white;
 }
 
+.m-barometer .button--dark-bg {
+        color: white;     
+        background-color: hsla(146,35%,34%,1);
+        border: 2px solid white;
+}
+
 .button--dark {
 	color: white;
 	background-color: var(--text-colour);
@@ -1307,7 +1339,7 @@ p a:hover, p a:focus {
 @media screen and (min-width: 1368px) {
 	.default-global-homepage .button--expander-open,
 	#section-index .button--expander-open {
-		display: none;
+/*		display: none; */ not sure why this is hidden
 	}
 }
 
@@ -1954,7 +1986,7 @@ p a:hover, p a:focus {
 }
 
 .hmpg-org-recent-stories .house-ad figure {
-	margin: -31px auto 5px;
+	margin: -10px auto 5px;
 	max-width: 80%;
 }
 
@@ -2095,6 +2127,32 @@ p a:hover, p a:focus {
 	}	
 }
 /* end of HMPG Ad Box molecule */
+
+.mobile	.house-ad div {
+max-width: 100% !important;
+width: 100%;
+}
+
+
+.mobile .house-ad div figure {
+width: 100px;
+max-width: 100px;
+}
+
+
+.mobile .house-ad div  h2, .mobile .house-ad div p {
+
+max-width: 95%;
+width: 95%;
+}
+
+@media screen and (min-width: 845px) {
+
+.mobile .house-ad, .mobile.hmpg-org-recent-stories  {
+display:none !important;
+}
+
+}
 
 
 /* COUNTER LIST molecule ----------------- */
@@ -2677,6 +2735,9 @@ main .hmpg-org-wrapper:first-of-type {
 	padding-top: 4rem;
 }
 
+
+.fab { margin-bottom: 10px;}
+
 .barometer-form-list p:first-child {
 	font-family: var(--typeface-display-medium);
 	font-weight: 600;
@@ -2715,7 +2776,7 @@ input[type=radio] {
 	display: block;
 }
 
-.barometer-form-label::before, .barometer-form-list li::before {
+\.barometer-form-label::before, .barometer-form-list li::before {
 	content: "";
 	cursor: default;
 	position: absolute;
@@ -2723,8 +2784,8 @@ input[type=radio] {
 	height: 2rem;
 	top: 0;
 	left: -3rem;
-	background: hsla(0, 0%, 100%, 0.3);
-	border: 2px solid white;
+	background: hsla(0, 0%, 0%, 1);
+	border: 2px solid black;
 	border-radius: 50%;
 }
 
@@ -3188,7 +3249,7 @@ main .hmpg-org-most::before {
 /* BUILDER organism ----------------- */
 
 .hmpg-org-builder {
-	display: grid;
+/*	display: grid; */
 	justify-content: center;
 	padding-top: 3rem !important;
 	background-color: var(--section-bg-yellow); /* var(--brand-colour--mod-bg) not working */
@@ -3202,9 +3263,10 @@ main .hmpg-org-builder::before {
 
 .builder__content {
 	position: relative;
-	max-width: 1000px;
-	display: grid;
-	justify-items: center;
+/*	max-width: 1000px; */
+/*	display: grid;
+	justify-items: center; */
+        width: 100%;
 	grid-column-gap: var(--gutter-column-half);
 	grid-row-gap: 0;
 	grid-template-areas: "image"
@@ -3231,7 +3293,8 @@ main .hmpg-org-builder::before {
 }
 
 .builder__image {
-	display: grid; /* Necessary for baseline-element.js to prevent element height from collapsing  */
+/*	display: grid;*/ /* Necessary for baseline-element.js to prevent element height from collapsing  */
+	display:none;
 	position: relative;
 }
 
