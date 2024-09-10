@@ -31,3 +31,11 @@
     top: var(--height);
     margin-top: 0;
 }
+
+/* Sticky clone */
+.header-basic--clone {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}

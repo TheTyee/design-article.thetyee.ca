@@ -11,8 +11,6 @@
     </div>
 	
     <nav>
-
-      <!-- MENU -- EXPANDER dropdown -->
       <div class="new-site-nav__dropdown nav-modal">
           <!-- SEARCH  -->
           <div class="new-site-nav__search-dropdown">
@@ -97,14 +95,13 @@
           <a class="new-nav__link new-facebook" href="https://facebook.com/thetyee"><i class="fab fa-facebook fa-lg"></i></a>
           <a class="new-nav__link new-twitter" href="https://twitter.com/thetyee"><i class="fab fa-twitter fa-lg"></i></a>
           	
-      </div> <!-- end of Site-Nav Dropdown -->
-
+      </div>
     </nav>
 </header>
 
 <script>
 $( document ).ready( function( $ ) {
-    $('.header-basic .menu-toggle button').click(function() {
+    function menuToggleAction() {
         const $navModal = $('.header-basic .nav-modal');
         const $menuIcon = $('.header-basic .fas');
 
@@ -125,6 +122,34 @@ $( document ).ready( function( $ ) {
             $('body').addClass('modal-open');
         } else {
             $('body').removeClass('modal-open');
+        }
+    }
+
+    // Add toggle click event to toggle button
+    $('.header-basic .menu-toggle button').click(menuToggleAction);
+
+    // Duplicate the header for use when user scrolls down the page
+    const $header = $('.header-basic');
+    const $headerClone = $header.clone().addClass('header-basic--clone').hide();
+
+    // Remove the cloned nav html
+    $headerClone.find('.nav-modal').remove();
+
+    // Add clone to body
+    $headerClone.appendTo('body');
+    
+    // Add toggle click event to cloned toggle button
+    $headerClone.select('.menu-toggle button').click(menuToggleAction);
+    
+    $(window).scroll(function() {
+        // When .header-basic scrolls out of view (with a buffer), show the sticky header
+        if ($(window).scrollTop() > $header.height() * 4) {
+            $headerClone.fadeIn(150);
+        }
+
+        // Only hide the sticky header when the user scrolls all the way to the top of the page
+        if ($(window).scrollTop() === 0) {
+            $headerClone.hide();
         }
     });
 
