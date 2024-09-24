@@ -34,6 +34,12 @@
     width: auto;
 }
 
+.header-basic .menu-toggle {
+    display: flex;
+    justify-content: center;
+    width: 37px;
+}
+
 .header-basic .menu-toggle button {
     /* Reset button styles */
     background: none;
@@ -54,6 +60,17 @@
     z-index: 1999;
     margin-top: 0;
     overflow-y: auto;
+
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.nav-modal li a {
+    font-size: 1.15em;
+    font-weight: 500;
 }
 
 .nav-modal.is-closed {
