@@ -137,6 +137,13 @@ $( document ).ready( function( $ ) {
     $stickyHeader.find('.menu-toggle button').click(menuToggleAction);
     $navModalHeader.find('.menu-toggle button').click(menuToggleAction);
 
+    // If menu is open, close it when user clicks escape key
+    $(document).keyup(function(e) {
+        if (e.key === "Escape" && $navModal.is(":visible")) {
+            menuToggleAction();
+        }
+    });
+
     // Trap focus within the modal when it is open
     $navModal.on('keydown', function(e) {
         if (e.key === "Tab") {
