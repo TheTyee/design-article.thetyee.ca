@@ -4,6 +4,12 @@
 	    <div class="logo">
             <a href="/"><img src="http://thetyee.github.io/design-article.thetyee.ca/ui/img/thetyee.svg" class="" alt="The Tyee" /></a>
 	    </div>
+
+        {% if page.weekender == true %}
+            <div class="weekenderLabel">
+                Weekender
+            </div>
+        {% endif %}
 	    
 	    <div class="menu-toggle">
             <button aria-label="Toggle Menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
