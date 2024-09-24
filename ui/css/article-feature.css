@@ -1,10 +1,11 @@
 /* Adjust basic header so that it can be superimposed on hero image */
 
-.article-feature-wide .header-basic:not(.header-basic--clone) {
+.article-feature-wide .header-basic:not(.header-basic--clone, .header-basic--nav) {
     color: white;
+    background-color: transparent;
 }
 
-.article-feature-wide .header-basic:not(.header-basic--clone) .logo img {
+.article-feature-wide .header-basic:not(.header-basic--clone, .header-basic--nav) .logo img {
     filter: invert(1);
 }
 

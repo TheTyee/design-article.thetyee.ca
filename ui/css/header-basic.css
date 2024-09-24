@@ -8,6 +8,7 @@
     padding-right: var(--page-margin-sides);
     z-index: 1000;
     position: relative;
+    background-color: var(--yellow);
 }
 
 .header-basic .wrapper {
@@ -19,7 +20,6 @@
 
 .header-basic .logo {
     height: 100%;
-    margin-inline: auto;
     padding-block: 18px;
 }
 
@@ -45,22 +45,31 @@
     font-size: 37px;    
 }
 
-.header-basic .nav-modal {
-    top: var(--height);
+.nav-modal {    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    z-index: 1999;
     margin-top: 0;
-    display: grid;
-    height: calc(100% - var(--header-height));
     overflow-y: auto;
 }
 
-.header-basic .nav-modal.is-closed {
+.nav-modal.is-closed {
     display: none;
 }
 
+.new-site-nav__dropdown {
+    position: relative;
+    display: grid;
+    margin-top: 0;
+}
+
 /* Sticky clone */
+
 .header-basic--clone {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: white;
 }
