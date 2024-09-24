@@ -112,3 +112,14 @@
 		max-width: 49em;
 	}
 }
+
+/* If weekender, green accent colours in article body */
+
+body.is-weekender .lead-in:first-letter {
+    color: var(--dark-green);
+}
+
+body.is-weekender .author-info,
+body.is-weekender .caption {
+    border-color: var(--dark-green);
+}

@@ -8,7 +8,7 @@
 
 {% include meta/head--2019.html %}
 
-<body class="{{ page.layout }} {{ page.body-class }} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+<body class="{{ page.layout }} {{ page.body-class }} {% if page.weekender == true %}is-weekender{% endif %} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
 
     {% include 01-molecules/messaging/alerts--browser-support.html %}
 
