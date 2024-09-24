@@ -56,6 +56,13 @@
     background: white;
 }
 
+/* Hide Series and Presents badges */
+
+.article-feature-wide .article-hero .series-badge {
+    display: none;
+}
+
+
 /* Space below author byline */
 
 .article-feature-wide .article-byline {
