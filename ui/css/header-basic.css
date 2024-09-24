@@ -60,12 +60,6 @@
     z-index: 1999;
     margin-top: 0;
     overflow-y: auto;
-
-    font-size: 1.6rem;
-    line-height: 2rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
 }
 
 .nav-modal li a {
@@ -81,6 +75,12 @@
     position: relative;
     display: grid;
     margin-top: 0;
+
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 /* Sticky clone */
@@ -89,4 +89,9 @@
     position: fixed;
     top: 0;
     width: 100%;
+}
+
+/* Optional Weekender label */
+.weekenderLabel {
+    margin-right: auto;
 }
