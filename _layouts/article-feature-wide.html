@@ -22,7 +22,11 @@
 
     {% include 02-organisms/article/article__byline.html %}
 
-    {{ content }}
+    {% if page.series == true %}
+        {% include 02-organisms/article/article__body-series.html %}    
+    {% else %}
+        {{ content }}
+    {% endif %}
 
     {% if page.page-type == 'article' and page.messaging-zone != 'no' %}
 
