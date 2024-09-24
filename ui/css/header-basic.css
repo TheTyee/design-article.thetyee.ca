@@ -77,7 +77,7 @@
     display: none;
 }
 
-.new-site-nav__dropdown {
+.nav-modal .new-site-nav__dropdown {
     position: relative;
     display: grid;
     margin-top: 0;
