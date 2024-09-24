@@ -136,6 +136,27 @@ $( document ).ready( function( $ ) {
     $header.find('.menu-toggle button').click(menuToggleAction);
     $stickyHeader.find('.menu-toggle button').click(menuToggleAction);
     $navModalHeader.find('.menu-toggle button').click(menuToggleAction);
+
+    // Trap focus within the modal when it is open
+    $navModal.on('keydown', function(e) {
+        if (e.key === "Tab") {
+            const focusableElements = $navModal.find('a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const firstElement = focusableElements.first();
+            const lastElement = focusableElements.last();
+
+            if (e.shiftKey) {
+                if (document.activeElement === firstElement[0]) {
+                    lastElement.focus();
+                    e.preventDefault();
+                }
+            } else {
+                if (document.activeElement === lastElement[0]) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        }
+    });
     
     // Add nav modal header to nav modal
     $navModalHeader.prependTo('.nav-modal');
