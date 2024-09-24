@@ -28,7 +28,7 @@
 
 .article-feature-wide .article-hero figure figcaption {
     padding-inline: var(--page-margin-sides);
-    max-width: 80ch;
+    max-width: 100ch;
     border-bottom: none;
     font-size: 0.8em;
 }
@@ -57,7 +57,7 @@
 /* Space below author byline */
 
 .article-feature-wide .article-byline {
-    margin-block: 1rem 2rem;
+    margin-block: 2rem 2rem;
 }
 
 /* Inline margins for byline should match .article__header. Copying here... */
