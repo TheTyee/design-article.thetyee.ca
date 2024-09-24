@@ -134,9 +134,9 @@ $( document ).ready( function( $ ) {
     }
 
     // Add toggle click event to all toggle buttons
-    $header.select('.menu-toggle button').click(menuToggleAction);
-    $stickyHeader.select('.menu-toggle button').click(menuToggleAction);
-    $navModalHeader.select('.menu-toggle button').click(menuToggleAction);
+    $header.find('.menu-toggle button').click(menuToggleAction);
+    $stickyHeader.find('.menu-toggle button').click(menuToggleAction);
+    $navModalHeader.find('.menu-toggle button').click(menuToggleAction);
     
     // Add nav modal header to nav modal
     $navModalHeader.prependTo('.nav-modal');
