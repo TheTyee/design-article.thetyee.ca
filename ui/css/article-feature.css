@@ -13,22 +13,25 @@
 
 .article-feature-wide .article-hero {
     margin-top: calc(-1 * var(--header-height));
+    display: grid;
+    max-width: 1800px;
+    margin-inline: auto;
 }
 
 .article-feature-wide .article-hero figure {
     float: none;
     padding: 0;
     margin: 0;
+    grid-area: 1/1;
 }
 
 .article-feature-wide .article-hero figure img {
-    height: 85vh;
     min-height: 500px;
     object-fit: cover;
     filter: brightness(0.80);
 }
 
-.article-feature-wide .article-hero figure figcaption {
+.article-feature-wide .hero-caption {
     padding-inline: var(--page-margin-sides);
     max-width: 100ch;
     border-bottom: none;
@@ -37,25 +40,25 @@
 
 /* Position headline on top of hero image */
 
-.article-feature-wide .article-hero .article-headline .container-fluid {
-    padding-inline: var(--page-margin-sides);
+.article-feature-wide .article-hero .article-headline {
+    grid-area: 1/1;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
+    max-height: 95vh;
+    color: white;
+    text-wrap: balance;
 }
 
-.article-feature-wide .article-hero .article-headline,
-.article-feature-wide .article-hero[data-headline-x="left"] .article-headline,
-.article-feature-wide .article-hero[data-headline-y="bottom"] .article-headline {
-    position: absolute;
-    left: 0;
-    bottom: 15vh;
-    color: white;
-    max-width: 100ch;
+.article-feature-wide .article-hero .article-headline .container-fluid,
+.article-feature-wide .article-hero[data-headline-x="left"] .article-headline .container-fluid,
+.article-feature-wide .article-hero[data-headline-y="bottom"] .article-headline .container-fluid {
+    padding-inline: var(--page-margin-sides);
     text-align: left;
 }
 
-.article-feature-wide .article-hero[data-headline-x="centre"] .article-headline {
-    right: 0;
+.article-feature-wide .article-hero[data-headline-x="centre"] .article-headline .container-fluid {
     text-align: center;
-    text-wrap: balance;
     max-width: none;
 }
 
@@ -63,16 +66,13 @@
     max-width: 100ch;
 }
 
-.article-feature-wide .article-hero[data-headline-x="right"] .article-headline {
-    left: auto;
-    right: 0;
+.article-feature-wide .article-hero[data-headline-x="right"] .article-headline .container-fluid {
     text-align: right;
 }
 
 @media screen and (min-width: 600px) {
     .article-feature-wide .article-hero[data-headline-y="middle"] .article-headline {
-        top: 50%;
-        transform: translateY(-50%);
+        align-items: center;
     }
 }
 
