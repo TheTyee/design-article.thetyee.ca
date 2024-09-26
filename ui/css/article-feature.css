@@ -94,23 +94,31 @@
     margin-block: 2rem 2rem;
 }
 
-/* Inline margins for byline should match .article__header. Copying here... */
+/* Inline margins for tags & byline should match .article__header. Copying here... */
 
+.article-feature-wide .tags,
 .article-feature-wide .article-byline {
 	max-width: 49em;
 	margin-inline: auto;
 }
 
 @media screen and (min-width: 640px) {
-	.article-feature-wide .article-byline {
+	.article-feature-wide .tags,
+    .article-feature-wide .article-byline {
 		padding-inline: 17px;
 	}
 }
 
 @media screen and (min-width: 1200px) {
-	.article-feature-wide .article-byline {
+	.article-feature-wide .tags,
+    .article-feature-wide .article-byline {
 		max-width: 49em;
 	}
+}
+
+/* Space above tags */
+.article-feature-wide .tags {
+    margin-block-start: 2.5rem;
 }
 
 /* If weekender, green accent colours in article body */
