@@ -28,7 +28,7 @@
 .article-feature-wide .article-hero figure img {
     min-height: 500px;
     object-fit: cover;
-    filter: brightness(0.80);
+    filter: brightness(0.75);
 }
 
 .article-feature-wide .hero-caption {
