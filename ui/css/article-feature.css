@@ -33,7 +33,7 @@
 
 .article-feature-wide .hero-caption {
     padding-inline: var(--page-margin-sides);
-    max-width: 100ch;
+    max-width: 120ch;
     border-bottom: none;
     font-size: 0.8em;
 }
