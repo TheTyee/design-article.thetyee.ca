@@ -1,133 +1,89 @@
-/* Adjust basic header so that it can be superimposed on hero image */
+/**
+ * Everything in this file is namespaced under .article-feature which is the
+ * layout class for the article feature component. This layout displays the
+ * hero image to the right of the headline on desktop screens.
+ */
 
-.article-feature-wide .header-basic:not(.header-basic--clone, .header-basic--nav) {
-    color: white;
-    background-color: transparent;
-}
+/* Headline and hero image are side-by-side */
 
-.article-feature-wide .header-basic:not(.header-basic--clone, .header-basic--nav) .logo img {
-    filter: invert(1);
-}
+@media screen and (min-width: 1100px) {
+    .article-feature .article-hero {
+        display: flex;
+        flex-direction: row;
+        column-gap: 2rem;
+        max-width: 1800px;
+        margin-inline: auto;
+        background-color: var(--light-grey);
+    }
 
-/* Full-bleed hero image */
+    .article-feature .article-hero > * {
+        flex: 1;
+    }
 
-.article-feature-wide .article-hero {
-    margin-top: calc(-1 * var(--header-height));
-    display: grid;
-    max-width: 1800px;
-    margin-inline: auto;
-}
+    .article-feature .article-headline {
+        align-self: center;        
+    }
 
-.article-feature-wide .article-hero figure {
-    float: none;
-    padding: 0;
-    margin: 0;
-    grid-area: 1/1;
-}
+    /* Change background colour if this is a weekender post */
 
-.article-feature-wide .article-hero figure img {
-    min-height: 500px;
-    object-fit: cover;
-    filter: brightness(0.75);
-}
-
-.article-feature-wide .hero-caption {
-    padding-inline: var(--page-margin-sides);
-    max-width: 120ch;
-    border-bottom: none;
-    font-size: 0.8em;
-}
-
-/* Position headline on top of hero image */
-
-.article-feature-wide .article-hero .article-headline {
-    grid-area: 1/1;
-    display: flex;
-    align-items: flex-end;
-    z-index: 1;
-    max-height: 95vh;
-    color: white;
-    text-wrap: balance;
-}
-
-.article-feature-wide .article-hero .article-headline .container-fluid,
-.article-feature-wide .article-hero[data-headline-x="left"] .article-headline .container-fluid,
-.article-feature-wide .article-hero[data-headline-y="bottom"] .article-headline .container-fluid {
-    padding-inline: var(--page-margin-sides);
-    text-align: left;
-}
-
-.article-feature-wide .article-hero[data-headline-x="centre"] .article-headline .container-fluid {
-    text-align: center;
-    max-width: none;
-}
-
-.article-feature-wide .article-hero[data-headline-x="centre"] .article-headline .container-fluid {
-    max-width: 100ch;
-}
-
-.article-feature-wide .article-hero[data-headline-x="right"] .article-headline .container-fluid {
-    text-align: right;
-}
-
-@media screen and (min-width: 600px) {
-    .article-feature-wide .article-hero[data-headline-y="middle"] .article-headline {
-        align-items: center;
+    body.is-weekender.article-feature .article-hero {
+        background-color: var(--light-green);
     }
 }
 
-/* Adjust tag styles so they stand out against hero image */
+/* Reset figure element */
 
-.article-feature-wide .article-hero .category-label:not(:first-of-type) {
-    background: white;
+.article-feature .article-hero figure {
+    float: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Caption */
+
+.article-feature .article-hero .caption {
+    border-bottom: none;
 }
 
 /* Hide Series and Presents badges */
 
-.article-feature-wide .article-hero .series-badge {
+.article-feature .article-hero .series-badge {
     display: none;
+}
+
+/* Space above and below the headline */
+
+.article-feature .article-headline {
+    margin-block: 6rem 3rem;
 }
 
 /* Space below author byline */
 
-.article-feature-wide .article-byline {
+.article-feature .article-byline {
     margin-block: 2rem 2rem;
 }
 
-/* Inline margins for tags & byline should match .article__header. Copying here... */
+/* Make tags readabile against background colour */
 
-.article-feature-wide .tags,
-.article-feature-wide .article-byline {
+.article-feature .category-label:not(:first-of-type) {
+    background-color: white;
+}
+
+/* Inline margins for byline should match .article__header. Copying here... */
+
+.article-feature .article-byline {
 	max-width: 49em;
 	margin-inline: auto;
 }
 
 @media screen and (min-width: 640px) {
-	.article-feature-wide .tags,
-    .article-feature-wide .article-byline {
+    .article-feature .article-byline {
 		padding-inline: 17px;
 	}
 }
 
 @media screen and (min-width: 1200px) {
-	.article-feature-wide .tags,
-    .article-feature-wide .article-byline {
+    .article-feature .article-byline {
 		max-width: 49em;
 	}
-}
-
-/* Space above tags */
-.article-feature-wide .tags {
-    margin-block-start: 2.5rem;
-}
-
-/* If weekender, green accent colours in article body */
-
-body.is-weekender .lead-in:first-letter {
-    color: var(--dark-green);
-}
-
-body.is-weekender .author-info,
-body.is-weekender .caption {
-    border-color: var(--dark-green);
 }

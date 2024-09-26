@@ -35,9 +35,11 @@
    ========================================================================== */
   /* First implemented, Sep 2024, Cornelius Bergen, Matchbox Creative  */
 @import "article-feature.css";
+@import "article-feature-wide.css";
+@import "article-weekender.css";
 
 /* ==========================================================================
-   #HEASDER-BASIC-STYLES
+   #HEADER-BASIC-STYLES
    ========================================================================== */
   /* First implemented, Sep 2024, Cornelius Bergen, Matchbox Creative  */
 @import "header-basic.css";
