@@ -121,22 +121,26 @@ document.addEventListener("DOMContentLoaded", function() {
     navModalHeader.classList.add('header-basic--nav');
 
     function menuToggleAction() {
-        const menuIcon = document.querySelector('.header-basic .fas');
+        const menuIcon = document.querySelectorAll('.header-basic .fas');
 
         // Toggle the nav modal visibility
         navModal.classList.toggle('is-closed');
 
         // Change the appearance of the toggle button
-        if (navModal.style.display === "none" || window.getComputedStyle(navModal).display === "none") {
-            menuIcon.classList.remove('fa-times');
-            menuIcon.classList.add('fa-bars');
+        if (navModal.classList.contains('is-closed')) {
+            menuIcon.forEach((m) => {
+                m.classList.remove('fa-times');
+                m.classList.add('fa-bars');
+            });
         } else {
-            menuIcon.classList.remove('fa-bars');
-            menuIcon.classList.add('fa-times');
+            menuIcon.forEach((m) => {
+                m.classList.remove('fa-bars');
+                m.classList.add('fa-times');
+            });
         }
 
         // Lock or unlock the body content
-        if (navModal.style.display === "none" || window.getComputedStyle(navModal).display === "none") {
+        if (navModal.classList.contains('is-closed')) {
             document.body.classList.remove('modal-open');
         } else {
             document.body.classList.add('modal-open');
