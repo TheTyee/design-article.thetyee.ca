@@ -35,7 +35,7 @@
 .article-feature-wide .article-hero figure img {
     min-height: 500px;
     object-fit: cover;
-    filter: brightness(0.75);
+    filter: brightness(0.8);
 }
 
 .article-feature-wide .hero-caption {
@@ -81,6 +81,29 @@
     .article-feature-wide .article-hero[data-headline-y="middle"] .article-headline {
         align-items: center;
     }
+}
+
+/* Background for headline */
+
+.article-feature-wide .article-hero {
+    overflow: hidden;
+}
+
+.article-feature-wide .article-headline .container-fluid {
+    position: relative;
+}
+
+.article-feature-wide .article-headline .container-fluid::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 100px 100px;
+    z-index: -1;
+    opacity: 0.2;
 }
 
 /* Hide Series and Presents badges */
