@@ -17,8 +17,12 @@
     <div class="article-hero" data-headline-x="{{ page.headline-position-x }}" data-headline-y="{{ page.headline-position-y }}">
         {% include 02-organisms/article/article__headline.html %}
 
-        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" figure-caption=page.featured-media-caption media-credit=page.featured-media-credit content-source=page.featured-media-source %}
+        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source=page.featured-media-source %}
     </div>
+
+    {% if page.featured-media-caption or page.featured-media-credit %}
+		<div class="caption hero-caption">{{ page.featured-media-caption }} <span class="caption__media--credit"> {{ page.featured-media-credit }}</span></div>
+	{% endif %}
 
     {% include 02-organisms/article/article__byline.html %}
 
