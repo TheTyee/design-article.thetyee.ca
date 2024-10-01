@@ -1,0 +1,24 @@
+.weekender-home-top {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "feature thumb1"
+        "feature thumb2"
+        "feature thumb3";
+    grid-template-columns: 1fr 30%;
+    gap: var(--gutter-row) var(--gutter-column);
+    max-width: 1800px;
+    margin-inline: auto;
+    margin-top: 2rem;
+    background-color: var(--light-green);
+    padding-block: var(--gutter-row);
+}
+
+.weekender-home-top header {
+    grid-area: header;
+    padding-inline: var(--page-margin-sides);
+}
+
+.weekender-home-top .story-item-feature {
+    grid-area: feature;
+}

@@ -21,4 +21,7 @@ the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
 @import "global-nav.css"; 
 @import "global-footer.css";
 
-@import "homepage.css?ver=11";
+@import "homepage.css?ver=12";
+
+/* First implemented, Sep 2024, Cornelius Bergen, Matchbox Creative */
+@import "weekender-home-top.css";

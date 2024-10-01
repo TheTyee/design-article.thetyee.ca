@@ -1,0 +1,12 @@
+{% for field in site.data.example_stories limit:1 %}
+
+<!-- Begin organisms/article/article__headline-simple -->
+<!--Article header, including hed, dek-->
+<header class="article-headline" data-dev-object-descrip="organisms/article/article__header-simple" data-dev-status="IN-PROGRESS">
+    <div class="container-fluid">
+        <h1 data-bind="title">{{ page.title }}</h1>
+        <h4 data-bind="teaser">{{ page.description }}</h4>
+    </div> <!--END .container-fluid-->
+</header>
+
+{% endfor %}

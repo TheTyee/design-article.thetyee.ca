@@ -1,0 +1,141 @@
+/**
+ * Everything in this file is namespaced under .article-feature-wide which is
+ * the layout class for the article feature (wide) component. This layout 
+ * displays a fullscreen, full-bleed hero image with the headline layered
+ * on top.
+ */
+
+/* Adjust basic header so that it can be superimposed on hero image */
+
+.article-feature-wide .header-basic:not(.header-basic--clone, .header-basic--nav) {
+    color: white;
+    background-color: transparent;
+}
+
+.article-feature-wide .header-basic:not(.header-basic--clone, .header-basic--nav) .logo img {
+    filter: invert(1);
+}
+
+/* Full-bleed hero image */
+
+.article-feature-wide .article-hero {
+    margin-top: calc(-1 * var(--header-height));
+    display: grid;
+    max-width: 1800px;
+    margin-inline: auto;
+}
+
+.article-feature-wide .article-hero figure {
+    float: none;
+    padding: 0;
+    margin: 0;
+    grid-area: 1/1;
+}
+
+.article-feature-wide .article-hero figure img {
+    min-height: 500px;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.article-feature-wide .hero-caption {
+    padding-inline: var(--page-margin-sides);
+    max-width: 120ch;
+    border-bottom: none;
+    font-size: 0.8em;
+}
+
+/* Position headline on top of hero image */
+
+.article-feature-wide .article-hero .article-headline {
+    grid-area: 1/1;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
+    max-height: 95vh;
+    color: white;
+    text-wrap: balance;
+}
+
+.article-feature-wide .article-hero .article-headline .container-fluid,
+.article-feature-wide .article-hero[data-headline-x="left"] .article-headline .container-fluid,
+.article-feature-wide .article-hero[data-headline-y="bottom"] .article-headline .container-fluid {
+    padding-inline: var(--page-margin-sides);
+    text-align: left;
+}
+
+.article-feature-wide .article-hero[data-headline-x="centre"] .article-headline .container-fluid {
+    text-align: center;
+    max-width: none;
+}
+
+.article-feature-wide .article-hero[data-headline-x="centre"] .article-headline .container-fluid {
+    max-width: 100ch;
+}
+
+.article-feature-wide .article-hero[data-headline-x="right"] .article-headline .container-fluid {
+    text-align: right;
+}
+
+@media screen and (min-width: 600px) {
+    .article-feature-wide .article-hero[data-headline-y="middle"] .article-headline {
+        align-items: center;
+    }
+}
+
+/* Background for headline */
+
+.article-feature-wide .article-hero {
+    overflow: hidden;
+}
+
+.article-feature-wide .article-headline .container-fluid {
+    position: relative;
+}
+
+.article-feature-wide .article-headline .container-fluid::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 100px 100px;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+/* Hide Series and Presents badges */
+
+.article-feature-wide .article-hero .series-badge {
+    display: none;
+}
+
+/* Space below author byline */
+
+.article-feature-wide .article-byline {
+    margin-block: 2rem 2rem;
+}
+
+/* Inline margins for tags & byline should match .article__header. Copying here... */
+
+.article-feature-wide .tags,
+.article-feature-wide .article-byline {
+	max-width: 49em;
+	margin-inline: auto;
+}
+
+@media screen and (min-width: 640px) {
+	.article-feature-wide .tags,
+    .article-feature-wide .article-byline {
+		padding-inline: 17px;
+	}
+}
+
+/* Space above tags */
+
+.article-feature-wide .tags {
+    margin-block-start: 2.5rem;
+}
+

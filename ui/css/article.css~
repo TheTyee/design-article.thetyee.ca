@@ -1,5 +1,3 @@
-/* DEPRECATED — REMOVE ME */
-
 /* 
 ==========================================================================
    Globals & Mixins
@@ -361,30 +359,6 @@ ul { }
   }
 
 
-/* BUTTON styles */
-
-.button {
-  background-color: #82AD00;
-  padding: 4px 10px;
-  width: 100%;
-  font-size: 1rem;
-  font-weight: normal;
-  display: block;
-  color: #fff !important;
-  text-align: center;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-}
-
-.button:hover, .button:focus, .button:active, 
-.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
-  color: white;
-  background-color:darkgreen;
-}
-
-
-
 /* LINKS  ========================================================================== */
 
 a, a:link, a:visited {color: #82AD00;}
@@ -561,7 +535,7 @@ p a:hover {color: #6F9400;}
     .section__header h1 {
         display: inline-block;
         font-size: 2.2em;
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
         font-weight: 800;
         color: #333;
         text-transform: uppercase;
@@ -608,34 +582,6 @@ p a:hover {color: #6F9400;}
     }
 
 
-
-/* EVENTS PAGE LAYOUT ========================================================================== */
-
-/* custom bootstrap float reset required for column list https://stackoverflow.com/a/24590544/8305003 */
-
-/* >> THIS HAS BEEN ABSTRACTED INTO AN index-list-grid HELPER CLASS << */
-
-/* In Small views clear every 4th element with .clear class that is a direct child of .event-list-grid */
-/* This clear floats after every 2nd list item. */
-@media (min-width: 768px) and (max-width: 991px) {
-    .event-list-grid>.clear:nth-child(4n)::before {
-      content: '';
-      display: table;
-      clear: both;
-    }
-}
-/* In Medium views and wider, clear every 6th element with .clear class that is a direct child of .event-list-grid */
-/* This clear floats after every 3rd list item. */
-@media (min-width: 992px) {
-    .event-list-grid>.clear:nth-child(6n)::before {  
-      content: '';
-      display: table;
-      clear: both;
-    }
-}
-
-
-
 /*--- 3-COL-BLOCK (most sotires block) ---*/
 
 .col-3-block {
@@ -672,15 +618,6 @@ p a:hover {color: #6F9400;}
             padding-top: .66em;
             margin-bottom: .75em;
         }
-
-	/* this is to make category labels manageable in narrow views - hides all except first label */
-	.article__header .category-label, .article__header strong {
-	 display:none;
-
-	}
-	 .article__header .category-label:first-of-type {
-	  display:inline-block;
-	}
     }
 
 
@@ -1026,10 +963,6 @@ ul.book_profile {
   .gallery_output figure:first-child {
     float:none;
   }
-
-.open > .dropdown-menu {
-    display: block;
-    }
 
 
 @media (min-width: 992px) {
@@ -1846,7 +1779,7 @@ display:inline-block;
 width: auto !important;
 height: auto !important;
 float: none;
-margin: 0;
+margin: 0 5px;
 }
 
     .author-info__date {
@@ -1888,8 +1821,7 @@ margin: 0;
         /* Apply margin to author text only if an img is present.
            Otherwise, the text should align flush left.  */
         img ~ .author-info__text {
-/*          margin-left: 4.35em; disabled because breaks when there are 
-two headshots.. seems that the image itself pushes adequately anyways */
+          margin-left: 4.35em;
         }
 
 
@@ -1912,32 +1844,6 @@ two headshots.. seems that the image itself pushes adequately anyways */
         }		
 
     }
-
-
-
-
-/* BIO PAGE =========================================================================== */
-
-.headshot-bio {
-    float: none;
-    object-fit: cover;
-    -o-object-fit: cover;
-    margin-top: 1.95em;
-    height: 6em;
-    width: 6em;
-    background-color: none;
-    border-radius: 50%;
-}
-
- /* BREAKPOINT: 1200px // Add padding to make text col narrower */
-    @media screen and (min-width: 1200px) {
-        .biopage__text {
-            padding-left: 4em;
-            padding-right: 4em;
-        }
-    }
-
-
 
 
 
@@ -2205,7 +2111,6 @@ two headshots.. seems that the image itself pushes adequately anyways */
           clear: none;
           margin-top: 1.5em;
           overflow: auto; /* Prevents collision with xl and xxl figures (which must be floated left to prevent huge gaps in the text column). */
-	min-height:315px;
       }
       
     }
@@ -2591,17 +2496,17 @@ div.embedded-poll {
 
 /* MESSAGING-BLOCK-SUBSCRIBE  ========================================================================== */
 
-    .messaging-block--subscribe form, .messaging-block--subscribe--events form {
+    .messaging-block--subscribe form {
       margin-top: .5em;
       margin-bottom: 0;
     }
 
-    .messaging-block--subscribe select.subscribe-frequency, .messaging-block--subscribe--events select.subscribe-frequency {
+    .messaging-block--subscribe select.subscribe-frequency {
         margin-top: .35em;
         margin-bottom: .35em;
     }
 
-    .messaging-block--subscribe .input-group select, .messaging-block--subscribe--events .input-group select {
+    .messaging-block--subscribe .input-group select {
         background-color: transparent;
         border: none;
         height: 18px;
@@ -2713,10 +2618,10 @@ label.valid {
         }
 
         .story-item--deck {
-            margin-bottom: .66em;
+            margin-bottom: .33em;
         }
 
-        .story-item__date, .story-item__author, .story-item__date--event {
+        .story-item__date, .story-item__author {
           font-weight: 600;
           font-size: .85em;
           text-transform: uppercase;
@@ -2743,7 +2648,7 @@ label.valid {
 
                 /* BREAKPOINT: 768px // Sets bigger headline for featured-story in larger views (sm and wider) */
                 @media (min-width: 768px) { 
-                    .index-page__featured-story .story-item--index-page .story-item__description h5, .index-page__featured-story.story-item--index-page .story-item__description h5 {
+                    .index-page__featured-story .story-item--index-page .story-item__description h5 {
                       font-size: 1.75em;
                     }
                 }
@@ -2755,20 +2660,6 @@ label.valid {
             .story-item__description h5 a:hover {
                 color: #6F9400;
             }
-
-            .story-item--event { }
-
-                .index-page__featured-story .story-item--event__details {
-                    margin-bottom: -.5em; */
-                }
-
-                .story-item__date--event {
-                    display: block;
-                }
-
-                .index-page__story-list--archived-events .button.button--get-tickets {
-                    display:none;
-                }
 
 
 
@@ -2859,19 +2750,6 @@ label.valid {
 }
 
 
-.series-box h5 {
-display:block !important;
-text-align:center;
-margin-top: 1.5em !important;
-}
-
-.series-box h3 {
-margin-bottom: 1em;
-}
-
-.series-box h3.title {
-margin-bottom: 1em;
-}
 
 /* RELATED-EVENT-BOX  ================================================================
     This object mostly just employs the default text-block-container style. An 
@@ -3078,7 +2956,6 @@ margin-bottom: 1em;
         left: -1em;
         top: -1.5em;
         transform: scale(1);
-        padding-left: inherit; /* Adjusts badge position when there's padding on the parent (e.g. Bootstrap cols) */
     }
 
         /* BREAKPOINT: 768px // Enlarge badges on featured-stories in wider layouts */
@@ -3137,12 +3014,8 @@ margin-bottom: 1em;
 
     #fact-box-1 {}
 
-    .fact-box p, .fact-box ul {
-      font-size: .8em !important;
-    }
-    
-    .fact-box ul {
-     padding-left: 17px;
+    .fact-box p {
+      font-size: .8em;
     }
 
     .fact-box h4 {
@@ -3223,7 +3096,7 @@ margin-bottom: 1em;
 
         img.fact-box--headshot {
             float: left;
-            margin-top: 0em; 
+            margin-top: 0em;
             margin-bottom: 0em;
             margin-right: 1.25em;
             height: 6em;
@@ -3398,13 +3271,11 @@ margin-bottom: 1em;
     padding: 45px 0 0 72px;
 }
 
-/*    @media (min-width: 550px) {
+    @media (min-width: 550px) {
         .grid__cell {
             width: 25%;
         }
     }
-*./
-
 
 
 
@@ -3713,14 +3584,8 @@ footer .footer__menu {
     padding-top: 1em;
     overflow: visible;
     clear: left;
-text-overflow: ellipsis;
-    max-width: 90%;
-    white-space: nowrap;
-    overflow: hidden;
 }
   
-
-
 
 @media (min-width: 768px) {
 	
@@ -4642,32 +4507,8 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 
 /* Spacing helper classes =================================================== */
 
-.p-t-1 {
-      padding-bottom: .5em;
-}
-
 .p-b-1 {
       padding-bottom: .5em;
-}
-
-.p-x-1 {
-    padding-left: .5em;
-    padding-right: .5em;
-}
-
-.p-x-2 {
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-.p-x-3 {
-    padding-left: 2em;
-    padding-right: 2em;
-}
-
-.p-x-4 {
-    padding-left: 4em;
-    padding-right: 4em;
 }
 
 .m-b-1 {
@@ -4709,38 +4550,6 @@ Not sure why this is here but it's preventing the .author-info__bio from disappe
 .m-t-5 {
       margin-top: 4em;
 }
-
-
-
-/* FLOAT CLEARING FOR INDEX LISTS - Helper classes ========================================================== */
-
-/* custom bootstrap float reset required for column list https://stackoverflow.com/a/24590544/8305003 
-   This applies proper clearing of floats when the number of items per line changes at different breakpoints. */
-
-/* CLEAR-0-2-3-3 -------------------------------------------------------------------- */
-/* All list items should be within one single bootstrap row.
-   The index-list-grid class should be applied to the bootstrap row. 
-   Then add an empty div.clear-0-2-3-3 after every bootstrap column element. */
-/* In XS views do nothing. */
-/* In Small views clear every 4th element with .clear-0-2-3-3 class that is a direct child of .event-list-grid */
-/* This clear floats after every 2nd list item. */
-@media (min-width: 768px) and (max-width: 991px) {
-    .index-list-grid>.clear-0-2-3-3:nth-child(4n)::before {
-      content: '';
-      display: table;
-      clear: both;
-    }
-}
-/* In Medium views and wider, clear every 6th element with .clear-0-2-3-3 class that is a direct child of .event-list-grid */
-/* This clear floats after every 3rd list item. */
-@media (min-width: 992px) {
-    .index-list-grid>.clear-0-2-3-3:nth-child(6n)::before {  
-      content: '';
-      display: table;
-      clear: both;
-    }
-}
-
 
 
 

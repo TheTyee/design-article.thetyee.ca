@@ -1,0 +1,147 @@
+/**
+ * Everything in this file is namespaced under .article-feature which is the
+ * layout class for the article feature component. This layout displays the
+ * hero image to the right of the headline on desktop screens.
+ */
+
+/* Headline, caption, and byline margins (matching .article__header) */
+
+.article-feature .article-headline {
+	max-width: 49em;
+    margin-block: 5vw 2vw;
+    padding-inline: var(--page-margin-sides);
+}
+
+.article-feature .article-headline .container-fluid {
+    padding-left: 0;    
+    padding-right: 0;    
+}
+
+.article-feature .article-byline {
+	max-width: 49em;
+	margin-inline: auto;
+}
+
+@media screen and (min-width: 640px) {
+    .article-feature .hero-caption {
+        padding-inline: 17px;
+    }
+
+    .article-feature .article-byline {
+		padding-inline: 17px;
+	}
+}
+
+/* Reset margins when going 50/50... */
+
+@media screen and (min-width: 1200px) {
+    .article-feature .article-headline {
+		max-width: none;
+        margin-block: 0;
+        padding-inline: 0;
+	}
+
+    .article-feature .hero-caption .container-fluid {
+        padding-left: 0;    
+        padding-right: 0;    
+    }
+}
+
+/* Adjust basic header so that it can be superimposed on hero image */
+
+@media screen and (min-width: 1200px) {
+
+    .article-feature .header-basic:not(.header-basic--clone, .header-basic--nav) {
+        background-color: transparent;
+    }
+
+    /* Slight background to menu toggle - should only be visible against dark photo */
+
+    .article-feature .header-basic .menu-toggle {
+        background-color: rgba(200, 200, 200, 0.1);
+        border-radius: 3px;
+        color: #161616;
+    }
+
+    /* Headline and hero image are side-by-side */
+
+    .article-feature .article-hero {
+        display: flex;
+        flex-direction: row;
+        column-gap: 3rem;
+        margin-top: calc(-1 * var(--header-height));
+        margin-inline: auto;
+        background-color: var(--light-grey);
+    }
+
+    .article-feature .article-hero > * {
+        flex: 0 50%;
+    }
+
+    .article-feature .article-headline {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: var(--page-margin-sides);
+
+        /* Space above the headline is the same as the header height */
+        margin-top: 66px;
+    }
+
+    .article-feature .article-hero figure img {
+        min-height: 500px;
+        aspect-ratio: 5 / 4;
+        object-fit: cover;
+    }
+
+    .article-feature .hero-caption {
+        margin-left: 50%;
+        padding-inline: 3rem var(--page-margin-sides);
+    }
+
+    /* Change background colour if this is a weekender post */
+
+    body.is-weekender.article-feature .article-hero {
+        background-color: var(--light-green);
+    }
+}
+
+/* Headline */
+
+.article-feature .article-headline {
+    text-wrap: balance;
+}
+
+/* Reset figure element */
+
+.article-feature .article-hero figure {
+    float: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Caption */
+
+.article-feature .hero-caption {
+    border-bottom: none;
+    text-wrap: pretty;
+}
+
+/* Hide Series and Presents badges */
+
+.article-feature .article-hero .series-badge {
+    display: none;
+}
+
+/* Space below author byline */
+
+.article-feature .article-byline {
+    margin-block: 2rem 2rem;
+}
+
+/* Make tags readable against background colour */
+
+.article-feature .category-label:not(:first-of-type) {
+    background-color: white;
+}
+

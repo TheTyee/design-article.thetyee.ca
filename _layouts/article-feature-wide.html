@@ -1,0 +1,87 @@
+---
+---
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+{% include meta/head--2019.html %}
+
+<body class="{{ page.layout }} {{ page.body-class }} {% if page.weekender == true %}is-weekender{% endif %} {% comment %}cmnt--visibility{% endcomment %}" id="{{ page.slug | 'front' }}">
+
+    {% include 01-molecules/messaging/alerts--browser-support.html %}
+
+    {% include 02-organisms/global/header--basic.html %}
+
+    <div class="article-hero" data-headline-x="{{ page.headline-position-x }}" data-headline-y="{{ page.headline-position-y }}">
+        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source=page.featured-media-source %}
+
+        {% include 02-organisms/article/article__headline-simple.html %}
+    </div>
+
+    {% if page.featured-media-caption or page.featured-media-credit %}
+		<div class="caption hero-caption">{{ page.featured-media-caption }} <span class="caption__media--credit"> {{ page.featured-media-credit }}</span></div>
+	{% endif %}
+
+    <div class="tags">
+        <div class="container-fluid">
+            <h6 class="category-label"><a href="/category-link-here/" data-bind="category">{{ page.meta-category }}</a></h6>
+            <h6 class="category-label"><a href="/tag-link-here/">Indigenous</a></h6>
+            <h6 class="category-label"><a href="/tag-link-here/">Rights + Justice</a></h6>
+            {% if page.story-tag1 %}<h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag1 }}</a></h6>{% endif %}
+            {% if page.story-tag2 %}<h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag2 }}</a></h6>{% endif %}
+            {% if page.story-tag3 %}<h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag3 }}</a></h6>{% endif %}
+            {% if page.story-tag4 %}<h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag4 }}</a></h6>{% endif %}
+            {% if page.story-tag5 %}<h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag5 }}</a></h6>{% endif %}
+            {% if page.story-tag6 %}<h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag6 }}</a></h6>{% endif %}
+            {% if page.story-tag7 %}<h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag7 }}</a></h6>{% endif %}
+        </div>
+    </div>
+
+    {% include 02-organisms/article/article__byline.html %}
+
+    {% if page.series == true %}
+        {% include 02-organisms/article/article__body-series.html %}    
+    {% else %}
+        {{ content }}
+    {% endif %}
+
+    {% if page.page-type == 'article' and page.messaging-zone != 'no' %}
+
+        {% assign barometer = 'false' %} <!--Leave this alone; it allows for the contents of messaging zone to load dynamically, based on region-->
+
+        {% include 02-organisms/sections/messaging-zone.html %}
+
+    {% endif %}
+    
+    <footer class="article-footer clearfix main-col-container">
+	    <div class="container-fluid">		    
+            {% include /01-molecules/blocks/messaging-block--builder.html %}
+        
+            {% include /01-molecules/blocks/messaging-block--share.html %}
+            
+            {% include /01-molecules/blocks/messaging-block--subscribe.html %}	    
+	    </div>	        
+    </footer>
+
+    {% include 02-organisms/sections/latest-stories.html %}
+
+	{% include 02-organisms/sections/featured-sponsor-article.html %} 
+
+    {% include 02-organisms/sections/comments.html %}
+
+    {% assign barometer = 'true' %}
+
+    {% include 02-organisms/sections/messaging-zone.html %}    
+
+    {% include 02-organisms/global/footer-global.html %}
+
+    {% include 02-organisms/global/footer-IE-fallback.html %}
+
+    {% include footer_scripts_standard.html %}
+
+    {% include 02-organisms/sections/subscription-modal.html %}
+
+    </body>
+</html>

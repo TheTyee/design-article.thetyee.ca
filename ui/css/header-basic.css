@@ -1,0 +1,98 @@
+:root {
+    --header-height: 66px;
+}
+
+.header-basic {
+    height: var(--header-height);
+    padding-left: var(--page-margin-sides);
+    padding-right: var(--page-margin-sides);
+    z-index: 1000;
+    position: relative;
+    background-color: var(--yellow);
+}
+
+.header-basic .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.header-basic .logo {
+    height: 100%;
+    padding-block: 18px;
+}
+
+.header-basic .logo a {
+    display: block;
+    height: 100%;
+}
+
+.header-basic .logo img {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+.header-basic .menu-toggle {
+    display: flex;
+    justify-content: center;
+    width: 37px;
+}
+
+.header-basic .menu-toggle button {
+    /* Reset button styles */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    /* Icon size */
+    font-size: 37px;    
+}
+
+.nav-modal {    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    z-index: 1999;
+    margin-top: 0;
+    overflow-y: auto;
+}
+
+.nav-modal li a {
+    font-size: 1.15em;
+    font-weight: 500;
+}
+
+.nav-modal.is-closed {
+    display: none;
+}
+
+.nav-modal .new-site-nav__dropdown {
+    position: relative;
+    display: grid;
+    margin-top: 0;
+
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* Sticky clone */
+
+.header-basic--clone {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Optional Weekender label */
+.weekenderLabel {
+    margin-right: auto;
+}
