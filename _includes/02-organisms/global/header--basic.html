@@ -145,6 +145,11 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             document.body.classList.add('modal-open');
         }
+
+        // When modal is opened, set focus to the close button
+        if (!navModal.classList.contains('is-closed')) {
+            navModal.querySelector('.menu-toggle button').focus();
+        }
     }
 
     // Add click event to all toggle buttons
