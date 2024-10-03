@@ -121,19 +121,19 @@ document.addEventListener("DOMContentLoaded", function() {
     navModalHeader.classList.add('header-basic--nav');
 
     function menuToggleAction() {
-        const menuIcon = document.querySelectorAll('.header-basic .fas');
+        const menuIcons = document.querySelectorAll('.header-basic .fas');
 
         // Toggle the nav modal visibility
         navModal.classList.toggle('is-closed');
 
         // Change the appearance of the toggle button
         if (navModal.classList.contains('is-closed')) {
-            menuIcon.forEach((m) => {
+            menuIcons.forEach((m) => {
                 m.classList.remove('fa-times');
                 m.classList.add('fa-bars');
             });
         } else {
-            menuIcon.forEach((m) => {
+            menuIcons.forEach((m) => {
                 m.classList.remove('fa-bars');
                 m.classList.add('fa-times');
             });
