@@ -1,0 +1,43 @@
+<!-- BEGIN 01-molecules/blocks/story-item--wide-feature -->
+{% comment %}
+<!-- The story-item object is used in the Weekender section of the homepage. The layout is wide and the article details are displayed on top of the image.
+
+HOW TO INCLUDE THIS OBJECT
+---------------------------------
+Use the content-source parameter parameter to specify the path of its contained image. Like this:
+	[% include 01-molecules/blocks/story-item--wide-feature.html content-source="http://baconmockup.com/300/200" %]
+
+If you want to adapt the object you can extend it by using the story-item-class parameter to add a new BEM class. Like this:
+	[% include 01-molecules/blocks/story-item--wide-feature.html content-source="http://baconmockup.com/300/200" story-item-class="customclass" %]
+
+To position the headline content on the image, use the headline-position-x and headline-position-y parameters. Defaults are headline-position-x="left" and headline-position-y="bottom". Like this:
+    [% include 01-molecules/blocks/story-item--wide-feature.html content-source="http://baconmockup.com/300/200" headline-position-x="left" headline-position-y="middle" %]
+
+You may also want to add a story badge (e.g. a series-badge), like this:
+	[% include 01-molecules/blocks/story-item--wide-feature.html content-source="ui/img/seniors-home.png" story-item-class="customclass" story-item-category="news" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home." story-badge="presents" %]
+-->
+{% endcomment %}
+<article class="story-item--wide-feature {{ include.story-item-class }}">
+    <div class="article-hero" data-headline-x="{{ include.headline-position-x }}" data-headline-y="{{ include.headline-position-y }}">
+        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source=include.content-source %}
+
+        <div class="wrapper">
+            <div class="category-label">
+                <a href="/category-link-here/" data-bind="category">{{ include.story-item-category }}</a>
+            </div>
+
+            <h2 class="story-item__headline"><a href="">{{ include.story-item-headline }}</a></h2>
+            
+            <p>{{ include.story-item-dek }}</p>
+            
+            <div class="story-item__author">
+                <a href="author" rel="author">David Beers</a>{% if include.author-2 != nil %}, <a href="author" rel="author">{{ include.author-2 }}</a>{% endif %}
+                {% if include.author-3 != nil %} 
+                    and <a href="author" rel="author">{{ include.author-3 }}</a>
+                {% endif %}
+                / 30 Sep 2018
+            </div>
+        </div>
+    </div>
+</article>
+<!-- END 01-molecules/blocks/story-item--wide-feature -->
