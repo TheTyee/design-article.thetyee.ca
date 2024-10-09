@@ -22,15 +22,15 @@ You may also want to add a story badge (e.g. a series-badge), like this:
         {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source=include.content-source %}
 
         <div class="wrapper">
-            <div class="category-label">
+            <div class="tags">
                 <a href="/category-link-here/" data-bind="category">{{ include.story-item-category }}</a>
             </div>
 
-            <h2 class="story-item__headline"><a href="">{{ include.story-item-headline }}</a></h2>
+            <h2>{{ include.story-item-headline }}</h2>
             
-            <p>{{ include.story-item-dek }}</p>
+            <div class="dek">{{ include.story-item-dek }}</div>
             
-            <div class="story-item__author">
+            <div class="author">
                 <a href="author" rel="author">David Beers</a>{% if include.author-2 != nil %}, <a href="author" rel="author">{{ include.author-2 }}</a>{% endif %}
                 {% if include.author-3 != nil %} 
                     and <a href="author" rel="author">{{ include.author-3 }}</a>

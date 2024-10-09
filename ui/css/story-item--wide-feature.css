@@ -1,57 +1,141 @@
-/* Set size and aspect ratio of image onto the parent so that we can position both image and headline inside */
 
-.story-item--wide-feature .article-hero {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+/* Full-bleed image on narrow screens */
+
+@media screen and (max-width: 683px) {
+    .story-item--wide-feature .article-hero figure {
+        margin-inline: calc(-1 * var(--page-margin-sides));
+        margin-bottom: 2rem;
+    }
 }
 
-/* Fit the image perfectly inside parent */
+/* Only superimpose headline on top of image on wider screens... */
 
-.story-item--wide-feature .article-hero img {
-    position: absolute;
-    inset: 0;   
-    aspect-ratio: 16 / 9;
+@media screen and (min-width: 684px) {
 
-    /* Override the height in pixels set by baselineElement.js */
-    height: auto !important;
+    /* Set size and aspect ratio of image onto the parent so that we can position both image and headline inside */
+
+    .story-item--wide-feature .article-hero {
+        --hero-aspect-ratio: 4 / 3;
+        position: relative;
+        aspect-ratio: var(--hero-aspect-ratio);
+        overflow: hidden;
+    }
+
+    @media screen and (min-width: 880px) {
+        .story-item--wide-feature .article-hero {
+            --hero-aspect-ratio: 16 / 9;
+        }
+    }
+
+    /* Fit the image perfectly inside parent */
+
+    .story-item--wide-feature .article-hero img {
+        position: absolute;
+        inset: 0;   
+        aspect-ratio: var(--hero-aspect-ratio);
+
+        /* Override the height in pixels set by baselineElement.js */
+        height: auto !important;
+    }
+
+    /* Superimpose article headline, etc on top of hero image */
+
+    .story-item--wide-feature .article-hero > .wrapper {
+        position: absolute;
+        inset: 0; 
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        padding: 3vw;
+    }
+
+    /* Custom headline position "x" and "y" */
+
+    .story-item--wide-feature .article-hero > .wrapper,
+    .story-item--wide-feature .article-hero[data-headline-y="bottom"] > .wrapper {
+        justify-content: flex-end;
+    }
+
+    .story-item--wide-feature .article-hero[data-headline-x="centre"] > .wrapper {
+        text-align: center;
+    }
+
+    .story-item--wide-feature .article-hero[data-headline-x="right"] > .wrapper {
+        text-align: right;
+    }
+
+    @media screen and (min-width: 600px) {
+        .story-item--wide-feature .article-hero[data-headline-y="middle"] > .wrapper {
+            justify-content: center;
+        }
+    }
+
+    /* Background for headline */
+
+    .story-item--wide-feature .article-hero img {
+        filter: brightness(0.85);
+    }
+
+    .story-item--wide-feature .article-hero > .wrapper {
+        color: white;
+    }
+
+    .story-item--wide-feature .article-hero > .wrapper::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: rgba(0, 0, 0, 0.6) 0 0 100px 100px;
+        z-index: -1;
+        opacity: 0.2;
+    }
 }
 
-/* Superimpose article headline, etc on top of hero image */
+/* Typography */
 
-.story-item--wide-feature .article-hero > .wrapper {
-    position: absolute;
-    inset: 0;
- 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    z-index: 1;
-    max-height: 95vh;
-    color: white;
-    text-wrap: balance;
+.story-item--wide-feature .tags a {
+    text-transform: capitalize;
 }
 
-/* Background for headline */
-
-.story-item--wide-feature .article-hero img {
-    filter: brightness(0.85);
+.story-item--wide-feature .tags a::before {
+    content: '/';    
 }
 
-.story-item--wide-feature .article-hero > .wrapper {
+.story-item--wide-feature a:hover,
+.story-item--wide-feature a:focus {
+    color: inherit;
 }
 
-.story-item--wide-feature .article-hero > .wrapper::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 30%;
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: rgba(0, 0, 0, 0.6) 0 0 100px 100px;
-    z-index: -1;
-    opacity: 0.2;
+.story-item--wide-feature h2 {
+    margin-block: 0.5em 0.8em;
+
+    font-family: var(--typeface-display);
+    font-weight: 500;
+    font-size: clamp(1.5em, 3vw, 2.5em);
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 684px) {
+    .story-item--wide-feature h2 {
+        text-wrap: balance;
+    }
+}
+
+.story-item--wide-feature .dek {
+    font-size: clamp(2rem, 1.5vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.5em;
+}
+
+.story-item--wide-feature .author a {
+    font-weight: bold;
+}
+
+.story-item--wide-feature .author a:hover,
+.story-item--wide-feature .author a:focus {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
 }
