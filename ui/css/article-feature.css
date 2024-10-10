@@ -47,9 +47,9 @@
     }
 }
 
-/* Adjust basic header so that it can be superimposed on hero image */
-
 @media screen and (min-width: 1200px) {
+
+    /* Adjust basic header so that it can be superimposed on hero image */
 
     .article-feature .header-basic:not(.header-basic--clone, .header-basic--nav) {
         background-color: transparent;
@@ -104,6 +104,34 @@
     body.is-weekender.article-feature .article-hero {
         background-color: var(--light-green);
     }
+}
+
+/* Tags - style like the weekender, only if posts is a weekender post */
+
+/* Only show the first label */
+
+.is-weekender .article-feature .category-label + .category-label {
+    display: none;
+}
+
+.is-weekender .article-feature .category-label {
+    text-transform: capitalize; 
+    background: transparent;
+    padding: 0;
+}
+
+.is-weekender .article-feature .category-label::before {
+    content: '/';
+}
+
+.is-weekender .article-feature .category-label:hover {
+    border: 0;
+}
+
+.is-weekender .article-feature .category-label a:hover,
+.is-weekender .article-feature .category-label a:focus {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
 }
 
 /* Headline */
