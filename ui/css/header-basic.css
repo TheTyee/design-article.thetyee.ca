@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
     height: 100%;
 }
 
@@ -93,6 +93,20 @@
 }
 
 /* Optional Weekender label */
+
 .weekenderLabel {
     margin-right: auto;
+    height: 100%;
+    padding-block: 14px 11px;
+}
+
+.weekenderLabel svg {
+    height: 100%;
+    width: auto;
+}
+
+@media (max-width: 500px) {
+    .weekenderLabel {
+        display: none;
+    }
 }
