@@ -58,11 +58,12 @@
     /* Background for headline */
 
     .story-item--wide-feature .article-hero img {
-        filter: brightness(0.85);
+        filter: brightness(0.9);
     }
 
     .story-item--wide-feature .article-hero > .wrapper {
         color: white;
+        text-shadow: 0 0 70px rgba(0, 0, 0, 0.6);
     }
 
     .story-item--wide-feature .article-hero > .wrapper::before {
