@@ -34,9 +34,13 @@
     padding: 0;
     margin: 0;
     grid-area: 1/1;
+    background-color: black;
 }
 
-.article-feature-wide .article-hero figure img {
+.article-feature-wide .article-hero figure img {    
+    display: block;
+    width: 100%;
+    height: auto;
     min-height: 500px;
     object-fit: cover;
     filter: brightness(0.8);

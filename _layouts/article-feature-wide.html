@@ -15,7 +15,9 @@
     {% include 02-organisms/global/header--basic.html %}
 
     <div class="article-hero" data-headline-x="{{ page.headline-position-x }}" data-headline-y="{{ page.headline-position-y }}">
-        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source=page.featured-media-source %}
+        <figure>
+            <img src="{{ page.featured-media-source }}" alt="custom alt text" fetchpriority="high" decoding="async">
+        </figure>
 
         {% include 02-organisms/article/article__headline-simple.html %}
     </div>
