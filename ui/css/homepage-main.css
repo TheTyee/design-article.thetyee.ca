@@ -24,4 +24,5 @@ the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
 @import "homepage.css?ver=12";
 
 /* First implemented, Sep 2024, Cornelius Bergen, Matchbox Creative */
+@import "story-item--wide-feature.css";
 @import "weekender-home-top.css";

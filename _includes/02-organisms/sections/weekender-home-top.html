@@ -1,17 +1,21 @@
 <section class="weekender-home-top">
-    <header>
-        <h2>The Weekender</h2>
-        
-        <p>A short one-sentence explainer blurb might go here</p>
-    </header>
+    <div class="wrapper">
+        <header>
+            <h2>
+                <img src="/ui/img/weekender-logo.svg" alt="Weekender" width="300" height="63">
+            </h2>
+            
+            <p>tagline</p>
+        </header>
 
-    {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/TahoeMineProtestGuatemala.jpg" story-item-class="story-item-feature" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." author-2="Amanda Follett Hosgood" author-3="Yasmin Jiwani" story-badge=nil %}
+        {% include 01-molecules/blocks/story-item--wide-feature.html content-source="ui/img/photos/TahoeMineProtestGuatemala.jpg" story-item-class="story-item-feature" story-item-category="analysis" story-item-headline="Why Guatemalan Indigenous Communities Are Fighting a Canadian Mining Giant" story-item-dek="No prior consent for damaging silver mine, say Xinka people." author-2="Amanda Follett Hosgood" author-3="Yasmin Jiwani" story-badge=nil headline-position-x="right" %}
 
-    {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/MissingWomensMarch2012_610px_front__size__thumb.jpg" story-item-class="story-item-secondary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Gray at the TD Vancouver International Jazz Festival" story-item-dek="One lucky winner will get two tickets to an incredible show on June 28. Enter to win!" story-badge="presents" %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/MissingWomensMarch2012_610px_front__size__thumb.jpg" story-item-class="story-item--secondary" story-item-category="presents" story-item-headline="CONTEST: Win tickets to Macy Gray at the TD Vancouver International Jazz Festival" story-badge="presents" %}
 
-    {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/ReinaFosterHorizon.jpg" story-item-class="story-item-secondary" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" story-item-dek="Part eight in a series. Who better to ask for solutions than indigenous youth who have been in government care. Today, Reina Foster." author-2="Amanda Follett Hosgood" author-3="Yasmin Jiwani" story-badge="series" %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/photos/ReinaFosterHorizon.jpg" story-item-class="story-item--secondary" story-item-category="news" story-item-headline="Lessons from care: &ldquo;One thing I do recall is feeling powerless and unprotected&rdquo;" author-2="Amanda Follett Hosgood" author-3="Yasmin Jiwani" story-badge="series" %}
 
-    {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item-secondary" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-item-dek="Eliminate all taxes but a levy on land, said Henry George. Here&rsquo;s why it would work." story-badge="series" %}
+        {% include 01-molecules/blocks/homepg-story-item.html content-source="ui/img/seniors-home.png" story-item-class="story-item--secondary" story-item-category="solutions" story-item-headline="A tax that would solve the housing crisis" story-badge="series" %}
 
-    <a href="/weekender-index.html" class="button button--spanrow button--dark-bg">Read more</a>
+        <a href="/Culture" class="button button--spanrow button--dark-bg">More Culture</a>        
+    </div>
 </section>

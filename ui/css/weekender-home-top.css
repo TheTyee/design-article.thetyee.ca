@@ -1,24 +1,105 @@
 .weekender-home-top {
+    /* Fudge to line up the weekender module with the bottom 
+       of the header without editing the header's margin */
+    margin-top: calc(-1 * (.5rem - 1px - 2px));
+
+    background-color: var(--light-green);
+}
+
+.weekender-home-top > .wrapper {
     display: grid;
     grid-template-areas: 
-        "header header"
-        "feature thumb1"
-        "feature thumb2"
-        "feature thumb3";
-    grid-template-columns: 1fr 30%;
+        "header header header"
+        "feature feature feature"
+        "thumb1 thumb2 thumb3";
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--gutter-row) var(--gutter-column);
+
     max-width: 1800px;
-    margin-inline: auto;
-    margin-top: 2rem;
-    background-color: var(--light-green);
+    margin-inline: auto;   
     padding-block: var(--gutter-row);
+    padding-inline: var(--page-margin-sides);
 }
 
 .weekender-home-top header {
     grid-area: header;
-    padding-inline: var(--page-margin-sides);
+    text-align: center;
 }
 
 .weekender-home-top .story-item-feature {
     grid-area: feature;
+}
+
+/* Style tags */
+
+.weekender-home-top .category-label {
+    font-size: 1em;
+}
+
+.weekender-home-top .category-label a {
+    background: none;
+    padding: 0;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.weekender-home-top .category-label::before {
+    content: '/';
+}
+
+.weekender-home-top .category-label a:hover,
+.weekender-home-top .category-label a:focus {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
+}
+
+/* Responsive layouts */
+
+@media screen and (max-width: 500px) {
+    .weekender-home-top > .wrapper {
+        gap: var(--gutter-row) var(--gutter-column);
+    }
+
+    .weekender-home-top .story-item--secondary figure {
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 683px) {
+    /* Space between weekender module and the next module */
+    .weekender-home-top + section.hmpg-org-wrapper {
+        padding-top: 5rem !important;
+    }
+
+    .weekender-home-top > .wrapper {
+        grid-template-areas: 
+            "header"
+            "feature"
+            "thumb1"
+            "thumb2"
+            "thumb3";
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 683px) and (min-width: 500px) {
+    .weekender-home-top > .wrapper {
+        gap: var(--gutter-row-half) var(--gutter-column);
+    }
+
+    .weekender-home-top .story-item--secondary {
+        border-top: 1px solid var(--border-colour-cols);
+        mix-blend-mode: multiply;
+        padding-top: var(--gutter-row-half);
+    }
+
+    .weekender-home-top .story-item--secondary figure {
+        float: right;
+        width: 45%;
+        margin-left: 1em;
+    }
+
+    .weekender-home-top .button {
+        margin-top: 2em;
+    }
 }
