@@ -114,26 +114,26 @@
 
 /* Only show the first label */
 
-.is-weekender .article-feature .category-label + .category-label {
+body.is-weekender.article-feature .category-label + .category-label {
     display: none;
 }
 
-.is-weekender .article-feature .category-label {
+body.is-weekender.article-feature .category-label {
     text-transform: capitalize; 
     background: transparent;
     padding: 0;
 }
 
-.is-weekender .article-feature .category-label::before {
+body.is-weekender.article-feature .category-label::before {
     content: '/';
 }
 
-.is-weekender .article-feature .category-label:hover {
+body.is-weekender.article-feature .category-label:hover {
     border: 0;
 }
 
-.is-weekender .article-feature .category-label a:hover,
-.is-weekender .article-feature .category-label a:focus {
+body.is-weekender.article-feature .category-label a:hover,
+body.is-weekender.article-feature .category-label a:focus {
     border-bottom: 2px solid;
     margin-bottom: -2px;
 }
