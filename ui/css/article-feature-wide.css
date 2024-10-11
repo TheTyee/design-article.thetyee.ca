@@ -57,6 +57,10 @@
     text-wrap: balance;
 }
 
+.article-feature-wide .article-hero .article-headline .container-fluid {
+    margin-inline: 0;
+}
+
 .article-feature-wide .article-hero .article-headline .container-fluid,
 .article-feature-wide .article-hero[data-headline-x="left"] .article-headline .container-fluid,
 .article-feature-wide .article-hero[data-headline-y="bottom"] .article-headline .container-fluid {
@@ -105,6 +109,12 @@
     box-shadow: rgba(0, 0, 0, 0.6) 0 0 100px 100px;
     z-index: -1;
     opacity: 0.2;
+}
+
+/* Typography */
+
+.article-feature-wide .article-headline h1 {
+    font-size: clamp(2em, 4vw, 3em) !important;
 }
 
 /* Hide Series and Presents badges */
