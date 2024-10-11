@@ -21,7 +21,11 @@
     </div>
 
     {% if page.featured-media-caption or page.featured-media-credit %}
-		<div class="caption hero-caption">{{ page.featured-media-caption }} <span class="caption__media--credit"> {{ page.featured-media-credit }}</span></div>
+    <div class="caption hero-caption">
+        <div class="container-fluid">
+            {{ page.featured-media-caption }} <span class="caption__media--credit"> {{ page.featured-media-credit }}</span>
+        </div>
+    </div>
 	{% endif %}
 
     <div class="tags">

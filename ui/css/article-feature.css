@@ -52,13 +52,16 @@
         background-color: transparent;
     }
 
-    /* Slight background to menu toggle - should only be visible against dark photo */
+    /* Darken hero so white image stands out */
 
-    .article-feature .header-basic .menu-toggle {
-        background-color: rgba(200, 200, 200, 0.1);
-        border-radius: 3px;
-        color: #161616;
+    .article-feature .header-basic:not(.header-basic--clone, .header-basic--nav) .menu-toggle {
+        color: white;
     }
+
+    .article-feature .article-hero img {
+        filter: brightness(0.95);
+    }
+
 
     /* Headline and hero image are side-by-side */
 
