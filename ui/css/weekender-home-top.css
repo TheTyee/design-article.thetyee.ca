@@ -30,6 +30,29 @@
     grid-area: feature;
 }
 
+/* Style tags */
+
+.weekender-home-top .category-label {
+    font-size: 1em;
+}
+
+.weekender-home-top .category-label a {
+    background: none;
+    padding: 0;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.weekender-home-top .category-label::before {
+    content: '/';
+}
+
+.weekender-home-top .category-label a:hover,
+.weekender-home-top .category-label a:focus {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
+}
+
 /* Responsive layouts */
 
 @media screen and (max-width: 500px) {
