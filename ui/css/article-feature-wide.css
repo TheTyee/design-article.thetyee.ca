@@ -12,6 +12,10 @@
     background-color: transparent;
 }
 
+.article-feature-wide .header-basic:not(.header-basic--clone, .header-basic--nav) .weekenderLabel path {
+    fill: white;
+}
+
 .article-feature-wide .header-basic:not(.header-basic--clone, .header-basic--nav) .logo img {
     filter: invert(1);
 }
