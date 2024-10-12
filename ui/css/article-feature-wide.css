@@ -119,10 +119,51 @@
     font-size: clamp(2em, 4vw, 3em) !important;
 }
 
-/* Hide Series and Presents badges */
+/* Series, Presents, and Poll badges and labels */
 
 .article-feature-wide .article-hero .series-badge {
     display: none;
+}
+
+.article-feature-wide .tyee-presents-label,
+.article-feature-wide .tyee-series-label,
+.article-feature-wide .poll-label {
+    width: auto;    
+    padding-inline: 0;
+    background-color: transparent;
+    color: white;
+    opacity: 0.9;
+}
+
+.article-feature-wide .tyee-presents-label,
+.article-feature-wide .tyee-presents-label:hover,
+.article-feature-wide .tyee-series-label,
+.article-feature-wide .tyee-series-label:hover,
+.article-feature-wide .poll-label,
+.article-feature-wide .poll-label:hover {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.article-feature-wide .tyee-presents-label a,
+.article-feature-wide .tyee-series-label a,
+.article-feature-wide .poll-label a {
+    display: block;
+}
+
+.article-feature-wide .tyee-presents-label a::before,
+.article-feature-wide .poll-label a::before {
+    font-size: .9em;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.article-feature-wide .tyee-presents-label a::before {
+    content: "TYEE PRESENTS: ";
+}
+
+.article-feature-wide .poll-label a::before {
+    content: "THE BAROMETER: ";
 }
 
 /* Caption */

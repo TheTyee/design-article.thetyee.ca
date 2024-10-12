@@ -4,7 +4,18 @@
 <!--Article header, including hed, dek-->
 <header class="article-headline" data-dev-object-descrip="organisms/article/article__header-simple" data-dev-status="IN-PROGRESS">
     <div class="container-fluid">
+        {% if page.presents == true %}
+            <h6 class="tyee-presents-label">
+                <a href="/presents-link-here/">Events, contests and other initiatives by The Tyee and select partners.</a>
+            </h6>
+        {% elsif page.series == true %}
+            <h6 class="tyee-series-label">
+                <a href="/series-link-here/">A Tyee Series</a>
+            </h6>
+        {% endif %}
+
         <h1 data-bind="title">{{ page.title }}</h1>
+
         <h4 data-bind="teaser">{{ page.description }}</h4>
     </div> <!--END .container-fluid-->
 </header>
