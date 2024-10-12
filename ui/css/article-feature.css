@@ -62,7 +62,6 @@
         filter: brightness(0.95);
     }
 
-
     /* Headline and hero image are side-by-side */
 
     .article-feature .article-hero {
@@ -102,6 +101,21 @@
 
     body.is-weekender.article-feature .article-hero {
         background-color: var(--light-green);
+    }
+
+    /* Style tyee-presents label when side-by-side */
+    
+    body.is-weekender.article-feature .article-hero .tyee-presents-label {
+        background-color: transparent;
+        padding-inline: 0;
+    }
+    
+    .article-feature .article-hero .tyee-presents-label a {
+        display: block;
+    }
+    
+    .article-feature .article-hero .tyee-presents-label a::before {
+        display: block;
     }
 }
 
@@ -143,7 +157,7 @@ body.is-weekender.article-feature .category-label a:focus {
 
 /* Headline */
 
-.article-feature .article-headline {
+.article-feature .article-headline h1 {
     text-wrap: balance;
 }
 
@@ -162,11 +176,24 @@ body.is-weekender.article-feature .category-label a:focus {
     text-wrap: pretty;
 }
 
-/* Hide Series and Presents badges */
+/* Series and Presents badges and labels */
 
 .article-feature .article-hero .series-badge {
     display: none;
 }
+
+.article-feature .article-hero .tyee-presents-label {
+    width: auto;    
+}
+
+
+.article-feature .article-hero .tyee-presents-label a::before {
+    content: "TYEE PRESENTS: ";
+    font-size: .9em;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
 
 /* Space below author byline */
 
