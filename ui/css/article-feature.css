@@ -176,24 +176,31 @@ body.is-weekender.article-feature .category-label a:focus {
     text-wrap: pretty;
 }
 
-/* Series and Presents badges and labels */
+/* Series, Presents, and Poll badges and labels */
 
 .article-feature .article-hero .series-badge {
     display: none;
 }
 
-.article-feature .article-hero .tyee-presents-label {
+.article-feature .article-hero .tyee-presents-label,
+.article-feature .article-hero .poll-label {
     width: auto;    
 }
 
-
-.article-feature .article-hero .tyee-presents-label a::before {
-    content: "TYEE PRESENTS: ";
+.article-feature .article-hero .tyee-presents-label a::before,
+.article-feature .article-hero .poll-label a::before {
     font-size: .9em;
     font-weight: 700;
     letter-spacing: .06em;
 }
 
+.article-feature .article-hero .tyee-presents-label a::before {
+    content: "TYEE PRESENTS: ";
+}
+
+.article-feature .article-hero .poll-label a::before {
+    content: "THE BAROMETER: ";
+}
 
 /* Space below author byline */
 
