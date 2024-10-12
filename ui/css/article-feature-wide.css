@@ -41,7 +41,7 @@
     display: block;
     width: 100%;
     height: auto;
-    min-height: 500px;
+    min-height: 75vh;
     object-fit: cover;
     filter: brightness(0.8);
 }
