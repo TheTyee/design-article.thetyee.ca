@@ -30,6 +30,12 @@
     grid-area: feature;
 }
 
+/* Weekender tagline */
+
+.weekender-home header p {
+    font-size: 1.2em;
+}
+
 /* Style tags */
 
 .weekender-home .category-label {

@@ -30,6 +30,12 @@
     grid-area: feature;
 }
 
+/* Weekender tagline */
+
+.weekender-home-split header p {
+    font-size: 1.2em;
+}
+
 .weekender-home-split .button {
     margin-top: 2em;
 }
