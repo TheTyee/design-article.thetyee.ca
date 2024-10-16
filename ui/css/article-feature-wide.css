@@ -40,8 +40,7 @@
 .article-feature-wide .article-hero figure img {    
     display: block;
     width: 100%;
-    height: auto;
-    min-height: 75vh;
+    height: 100vh;
     object-fit: cover;
     filter: brightness(0.8);
 }
