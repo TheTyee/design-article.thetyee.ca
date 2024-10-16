@@ -23,6 +23,8 @@ the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
 
 @import "homepage.css?ver=12";
 
-/* First implemented, Sep 2024, Cornelius Bergen, Matchbox Creative */
+/* First implemented, Sep-Oct 2024, Cornelius Bergen, Matchbox Creative */
+@import "story-item--split-feature.css";
 @import "story-item--wide-feature.css";
-@import "weekender-home-top.css";
+@import "weekender-home.css";
+@import "weekender-home-split.css";

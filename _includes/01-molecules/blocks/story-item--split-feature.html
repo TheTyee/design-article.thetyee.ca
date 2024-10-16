@@ -1,0 +1,42 @@
+<!-- BEGIN 01-molecules/blocks/story-item--split-feature -->
+{% comment %}
+<!-- The story-item object is used in the Weekender section of the homepage. The layout is split 50/50, headline/hero.
+
+HOW TO INCLUDE THIS OBJECT
+---------------------------------
+Use the content-source parameter parameter to specify the path of its contained image. Like this:
+	[% include 01-molecules/blocks/story-item--split-feature.html content-source="http://baconmockup.com/300/200" %]
+
+If you want to adapt the object you can extend it by using the story-item-class parameter to add a new BEM class. Like this:
+	[% include 01-molecules/blocks/story-item--split-feature.html content-source="http://baconmockup.com/300/200" story-item-class="customclass" %]
+
+You may also want to add a story badge (e.g. a series-badge), like this:
+	[% include 01-molecules/blocks/story-item--split-feature.html content-source="ui/img/seniors-home.png" story-item-class="customclass" story-item-category="news" story-item-headline="‘Service Co-op’ Helps Calgary Seniors Stay in the ‘Hood" story-item-dek="Whether it’s keeping up with maintenance or downsizing, ‘Aging in Place’ co-op aims to keep seniors at home." story-badge="presents" %]
+-->
+{% endcomment %}
+<article class="story-item--split-feature {{ include.story-item-class }}">
+    <div class="article-hero">
+        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source=include.content-source %}
+
+        <div class="wrapper">
+            <div class="tags">
+                <a href="/category-link-here/" data-bind="category">{{ include.story-item-category }}</a>
+            </div>
+
+            <h2>
+                <a href="/article-link-here">{{ include.story-item-headline }}</a>
+            </h2>
+            
+            <div class="dek">{{ include.story-item-dek }}</div>
+            
+            <div class="author">
+                <a href="author" rel="author">David Beers</a>{% if include.author-2 != nil %}, <a href="author" rel="author">{{ include.author-2 }}</a>{% endif %}
+                {% if include.author-3 != nil %} 
+                    and <a href="author" rel="author">{{ include.author-3 }}</a>
+                {% endif %}
+                / 30 Sep 2018
+            </div>
+        </div>
+    </div>
+</article>
+<!-- END 01-molecules/blocks/story-item--wide-feature -->

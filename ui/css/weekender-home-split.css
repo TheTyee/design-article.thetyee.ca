@@ -1,0 +1,61 @@
+.weekender-home-split {
+    /* Fudge to line up the weekender module with the bottom 
+       of the header without editing the header's margin */
+    margin-top: calc(-1 * (.5rem - 1px - 2px));
+
+    background-color: var(--light-green);
+}
+
+.weekender-home-split > .wrapper {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "feature feature feature"
+        "thumb1 thumb2 thumb3";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gutter-row) var(--gutter-column);
+
+    max-width: 1800px;
+    margin-inline: auto;   
+    padding-block: var(--gutter-row);
+    padding-inline: var(--page-margin-sides);
+}
+
+.weekender-home-split header {
+    grid-area: header;
+    text-align: center;
+}
+
+.weekender-home-split .story-item-feature {
+    grid-area: feature;
+}
+
+/* Style tags */
+
+.weekender-home-split .category-label {
+    font-size: 1em;
+}
+
+.weekender-home-split .category-label a {
+    background: none;
+    padding: 0;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.weekender-home-split .category-label::before {
+    content: '/';
+}
+
+.weekender-home-split .category-label a:hover,
+.weekender-home-split .category-label a:focus {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
+}
+
+/* Hide image in secondary story cards */
+
+.weekender-home-split .story-item__image {
+    display: none;
+}
+

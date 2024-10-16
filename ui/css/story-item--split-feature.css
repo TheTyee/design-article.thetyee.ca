@@ -1,0 +1,45 @@
+/* Typography */
+
+.story-item--split-feature .tags a {
+    text-transform: capitalize;
+}
+
+.story-item--split-feature .tags a::before {
+    content: '/';    
+}
+
+.story-item--split-feature a:hover,
+.story-item--split-feature a:focus {
+    color: inherit;
+}
+
+.story-item--split-feature h2 {
+    margin-block: 0.5em 0.8em;
+
+    font-family: var(--typeface-display);
+    font-weight: 500;
+    font-size: clamp(1.5em, 3vw, 2.5em);
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 684px) {
+    .story-item--split-feature h2 {
+        text-wrap: balance;
+    }
+}
+
+.story-item--split-feature .dek {
+    font-size: clamp(2rem, 1.5vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.5em;
+}
+
+.story-item--split-feature .author a {
+    font-weight: bold;
+}
+
+.story-item--split-feature .author a:hover,
+.story-item--split-feature .author a:focus {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
+}
