@@ -88,6 +88,16 @@
     }
 }
 
+/* Change focus of cropped image based on headline position */
+
+.article-feature-wide .article-hero[data-headline-x="left"] figure img {
+    object-position: 66% 50%;
+}
+
+.article-feature-wide .article-hero[data-headline-x="right"] figure img {
+    object-position: 33% 50%;
+}
+
 /* Background for headline */
 
 .article-feature-wide .article-hero {
