@@ -91,11 +91,11 @@
 /* Change focus of cropped image based on headline position */
 
 .article-feature-wide .article-hero[data-headline-x="left"] figure img {
-    object-position: 66% 50%;
+    object-position: 66% 40%;
 }
 
 .article-feature-wide .article-hero[data-headline-x="right"] figure img {
-    object-position: 33% 50%;
+    object-position: 33% 40%;
 }
 
 /* Background for headline */
