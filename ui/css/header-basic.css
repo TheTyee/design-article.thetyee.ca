@@ -110,3 +110,16 @@
         display: none;
     }
 }
+
+/* Weekender circle colour */
+
+.weekenderLabel svg circle {
+    fill: var(--yellow);
+    opacity: 0.8;
+}
+
+.header-basic--clone .weekenderLabel svg circle, 
+.header-basic--nav .weekenderLabel svg circle {
+    fill: white;
+}
+
