@@ -18,8 +18,8 @@
 
     font-family: var(--typeface-display);
     font-weight: 500;
-    font-size: clamp(1.5em, 3vw, 2.5em);
-    line-height: 1.5;
+    font-size: clamp(1.5em, 3vw, 2.25em);
+    line-height: 1.35;
 }
 
 @media screen and (min-width: 684px) {

@@ -16,7 +16,9 @@ You may also want to add a story badge (e.g. a series-badge), like this:
 {% endcomment %}
 <article class="story-item--split-feature {{ include.story-item-class }}">
     <div class="article-hero">
-        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source=include.content-source %}
+        <a href="/article-link-here/">
+            {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source=include.content-source %}
+        </a>
 
         <div class="wrapper">
             <div class="tags">
