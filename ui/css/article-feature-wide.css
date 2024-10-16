@@ -67,20 +67,20 @@
 .article-feature-wide .article-hero[data-headline-y="bottom"] .article-headline .container-fluid {
     padding-inline: var(--page-margin-sides);
     text-align: left;
+    max-width: 120ch;
 }
 
 .article-feature-wide .article-hero[data-headline-x="centre"] .article-headline .container-fluid {
     text-align: center;
-    max-width: none;
 }
 
 .article-feature-wide .article-hero[data-headline-x="centre"] .article-headline .container-fluid {
-    max-width: 120ch;
     margin-inline: auto;
 }
 
 .article-feature-wide .article-hero[data-headline-x="right"] .article-headline .container-fluid {
     text-align: right;
+    margin-left: auto;
 }
 
 @media screen and (min-width: 600px) {
@@ -175,7 +175,7 @@
 }
 
 .article-feature-wide .hero-caption > .container-fluid {
-    max-width: 120ch;
+    max-width: 150ch;
 }
 
 .article-feature-wide .article-hero[data-headline-x="left"] + .hero-caption {

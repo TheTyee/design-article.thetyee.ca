@@ -43,16 +43,19 @@
         padding: 3vw;
         margin-top: auto;
         height: fit-content;
+        max-width: 90rem;
     }
 
     /* Custom headline position "x" */
 
     .story-item--wide-feature .article-hero[data-headline-x="centre"] > .wrapper {
         text-align: center;
+        margin-inline: auto;
     }
 
     .story-item--wide-feature .article-hero[data-headline-x="right"] > .wrapper {
         text-align: right;
+        margin-left: auto;
     }
 
     /* Background for headline */
