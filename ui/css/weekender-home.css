@@ -30,7 +30,12 @@
     grid-area: feature;
 }
 
-/* Weekender tagline */
+/* Weekender logo and tagline */
+
+.weekender-home header img {
+    width: clamp(180px, 22vw, 260px);
+    height: auto;
+}
 
 .weekender-home header p {
     font-size: 1.2em;
