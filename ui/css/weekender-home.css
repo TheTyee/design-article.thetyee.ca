@@ -13,11 +13,11 @@
         "feature feature feature"
         "thumb1 thumb2 thumb3";
     grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--gutter-row) var(--gutter-column);
+    gap: var(--gutter-row-half) var(--gutter-column);
 
     max-width: 1800px;
     margin-inline: auto;   
-    padding-block: var(--gutter-row);
+    padding-block: var(--gutter-row-half) var(--gutter-row);
     padding-inline: var(--page-margin-sides);
 }
 
@@ -28,6 +28,10 @@
 
 .weekender-home .story-item-feature {
     grid-area: feature;
+}
+
+.weekender-home .button {
+    margin-top: 2em;
 }
 
 /* Weekender logo and tagline */
@@ -107,7 +111,6 @@
 
     .weekender-home .story-item--secondary {
         border-top: 1px solid var(--border-colour-cols);
-        mix-blend-mode: multiply;
         padding-top: var(--gutter-row-half);
     }
 
@@ -116,8 +119,14 @@
         width: 45%;
         margin-left: 1em;
     }
+}
 
-    .weekender-home .button {
-        margin-top: 2em;
+@media screen and (min-width: 684px) {
+    .weekender-home .story-item--secondary {
+        padding-top: 1em;
+    }
+
+    .weekender-home .story-item--secondary figure {
+        margin-bottom: 1.5em;
     }
 }
