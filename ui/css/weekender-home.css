@@ -3,7 +3,7 @@
        of the header without editing the header's margin */
     margin-top: calc(-1 * (.5rem - 1px - 2px));
 
-    background-color: var(--light-green);
+    background-color: rgba(125, 194, 163, 0.3);
 }
 
 .weekender-home > .wrapper {
@@ -57,6 +57,13 @@
 .weekender-home .category-label a:focus {
     border-bottom: 2px solid;
     margin-bottom: -2px;
+}
+
+/* Style headline hover states */
+
+.weekender-home .article-hero h2 a:hover,
+.weekender-home .story-item--secondary h2 a:hover {
+    background-color: var(--section-bg-yellow);
 }
 
 /* Responsive layouts */

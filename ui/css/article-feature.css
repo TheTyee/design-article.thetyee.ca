@@ -100,7 +100,7 @@
     /* Change background colour if this is a weekender post */
 
     body.is-weekender.article-feature .article-hero {
-        background-color: var(--light-green);
+        background-color: rgba(125, 194, 163, 0.3);
     }
 
     /* Style tyee-presents label when side-by-side */
