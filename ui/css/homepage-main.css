@@ -21,4 +21,4 @@ the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
 @import "global-nav.css"; 
 @import "global-footer.css";
 
-@import "homepage.css?ver=12";
+@import "homepage.css?v=12";

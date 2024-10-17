@@ -98,6 +98,45 @@ text += '</div>';
 return text;
 }
 
+
+var showAds = 1;
+async function getUser() {
+  try {
+    const response = await fetch('https://account.thetyee.ca/congruent/api/v1/builder-info/current', {
+method: "GET",
+credentials: "include"
+});
+
+    if (!response.ok) {
+      throw new Error(`Error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+getUser().then(res => {
+ // console.log(res);
+
+if (res.active_builder) { 
+
+showAds = 0;
+
+} else {
+
+showAds = 1;
+
+}
+
+
+
+});
+
+
+
 function renderRow(num){
     var i = 0;
     while (i < num) {
@@ -123,7 +162,7 @@ function renderRow(num){
     
     }
     
-    if (rowCount == 3) {
+    if (rowCount == 3 && showAds == 1 ) {
                
         text += '</div><div class="row"><div class="col-xs-12 col-md-8" id="joinadfill"></div></div><div class="blank">';
         $.get( "/inc/joinad/include.php", function( data ) {
@@ -131,7 +170,7 @@ function renderRow(num){
     }, "html");
 
     }
-     if (rowCount == 2) {
+     if (rowCount == 2 && showAds == 1) {
         
     text += '<div class="col-xs-12 col-md-4" id="adfilltop">';
     text += '<aside class="ad-box ad-box--bigbox" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">';
@@ -141,7 +180,7 @@ function renderRow(num){
                 
      }
      
-          if (rowCount == 4) {
+          if (rowCount == 4 && showAds ==1) {
         
     text += '<div class="col-xs-12 col-md-4" id="adfilltop">';
     text += '<aside class="ad-box ad-box--bigbox" data-dev-object-descrip="01-molecules/blocks/ad-box" data-dev-status="IN-PROGRESS">';
@@ -151,7 +190,7 @@ function renderRow(num){
                 
      }
     
-         if (rowCount == 5) {
+         if (rowCount == 5 && showAds ==1) {
             
             
         jQuery("#presentsfill").appendTo(".filler");
