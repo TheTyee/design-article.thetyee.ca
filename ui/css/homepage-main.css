@@ -18,7 +18,7 @@ the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
 
 /* ===========  2020: top navigation moved into a single file ====== */
 
-@import "global-nav.css?v=23"; 
-@import "global-footer.css?v=23";
+@import "global-nav.css?v=24"; 
+@import "global-footer.css?v=24";
 
-@import "homepage.css?ver=23";
+@import "homepage.css?v=1111111111111126";
