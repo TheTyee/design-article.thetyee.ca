@@ -38,7 +38,7 @@
 
 /* Reset margins when going 50/50... */
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1100px) {
     .article-feature .article-hero {
         padding-inline: 0;
     }
@@ -46,13 +46,13 @@
 
 /* On smaller screens, weekender dot is white (against default yellow background)  */
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1099px) {
     .article-feature .header-basic .weekenderLabel svg circle {
         fill: white;
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1100px) {
 
     /* Adjust basic header so that it can be superimposed on hero image */
 
