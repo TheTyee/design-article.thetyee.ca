@@ -1,6 +1,12 @@
 
 /* Full-bleed image on narrow screens */
 
+.story-item--wide-feature .article-hero img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
 @media screen and (max-width: 683px) {
     .story-item--wide-feature .article-hero figure {
         margin-inline: calc(-1 * var(--page-margin-sides));

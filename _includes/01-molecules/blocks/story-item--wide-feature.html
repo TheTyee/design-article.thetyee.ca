@@ -19,7 +19,9 @@ You may also want to add a story badge (e.g. a series-badge), like this:
 {% endcomment %}
 <article class="story-item--wide-feature {{ include.story-item-class }}">
     <div class="article-hero" data-headline-x="{{ include.headline-position-x }}">
-        {% include 01-molecules/blocks/figure.html figure-contents="00-atoms/images/image" content-source=include.content-source %}
+        <figure class="figure" data-dev-object-descrip="01-molecules/blocks/figure" data-dev-status="IN-PROGRESS">
+            <img srcset="ui/img/photos/MAIN_TLC-830w.jpg 830w, ui/img/photos/MAIN_TLC.jpg 2200w" src="ui/img/photos/MAIN_TLC.jpg" alt="">
+        </figure>
 
         <div class="wrapper">
             <div class="tags">
