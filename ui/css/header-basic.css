@@ -10,6 +10,11 @@
     }    
 }
 
+/* TODO: test rubber-band effect in ios */
+html, body {
+    overscroll-behavior: none;
+}
+
 .header-basic {
     height: var(--header-height);
     padding-left: var(--page-margin-sides);
