@@ -10,11 +10,6 @@
     }    
 }
 
-/* TODO: test rubber-band effect in ios */
-html, body {
-    overscroll-behavior: none;
-}
-
 .header-basic {
     height: var(--header-height);
     padding-left: var(--page-margin-sides);
@@ -89,6 +84,9 @@ html, body {
     position: relative;
     display: grid;
     margin-top: 0;
+
+    /* prevent rubber-band effect when nav open */
+    overscroll-behavior: none;
 
     font-size: 1.6rem;
     line-height: 2rem;
