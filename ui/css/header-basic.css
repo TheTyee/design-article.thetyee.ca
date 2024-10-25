@@ -1,5 +1,13 @@
 :root {
-    --header-height: 66px;
+    --header-height: 55px;
+    --menu-toggle-size: 30px;
+}
+
+@media screen and (min-width: 470px) {
+    :root {
+        --header-height: 66px;
+        --menu-toggle-size: 37px;
+    }    
 }
 
 .header-basic {
@@ -21,7 +29,7 @@
 
 .header-basic .logo {
     height: 100%;
-    padding-block: 18px;
+    padding-block: calc(var(--header-height) / 4);
 }
 
 .header-basic .logo a {
@@ -38,7 +46,7 @@
 .header-basic .menu-toggle {
     display: flex;
     justify-content: center;
-    width: 37px;
+    width: var(--menu-toggle-size);
 }
 
 .header-basic .menu-toggle button {
@@ -49,7 +57,7 @@
     padding: 0;
     margin: 0;
     /* Icon size */
-    font-size: 37px;    
+    font-size: var(--menu-toggle-size);    
 }
 
 .nav-modal {    
