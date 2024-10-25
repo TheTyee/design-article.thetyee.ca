@@ -191,8 +191,27 @@ body.is-weekender.article-feature .category-label a:focus {
 }
 
 .article-feature .article-hero .tyee-presents-label,
+.article-feature .article-hero .tyee-series-label,
 .article-feature .article-hero .poll-label {
     width: auto;    
+    padding-inline: 0;
+    background-color: transparent;
+}
+
+.article-feature .tyee-presents-label,
+.article-feature .tyee-presents-label:hover,
+.article-feature .tyee-series-label,
+.article-feature .tyee-series-label:hover,
+.article-feature .poll-label,
+.article-feature .poll-label:hover {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.article-feature .tyee-presents-label a,
+.article-feature .tyee-series-label a,
+.article-feature .poll-label a {
+    display: block;
 }
 
 .article-feature .article-hero .tyee-presents-label a::before,
