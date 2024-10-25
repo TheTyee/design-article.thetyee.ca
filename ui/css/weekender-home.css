@@ -141,11 +141,7 @@
 }
 
 @media screen and (min-width: 684px) {
-    .weekender-home .story-item--secondary {
-        padding-top: 1em;
-    }
-
     .weekender-home .story-item--secondary figure {
-        margin-bottom: 1.5em;
+        margin-bottom: 1em;
     }
 }

@@ -119,7 +119,7 @@
 
     font-family: var(--typeface-display);
     font-weight: 500;
-    font-size: clamp(1.5em, 3vw, 2.5em);
+    font-size: clamp(1.5em, 4vw, 3.5em);
     line-height: 1.5;
 }
 
