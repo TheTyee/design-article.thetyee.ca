@@ -1,9 +1,28 @@
 .weekender-home-split {
-    /* Fudge to line up the weekender module with the bottom 
-       of the header without editing the header's margin */
-    margin-top: calc(-1 * (.5rem - 1px - 2px));
-
     background-color: rgba(125, 194, 163, 0.3);
+}
+
+/* Fudge to line up the weekender module with the bottom 
+    of the header without editing the header's margin */
+.weekender-home-split {
+    /* This is just based on the inside content at narrow widths. 
+        Would change if the height of header content changes! */
+    --siteHeaderHeight: 73px;
+
+    /* narrow screens - up to 684px */
+    margin-top: var(--siteHeaderHeight);
+}
+
+@media screen and (min-width: 683px) {
+    .weekender-home-split {
+        margin-top: calc(-11vw - 1rem + var(--siteHeaderHeight));
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .weekender-home-split {
+        margin-top: calc(-1 * (.5rem - 1px - 2px));
+    }
 }
 
 .weekender-home-split > .wrapper {
