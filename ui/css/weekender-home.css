@@ -97,8 +97,8 @@
 /* Responsive layouts */
 
 @media screen and (max-width: 500px) {
-    .weekender-home > .wrapper {
-        gap: var(--gutter-row) var(--gutter-column);
+    .weekender-home > .wrapper article + article {
+        margin-top: var(--gutter-row-half);
     }
 
     .weekender-home .story-item--secondary figure {
