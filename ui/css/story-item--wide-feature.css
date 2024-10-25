@@ -126,7 +126,7 @@
     font-family: var(--typeface-display);
     font-weight: 500;
     font-size: clamp(1.5em, 4vw, 3.5em);
-    line-height: 1.5;
+    line-height: 1.35;
 }
 
 @media screen and (min-width: 684px) {

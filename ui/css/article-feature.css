@@ -181,6 +181,7 @@ body.is-weekender.article-feature .category-label a:focus {
 
 .article-feature .hero-caption {
     border-bottom: none;
+    font-size: 0.8em;
     text-wrap: pretty;
 }
 
