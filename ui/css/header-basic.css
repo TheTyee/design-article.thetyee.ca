@@ -69,6 +69,9 @@
     z-index: 1999;
     margin-top: 0;
     overflow-y: auto;
+
+    /* prevent rubber-band effect when nav open */
+    overscroll-behavior: none;
 }
 
 .nav-modal li a {
@@ -84,9 +87,6 @@
     position: relative;
     display: grid;
     margin-top: 0;
-
-    /* prevent rubber-band effect when nav open */
-    overscroll-behavior: none;
 
     font-size: 1.6rem;
     line-height: 2rem;
