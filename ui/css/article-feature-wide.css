@@ -178,6 +178,7 @@
 /* Caption */
 
 .article-feature-wide .hero-caption {
+    max-width: 1800px;
     margin-inline: auto;
     border-bottom: none;
     font-size: 0.8em;
@@ -188,7 +189,6 @@
 }
 
 .article-feature-wide .article-hero[data-headline-x="left"] + .hero-caption {
-    margin-left: 0;
     padding-inline: 0;
 }
 
@@ -198,7 +198,6 @@
 }
 
 .article-feature-wide .article-hero[data-headline-x="right"] + .hero-caption {
-    margin-right: 0;
     padding-inline: 0;
 }
 
