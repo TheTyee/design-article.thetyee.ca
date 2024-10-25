@@ -116,6 +116,7 @@ function renderRow(num){
     text += '<div class="col-xs-12 col-md-4"><div id="subscribefill" class="messaging-zone index-list-spacing"></div></div>';
     $.get( "/design-article.thetyee.ca/_includes/01-molecules/blocks/messaging-block--subscribe.html", function( data ) {
     jQuery("#subscribefill").html(data);
+   $("input[name='custom_campaign']").attr("value","cover_sidebar");
     enableEmailSubscription();
 }, "html");
   
@@ -162,7 +163,7 @@ function renderRow(num){
     rowCount++;
  //   console.log("rowCount is " + rowCount);
    jQuery(".index-page__story-list .filler").append(text);
-
+smartquotes();
         i++;
     }
     

@@ -1,14 +1,16 @@
 <!-- Begin 02-organisms/sections/httpswarning -->
 <!-- This object will be used below the article body amd also as a dropdown in the primary nav -->
+<?php if (empty($_SERVER['HTTPS'])) : ?>
+
 <div id="https" style="display:none;" class="[ container-fluid ]" data-dev-object-descrip="molecules/blocks/ad-banner">
 <div class="container-fluid">
 
 <span>
-	<img src="/ui/img/lock.png" height="15" width="auto" style="position:relative;top:-1px;"> <a href="https://thetyee.ca">
-		The Tyee now available in https (click to redirect).
+	<img src="/ui/img/lock.png" height="15" width="auto" style="position:relative;top:-1px;"> <a href="https://thetyee.ca<?=$_SERVER['REQUEST_URI']?>">
+		Now available in https (click to redirect).
 	</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>
-<span> <a href="/story">Click here</a> to learn more about why.
+<span> <a href="/Tyeenews/2016/11/28/Tyee-Upping-Security-Game/">Click here</a> to learn more about why.
 </span>
 </div>
 </div>
@@ -16,7 +18,7 @@
 $(window).load(function(){
 
 setTimeout(function() { showHttps(); }, 200);
-setTimeout(function() { hideHttps(); }, 12000);
+setTimeout(function() { hideHttps(); }, 18000);
 
 	
 });
@@ -29,3 +31,4 @@ function showHttps() {
 
 </script>
 <!-- END 02-organisms/sections/httpswarning -->
+<?php endif; ?>

@@ -63,9 +63,13 @@ text += '<div class="story-item story-item--index-page index-list-spacing" data-
                 }
             }
 
-text += '<a href="' + unit.uri + '"><!-- 00-atoms/images/image -->';
 var thumbImg;
+
+if (unit.related_media) {
+text += '<a href="' + unit.uri + '"><!-- 00-atoms/images/image -->';
+
             thumbImg = unit.related_media[0].uri.replace("http://thetyee.cachefly.net", "//thetyee.ca");
+
 
 for (var k in unit.related_media[0].thumbnails) {   
         var thumb = unit.related_media[0].thumbnails[k];
@@ -79,8 +83,10 @@ for (var k in unit.related_media[0].thumbnails) {
 }
  thumbImg = thumbImg.replace("http://", "//");
 
+
 text += '<img src="' + thumbImg + '" class="responsive-img" alt="image atom">';
 text += '</a>';
+      }
 text +='<div class="story-item__description">';
 text +=	'<h5><a href="' + unit.uri + ' ">' + unit.title + '</a></h5>';
 if (unit.teaser) {  
@@ -120,7 +126,7 @@ function renderRow(num){
     rowCount++;
  //   console.log("rowCount is " + rowCount);
    jQuery(".index-page__story-list .filler").append(text);
-
+smartquotes();
         i++;
     }
     
@@ -177,8 +183,9 @@ function renderRow(num){
             //for each item from the API, plug info into a Unit object
             jQuery.each(recentItems, function(key, value){
 
+if (value._source.related_media ) {
                 latestUnitImage = value._source.related_media[0].uri;
-
+}
 
 
                 //Format the API img uri's so they don't point at cachefly
@@ -200,8 +207,11 @@ function renderRow(num){
                 //Populate Unit objects with API data
                 Unit.urlPath = value._source.path;
                 Unit.hed = value._source.title;
-                Unit.image = latestUnitImage;
-                Unit.dek = value._source.teaser;
+if (typeof latestUnitImage !== 'undefined') {
+
+               Unit.image = latestUnitImage;
+}               
+ Unit.dek = value._source.teaser;
                 Unit.date = formattedDate;
                 Unit.authour = value._source.byline;
 
@@ -239,7 +249,13 @@ function renderRow(num){
 
 var segments = window.location.href.split("/");
 topic = segments[(segments.length - 2)]; 
-if (topic == "Zoe_Ducklow") { topic = "Zoë_Ducklow" };
+if (topic == "Zoe_Ducklow") { topic = "Zoë_Ducklow" 
+} else if (topic =="Geoff_D_Auria") { topic = "Geoff_D'Auria" 
+} else if (topic =="Michael_M_Gonigle") { topic = "Michael_M'Gonigle" 
+} else if (topic =="Kata__Catherine__Lafferty") { topic = "Catherine__Lafferty" 
+} else if (topic =="Zoe_Yunker") { topic = "Zoë_Yunker" };
+// topic = topic.replace(/ë/gi, "e");
+
         //make UnitObjects global, so I don't have to keep hitting the API
         UnitObjects = UnitObjects;
                 getUnitStories(18,0);

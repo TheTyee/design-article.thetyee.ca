@@ -29,8 +29,7 @@
     "tag": "v2.6.1",
     "commit": "d95e467733558d0dfea2bfb41e724cef585d64a2"
   },
-  "_source": "git://github.com/less/less.js.git",
+  "_source": "https://github.com/less/less.js.git",
   "_target": "~2.6.1",
-  "_originalSource": "less.js",
-  "_direct": true
+  "_originalSource": "less.js"
 }
