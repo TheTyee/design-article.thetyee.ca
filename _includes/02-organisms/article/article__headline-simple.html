@@ -12,6 +12,31 @@
             <h6 class="tyee-series-label">
                 <a href="/series-link-here/">A Tyee Series</a>
             </h6>
+        {% else %}
+            <h6 class="category-label"><a href="/category-link-here/" data-bind="category">{{ page.meta-category }}</a></h6>
+            <h6 class="category-label"><a href="/tag-link-here/">Indigenous</a></h6>
+            <h6 class="category-label"><a href="/tag-link-here/">Rights + Justice</a></h6>
+            {% if page.story-tag1 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag1 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag2 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag2 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag3 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag3 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag4 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag4 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag5 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag5 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag6 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag6 }}</a></h6>
+            {% endif %}
+            {% if page.story-tag7 != nil %}
+              <h6 class="category-label"><a href="/tag-link-here/">{{ page.story-tag7 }}</a></h6>
+            {% endif %}
         {% endif %}
 
         <h1 data-bind="title">{{ page.title }}</h1>

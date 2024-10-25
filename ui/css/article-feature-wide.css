@@ -142,6 +142,12 @@
     font-size: clamp(2em, 4vw, 3em) !important;
 }
 
+/* Hide categories above the headline */
+
+.article-feature-wide .article-headline .category-label {
+    display: none;
+}
+
 /* Series, Presents, and Poll badges and labels */
 
 .article-feature-wide .article-hero .series-badge {
