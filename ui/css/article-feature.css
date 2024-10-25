@@ -44,6 +44,14 @@
     }
 }
 
+/* On smaller screens, weekender dot is white (against default yellow background)  */
+
+@media screen and (max-width: 1199px) {
+    .article-feature .header-basic .weekenderLabel svg circle {
+        fill: white;
+    }
+}
+
 @media screen and (min-width: 1200px) {
 
     /* Adjust basic header so that it can be superimposed on hero image */
