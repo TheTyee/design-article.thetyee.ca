@@ -139,7 +139,7 @@
 /* Typography */
 
 .article-feature-wide .article-headline h1 {
-    font-size: clamp(2em, 4vw, 3em) !important;
+    font-size: clamp(1.625em, 4vw, 3em) !important;
 }
 
 /* Hide categories above the headline */
