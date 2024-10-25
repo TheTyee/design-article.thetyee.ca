@@ -269,7 +269,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Hide the sticky header when at the top of the page
         if (window.scrollY === 0) {
-            fadeOut(stickyHeader, 300);
+            // Only fade out on wider screens (animation is too slow on ios)
+            if (window.innerWidth > 768) {
+                fadeOut(stickyHeader, 300);
+            } else {
+                fadeOut(stickyHeader, 0);
+            }
         }
     });
 
