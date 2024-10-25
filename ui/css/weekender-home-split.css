@@ -131,7 +131,7 @@
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 683px) {
+@media screen and (max-width: 683px) {
     .weekender-home-split .story-item--secondary {
         border-right: none;
         border-top: 1px solid var(--border-colour-cols);
