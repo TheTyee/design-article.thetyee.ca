@@ -1,0 +1,244 @@
+/**
+ * Everything in this file is namespaced under .article-feature which is the
+ * layout class for the article feature component. This layout displays the
+ * hero image to the right of the headline on desktop screens.
+ */
+
+/* Headline, caption, and byline margins (matching .article__header) */
+
+.article-feature .article-hero {
+    margin-inline: auto;
+    padding-inline: var(--page-margin-sides);
+}
+
+.article-feature .article-headline {
+    margin-block: 5vw 2vw;
+}
+
+.article-feature .article-headline .container-fluid {
+    padding-left: 0;    
+    padding-right: 0;    
+}
+
+.article-feature .hero-caption {
+    margin-inline: auto;
+    padding-inline: var(--page-margin-sides);
+}
+
+.article-feature .article-byline {
+	max-width: 49em;
+	margin-inline: auto;
+}
+
+@media screen and (min-width: 640px) {
+    .article-feature .article-byline {
+		padding-inline: 17px;
+	}
+}
+
+/* Reset margins when going 50/50... */
+
+@media screen and (min-width: 1100px) {
+    .article-feature .article-hero {
+        padding-inline: 0;
+    }
+}
+
+/* On smaller screens, weekender dot is white (against default yellow background)  */
+
+@media screen and (max-width: 1099px) {
+    .article-feature .header-basic .weekenderLabel svg circle {
+        fill: white;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+
+    /* Adjust basic header so that it can be superimposed on hero image */
+
+    .article-feature .header-basic:not(.header-basic--clone, .header-basic--nav) {
+        background-color: transparent;
+    }
+
+    /* Darken hero so white image stands out */
+
+    .article-feature .header-basic:not(.header-basic--clone, .header-basic--nav) .menu-toggle {
+        color: white;
+    }
+
+    .article-feature .article-hero img {
+        filter: brightness(0.95);
+    }
+
+    /* Headline and hero image are side-by-side */
+
+    .article-feature .article-hero {
+        display: flex;
+        flex-direction: row;
+        column-gap: 3rem;
+        margin-top: calc(-1 * var(--header-height));
+        background-color: var(--light-grey);
+    }
+
+    .article-feature .article-hero > * {
+        flex: 0 50%;
+    }
+
+    .article-feature .article-headline {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: var(--page-margin-sides);
+
+        /* Space above the headline is the same as the header height */
+        margin-top: 66px;
+    }
+
+    .article-feature .article-hero figure img {
+        min-height: 500px;
+        aspect-ratio: 5 / 4;
+        object-fit: cover;
+    }
+
+    .article-feature .hero-caption {
+        margin-left: 50%;
+        padding-inline: 3rem var(--page-margin-sides);
+    }
+
+    /* Change background colour if this is a weekender post */
+
+    body.is-weekender.article-feature .article-hero {
+        background-color: rgba(125, 194, 163, 0.3);
+    }
+
+    /* Style tyee-presents label when side-by-side */
+    
+    body.is-weekender.article-feature .article-hero .tyee-presents-label {
+        background-color: transparent;
+        padding-inline: 0;
+    }
+    
+    .article-feature .article-hero .tyee-presents-label a {
+        display: block;
+    }
+    
+    .article-feature .article-hero .tyee-presents-label a::before {
+        display: block;
+    }
+}
+
+/* At wider screens, revert to default image shape */
+
+@media screen and (min-width: 1370px) {    
+    .article-feature .article-hero figure img {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+/* Tags - style like the weekender, only if posts is a weekender post */
+
+/* Only show the first label */
+
+body.is-weekender.article-feature .category-label + .category-label {
+    display: none;
+}
+
+body.is-weekender.article-feature .category-label {
+    text-transform: capitalize; 
+    background: transparent;
+    padding: 0;
+}
+
+body.is-weekender.article-feature .category-label::before {
+    content: '/';
+}
+
+body.is-weekender.article-feature .category-label:hover {
+    border: 0;
+}
+
+body.is-weekender.article-feature .category-label a:hover,
+body.is-weekender.article-feature .category-label a:focus {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
+}
+
+/* Headline */
+
+.article-feature .article-headline h1 {
+    text-wrap: balance;
+}
+
+/* Reset figure element */
+
+.article-feature .article-hero figure {
+    float: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Caption */
+
+.article-feature .hero-caption {
+    border-bottom: none;
+    font-size: 0.8em;
+    text-wrap: pretty;
+}
+
+/* Series, Presents, and Poll badges and labels */
+
+.article-feature .article-hero .series-badge {
+    display: none;
+}
+
+.article-feature .article-hero .tyee-presents-label,
+.article-feature .article-hero .tyee-series-label,
+.article-feature .article-hero .poll-label {
+    width: auto;    
+    padding-inline: 0;
+    background-color: transparent;
+}
+
+.article-feature .tyee-presents-label,
+.article-feature .tyee-presents-label:hover,
+.article-feature .tyee-series-label,
+.article-feature .tyee-series-label:hover,
+.article-feature .poll-label,
+.article-feature .poll-label:hover {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.article-feature .tyee-presents-label a,
+.article-feature .tyee-series-label a,
+.article-feature .poll-label a {
+    display: block;
+}
+
+.article-feature .article-hero .tyee-presents-label a::before,
+.article-feature .article-hero .poll-label a::before {
+    font-size: .9em;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.article-feature .article-hero .tyee-presents-label a::before {
+    content: "TYEE PRESENTS: ";
+}
+
+.article-feature .article-hero .poll-label a::before {
+    content: "THE BAROMETER: ";
+}
+
+/* Space below author byline */
+
+.article-feature .article-byline {
+    margin-block: 2rem 2rem;
+}
+
+/* Make tags readable against background colour */
+
+.article-feature .category-label:not(:first-of-type) {
+    background-color: white;
+}
+

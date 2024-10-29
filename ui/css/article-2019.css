@@ -2009,7 +2009,6 @@ max-width: 100%;
 .figure--xxl { width: calc(100vw) !important; }
 }
 
-}
 
     /* Remove float when view is wide enough */
 
@@ -3587,7 +3586,7 @@ label.valid {
 }
 
 .index-page__featured-story .story-item--event__details {
-	margin-bottom: -.5em; */
+	margin-bottom: -.5em;
 }
 
 .story-item__date--event {
@@ -3755,11 +3754,9 @@ label.valid {
 }
 
 @media screen and (max-width: 939px) {
-
-.aside-mobile {
-display:block !important;
-}รร
-
+    .aside-mobile {
+        display:block !important;
+    }
 }
 
 /*  IN WIDER VIEWPORTS: 

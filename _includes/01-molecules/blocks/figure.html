@@ -23,10 +23,9 @@ To make the figure extra-large (breaking out of the text column in wide viewport
 <figure class="figure {{ include.figure-class }}" data-dev-object-descrip="01-molecules/blocks/figure" data-dev-status="IN-PROGRESS">
 	{% include {{ include.figure-contents }}.html content-source=include.content-source %}
 
-	{% if include.figure-caption != "" or include.media-credit != "" %}
+	{% if include.figure-caption or include.media-credit %}
 		<figcaption class="caption">{{ include.figure-caption }} <span class="caption__media--credit"> {{ include.media-credit }}</span></figcaption>
 	{% endif %}
-
 </figure>
 <!-- END 01-molecules/blocks/figure -->
 
