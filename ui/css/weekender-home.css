@@ -1,0 +1,147 @@
+.weekender-home {
+    background-color: rgba(125, 194, 163, 0.3);
+}
+
+/* Fudge to line up the weekender module with the bottom 
+    of the header without editing the header's margin */
+.weekender-home {
+    /* This is just based on the inside content at narrow widths. 
+        Would change if the height of header content changes! */
+    --siteHeaderHeight: 73px;
+
+    /* narrow screens - up to 684px */
+    margin-top: var(--siteHeaderHeight);
+}
+
+@media screen and (min-width: 683px) {
+    .weekender-home {
+        margin-top: calc(-11vw - 1rem + var(--siteHeaderHeight));
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .weekender-home {
+        margin-top: calc(-1 * (.5rem - 1px - 2px));
+    }
+}
+
+.weekender-home > .wrapper {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "feature feature feature"
+        "thumb1 thumb2 thumb3";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gutter-row-half) var(--gutter-column);
+
+    max-width: 1800px;
+    margin-inline: auto;   
+    padding-block: var(--gutter-row-half) var(--gutter-row);
+    padding-inline: var(--page-margin-sides);
+}
+
+.weekender-home header {
+    grid-area: header;
+    text-align: center;
+}
+
+.weekender-home .story-item-feature {
+    grid-area: feature;
+}
+
+.weekender-home .button {
+    margin-top: 2em;
+}
+
+/* Weekender logo and tagline */
+
+.weekender-home header img {
+    width: clamp(180px, 22vw, 260px);
+    height: auto;
+}
+
+.weekender-home header p {
+    font-size: 1.2em;
+}
+
+/* Style tags */
+
+.weekender-home .category-label {
+    font-size: 1em;
+}
+
+.weekender-home .category-label a {
+    background: none;
+    padding: 0;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.weekender-home .category-label::before {
+    content: '/';
+}
+
+.weekender-home .category-label a:hover,
+.weekender-home .category-label a:focus {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
+}
+
+/* Style headline hover states */
+
+.weekender-home .article-hero h2 a:hover,
+.weekender-home .story-item--secondary h2 a:hover {
+    background-color: var(--section-bg-yellow);
+}
+
+/* Responsive layouts */
+
+@media screen and (max-width: 500px) {
+    .weekender-home > .wrapper article + article {
+        margin-top: var(--gutter-row-half);
+    }
+
+    .weekender-home .story-item--secondary figure {
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 683px) {
+    /* Space between weekender module and the next module */
+    .weekender-home + section.hmpg-org-wrapper {
+        padding-top: 5rem !important;
+    }
+
+    .weekender-home > .wrapper {
+        grid-template-areas: 
+            "header"
+            "feature"
+            "thumb1"
+            "thumb2"
+            "thumb3";
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 683px) and (min-width: 500px) {
+    .weekender-home > .wrapper {
+        gap: var(--gutter-row-half) var(--gutter-column);
+    }
+
+    .weekender-home .story-item--secondary {
+        border-top: 1px solid var(--border-colour-cols);
+        padding-top: var(--gutter-row-half);
+    }
+
+    .weekender-home .story-item--secondary figure {
+        float: right;
+        width: 45%;
+        margin-left: 1em;
+    }
+}
+
+@media screen and (min-width: 684px) {
+    .weekender-home .story-item--secondary figure {
+        margin-bottom: 1em;
+    }
+}
