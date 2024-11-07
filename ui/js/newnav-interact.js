@@ -21,13 +21,16 @@ jQuery( document ).ready( function( $ ) {
 });	
 
 function bumpMenu() {
-var barHeight = $(".new-site-header__logo-block-wrapper").height();
-$("#new-site-navigation").css("margin-top", barHeight + "px");
-var menuheight = $(".new-site-navigation").height();
-$(".new-site-nav__dropdown").css("top", barHeight-15 + "px");
+    var barHeight = $(".new-site-header__logo-block-wrapper").height();
+    var menuheight = $(".new-site-navigation").height();
+    
+    if(barHeight > 0) {
+        $("#new-site-navigation").css("margin-top", barHeight + "px");        
+        $(".new-site-nav__dropdown").css("top", barHeight-15 + "px");
+    }
+			
 }
 bumpMenu();
-
 
 
 
@@ -70,6 +73,17 @@ setMain();
   }, 250);
 			
     });
+
+
+jQuery( window ).on( "load", function() {
+   
+			setTimeout(function() {
+$("body").show();	
+            
+  }, 300);
+			
+    });
+
 
 
 

@@ -1,0 +1,190 @@
+.weekender-home-split {
+    background-color: rgba(125, 194, 163, 0.3);
+}
+
+/* Fudge to line up the weekender module with the bottom 
+    of the header without editing the header's margin */
+.weekender-home-split {
+    /* This is just based on the inside content at narrow widths. 
+        Would change if the height of header content changes! */
+    --siteHeaderHeight: 73px;
+
+    /* narrow screens - up to 684px */
+    margin-top: var(--siteHeaderHeight);
+}
+
+@media screen and (min-width: 683px) {
+    .weekender-home-split {
+        margin-top: calc(-11vw - 1rem + var(--siteHeaderHeight));
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .weekender-home-split {
+        margin-top: calc(-1 * (.5rem - 1px - 2px));
+    }
+}
+
+.weekender-home-split > .wrapper {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "feature feature feature"
+        "thumb1 thumb2 thumb3";
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: var(--gutter-row-half);
+
+    max-width: 1800px;
+    margin-inline: auto;   
+    padding-block: var(--gutter-row-half) var(--gutter-row);
+    padding-inline: var(--page-margin-sides);
+}
+
+.weekender-home-split header {
+    grid-area: header;
+    text-align: center;
+}
+
+.weekender-home-split .story-item-feature {
+    grid-area: feature;
+}
+
+.weekender-home-split .button {
+    margin-top: 2em;
+}
+
+/* Hide image in secondary story cards */
+
+.weekender-home-split .story-item__image {
+    display: none;
+}
+
+/* Gap and keyline between secondary story cards */
+
+.weekender-home-split .story-2,
+.weekender-home-split .story-3 {
+    border-right: 1.5px solid var(--border-colour-cols);
+    padding-right: 2em;
+}
+
+.weekender-home-split .story-3,
+.weekender-home-split .story-4 {
+    padding-left: 2em;
+}
+
+/* Vertical spacing inside secondary story cards */
+
+.weekender-home-split .story-item--secondary h2 {
+    margin-block: 1em 1.2em;
+}
+
+/* Weekender logo and tagline */
+
+.weekender-home-split header img {
+    width: clamp(180px, 22vw, 260px);
+    height: auto;
+}
+
+.weekender-home-split header p {
+    font-size: 1.2em;
+}
+
+/* Style tags */
+
+.weekender-home-split .category-label {
+    font-size: 1em;
+}
+
+.weekender-home-split .category-label a {
+    background: none;
+    padding: 0;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.weekender-home-split .category-label::before {
+    content: '/';
+}
+
+.weekender-home-split .category-label a:hover,
+.weekender-home-split .category-label a:focus {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
+}
+
+/* Style headline hover states */
+
+.weekender-home-split .article-hero h2 a:hover,
+.weekender-home-split .story-item--secondary h2 a:hover {
+    background-color: var(--section-bg-yellow);
+}
+
+/* Responsive layouts */
+
+@media screen and (max-width: 683px) {
+    /* Space below feature story hero image */
+    .weekender-home-split .article-hero > a {
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    /* Space between weekender module and the next module */
+    .weekender-home-split + section.hmpg-org-wrapper {
+        padding-top: 5rem !important;
+    }
+
+    .weekender-home-split > .wrapper {
+        grid-template-areas: 
+            "header"
+            "feature"
+            "thumb1"
+            "thumb2"
+            "thumb3";
+        grid-template-columns: 1fr;
+    }
+
+    /* Vertical spacing inside secondary story cards */
+    
+    .weekender-home-split .story-item--secondary h2 {
+        margin-block: 0;
+    }
+}
+
+@media screen and (max-width: 683px) {
+    .weekender-home-split .story-item--secondary {
+        border-right: none;
+        border-top: 1px solid var(--border-colour-cols);
+        padding-top: var(--gutter-row-half);
+        padding-inline: 0;
+    }
+}
+
+@media screen and (min-width: 684px) {
+    /* Side-by-side layout */
+
+    .weekender-home-split .article-hero {
+        display: flex;
+        background-color: #7dc2a3;
+        background-color: rgba(125, 194, 163, 0.3);
+    }
+
+    .weekender-home-split .article-hero > * {
+        flex: 1 1 50%;
+    }
+
+    .weekender-home-split .article-hero > a figure {
+        height: 100%;
+    }
+
+    .weekender-home-split .article-hero > a img {
+        height: 100% !important;
+    }
+
+    .weekender-home-split .article-hero > .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-block: 5vw;
+        padding-inline: 5vw;
+    }
+}
