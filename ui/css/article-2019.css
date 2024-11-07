@@ -27,6 +27,14 @@ Html {
 	font-size: 18px;
 }
 
+
+/* fix issue woth most read showing too bold, replicating from HP */
+:root {
+        --typeface-display-medium: 'Tiempos Text', georgia, serif;
+}
+
+
+
 body {
 	font-family: var(--typeface-sans), sans-serif;
 	font-weight: 400;
@@ -3471,6 +3479,9 @@ label.valid {
 
 
 /* RELATED STORY  ========================================================================== */
+
+.related_story_b { display:none;}
+
 
 .related-story {
 	position: relative;
