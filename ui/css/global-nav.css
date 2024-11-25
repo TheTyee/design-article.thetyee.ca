@@ -205,7 +205,7 @@ ul#nav-bar li label.nav-bar__link--more:after {
 
 .new-site-header__logo-block {
 
-    background-image: url(/ui/img/20.png);
+/*    background-image: url(/ui/img/20.png); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 145px;
