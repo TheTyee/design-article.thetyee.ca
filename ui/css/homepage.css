@@ -13,6 +13,11 @@
 
 /* CAPTIONS  ========================================================================== */
 
+
+/*#most_popular { display:none; } */
+
+.login {display:none;}
+
 .caption {
 	padding-top: .65em;
 	padding-bottom: 1rem;
