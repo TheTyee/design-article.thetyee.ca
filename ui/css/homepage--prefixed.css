@@ -112,11 +112,22 @@ html {
 }
 
 
+@font-face {
+font-family: 'Adjusted Arial Fallback';
+  /* Courier New closely matches Franklin Gothic URW */
+    src: local(Arial);
+    size-adjust: 94%;
+    ascent-override: 100%;
+    descent-override: normal;
+    line-gap-override: normal;
+}
+
+
 /* Typefaces */
 
 :root {
 	--typeface-serif: 'Tiempos Text', georgia, serif;
-	--typeface-sans: 'franklin-gothic-urw', helvetica, sans-serif;
+	--typeface-sans: 'franklin-gothic-urw','Adjusted Arial Fallback' , sans-serif;
 	--typeface-item-body: 'franklin-gothic-urw', helvetica, sans-serif;
 	--typeface-display: 'Tiempos Text', georgia, serif;
 	--typeface-display-small: 'Tiempos Text', georgia, serif;
