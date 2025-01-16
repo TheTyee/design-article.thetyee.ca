@@ -2791,7 +2791,17 @@ span.author-info__date span {
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 850px) {
+.caption.mobile { display:none !important; }
+
+}
+
+@media screen and (max-width: 849px) {
+
+.caption.desktop {
+display:none !important;
+}
+
 .tool-bar .desktop {
 display:none;
 }
