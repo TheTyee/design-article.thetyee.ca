@@ -28,9 +28,9 @@ function bumpMenu() {
         $("#new-site-navigation").css("margin-top", barHeight + "px");        
         $(".new-site-nav__dropdown").css("top", barHeight-15 + "px");
     }
+			
 }
 bumpMenu();
-
 
 
 
@@ -73,6 +73,17 @@ setMain();
   }, 250);
 			
     });
+
+
+jQuery( window ).on( "load", function() {
+   
+			setTimeout(function() {
+$("body").show();	
+            
+  }, 300);
+			
+    });
+
 
 
 
