@@ -1,4 +1,4 @@
-/* @override 
+/* @override
 	http://127.0.0.1:4000/ui/css/article-2019.css */
 
 
@@ -35,6 +35,15 @@ Html {
         --typeface-display-medium: 'Tiempos Text', georgia, serif;
 }
 
+@font-face {
+font-family: 'Adjusted Arial Fallback';
+  /* Courier New closely matches Franklin Gothic URW */
+    src: local(Arial);
+    size-adjust: 94%;
+    ascent-override: 100%;
+    descent-override: normal;
+    line-gap-override: normal;
+}
 
 
 body {
@@ -2703,6 +2712,10 @@ span.author-info__date span {
 	display: inline-block;
 	text-transform: uppercase;
 	color: var(--grey);
+}
+
+.messaging-block .tool-bar, .messaging-block--share {
+display:none !important;
 }
 
 .messaging-block--share .tool-bar .count .text {
