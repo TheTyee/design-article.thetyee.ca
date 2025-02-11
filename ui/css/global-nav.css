@@ -1,6 +1,6 @@
 /* @override 
 	http://127.0.0.1:4000/ui/css/global-nav.css */
-
+	
 #ad-leaderboard,
 .ad-banner {
 	display: none;
@@ -12,6 +12,58 @@
 	left:0px;
 	width: 100%;
 	z-index:1999;
+}
+
+
+
+.new-site-header .login {
+	
+	grid-column: 5;
+	align-self: start;
+	/* justify-self: end; */
+	align-self: center;
+	position: absolute;
+	margin-left:1em;
+	font-size: 140%;
+	margin-top: 12px;
+}
+
+@media screen and (max-width: 468px) {
+
+
+.new-site-header .login {
+	margin-top: 8px;
+}
+
+.fa.fa-user.logged_in {
+	font-size: 90%  !important;
+
+}
+
+.login .builder {
+
+small {
+ display:none;
+}
+}
+
+}
+
+.scroll .login {
+	display:none;
+	
+}
+i.log_in {
+	color: transparent;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;
+}
+
+@media screen and (max-width: 468px) {
+	
+	.new-site-header .login {
+	grid-column: 2;	
+	}
 }
 
 .new-site-header__logo-block-wrapper  {
@@ -203,7 +255,7 @@ ul#nav-bar li label.nav-bar__link--more:after {
 
 .new-site-header__logo-block {
 
-    background-image: url(/ui/img/20.png);
+/*    background-image: url(/ui/img/20.png); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 145px;
@@ -1301,6 +1353,9 @@ grid-column:col-5;
 		padding-left: 4vw; /* offset to align with nav button */
 	}
 }
+
+
+
 
 
   /* End of Site Header organism */
