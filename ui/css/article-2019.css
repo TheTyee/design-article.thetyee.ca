@@ -4348,7 +4348,7 @@ img.fact-box--headshot {
 /* COMMENTS-SECTION  ========================================================================== */
 
 .comments-section {
-	max-width: 700px;
+/*	max-width: 700px;*/
 	margin: 0 auto;
 	text-align: center;
 	background-color: #fff; /*#F4F4F4;*/
