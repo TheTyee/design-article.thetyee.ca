@@ -67,7 +67,7 @@ function hideIfNoHash() {
     if (hash.indexOf("comment") !== -1 ) {
         jQuery('.read-more').fadeOut();
     } else {
-        var el = jQuery('.comments-section');
+        var el = jQuery('.comments-section .main-col-container');
         el.css(
             "height", "660px"
         );
@@ -111,12 +111,11 @@ function enableEmailSubscription() {
         });
     });  
 }
-
-jQuery(window).load(function() {
+jQuery(window).on('load', function() {
     // attaching to window load
     latestFix();
   mobileFriendlyCommentsStr();
-   //  hideIfNoHash();
+    hideIfNoHash();
     enableEmailSubscription();
 });
 window.data;
@@ -324,7 +323,7 @@ console.log(datatwo.result);
         // Show Disqus comments
         jQuery(".comments-section .btn").click(function(e) {
             e.preventDefault();
-            var el = jQuery('.comments-section');
+            var el = jQuery('.comments-section .main-col-container');
             el.css({
                 "height": "auto",
             });
