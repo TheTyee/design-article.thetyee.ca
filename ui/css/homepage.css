@@ -3177,7 +3177,7 @@ main .hmpg-org-most::before {
 
 @media screen and (min-width: 684px) {
 	.hmpg-org-most {
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 
     /* In wider eliminate first column position adjustment  */
