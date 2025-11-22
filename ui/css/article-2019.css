@@ -6218,6 +6218,9 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
     align-content: start;
 }
 
+#most-commented {
+display:none;
+}
 
 
 .hmpg-org-most--column {
@@ -6355,7 +6358,7 @@ h2.hmpg-module-header__main-label {
 
 @media screen and (min-width: 684px) {
 	.hmpg-org-most {
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 
     /* In wider eliminate first column position adjustment  */
