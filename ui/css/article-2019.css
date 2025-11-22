@@ -6220,7 +6220,7 @@ body.cmnt--visibility [data-dev-object-descrip*="molecules"][data-dev-object-des
     align-content: start;
 }
 
-#most-commented {
+#most_commented {
 display:none;
 }
 
