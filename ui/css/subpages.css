@@ -44,7 +44,14 @@ iframe { max-width: 98%; }
 		padding-right: 32px;
 	}
 }
+@media screen and (min-width: 568px) {
 
+	.team-grid.four-col {
+	grid-template-columns: 1fr 1fr 1fr 1fr !important;
+	}
+}
+
+}
 @media screen and (max-width: 568px) {
 /*	body.subpage .article__header {
 		margin-top: 15px !important;
