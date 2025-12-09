@@ -1242,9 +1242,6 @@ span.list-metric, .index-list span {
 The .main-col-container styling is really the scaffold of the layout and most other things hang off of it or are contained by it, so any changes to it are likely to cause problems. The best thing is if objects just sit inside it and are positioned relative to it (like figures and asides).
 */
 
-body.about_page .article__header  {
-    max-width: 38em;
-}
 
 .main-col-container {
 	/* the text column remains centred after hitting its max width. */
@@ -1275,7 +1272,11 @@ body.about_page .article__header  {
 @media screen and (min-width: 880px) {
 	/* When viewport exceeds the max-width of the article__header ...  */
 	
-	.main-col-container {
+body.about_page .article__header {
+    max-width: 38em;
+}
+
+	.main-col-container, .about_page .article__header {
 		margin-left: auto;
 		margin-right: auto;
 		left: -4.5em; /* = ( [article__header max-width] - [article__body max-width] - [padding&margins] ) / 2 */
