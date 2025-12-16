@@ -885,6 +885,17 @@ text-decoration: underline;
 	max-width: 1000px; /* Sets a limit on the width of the bootstrap layout */
 }
 
+.cover section.col-3-block *:nth-child(3) {
+    display: none;
+}
+
+@media (min-width: 768px) {
+.cover  .col-sm-4 {
+        width: 49.9%;
+    }
+}
+
+
 @media screen and (max-width: 849px) {
 .cover .section__header {
         margin-top: 3em;
