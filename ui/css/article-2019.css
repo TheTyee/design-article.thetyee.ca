@@ -181,6 +181,18 @@ h4 {
     display: none;
 }
 
+.header-basic .new-site-header__buttons {
+min-width: 78px;	
+}
+@media screen and (max-width: 607px) {
+.header-basic .new-site-header__buttons span {
+display:none;
+}
+
+}
+
+
+
 
     /* BREAKPOINT: 600px // Increase article title size */
 
