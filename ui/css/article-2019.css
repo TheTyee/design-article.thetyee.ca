@@ -177,6 +177,11 @@ h4 {
 	margin-top: 0px;
 }
 
+.header-basic a.black.hide-on-phone {
+    display: none;
+}
+
+
     /* BREAKPOINT: 600px // Increase article title size */
 
 @media screen and (min-width: 600px) {
