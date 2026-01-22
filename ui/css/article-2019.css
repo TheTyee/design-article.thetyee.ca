@@ -2949,6 +2949,15 @@ background: #53ACEC;
 .str-comment:hover {
 	color: black !important;
 }
+
+@media screen and (max-width: 400px) {
+#commentcounter {
+ display:none;
+
+}
+
+}
+
 		
 
         /* HIDE BUTTONS ON POLL STORIES */
