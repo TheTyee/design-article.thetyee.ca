@@ -3837,32 +3837,20 @@ label.valid {
 	margin-top: .125em;
 }
 
-
-.bw-audio-intro {
-	display: block;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 1px;
-	line-height: 1px;
-	color: transparent;
-	opacity: 0.01;
-	max-height: 2px;
-	overflow: hidden;
-	pointer-events: none;
-	user-select: none;
-	background: transparent;
+.bw-audio-inline {
+  display: inline-block;
+  width: 0;
+  max-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1px;
+  line-height: 0;
+  color: transparent;
+  opacity: 0.01;
+  vertical-align: baseline;
 }
-
-.bw-audio-intro p {
-	margin: 0 !important;
-	padding: 0 !important;
-	border: 0 !important;
-	font-size: inherit;
-	line-height: inherit;
-	color: inherit;
-}
-
 
 @media screen and (max-width: 939px) {
     .aside-mobile {
