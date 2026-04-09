@@ -251,7 +251,8 @@ var segments = window.location.href.split("/");
 topic = segments[(segments.length - 2)]; 
 if (topic == "Zoe_Ducklow") { topic = "Zoë_Ducklow" 
 } else if (topic =="Geoff_D_Auria") { topic = "Geoff_D'Auria" 
-} else if (topic =="Michael_M_Gonigle") { topic = "Michael_M'Gonigle" 
+} else if (topic =="Michael_M_Gonigle") { topic = "Michael_M'Gonigle"
+} else if (topic =="J_B__MacKinnon") { topic = "JB_MacKinnon"  
 } else if (topic =="Kata__Catherine__Lafferty") { topic = "Catherine__Lafferty" 
 } else if (topic =="Zoe_Yunker") { topic = "Zoë_Yunker" };
 // topic = topic.replace(/ë/gi, "e");
