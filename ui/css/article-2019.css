@@ -940,6 +940,7 @@ text-decoration: underline;
 
 .section-sponsor-blurb {
 	font-weight: 200;
+	text-align: left;
 }
 
 .index-list-spacing {
@@ -2871,7 +2872,7 @@ display:none;
 }
 
 
-.btn-twitter, .btn-facebook, .btn-facebook, .btn-email, .btn-flip {
+.btn-twitter, .btn-facebook, .btn-facebook, .btn-email, .btn-flip, .btn-whats {
 	color: #7A7C85 !important;
 	background: #E0E0E0;
 }
@@ -2886,7 +2887,7 @@ display:none;
 	color: #fff !important;
 }
 
-.btn-flip:hover {
+.btn-flip:hover, .btn-whats:hover{
 background: #53ACEC;
     color: #fff !important;
 }
