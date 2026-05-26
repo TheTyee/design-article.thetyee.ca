@@ -30,15 +30,19 @@
 
        <li id="comments" class=""><a class="btn-comment" href="#comments"><?php include($gitrootinc . "00-atoms/images/comment-bubble.html") ?></a>
 
-      <li id="commentcount" class="desktop">
-      <a class="str-comment coral-count" href="#disqus_thread" data-coral-url="https://thetyee.ca<?= $_SERVER['REQUEST_URI']?>"></a>
-        </li>   
+   <a id="commentcounter" class="str-comment coral-count" href="#disqus_thread" style="display:none;"></a>
+        </li>
     </ul>
 
 </div>
 
 
 <script>
+const myDiv = document.getElementById("commentcounter");
+if (myDiv) {
+myDiv.setAttribute("data-coral-id", storyID);
+}
+
       $("#sharecopy a").click(function(e){
 e.preventDefault();
             navigator.clipboard.writeText(window.location.href);
