@@ -2845,6 +2845,9 @@ display:none !important;
 }
 
 
+.coral-count-number, .coral-count-text, .coral-new-count-divider, .coral-new-count-number, .coral-new-count-text {display:none;}
+
+
 /* Chrome 29+ */
 @media screen and (-webkit-min-device-pixel-ratio:0)
   and (min-resolution:.001dpcm) {
@@ -2938,6 +2941,8 @@ background: #53ACEC;
 .comment-bubble-svg {
 	height: 27px;
 }
+
+
 
 .str-comment {
 	color: var(--lightgrey) !important;
