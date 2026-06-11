@@ -5,7 +5,7 @@
    2020: top navigation moved into a single file
    and 2021: footer moved into a single file ====== */
 
-@import "global-nav.css"; 
+@import "global-nav.css?v=1"; 
 @import "global-footer.css";
 
 /*  ==== #FONTS === */
@@ -27,7 +27,7 @@
   Another thing to note is that the @import'ed stylesheet shouldn't itself contain
   any @import declarations, otherwise you end up with yet another devtools bug
   shitstorm and a headache the size of mother russia. */
-@import "article-2019.css?v=1111111123";
+@import "article-2019.css?v=111111133";
 
 
 /* ==========================================================================

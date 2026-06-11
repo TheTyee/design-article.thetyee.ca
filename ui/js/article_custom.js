@@ -58,7 +58,7 @@ var newstr =  "None yet";
  jQuery('.str-comment').html(newstr);
 } else {
     var newstr = str.replace(/comments/i, '<span class="str-comment-cnt hidden-sm hidden-xs">Comments</span>');
-    jQuery('.str-comment').html(newstr);
+   jQuery (jQuery('.str-comment')[0]).html(newstr);
     }
 }
 

@@ -80,7 +80,7 @@ jQuery( window ).on( "load", function() {
 			setTimeout(function() {
 $("body").show();	
             
-  }, 300);
+  }, 450);
 			
     });
 
