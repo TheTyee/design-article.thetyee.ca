@@ -20,6 +20,8 @@ body {
 	background-color: #fff;
 }
 
+.login { display:none;}
+
 
 /* Type */
 
@@ -2558,7 +2560,7 @@ background-color:white;
 
 span.author-info__date span {
   content: "\00a0";
-  padding-right: 2px; 
+  padding-right: 2px;
 }
 	
 	.author-more {

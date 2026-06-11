@@ -50,6 +50,8 @@
 
        <li id="comments" class=""><a class="btn-comment" href="#comments"><?php include($gitrootinc . "00-atoms/images/comment-bubble.html") ?></a>
 
+   <a id="commentcounter" class="str-comment coral-count" href="#disqus_thread" style="display:none;"></a>
+        </li>
       <li id="commentcount" class="desktop">
       <a id="commentcounter" class="str-comment coral-count" href="#disqus_thread"></a>
         </li>   
@@ -60,9 +62,9 @@
 
 <script>
 const myDiv = document.getElementById("commentcounter");
+if (myDiv) {
 myDiv.setAttribute("data-coral-id", storyID);
-
-
+}
 
       $("#sharecopy a").click(function(e){
 e.preventDefault();
