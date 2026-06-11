@@ -6449,3 +6449,23 @@ h2.hmpg-module-header__main-label {
 
 /* End of Most organism */
 
+
+
+/* PODCAST TRANSCRIPT — transcript element: offset in Franklin Gothic (the DEK/caption face), body reading size */
+.article__body .transcript,
+.article__body .transcript p,
+.article__body .transcript .transcript__note {
+	font-family: var(--typeface-sans), "franklin-gothic-urw", "Libre Franklin", Arial, sans-serif;
+}
+.article__body .transcript .transcript__note {
+	font-weight: 700;
+	margin-bottom: 1.25rem;
+}
+.article__body .transcript p {
+	margin-bottom: 1.1rem;
+}
+.transcript-rule {
+	margin: 2rem 0 1.5rem;
+	border: 0;
+	border-top: 1px solid #ccc;
+}
