@@ -52,7 +52,7 @@ function fixFeaturedMediaOffset(){
 function mobileFriendlyCommentsStr() {
     // Adds the .stric-comment-cnt class to the Disqus comment counter
     // so it can be hidden on mobile
-    var str = jQuery('.str-comment').text();
+    var str = jQuery('.str-comment').first().text();
     if (str ===  "No comments yet") {
 var newstr =  "None yet"; 
  jQuery('.str-comment').html(newstr);
