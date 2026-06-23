@@ -5052,3 +5052,6 @@ content : none !important;
     border: 1px solid #ddd;
 }
 
+
+/* hide legacy share-count placeholder (dead Facebook share counter; was a hard-coded "68 SHARES" only kept hidden by article_custom.js) */
+.tool-bar li.count, #sharecount { display: none !important; }
