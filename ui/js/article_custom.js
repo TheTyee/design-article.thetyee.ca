@@ -169,14 +169,41 @@ jQuery(".chevron").click(function(){
 $(".latest-stories__media-wrapper li").toggle();
 });
 
-        jQuery('a.btn-comment, a.str-comment').click(function(e){
-            jQuery('html, body').animate({
-                scrollTop: jQuery("#disqus_thread").offset().top
-            }, 500, function(){
-                jQuery(".comments-section button").click();
-            });
+        // --- Comments deep-link + reveal (Coral). Replaces the dead Disqus #disqus_thread
+        // target left over from the Disqus->Coral migration: #disqus_thread is now an empty
+        // 0-height div, so the old scrollTop landed nowhere. The real thread is #coral_thread.
+        function tyeeScrollToComments(smooth){
+            var $t = jQuery('#coral_thread');
+            if (!$t.length) { $t = jQuery('.comments-section'); }
+            if (!$t.length) { return; }
+            // expand the collapsed comments container first so the offset is the post-expand position
+            jQuery('.comments-section .main-col-container').css('height', 'auto');
+            jQuery('.read-more').fadeOut();
+            jQuery('#comment_agreement').fadeOut();
+            jQuery('html, body').animate({ scrollTop: $t.offset().top - 20 }, smooth === false ? 0 : 500);
+        }
+
+        jQuery('a.btn-comment, a.str-comment').off('click').on('click', function(e){
+            e.preventDefault();
+            tyeeScrollToComments(true);
             return false;
         });
+
+        // Deep-link from the URL. id="comments" is the top social-share button, so the browser's
+        // native #comments jump lands mid-article. Override it: reveal + scroll to the real Coral
+        // thread AFTER Coral has rendered (it injects async), so we land ON the comments.
+        function tyeeHandleCommentHash(){
+            if (window.location.hash.toLowerCase().indexOf('comment') === -1) { return; }
+            var tries = 0;
+            (function waitForCoral(){
+                var el = document.getElementById('coral_thread');
+                var ready = el && el.getBoundingClientRect().height > 150;
+                if (ready || tries++ > 40) { tyeeScrollToComments(true); return; }
+                setTimeout(waitForCoral, 250);
+            })();
+        }
+        tyeeHandleCommentHash();
+        jQuery(window).on('hashchange', tyeeHandleCommentHash);
 
         // populate shared count
 
