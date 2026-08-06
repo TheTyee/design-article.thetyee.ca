@@ -169,38 +169,51 @@ jQuery(".chevron").click(function(){
 $(".latest-stories__media-wrapper li").toggle();
 });
 
-        // --- Comments deep-link + reveal (Coral). Replaces the dead Disqus #disqus_thread
-        // target left over from the Disqus->Coral migration: #disqus_thread is now an empty
-        // 0-height div, so the old scrollTop landed nowhere. The real thread is #coral_thread.
-        function tyeeScrollToComments(smooth){
-            var $t = jQuery('#coral_thread');
-            if (!$t.length) { $t = jQuery('.comments-section'); }
-            if (!$t.length) { return; }
-            // expand the collapsed comments container first so the offset is the post-expand position
+        // --- Comments deep-link + reveal (Coral). Replaces the dead Disqus #disqus_thread target
+        // (now an empty 0-height leftover) from the Disqus->Coral migration. The real thread is
+        // #coral_thread, and it LAZY-LOADS — for logged-out readers Coral can take several seconds,
+        // during which the layout above reflows. So we reveal the section and re-assert the scroll
+        // to the START of the comments repeatedly as it settles (native scrollIntoView, no overshoot),
+        // backing off the moment the reader scrolls away so we never yank them.
+        function tyeeCommentsEl(){
+            return document.getElementById('coral_thread')
+                || document.querySelector('.comments-section');
+        }
+        function tyeeRevealComments(){
             jQuery('.comments-section .main-col-container').css('height', 'auto');
             jQuery('.read-more').fadeOut();
             jQuery('#comment_agreement').fadeOut();
-            jQuery('html, body').animate({ scrollTop: $t.offset().top - 20 }, smooth === false ? 0 : 500);
+        }
+        function tyeeScrollToComments(smooth){
+            var el = tyeeCommentsEl();
+            if (!el) { return; }
+            el.scrollIntoView(smooth ? { behavior: 'smooth', block: 'start' } : { block: 'start' });
         }
 
         jQuery('a.btn-comment, a.str-comment').off('click').on('click', function(e){
             e.preventDefault();
+            tyeeRevealComments();
             tyeeScrollToComments(true);
             return false;
         });
 
         // Deep-link from the URL. id="comments" is the top social-share button, so the browser's
-        // native #comments jump lands mid-article. Override it: reveal + scroll to the real Coral
-        // thread AFTER Coral has rendered (it injects async), so we land ON the comments.
+        // native #comments jump lands mid-article. Override it and keep the comments pinned as the
+        // article images + Coral thread lazy-load and reflow underneath.
         function tyeeHandleCommentHash(){
             if (window.location.hash.toLowerCase().indexOf('comment') === -1) { return; }
-            var tries = 0;
-            (function waitForCoral(){
-                var el = document.getElementById('coral_thread');
-                var ready = el && el.getBoundingClientRect().height > 150;
-                if (ready || tries++ > 40) { tyeeScrollToComments(true); return; }
-                setTimeout(waitForCoral, 250);
-            })();
+            tyeeRevealComments();
+            tyeeScrollToComments(false);              // immediate best-effort landing
+            jQuery(window).one('load', function(){ tyeeRevealComments(); tyeeScrollToComments(false); });
+            var last = -1, ticks = 0;
+            var iv = setInterval(function(){
+                if (ticks++ > 24) { clearInterval(iv); return; }          // ~12s of settling
+                var cur = window.scrollY;
+                if (last !== -1 && Math.abs(cur - last) > 80) { clearInterval(iv); return; } // reader took over
+                tyeeRevealComments();
+                tyeeScrollToComments(false);
+                last = window.scrollY;
+            }, 500);
         }
         tyeeHandleCommentHash();
         jQuery(window).on('hashchange', tyeeHandleCommentHash);
