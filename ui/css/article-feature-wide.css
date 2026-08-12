@@ -22,11 +22,14 @@
 
 /* Full-bleed hero image */
 
+/* No max-width on the hero: the page's own content column keeps widening past
+   1800px (see --page-margin-sides), so capping the hero left the superimposed
+   white header sitting on the white page background beyond about 2200px --
+   the logo, menu and support button all became invisible. */
+
 .article-feature-wide .article-hero {
     margin-top: calc(-1 * var(--header-height));
     display: grid;
-    max-width: 1800px;
-    margin-inline: auto;
 }
 
 .article-feature-wide .article-hero figure {
