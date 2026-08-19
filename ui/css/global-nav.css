@@ -230,8 +230,13 @@ ul#nav-bar li label.nav-bar__link--more:after {
 	margin-bottom: 2px;
 }
 
+/* Render dropdown link text exactly as authored in header--homepage.html.
+   Was text-transform: capitalize, which forced title case on every word and broke
+   multi-word names with lowercase joining words ("Ways to Give" -> "Ways To Give").
+   Every item in both columns is already correctly cased at source, so this is a no-op
+   for all of them except that one — and it stops the next "Terms of Service" breaking too. */
 .new-expander-content__topics-submenu .new-nav__link--dropdown-item, .new-expander-content__more-submenu .new-nav__link--dropdown-item {
-	text-transform: capitalize;
+	text-transform: none;
 	letter-spacing: 0
 }
 
