@@ -30,3 +30,6 @@ the CSS file seems to avoid the bug (or maybe prevent resource mapping) */
 @import "story-item--wide-feature.css?v=1";
 @import "weekender-home.css";
 @import "weekender-home-split.css";
+
+/* Dark Reader contrast fixes — see file header. Must stay LAST so it wins the cascade. */
+@import "darkreader-contrast.css?v=1";

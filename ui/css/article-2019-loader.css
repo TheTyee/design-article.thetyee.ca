@@ -44,3 +44,6 @@
 @import "header-basic.css";
 
 
+
+/* Dark Reader contrast fixes — see file header. Must stay LAST so it wins the cascade. */
+@import "darkreader-contrast.css?v=1";
