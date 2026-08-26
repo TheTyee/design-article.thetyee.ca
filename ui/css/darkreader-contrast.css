@@ -1,0 +1,172 @@
+/* ==========================================================================
+   #DARK-READER-CONTRAST
+   Added 2026-08-25. Asana "accessibility issue flagged by reader" (1216967036361694).
+
+   A reader using the Dark Reader extension reported Tyee pages where text was
+   effectively invisible. Nothing is wrong with our markup: black on our brand
+   yellow #ffd000 is 14.3:1. The failure is in how Dark Reader works — it recolours
+   the page and then applies the user's Brightness slider as a global CSS filter.
+   Its text colour clips to pure white past roughly 115, while #ffd000 (already at
+   R=255) has so much headroom left that it climbs back to nearly the original hue.
+   The result is white on yellow at about 1.7:1.
+
+   EVERY RULE HERE IS SCOPED TO html[data-darkreader-scheme="dark"], an attribute
+   that ONLY the Dark Reader extension sets, and only while it is actively theming
+   the page. No browser, OS setting, high-contrast mode or other extension sets it.
+   So for every reader who is not running Dark Reader, none of these selectors can
+   ever match and the page is byte-for-byte what it is today.
+
+   Deliberately NOT @media (prefers-color-scheme: dark): thetyee.ca has no dark
+   theme, so a reader on a dark OS with no extension must keep getting the normal
+   light page rather than a handful of randomly darkened panels.
+
+   Do not redefine --yellow here. It is used for yellow TEXT on dark surfaces (the
+   nav dropdown), so darkening the variable globally makes those cases worse.
+   ========================================================================== */
+
+/* --- Brand-yellow #ffd000 surfaces ------------------------------------- */
+html[data-darkreader-scheme="dark"] .new-site-header__logo-block-wrapper,
+html[data-darkreader-scheme="dark"] .new-site-nav__search-form-button {
+	background-color: #3b2f00 !important;
+	color: #ffe27a !important;
+}
+html[data-darkreader-scheme="dark"] .new-site-header__logo-block-wrapper *,
+html[data-darkreader-scheme="dark"] .new-site-nav__search-form-button * {
+	color: #ffe27a !important;
+}
+
+/* --- Pale-yellow #ffe057 homepage modules (Insider, Builder) ------------ */
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider,
+html[data-darkreader-scheme="dark"] .hmpg-org-builder {
+	background-color: #3b2f00 !important;
+}
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider,
+html[data-darkreader-scheme="dark"] .hmpg-org-builder,
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider p,
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider h2,
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider i,
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider em,
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider strong,
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider span,
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider .story-item__date,
+html[data-darkreader-scheme="dark"] .hmpg-org-builder p,
+html[data-darkreader-scheme="dark"] .hmpg-org-builder h2,
+html[data-darkreader-scheme="dark"] .hmpg-org-builder span {
+	color: #ffe8a3 !important;
+}
+html[data-darkreader-scheme="dark"] .hmpg-org-tyee-insider a,
+html[data-darkreader-scheme="dark"] .hmpg-org-builder a {
+	color: #ffc98a !important;
+}
+
+/* --- In-article support CTA (.byline_cta uses var(--yellow)) ------------ */
+html[data-darkreader-scheme="dark"] .byline_cta,
+html[data-darkreader-scheme="dark"] .byline_cta_builder {
+	background-color: #3b2f00 !important;
+	border-color: #6b5600 !important;
+	color: #ffe8a3 !important;
+}
+html[data-darkreader-scheme="dark"] .byline_cta *,
+html[data-darkreader-scheme="dark"] .byline_cta_builder * {
+	color: #ffe8a3 !important;
+}
+
+/* --- Button hover / focus / active --------------------------------------
+   article-2019.css turns these yellow with white text on interaction. See the note
+   in the ticket: that pairing is 1.38:1 for EVERYONE, extension or not, and wants a
+   separate design decision. This rule only repairs the Dark Reader case; it does not
+   touch the ordinary hover state. */
+html[data-darkreader-scheme="dark"] .button:hover,
+html[data-darkreader-scheme="dark"] .button:focus,
+html[data-darkreader-scheme="dark"] .button:active,
+html[data-darkreader-scheme="dark"] .btn-default:hover,
+html[data-darkreader-scheme="dark"] .btn-default:focus,
+html[data-darkreader-scheme="dark"] .btn-default:active,
+html[data-darkreader-scheme="dark"] .btn-default.active {
+	background-color: #4a3b00 !important;
+	color: #fff3c4 !important;
+}
+
+/* --- Newsletter / campaign interstitial ---------------------------------
+   Third-party popup (OptinMonster: .coaling-c-* / .Campaign__*). Its panel is the
+   same brand yellow, so it fails the same way — and it is full-screen on arrival,
+   which makes it the most visible instance of the bug. Overridden here rather than
+   in the campaign editor so the fix ships with the site; !important is required to
+   beat the tool's inline styles. */
+html[data-darkreader-scheme="dark"] .coaling-c-alpha,
+html[data-darkreader-scheme="dark"] .Campaign__alphaLayer,
+html[data-darkreader-scheme="dark"] .coaling-c-wrapper,
+html[data-darkreader-scheme="dark"] .Campaign__innerWrapper {
+	background-color: #3b2f00 !important;
+}
+html[data-darkreader-scheme="dark"] .coaling-c-alpha,
+html[data-darkreader-scheme="dark"] .coaling-c-alpha *,
+html[data-darkreader-scheme="dark"] .Campaign__alphaLayer,
+html[data-darkreader-scheme="dark"] .Campaign__alphaLayer * {
+	color: #ffe8a3 !important;
+}
+
+/* --- Inline-styled yellow promo links in article bodies -----------------
+   These are authored in Bricolage with an inline style="...background:rgba(255,208,0,.8)..."
+   (the in-article "Get The Tyee to your Inbox" box, and the appended election CTA). Dark Reader
+   lifts their text to white but leaves the inline yellow, giving ~1.5:1. Inline styles beat
+   author rules, so !important is required here. */
+html[data-darkreader-scheme="dark"] aside.ad-box--bigbox a,
+html[data-darkreader-scheme="dark"] aside.ad-box--bigbox strong a,
+html[data-darkreader-scheme="dark"] #append_a a {
+	background-color: #4a3b00 !important;
+	background-image: none !important;
+	color: #fff3c4 !important;
+	border-color: #6b5600 !important;
+}
+
+/* --- Catch-all for ANY inline-styled brand-yellow element ---------------
+   The in-article promo boxes rotate per page load and sit in different containers, so naming
+   containers does not hold. Match the inline style itself instead: anything an editor has given
+   a brand-yellow background in Bricolage. Covers both spacing conventions of rgb()/rgba(). */
+html[data-darkreader-scheme="dark"] [style*="255,208,0"],
+html[data-darkreader-scheme="dark"] [style*="255, 208, 0"],
+html[data-darkreader-scheme="dark"] [style*="#ffd000"],
+html[data-darkreader-scheme="dark"] [style*="#FFD000"] {
+	background-color: #4a3b00 !important;
+	background-image: none !important;
+	color: #fff3c4 !important;
+	border-color: #6b5600 !important;
+}
+html[data-darkreader-scheme="dark"] [style*="255,208,0"] *,
+html[data-darkreader-scheme="dark"] [style*="255, 208, 0"] *,
+html[data-darkreader-scheme="dark"] [style*="#ffd000"] *,
+html[data-darkreader-scheme="dark"] [style*="#FFD000"] * {
+	color: #fff3c4 !important;
+}
+
+/* --- Top-nav links on hover/focus --------------------------------------
+   The nav-bar links flip to brand yellow on interaction, same trap as the buttons above. */
+html[data-darkreader-scheme="dark"] #nav-bar a:hover,
+html[data-darkreader-scheme="dark"] #nav-bar a:focus,
+html[data-darkreader-scheme="dark"] .new-site-nav a:hover,
+html[data-darkreader-scheme="dark"] .new-site-nav a:focus {
+	background-color: #4a3b00 !important;
+	color: #fff3c4 !important;
+}
+
+/* --- Subscribe button, resting green -----------------------------------
+   Dark Reader renders this #468f66 with white text = 3.90:1, just under AA. Deepening the
+   green restores it without changing the button for anyone else. */
+html[data-darkreader-scheme="dark"] .btn--subscribe,
+html[data-darkreader-scheme="dark"] button.btn--subscribe {
+	background-color: #2f6647 !important;
+	color: #ffffff !important;
+}
+
+/* --- Yellow house ads on index pages ------------------------------------
+   e.g. "Canada needs more independent media. Join us." — aside.house-ad wraps a div with a
+   brand-yellow background and dark text. */
+html[data-darkreader-scheme="dark"] .house-ad,
+html[data-darkreader-scheme="dark"] .house-ad > div {
+	background-color: #3b2f00 !important;
+	color: #ffe8a3 !important;
+}
+html[data-darkreader-scheme="dark"] .house-ad * {
+	color: #ffe8a3 !important;
+}
