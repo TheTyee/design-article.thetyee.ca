@@ -170,3 +170,11 @@ html[data-darkreader-scheme="dark"] .house-ad > div {
 html[data-darkreader-scheme="dark"] .house-ad * {
 	color: #ffe8a3 !important;
 }
+
+/* --- Masthead wordmark ---------------------------------------------------
+   thetyee.svg is black ink on transparent. Dark Reader does not invert images by default, so
+   once the band above goes dark the wordmark disappears. Invert it to match. Keep this rule
+   next to the band rule — the two must always change together. */
+html[data-darkreader-scheme="dark"] .new-site-header__logo-img {
+	filter: invert(1) !important;
+}
