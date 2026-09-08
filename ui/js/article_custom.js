@@ -53,6 +53,7 @@ function mobileFriendlyCommentsStr() {
     // Adds the .stric-comment-cnt class to the Disqus comment counter
     // so it can be hidden on mobile
     var str = jQuery('.str-comment').first().text();
+    str = str.replace(/\s*\/\s*\d+\s*New\s*/i, ''); // TR2047 drop Coral "/ N New" indicator
     if (str ===  "No comments yet") {
 var newstr =  "None yet"; 
  jQuery('.str-comment').html(newstr);
