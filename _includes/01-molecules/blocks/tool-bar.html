@@ -77,30 +77,4 @@ e.preventDefault();
                          $("#copied").fadeOut(6000);
                          });
      });
-
-// Archived-comment counter for pre-cutover (Disqus-era) stories.
-// Coral has no thread for these, so its count.js fills the toolbar counter with "0".
-// A page that predates the Disqus->Coral cutover has NO #coral_thread mount (post-cutover
-// pages carry both a hidden #disqus_thread AND a #coral_thread). When #coral_thread is
-// absent, ask the archive for the real comment count and show it. Fails silently -> on any
-// error the existing Coral behaviour is left untouched, so there is no added risk.
-(function () {
-  document.addEventListener("DOMContentLoaded", function () {
-    if (document.getElementById("coral_thread")) return; // post-cutover: Coral owns the count
-    var counters = document.querySelectorAll("a.str-comment");
-    if (!counters.length) return;
-    var endpoint = "/comment-archive/count.php?url=" + encodeURIComponent(window.location.href);
-    fetch(endpoint, { credentials: "same-origin" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (d) {
-        if (!d || !d.ok || !d.archived || !d.count) return; // not in archive -> keep Coral's value
-        for (var i = 0; i < counters.length; i++) {
-          // Drop coral-count so Coral's async count.js can't overwrite us back to 0.
-          counters[i].classList.remove("coral-count");
-          counters[i].textContent = String(d.count);
-        }
-      })
-      .catch(function () {});
-  });
-})();
     </script>
